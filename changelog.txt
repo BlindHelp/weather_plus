@@ -24,8 +24,6 @@ We only have the Master branch. I think it is not necessary to create any stable
 
 git tag v8.1
 
-06-07-2021
-
 # Created the new tag:
 
 git tag v8.2
@@ -39,8 +37,10 @@ Translated new string in french and spanish.
 scons -c # To clean the content of the unnotuous files in the Locale folder, manifest.ini, nvda.mo.
 
 Created the new file:
-Weather_Plus.pot
+Weather_Plus.pot # 345 strings for Weather_Plus8.2.
 With the scons pot command.
+
+Updated translation for hr language in locale folder by Tarik Hadžirović. Thanks.
 
 ---
 
