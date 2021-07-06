@@ -1,966 +1,559 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Weather_Plus 6.0\n"
+"Project-Id-Version: Weather_Plus versão 8\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2019-05-06 11:43+0200\n"
-"PO-Revision-Date: 2019-05-06 11:47+0200\n"
-"Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
-"Language-Team: Ângelo Miguel Abrantes <ampa4374@gmail.com>\n"
-"Language: pt\n"
+"POT-Creation-Date: 2021-06-26 22:52+0200\n"
+"PO-Revision-Date: 2021-06-26 22:53+0200\n"
+"Last-Translator: Ângelo Abrantes <ampa4374@gmail.com>\n"
+"Language-Team: Equipa Portuguesa do NVDA: Ângelo Abrantes e Rui Fontes\n"
+"Language: pt_PT\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 1.8.13\n"
 "X-Poedit-Basepath: ../../../globalPlugins/Weather_Plus\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: __init__.py\n"
+"X-Poedit-SearchPath-1: buildVars.py\n"
 
-#. Translators: A message informing the user that he has installed an old version that contains a space rather than an underscore.
-#: addon\installTasks.py:22
-msgid ""
-"You have installed the Weather Plus add-on which is incompatible with this "
-"one. The new name of this add-on is Weather_Plus with an underscore. Click "
-"OK to update it."
-msgstr ""
-"Tem instalado o Weather Plus add-on, o qual é incompatível com este. O novo "
-"nome deste extra é Weather_Plus com um sinal de sublinhado. prima OK para o "
-"actualizar."
-
-#. Translators: The title of the dialogbox.
-#: addon\installTasks.py:24
-msgid "Update confirmation"
-msgstr "Confirmação de actualização."
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:53
+#: __init__.py:62
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:53
+#: __init__.py:62
 msgid "Celsius"
 msgstr "Celsius"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:53
+#: __init__.py:62
 msgid "Kelvin"
 msgstr "Kelvin"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:55
+#: __init__.py:64
 msgid "unknown"
 msgstr "desconhecido"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:85
+#: __init__.py:104
 msgid "Weather Plus &Settings"
-msgstr "Opções do &Weather Plus"
+msgstr "Configurações do &Weather Plus"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:85
+#: __init__.py:104
 msgid "Show configuration items."
 msgstr "Mostrar itens de configuração"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:86
+#: __init__.py:106
 msgid "Set and &manage your cities..."
 msgstr "&Weather Plus - Configurações Gerais."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:86
+#: __init__.py:106
 msgid "Displays or allows to set the current cities from a list"
 msgstr "Mostra ou permite definir as cidades a partir de  uma lista"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:88
+#: __init__.py:109
 msgid "Set a &temporary city..."
 msgstr "Definir uma cidade &em modo temporário."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:88
+#: __init__.py:109
 msgid "Allows to set one temporary city from a list"
-msgstr "Permitir selecionar uma cidade em modo temporário a partir da lista."
+msgstr "Permite seleccionar uma cidade em modo temporário a partir da lista."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:91
+#: __init__.py:113
 msgid "&Documentation"
 msgstr "&Documentação."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:91
+#: __init__.py:113
 msgid "Opens the help file for the current language"
 msgstr "Abre o ficheiro de ajuda para o idioma actual"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:94
+#: __init__.py:117
 msgid "&Check for Upgrade..."
 msgstr "Verificar se há nova ver&são do Weather Plus disponível."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:94
+#: __init__.py:117
 msgid "Notify if there is an upgraded version available"
 msgstr "Informar, quando houver uma nova versão &disponível."
 
-#. opens the Weather Plus settings window
-#: addon\globalPlugins\Weather_Plus\__init__.py:140
+#: __init__.py:163
+msgid "nanometers"
+msgstr "nanómetros"
+
+#: __init__.py:166
+msgid "miles per hour"
+msgstr "milhas por hora"
+
+#: __init__.py:167
+msgid "miles"
+msgstr "milhas"
+
+#: __init__.py:168
+msgid "inches"
+msgstr "polegadas"
+
+#: __init__.py:169
+msgid "inches of mercury"
+msgstr "Polegadas de mercúrio;"
+
+#: __init__.py:172
+msgid "kilometers per hour"
+msgstr "quilómetros por hora"
+
+#: __init__.py:173
+msgid "kilometers"
+msgstr "quilómetros"
+
+#: __init__.py:174
+msgid "millimeters"
+msgstr "milímetros"
+
+#: __init__.py:175
+msgid "millibars"
+msgstr "milibares"
+
+#: __init__.py:177
+msgid "millimeters of mercury"
+msgstr "milímetros de mercúrio"
+
+#: __init__.py:203
 msgid "Settings"
 msgstr "Configurações"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:140
-#: addon\globalPlugins\Weather_Plus\__init__.py:2019
+#: __init__.py:203 __init__.py:2245
 msgid "Preset"
 msgstr "Predefinir"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:140
-#: addon\globalPlugins\Weather_Plus\__init__.py:3075
-#: addon\globalPlugins\Weather_Plus\__init__.py:3364
+#: __init__.py:203 __init__.py:3358 __init__.py:3680
 msgid "None"
 msgstr "Nenhum"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:141
-msgid "Enter a City, woeId or choose one from the list, if available."
-msgstr ""
-"Introduza uma Cidade válida, ou escolha uma a partir da lista, se disponível."
+#: __init__.py:205
+msgid "Enter a City or choose one from the list, if available."
+msgstr "Introduza uma cidade ou escolha uma da lista, se disponível."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:273
-#: addon\globalPlugins\Weather_Plus\__init__.py:1782
-#: addon\globalPlugins\Weather_Plus\__init__.py:2555
-#: addon\globalPlugins\Weather_Plus\__init__.py:3208
-msgid "The woeID"
-msgstr "A woeID"
+#: __init__.py:379 __init__.py:1819 __init__.py:2903 __init__.py:3508
+msgid "The city"
+msgstr "A cidade"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:274
-#: addon\globalPlugins\Weather_Plus\__init__.py:1782
-msgid "assigned to"
-msgstr "atribuído a"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:275
+#: __init__.py:380
 msgid "has not been preset."
 msgstr "não foi predefinido."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:276
+#: __init__.py:381
 msgid "Will be used in temporary mode!"
-msgstr "Será usado en modo temporário!;"
+msgstr "Será usada en modo temporário!;"
 
-#. offers to save the list changed
-#: addon\globalPlugins\Weather_Plus\__init__.py:277
-#: addon\globalPlugins\Weather_Plus\__init__.py:303
-#: addon\globalPlugins\Weather_Plus\__init__.py:362
-#: addon\globalPlugins\Weather_Plus\__init__.py:1787
-#: addon\globalPlugins\Weather_Plus\__init__.py:2434
-#: addon\globalPlugins\Weather_Plus\__init__.py:2591
-#: addon\globalPlugins\Weather_Plus\__init__.py:2596
-#: addon\globalPlugins\Weather_Plus\__init__.py:2661
-#: addon\globalPlugins\Weather_Plus\__init__.py:3109
-#: addon\globalPlugins\Weather_Plus\__init__.py:3216
-#: addon\globalPlugins\Weather_Plus\__init__.py:3388
-#: addon\globalPlugins\Weather_Plus\__init__.py:3407
-#: addon\globalPlugins\Weather_Plus\__init__.py:4081
+#: __init__.py:384 __init__.py:412 __init__.py:474 __init__.py:1825
+#: __init__.py:2733 __init__.py:2941 __init__.py:2946 __init__.py:3016
+#: __init__.py:3396 __init__.py:3517 __init__.py:3707 __init__.py:3726
+#: __init__.py:4574
 msgid "Notice!"
 msgstr "Aviso prévio!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:304
+#: __init__.py:414
 msgid "You have modified the list of your cities"
 msgstr "Modificou a lista das suas cidades"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:304
+#: __init__.py:414
 msgid "Do you want to save it?"
 msgstr "Deseja guardá-la?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:360
-msgid "The cities on your list are not compatible with the Yahoo API!"
-msgstr "As cidades da sua lista não são compatíveis com a API do Yahoo!"
+#: __init__.py:471
+msgid "The cities on your list are not compatible with the Weather API!"
+msgstr "As cidades da sua lista não são compatíveis com a API do tempo!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:361
+#: __init__.py:472
 msgid ""
 "They have to be tested and validated, you can do it from the addon settings "
 "window."
 msgstr ""
-"Elas precisam ser testadas e validadas, você pode fazê-lo na janela de "
-"configurações do addon."
+"Precisam de ser testadas e validadas, pode fazê-lo na janela de "
+"configurações do extra."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:373
+#: __init__.py:486
 msgid "Setting up a temporary city"
 msgstr "Definir uma cidade em modo temporário."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:376
+#: __init__.py:490
 msgid "Cities List available:"
 msgstr "Lista de Cidades disponíveis:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:408
+#: __init__.py:522
 msgid "Documentation not available for the current language!"
 msgstr "Documentação indisponível para o idioma actual!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:454
-#: addon\globalPlugins\Weather_Plus\__init__.py:1638
-#: addon\globalPlugins\Weather_Plus\__init__.py:2519
-#: addon\globalPlugins\Weather_Plus\__init__.py:2806
-#: addon\globalPlugins\Weather_Plus\__init__.py:2818
-#: addon\globalPlugins\Weather_Plus\__init__.py:2852
+#: __init__.py:571
 msgid ""
-"Sorry, i can not receive data, verify that your internet connection is "
+"Sorry, I can not receive data, problems with the download page, try again "
+"later please!"
+msgstr ""
+"Desculpe, não é possível receber dados. Verifique se a sua conexão à "
+"internet está activa, ou tente novamente mais tarde!"
+
+#: __init__.py:574 __init__.py:1686 __init__.py:2864 __init__.py:3186
+msgid ""
+"Sorry, I can not receive data, verify that your internet connection is "
 "active, or try again later!"
 msgstr ""
 "Desculpe, não é possível receber dados. Verifique se a sua conexão à "
-"internet está ativa, ou tente novamente mais tarde!"
+"internet está activa, ou tente novamente mais tarde!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:470
+#: __init__.py:586
 msgid "version"
 msgstr "Versão"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:470
+#: __init__.py:586
 msgid "is available."
 msgstr "está disponível."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:471
+#: __init__.py:587
 msgid "Installed version"
 msgstr "Versão instalada"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:472
+#: __init__.py:588
 msgid "Do you want to download and install it?"
 msgstr "Quer baixá-lo e instalá-lo?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:475
+#: __init__.py:593
 msgid "Sorry, at the time an update is not available."
 msgstr "Desculpe. De momento não há nova versão disponível."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1027
-#: addon\globalPlugins\Weather_Plus\__init__.py:2527
-#: addon\globalPlugins\Weather_Plus\__init__.py:4678
+#: __init__.py:1071 __init__.py:2872 __init__.py:5231
 msgid "not found!"
 msgstr "não encontrado!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1028
+#: __init__.py:1072
 msgid ""
 "You need to upgrade the sound effects by reactivating the appropriate option "
 "from the settings of"
 msgstr ""
-"é necessário atualizar os efeitos sonoros, reativando a opção apropriada a "
+"é necessário actualizar os efeitos sonoros, reactivando a opção apropriada a "
 "partir das opções de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1030
+#: __init__.py:1074
 msgid "But if these are already updated, then you need to update"
 msgstr "Mas se já estiverem actualizados, então não precisa de actualizar"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1152
+#: __init__.py:1246
 msgid "I can not load the settings!"
 msgstr "As configurações não podem ser carregadas!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1210
+#: __init__.py:1246
+msgid "Attention!"
+msgstr "Atenção!"
+
+#: __init__.py:1316
 msgid "I can not save the settings!"
 msgstr "As configurações não podem ser guardadas!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1230
+#: __init__.py:1331
 msgid "invalid name"
 msgstr "nome inválido"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1304
-msgid "miles"
-msgstr "milhas"
+#: __init__.py:1421
+msgid "The cloudiness is"
+msgstr "A nebulosidade é"
 
-#. takes the value in mmHg
-#: addon\globalPlugins\Weather_Plus\__init__.py:1308
-msgid "millimeters of mercury"
-msgstr "milímetros de mercúrio"
+#: __init__.py:1422
+msgid "The precipitation is"
+msgstr "A precipitação é "
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1310
-msgid "inches of mercury"
-msgstr "Polegadas de mercúrio;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1323
-msgid "kilometers"
-msgstr "quilómetros"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1325
-msgid "millibars"
-msgstr "milibares"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1333
+#: __init__.py:1466
 msgid "the weather report is currently"
 msgstr "o boletim meteorológico atual regista uma temperatura de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1334
-#: addon\globalPlugins\Weather_Plus\__init__.py:1370
-#: addon\globalPlugins\Weather_Plus\__init__.py:1445
-#: addon\globalPlugins\Weather_Plus\__init__.py:1473
+#: __init__.py:1467 __init__.py:1507 __init__.py:1612 __init__.py:1639
+#: __init__.py:1952
 msgid "degrees"
 msgstr "graus"
 
-#. adds wind information to the string
-#: addon\globalPlugins\Weather_Plus\__init__.py:1341
+#: __init__.py:1474
 msgid "The wind direction is from"
 msgstr "A direção do vento é de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1346
-#: addon\globalPlugins\Weather_Plus\__init__.py:1357
+#: __init__.py:1480 __init__.py:1492
 msgid "with speed of"
 msgstr "com a velocidade de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1351
-#: addon\globalPlugins\Weather_Plus\__init__.py:1361
+#: __init__.py:1485 __init__.py:1496
 msgid "The wind speed is"
 msgstr "A velocidade do vento é;"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1370
+#: __init__.py:1504
+msgid "The wind gusts are of"
+msgstr "As rajadas de vento são de"
+
+#: __init__.py:1507
 msgid "The perceived temperature is"
 msgstr "A sensação térmica é de"
 
-#. adds information on the atmosphere
-#: addon\globalPlugins\Weather_Plus\__init__.py:1377
-msgid "steady"
-msgstr "estável"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1377
-msgid "rising"
-msgstr "ascendente"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1377
-msgid "falling"
-msgstr "descendente"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1378
+#: __init__.py:1514
 msgid "The humidity is"
 msgstr "A humidade é de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1383
+#: __init__.py:1516
+msgid "The cloudiness is of"
+msgstr "A nebulosidade é de"
+
+#: __init__.py:1518
+msgid "The precipitation is of"
+msgstr "A precipitação é de"
+
+#: __init__.py:1523
 msgid "and the visibility is up to"
 msgstr "e a visibilidade é de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1392
+#: __init__.py:1532
 msgid "The visibility is up to"
 msgstr "a visibilidade é de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1397
-#: addon\globalPlugins\Weather_Plus\__init__.py:1404
+#: __init__.py:1537
+msgid "and the precipitation is"
+msgstr "E a precipitação é "
+
+#: __init__.py:1554
 msgid "The pressure is"
 msgstr "A pressão atmosférica é de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1399
-msgid "and the state of the barometric pressure is"
-msgstr "e o estado da pressão barométrica é"
+#: __init__.py:1558
+msgid "The UV radiation is of"
+msgstr "A radiação ultravioleta é de "
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1409
-msgid "The state of the barometric pressure is"
-msgstr "o estado da pressão barométrica é"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1425
+#: __init__.py:1578
 msgid "The sun rises at"
 msgstr "O sol nasce às"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1426
+#: __init__.py:1579 __init__.py:1581
 msgid "and sets at"
 msgstr "e põe-se às"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1441
+#: __init__.py:1580
+msgid "The moon rises at"
+msgstr "A Lua nasce às"
+
+#: __init__.py:1608
 msgid "the forecast for today is"
 msgstr "a previsão meteorológica para hoje é de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1443
-#: addon\globalPlugins\Weather_Plus\__init__.py:1471
+#: __init__.py:1610 __init__.py:1637
 msgid "with a maximum temperature of"
 msgstr "com a temperatura máxima de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1444
-#: addon\globalPlugins\Weather_Plus\__init__.py:1472
+#: __init__.py:1611 __init__.py:1638
 msgid "and a minimum of"
 msgstr "e a mínima de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1478
+#: __init__.py:1645
 msgid "not available"
 msgstr "indisponível;"
 
-#. this does not replace the name of the city
-#: addon\globalPlugins\Weather_Plus\__init__.py:1484
+#: __init__.py:1649
 msgid "In"
 msgstr "Para"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1484
+#: __init__.py:1649
 msgid "Unnamed"
 msgstr "Sem nome"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1493
-#: addon\globalPlugins\Weather_Plus\__init__.py:1902
-msgid "Sorry, the woeID is not set!"
-msgstr "Desculpe, a woeID não foi definida!"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1499
-msgid "kilometers per hour"
-msgstr "quilómetros por hora"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1500
-msgid "miles per hour"
-msgstr "milhas por hora"
-
-#. weather condition
-#: addon\globalPlugins\Weather_Plus\__init__.py:1502
-msgid "in the morning"
-msgstr "de manhã"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1503
-msgid "in the evening"
-msgstr "de tarde"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1504
-#: addon\globalPlugins\Weather_Plus\__init__.py:1505
-#: addon\globalPlugins\Weather_Plus\__init__.py:1506
-msgid " and "
-msgstr " e "
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1507
-msgid " to "
-msgstr " para"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1509
-msgid "in the vicinity"
-msgstr "nas proximidades"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1510
-msgid "tornado"
-msgstr "tornado"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1511
-msgid "tropical storm"
-msgstr "Tempestade tropical"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1512
-msgid "hurricane"
-msgstr "furacão"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1513
-msgid "severe thunderstorms"
-msgstr "Tempestades severas;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1514
-msgid "mixed rain and snow"
-msgstr "chuva com neve."
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1515
-msgid "mixed rain and hail"
-msgstr "chuva com granizo;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1516
-msgid "mixed rain and sleet"
-msgstr "chuva com neve;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1517
-msgid "mixed snow and sleet"
-msgstr "neve com granizo;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1518
-msgid "snow flurries"
-msgstr "flocos de neve;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1519
-msgid "smoke"
-msgstr "nevoeiro"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1520
-msgid "smoky"
-msgstr "Nevoeiro;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1521
-msgid "precipitation"
-msgstr "precipitação"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1522
-#: addon\globalPlugins\Weather_Plus\__init__.py:1523
-msgid "sunny intervals"
-msgstr "abertas"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1524
-msgid "sunny period"
-msgstr "período de sol"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1525
-msgid "light snow"
-msgstr "neve ligeira"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1526
-msgid "scattered snow showers"
-msgstr "aguaceiros de neve pouco frequentes"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1527
-msgid "snow showers"
-msgstr "aguaceiros de neve"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1528
-msgid "snow shower"
-msgstr "aguaceiro de neve"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1529
-msgid "snowstorm"
-msgstr "tempestade de neve"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1530
-msgid "snowdrift"
-msgstr "muita neve"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1531
-msgid "drifting snow"
-msgstr "acumulação de neve"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1532
-msgid "wintry Mix"
-msgstr "chuva e neve"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1533
-#: addon\globalPlugins\Weather_Plus\__init__.py:1534
-msgid "ice to rain"
-msgstr "gelo com chuva"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1535
-msgid "ice"
-msgstr "gelo"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1536
-msgid "blizzard"
-msgstr "nevasca"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1537
-msgid "blowing snow"
-msgstr "neve e vento"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1538
-msgid "snow"
-msgstr "neve"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1539
-msgid "light rain with thunder"
-msgstr "chuva leve com trovoadas"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1540
-msgid "few showers"
-msgstr "alguns aguaceiros"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1541
-msgid "heavy showers"
-msgstr "Aguaceiros fortes"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1542
-msgid "heavy thunderstorms"
-msgstr "trovoadas fortes"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1543
-msgid "heavy thunderstorm"
-msgstr "trovoada forte"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1544
-msgid "lightning"
-msgstr "relâmpago"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1545
-msgid "isolated clouds"
-msgstr "nuvens dispersas;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1546
-msgid "partly cloudy"
-msgstr "céu parcialmente nublado"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1547
-msgid "partly bright"
-msgstr "céu parcialmente limpo;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1548
-msgid "showers early"
-msgstr "aguaceiros pela manhã"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1549
-#: addon\globalPlugins\Weather_Plus\__init__.py:1550
-msgid "light rain"
-msgstr "chuva fraca"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1551
-msgid "heavy rain"
-msgstr "Chuva forte"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1552
-msgid "isolated showers"
-msgstr "aguaceiros pouco frequentes;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1553
-msgid "isolated thunderstorms"
-msgstr "Trovoadas pouco frequentes;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1554
-msgid "isolated thundershowers"
-msgstr "trovoadas pouco frequentes"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1555
-msgid "mostly cloudy"
-msgstr "céu predominantemente nublado"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1556
-msgid "mostly dry"
-msgstr "dia maioritariamente ceco"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1557
-msgid "mostly clear"
-msgstr "Céu pouco nublado;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1558
-msgid "clearing"
-msgstr "tornando-se sem nuvens"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1559
-msgid "no rain"
-msgstr "sem chuva"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1560
-msgid "sleet"
-msgstr "chuva e neve"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1561
-msgid "blowing dust"
-msgstr "vento com poeira"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1562
-msgid "widespread dust"
-msgstr "poeira generalizada"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1563
-msgid "low drifting sand"
-msgstr "tempestade fraca de areia"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1564
-msgid "sandstorm"
-msgstr "tempestade de areia"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1565
-msgid "sand storm"
-msgstr "Tempestade de areia"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1566
-msgid "dust"
-msgstr "poeira"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1567
-msgid "sand"
-msgstr "areia"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1568
-msgid "thundery showers"
-msgstr "Aguaceiros com trovoada"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1569
-msgid "thundershowers"
-msgstr "aguaceiros e trovoadas"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1570
-msgid "scattered thunderstorms"
-msgstr "trovoadas dispersas"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1571
-msgid "scattered showers"
-msgstr "Aguaceiros dispersos"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1572
-msgid "thunderstorms"
-msgstr "trovoadas"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1573
-msgid "thunderstorm"
-msgstr "trovoada"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1574
-msgid "storm"
-msgstr "tempestade"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1575
-msgid "hail"
-msgstr "granizo"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1576
-msgid "foggy"
-msgstr "enevoado"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1577
-msgid "fog"
-msgstr "nevoeiro"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1578
-msgid "haze"
-msgstr "neblina"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1579
-msgid "mist"
-msgstr "Céu com alguma neblina"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1580
-msgid "clear"
-msgstr "Céu Limpo;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1581
-msgid "fair"
-msgstr "céu limpo;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1582
-msgid "fine"
-msgstr "Tempo bom"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1583
-msgid "overcast"
-msgstr "Céu encoberto;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1584
-msgid "light showers"
-msgstr "Aguaceiros leves;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1585
-msgid "light drizzle"
-msgstr "Chuviscos;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1586
-msgid "freezing rain"
-msgstr "chuva gelada"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1587
-msgid "frequent showers"
-msgstr "aguaceiros frequentes"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1588
-msgid "rain shower"
-msgstr "chuvadas;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1589
-msgid "rain"
-msgstr "chuva"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1590
-msgid "freezing drizzle"
-msgstr "giada"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1591
-msgid "showers"
-msgstr "Aguaceiros;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1592
-msgid "drizzle"
-msgstr "orvalho"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1593
-msgid "dry"
-msgstr "seco"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1594
-msgid "mild"
-msgstr "moderado"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1595
-msgid "clouds"
-msgstr "nuvens;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1596
-msgid "cloudy"
-msgstr "céu nublado"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1597
-msgid "mostly sunny"
-msgstr "céu limpo ou pouco nublado"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1598
-msgid "sunny"
-msgstr "céu limpo"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1599
-msgid "sun"
-msgstr "sol"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1600
-msgid "bright"
-msgstr "sol radiante"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1601
-msgid "thunder"
-msgstr "trovoada"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1602
-msgid "shower"
-msgstr "aguaceiro;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1603
-msgid "breezy"
-msgstr "ocorrência de vento"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1604
-msgid "blustery"
-msgstr "tempestuoso;"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1605
-msgid "windy"
-msgstr "ocorrência de vento"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1606
-msgid "wind"
-msgstr "vento"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1607
-msgid "flurries"
-msgstr "agitados"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1608
-msgid "late"
-msgstr "pela tarde"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1609
-msgid "early"
-msgstr "pela manhã"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1610
-msgid "isolated"
-msgstr "disperso"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1611
-msgid "shallow fog"
-msgstr "nevoeiro baixo"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1612
-msgid "heavy"
-msgstr "denso"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1613
-msgid "cold"
-msgstr "Frio"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1614
-msgid "hot"
-msgstr "calor"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1662
+#: __init__.py:1661 __init__.py:1877 __init__.py:2069
+msgid "Sorry, the city is not set!"
+msgstr "Desculpe, a cidade não está definida!"
+
+#: __init__.py:1667 __init__.py:2976 __init__.py:3158 __init__.py:3593
+#: __init__.py:3728 __init__.py:5405
+msgid "Please wait..."
+msgstr "Por favor aguarde..."
+
+#: __init__.py:1710
 msgid "Sorry, it was not possible to load the most recent update!"
 msgstr "Desculpe, não é possível baixar a versão mais recente."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1663
+#: __init__.py:1711
 msgid "Please try again later."
 msgstr "Por favor, tente mais tarde."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1710
-#: addon\globalPlugins\Weather_Plus\__init__.py:1711
+#: __init__.py:1754 __init__.py:1755
 msgid "meters per second"
 msgstr "metros por segundo"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1758
-msgid "Sorry, the woeID set is not valid or contains incomplete data!"
-msgstr "Desculpe, a woeID definida não é válida ou contém dados incompletos!"
+#: __init__.py:1794
+msgid "Sorry, the city set is not valid or contains incomplete data!"
+msgstr "Desculpe, a cidade definida não é válida ou contém dados incompletos!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "north"
 msgstr "norte"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "north northeast"
 msgstr "nor-nordeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "northeast"
 msgstr "nordeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "east northeast"
 msgstr "Este-nordeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "east"
 msgstr "este"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "east southeast"
 msgstr "Este-sudeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "southeast"
 msgstr "sudeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "south southeast"
 msgstr "sul-sudeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "south"
 msgstr "sul"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "south southwest"
 msgstr "sul-sudoeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "southwest"
 msgstr "sudoeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "west southwest"
 msgstr "oeste-sudoeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "west"
 msgstr "oeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "west northwest"
 msgstr "Oeste-noroeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "northwest"
 msgstr "noroeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "north northwest"
 msgstr "nor-noroeste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1783
+#: __init__.py:1820
 msgid ""
 "Is not working properly, contains incomplete data or has been removed from "
-"the database of"
+"the"
 msgstr ""
-"Não funciona corretamente, contém dados incompletos ou foi removido da base "
+"Não funciona correctamente, contém dados incompletos ou foi removido da base "
 "de dados de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1785
-#: addon\globalPlugins\Weather_Plus\__init__.py:2550
+#: __init__.py:1822 __init__.py:2897
 msgid "It could be a temporary problem and you may wait a while '..."
 msgstr ""
 "Pode ser um problema temporário, pode aguardar um pouco e tentar novamente "
 "mais tarde."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1786
+#: __init__.py:1823
 msgid "Do you want to delete it from your list?"
-msgstr "Quer excluí-lo da sua lista?"
+msgstr "Quer excluí-la da sua lista?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1847
+#: __init__.py:1894
+msgid "Chance of rain"
+msgstr "Possibilidades de chuva"
+
+#: __init__.py:1895
+msgid "Chance of snow"
+msgstr "Possibilidades de neve"
+
+#: __init__.py:1940
+msgid "Wind speed"
+msgstr "Velocidade do vento"
+
+#: __init__.py:1941
+msgid "Direction"
+msgstr "Direção"
+
+#: __init__.py:1942
+msgid "Wind direction"
+msgstr "Direcção do vento;"
+
+#: __init__.py:1943
+msgid "Wind gusts"
+msgstr "Rajadas do vento"
+
+#: __init__.py:1944
+msgid "Cloudiness"
+msgstr "Nebulosidade"
+
+#: __init__.py:1945
+msgid "Precipitation"
+msgstr "Precipitação"
+
+#: __init__.py:1946
+msgid "Humidity"
+msgstr "Humidade "
+
+#: __init__.py:1947
+msgid "Visibility"
+msgstr "Visibilidade:"
+
+#: __init__.py:1966
+msgid "Hourly forecast for"
+msgstr "Previsão por hora para"
+
+#: __init__.py:1991
 msgid "Provides the current temperature and weather conditions."
 msgstr "Fornece a temperatura corrente e as condições meteorológicas actuais."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1858
+#: __init__.py:2003
+#, python-format
 msgid ""
-"Provides the weather forecast and current temperature for 24 hours and the "
-"next 9 days."
+"If pressed once, announce the weather forecast and current temperature for "
+"24 hours and the next %d days. If pressed twice announce the hourlyforecast "
+"temperature and weather conditions."
 msgstr ""
-"Fornece a previsão do tempo e da temperatura para 24 horas e para os 9 dias "
-"seguintes."
+"Se pressionada uma vez, anuncia a previsão meteorológica e a temperatura "
+"actual; se pressionada duas vezes, fornece as condições para os próximos %d "
+"dias."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1866
+#: __init__.py:2011
 msgid "Sorry, no list available!"
 msgstr "Desculpe, não existe lista disponível!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1879
+#: __init__.py:2044
 msgid "Allows you to set a temporary city."
 msgstr ""
 "Permite que defina uma cidade temporária. Voltará à predefinida, quando "
 "reiniciar o NVDA."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1893
+#: __init__.py:2058
 msgid "Scale of temperature measurement set into"
 msgstr "Escala de medição de temperatura definida para"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1895
+#: __init__.py:2060
 msgid "Allows you to set a temporary scale of temperature mesurement."
 msgstr "Permite definir uma escala temporária de medidas de temperatura."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1916
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
+#: __init__.py:2090
 msgid "at"
 msgstr "às"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1919
+#: __init__.py:2093
 msgid "Last update of the current weather report"
 msgstr "Última actualização da previsão  meteorológica"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1921
+#: __init__.py:2095
 msgid "Announces the date of the last update of the weather report."
 msgstr "Anuncia a data da última actualização da previsão meteorológica."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1937
+#: __init__.py:2155
 msgid "Open the Weather Plus settings dialog."
 msgstr "Abrir as configurações do &Weather Plus"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1972
+#: __init__.py:2197
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast, f5: volume controls."
@@ -969,7 +562,7 @@ msgstr ""
 "edição, f4: controlo da duração da previsão do tempo, f5: controlos do "
 "volume ."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1973
+#: __init__.py:2198
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast."
@@ -977,60 +570,67 @@ msgstr ""
 "f1: ajuda na localização, f2: selecção do último tab, f3: lista e caixa de "
 "edição, f4: controlo da duração da previsão do tempo."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2015
+#: __init__.py:2241
 msgid "Test"
 msgstr "Testar"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2016
+#: __init__.py:2242
 msgid "Details"
 msgstr "Detalhes:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2017
+#: __init__.py:2243
 msgid "Define"
 msgstr "definir"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2018
+#: __init__.py:2244
 msgid "Add"
 msgstr "Adicionar"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2020
+#: __init__.py:2246
 msgid "Remove"
 msgstr "Remover"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2021
+#: __init__.py:2247
 msgid "Rename"
 msgstr "Renomear"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2047
+#: __init__.py:2273
 msgid "&Import new cities..."
 msgstr "I&mportar novas cidades..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2048
+#: __init__.py:2274
 msgid "&Export your cities..."
 msgstr "E&xportar as suas cidades..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2060
+#: __init__.py:2275
+msgid "&hourlyforecast setting..."
+msgstr "&Configuração das previsões horárias..."
+
+#: __init__.py:2290
 msgid "Scale of temperature measurement:"
 msgstr "Escala de medição de temperatura:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2068
+#: __init__.py:2298
 msgid "Degrees shown as:"
 msgstr "Mostrar os graus como:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2071
+#: __init__.py:2301
 msgid "C - F - K"
 msgstr "C - F - K"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2072
-msgid "Don't specify"
+#: __init__.py:2302
+msgid "Unspecified"
 msgstr "Não especificado"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2078
+#: __init__.py:2310
 msgid "Weather Forecasts up to days:"
 msgstr "Previsão do tempo acima de dois dias: "
 
-#. check boxes
-#: addon\globalPlugins\Weather_Plus\__init__.py:2086
+#: __init__.py:2321
+msgid "API response language:"
+msgstr "Idioma de resposta da api"
+
+#: __init__.py:2330
 msgid ""
 "&Copy the weather report and weather forecast, including city details to "
 "clipboard"
@@ -1038,123 +638,135 @@ msgstr ""
 "Copiar o boletim meteoroló&gico e previsão do tempo, incluindo detalhes da "
 "cidade para a área de transferência"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2091
+#: __init__.py:2335
 msgid "Enable &audio effects (only for the current weather conditions)"
 msgstr ""
-"Ativar efeitos &sonoros (funciona somente para o boletim meteorológico atual)"
+"Activar efeitos &sonoros (funciona somente para o boletim meteorológico "
+"actual)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2094
+#: __init__.py:2338
 msgid "Use only &weather effects"
 msgstr "Use apenas &efeitos climáticos"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2099
+#: __init__.py:2343
 msgid "General audio volume"
 msgstr "Volume de áudio Geral"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2100
+#: __init__.py:2344
 msgid "Current audio volume"
-msgstr "Volume de áudio atual"
+msgstr "Volume de áudio actual"
 
-#. check boxes
-#: addon\globalPlugins\Weather_Plus\__init__.py:2131
+#: __init__.py:2376
 msgid "Enable &help buttons in the settings window"
-msgstr "Ativar &botões de ajuda na janela de configurações"
+msgstr "Activar &botões de ajuda na janela de configurações"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2138
-msgid "Read &wind informations"
-msgstr "Ler informações da &janela"
+#: __init__.py:2383
+msgid "Read &wind information"
+msgstr "Ler informações do &vento "
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2143
+#: __init__.py:2388 __init__.py:5810
 msgid "Add wind directi&on"
 msgstr "Adicionar a &direcção do vento"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2147
+#: __init__.py:2392 __init__.py:5806
 msgid "Add wi&nd speed"
 msgstr "Adicionar a velocidade do ve&nto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2151
+#: __init__.py:2396
 msgid "Add speed in &meters per second of the wind"
 msgstr "Adicionar a velocidade do vent&o em metros por segundo"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2155
+#: __init__.py:2400 __init__.py:5814
+msgid "Add wind &gust speed"
+msgstr "Adiciona vento &rajadas "
+
+#: __init__.py:2404
 msgid "Add perceived &temperature"
 msgstr "Adicionar sensação &térmica"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2160
-msgid "&Read atmospherical informations"
-msgstr "Ler informações &atmosféricas"
+#: __init__.py:2409
+msgid "&Read atmospherical information"
+msgstr "Ler informações &atmosféricas "
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2165
+#: __init__.py:2414 __init__.py:5822
 msgid "Add humidity va&lue"
 msgstr "Adicionar va&lor da humidade"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2169
+#: __init__.py:2418 __init__.py:5826
 msgid "Add &visibility value"
 msgstr "Adicionar &valor da visibilidade"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2173
+#: __init__.py:2422 __init__.py:5818
+msgid "Add cloudiness &value"
+msgstr "Adiciona nebulosidade &valor"
+
+#: __init__.py:2426 __init__.py:5830
+msgid "Add precipitation &value"
+msgstr "Adiciona precipitação &valor"
+
+#: __init__.py:2430 __init__.py:5834
+msgid "Add &ultraviolet radiation value"
+msgstr "Adiciona valor de radiação &ultravioleta"
+
+#: __init__.py:2434
 msgid "Add atmospheric &pressure value"
 msgstr "Adicionar valor da &pressão atmosférica"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2177
+#: __init__.py:2438
 msgid "Indicates the atmospheric pressure in millimeters of mercur&y (mmHg)"
 msgstr "Indicar a pressão atmosférica em milímetros de mercúrio (mm&Hg)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2181
-msgid "Add status of &barometric pressure"
-msgstr "Adi&cionar estado da pressão barométrica"
+#: __init__.py:2443
+msgid "Read a&stronomical information"
+msgstr "Ler informações ast&ronómicas "
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2186
-msgid "Read a&stronomical informations"
-msgstr "Ler informações ast&ronómicas"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2190
+#: __init__.py:2447
 msgid "Enable reading of the hours in &24-hour format"
-msgstr "Ativar a leitura das horas em formato de &24 horas"
+msgstr "Activar a leitura das horas em formato de &24 horas"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2195
+#: __init__.py:2452
 msgid "Use the comma to separate decimals, example (4,&15)"
 msgstr "Usar a vírgula para separar as décimas. Exemplo (4,&15)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2199
+#: __init__.py:2456
+msgid "&Displays output in a window"
+msgstr "&Exibe a saída em uma janela"
+
+#: __init__.py:2460
 msgid "Check for &upgrade"
-msgstr "Informar, se houver nova versão do Weather Plus disponível."
+msgstr "Procurar por actualização"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2227
-msgid ""
-"Testing the validity of city woeID entry and find the name of city assigned, "
-"or viceversa."
-msgstr ""
-"Testa a validade do woeID da cidade entrada e encontra o nome da cidade "
-"correspondente, ou vice-versa."
+#: __init__.py:2487
+msgid "Test the city validity  and find the data of it."
+msgstr "Testa a validade da cidade e encontra os seus dados"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2228
-msgid "Displays information on the current city."
-msgstr "Exibe informações sobre a cidade atual."
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2229
-msgid "Allows you to define the area, in order to adapt the sound effects."
-msgstr "Permite que defina a região, a fim de adaptar-lhe os efeitos sonoros."
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2230
+#: __init__.py:2488
 msgid "Add the current city into your list."
 msgstr "Adiciona a cidade actual à sua lista."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2231
+#: __init__.py:2489
+msgid "Displays information about the current city."
+msgstr "Mostra informação acerca da cidade actual"
+
+#: __init__.py:2490
+msgid "Allows you to define the area, in order to adapt the sound effects."
+msgstr "Permite que defina a região, a fim de adaptar-lhe os efeitos sonoros."
+
+#: __init__.py:2491
 msgid ""
 "Presets the current city as the default, will be used every time you restart "
 "the plugin."
 msgstr "Predefine a cidade actual e usa-a sempre que o extra for reiniciado."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2232
+#: __init__.py:2492
 msgid "Delete  the current city from your list."
 msgstr "Apaga a cidade actual da sua lista."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2233
+#: __init__.py:2493
 msgid "Rename the current city."
 msgstr "Renomeia a cidade actual."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2234
+#: __init__.py:2494
 msgid ""
 "Permits to incorporate in your list new cities importing them from another "
 "list with the extension *.zipcodes; you can select the city you want to "
@@ -1164,666 +776,1218 @@ msgstr ""
 "lista com a extensão *.zipcodes; pode seleccionar a cidade que quer "
 "importar, marcando a caixa de marcação associada."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2235
+#: __init__.py:2495
 msgid "Permits to save your list of cities in a specified path."
 msgstr "Permite guardar a sua lista de cidades numa pasta específica."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2326
+#: __init__.py:2496
+msgid "Allows you to choose the contents of the hourly forecast report."
+msgstr "Permite seleccionar os elementos do relatório da previsão horária"
+
+#: __init__.py:2603
 msgid "You can enter or search for a city"
 msgstr "Pode escrever ou procurar por uma cidade"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2327
-msgid "By city woeID: 715399"
-msgstr "Pelo código da cidade: 2785-766"
+#: __init__.py:2604
+msgid "By Latitude and Longitude: 48.8567,2.3508"
+msgstr "Por latitude e longitude: 48.8567,2.3508"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2328
-msgid "By only city name: Ferrara"
-msgstr "Apenas pelo nome da cidade: Cascais"
+#: __init__.py:2605
+msgid "By City name: Paris"
+msgstr "Pelo nome da cidade: Cascais"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2329
-msgid "By state or region and city name: Emilia Romagna Ferrara"
-msgstr "Por estado ou região e nome da cidade: Portugal, Castelo Branco"
+#: __init__.py:2606
+msgid "By City name and country: Toronto,Canada"
+msgstr "Pelo nome da cidade e do país: Cascais, Portugal"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2330
-msgid "By city name and country: Ferrara,it"
-msgstr "Pelo nome da cidade e País: Cascais pt"
+#: __init__.py:2607
+msgid "Or Toronto,CA"
+msgstr "Ou Cascais,pt"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2331
-msgid "By postal code: 44100,it"
-msgstr "Pelo código de área exemplo: 2720 pt"
+#: __init__.py:2608
+msgid "By City name and region: Toronto,Ontario"
+msgstr "Pelo nome da cidade e da região: Cascais,Lisboa"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2332
-msgid "By geographic coordinates: latitude, longitude"
-msgstr "Pelas cordenadas geográficas exemplo: latitude, longitude"
+#: __init__.py:2609
+msgid "By US zip: 10001"
+msgstr "Pelo código postal dos Estados unidos: 1021"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2333
+#: __init__.py:2610
+msgid "By UK postcode: SW1"
+msgstr "Pelo código postal do reino unido: SW1"
+
+#: __init__.py:2611
+msgid "By Canada postal code: G2J"
+msgstr "Pelo código postal do Canadá: G2J"
+
+#: __init__.py:2612
+msgid "By metar:<metar code>: metar:EGLL"
+msgstr "By metar:<metar code>: metar:EGLL"
+
+#: __init__.py:2613
+msgid "By iata:<3 digit airport code>: iata:DXB"
+msgstr "pelo iata:<Código dos aeroportos, de três algarismos>: iata:DXB"
+
+#: __init__.py:2614
+msgid "By auto:ip IP lookup: auto:ip"
+msgstr "por auto:ip IP pesquisar: auto:ip"
+
+#: __init__.py:2615
+msgid "By IP address (IPv4 and IPv6 supported): 100.0.0.1"
+msgstr "Pelo endereço de IP (IPv4 e IPv6 são suportados): 100.0.0.1"
+
+#: __init__.py:2616
+msgid "if there will be cities with the same name, will be listed"
+msgstr "Se houver cidades com o mesmo nome, serão listadas"
+
+#: __init__.py:2617
+msgid "By default, confirming a selection, is used the postal code"
+msgstr "Por defeito, confirmando uma selecção, é usado o código postal"
+
+#: __init__.py:2618
+msgid ""
+"If the postal code is not valid, will be used a text string: city, state, "
+"region"
+msgstr ""
+"Se o código postal não for válido, será usada uma string de texto: cidade, "
+"estado, região"
+
+#: __init__.py:2619
+msgid "You can indicate how to proceed by prefixing the following commands"
+msgstr ""
+"Pode indicar como prosseguir a pesquisa, usando como prefixo os seguintes "
+"comandos"
+
+#: __init__.py:2620
+msgid ""
+"Direct (cities with the same name, will not listed), by typing D:City: D:"
+"Paris"
+msgstr ""
+"Directo (cidades com o mesmo nome, não serão listadas), escrevendo D:Cidade: "
+"D:Paris"
+
+#: __init__.py:2621
+msgid "Geographic coordinates, by typing G:City: G:Venezia"
+msgstr "Coordenadas Geográficas, escrevendo G:Cidade: G:Venezia"
+
+#: __init__.py:2622
+msgid "Text string, by typing T:City: T:Bologna"
+msgstr "String de texto, escrevendo T:Cidade: T:Bolonha"
+
+#: __init__.py:2623
 msgid "If the city is not found"
 msgstr "Se a Cidade não for encontrada"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2334
+#: __init__.py:2624
+msgid "Try to reverse the order in the search key"
+msgstr "Tentar inverter a ordem nos termos de pesquisa"
+
+#: __init__.py:2625
 msgid "Try with or without the country of origin"
 msgstr "Tentar com ou sem a indicação do país de origem."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2335
-msgid "Try to merge the name with hyphens, or separate it with spaces"
-msgstr "Tentar unindo o nome com hífens, ou separando-o por espaços"
+#: __init__.py:2626
+msgid "Try to merge the name with hyphens, or separate it with separator"
+msgstr "Tentar mesclar o nome com hífens ou separá-lo com separador"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2336
+#: __init__.py:2627
 msgid "Try deleting apostrophes"
 msgstr "Tentar, apagando apóstrofos"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2337
+#: __init__.py:2628
 msgid "Try changing the vowels accented with normal vowels"
 msgstr "Tentar, substituindo as vogais acentuadas por vogais normais."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2338
+#: __init__.py:2629
+msgid "Try to change in English some parts"
+msgstr "Tente mudar algumas partes para inglês"
+
+#: __init__.py:2630
 msgid "Try with a closest location"
 msgstr "Tentar, juntando uma localização mais próxima"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2340
+#: __init__.py:2633
 msgid "Help placing"
 msgstr "Ajuda na localização"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2432
+#: __init__.py:2730
 msgid "No sound effect in memory!"
 msgstr "Nenhum efeito sonoro na memória!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2433
+#: __init__.py:2731
 msgid "I can't reproduce the sound."
 msgstr "O som não pode ser reproduzido!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2526
+#: __init__.py:2827
+msgid "Choose search key for"
+msgstr "Escolher o termo de pesquisa para"
+
+#: __init__.py:2847
+msgid "Unfortunately I could not recover enough data to find the city."
+msgstr ""
+"Infelizmente não foi possível recuperar dados suficientes para encontrar a "
+"cidade."
+
+#: __init__.py:2848
+msgid "Do I try anyway?"
+msgstr "Quer tentar de qualquer maneira?"
+
+#: __init__.py:2871
 msgid "not found! Press F1 for help on entering data."
 msgstr ""
 "Não encontrado! Pressione \"f1\", para obter ajuda sobre entrada de dados."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2548
+#: __init__.py:2895
 msgid "Is not working properly or has been removed from the database of"
 msgstr "Não funciona corretamente ou foi removido da base de dados de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2552
+#: __init__.py:2899
 msgid "Is no longer valid!"
 msgstr "Já não é válida!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2582
+#: __init__.py:2932
 msgid "This option requires the installation of some audio effects"
 msgstr "Esta opção requer a instalação de alguns efeitos sonoros"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2583
+#: __init__.py:2933
 msgid "Do you want to install them?"
 msgstr "quer instalá-los?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2587
+#: __init__.py:2937
 msgid "The audio effects are installed!"
 msgstr "Os efeitos sonoros estão instalados!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2588
+#: __init__.py:2938
 msgid "Would you like to update?"
 msgstr "quer fazer a actualização?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2589
+#: __init__.py:2939
 msgid "Or do you want to uninstall them?"
 msgstr "Ou deseja desinstalá-los?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2596
+#: __init__.py:2946
 msgid "Are you sure you want to uninstall the sound effects?"
 msgstr "Tem a certeza de que deseja desinstalar os efeitos sonoros?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2623
+#: __init__.py:2974
 msgid "Update in progress"
 msgstr "Actualização em andamento"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2624
+#: __init__.py:2975
 msgid "Installation in progress"
 msgstr "Instalação em andamento"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2625
-#: addon\globalPlugins\Weather_Plus\__init__.py:2835
-#: addon\globalPlugins\Weather_Plus\__init__.py:3295
-#: addon\globalPlugins\Weather_Plus\__init__.py:3409
-#: addon\globalPlugins\Weather_Plus\__init__.py:4850
-msgid "Please wait..."
-msgstr "Por favor aguarde..."
-
-#. Installation Complete
-#: addon\globalPlugins\Weather_Plus\__init__.py:2651
+#: __init__.py:3004
 msgid "The installation of audio effects has been completed successfully!"
 msgstr "A instalação dos efeitos sonoros foi concluída com sucesso!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2652
+#: __init__.py:3005
 msgid "Adding folder:"
 msgstr "A adicionar pasta"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2654
+#: __init__.py:3007
 msgid "The upgrade of audio effects has been completed successfully!"
 msgstr "A actualização dos efeitos sonoros foi concluída com sucesso!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2659
+#: __init__.py:3014
 msgid "These sound effects are subject to change by the author."
 msgstr "Estes efeitos sonoros estão sujeitos a alterações pelo autor."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2660
+#: __init__.py:3015
 msgid "Disable and re-enable this option in order to update or uninstall them."
 msgstr "Desativar e reativar esta opção para os atualizar ou desinstalar."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2720
+#: __init__.py:3076
 msgid "Verify that your internet connection is active, or try again later."
 msgstr ""
-"Verifique se a sua conexão à internet está ativa, ou tente novamente mais "
+"Verifique se a sua conexão à internet está activa, ou tente novamente mais "
 "tarde."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2721
+#: __init__.py:3077
 msgid "File corrupted or not available!"
 msgstr "Ficheiro corrompido ou indisponível!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2723
-msgid "Sorry, i could not complete the installation of the sound effects!"
+#: __init__.py:3079
+msgid "Sorry, I could not complete the installation of the sound effects!"
 msgstr "Desculpe, não é possível concluir a instalação dos efeitos sonoros!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2724
+#: __init__.py:3080
 msgid "Installation Error!"
 msgstr "Erro de instalação!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2825
-msgid ""
-"The details of this city are not in the database and so I added them to the "
-"list. Try again!"
-msgstr ""
-"Os detalhes desta cidade não estão no banco de dados e, por isso, adicionei-"
-"os à lista. Tente novamente!"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2832
+#: __init__.py:3171
 msgid "Cannot identify your location, due to insufficient data."
 msgstr ""
 "A sua localização não pode ser identificada, devido a insuficiência de dados."
 
-#. if there is daylight saving time
-#: addon\globalPlugins\Weather_Plus\__init__.py:2865
-msgid "Daylight saving time"
-msgstr "Hora de Verão"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2866
-msgid "ahead"
-msgstr "adiantando o relógio"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2866
-msgid "back"
-msgstr "atrasando o relógio"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-msgid "Starts on"
-msgstr "Começa no dia"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
-msgid "set your clock"
-msgstr "ajustar o horário"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
-msgid "hour"
-msgstr "hora,"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
-msgid "Ends on"
-msgstr "termina no dia"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2875
+#: __init__.py:3199
 msgid "Details of"
 msgstr "Detalhes de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2878
+#: __init__.py:3202
 msgid "Place"
 msgstr "Lugar"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2879
+#: __init__.py:3203
 msgid "Current local time"
 msgstr "Hora local"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2880
+#: __init__.py:3204
 msgid "Degrees latitude"
 msgstr "Graus de latitude"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2881
+#: __init__.py:3205
 msgid "Degrees longitude"
 msgstr "Graus de longitude"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2882
+#: __init__.py:3206
 msgid "Elevation above sea level"
 msgstr "Altitude"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2882
+#: __init__.py:3206
 msgid "meters"
 msgstr "metros"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2901
+#: __init__.py:3227
 msgid "Define the area for"
 msgstr "Defina a região para"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2904
+#: __init__.py:3231
 msgid "Hinterland"
 msgstr "interior de um país"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2905
+#: __init__.py:3232
 msgid "Maritime area"
 msgstr "Região marítima"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2906
+#: __init__.py:3233
 msgid "Desert zone"
 msgstr "Zona de deserto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2907
+#: __init__.py:3234
 msgid "Arctic zone"
 msgstr "Zona do Árctico"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2908
+#: __init__.py:3235
 msgid "Mountain zone"
 msgstr "Zona de montanha"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3101
+#: __init__.py:3387
 msgid "Enter new name."
 msgstr "Escreva o novo nome."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3109
+#: __init__.py:3396
 msgid "it can't be used because it already exists!"
 msgstr "Não pode ser usado, porque já existe!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3208
+#: __init__.py:3508
 msgid "is correct"
 msgstr "está correcto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3209
+#: __init__.py:3509
 msgid "But the name"
 msgstr "Mas o nome"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3211
+#: __init__.py:3511
 msgid "already exists"
 msgstr "já existe"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3212
+#: __init__.py:3512
 msgid "You have to change it!"
 msgstr "é necessário alterá-lo!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3213
+#: __init__.py:3513
 msgid "The city proper is"
 msgstr "A cidade propriamente dita é"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3215
+#: __init__.py:3515
 msgid "Want to use the suggested name?"
 msgstr "Quer utilizar o nome sugerido?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3227
+#: __init__.py:3527
 msgid "Import cities"
 msgstr "Importar cidades, com os respectivos códigos."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3254
+#: __init__.py:3545
+msgid "Empty file or not in cities format compatible!"
+msgstr "Ficheiro vazio ou com formato incompatível!"
+
+#: __init__.py:3551
 msgid "Do you want to replace your list with this?"
 msgstr "Quer substituir a sua lista por esta? "
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3255
+#: __init__.py:3552
 msgid "If you select yes, your list will be completely replaced."
 msgstr "Se escolher \"sim\", a sua lista será totalmente substituída."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3256
+#: __init__.py:3553
 msgid "If you select no, the new cities will be added to your list."
 msgstr "Se escolher \"não\", as novas cidades serão adicionadas à sua lista."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3258
+#: __init__.py:3556
 msgid "Select import mode"
-msgstr "Selecionar o modo \"importar\";"
+msgstr "Seleccionar o modo \"importar\";"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3269
+#: __init__.py:3567
 msgid "File contents"
 msgstr "Conteúdos do ficheiro;"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3270
+#: __init__.py:3568
 msgid "cities"
 msgstr "Cidades;"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3273
+#: __init__.py:3571
 msgid "Activate the check boxes of the cities you want to import."
 msgstr "Marque as caixas de selecção das cidades que deseja importar."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3294
+#: __init__.py:3592
 msgid "Importing cities in progress"
 msgstr "a importar as cidades..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3368
+#: __init__.py:3684
 msgid "Were added"
 msgstr "Foram adicionados"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3368
+#: __init__.py:3684
 msgid "new cities to the list"
 msgstr "novas cidades à a lista"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3369
+#: __init__.py:3685
 msgid "Have been ignored because existing"
 msgstr "Foram ignorados porque já existen"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3370
+#: __init__.py:3686
 msgid "Content of imported list"
 msgstr "Conteúdo da lista importada"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3371
+#: __init__.py:3687
+msgid "Containing incomplete data"
+msgstr "Contém dados incomplletos"
+
+#: __init__.py:3688
 msgid "selected by the user"
 msgstr "seleccionado pelo utilizador"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3372
+#: __init__.py:3689
 msgid "Import finished"
 msgstr "Importação concluída"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3383
+#: __init__.py:3701
 msgid "A copy of"
 msgstr "Uma cópia de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3385
+#: __init__.py:3703
 msgid "It will be exported"
 msgstr "Vai ser exportada"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3386
+#: __init__.py:3704
 msgid "But it does not yet contain the changes you just made the list!"
 msgstr "Mas ainda não contém as alterações feitas na lista!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3387
+#: __init__.py:3705
 msgid "I proceed?"
 msgstr "quer continuar?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3392
+#: __init__.py:3711
 msgid "Export cities"
 msgstr "Exportar cidades."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3407
+#: __init__.py:3726
 msgid "You can not export the same file at the same path!"
 msgstr "não pode exportar o mesmo ficheiro para  o mesmo caminho!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4019
+#: __init__.py:3746
+msgid "Hourlyforecast data report values."
+msgstr "Valores do relatório de dados de hora em hora."
+
+#: __init__.py:3746
+msgid "Disable the data you don't want to be processed:"
+msgstr "Desactive os dados que deseja que não sejam processados"
+
+#: __init__.py:4492
 msgid "january"
 msgstr " de janeiro"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4020
+#: __init__.py:4493
 msgid "february"
 msgstr "de fevereiro"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4021
+#: __init__.py:4494
 msgid "march"
 msgstr "de março"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4022
+#: __init__.py:4495
 msgid "april"
 msgstr "de abril"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4023
+#: __init__.py:4496
 msgid "may"
 msgstr "de maio"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4024
+#: __init__.py:4497
 msgid "june"
 msgstr "de junho"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4025
+#: __init__.py:4498
 msgid "july"
 msgstr "de julho"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4026
+#: __init__.py:4499
 msgid "august"
 msgstr "de agosto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4027
+#: __init__.py:4500
 msgid "september"
 msgstr "de setembro"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4028
+#: __init__.py:4501
 msgid "october"
 msgstr "de outubro"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4029
+#: __init__.py:4502
 msgid "november"
 msgstr "de novembro"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4030
+#: __init__.py:4503
 msgid "december"
 msgstr "de dezembro"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4031
+#: __init__.py:4504
 msgid "Monday"
 msgstr "Segunda-feira"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4032
+#: __init__.py:4505
 msgid "Tuesday"
 msgstr "Terça-feira"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4033
+#: __init__.py:4506
 msgid "Wednesday"
 msgstr "Quarta-feira"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4034
+#: __init__.py:4507
 msgid "Thursday"
 msgstr "Quinta-feira"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4035
+#: __init__.py:4508
 msgid "Friday"
 msgstr "Sexta-feira"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4036
+#: __init__.py:4509
 msgid "Saturday"
 msgstr "Sábado"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4037
+#: __init__.py:4510
 msgid "Sunday"
 msgstr "Domingo"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4076
+#: __init__.py:4568
 #, python-format
-msgid "It was not possible find the acronym of %s!"
-msgstr "Não foi possível encontrar a sigla de %s!"
+msgid "It was not possible find the acronym of \"%s\"!"
+msgstr "Não foi possível encontrar o acrônimo de \"%s\"!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4077
-msgid ""
-"This does not allow to get the city local time, the sound effects will not "
-"be consistent."
-msgstr ""
-"Isso não permite obter a hora local da cidade, os efeitos sonoros não serão "
-"consistentes."
+#: __init__.py:4569
+msgid "This may not allow you to get the city details."
+msgstr "Isto pode não permitir que obtenha os detalhes da cidade."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4078
+#: __init__.py:4570
 msgid ""
 "Please report this to the author so he can add this country in database."
 msgstr ""
 "Por favor, comunique isso ao autor para que ele possa adicionar esse país ao "
 "banco de dados."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4079
+#: __init__.py:4571
 #, python-format
 msgid "Send an email to %s"
 msgstr "Envie um email para %s"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4080
+#: __init__.py:4572
 msgid "With  object the line below, thanks."
 msgstr "Com objeto a linha abaixo, obrigado."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4140
-#: addon\globalPlugins\Weather_Plus\__init__.py:4158
+#: __init__.py:4640 __init__.py:4658
 msgid "Downloaded"
 msgstr "Descarregado!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4141
+#: __init__.py:4641
 msgid "of"
 msgstr "de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4176
+#: __init__.py:4679
 msgid "Find..."
 msgstr "Procurar."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4177
+#: __init__.py:4680
 msgid "Find next"
 msgstr "Procurar próximo"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4178
+#: __init__.py:4681
 msgid "Find previous"
 msgstr "Procurar anterior"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4213
-msgid "Empty file or not in cities woeID format compatible!"
-msgstr "Ficheiro vazio ou em formato zipcodes imcompatível!"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:4392
+#: __init__.py:4880
 msgid "Be an error has occurred."
 msgstr "Seja um erro."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4393
+#: __init__.py:4881
 msgid "See the log for more information."
 msgstr "Veja o log para mais informações."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4394
+#: __init__.py:4882
 msgid "Error: failure writing file!"
 msgstr "Erro: Falha ao guardar o ficheiro!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4499
+#: __init__.py:5026
 msgid "occurrences found"
 msgstr "ocorrências encontradas"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4499
+#: __init__.py:5026
 msgid "for"
 msgstr "para"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4501
+#: __init__.py:5028
 msgid "Choose a city."
 msgstr "Escolha uma cidade."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4503
+#: __init__.py:5030
 msgid "List of availables Cities"
 msgstr "Lista de cidades disponíveis"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4536
+#: __init__.py:5062
 msgid "Do not show this message again!"
 msgstr "Não mostrar esta mensagem novamente!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4546
+#: __init__.py:5072
 msgid "&Install..."
 msgstr "&Instalar..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4546
+#: __init__.py:5072
 msgid "Upd&ate..."
-msgstr "At&ualizar..."
+msgstr "Act&ualizar..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4548
+#: __init__.py:5074
 msgid "&Close"
 msgstr "&Fechar"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4549
+#: __init__.py:5075
 msgid "&Uninstall..."
 msgstr "&Desinstalar..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4627
+#: __init__.py:5177
 msgid "Type the search string"
 msgstr "Digite o texto a procurar"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4628
-#: addon\globalPlugins\Weather_Plus\__init__.py:4678
+#: __init__.py:5177 __init__.py:5231
 msgid "Find"
 msgstr "encontrar"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4676
+#: __init__.py:5228
 msgid "next"
 msgstr "próximo"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4676
+#: __init__.py:5228
 msgid "previous"
 msgstr "anterior"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4680
+#: __init__.py:5235
 msgid "No results next for"
 msgstr "Sem próximo resultado para"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4680
+#: __init__.py:5235
 msgid "No previous results for"
 msgstr "Sem resultado anterior para"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4722
+#: __init__.py:5277
 msgid "&Select all"
 msgstr "Sele&ccionar tudo"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4724
+#: __init__.py:5279
 msgid "&Deselect all"
 msgstr "&Desseleccionar tudo"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4764
+#: __init__.py:5319
 msgid "not checked"
 msgstr "Não marcado"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4766
+#: __init__.py:5321
 msgid "checked"
 msgstr "marcado"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4770
+#: __init__.py:5325
 msgid "check box"
 msgstr "caixa de selecção"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4780
+#: __init__.py:5335
 msgid "check boxes checked"
 msgstr "caixas de selecção marcadas"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4789
+#: __init__.py:5344
 msgid "check boxes not checked"
 msgstr "caixas de selecção não marcadas"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4851
+#: __init__.py:5406
 msgid "Saving in progress"
 msgstr "A guardar..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4853
+#: __init__.py:5408
 msgid "Download canceled."
 msgstr "Descarga cancelada.;"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4906
+#: __init__.py:5462
 msgid "&Copy to clipboard"
 msgstr "&Copiar para área de transferência"
 
 #: buildVars.py:23
 msgid ""
-"Adds local temperature and forecast 24 ours and prediction up to 9 days.\n"
+"Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
 msgstr ""
-"Fornece a temperatura local e a previsão para as próximas 24 horas e a "
-"previsão até 9 días.\n"
+"Adiciona a temperatura local e a previsão para 24 horas e previsões até 3 "
+"dias.\n"
 
 #: buildVars.py:24
 msgid "NVDA+w for the current bulletin.\n"
-msgstr "NVDA+w informa as condições meteorológicas atuais.\n"
+msgstr "NVDA+w informa as condições meteorológicas actuais.\n"
 
 #: buildVars.py:25
 msgid ""
 "NVDA+shift+w for the prediction in the current 24 hours and prediction up to "
-"9 days.\n"
-msgstr ""
-"NVDA+shift+w informa a previsão para as próximas 24 horas e a previsão até 9 "
-"días.\n"
+"2 days.\n"
+msgstr "NVDA+Shift+W para a previsão para 24 horas e previsões até 2 dias.\n"
 
 #: buildVars.py:26
+msgid ""
+"NVDA+shift+w, pressed twice provides the hourlyforecast of the weather "
+"conditions.\n"
+msgstr ""
+"NVDA+Shift+W, pressionado duas vezes fornece a previsão horária das "
+"condições meteorológicas\n"
+
+#: buildVars.py:27
 msgid "NVDA+shift+control+w for quickly enter a temporary city.\n"
 msgstr "NVDA+shift+control+w para inserir rapidamente uma cidade temporária.\n"
 
-#: buildVars.py:27
+#: buildVars.py:28
 msgid "NVDA + shift + control + alt + w for open the Weather Plus settings.\n"
 msgstr ""
 "NVDA+shift+control+alt+w Para abrir o diálogo de configurações do Weather "
 "Plus.\n"
 
-#: buildVars.py:28
+#: buildVars.py:29
 msgid ""
 "NVDA+alt+w announces the date of the last update of the weather report.\n"
-msgstr "NVDA+alt+w Indica a data da última atualização da previsão do tempo.\n"
+msgstr ""
+"NVDA+alt+w Indica a data da última actualização da previsão do tempo.\n"
 
-#: buildVars.py:29
+#: buildVars.py:30
 msgid "Shift+control+w alternates between Fahrenheit, Celsius and Kelvin.\n"
 msgstr "Shift+control+w alterna entre Fahrenheit, centígrados e Kelvin.\n"
 
-#: buildVars.py:30
+#: buildVars.py:31
 msgid ""
 "For other instructions, you can also press Add-on Help button in Add-ons "
 "manager."
 msgstr ""
 "Para outras instruções, pode ppressionar o botão \"Ajuda do Complemento\", "
-"no \"Gerenciador de extras\"."
+"no \"gestor de extras\"."
+
+#~ msgid "Attenction!"
+#~ msgstr "Atenção!"
+
+#~ msgid "precipitation"
+#~ msgstr "precipitação"
+
+#~ msgid "Enter a City, woeId or choose one from the list, if available."
+#~ msgstr ""
+#~ "Introduza uma Cidade válida, ou escolha uma a partir da lista, se "
+#~ "disponível."
+
+#~ msgid "The woeID"
+#~ msgstr "A woeID"
+
+#~ msgid "assigned to"
+#~ msgstr "atribuído a"
+
+#~ msgid "The cities on your list are not compatible with the Yahoo API!"
+#~ msgstr "As cidades da sua lista não são compatíveis com a API do Yahoo!"
+
+#~ msgid "steady"
+#~ msgstr "estável"
+
+#~ msgid "rising"
+#~ msgstr "ascendente"
+
+#~ msgid "falling"
+#~ msgstr "descendente"
+
+#~ msgid "and the state of the barometric pressure is"
+#~ msgstr "e o estado da pressão barométrica é"
+
+#~ msgid "The state of the barometric pressure is"
+#~ msgstr "o estado da pressão barométrica é"
+
+#~ msgid "Sorry, the woeID is not set!"
+#~ msgstr "Desculpe, a woeID não foi definida!"
+
+#~ msgid "in the morning"
+#~ msgstr "de manhã"
+
+#~ msgid "in the evening"
+#~ msgstr "de tarde"
+
+#~ msgid " and "
+#~ msgstr " e "
+
+#~ msgid " to "
+#~ msgstr " para"
+
+#~ msgid "in the vicinity"
+#~ msgstr "nas proximidades"
+
+#~ msgid "tornado"
+#~ msgstr "tornado"
+
+#~ msgid "tropical storm"
+#~ msgstr "Tempestade tropical"
+
+#~ msgid "hurricane"
+#~ msgstr "furacão"
+
+#~ msgid "severe thunderstorms"
+#~ msgstr "Tempestades severas;"
+
+#~ msgid "mixed rain and snow"
+#~ msgstr "chuva com neve."
+
+#~ msgid "mixed rain and hail"
+#~ msgstr "chuva com granizo;"
+
+#~ msgid "mixed rain and sleet"
+#~ msgstr "chuva com neve;"
+
+#~ msgid "mixed snow and sleet"
+#~ msgstr "neve com granizo;"
+
+#~ msgid "snow flurries"
+#~ msgstr "flocos de neve;"
+
+#~ msgid "smoke"
+#~ msgstr "nevoeiro"
+
+#~ msgid "smoky"
+#~ msgstr "Nevoeiro;"
+
+#~ msgid "sunny intervals"
+#~ msgstr "abertas"
+
+#~ msgid "sunny period"
+#~ msgstr "período de sol"
+
+#~ msgid "light snow"
+#~ msgstr "neve ligeira"
+
+#~ msgid "scattered snow showers"
+#~ msgstr "aguaceiros de neve pouco frequentes"
+
+#~ msgid "snow showers"
+#~ msgstr "aguaceiros de neve"
+
+#~ msgid "snow shower"
+#~ msgstr "aguaceiro de neve"
+
+#~ msgid "snowstorm"
+#~ msgstr "tempestade de neve"
+
+#~ msgid "snowdrift"
+#~ msgstr "muita neve"
+
+#~ msgid "drifting snow"
+#~ msgstr "acumulação de neve"
+
+#~ msgid "wintry Mix"
+#~ msgstr "chuva e neve"
+
+#~ msgid "ice to rain"
+#~ msgstr "gelo com chuva"
+
+#~ msgid "ice"
+#~ msgstr "gelo"
+
+#~ msgid "blizzard"
+#~ msgstr "nevasca"
+
+#~ msgid "blowing snow"
+#~ msgstr "neve e vento"
+
+#~ msgid "snow"
+#~ msgstr "neve"
+
+#~ msgid "light rain with thunder"
+#~ msgstr "chuva leve com trovoadas"
+
+#~ msgid "few showers"
+#~ msgstr "alguns aguaceiros"
+
+#~ msgid "heavy showers"
+#~ msgstr "Aguaceiros fortes"
+
+#~ msgid "heavy thunderstorms"
+#~ msgstr "trovoadas fortes"
+
+#~ msgid "heavy thunderstorm"
+#~ msgstr "trovoada forte"
+
+#~ msgid "lightning"
+#~ msgstr "relâmpago"
+
+#~ msgid "isolated clouds"
+#~ msgstr "nuvens dispersas;"
+
+#~ msgid "partly cloudy"
+#~ msgstr "céu parcialmente nublado"
+
+#~ msgid "partly bright"
+#~ msgstr "céu parcialmente limpo;"
+
+#~ msgid "showers early"
+#~ msgstr "aguaceiros pela manhã"
+
+#~ msgid "light rain"
+#~ msgstr "chuva fraca"
+
+#~ msgid "heavy rain"
+#~ msgstr "Chuva forte"
+
+#~ msgid "isolated showers"
+#~ msgstr "aguaceiros pouco frequentes;"
+
+#~ msgid "isolated thunderstorms"
+#~ msgstr "Trovoadas pouco frequentes;"
+
+#~ msgid "isolated thundershowers"
+#~ msgstr "trovoadas pouco frequentes"
+
+#~ msgid "mostly cloudy"
+#~ msgstr "céu predominantemente nublado"
+
+#~ msgid "mostly dry"
+#~ msgstr "dia maioritariamente ceco"
+
+#~ msgid "mostly clear"
+#~ msgstr "Céu pouco nublado;"
+
+#~ msgid "clearing"
+#~ msgstr "tornando-se sem nuvens"
+
+#~ msgid "no rain"
+#~ msgstr "sem chuva"
+
+#~ msgid "sleet"
+#~ msgstr "chuva e neve"
+
+#~ msgid "blowing dust"
+#~ msgstr "vento com poeira"
+
+#~ msgid "widespread dust"
+#~ msgstr "poeira generalizada"
+
+#~ msgid "low drifting sand"
+#~ msgstr "tempestade fraca de areia"
+
+#~ msgid "sandstorm"
+#~ msgstr "tempestade de areia"
+
+#~ msgid "sand storm"
+#~ msgstr "Tempestade de areia"
+
+#~ msgid "dust"
+#~ msgstr "poeira"
+
+#~ msgid "sand"
+#~ msgstr "areia"
+
+#~ msgid "thundery showers"
+#~ msgstr "Aguaceiros com trovoada"
+
+#~ msgid "thundershowers"
+#~ msgstr "aguaceiros e trovoadas"
+
+#~ msgid "scattered thunderstorms"
+#~ msgstr "trovoadas dispersas"
+
+#~ msgid "scattered showers"
+#~ msgstr "Aguaceiros dispersos"
+
+#~ msgid "thunderstorms"
+#~ msgstr "trovoadas"
+
+#~ msgid "thunderstorm"
+#~ msgstr "trovoada"
+
+#~ msgid "storm"
+#~ msgstr "tempestade"
+
+#~ msgid "hail"
+#~ msgstr "granizo"
+
+#~ msgid "foggy"
+#~ msgstr "enevoado"
+
+#~ msgid "fog"
+#~ msgstr "nevoeiro"
+
+#~ msgid "haze"
+#~ msgstr "neblina"
+
+#~ msgid "mist"
+#~ msgstr "Céu com alguma neblina"
+
+#~ msgid "clear"
+#~ msgstr "Céu Limpo;"
+
+#~ msgid "fair"
+#~ msgstr "céu limpo;"
+
+#~ msgid "fine"
+#~ msgstr "Tempo bom"
+
+#~ msgid "overcast"
+#~ msgstr "Céu encoberto;"
+
+#~ msgid "light showers"
+#~ msgstr "Aguaceiros leves;"
+
+#~ msgid "light drizzle"
+#~ msgstr "Chuviscos;"
+
+#~ msgid "freezing rain"
+#~ msgstr "chuva gelada"
+
+#~ msgid "frequent showers"
+#~ msgstr "aguaceiros frequentes"
+
+#~ msgid "rain shower"
+#~ msgstr "chuvadas;"
+
+#~ msgid "rain"
+#~ msgstr "chuva"
+
+#~ msgid "freezing drizzle"
+#~ msgstr "giada"
+
+#~ msgid "showers"
+#~ msgstr "Aguaceiros;"
+
+#~ msgid "drizzle"
+#~ msgstr "orvalho"
+
+#~ msgid "dry"
+#~ msgstr "seco"
+
+#~ msgid "mild"
+#~ msgstr "moderado"
+
+#~ msgid "clouds"
+#~ msgstr "nuvens;"
+
+#~ msgid "cloudy"
+#~ msgstr "céu nublado"
+
+#~ msgid "mostly sunny"
+#~ msgstr "céu limpo ou pouco nublado"
+
+#~ msgid "sunny"
+#~ msgstr "céu limpo"
+
+#~ msgid "sun"
+#~ msgstr "sol"
+
+#~ msgid "bright"
+#~ msgstr "sol radiante"
+
+#~ msgid "thunder"
+#~ msgstr "trovoada"
+
+#~ msgid "shower"
+#~ msgstr "aguaceiro;"
+
+#~ msgid "breezy"
+#~ msgstr "ocorrência de vento"
+
+#~ msgid "blustery"
+#~ msgstr "tempestuoso;"
+
+#~ msgid "windy"
+#~ msgstr "ocorrência de vento"
+
+#~ msgid "wind"
+#~ msgstr "vento"
+
+#~ msgid "flurries"
+#~ msgstr "agitados"
+
+#~ msgid "late"
+#~ msgstr "pela tarde"
+
+#~ msgid "early"
+#~ msgstr "pela manhã"
+
+#~ msgid "isolated"
+#~ msgstr "disperso"
+
+#~ msgid "shallow fog"
+#~ msgstr "nevoeiro baixo"
+
+#~ msgid "heavy"
+#~ msgstr "denso"
+
+#~ msgid "cold"
+#~ msgstr "Frio"
+
+#~ msgid "hot"
+#~ msgstr "calor"
+
+#~ msgid "Sorry, the woeID set is not valid or contains incomplete data!"
+#~ msgstr ""
+#~ "Desculpe, a woeID definida não é válida ou contém dados incompletos!"
+
+#~ msgid ""
+#~ "Is not working properly, contains incomplete data or has been removed "
+#~ "from the database of"
+#~ msgstr ""
+#~ "Não funciona correctamente, contém dados incompletos ou foi removido da "
+#~ "base de dados de"
+
+#~ msgid ""
+#~ "Provides the weather forecast and current temperature for 24 hours and "
+#~ "the next 9 days."
+#~ msgstr ""
+#~ "Fornece a previsão do tempo e da temperatura para 24 horas e para os 9 "
+#~ "dias seguintes."
+
+#~ msgid "Add status of &barometric pressure"
+#~ msgstr "Adi&cionar estado da pressão barométrica"
+
+#~ msgid ""
+#~ "Testing the validity of city woeID entry and find the name of city "
+#~ "assigned, or viceversa."
+#~ msgstr ""
+#~ "Testa a validade do woeID da cidade entrada e encontra o nome da cidade "
+#~ "correspondente, ou vice-versa."
+
+#~ msgid "Displays information on the current city."
+#~ msgstr "Mostra informações sobre a cidade actual."
+
+#~ msgid ""
+#~ "You can also indicate how to proceed by prefixing the following commands"
+#~ msgstr "Também pode indicar como proceder, prefixando os comandos"
+
+#~ msgid "Direct (the Recursive cities they will not appear), by typing D:City"
+#~ msgstr "Direto (as cidades recursivas não aparecerão), digitando D:Cidade"
+
+#~ msgid "Geographic coordinates, by typing G:City"
+#~ msgstr "Coordenadas geográficas, escrevendo G:Cidade"
+
+#~ msgid "Postal code, by typing P:City"
+#~ msgstr "Código postal, escrevendo P:Cidade"
+
+#~ msgid "Text string, by typing T:City"
+#~ msgstr "Cadeia de carateres, escrevendo t:cidade"
+
+#~ msgid ""
+#~ "The city can be preceded by the region and / or state, separated by a "
+#~ "comma or space"
+#~ msgstr ""
+#~ "A cidade pode ser antecedida da região ou do estado, separada por vírgula "
+#~ "ou espaço."
+
+#~ msgid "Australia, Queensland, Cona Creek"
+#~ msgstr "Lisboa, Cascais, S. Domingos de Rana"
+
+#~ msgid "By city woeID: 715399"
+#~ msgstr "Pelo código da cidade: 2785-766"
+
+#~ msgid "By only city name: Ferrara"
+#~ msgstr "Apenas pelo nome da cidade: Cascais"
+
+#~ msgid "By state or region and city name: Emilia Romagna Ferrara"
+#~ msgstr "Por estado ou região e nome da cidade: Portugal, Castelo Branco"
+
+#~ msgid "By city name and country: Ferrara,it"
+#~ msgstr "Pelo nome da cidade e País: Cascais pt"
+
+#~ msgid "By postal code: 44100,it"
+#~ msgstr "Pelo código de área exemplo: 2720 pt"
+
+#~ msgid "By geographic coordinates: latitude, longitude"
+#~ msgstr "Pelas cordenadas geográficas exemplo: latitude, longitude"
+
+#~ msgid "Try to merge the name with hyphens, or separate it with spaces"
+#~ msgstr "Tentar unindo o nome com hífens, ou separando-o por espaços"
+
+#~ msgid ""
+#~ "The details of this city are not in the database and so I added them to "
+#~ "the list. Try again!"
+#~ msgstr ""
+#~ "Os detalhes desta cidade não estão no banco de dados e, por isso, "
+#~ "adicionei-os à lista. Tente novamente!"
+
+#~ msgid "It was not possible find the acronym of %s!"
+#~ msgstr "Não foi possível encontrar a sigla de %s!"
+
+#~ msgid "This does not allow to get the city details."
+#~ msgstr "Isso não permite obter os detalhes da cidade."
+
+#~ msgid "Empty file or not in cities woeID format compatible!"
+#~ msgstr "Ficheiro vazio ou em formato zipcodes imcompatível!"
+
+#~ msgid ""
+#~ "Adds local temperature and forecast 24 ours and prediction up to 9 days.\n"
+#~ msgstr ""
+#~ "Fornece a temperatura local e a previsão para as próximas 24 horas e a "
+#~ "previsão até 9 días.\n"
+
+#~ msgid ""
+#~ "NVDA+shift+w for the prediction in the current 24 hours and prediction up "
+#~ "to 9 days.\n"
+#~ msgstr ""
+#~ "NVDA+shift+w informa a previsão para as próximas 24 horas e a previsão "
+#~ "até 9 días.\n"
+
+#~ msgid "Don't specify"
+#~ msgstr "Não especificado"
+
+#~ msgid ""
+#~ "You have installed the Weather Plus add-on which is incompatible with "
+#~ "this one. The new name of this add-on is Weather_Plus with an underscore. "
+#~ "Click OK to update it."
+#~ msgstr ""
+#~ "Tem instalado o Weather Plus add-on, o qual é incompatível com este. O "
+#~ "novo nome deste extra é Weather_Plus com um sinal de sublinhado. prima OK "
+#~ "para o actualizar."
+
+#~ msgid "Update confirmation"
+#~ msgstr "Confirmação de actualização."
+
+#~ msgid "Daylight saving time"
+#~ msgstr "Hora de Verão"
+
+#~ msgid "ahead"
+#~ msgstr "adiantando o relógio"
+
+#~ msgid "back"
+#~ msgstr "atrasando o relógio"
+
+#~ msgid "Starts on"
+#~ msgstr "Começa no dia"
+
+#~ msgid "set your clock"
+#~ msgstr "ajustar o horário"
+
+#~ msgid "hour"
+#~ msgstr "hora,"
+
+#~ msgid "Ends on"
+#~ msgstr "termina no dia"
 
 #~ msgid ""
 #~ "In&dicates the wait with a beep while you search for the latest bulletin"

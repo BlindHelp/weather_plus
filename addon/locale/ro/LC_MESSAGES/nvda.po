@@ -1,163 +1,166 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Weather_Plus 6.0\n"
+"Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2019-05-06 11:49+0200\n"
-"PO-Revision-Date: 2019-05-06 11:52+0200\n"
-"Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
+"POT-Creation-Date: 2021-06-26 22:53+0200\n"
+"PO-Revision-Date: 2021-06-26 22:54+0200\n"
+"Last-Translator: Florian Ionașcu <florianionascu@hotmail.com>\n"
 "Language-Team: Florian Ionașcu <florianionascu@hotmail.com>\n"
 "Language: ro\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 1.8.13\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: ../../../globalPlugins/Weather_Plus\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: __init__.py\n"
+"X-Poedit-SearchPath-1: buildVars.py\n"
 
-#. Translators: A message informing the user that he has installed an old version that contains a space rather than an underscore.
-#: addon\installTasks.py:22
-msgid ""
-"You have installed the Weather Plus add-on which is incompatible with this "
-"one. The new name of this add-on is Weather_Plus with an underscore. Click "
-"OK to update it."
-msgstr ""
-"Ai instalat suplimentul Weather Plus, care nu este compatibil cu acesta. "
-"Noul nume al acestui supliment este Weather_Plus cu o liniuță joasă. Dă "
-"click pe OK pentru a-l actualiza."
-
-#. Translators: The title of the dialogbox.
-#: addon\installTasks.py:24
-msgid "Update confirmation"
-msgstr "Confirmare actualizare"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:53
+#: __init__.py:62
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:53
+#: __init__.py:62
 msgid "Celsius"
 msgstr "Celsius"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:53
+#: __init__.py:62
 msgid "Kelvin"
 msgstr "Kelvin"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:55
+#: __init__.py:64
 msgid "unknown"
 msgstr "necunoscut"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:85
+#: __init__.py:104
 msgid "Weather Plus &Settings"
 msgstr "Setări &Weather Plus"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:85
+#: __init__.py:104
 msgid "Show configuration items."
 msgstr "Afișează elementele de configurare."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:86
+#: __init__.py:106
 msgid "Set and &manage your cities..."
 msgstr "&Setează și administrează-ți orașele..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:86
+#: __init__.py:106
 msgid "Displays or allows to set the current cities from a list"
 msgstr "Afișează sau permite setarea orașelor curente dintr-o listă"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:88
+#: __init__.py:109
 msgid "Set a &temporary city..."
-msgstr "&Setează un oraș temporar"
+msgstr "&Setează un oraș temporar..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:88
+#: __init__.py:109
 msgid "Allows to set one temporary city from a list"
-msgstr "Permite setarea unui oraș temporar dintr-o listă."
+msgstr "Permite setarea unui oraș temporar dintr-o listă"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:91
+#: __init__.py:113
 msgid "&Documentation"
 msgstr "&Documentație"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:91
+#: __init__.py:113
 msgid "Opens the help file for the current language"
 msgstr "Deschide fișierul de ajutor pentru limba curentă"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:94
+#: __init__.py:117
 msgid "&Check for Upgrade..."
 msgstr "Ca&ută actualizări..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:94
+#: __init__.py:117
 msgid "Notify if there is an upgraded version available"
 msgstr "Anunță dacă există o versiune actualizată disponibilă"
 
-#. opens the Weather Plus settings window
-#: addon\globalPlugins\Weather_Plus\__init__.py:140
+#: __init__.py:163
+msgid "nanometers"
+msgstr "nanometri"
+
+#: __init__.py:166
+msgid "miles per hour"
+msgstr "mile pe oră"
+
+#: __init__.py:167
+msgid "miles"
+msgstr "mile"
+
+#: __init__.py:168
+msgid "inches"
+msgstr "inchi"
+
+#: __init__.py:169
+msgid "inches of mercury"
+msgstr "inci de mercur"
+
+#: __init__.py:172
+msgid "kilometers per hour"
+msgstr "kilometri pe oră"
+
+#: __init__.py:173
+msgid "kilometers"
+msgstr "kilometri"
+
+#: __init__.py:174
+msgid "millimeters"
+msgstr "milimetri"
+
+#: __init__.py:175
+msgid "millibars"
+msgstr "milibare"
+
+#: __init__.py:177
+msgid "millimeters of mercury"
+msgstr "milimetri coloană de mercur"
+
+#: __init__.py:203
 msgid "Settings"
 msgstr "Setări"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:140
-#: addon\globalPlugins\Weather_Plus\__init__.py:2019
+#: __init__.py:203 __init__.py:2245
 msgid "Preset"
 msgstr "Presetat"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:140
-#: addon\globalPlugins\Weather_Plus\__init__.py:3075
-#: addon\globalPlugins\Weather_Plus\__init__.py:3364
+#: __init__.py:203 __init__.py:3358 __init__.py:3680
 msgid "None"
 msgstr "Fără"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:141
-msgid "Enter a City, woeId or choose one from the list, if available."
-msgstr "Introdu un oraș, woeId, sau alege unul din listă dacă este disponibil."
+#: __init__.py:205
+msgid "Enter a City or choose one from the list, if available."
+msgstr "Introduceți un oraș sau alegeți unul din listă dacă există."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:273
-#: addon\globalPlugins\Weather_Plus\__init__.py:1782
-#: addon\globalPlugins\Weather_Plus\__init__.py:2555
-#: addon\globalPlugins\Weather_Plus\__init__.py:3208
-msgid "The woeID"
-msgstr "WoeID-ul "
+#: __init__.py:379 __init__.py:1819 __init__.py:2903 __init__.py:3508
+msgid "The city"
+msgstr "Orașul"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:274
-#: addon\globalPlugins\Weather_Plus\__init__.py:1782
-msgid "assigned to"
-msgstr "Alocat la"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:275
+#: __init__.py:380
 msgid "has not been preset."
-msgstr "Nu a fost presetat."
+msgstr "nu a fost presetat."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:276
+#: __init__.py:381
 msgid "Will be used in temporary mode!"
 msgstr "Va fi utilizat temporar!"
 
-#. offers to save the list changed
-#: addon\globalPlugins\Weather_Plus\__init__.py:277
-#: addon\globalPlugins\Weather_Plus\__init__.py:303
-#: addon\globalPlugins\Weather_Plus\__init__.py:362
-#: addon\globalPlugins\Weather_Plus\__init__.py:1787
-#: addon\globalPlugins\Weather_Plus\__init__.py:2434
-#: addon\globalPlugins\Weather_Plus\__init__.py:2591
-#: addon\globalPlugins\Weather_Plus\__init__.py:2596
-#: addon\globalPlugins\Weather_Plus\__init__.py:2661
-#: addon\globalPlugins\Weather_Plus\__init__.py:3109
-#: addon\globalPlugins\Weather_Plus\__init__.py:3216
-#: addon\globalPlugins\Weather_Plus\__init__.py:3388
-#: addon\globalPlugins\Weather_Plus\__init__.py:3407
-#: addon\globalPlugins\Weather_Plus\__init__.py:4081
+#: __init__.py:384 __init__.py:412 __init__.py:474 __init__.py:1825
+#: __init__.py:2733 __init__.py:2941 __init__.py:2946 __init__.py:3016
+#: __init__.py:3396 __init__.py:3517 __init__.py:3707 __init__.py:3726
+#: __init__.py:4574
 msgid "Notice!"
 msgstr "Avertisment!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:304
+#: __init__.py:414
 msgid "You have modified the list of your cities"
 msgstr "Ai modificat lista orașelor tale"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:304
+#: __init__.py:414
 msgid "Do you want to save it?"
 msgstr "Vrei s-o salvezi?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:360
-msgid "The cities on your list are not compatible with the Yahoo API!"
-msgstr "Orașele din lista dvs. nu sunt compatibile cu API-ul Yahoo!"
+#: __init__.py:471
+msgid "The cities on your list are not compatible with the Weather API!"
+msgstr "Orașele din lista dumneavoastră nu sunt compatibile cu API-ul Weather!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:361
+#: __init__.py:472
 msgid ""
 "They have to be tested and validated, you can do it from the addon settings "
 "window."
@@ -165,58 +168,59 @@ msgstr ""
 "Ele trebuie să fie testate și validate, o puteți face din fereastra de "
 "setări a addonului."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:373
+#: __init__.py:486
 msgid "Setting up a temporary city"
 msgstr "Setarea unui oraș temporar"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:376
+#: __init__.py:490
 msgid "Cities List available:"
 msgstr "Lista orașelor disponibile:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:408
+#: __init__.py:522
 msgid "Documentation not available for the current language!"
 msgstr "Documentația nu este disponibilă pentru limba curentă!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:454
-#: addon\globalPlugins\Weather_Plus\__init__.py:1638
-#: addon\globalPlugins\Weather_Plus\__init__.py:2519
-#: addon\globalPlugins\Weather_Plus\__init__.py:2806
-#: addon\globalPlugins\Weather_Plus\__init__.py:2818
-#: addon\globalPlugins\Weather_Plus\__init__.py:2852
+#: __init__.py:571
 msgid ""
-"Sorry, i can not receive data, verify that your internet connection is "
+"Sorry, I can not receive data, problems with the download page, try again "
+"later please!"
+msgstr ""
+"Îmi pare rău, nu pot primi datele, sunt probleme cu pagina de descărcări. Te "
+"rog să încerci din nou mai târziu!"
+
+#: __init__.py:574 __init__.py:1686 __init__.py:2864 __init__.py:3186
+msgid ""
+"Sorry, I can not receive data, verify that your internet connection is "
 "active, or try again later!"
 msgstr ""
 "Îmi pare rău, nu pot primi data, verifică dacă conecsiunea ta la internet "
 "este activă, sau încearcă din nou mai târziu!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:470
+#: __init__.py:586
 msgid "version"
 msgstr "versiune"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:470
+#: __init__.py:586
 msgid "is available."
 msgstr "este disponibilă."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:471
+#: __init__.py:587
 msgid "Installed version"
 msgstr "Versiunea instalată"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:472
+#: __init__.py:588
 msgid "Do you want to download and install it?"
 msgstr "Vrei s-o descarci și s-o instalezi?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:475
+#: __init__.py:593
 msgid "Sorry, at the time an update is not available."
 msgstr "Ne pare rău, nicio actualizare nu este disponibilă momentan."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1027
-#: addon\globalPlugins\Weather_Plus\__init__.py:2527
-#: addon\globalPlugins\Weather_Plus\__init__.py:4678
+#: __init__.py:1071 __init__.py:2872 __init__.py:5231
 msgid "not found!"
-msgstr "Negăsit!"
+msgstr "negăsit!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1028
+#: __init__.py:1072
 msgid ""
 "You need to upgrade the sound effects by reactivating the appropriate option "
 "from the settings of"
@@ -224,739 +228,328 @@ msgstr ""
 "Este necesar să actualizați efectele de sunet activând opțiunea apropiată "
 "din setările lor"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1030
+#: __init__.py:1074
 msgid "But if these are already updated, then you need to update"
 msgstr "Dar dacă acestea sunt deja actualizate, atunci trebuie să actualizați"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1152
+#: __init__.py:1246
 msgid "I can not load the settings!"
 msgstr "Nu pot încărca setările!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1210
+#: __init__.py:1246
+msgid "Attention!"
+msgstr "Atenție!"
+
+#: __init__.py:1316
 msgid "I can not save the settings!"
 msgstr "Nu pot salva setările!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1230
+#: __init__.py:1331
 msgid "invalid name"
-msgstr "Nume invalid"
+msgstr "nume invalid"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1304
-msgid "miles"
-msgstr "mile"
+#: __init__.py:1421
+msgid "The cloudiness is"
+msgstr "Nebulozitatea este de"
 
-#. takes the value in mmHg
-#: addon\globalPlugins\Weather_Plus\__init__.py:1308
-msgid "millimeters of mercury"
-msgstr "milimetri coloană de mercur"
+#: __init__.py:1422
+msgid "The precipitation is"
+msgstr "Nivelul de precipitații este de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1310
-msgid "inches of mercury"
-msgstr "inci de mercur"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1323
-msgid "kilometers"
-msgstr "kilometri"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1325
-msgid "millibars"
-msgstr "Milibare"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1333
+#: __init__.py:1466
 msgid "the weather report is currently"
-msgstr "Buletinul meteo este actual"
+msgstr "buletinul meteo este actual"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1334
-#: addon\globalPlugins\Weather_Plus\__init__.py:1370
-#: addon\globalPlugins\Weather_Plus\__init__.py:1445
-#: addon\globalPlugins\Weather_Plus\__init__.py:1473
+#: __init__.py:1467 __init__.py:1507 __init__.py:1612 __init__.py:1639
+#: __init__.py:1952
 msgid "degrees"
 msgstr "grade"
 
-#. adds wind information to the string
-#: addon\globalPlugins\Weather_Plus\__init__.py:1341
+#: __init__.py:1474
 msgid "The wind direction is from"
 msgstr "Direcția vântului este dinspre"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1346
-#: addon\globalPlugins\Weather_Plus\__init__.py:1357
+#: __init__.py:1480 __init__.py:1492
 msgid "with speed of"
 msgstr "cu viteza de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1351
-#: addon\globalPlugins\Weather_Plus\__init__.py:1361
+#: __init__.py:1485 __init__.py:1496
 msgid "The wind speed is"
 msgstr "Viteza vântului este de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1370
+#: __init__.py:1504
+msgid "The wind gusts are of"
+msgstr "Rafalele de vânt sunt de"
+
+#: __init__.py:1507
 msgid "The perceived temperature is"
 msgstr "Temperatura percepută este de"
 
-#. adds information on the atmosphere
-#: addon\globalPlugins\Weather_Plus\__init__.py:1377
-msgid "steady"
-msgstr "stabilă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1377
-msgid "rising"
-msgstr "în creștere"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1377
-msgid "falling"
-msgstr "în scădere"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1378
+#: __init__.py:1514
 msgid "The humidity is"
 msgstr "Umiditatea este de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1383
+#: __init__.py:1516
+msgid "The cloudiness is of"
+msgstr "La nuvolosità è del"
+
+#: __init__.py:1518
+msgid "The precipitation is of"
+msgstr "Nivelul de precipitații este de"
+
+#: __init__.py:1523
 msgid "and the visibility is up to"
 msgstr "și vizibilitatea este până la"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1392
+#: __init__.py:1532
 msgid "The visibility is up to"
 msgstr "Vizibilitatea este până la"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1397
-#: addon\globalPlugins\Weather_Plus\__init__.py:1404
+#: __init__.py:1537
+msgid "and the precipitation is"
+msgstr "și nivelul de precipitații este de"
+
+#: __init__.py:1554
 msgid "The pressure is"
 msgstr "Presiunea este de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1399
-msgid "and the state of the barometric pressure is"
-msgstr "și starea presiunii barometrice este "
+#: __init__.py:1558
+msgid "The UV radiation is of"
+msgstr "Nivelul de raze ultraviolete este de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1409
-msgid "The state of the barometric pressure is"
-msgstr "Starea presiunii barometrice este de"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1425
+#: __init__.py:1578
 msgid "The sun rises at"
 msgstr "Soarele răsare la"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1426
+#: __init__.py:1579 __init__.py:1581
 msgid "and sets at"
 msgstr "și apune la"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1441
-msgid "the forecast for today is"
-msgstr "Prognoza pentru astăzi este"
+#: __init__.py:1580
+msgid "The moon rises at"
+msgstr "Luna răsare la"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1443
-#: addon\globalPlugins\Weather_Plus\__init__.py:1471
+#: __init__.py:1608
+msgid "the forecast for today is"
+msgstr "prognoza pentru astăzi este"
+
+#: __init__.py:1610 __init__.py:1637
 msgid "with a maximum temperature of"
 msgstr "cu o temperatură maximă de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1444
-#: addon\globalPlugins\Weather_Plus\__init__.py:1472
+#: __init__.py:1611 __init__.py:1638
 msgid "and a minimum of"
 msgstr "și o minimă de"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1478
+#: __init__.py:1645
 msgid "not available"
 msgstr "nedisponibil"
 
-#. this does not replace the name of the city
-#: addon\globalPlugins\Weather_Plus\__init__.py:1484
+#: __init__.py:1649
 msgid "In"
 msgstr "În"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1484
+#: __init__.py:1649
 msgid "Unnamed"
 msgstr "Fără nume"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1493
-#: addon\globalPlugins\Weather_Plus\__init__.py:1902
-msgid "Sorry, the woeID is not set!"
-msgstr "Ne pare rău, woeID-ul nu este setat!"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1499
-msgid "kilometers per hour"
-msgstr "kilometri pe oră"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1500
-msgid "miles per hour"
-msgstr "mile pe oră"
-
-#. weather condition
-#: addon\globalPlugins\Weather_Plus\__init__.py:1502
-msgid "in the morning"
-msgstr "dimineața"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1503
-msgid "in the evening"
-msgstr "seara"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1504
-#: addon\globalPlugins\Weather_Plus\__init__.py:1505
-#: addon\globalPlugins\Weather_Plus\__init__.py:1506
-msgid " and "
-msgstr " și "
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1507
-msgid " to "
-msgstr " la "
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1509
-msgid "in the vicinity"
-msgstr "în vecinătatea"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1510
-msgid "tornado"
-msgstr "tornadă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1511
-msgid "tropical storm"
-msgstr "furtună tropicală"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1512
-msgid "hurricane"
-msgstr "uragan"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1513
-msgid "severe thunderstorms"
-msgstr "furtuni severe"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1514
-msgid "mixed rain and snow"
-msgstr "burniță"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1515
-msgid "mixed rain and hail"
-msgstr "ploaie cu grindină"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1516
-msgid "mixed rain and sleet"
-msgstr "lapoviță"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1517
-msgid "mixed snow and sleet"
-msgstr "lapoviță și ninsoare"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1518
-msgid "snow flurries"
-msgstr "rafale de zăpadă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1519
-msgid "smoke"
-msgstr "ceață"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1520
-msgid "smoky"
-msgstr "cețos"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1521
-msgid "precipitation"
-msgstr "precipitație"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1522
-#: addon\globalPlugins\Weather_Plus\__init__.py:1523
-msgid "sunny intervals"
-msgstr "intervale însorite"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1524
-msgid "sunny period"
-msgstr "perioadă însorită"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1525
-msgid "light snow"
-msgstr "ninsoare ușoară"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1526
-msgid "scattered snow showers"
-msgstr "ninsori răzlețe"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1527
-msgid "snow showers"
-msgstr "averse de zăpadă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1528
-msgid "snow shower"
-msgstr "aversă de zăpadă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1529
-msgid "snowstorm"
-msgstr "furtună de zăpadă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1530
-msgid "snowdrift"
-msgstr "troian de zăpadă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1531
-msgid "drifting snow"
-msgstr "înzăpezire"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1532
-msgid "wintry Mix"
-msgstr "chiciură"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1533
-#: addon\globalPlugins\Weather_Plus\__init__.py:1534
-msgid "ice to rain"
-msgstr "ploaie înghețată"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1535
-msgid "ice"
-msgstr "gheață"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1536
-msgid "blizzard"
-msgstr "viscol"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1537
-msgid "blowing snow"
-msgstr "zăpadă viscolită"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1538
-msgid "snow"
-msgstr "zăpadă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1539
-msgid "light rain with thunder"
-msgstr "ploaie cu descărcări electrice"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1540
-msgid "few showers"
-msgstr "averse scurte"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1541
-msgid "heavy showers"
-msgstr "averse puternice"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1542
-msgid "heavy thunderstorms"
-msgstr "furtuni cu descărcări electrice"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1543
-msgid "heavy thunderstorm"
-msgstr "furtună cu descărcări electrice"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1544
-msgid "lightning"
-msgstr "fulger"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1545
-msgid "isolated clouds"
-msgstr "nori izolați"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1546
-msgid "partly cloudy"
-msgstr "parțial noros"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1547
-msgid "partly bright"
-msgstr "parțial senin"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1548
-msgid "showers early"
-msgstr "averse timpurii"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1549
-#: addon\globalPlugins\Weather_Plus\__init__.py:1550
-msgid "light rain"
-msgstr "ploaie ușoară"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1551
-msgid "heavy rain"
-msgstr "ploaie torențială"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1552
-msgid "isolated showers"
-msgstr "averse izolate"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1553
-msgid "isolated thunderstorms"
-msgstr "furtuni cu descărcări electrice izolate"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1554
-msgid "isolated thundershowers"
-msgstr "averse izolate cu tunete și fulgere"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1555
-msgid "mostly cloudy"
-msgstr "cer acoperit"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1556
-msgid "mostly dry"
-msgstr "aproape uscat"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1557
-msgid "mostly clear"
-msgstr "aproape senin"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1558
-msgid "clearing"
-msgstr "cer limpede"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1559
-msgid "no rain"
-msgstr "fără ploaie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1560
-msgid "sleet"
-msgstr "lapoviță"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1561
-msgid "blowing dust"
-msgstr "furtună de praf"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1562
-msgid "widespread dust"
-msgstr "praf pe suprafețe întinse"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1563
-msgid "low drifting sand"
-msgstr "nisip aluvionar în cantități reduse"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1564
-msgid "sandstorm"
-msgstr "furtună de nisip"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1565
-msgid "sand storm"
-msgstr "furtună de nisip"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1566
-msgid "dust"
-msgstr "praf"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1567
-msgid "sand"
-msgstr "nisipp"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1568
-msgid "thundery showers"
-msgstr "averse cu descărcări electrice"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1569
-msgid "thundershowers"
-msgstr "averse cu descărcări electrice"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1570
-msgid "scattered thunderstorms"
-msgstr "furtuni răzlețe cu descărcări electrice"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1571
-msgid "scattered showers"
-msgstr "averse răzlețe"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1572
-msgid "thunderstorms"
-msgstr "furtuni cu descărcări electrice"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1573
-msgid "thunderstorm"
-msgstr "furtună cu descărcări electrice"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1574
-msgid "storm"
-msgstr "furtună"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1575
-msgid "hail"
-msgstr "grindină"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1576
-msgid "foggy"
-msgstr "cețos"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1577
-msgid "fog"
-msgstr "ceață"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1578
-msgid "haze"
-msgstr "pâclă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1579
-msgid "mist"
-msgstr "ceață"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1580
-msgid "clear"
-msgstr "senin"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1581
-msgid "fair"
-msgstr "timp frumos"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1582
-msgid "fine"
-msgstr "vreme bună"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1583
-msgid "overcast"
-msgstr "cer noros"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1584
-msgid "light showers"
-msgstr "averse ușoare"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1585
-msgid "light drizzle"
-msgstr "burniță ușoară"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1586
-msgid "freezing rain"
-msgstr "ploaie înghețată"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1587
-msgid "frequent showers"
-msgstr "aversă frecventă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1588
-msgid "rain shower"
-msgstr "aversă de ploaie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1589
-msgid "rain"
-msgstr "ploaie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1590
-msgid "freezing drizzle"
-msgstr "burniță înghețată"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1591
-msgid "showers"
-msgstr "averse"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1592
-msgid "drizzle"
-msgstr "burniță"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1593
-msgid "dry"
-msgstr "uscat"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1594
-msgid "mild"
-msgstr "climă blândă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1595
-msgid "clouds"
-msgstr "nori"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1596
-msgid "cloudy"
-msgstr "noros"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1597
-msgid "mostly sunny"
-msgstr "parțial însorit"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1598
-msgid "sunny"
-msgstr "însorit"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1599
-msgid "sun"
-msgstr "soare"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1600
-msgid "bright"
-msgstr "luminos"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1601
-msgid "thunder"
-msgstr "descărcare electrică"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1602
-msgid "shower"
-msgstr "aversă"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1603
-msgid "breezy"
-msgstr "răcoros"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1604
-msgid "blustery"
-msgstr "vântos"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1605
-msgid "windy"
-msgstr "vântos"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1606
-msgid "wind"
-msgstr "vânt"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1607
-msgid "flurries"
-msgstr "fulgi"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1608
-msgid "late"
-msgstr "târziu"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1609
-msgid "early"
-msgstr "devreme"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1610
-msgid "isolated"
-msgstr "izolat"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1611
-msgid "shallow fog"
-msgstr "ceață superficială"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1612
-msgid "heavy"
-msgstr "greu"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1613
-msgid "cold"
-msgstr "frig"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1614
-msgid "hot"
-msgstr "cald"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1662
+#: __init__.py:1661 __init__.py:1877 __init__.py:2069
+msgid "Sorry, the city is not set!"
+msgstr "Ne pare rău, orașul nu este setat!"
+
+#: __init__.py:1667 __init__.py:2976 __init__.py:3158 __init__.py:3593
+#: __init__.py:3728 __init__.py:5405
+msgid "Please wait..."
+msgstr "Te rugăm să aștepți."
+
+#: __init__.py:1710
 msgid "Sorry, it was not possible to load the most recent update!"
 msgstr ""
 "Ne pare rău, nu a fost posibilă încărcarea celei mai recente actualizări!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1663
+#: __init__.py:1711
 msgid "Please try again later."
 msgstr "Te rugăm să încerci din nou mai târziu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1710
-#: addon\globalPlugins\Weather_Plus\__init__.py:1711
+#: __init__.py:1754 __init__.py:1755
 msgid "meters per second"
 msgstr "metri pe secundă"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1758
-msgid "Sorry, the woeID set is not valid or contains incomplete data!"
-msgstr "Ne pare rău, setul de foame nu este valid sau conține date incomplete!"
+#: __init__.py:1794
+msgid "Sorry, the city set is not valid or contains incomplete data!"
+msgstr "Ne pare rău, orașul setat nu este valid sau conține date incomplete!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "north"
 msgstr "nord"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "north northeast"
 msgstr "nord nordest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "northeast"
 msgstr "nordest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "east northeast"
 msgstr "est nordest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "east"
 msgstr "est"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "east southeast"
 msgstr "est sudest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "southeast"
 msgstr "sudest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "south southeast"
 msgstr "sud sudest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "south"
 msgstr "sud"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "south southwest"
 msgstr "sud sudvest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "southwest"
 msgstr "sudvest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "west southwest"
 msgstr "vest sudvest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "west"
 msgstr "vest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "west northwest"
 msgstr "vest nordvest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "northwest"
 msgstr "nordvest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "north northwest"
 msgstr "nord nordvest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1783
+#: __init__.py:1820
 msgid ""
 "Is not working properly, contains incomplete data or has been removed from "
-"the database of"
+"the"
 msgstr ""
-"Nu funcționează corespunzător, conține date incomplete sau a fost eliminat "
-"din baza de date"
+"Nu funcționează corespunzător, conține date incomplete sau a fost șters din"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1785
-#: addon\globalPlugins\Weather_Plus\__init__.py:2550
+#: __init__.py:1822 __init__.py:2897
 msgid "It could be a temporary problem and you may wait a while '..."
 msgstr "Ar putea să fie o problemă temporară, iar tu poți aștepta un timp '..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1786
+#: __init__.py:1823
 msgid "Do you want to delete it from your list?"
 msgstr "Vrei să-l elimini din listă?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1847
+#: __init__.py:1894
+msgid "Chance of rain"
+msgstr "Șanse de precipitații"
+
+#: __init__.py:1895
+msgid "Chance of snow"
+msgstr "Șanse de ninsoare"
+
+#: __init__.py:1940
+msgid "Wind speed"
+msgstr "Viteza vântului"
+
+#: __init__.py:1941
+msgid "Direction"
+msgstr "Direcție"
+
+#: __init__.py:1942
+msgid "Wind direction"
+msgstr "Direcția vântului"
+
+#: __init__.py:1943
+msgid "Wind gusts"
+msgstr "Rafalele de vânt"
+
+#: __init__.py:1944
+msgid "Cloudiness"
+msgstr "Nebulozitate"
+
+#: __init__.py:1945
+msgid "Precipitation"
+msgstr "Precipitații"
+
+#: __init__.py:1946
+msgid "Humidity"
+msgstr "Umiditate"
+
+#: __init__.py:1947
+msgid "Visibility"
+msgstr "Vizibilitate"
+
+#: __init__.py:1966
+msgid "Hourly forecast for"
+msgstr "Prognoza orară pentru"
+
+#: __init__.py:1991
 msgid "Provides the current temperature and weather conditions."
 msgstr "Furnizează temperatura curentă și condițiile meteo."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1858
+#: __init__.py:2003
+#, python-format
 msgid ""
-"Provides the weather forecast and current temperature for 24 hours and the "
-"next 9 days."
+"If pressed once, announce the weather forecast and current temperature for "
+"24 hours and the next %d days. If pressed twice announce the hourlyforecast "
+"temperature and weather conditions."
 msgstr ""
-"Furnizează prognoza meteo și temperatura curentă pentru 24 de ore și pentru "
-"următoarele 9 zile."
+"Dacă e apăsată o dată, anunță prognoza meteo și temperatura actuală pentru "
+"24 de ore și pentru următoarele %d zile. Dacă e apăsată de două ori, anunță "
+"prognoza orară, temperatura și condițiile meteorologice."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1866
+#: __init__.py:2011
 msgid "Sorry, no list available!"
 msgstr "Ne pare rău, nicio listă disponibilă!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1879
+#: __init__.py:2044
 msgid "Allows you to set a temporary city."
 msgstr "Îți permite să setezi un oraș temporar."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1893
+#: __init__.py:2058
 msgid "Scale of temperature measurement set into"
 msgstr "Unitate de măsură a temperaturii setată în"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1895
+#: __init__.py:2060
 msgid "Allows you to set a temporary scale of temperature mesurement."
 msgstr "Îți permite să setezi o unitate de măsură temporară a temperaturii."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1916
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
+#: __init__.py:2090
 msgid "at"
 msgstr "la"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1919
+#: __init__.py:2093
 msgid "Last update of the current weather report"
 msgstr "Ultima actualizare a buletinului meteo actual"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1921
+#: __init__.py:2095
 msgid "Announces the date of the last update of the weather report."
 msgstr "Anunță data ultimei actualizări a buletinului meteo."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1937
+#: __init__.py:2155
 msgid "Open the Weather Plus settings dialog."
 msgstr "&Deschide dialogul de setări Weather Plus."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1972
+#: __init__.py:2197
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast, f5: volume controls."
@@ -964,7 +557,7 @@ msgstr ""
 "f1: ajutor, f2: ultima selecție cu Tab, f3: lista și caseta de editare, f4: "
 "controlează durata prognozei meteo, f5: setarea volumului."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1973
+#: __init__.py:2198
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast."
@@ -972,60 +565,67 @@ msgstr ""
 "f1: ajutor, f2: ultima selecție cu Tab, f3: lista și caseta de editare, f4: "
 "controlează durata prognozei meteo."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2015
+#: __init__.py:2241
 msgid "Test"
 msgstr "Test"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2016
+#: __init__.py:2242
 msgid "Details"
 msgstr "Detalii"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2017
+#: __init__.py:2243
 msgid "Define"
 msgstr "Definește"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2018
+#: __init__.py:2244
 msgid "Add"
 msgstr "Adaugă"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2020
+#: __init__.py:2246
 msgid "Remove"
 msgstr "Elimină"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2021
+#: __init__.py:2247
 msgid "Rename"
 msgstr "Redenumiți"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2047
+#: __init__.py:2273
 msgid "&Import new cities..."
 msgstr "&Importă orașe noi..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2048
+#: __init__.py:2274
 msgid "&Export your cities..."
 msgstr "&exportă-ți orașele..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2060
+#: __init__.py:2275
+msgid "&hourlyforecast setting..."
+msgstr "&Setarea prognozei orare..."
+
+#: __init__.py:2290
 msgid "Scale of temperature measurement:"
 msgstr "Unitatea de măsură a temperaturii:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2068
+#: __init__.py:2298
 msgid "Degrees shown as:"
 msgstr "Indică gradele ca:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2071
+#: __init__.py:2301
 msgid "C - F - K"
 msgstr "C - F - K"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2072
-msgid "Don't specify"
-msgstr "Nu specifica"
+#: __init__.py:2302
+msgid "Unspecified"
+msgstr "Nespecificat"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2078
+#: __init__.py:2310
 msgid "Weather Forecasts up to days:"
 msgstr "Prognozele meteo până la zile:"
 
-#. check boxes
-#: addon\globalPlugins\Weather_Plus\__init__.py:2086
+#: __init__.py:2321
+msgid "API response language:"
+msgstr "Limbajul de răspuns API:"
+
+#: __init__.py:2330
 msgid ""
 "&Copy the weather report and weather forecast, including city details to "
 "clipboard"
@@ -1033,108 +633,119 @@ msgstr ""
 "&Copiază buletinul meteo și prognoza vremii, incluzând detaliile orașului pe "
 "planșetă"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2091
+#: __init__.py:2335
 msgid "Enable &audio effects (only for the current weather conditions)"
 msgstr "Activează efectele &audio (doar pentru condițiile meteo actuale)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2094
+#: __init__.py:2338
 msgid "Use only &weather effects"
 msgstr "Utilizați numai &efecte meteorologice"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2099
+#: __init__.py:2343
 msgid "General audio volume"
 msgstr "Volum audio general"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2100
+#: __init__.py:2344
 msgid "Current audio volume"
 msgstr "Volum audio curent"
 
-#. check boxes
-#: addon\globalPlugins\Weather_Plus\__init__.py:2131
+#: __init__.py:2376
 msgid "Enable &help buttons in the settings window"
-msgstr "\vActivează butoanele de a&jutor în fereastra de setări"
+msgstr "Activează butoanele de a&jutor din fereastra de setări"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2138
-msgid "Read &wind informations"
-msgstr "Citește informațiile &vântului"
+#: __init__.py:2383
+msgid "Read &wind information"
+msgstr "Citeș&te informațiile despre vânt"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2143
+#: __init__.py:2388 __init__.py:5810
 msgid "Add wind directi&on"
 msgstr "Adaugă &direcția vântului"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2147
+#: __init__.py:2392 __init__.py:5806
 msgid "Add wi&nd speed"
 msgstr "Adaugă viteza vâ&ntului"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2151
+#: __init__.py:2396
 msgid "Add speed in &meters per second of the wind"
 msgstr "Adaugă viteza în &metri pe secundă a vântului"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2155
+#: __init__.py:2400 __init__.py:5814
+msgid "Add wind &gust speed"
+msgstr "Adaugă viteza rafalelor de v&ânt"
+
+#: __init__.py:2404
 msgid "Add perceived &temperature"
 msgstr "Adaugă &temperatura percepută"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2160
-msgid "&Read atmospherical informations"
-msgstr "Citește informațiile atmosfe&rice"
+#: __init__.py:2409
+msgid "&Read atmospherical information"
+msgstr "Cite&ște informațiile atmosferice"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2165
+#: __init__.py:2414 __init__.py:5822
 msgid "Add humidity va&lue"
 msgstr "Adaugă va&loarea umidității"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2169
+#: __init__.py:2418 __init__.py:5826
 msgid "Add &visibility value"
 msgstr "Adau&gă valoarea vizibilității"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2173
+#: __init__.py:2422 __init__.py:5818
+msgid "Add cloudiness &value"
+msgstr "Adaugă &valoarea de nebulozitate"
+
+#: __init__.py:2426 __init__.py:5830
+msgid "Add precipitation &value"
+msgstr "Adaug&ă valoarea de precipitații"
+
+#: __init__.py:2430 __init__.py:5834
+msgid "Add &ultraviolet radiation value"
+msgstr "Adaugă valoarea de ra&ze ultraviolete"
+
+#: __init__.py:2434
 msgid "Add atmospheric &pressure value"
 msgstr "Adaugă valoarea &presiunii atmosferice"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2177
+#: __init__.py:2438
 msgid "Indicates the atmospheric pressure in millimeters of mercur&y (mmHg)"
 msgstr "Indică presiunea atmosferică în milimetri coloană de mercur (mm&Hg)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2181
-msgid "Add status of &barometric pressure"
-msgstr "Adaugă starea presiunii &barometrice"
+#: __init__.py:2443
+msgid "Read a&stronomical information"
+msgstr "Citeș&te informațiile astronomice"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2186
-msgid "Read a&stronomical informations"
-msgstr "Citește informațiile a&stronomice"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2190
+#: __init__.py:2447
 msgid "Enable reading of the hours in &24-hour format"
 msgstr "Activează citirea orelor în &formatul de 24 de ore"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2195
+#: __init__.py:2452
 msgid "Use the comma to separate decimals, example (4,&15)"
 msgstr "Utilizați o virgulă pentru a separa zecimale, exemplu (4,&15)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2199
+#: __init__.py:2456
+msgid "&Displays output in a window"
+msgstr "A&fișează ieșirea într-o fereastră"
+
+#: __init__.py:2460
 msgid "Check for &upgrade"
 msgstr "Caută actuali&zări"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2227
-msgid ""
-"Testing the validity of city woeID entry and find the name of city assigned, "
-"or viceversa."
-msgstr ""
-"Testarea valabilității intrării în oraș și identificarea orașului, sau "
-"viceversa."
+#: __init__.py:2487
+msgid "Test the city validity  and find the data of it."
+msgstr "Testați validitatea orașului și căutați-i datele."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2228
-msgid "Displays information on the current city."
-msgstr "Afișează informații despre orașul curent."
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2229
-msgid "Allows you to define the area, in order to adapt the sound effects."
-msgstr "Îți permite să definești zona, ca să adapteze efectele de sunete."
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2230
+#: __init__.py:2488
 msgid "Add the current city into your list."
 msgstr "Adaugă orașul curent în lista ta."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2231
+#: __init__.py:2489
+msgid "Displays information about the current city."
+msgstr "Afișează informații despre orașul actual."
+
+#: __init__.py:2490
+msgid "Allows you to define the area, in order to adapt the sound effects."
+msgstr "Îți permite să definești zona, ca să adapteze efectele de sunete."
+
+#: __init__.py:2491
 msgid ""
 "Presets the current city as the default, will be used every time you restart "
 "the plugin."
@@ -1142,15 +753,15 @@ msgstr ""
 "Presetează orașul curent ca implicit, va fi utilizat de fiecare dată când "
 "reporniți suplimentul."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2232
+#: __init__.py:2492
 msgid "Delete  the current city from your list."
 msgstr "Șterge un oraș curent din lista ta."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2233
+#: __init__.py:2493
 msgid "Rename the current city."
 msgstr "Redenumiți orașul curent."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2234
+#: __init__.py:2494
 msgid ""
 "Permits to incorporate in your list new cities importing them from another "
 "list with the extension *.zipcodes; you can select the city you want to "
@@ -1160,627 +771,669 @@ msgstr ""
 "altă listă cu extensia * .zipcodes; puteți selecta orașul pe care doriți să-"
 "l importați, activând caseta de validare asociată."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2235
+#: __init__.py:2495
 msgid "Permits to save your list of cities in a specified path."
 msgstr "Permite salvarea listei de orașe într-o cale specificată."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2326
+#: __init__.py:2496
+msgid "Allows you to choose the contents of the hourly forecast report."
+msgstr "Vă permite să alegeți conținuturile raportului prognozei orare."
+
+#: __init__.py:2603
 msgid "You can enter or search for a city"
 msgstr "Poți să introduci sau să cauți un oraș"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2327
-msgid "By city woeID: 715399"
-msgstr "Prin woeID-ul orașului: 715399"
+#: __init__.py:2604
+msgid "By Latitude and Longitude: 48.8567,2.3508"
+msgstr "După latitudine și longitudine: 48.8567,2.3508"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2328
-msgid "By only city name: Ferrara"
-msgstr "Doar prin numele orașului: Ferrara"
+#: __init__.py:2605
+msgid "By City name: Paris"
+msgstr "După numele orașului: Paris"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2329
-msgid "By state or region and city name: Emilia Romagna Ferrara"
+#: __init__.py:2606
+msgid "By City name and country: Toronto,Canada"
+msgstr "După numele orașului și după țară: Toronto,Canada"
+
+#: __init__.py:2607
+msgid "Or Toronto,CA"
+msgstr "Sau Toronto,CA"
+
+#: __init__.py:2608
+msgid "By City name and region: Toronto,Ontario"
+msgstr "După numele orașului și al regiunii: Toronto,Ontario"
+
+#: __init__.py:2609
+msgid "By US zip: 10001"
+msgstr "După codul poștal din Statele Unite: 10001"
+
+#: __init__.py:2610
+msgid "By UK postcode: SW1"
+msgstr "După codul poștal din Regatul Unit: SW1"
+
+#: __init__.py:2611
+msgid "By Canada postal code: G2J"
+msgstr "După codul poștal din Canada: G2J"
+
+#: __init__.py:2612
+msgid "By metar:<metar code>: metar:EGLL"
+msgstr "După metar:<metar code>: metar:EGLL"
+
+#: __init__.py:2613
+msgid "By iata:<3 digit airport code>: iata:DXB"
+msgstr "După iata:<3 digit airport code>: iata:DXB"
+
+#: __init__.py:2614
+msgid "By auto:ip IP lookup: auto:ip"
+msgstr "După auto:ip IP lookup: auto:ip"
+
+#: __init__.py:2615
+msgid "By IP address (IPv4 and IPv6 supported): 100.0.0.1"
+msgstr "După adresa IP (sunt suportate IPv4 și IPv6): 100.0.0.1"
+
+#: __init__.py:2616
+msgid "if there will be cities with the same name, will be listed"
+msgstr "dacă vor exista orașe cu același nume, acestea vor fi listate"
+
+#: __init__.py:2617
+msgid "By default, confirming a selection, is used the postal code"
+msgstr "În mod implicit, la confirmarea unei alegeri se folosește codul poștal"
+
+#: __init__.py:2618
+msgid ""
+"If the postal code is not valid, will be used a text string: city, state, "
+"region"
 msgstr ""
-"După numele statului sau al regiunii și al orașului: Emilia Romagna Ferrara"
+"Dacă nu este valid codul poștal, se va utiliza un șir de text: oraș, țară, "
+"regiune"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2330
-msgid "By city name and country: Ferrara,it"
-msgstr "Prin numele orașului și al țării: Ferrara,it"
+#: __init__.py:2619
+msgid "You can indicate how to proceed by prefixing the following commands"
+msgstr "Puteți indica cum să se procedeze inserând următoarele comenzi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2331
-msgid "By postal code: 44100,it"
-msgstr "Prin codul poștal: 44100,it"
+#: __init__.py:2620
+msgid ""
+"Direct (cities with the same name, will not listed), by typing D:City: D:"
+"Paris"
+msgstr ""
+"Direct (orașele cu același nume nu vor fi listate), tastând D:City: D:Paris"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2332
-msgid "By geographic coordinates: latitude, longitude"
-msgstr "Prin coordonatele geografice: longitudine, latitudine"
+#: __init__.py:2621
+msgid "Geographic coordinates, by typing G:City: G:Venezia"
+msgstr "Coordonate geoggrafice, tastând G:City: G:Venezia"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2333
+#: __init__.py:2622
+msgid "Text string, by typing T:City: T:Bologna"
+msgstr "Șir de text, tastând T:City: T:Bologna"
+
+#: __init__.py:2623
 msgid "If the city is not found"
 msgstr "Dacă orașul nu este găsit"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2334
+#: __init__.py:2624
+msgid "Try to reverse the order in the search key"
+msgstr "Încercați să inversați ordinea în cheia de căutare"
+
+#: __init__.py:2625
 msgid "Try with or without the country of origin"
 msgstr "Încearcă cu sau fără țara de origine"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2335
-msgid "Try to merge the name with hyphens, or separate it with spaces"
-msgstr "Încearcă să unești numele cu cratime, sau separă-l cu spații"
+#: __init__.py:2626
+msgid "Try to merge the name with hyphens, or separate it with separator"
+msgstr "Încercați să uniți numele cu cratimă sau să îl separați cu separator"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2336
+#: __init__.py:2627
 msgid "Try deleting apostrophes"
 msgstr "Încearcă să ștergi apostrofurile"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2337
+#: __init__.py:2628
 msgid "Try changing the vowels accented with normal vowels"
 msgstr "Încercați să schimbați vocalele accentuate cu vocalele normale"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2338
+#: __init__.py:2629
+msgid "Try to change in English some parts"
+msgstr "Încearcă să modifici niște părți în engleză"
+
+#: __init__.py:2630
 msgid "Try with a closest location"
 msgstr "Încearcă cu o locație învecinată"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2340
+#: __init__.py:2633
 msgid "Help placing"
 msgstr "Ajutor"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2432
+#: __init__.py:2730
 msgid "No sound effect in memory!"
 msgstr "Fără efecte de sunete în memorie!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2433
+#: __init__.py:2731
 msgid "I can't reproduce the sound."
 msgstr "Nu pot să redau sunetul."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2526
-msgid "not found! Press F1 for help on entering data."
-msgstr "Negăsit! Apasă F1 pentru ajutor."
+#: __init__.py:2827
+msgid "Choose search key for"
+msgstr "Alegeți cheia de căutare pentru"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2548
+#: __init__.py:2847
+msgid "Unfortunately I could not recover enough data to find the city."
+msgstr "Din păcate nu am reușit să adun suficiente date pentru a găsi orașul."
+
+#: __init__.py:2848
+msgid "Do I try anyway?"
+msgstr "Să încerc din nou?"
+
+#: __init__.py:2871
+msgid "not found! Press F1 for help on entering data."
+msgstr "negăsit! Apasă F1 pentru ajutor în introducerea de date."
+
+#: __init__.py:2895
 msgid "Is not working properly or has been removed from the database of"
 msgstr "Nu funcționează corect sau a fost eliminat din baza de date a"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2552
+#: __init__.py:2899
 msgid "Is no longer valid!"
 msgstr "Nu mai e valid!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2582
+#: __init__.py:2932
 msgid "This option requires the installation of some audio effects"
 msgstr "Această opțiune necesită instalarea unor efecte audio"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2583
+#: __init__.py:2933
 msgid "Do you want to install them?"
 msgstr "Vrei să le instalezi?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2587
+#: __init__.py:2937
 msgid "The audio effects are installed!"
 msgstr "Efectele audio sunt instalate!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2588
+#: __init__.py:2938
 msgid "Would you like to update?"
 msgstr "Vreți să le actualizați?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2589
+#: __init__.py:2939
 msgid "Or do you want to uninstall them?"
 msgstr "Sau vrei să le dezinstalezi?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2596
+#: __init__.py:2946
 msgid "Are you sure you want to uninstall the sound effects?"
 msgstr "Ești sigur că vrei să dezinstalezi efectele de sunet?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2623
+#: __init__.py:2974
 msgid "Update in progress"
 msgstr "Actualizare în curs"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2624
+#: __init__.py:2975
 msgid "Installation in progress"
 msgstr "Instalare în curs"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2625
-#: addon\globalPlugins\Weather_Plus\__init__.py:2835
-#: addon\globalPlugins\Weather_Plus\__init__.py:3295
-#: addon\globalPlugins\Weather_Plus\__init__.py:3409
-#: addon\globalPlugins\Weather_Plus\__init__.py:4850
-msgid "Please wait..."
-msgstr "Te rugăm să aștepți."
-
-#. Installation Complete
-#: addon\globalPlugins\Weather_Plus\__init__.py:2651
+#: __init__.py:3004
 msgid "The installation of audio effects has been completed successfully!"
 msgstr "Instalarea efectelor audio a fost completată cu succes!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2652
+#: __init__.py:3005
 msgid "Adding folder:"
 msgstr "Adăugare dosar:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2654
+#: __init__.py:3007
 msgid "The upgrade of audio effects has been completed successfully!"
 msgstr "Actualizarea efectelor audio a fost completată cu succes!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2659
+#: __init__.py:3014
 msgid "These sound effects are subject to change by the author."
 msgstr "Aceste efecte de sunet pot fi modificate de către autor."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2660
+#: __init__.py:3015
 msgid "Disable and re-enable this option in order to update or uninstall them."
 msgstr ""
 "Dezactivează sau reactivează această opțiune pentru a le actualiza sau "
 "dezinstala."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2720
+#: __init__.py:3076
 msgid "Verify that your internet connection is active, or try again later."
 msgstr ""
 "Verifică dacă conexiunea la internet este activă, sau încearcă din nou mai "
 "târziu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2721
+#: __init__.py:3077
 msgid "File corrupted or not available!"
 msgstr "Fișier corupt sau indisponibil!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2723
-msgid "Sorry, i could not complete the installation of the sound effects!"
+#: __init__.py:3079
+msgid "Sorry, I could not complete the installation of the sound effects!"
 msgstr "Îmi pare rău, nu aș putea să completez instalarea efectelor de sunet!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2724
+#: __init__.py:3080
 msgid "Installation Error!"
 msgstr "Eroare la instalare!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2825
-msgid ""
-"The details of this city are not in the database and so I added them to the "
-"list. Try again!"
-msgstr ""
-"Detaliile acestui oraș nu sunt în baza de date și am adăugat-o pe listă. "
-"Încearcă din nou!"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2832
+#: __init__.py:3171
 msgid "Cannot identify your location, due to insufficient data."
 msgstr "Nu-ți pot identifica locația datorită datelor insuficiente."
 
-#. if there is daylight saving time
-#: addon\globalPlugins\Weather_Plus\__init__.py:2865
-msgid "Daylight saving time"
-msgstr "Ora de vară"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2866
-msgid "ahead"
-msgstr "înainte"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2866
-msgid "back"
-msgstr "înapoi"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-msgid "Starts on"
-msgstr "Începe pe"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
-msgid "set your clock"
-msgstr "setează-ți ceasul"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
-msgid "hour"
-msgstr "oră"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
-msgid "Ends on"
-msgstr "Se termină pe"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2875
+#: __init__.py:3199
 msgid "Details of"
 msgstr "Detalii ale"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2878
+#: __init__.py:3202
 msgid "Place"
 msgstr "Loc"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2879
+#: __init__.py:3203
 msgid "Current local time"
 msgstr "Oră locală curentă"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2880
+#: __init__.py:3204
 msgid "Degrees latitude"
-msgstr "grade latitudine"
+msgstr "Grade latitudine"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2881
+#: __init__.py:3205
 msgid "Degrees longitude"
-msgstr "grade longitudine"
+msgstr "Grade longitudine"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2882
+#: __init__.py:3206
 msgid "Elevation above sea level"
 msgstr "Altitudine deasupra nivelului mării"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2882
+#: __init__.py:3206
 msgid "meters"
 msgstr "metri"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2901
+#: __init__.py:3227
 msgid "Define the area for"
 msgstr "Definește ținutul pentru"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2904
+#: __init__.py:3231
 msgid "Hinterland"
 msgstr "Hinterland"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2905
+#: __init__.py:3232
 msgid "Maritime area"
 msgstr "Zonă maritimă"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2906
+#: __init__.py:3233
 msgid "Desert zone"
 msgstr "Zonă deșertică"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2907
+#: __init__.py:3234
 msgid "Arctic zone"
 msgstr "Zonă arctică"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2908
+#: __init__.py:3235
 msgid "Mountain zone"
 msgstr "Zonă montană"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3101
+#: __init__.py:3387
 msgid "Enter new name."
 msgstr "Introduceți un nume nou."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3109
+#: __init__.py:3396
 msgid "it can't be used because it already exists!"
 msgstr "nu poate fi folosit deoarece există deja!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3208
+#: __init__.py:3508
 msgid "is correct"
 msgstr "este corect"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3209
+#: __init__.py:3509
 msgid "But the name"
 msgstr "Dar numele"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3211
+#: __init__.py:3511
 msgid "already exists"
 msgstr "există deja"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3212
+#: __init__.py:3512
 msgid "You have to change it!"
 msgstr "Este necesar să-l modifici!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3213
+#: __init__.py:3513
 msgid "The city proper is"
 msgstr "Orașul corect este"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3215
+#: __init__.py:3515
 msgid "Want to use the suggested name?"
 msgstr "Vrei să folosești numele sugerat?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3227
+#: __init__.py:3527
 msgid "Import cities"
 msgstr "Importă orașe"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3254
+#: __init__.py:3545
+msgid "Empty file or not in cities format compatible!"
+msgstr "Fișier gol sau incompatibil cu formatul de orașe!"
+
+#: __init__.py:3551
 msgid "Do you want to replace your list with this?"
 msgstr "Vrei să înlocuiești lista ta cu aceasta?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3255
+#: __init__.py:3552
 msgid "If you select yes, your list will be completely replaced."
 msgstr "Dacă selectezi da, lista ta va fi complet înlocuită."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3256
+#: __init__.py:3553
 msgid "If you select no, the new cities will be added to your list."
 msgstr "Dacă selectezi da, noile orașe vor fi adăugate în lista ta."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3258
+#: __init__.py:3556
 msgid "Select import mode"
 msgstr "Selectează modalitatea de importare"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3269
+#: __init__.py:3567
 msgid "File contents"
 msgstr "Conținutul fișierelor"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3270
+#: __init__.py:3568
 msgid "cities"
 msgstr "orașe"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3273
+#: __init__.py:3571
 msgid "Activate the check boxes of the cities you want to import."
 msgstr "Activează casetele de bifat ale orașelor pe care vrei să le imporți."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3294
+#: __init__.py:3592
 msgid "Importing cities in progress"
 msgstr "Importarea orașelor este în curs"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3368
+#: __init__.py:3684
 msgid "Were added"
 msgstr "Au fost adăugate"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3368
+#: __init__.py:3684
 msgid "new cities to the list"
-msgstr "Noi orașe la listă"
+msgstr "noi orașe la listă"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3369
+#: __init__.py:3685
 msgid "Have been ignored because existing"
 msgstr "Au fost ignorate pentru că există deja"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3370
+#: __init__.py:3686
 msgid "Content of imported list"
 msgstr "Conținutul listei importate"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3371
-msgid "selected by the user"
-msgstr "Selectat de utilizator"
+#: __init__.py:3687
+msgid "Containing incomplete data"
+msgstr "Conține date incomplete"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3372
+#: __init__.py:3688
+msgid "selected by the user"
+msgstr "selectat de utilizator"
+
+#: __init__.py:3689
 msgid "Import finished"
 msgstr "Importare terminată"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3383
+#: __init__.py:3701
 msgid "A copy of"
 msgstr "O copie a"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3385
+#: __init__.py:3703
 msgid "It will be exported"
 msgstr "Va fi exportat"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3386
+#: __init__.py:3704
 msgid "But it does not yet contain the changes you just made the list!"
 msgstr "Dar nu conține încă modificările pe care tocmai le-ai făcut în listă!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3387
+#: __init__.py:3705
 msgid "I proceed?"
 msgstr "Continui?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3392
+#: __init__.py:3711
 msgid "Export cities"
 msgstr "Exportă orașe"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3407
+#: __init__.py:3726
 msgid "You can not export the same file at the same path!"
 msgstr "Nu poți exporta același fișier pe aceeași cale!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4019
+#: __init__.py:3746
+msgid "Hourlyforecast data report values."
+msgstr "Valorile raportului care conține datele cu privire la prognoza orară."
+
+#: __init__.py:3746
+msgid "Disable the data you don't want to be processed:"
+msgstr "Dezactivați datele care să nu fie procesate:"
+
+#: __init__.py:4492
 msgid "january"
 msgstr "ianuarie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4020
+#: __init__.py:4493
 msgid "february"
 msgstr "februarie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4021
+#: __init__.py:4494
 msgid "march"
 msgstr "martie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4022
+#: __init__.py:4495
 msgid "april"
 msgstr "aprilie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4023
+#: __init__.py:4496
 msgid "may"
 msgstr "mai"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4024
+#: __init__.py:4497
 msgid "june"
 msgstr "iunie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4025
+#: __init__.py:4498
 msgid "july"
 msgstr "iulie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4026
+#: __init__.py:4499
 msgid "august"
 msgstr "august"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4027
+#: __init__.py:4500
 msgid "september"
 msgstr "septembrie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4028
+#: __init__.py:4501
 msgid "october"
 msgstr "octombrie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4029
+#: __init__.py:4502
 msgid "november"
 msgstr "noiembrie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4030
+#: __init__.py:4503
 msgid "december"
 msgstr "decembrie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4031
+#: __init__.py:4504
 msgid "Monday"
 msgstr "Luni"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4032
+#: __init__.py:4505
 msgid "Tuesday"
 msgstr "Marți"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4033
+#: __init__.py:4506
 msgid "Wednesday"
 msgstr "Miercuri"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4034
+#: __init__.py:4507
 msgid "Thursday"
 msgstr "Joi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4035
+#: __init__.py:4508
 msgid "Friday"
 msgstr "Vineri"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4036
+#: __init__.py:4509
 msgid "Saturday"
 msgstr "Sâmbătă"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4037
+#: __init__.py:4510
 msgid "Sunday"
 msgstr "Duminică"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4076
+#: __init__.py:4568
 #, python-format
-msgid "It was not possible find the acronym of %s!"
-msgstr "Nu a fost posibil să găsiți acronimul %s!"
+msgid "It was not possible find the acronym of \"%s\"!"
+msgstr "Nu s-a putut găsi acronimul lui \"%s\"!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4077
-msgid ""
-"This does not allow to get the city local time, the sound effects will not "
-"be consistent."
+#: __init__.py:4569
+msgid "This may not allow you to get the city details."
 msgstr ""
-"Acest lucru nu permite să obțineți ora locală, efectele sonore nu vor fi "
-"consecvente."
+"Acest lucru ar putea să nu vă permită să obțineți informații despre oraș."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4078
+#: __init__.py:4570
 msgid ""
 "Please report this to the author so he can add this country in database."
 msgstr ""
 "Raportați acest lucru autorului pentru a putea adăuga această țară în baza "
 "de date."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4079
+#: __init__.py:4571
 #, python-format
 msgid "Send an email to %s"
 msgstr "Trimiteți un e-mail la %s"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4080
+#: __init__.py:4572
 msgid "With  object the line below, thanks."
 msgstr "Cu obiectul linia de mai jos, mulțumesc."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4140
-#: addon\globalPlugins\Weather_Plus\__init__.py:4158
+#: __init__.py:4640 __init__.py:4658
 msgid "Downloaded"
 msgstr "Descărcat"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4141
+#: __init__.py:4641
 msgid "of"
 msgstr "din"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4176
+#: __init__.py:4679
 msgid "Find..."
-msgstr "Găsește"
+msgstr "Găsește..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4177
+#: __init__.py:4680
 msgid "Find next"
 msgstr "Găsește succedentul"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4178
+#: __init__.py:4681
 msgid "Find previous"
 msgstr "Găsește precedentul"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4213
-msgid "Empty file or not in cities woeID format compatible!"
-msgstr "Fișier gol sau formatul woeID pentru orașe nu este compatibil!"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:4392
+#: __init__.py:4880
 msgid "Be an error has occurred."
 msgstr "A apărut o eroare."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4393
+#: __init__.py:4881
 msgid "See the log for more information."
 msgstr "Consultați jurnalul pentru mai multe informații."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4394
+#: __init__.py:4882
 msgid "Error: failure writing file!"
 msgstr "Eroare: eșuare la scrierea fișierului!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4499
+#: __init__.py:5026
 msgid "occurrences found"
 msgstr "apariții găsite"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4499
+#: __init__.py:5026
 msgid "for"
 msgstr "pentru"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4501
+#: __init__.py:5028
 msgid "Choose a city."
 msgstr "Alege un oraș."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4503
+#: __init__.py:5030
 msgid "List of availables Cities"
 msgstr "Lista orașelor disponibile"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4536
+#: __init__.py:5062
 msgid "Do not show this message again!"
 msgstr "Nu afișați acest mesaj din nou!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4546
+#: __init__.py:5072
 msgid "&Install..."
 msgstr "&Instalează..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4546
+#: __init__.py:5072
 msgid "Upd&ate..."
 msgstr "&Actualizează."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4548
+#: __init__.py:5074
 msgid "&Close"
 msgstr "&Închide"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4549
+#: __init__.py:5075
 msgid "&Uninstall..."
 msgstr "&Dezinstalează..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4627
+#: __init__.py:5177
 msgid "Type the search string"
 msgstr "Tastează textul de căutare"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4628
-#: addon\globalPlugins\Weather_Plus\__init__.py:4678
+#: __init__.py:5177 __init__.py:5231
 msgid "Find"
 msgstr "Găsește"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4676
+#: __init__.py:5228
 msgid "next"
 msgstr "succesiv"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4676
+#: __init__.py:5228
 msgid "previous"
 msgstr "precedent"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4680
+#: __init__.py:5235
 msgid "No results next for"
-msgstr "fără rezultate succedente pentru"
+msgstr "Fără rezultate succedente pentru"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4680
+#: __init__.py:5235
 msgid "No previous results for"
 msgstr "Fără rezultate precedente pentru"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4722
+#: __init__.py:5277
 msgid "&Select all"
 msgstr "&Selectare tot"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4724
+#: __init__.py:5279
 msgid "&Deselect all"
 msgstr "&Deselectare tot"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4764
+#: __init__.py:5319
 msgid "not checked"
 msgstr "nebifat"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4766
+#: __init__.py:5321
 msgid "checked"
 msgstr "bifat"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4770
+#: __init__.py:5325
 msgid "check box"
 msgstr "casetă de bifat"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4780
+#: __init__.py:5335
 msgid "check boxes checked"
 msgstr "casete de bifat bifate"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4789
+#: __init__.py:5344
 msgid "check boxes not checked"
 msgstr "casete de bifat nebifate"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4851
+#: __init__.py:5406
 msgid "Saving in progress"
 msgstr "Salvare în curs"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4853
+#: __init__.py:5408
 msgid "Download canceled."
 msgstr "Descărcare anulată."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4906
+#: __init__.py:5462
 msgid "&Copy to clipboard"
 msgstr "&Copiați în clipboard"
 
 #: buildVars.py:23
 msgid ""
-"Adds local temperature and forecast 24 ours and prediction up to 9 days.\n"
+"Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
 msgstr ""
-"Adaugă temperatura locală și prognoza pentru 24 de ore până la 9 zile.\n"
+"Adaugă temperatura locală și prognoza pe 24 de ore, precum și previziunile "
+"meteorologice pentru următoarele două zile.\n"
 
 #: buildVars.py:24
 msgid "NVDA+w for the current bulletin.\n"
@@ -1789,35 +1442,538 @@ msgstr "NVDA+w pentru buletinul actual.\n"
 #: buildVars.py:25
 msgid ""
 "NVDA+shift+w for the prediction in the current 24 hours and prediction up to "
-"9 days.\n"
+"2 days.\n"
 msgstr ""
-"NVDA+shift+w pentru prognoza pe 24 de ore și prognoza până la 9 zile.\n"
+"NVDA+shift+w pentru previziunile pe 24 de ore și pentru prognoza pe două "
+"zile.\n"
 
 #: buildVars.py:26
+msgid ""
+"NVDA+shift+w, pressed twice provides the hourlyforecast of the weather "
+"conditions.\n"
+msgstr "NVDA+shift+w apăsată de două ori furnizează prognoza orară.\n"
+
+#: buildVars.py:27
 msgid "NVDA+shift+control+w for quickly enter a temporary city.\n"
 msgstr "NVDA+shift+control+w alege un oraș temporar.\n"
 
-#: buildVars.py:27
+#: buildVars.py:28
 msgid "NVDA + shift + control + alt + w for open the Weather Plus settings.\n"
 msgstr "NVDA+shift+control+alt+w Deschide dialogul de setări Weather Plus.\n"
 
-#: buildVars.py:28
+#: buildVars.py:29
 msgid ""
 "NVDA+alt+w announces the date of the last update of the weather report.\n"
 msgstr ""
 "NVDA+alt+w anunță data ultimei actualizări a buletinului meteorologic.\n"
 
-#: buildVars.py:29
+#: buildVars.py:30
 msgid "Shift+control+w alternates between Fahrenheit, Celsius and Kelvin.\n"
 msgstr "Shift+control+w comută între Fahrenheit, Celsius și Kelvin.\n"
 
-#: buildVars.py:30
+#: buildVars.py:31
 msgid ""
 "For other instructions, you can also press Add-on Help button in Add-ons "
 "manager."
 msgstr ""
 "Pentru alte instrucțiuni, puteți apăsa butonul de ajutor care se găsește în "
 "administratorul de suplimente."
+
+#~ msgid "precipitation"
+#~ msgstr "precipitație"
+
+#~ msgid "Enter a City, woeId or choose one from the list, if available."
+#~ msgstr ""
+#~ "Introdu un oraș, woeId, sau alege unul din listă dacă este disponibil."
+
+#~ msgid "The woeID"
+#~ msgstr "WoeID-ul"
+
+#~ msgid "assigned to"
+#~ msgstr "alocat la"
+
+#~ msgid "The cities on your list are not compatible with the Yahoo API!"
+#~ msgstr "Orașele din lista dvs. nu sunt compatibile cu API-ul Yahoo!"
+
+#~ msgid "steady"
+#~ msgstr "stabilă"
+
+#~ msgid "rising"
+#~ msgstr "în creștere"
+
+#~ msgid "falling"
+#~ msgstr "în scădere"
+
+#~ msgid "and the state of the barometric pressure is"
+#~ msgstr "și starea presiunii barometrice este"
+
+#~ msgid "The state of the barometric pressure is"
+#~ msgstr "Starea presiunii barometrice este de"
+
+#~ msgid "Sorry, the woeID is not set!"
+#~ msgstr "Ne pare rău, woeID-ul nu este setat!"
+
+#~ msgid "in the morning"
+#~ msgstr "dimineața"
+
+#~ msgid "in the evening"
+#~ msgstr "seara"
+
+#~ msgid " and "
+#~ msgstr " și "
+
+#~ msgid " to "
+#~ msgstr " la "
+
+#~ msgid "in the vicinity"
+#~ msgstr "în vecinătatea"
+
+#~ msgid "tornado"
+#~ msgstr "tornadă"
+
+#~ msgid "tropical storm"
+#~ msgstr "furtună tropicală"
+
+#~ msgid "hurricane"
+#~ msgstr "uragan"
+
+#~ msgid "severe thunderstorms"
+#~ msgstr "furtuni severe"
+
+#~ msgid "mixed rain and snow"
+#~ msgstr "burniță"
+
+#~ msgid "mixed rain and hail"
+#~ msgstr "ploaie cu grindină"
+
+#~ msgid "mixed rain and sleet"
+#~ msgstr "lapoviță"
+
+#~ msgid "mixed snow and sleet"
+#~ msgstr "lapoviță și ninsoare"
+
+#~ msgid "snow flurries"
+#~ msgstr "rafale de zăpadă"
+
+#~ msgid "smoke"
+#~ msgstr "ceață"
+
+#~ msgid "smoky"
+#~ msgstr "cețos"
+
+#~ msgid "sunny intervals"
+#~ msgstr "intervale însorite"
+
+#~ msgid "sunny period"
+#~ msgstr "perioadă însorită"
+
+#~ msgid "light snow"
+#~ msgstr "ninsoare ușoară"
+
+#~ msgid "scattered snow showers"
+#~ msgstr "ninsori răzlețe"
+
+#~ msgid "snow showers"
+#~ msgstr "averse de zăpadă"
+
+#~ msgid "snow shower"
+#~ msgstr "aversă de zăpadă"
+
+#~ msgid "snowstorm"
+#~ msgstr "furtună de zăpadă"
+
+#~ msgid "snowdrift"
+#~ msgstr "troian de zăpadă"
+
+#~ msgid "drifting snow"
+#~ msgstr "înzăpezire"
+
+#~ msgid "wintry Mix"
+#~ msgstr "chiciură"
+
+#~ msgid "ice to rain"
+#~ msgstr "ploaie înghețată"
+
+#~ msgid "ice"
+#~ msgstr "gheață"
+
+#~ msgid "blizzard"
+#~ msgstr "viscol"
+
+#~ msgid "blowing snow"
+#~ msgstr "zăpadă viscolită"
+
+#~ msgid "snow"
+#~ msgstr "zăpadă"
+
+#~ msgid "light rain with thunder"
+#~ msgstr "ploaie cu descărcări electrice"
+
+#~ msgid "few showers"
+#~ msgstr "averse scurte"
+
+#~ msgid "heavy showers"
+#~ msgstr "averse puternice"
+
+#~ msgid "heavy thunderstorms"
+#~ msgstr "furtuni cu descărcări electrice"
+
+#~ msgid "heavy thunderstorm"
+#~ msgstr "furtună cu descărcări electrice"
+
+#~ msgid "lightning"
+#~ msgstr "fulger"
+
+#~ msgid "isolated clouds"
+#~ msgstr "nori izolați"
+
+#~ msgid "partly cloudy"
+#~ msgstr "parțial noros"
+
+#~ msgid "partly bright"
+#~ msgstr "parțial senin"
+
+#~ msgid "showers early"
+#~ msgstr "averse timpurii"
+
+#~ msgid "light rain"
+#~ msgstr "ploaie ușoară"
+
+#~ msgid "heavy rain"
+#~ msgstr "ploaie torențială"
+
+#~ msgid "isolated showers"
+#~ msgstr "averse izolate"
+
+#~ msgid "isolated thunderstorms"
+#~ msgstr "furtuni cu descărcări electrice izolate"
+
+#~ msgid "isolated thundershowers"
+#~ msgstr "averse izolate cu tunete și fulgere"
+
+#~ msgid "mostly cloudy"
+#~ msgstr "cer acoperit"
+
+#~ msgid "mostly dry"
+#~ msgstr "aproape uscat"
+
+#~ msgid "mostly clear"
+#~ msgstr "aproape senin"
+
+#~ msgid "clearing"
+#~ msgstr "cer limpede"
+
+#~ msgid "no rain"
+#~ msgstr "fără ploaie"
+
+#~ msgid "sleet"
+#~ msgstr "lapoviță"
+
+#~ msgid "blowing dust"
+#~ msgstr "furtună de praf"
+
+#~ msgid "widespread dust"
+#~ msgstr "praf pe suprafețe întinse"
+
+#~ msgid "low drifting sand"
+#~ msgstr "nisip aluvionar în cantități reduse"
+
+#~ msgid "sandstorm"
+#~ msgstr "furtună de nisip"
+
+#~ msgid "sand storm"
+#~ msgstr "furtună de nisip"
+
+#~ msgid "dust"
+#~ msgstr "praf"
+
+#~ msgid "sand"
+#~ msgstr "nisipp"
+
+#~ msgid "thundery showers"
+#~ msgstr "averse cu descărcări electrice"
+
+#~ msgid "thundershowers"
+#~ msgstr "averse cu descărcări electrice"
+
+#~ msgid "scattered thunderstorms"
+#~ msgstr "furtuni răzlețe cu descărcări electrice"
+
+#~ msgid "scattered showers"
+#~ msgstr "averse răzlețe"
+
+#~ msgid "thunderstorms"
+#~ msgstr "furtuni cu descărcări electrice"
+
+#~ msgid "thunderstorm"
+#~ msgstr "furtună cu descărcări electrice"
+
+#~ msgid "storm"
+#~ msgstr "furtună"
+
+#~ msgid "hail"
+#~ msgstr "grindină"
+
+#~ msgid "foggy"
+#~ msgstr "cețos"
+
+#~ msgid "fog"
+#~ msgstr "ceață"
+
+#~ msgid "haze"
+#~ msgstr "pâclă"
+
+#~ msgid "mist"
+#~ msgstr "ceață"
+
+#~ msgid "clear"
+#~ msgstr "senin"
+
+#~ msgid "fair"
+#~ msgstr "timp frumos"
+
+#~ msgid "fine"
+#~ msgstr "vreme bună"
+
+#~ msgid "overcast"
+#~ msgstr "cer noros"
+
+#~ msgid "light showers"
+#~ msgstr "averse ușoare"
+
+#~ msgid "light drizzle"
+#~ msgstr "burniță ușoară"
+
+#~ msgid "freezing rain"
+#~ msgstr "ploaie înghețată"
+
+#~ msgid "frequent showers"
+#~ msgstr "aversă frecventă"
+
+#~ msgid "rain shower"
+#~ msgstr "aversă de ploaie"
+
+#~ msgid "rain"
+#~ msgstr "ploaie"
+
+#~ msgid "freezing drizzle"
+#~ msgstr "burniță înghețată"
+
+#~ msgid "showers"
+#~ msgstr "averse"
+
+#~ msgid "drizzle"
+#~ msgstr "burniță"
+
+#~ msgid "dry"
+#~ msgstr "uscat"
+
+#~ msgid "mild"
+#~ msgstr "climă blândă"
+
+#~ msgid "clouds"
+#~ msgstr "nori"
+
+#~ msgid "cloudy"
+#~ msgstr "noros"
+
+#~ msgid "mostly sunny"
+#~ msgstr "parțial însorit"
+
+#~ msgid "sunny"
+#~ msgstr "însorit"
+
+#~ msgid "sun"
+#~ msgstr "soare"
+
+#~ msgid "bright"
+#~ msgstr "luminos"
+
+#~ msgid "thunder"
+#~ msgstr "descărcare electrică"
+
+#~ msgid "shower"
+#~ msgstr "aversă"
+
+#~ msgid "breezy"
+#~ msgstr "răcoros"
+
+#~ msgid "blustery"
+#~ msgstr "vântos"
+
+#~ msgid "windy"
+#~ msgstr "vântos"
+
+#~ msgid "wind"
+#~ msgstr "vânt"
+
+#~ msgid "flurries"
+#~ msgstr "fulgi"
+
+#~ msgid "late"
+#~ msgstr "târziu"
+
+#~ msgid "early"
+#~ msgstr "devreme"
+
+#~ msgid "isolated"
+#~ msgstr "izolat"
+
+#~ msgid "shallow fog"
+#~ msgstr "ceață superficială"
+
+#~ msgid "heavy"
+#~ msgstr "greu"
+
+#~ msgid "cold"
+#~ msgstr "frig"
+
+#~ msgid "hot"
+#~ msgstr "cald"
+
+#~ msgid "Sorry, the woeID set is not valid or contains incomplete data!"
+#~ msgstr ""
+#~ "Ne pare rău, setul de foame nu este valid sau conține date incomplete!"
+
+#~ msgid ""
+#~ "Is not working properly, contains incomplete data or has been removed "
+#~ "from the database of"
+#~ msgstr ""
+#~ "Nu funcționează corespunzător, conține date incomplete sau a fost "
+#~ "eliminat din baza de date"
+
+#~ msgid ""
+#~ "Provides the weather forecast and current temperature for 24 hours and "
+#~ "the next 9 days."
+#~ msgstr ""
+#~ "Furnizează prognoza meteo și temperatura curentă pentru 24 de ore și "
+#~ "pentru următoarele 9 zile."
+
+#~ msgid "Add status of &barometric pressure"
+#~ msgstr "Adaugă starea presiunii &barometrice"
+
+#~ msgid ""
+#~ "Testing the validity of city woeID entry and find the name of city "
+#~ "assigned, or viceversa."
+#~ msgstr ""
+#~ "Testarea valabilității intrării în oraș și identificarea orașului, sau "
+#~ "viceversa."
+
+#~ msgid "Displays information on the current city."
+#~ msgstr "Afișează informații despre orașul curent."
+
+#~ msgid ""
+#~ "You can also indicate how to proceed by prefixing the following commands"
+#~ msgstr ""
+#~ "De asemenea, poți indica cum să continue prefixând următoarele comenzi"
+
+#~ msgid "Direct (the Recursive cities they will not appear), by typing D:City"
+#~ msgstr "Direct (nu vor apărea orașele recursive), tastând D:City"
+
+#~ msgid "Geographic coordinates, by typing G:City"
+#~ msgstr "Coordonate geografice, tastând G:City"
+
+#~ msgid "Postal code, by typing P:City"
+#~ msgstr "Cod poștal, tastând P:City"
+
+#~ msgid "Text string, by typing T:City"
+#~ msgstr "Șir de text, tastând T:City"
+
+#~ msgid ""
+#~ "The city can be preceded by the region and / or state, separated by a "
+#~ "comma or space"
+#~ msgstr ""
+#~ "Orașul poate fi precedat de regiune și/sau de stat, separate de o virgulă "
+#~ "sau un spațiu"
+
+#~ msgid "Australia, Queensland, Cona Creek"
+#~ msgstr "Australia, Queensland, Cona Creek"
+
+#~ msgid "By city woeID: 715399"
+#~ msgstr "Prin woeID-ul orașului: 715399"
+
+#~ msgid "By only city name: Ferrara"
+#~ msgstr "Doar prin numele orașului: Ferrara"
+
+#~ msgid "By state or region and city name: Emilia Romagna Ferrara"
+#~ msgstr ""
+#~ "După numele statului sau al regiunii și al orașului: Emilia Romagna "
+#~ "Ferrara"
+
+#~ msgid "By city name and country: Ferrara,it"
+#~ msgstr "Prin numele orașului și al țării: Ferrara,it"
+
+#~ msgid "By postal code: 44100,it"
+#~ msgstr "Prin codul poștal: 44100,it"
+
+#~ msgid "By geographic coordinates: latitude, longitude"
+#~ msgstr "Prin coordonatele geografice: longitudine, latitudine"
+
+#~ msgid "Try to merge the name with hyphens, or separate it with spaces"
+#~ msgstr "Încearcă să unești numele cu cratime, sau separă-l cu spații"
+
+#~ msgid ""
+#~ "The details of this city are not in the database and so I added them to "
+#~ "the list. Try again!"
+#~ msgstr ""
+#~ "Detaliile acestui oraș nu sunt în baza de date și am adăugat-o pe listă. "
+#~ "Încearcă din nou!"
+
+#~ msgid "It was not possible find the acronym of %s!"
+#~ msgstr "Nu a fost posibil să găsiți acronimul %s!"
+
+#~ msgid "This does not allow to get the city details."
+#~ msgstr "Acest lucru nu vă permite să obțineți informații despre oraș."
+
+#~ msgid "Empty file or not in cities woeID format compatible!"
+#~ msgstr "Fișier gol sau formatul woeID pentru orașe nu este compatibil!"
+
+#~ msgid ""
+#~ "Adds local temperature and forecast 24 ours and prediction up to 9 days.\n"
+#~ msgstr ""
+#~ "Adaugă temperatura locală și prognoza pentru 24 de ore până la 9 zile.\n"
+
+#~ msgid ""
+#~ "NVDA+shift+w for the prediction in the current 24 hours and prediction up "
+#~ "to 9 days.\n"
+#~ msgstr ""
+#~ "NVDA+shift+w pentru prognoza pe 24 de ore și prognoza până la 9 zile.\n"
+
+#~ msgid "Don't specify"
+#~ msgstr "Nu specifica"
+
+#~ msgid ""
+#~ "You have installed the Weather Plus add-on which is incompatible with "
+#~ "this one. The new name of this add-on is Weather_Plus with an underscore. "
+#~ "Click OK to update it."
+#~ msgstr ""
+#~ "Ai instalat suplimentul Weather Plus, care nu este compatibil cu acesta. "
+#~ "Noul nume al acestui supliment este Weather_Plus cu o liniuță joasă. Dă "
+#~ "click pe OK pentru a-l actualiza."
+
+#~ msgid "Update confirmation"
+#~ msgstr "Confirmare actualizare"
+
+#~ msgid "Daylight saving time"
+#~ msgstr "Ora de vară"
+
+#~ msgid "ahead"
+#~ msgstr "înainte"
+
+#~ msgid "back"
+#~ msgstr "înapoi"
+
+#~ msgid "Starts on"
+#~ msgstr "Începe pe"
+
+#~ msgid "set your clock"
+#~ msgstr "setează-ți ceasul"
+
+#~ msgid "hour"
+#~ msgstr "oră"
+
+#~ msgid "Ends on"
+#~ msgstr "Se termină pe"
 
 #~ msgid ""
 #~ "In&dicates the wait with a beep while you search for the latest bulletin"
@@ -1919,9 +2075,6 @@ msgstr ""
 
 #~ msgid "Access denied!"
 #~ msgstr "Accesso negato!"
-
-#~ msgid "The cloudiness is of"
-#~ msgstr "La nuvolosità è del"
 
 #~ msgid "hectopascal"
 #~ msgstr "ettopascal"

@@ -1,1812 +1,1970 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: Weather_Plus 6.0\n"
+"Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2019-05-06 12:00+0200\n"
-"PO-Revision-Date: 2019-05-06 12:09+0200\n"
-"Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
+"POT-Creation-Date: 2021-06-26 22:55+0200\n"
+"PO-Revision-Date: 2021-06-26 22:56+0200\n"
+"Last-Translator: Ondrej Rosík <ondrej.rosik@gmail.com>\n"
 "Language-Team: Peter Halada <pietro4044@gmail.com>\n"
 "Language: sk\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.12\n"
+"X-Generator: Poedit 1.8.13\n"
 "X-Poedit-Basepath: ../../../globalPlugins/Weather_Plus\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
 "X-Poedit-SearchPath-0: __init__.py\n"
+"X-Poedit-SearchPath-1: buildVars.py\n"
 
-#. Translators: A message informing the user that he has installed an old version that contains a space rather than an underscore.
-#: addon\installTasks.py:22
-msgid ""
-"You have installed the Weather Plus add-on which is incompatible with this "
-"one. The new name of this add-on is Weather_Plus with an underscore. Click "
-"OK to update it."
-msgstr ""
-"Nainštalovali ste doplnok Weather Plus, ktorý nie je kompatibilný s týmto "
-"doplnkom. Nový názov tohto doplnku je Weather_Plus s podčiarkovníkom. "
-"Kliknutím na tlačidlo OK ho aktualizujte."
-
-#. Translators: The title of the dialogbox.
-#: addon\installTasks.py:24
-msgid "Update confirmation"
-msgstr "Potvrdenie aktualizácie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:53
+#: __init__.py:62
 msgid "Fahrenheit"
 msgstr "Fahrenheit"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:53
+#: __init__.py:62
 msgid "Celsius"
 msgstr "Celzia"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:53
+#: __init__.py:62
 msgid "Kelvin"
 msgstr "Kelvin"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:55
+#: __init__.py:64
 msgid "unknown"
 msgstr "neznáme"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:85
+#: __init__.py:104
 msgid "Weather Plus &Settings"
-msgstr "&Nastavenia doplnku počasie+"
+msgstr "&počasie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:85
+#: __init__.py:104
 msgid "Show configuration items."
-msgstr "Zobraziť položky nastavenia"
+msgstr "Zobrazí nastavenia."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:86
+#: __init__.py:106
 msgid "Set and &manage your cities..."
-msgstr "Nastaviť a ovládať kód mesta"
+msgstr "Nastaviť a &spravovať mestá..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:86
+#: __init__.py:106
 msgid "Displays or allows to set the current cities from a list"
-msgstr "Zobrazí alebo umožní nastaviť kód mesta zo zoznamu"
+msgstr "Zobrazí alebo umožní nastaviť kódy miest zo zoznamu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:88
+#: __init__.py:109
 msgid "Set a &temporary city..."
-msgstr "Nastaviť dočasný kód mesta."
+msgstr "Nastaviť &dočasné mesto..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:88
+#: __init__.py:109
 msgid "Allows to set one temporary city from a list"
-msgstr "Umožňuje nastaviť dočasný kód mesta zo zoznamu"
+msgstr "Umožňuje dočasne v zozname vybrať iné mesto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:91
+#: __init__.py:113
 msgid "&Documentation"
 msgstr "Nápove&da"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:91
+#: __init__.py:113
 msgid "Opens the help file for the current language"
 msgstr "Otvorí nápovedu pre aktuálne zvolený jazyk"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:94
+#: __init__.py:117
 msgid "&Check for Upgrade..."
-msgstr "Skontrolovať vyššiu verziu..."
+msgstr "Skontrolovať &aktualizácie..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:94
+#: __init__.py:117
 msgid "Notify if there is an upgraded version available"
-msgstr "Upozorniť, ak je k dispozícii aktualizácia"
+msgstr "Upozorniť na novú verziu"
 
-#. opens the Weather Plus settings window
-#: addon\globalPlugins\Weather_Plus\__init__.py:140
+#: __init__.py:163
+msgid "nanometers"
+msgstr "nanometre"
+
+#: __init__.py:166
+msgid "miles per hour"
+msgstr "míľ za hodinu"
+
+#: __init__.py:167
+msgid "miles"
+msgstr "míle"
+
+#: __init__.py:168
+msgid "inches"
+msgstr "palcov"
+
+#: __init__.py:169
+msgid "inches of mercury"
+msgstr "palcov ortuti"
+
+#: __init__.py:172
+msgid "kilometers per hour"
+msgstr "kilometrov za hodinu"
+
+#: __init__.py:173
+msgid "kilometers"
+msgstr "kilometrov"
+
+#: __init__.py:174
+msgid "millimeters"
+msgstr "milimetrov"
+
+#: __init__.py:175
+msgid "millibars"
+msgstr "millibarov"
+
+#: __init__.py:177
+msgid "millimeters of mercury"
+msgstr "milimetrov ortuti"
+
+#: __init__.py:203
 msgid "Settings"
 msgstr "Nastavenia"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:140
-#: addon\globalPlugins\Weather_Plus\__init__.py:2019
+#: __init__.py:203 __init__.py:2245
 msgid "Preset"
 msgstr "Predvolené mesto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:140
-#: addon\globalPlugins\Weather_Plus\__init__.py:3075
-#: addon\globalPlugins\Weather_Plus\__init__.py:3364
+#: __init__.py:203 __init__.py:3358 __init__.py:3680
 msgid "None"
 msgstr "Nič"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:141
-msgid "Enter a City, woeId or choose one from the list, if available."
-msgstr "Zadajte mesto, WOEID alebo ho vyberte zo zoznamu, ak je k dispozícii."
+#: __init__.py:205
+msgid "Enter a City or choose one from the list, if available."
+msgstr "Zadajte mesto alebo ak je k dispozícii ho vyberte zo zoznamu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:273
-#: addon\globalPlugins\Weather_Plus\__init__.py:1782
-#: addon\globalPlugins\Weather_Plus\__init__.py:2555
-#: addon\globalPlugins\Weather_Plus\__init__.py:3208
-msgid "The woeID"
-msgstr "kód miest WOEID"
+#: __init__.py:379 __init__.py:1819 __init__.py:2903 __init__.py:3508
+msgid "The city"
+msgstr "Mesto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:274
-#: addon\globalPlugins\Weather_Plus\__init__.py:1782
-msgid "assigned to"
-msgstr "Patrí k"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:275
+#: __init__.py:380
 msgid "has not been preset."
 msgstr "nie je predvolené."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:276
+#: __init__.py:381
 msgid "Will be used in temporary mode!"
-msgstr "Bude použité v dočasnom režime"
+msgstr "Bude použité v dočasnom režime!"
 
-#. offers to save the list changed
-#: addon\globalPlugins\Weather_Plus\__init__.py:277
-#: addon\globalPlugins\Weather_Plus\__init__.py:303
-#: addon\globalPlugins\Weather_Plus\__init__.py:362
-#: addon\globalPlugins\Weather_Plus\__init__.py:1787
-#: addon\globalPlugins\Weather_Plus\__init__.py:2434
-#: addon\globalPlugins\Weather_Plus\__init__.py:2591
-#: addon\globalPlugins\Weather_Plus\__init__.py:2596
-#: addon\globalPlugins\Weather_Plus\__init__.py:2661
-#: addon\globalPlugins\Weather_Plus\__init__.py:3109
-#: addon\globalPlugins\Weather_Plus\__init__.py:3216
-#: addon\globalPlugins\Weather_Plus\__init__.py:3388
-#: addon\globalPlugins\Weather_Plus\__init__.py:3407
-#: addon\globalPlugins\Weather_Plus\__init__.py:4081
+#: __init__.py:384 __init__.py:412 __init__.py:474 __init__.py:1825
+#: __init__.py:2733 __init__.py:2941 __init__.py:2946 __init__.py:3016
+#: __init__.py:3396 __init__.py:3517 __init__.py:3707 __init__.py:3726
+#: __init__.py:4574
 msgid "Notice!"
 msgstr "Upozornenie!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:304
+#: __init__.py:414
 msgid "You have modified the list of your cities"
-msgstr "Upravil ste zoznam vašich miest"
+msgstr "Upravili ste zoznam vašich miest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:304
+#: __init__.py:414
 msgid "Do you want to save it?"
-msgstr "Chcete to uložiť?"
+msgstr "Chcete uložiť zmeny?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:360
-msgid "The cities on your list are not compatible with the Yahoo API!"
-msgstr "Mestá vo vašom zozname nie sú kompatibilné s rozhraním Yahoo API!"
+#: __init__.py:471
+msgid "The cities on your list are not compatible with the Weather API!"
+msgstr "Mestá v zozname nie sú kompatibilné s Weather API!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:361
+#: __init__.py:472
 msgid ""
 "They have to be tested and validated, you can do it from the addon settings "
 "window."
 msgstr ""
-"Musia byť testované a overené, môžete to urobiť z okna nastavení Addon."
+"Musia byť testované a overené, môžete to urobiť v okne nastavení doplnku."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:373
+#: __init__.py:486
 msgid "Setting up a temporary city"
-msgstr "Nastaviť kód mesta ako dočasný"
+msgstr "Nastaviť dočasné mesto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:376
+#: __init__.py:490
 msgid "Cities List available:"
-msgstr "Zoznam kódov miest je dostupný:"
+msgstr "Zoznam dostupných miest:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:408
+#: __init__.py:522
 msgid "Documentation not available for the current language!"
-msgstr "Nápoveda pre tento jazyk nie je dostupná"
+msgstr "Nápoveda pre tento jazyk nie je dostupná!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:454
-#: addon\globalPlugins\Weather_Plus\__init__.py:1638
-#: addon\globalPlugins\Weather_Plus\__init__.py:2519
-#: addon\globalPlugins\Weather_Plus\__init__.py:2806
-#: addon\globalPlugins\Weather_Plus\__init__.py:2818
-#: addon\globalPlugins\Weather_Plus\__init__.py:2852
+#: __init__.py:571
 msgid ""
-"Sorry, i can not receive data, verify that your internet connection is "
+"Sorry, I can not receive data, problems with the download page, try again "
+"later please!"
+msgstr ""
+"Ľutujeme, ale kvôli problémom so stránkou na stiahnutie nemôžem prijímať "
+"údaje,  skúste to znova neskôr, prosím!"
+
+#: __init__.py:574 __init__.py:1686 __init__.py:2864 __init__.py:3186
+msgid ""
+"Sorry, I can not receive data, verify that your internet connection is "
 "active, or try again later!"
 msgstr ""
 "Nemôžem prijímať dáta, overte funkčnosť internetového pripojenia, alebo "
 "skúste neskôr!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:470
+#: __init__.py:586
 msgid "version"
 msgstr "verzia"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:470
+#: __init__.py:586
 msgid "is available."
-msgstr "je k dispozícii"
+msgstr "je k dispozícii."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:471
+#: __init__.py:587
 msgid "Installed version"
 msgstr "Nainštalovaná verzia"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:472
+#: __init__.py:588
 msgid "Do you want to download and install it?"
-msgstr "Chcete ho prevziať a nainštalovať?"
+msgstr "Chcete prevziať a nainštalovať?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:475
+#: __init__.py:593
 msgid "Sorry, at the time an update is not available."
-msgstr "V tejto chvíli nie je aktualizácia dostupná."
+msgstr "Používate najnovšiu verziu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1027
-#: addon\globalPlugins\Weather_Plus\__init__.py:2527
-#: addon\globalPlugins\Weather_Plus\__init__.py:4678
+#: __init__.py:1071 __init__.py:2872 __init__.py:5231
 msgid "not found!"
-msgstr "Nenájdené"
+msgstr "Nenájdené!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1028
+#: __init__.py:1072
 msgid ""
 "You need to upgrade the sound effects by reactivating the appropriate option "
 "from the settings of"
 msgstr ""
-"Je potrebné znovu aktivovať nastavenia priradených zvukov v nastavení doplnku"
+"Je potrebné aktualizovať knižnicu zvukov aktivovaním príslušnej položky v "
+"nastaveniach."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1030
+#: __init__.py:1074
 msgid "But if these are already updated, then you need to update"
-msgstr "\"Ak sú však už aktualizované, musíte ich aktualizovať\""
+msgstr "Ak je knižnica aktuálna, skúste aktualizovať doplnok."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1152
+#: __init__.py:1246
 msgid "I can not load the settings!"
-msgstr "Nemôžem načítať nastavenia!"
+msgstr "Nepodarilo sa načítať nastavenia!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1210
+#: __init__.py:1246
+msgid "Attention!"
+msgstr "Pozor!"
+
+#: __init__.py:1316
 msgid "I can not save the settings!"
-msgstr "Nemôžem uložiť nastavenia"
+msgstr "Nepodarilo sa uložiť nastavenia!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1230
+#: __init__.py:1331
 msgid "invalid name"
 msgstr "Neplatný názov"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1304
-msgid "miles"
-msgstr "míle"
+#: __init__.py:1421
+msgid "The cloudiness is"
+msgstr "Oblačnosť je"
 
-#. takes the value in mmHg
-#: addon\globalPlugins\Weather_Plus\__init__.py:1308
-msgid "millimeters of mercury"
-msgstr "milimetrov ortuti"
+#: __init__.py:1422
+msgid "The precipitation is"
+msgstr "Zrážky sú"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1310
-msgid "inches of mercury"
-msgstr "palcov ortuťového stĺpca"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1323
-msgid "kilometers"
-msgstr "kilometrov"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1325
-msgid "millibars"
-msgstr "millibarov"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1333
+#: __init__.py:1466
 msgid "the weather report is currently"
 msgstr "teraz je"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1334
-#: addon\globalPlugins\Weather_Plus\__init__.py:1370
-#: addon\globalPlugins\Weather_Plus\__init__.py:1445
-#: addon\globalPlugins\Weather_Plus\__init__.py:1473
+#: __init__.py:1467 __init__.py:1507 __init__.py:1612 __init__.py:1639
+#: __init__.py:1952
 msgid "degrees"
 msgstr "stupňov"
 
-#. adds wind information to the string
-#: addon\globalPlugins\Weather_Plus\__init__.py:1341
+#: __init__.py:1474
 msgid "The wind direction is from"
-msgstr "Smer vetra od"
+msgstr "Smer vetra "
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1346
-#: addon\globalPlugins\Weather_Plus\__init__.py:1357
+#: __init__.py:1480 __init__.py:1492
 msgid "with speed of"
 msgstr "s rýchlosťou"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1351
-#: addon\globalPlugins\Weather_Plus\__init__.py:1361
+#: __init__.py:1485 __init__.py:1496
 msgid "The wind speed is"
 msgstr "Rýchlosť vetra je"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1370
+#: __init__.py:1504
+msgid "The wind gusts are of"
+msgstr "Nárazy vetra sú z"
+
+#: __init__.py:1507
 msgid "The perceived temperature is"
 msgstr "Pocitová teplota je"
 
-#. adds information on the atmosphere
-#: addon\globalPlugins\Weather_Plus\__init__.py:1377
-msgid "steady"
-msgstr "ustálený"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1377
-msgid "rising"
-msgstr "stúpajúci"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1377
-msgid "falling"
-msgstr "klesajúci"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1378
+#: __init__.py:1514
 msgid "The humidity is"
 msgstr "Vlhkosť je"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1383
+#: __init__.py:1516
+msgid "The cloudiness is of"
+msgstr "Oblačnosť je"
+
+#: __init__.py:1518
+msgid "The precipitation is of"
+msgstr "Zrážky sú"
+
+#: __init__.py:1523
 msgid "and the visibility is up to"
 msgstr "a viditeľnosť do"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1392
+#: __init__.py:1532
 msgid "The visibility is up to"
 msgstr "Viditeľnosť je až do"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1397
-#: addon\globalPlugins\Weather_Plus\__init__.py:1404
+#: __init__.py:1537
+msgid "and the precipitation is"
+msgstr "a zrážky sú"
+
+#: __init__.py:1554
 msgid "The pressure is"
 msgstr "Tlak je"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1399
-msgid "and the state of the barometric pressure is"
-msgstr "a stav barometrického tlaku je"
+#: __init__.py:1558
+msgid "The UV radiation is of"
+msgstr "UV žiarenie je"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1409
-msgid "The state of the barometric pressure is"
-msgstr "Sstav barometrického tlaku je"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1425
+#: __init__.py:1578
 msgid "The sun rises at"
-msgstr "Slnko vychádza v"
+msgstr "Slnko vychádza o"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1426
+#: __init__.py:1579 __init__.py:1581
 msgid "and sets at"
-msgstr "a zapadá v"
+msgstr "a zapadá o"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1441
+#: __init__.py:1580
+msgid "The moon rises at"
+msgstr "Mesiac vychádza o"
+
+#: __init__.py:1608
 msgid "the forecast for today is"
 msgstr "Predpoveď na dnešok je:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1443
-#: addon\globalPlugins\Weather_Plus\__init__.py:1471
+#: __init__.py:1610 __init__.py:1637
 msgid "with a maximum temperature of"
 msgstr "maximálne"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1444
-#: addon\globalPlugins\Weather_Plus\__init__.py:1472
+#: __init__.py:1611 __init__.py:1638
 msgid "and a minimum of"
 msgstr "a minimálne"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1478
+#: __init__.py:1645
 msgid "not available"
 msgstr "nie je k dispozícii"
 
-#. this does not replace the name of the city
-#: addon\globalPlugins\Weather_Plus\__init__.py:1484
+#: __init__.py:1649
 msgid "In"
 msgstr "V"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1484
+#: __init__.py:1649
 msgid "Unnamed"
 msgstr "Nepomenované"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1493
-#: addon\globalPlugins\Weather_Plus\__init__.py:1902
-msgid "Sorry, the woeID is not set!"
-msgstr "Kód mesta woeID nie je nastavený"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1499
-msgid "kilometers per hour"
-msgstr "kilometrov za hodinu"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1500
-msgid "miles per hour"
-msgstr "míľ za hodinu"
-
-#. weather condition
-#: addon\globalPlugins\Weather_Plus\__init__.py:1502
-msgid "in the morning"
-msgstr "Ráno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1503
-msgid "in the evening"
-msgstr "večer"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1504
-#: addon\globalPlugins\Weather_Plus\__init__.py:1505
-#: addon\globalPlugins\Weather_Plus\__init__.py:1506
-msgid " and "
-msgstr " a "
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1507
-msgid " to "
-msgstr " do "
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1509
-msgid "in the vicinity"
-msgstr "V okolí"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1510
-msgid "tornado"
-msgstr "tornádo"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1511
-msgid "tropical storm"
-msgstr "tropická búrka"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1512
-msgid "hurricane"
-msgstr "hurikán"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1513
-msgid "severe thunderstorms"
-msgstr "silné búrky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1514
-msgid "mixed rain and snow"
-msgstr "dážď so snehom"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1515
-msgid "mixed rain and hail"
-msgstr "dážď s krúpami"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1516
-msgid "mixed rain and sleet"
-msgstr "dážď a zmiešaný dážď so snehom"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1517
-msgid "mixed snow and sleet"
-msgstr "sneh a zmiešaný dážď so snehom"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1518
-msgid "snow flurries"
-msgstr "snehová fujavica"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1519
-msgid "smoke"
-msgstr "opar"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1520
-msgid "smoky"
-msgstr "zahmlené"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1521
-msgid "precipitation"
-msgstr "dažďové zrážky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1522
-#: addon\globalPlugins\Weather_Plus\__init__.py:1523
-msgid "sunny intervals"
-msgstr "občas slnečno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1524
-msgid "sunny period"
-msgstr "slnečné obdobie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1525
-msgid "light snow"
-msgstr "slabé sneženie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1526
-msgid "scattered snow showers"
-msgstr "ojedinelé snehové prehánky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1527
-msgid "snow showers"
-msgstr "snehové prehánky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1528
-msgid "snow shower"
-msgstr "snehová prehánka"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1529
-msgid "snowstorm"
-msgstr "Snehová búrka"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1530
-msgid "snowdrift"
-msgstr "zvírený sneh"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1531
-msgid "drifting snow"
-msgstr "zvírený sneh"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1532
-msgid "wintry Mix"
-msgstr "mrznúci dážď"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1533
-#: addon\globalPlugins\Weather_Plus\__init__.py:1534
-msgid "ice to rain"
-msgstr "dážď s ľadom"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1535
-msgid "ice"
-msgstr "poľadovica"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1536
-msgid "blizzard"
-msgstr "snehová búrka"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1537
-msgid "blowing snow"
-msgstr "Sneženie s prudkým vetrom"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1538
-msgid "snow"
-msgstr "sneženie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1539
-msgid "light rain with thunder"
-msgstr "slabý dážď s hrmením"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1540
-msgid "few showers"
-msgstr "niekoľko prehánok"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1541
-msgid "heavy showers"
-msgstr "silné prehánky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1542
-msgid "heavy thunderstorms"
-msgstr "silné búrky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1543
-msgid "heavy thunderstorm"
-msgstr "silná búrka"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1544
-msgid "lightning"
-msgstr "blýskanie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1545
-msgid "isolated clouds"
-msgstr "ojedinelé mraky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1546
-msgid "partly cloudy"
-msgstr "čiastočne oblačno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1547
-msgid "partly bright"
-msgstr "čiastočne jasno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1548
-msgid "showers early"
-msgstr "ranné prehánky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1549
-#: addon\globalPlugins\Weather_Plus\__init__.py:1550
-msgid "light rain"
-msgstr "slabý dážď"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1551
-msgid "heavy rain"
-msgstr "hustý dážď"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1552
-msgid "isolated showers"
-msgstr "ojedinelé prehánky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1553
-msgid "isolated thunderstorms"
-msgstr "ojedinelé búrky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1554
-msgid "isolated thundershowers"
-msgstr "ojedinelé prehánky s hrmením"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1555
-msgid "mostly cloudy"
-msgstr "väčšinou oblačno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1556
-msgid "mostly dry"
-msgstr "väčšinou sucho"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1557
-msgid "mostly clear"
-msgstr "väčšinou jasno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1558
-msgid "clearing"
-msgstr "vyjasnenie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1559
-msgid "no rain"
-msgstr "žiadny dážď"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1560
-msgid "sleet"
-msgstr "dážď so snehom"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1561
-msgid "blowing dust"
-msgstr "poletujúci prach"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1562
-msgid "widespread dust"
-msgstr "väčšinou prach"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1563
-msgid "low drifting sand"
-msgstr "nízko poletujúci piesok"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1564
-msgid "sandstorm"
-msgstr "piesočná búrka"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1565
-msgid "sand storm"
-msgstr "piesočná búrka"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1566
-msgid "dust"
-msgstr "prach"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1567
-msgid "sand"
-msgstr "piesok"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1568
-msgid "thundery showers"
-msgstr "prehánky s hrmením"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1569
-msgid "thundershowers"
-msgstr "prehánky s hrmením"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1570
-msgid "scattered thunderstorms"
-msgstr "miestami búrky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1571
-msgid "scattered showers"
-msgstr "ojedinelé prehánky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1572
-msgid "thunderstorms"
-msgstr "búrky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1573
-msgid "thunderstorm"
-msgstr "búrka"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1574
-msgid "storm"
-msgstr "búrka"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1575
-msgid "hail"
-msgstr "krupobitie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1576
-msgid "foggy"
-msgstr "hmlisto"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1577
-msgid "fog"
-msgstr "hmla"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1578
-msgid "haze"
-msgstr "opar"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1579
-msgid "mist"
-msgstr "hmla"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1580
-msgid "clear"
-msgstr "jasno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1581
-msgid "fair"
-msgstr "pekne"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1582
-msgid "fine"
-msgstr "pekne"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1583
-msgid "overcast"
-msgstr "zamračené"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1584
-msgid "light showers"
-msgstr "slabé prehánky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1585
-msgid "light drizzle"
-msgstr "slabé mrholenie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1586
-msgid "freezing rain"
-msgstr "mrznúci dážď"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1587
-msgid "frequent showers"
-msgstr "časté prehánky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1588
-msgid "rain shower"
-msgstr "dažďová prehánka"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1589
-msgid "rain"
-msgstr "dážď"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1590
-msgid "freezing drizzle"
-msgstr "mrznúce mrholenie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1591
-msgid "showers"
-msgstr "prehánky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1592
-msgid "drizzle"
-msgstr "mrholenie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1593
-msgid "dry"
-msgstr "sucho"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1594
-msgid "mild"
-msgstr "mierny"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1595
-msgid "clouds"
-msgstr "mraky"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1596
-msgid "cloudy"
-msgstr "oblačno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1597
-msgid "mostly sunny"
-msgstr "väčšinou slnečno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1598
-msgid "sunny"
-msgstr "slnečno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1599
-msgid "sun"
-msgstr "slnko"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1600
-msgid "bright"
-msgstr "jasno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1601
-msgid "thunder"
-msgstr "hrmenie"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1602
-msgid "shower"
-msgstr "prehánka"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1603
-msgid "breezy"
-msgstr "veterno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1604
-msgid "blustery"
-msgstr "búrlivý"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1605
-msgid "windy"
-msgstr "veterno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1606
-msgid "wind"
-msgstr "vietor"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1607
-msgid "flurries"
-msgstr "prívaly dažďa"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1608
-msgid "late"
-msgstr "neskôr"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1609
-msgid "early"
-msgstr "ranné"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1610
-msgid "isolated"
-msgstr "ojedinelé"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1611
-msgid "shallow fog"
-msgstr "slabá hmla"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1612
-msgid "heavy"
-msgstr "silný"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1613
-msgid "cold"
-msgstr "chladno"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1614
-msgid "hot"
-msgstr "horúco"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:1662
+#: __init__.py:1661 __init__.py:1877 __init__.py:2069
+msgid "Sorry, the city is not set!"
+msgstr "Ľutujeme, mesto nie je nastavené!"
+
+#: __init__.py:1667 __init__.py:2976 __init__.py:3158 __init__.py:3593
+#: __init__.py:3728 __init__.py:5405
+msgid "Please wait..."
+msgstr "Prosím čakajte ..."
+
+#: __init__.py:1710
 msgid "Sorry, it was not possible to load the most recent update!"
-msgstr "Nebolo však možné overiť meno zodpovedajúceho mesta!"
+msgstr "Nepodarilo sa načítať aktualizáciu!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1663
+#: __init__.py:1711
 msgid "Please try again later."
 msgstr "Skúste neskôr, prosím."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1710
-#: addon\globalPlugins\Weather_Plus\__init__.py:1711
+#: __init__.py:1754 __init__.py:1755
 msgid "meters per second"
 msgstr "metrov za sekundu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1758
-msgid "Sorry, the woeID set is not valid or contains incomplete data!"
-msgstr "Prepáčte, nastavený woeID nie je platný, alebo obsahuje neúplné údaje!"
+#: __init__.py:1794
+msgid "Sorry, the city set is not valid or contains incomplete data!"
+msgstr "Je nám ľúto, sada miest nie je platná alebo obsahuje neúplné údaje!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "north"
 msgstr "severu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "north northeast"
-msgstr "severu až severovýchodu"
+msgstr "sever až severovýchod"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "northeast"
-msgstr "severovýchodu"
+msgstr "severovýchod"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "east northeast"
-msgstr "východu až severovýchodu"
+msgstr "východ až severovýchod"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "east"
 msgstr "východu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "east southeast"
 msgstr "východu až juhovýchodu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "southeast"
 msgstr "juhovýchodu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1766
+#: __init__.py:1802
 msgid "south southeast"
 msgstr "juhu až juhovýchodu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "south"
 msgstr "juhu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "south southwest"
 msgstr "juhu až juhozápadu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "southwest"
 msgstr "juhozápadu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "west southwest"
 msgstr "západu až juhozápadu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "west"
 msgstr "západu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "west northwest"
 msgstr "západu až severozápadu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "northwest"
 msgstr "severozápadu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1767
+#: __init__.py:1803
 msgid "north northwest"
 msgstr "severu až severozápadu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1783
+#: __init__.py:1820
 msgid ""
 "Is not working properly, contains incomplete data or has been removed from "
-"the database of"
-msgstr ""
-"Nepracuje správne, obsahuje neúplné údaje, alebo bol odobratý z databázy"
+"the"
+msgstr "Nepracuje správne, obsahuje neúplné údaje alebo bol odstránený"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1785
-#: addon\globalPlugins\Weather_Plus\__init__.py:2550
+#: __init__.py:1822 __init__.py:2897
 msgid "It could be a temporary problem and you may wait a while '..."
 msgstr "Môže to byť dočasný problém, chvíľu počkajte !!!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1786
+#: __init__.py:1823
 msgid "Do you want to delete it from your list?"
-msgstr "Chcete to vymazať zo zoznamu"
+msgstr "Chcete vymazať zo zoznamu?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1847
+#: __init__.py:1894
+msgid "Chance of rain"
+msgstr "Možnosť dažďa"
+
+#: __init__.py:1895
+msgid "Chance of snow"
+msgstr "Možnosť sneženia"
+
+#: __init__.py:1940
+msgid "Wind speed"
+msgstr "Rýchlosť vetra"
+
+#: __init__.py:1941
+msgid "Direction"
+msgstr "Smer"
+
+#: __init__.py:1942
+msgid "Wind direction"
+msgstr "Smer vetra"
+
+#: __init__.py:1943
+msgid "Wind gusts"
+msgstr "Nárazy vetra"
+
+#: __init__.py:1944
+msgid "Cloudiness"
+msgstr "Oblačnosť"
+
+#: __init__.py:1945
+msgid "Precipitation"
+msgstr "Zrážky"
+
+#: __init__.py:1946
+msgid "Humidity"
+msgstr "Vlhkosť"
+
+#: __init__.py:1947
+msgid "Visibility"
+msgstr "Viditeľnosť"
+
+#: __init__.py:1966
+msgid "Hourly forecast for"
+msgstr "Hodinová predpoveď pre"
+
+#: __init__.py:1991
 msgid "Provides the current temperature and weather conditions."
-msgstr "Poskytuje informácie o aktuálnej teplote a stave počasia."
+msgstr "Oznámy aktuálne počasie."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1858
+#: __init__.py:2003
+#, python-format
 msgid ""
-"Provides the weather forecast and current temperature for 24 hours and the "
-"next 9 days."
+"If pressed once, announce the weather forecast and current temperature for "
+"24 hours and the next %d days. If pressed twice announce the hourlyforecast "
+"temperature and weather conditions."
 msgstr ""
-"Poskytuje informácie o predpovedi počasia a aktuálnej teplote na 24 hodín a "
-"9 nasledujúcich dní."
+"Ak stlačíte jedenkrát, oznámi predpoveď počasia a aktuálnu teplotu na 24 "
+"hodín a ďalších% d dní. Ak stlačíte dvakrát, oznámi hodinovú predpovedanú "
+"teplotu a poveternostné podmienky."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1866
+#: __init__.py:2011
 msgid "Sorry, no list available!"
 msgstr "Žiadny zoznam nie je dostupný!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1879
+#: __init__.py:2044
 msgid "Allows you to set a temporary city."
 msgstr "Umožňuje nastaviť dočasný kód mesta."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1893
+#: __init__.py:2058
 msgid "Scale of temperature measurement set into"
-msgstr "Jednotky merania teploty nastavené na"
+msgstr "Jednotky merania teploty"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1895
+#: __init__.py:2060
 msgid "Allows you to set a temporary scale of temperature mesurement."
 msgstr "Umožňuje nastaviť dočasné jednotky merania teploty."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1916
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
+#: __init__.py:2090
 msgid "at"
 msgstr "v"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1919
+#: __init__.py:2093
 msgid "Last update of the current weather report"
-msgstr "Posledná aktualizácia súčasnej správy o počasí"
+msgstr "Posledná aktualizácia dát "
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1921
+#: __init__.py:2095
 msgid "Announces the date of the last update of the weather report."
-msgstr "Ohlasuje dátum poslednej aktualizácie súčasnej správy o počasí."
+msgstr "Oznamuje dátum poslednej aktualizácie súčasnej správy o počasí."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1937
+#: __init__.py:2155
 msgid "Open the Weather Plus settings dialog."
-msgstr "Otvoriť dialóg nastavenia doplnku Weather Plus"
+msgstr "Otvorí dialóg nastavení doplnku Počasie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1972
+#: __init__.py:2197
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast, f5: volume controls."
 msgstr ""
-"f1: nápoveda o umiestnení, f2: posledný výber TAB, f3: zoznam a edit pole, "
-"f4: kontrola dĺžky predpovede počasia, f5 ovládanie hlasitosti."
+"f1: Pomocník, f2: Oznámy aktuálne vybratú záložku, f3: presunie kurzor na "
+"editačné pole alebo zoznam, f4: Nastaví dĺžku predpovede počasia, F5: "
+"Nastavenie úrovne hlasitosti."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1973
+#: __init__.py:2198
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast."
 msgstr ""
-"f1: nápoveda o umiestnení, f2: posledný výber TAB, f3: zoznam a edit pole, "
-"f4: kontrola dĺžky predpovede počasia."
+"f1: Pomocník, f2: Oznámy aktuálne vybratú záložku, f3: presunie kurzor na "
+"editačné pole alebo zoznam, f4: Nastaví dĺžku predpovede počasia."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2015
+#: __init__.py:2241
 msgid "Test"
-msgstr "Testovanie"
+msgstr "otestovať"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2016
+#: __init__.py:2242
 msgid "Details"
 msgstr "Podrobnosti o meste"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2017
+#: __init__.py:2243
 msgid "Define"
-msgstr "Definovať"
+msgstr "Nastavenie zvukových efektov"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2018
+#: __init__.py:2244
 msgid "Add"
 msgstr "Pridať"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2020
+#: __init__.py:2246
 msgid "Remove"
-msgstr "Odobrať"
+msgstr "odstrániť"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2021
+#: __init__.py:2247
 msgid "Rename"
 msgstr "Premenovať"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2047
+#: __init__.py:2273
 msgid "&Import new cities..."
-msgstr "&Importovať nové kódy miest a krajín ..."
+msgstr "&Importovať..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2048
+#: __init__.py:2274
 msgid "&Export your cities..."
-msgstr "&Exportovať vlastné kódy miest a krajín ..."
+msgstr "&Exportovať..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2060
+#: __init__.py:2275
+msgid "&hourlyforecast setting..."
+msgstr "& nastavenie hodinovej predpovede ..."
+
+#: __init__.py:2290
 msgid "Scale of temperature measurement:"
 msgstr "Jednotky merania teploty:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2068
+#: __init__.py:2298
 msgid "Degrees shown as:"
 msgstr "Zobraziť stupne ako:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2071
+#: __init__.py:2301
 msgid "C - F - K"
 msgstr "C - F - K"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2072
-msgid "Don't specify"
-msgstr "Neurčovať"
+#: __init__.py:2302
+msgid "Unspecified"
+msgstr "nešpecifikované"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2078
+#: __init__.py:2310
 msgid "Weather Forecasts up to days:"
-msgstr "Predpoveď na dnešok je:"
+msgstr "Predpoveď počasia na dnes je:"
 
-#. check boxes
-#: addon\globalPlugins\Weather_Plus\__init__.py:2086
+#: __init__.py:2321
+msgid "API response language:"
+msgstr "API zodpovedajúceho jazyka:"
+
+#: __init__.py:2330
 msgid ""
 "&Copy the weather report and weather forecast, including city details to "
 "clipboard"
 msgstr ""
-"&Kopírovať správu o počasí vr. predpovede a podrobnosti o meste do schránky"
+"&kopírovať predpoveď počasia, aktuálne počasie a informácie o meste do "
+"schránky"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2091
+#: __init__.py:2335
 msgid "Enable &audio effects (only for the current weather conditions)"
-msgstr "&Zapnúť zvukové efekty (Len pre aktuálny stav počasia)"
+msgstr "Predpoveď oznamovať aj &Zvukom"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2094
+#: __init__.py:2338
 msgid "Use only &weather effects"
-msgstr "Použite len & efekty počasia"
+msgstr "Neprehrávať zvuky &Prostredia"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2099
+#: __init__.py:2343
 msgid "General audio volume"
-msgstr "Všeobecné nastavenie hlasitosti zvuku"
+msgstr "Predvolená hlasitosť zvukových efektov"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2100
+#: __init__.py:2344
 msgid "Current audio volume"
-msgstr "Aktuálna hlasitosť zvuku"
+msgstr "Aktuálna hlasitosť zvukových efektov"
 
-#. check boxes
-#: addon\globalPlugins\Weather_Plus\__init__.py:2131
+#: __init__.py:2376
 msgid "Enable &help buttons in the settings window"
-msgstr "Zapnúť nápovedné popisk&y prvkov v okne pre nastavenie"
+msgstr "Povoliť texty Pomocníka v oknách s &nastaveniami"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2138
-msgid "Read &wind informations"
-msgstr "&Ohlasovať informácie o vetre"
+#: __init__.py:2383
+msgid "Read &wind information"
+msgstr "Oznamovať po&veternostné podmienky"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2143
+#: __init__.py:2388 __init__.py:5810
 msgid "Add wind directi&on"
-msgstr "P&ridať smer vetra"
+msgstr "Oznamovať &smer vetra"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2147
+#: __init__.py:2392 __init__.py:5806
 msgid "Add wi&nd speed"
-msgstr "Pridať rýc&hlosť vetra"
+msgstr "Oznamovať &rýchlosť vetra"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2151
+#: __init__.py:2396
 msgid "Add speed in &meters per second of the wind"
-msgstr "Pridať rýchlosť vetra v &metroch za sekundu"
+msgstr "Oznamovať rýchlosť vetra v &metroch za sekundu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2155
+#: __init__.py:2400 __init__.py:5814
+msgid "Add wind &gust speed"
+msgstr "Pridajte rýchlosť a nárazy vetra"
+
+#: __init__.py:2404
 msgid "Add perceived &temperature"
-msgstr "Pridať &pocitovú teplotu"
+msgstr "Oznamovať pocitovú &teplotu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2160
-msgid "&Read atmospherical informations"
-msgstr "Ohlasovať &atmosférické informácie/tlak vlhkosť)"
+#: __init__.py:2409
+msgid "&Read atmospherical information"
+msgstr "Oznamovať &atmosferické informácie (tlak, vlhkosť...)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2165
+#: __init__.py:2414 __init__.py:5822
 msgid "Add humidity va&lue"
-msgstr "Pridať hod&notu vlhkosti"
+msgstr "Oznamovať vl&hkosť"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2169
+#: __init__.py:2418 __init__.py:5826
 msgid "Add &visibility value"
-msgstr "Pridať hodnotu &viditeľnosti"
+msgstr "Oznamovať vi&diteľnosť"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2173
+#: __init__.py:2422 __init__.py:5818
+msgid "Add cloudiness &value"
+msgstr "Pridajte &hodnotu oblačnosti"
+
+#: __init__.py:2426 __init__.py:5830
+msgid "Add precipitation &value"
+msgstr "Pridajte hodnotu zrážok"
+
+#: __init__.py:2430 __init__.py:5834
+msgid "Add &ultraviolet radiation value"
+msgstr "Pridajte hodnotu ultrafialového žiarenia"
+
+#: __init__.py:2434
 msgid "Add atmospheric &pressure value"
-msgstr "Pridať hodnotu atmos&ferického tlaku"
+msgstr "Oznamovať hodnotu Atmos&ferického tlaku"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2177
+#: __init__.py:2438
 msgid "Indicates the atmospheric pressure in millimeters of mercur&y (mmHg)"
-msgstr "Oznamuje v milimetro&ch ortuti atmosférický tlak(mmHg)"
+msgstr "oznamovať atmosferický tlak v milimetroch ortuti (mmH&g)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2181
-msgid "Add status of &barometric pressure"
-msgstr "Pridať stav &barometrického tlaku"
+#: __init__.py:2443
+msgid "Read a&stronomical information"
+msgstr "Oznamovať astronomické inf&ormácie (východ / západ slnka a pod.)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2186
-msgid "Read a&stronomical informations"
-msgstr "Ohla&sovať astronomické informácie (východ / západ slnka)"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2190
+#: __init__.py:2447
 msgid "Enable reading of the hours in &24-hour format"
-msgstr "Povoliť ohlasovanie času v &24 hodinovom formáte"
+msgstr "Používať &24-hodinový formát"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2195
+#: __init__.py:2452
 msgid "Use the comma to separate decimals, example (4,&15)"
-msgstr "Použiť čiarku na oddeľovanie desatinných čísel, príklad (4,&15)"
+msgstr "Desatinné čísla oddeľovať čiarkou (1&,15)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2199
+#: __init__.py:2456
+msgid "&Displays output in a window"
+msgstr "&Zobrazí výstup v okne"
+
+#: __init__.py:2460
 msgid "Check for &upgrade"
-msgstr "Skontro&lovať vyššiu verziu..."
+msgstr "Kontrolovať dost&upnosť novej verzie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2227
-msgid ""
-"Testing the validity of city woeID entry and find the name of city assigned, "
-"or viceversa."
-msgstr ""
-"Testovanie platnosti vstupu mesta WOEID a hľadanie názvu prideleného mesta,"
-"alebo naopak."
+#: __init__.py:2487
+msgid "Test the city validity  and find the data of it."
+msgstr "Otestujte platnosť mesta a nájdite jeho údaje."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2228
-msgid "Displays information on the current city."
-msgstr "Zobrazí informácie o aktuálnom meste."
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2229
-msgid "Allows you to define the area, in order to adapt the sound effects."
-msgstr ""
-"Umožňuje definovať oblasť, aby jej bolo možné prispôsobiť zvukové efekty."
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2230
+#: __init__.py:2488
 msgid "Add the current city into your list."
-msgstr "Pridajte aktuálne mesto do zoznamu."
+msgstr "Pridá aktuálne mesto do zoznamu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2231
+#: __init__.py:2489
+msgid "Displays information about the current city."
+msgstr "Zobrazuje informácie o aktuálnom meste."
+
+#: __init__.py:2490
+msgid "Allows you to define the area, in order to adapt the sound effects."
+msgstr "Umožňuje definovať oblasť na použitie zvukových efektov."
+
+#: __init__.py:2491
 msgid ""
 "Presets the current city as the default, will be used every time you restart "
 "the plugin."
 msgstr ""
-"Prednastaví aktuálne mesto ako predvolené, čo sa použije pri každom reštarte "
-"pluginu."
+"Nastaví Aktuálne mesto ako predvolené. Počasie pre toto mesto bude dostupné "
+"vždy po reštarte doplnku."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2232
+#: __init__.py:2492
 msgid "Delete  the current city from your list."
-msgstr "Odstráňte aktuálne mesto zo zoznamu."
+msgstr "Odstráňi aktuálne mesto zo zoznamu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2233
+#: __init__.py:2493
 msgid "Rename the current city."
-msgstr "Premenujte aktuálne mesto."
+msgstr "Premenuje aktuálne mesto."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2234
+#: __init__.py:2494
 msgid ""
 "Permits to incorporate in your list new cities importing them from another "
 "list with the extension *.zipcodes; you can select the city you want to "
 "import, by turning on the check box associated."
 msgstr ""
-"Umožňuje zahrnúť do zoznamu nové mestá, ktoré sú importované z iného zoznamu "
-"z rozšírenia  * .zipcodes; zapnutím začiarkavacieho poľa môžete vybrať "
-"mesto, ktoré chcete importovať."
+"Umožňuje zahrnúť do zoznamu nové mestá, ktoré importujete zo súboru *."
+"zipcodes. Začiarknutím príslušného políčka môžete vybrať mestá, ktoré chcete "
+"importovať."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2235
+#: __init__.py:2495
 msgid "Permits to save your list of cities in a specified path."
-msgstr "Umožní uložiť zoznam miest do určeného umiestnenia."
+msgstr "Uloží zoznam miest do súboru."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2326
+#: __init__.py:2496
+msgid "Allows you to choose the contents of the hourly forecast report."
+msgstr "Umožní zvoliť obsah hodinovej predpovede"
+
+#: __init__.py:2603
 msgid "You can enter or search for a city"
 msgstr "Môžete zadať alebo vyhľadať mesto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2327
-msgid "By city woeID: 715399"
-msgstr "Podľa WOEID mesta: 715399"
+#: __init__.py:2604
+msgid "By Latitude and Longitude: 48.8567,2.3508"
+msgstr "Podľa zemepisnej šírky a dĺžky: 48,8677,2,3508"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2328
-msgid "By only city name: Ferrara"
-msgstr "Iba názov mesta: Ferrara"
+#: __init__.py:2605
+msgid "By City name: Paris"
+msgstr "Podľa názvu mesta: Paris"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2329
-msgid "By state or region and city name: Emilia Romagna Ferrara"
-msgstr "Podľa štátu alebo regiónu a názvu mesta: Emilia Romagna Ferrara"
+#: __init__.py:2606
+msgid "By City name and country: Toronto,Canada"
+msgstr "Podľa názvu mesta a krajiny: Toronto, Canada"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2330
-msgid "By city name and country: Ferrara,it"
-msgstr "Podľa názvu mesta a krajiny: kód Ferrara"
+#: __init__.py:2607
+msgid "Or Toronto,CA"
+msgstr "Alebo Toronto,CA"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2331
-msgid "By postal code: 44100,it"
-msgstr "Podľa PSČ mesta: 44100,it"
+#: __init__.py:2608
+msgid "By City name and region: Toronto,Ontario"
+msgstr "Podľa názvu mesta a regiónu: Toronto, Ontario"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2332
-msgid "By geographic coordinates: latitude, longitude"
-msgstr "Podľa zemepisných súradníc: zemepisná šírka, zemepisná dĺžka"
+#: __init__.py:2609
+msgid "By US zip: 10001"
+msgstr "Podľa amerického zipu: 10001"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2333
+#: __init__.py:2610
+msgid "By UK postcode: SW1"
+msgstr "Podľa britského poštového smerovacieho čísla: SW1"
+
+#: __init__.py:2611
+msgid "By Canada postal code: G2J"
+msgstr "Podľa kanadského poštového smerovacieho čísla: G2J"
+
+#: __init__.py:2612
+msgid "By metar:<metar code>: metar:EGLL"
+msgstr "Podľa metar:<metar code>: metar:EGLL"
+
+#: __init__.py:2613
+msgid "By iata:<3 digit airport code>: iata:DXB"
+msgstr "Podľa iata:<3 číselný kód letiska>: iata:DXB"
+
+#: __init__.py:2614
+msgid "By auto:ip IP lookup: auto:ip"
+msgstr "Podľa auto:ip IP lookup: auto:ip"
+
+#: __init__.py:2615
+msgid "By IP address (IPv4 and IPv6 supported): 100.0.0.1"
+msgstr "Podľa adresy IP (podporované protokoly IPv4 a IPv6): 100.0.0.1"
+
+#: __init__.py:2616
+msgid "if there will be cities with the same name, will be listed"
+msgstr "Mestá s rovnakým názvom budú uvedené"
+
+#: __init__.py:2617
+msgid "By default, confirming a selection, is used the postal code"
+msgstr ""
+"V predvolenom nastavení sa ako potvrdenie výberu používa poštové smerovacie "
+"číslo"
+
+#: __init__.py:2618
+msgid ""
+"If the postal code is not valid, will be used a text string: city, state, "
+"region"
+msgstr "Ak PSČ nie je platné, použije sa textový reťazec: mesto, štát, región"
+
+#: __init__.py:2619
+msgid "You can indicate how to proceed by prefixing the following commands"
+msgstr "Predvoľbou nasledujúcich príkazov môžete určiť, ako postupovať"
+
+#: __init__.py:2620
+msgid ""
+"Direct (cities with the same name, will not listed), by typing D:City: D:"
+"Paris"
+msgstr ""
+"Priame (mestá s rovnakým názvom, ktoré nebudú uvedené), zadaním D: Mesto: D: "
+"Paris"
+
+#: __init__.py:2621
+msgid "Geographic coordinates, by typing G:City: G:Venezia"
+msgstr "Geografické súradnice, zadaním G: Mesto: G: Venezia"
+
+#: __init__.py:2622
+msgid "Text string, by typing T:City: T:Bologna"
+msgstr "Textový reťazec zadaním T: Mesto: T: Bologna"
+
+#: __init__.py:2623
 msgid "If the city is not found"
-msgstr "Ak je mesto nenájdené"
+msgstr "Ak sa nepodarilo nájsť mesto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2334
+#: __init__.py:2624
+msgid "Try to reverse the order in the search key"
+msgstr "Pokúste sa obrátiť poradie vyhľadávania"
+
+#: __init__.py:2625
 msgid "Try with or without the country of origin"
-msgstr "Skúste s alebo bez krajiny pôvodu"
+msgstr "Skúste zadať alebo naopak vynechať názov krajiny"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2335
-msgid "Try to merge the name with hyphens, or separate it with spaces"
-msgstr "Skúste rozdeliť názov spojovníkom alebo medzerou"
+#: __init__.py:2626
+msgid "Try to merge the name with hyphens, or separate it with separator"
+msgstr "Pokúste sa zlúčiť meno so spojovníkmi alebo ho oddeľte oddeľovačom"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2336
+#: __init__.py:2627
 msgid "Try deleting apostrophes"
-msgstr "Skúste odstrániť apostrofy"
+msgstr "Skúste odstrániť znak apostrof"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2337
+#: __init__.py:2628
 msgid "Try changing the vowels accented with normal vowels"
-msgstr "Skúste zmeniť samohlásky obvyklými samohláskami"
+msgstr "Skúste zmeniť prízvučné samohlásky obvyklými samohláskami"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2338
+#: __init__.py:2629
+msgid "Try to change in English some parts"
+msgstr "Zadajte názov v angličtine"
+
+#: __init__.py:2630
 msgid "Try with a closest location"
-msgstr "Skúste s najbližším miestom"
+msgstr "Skúste iné najbližšie miesto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2340
+#: __init__.py:2633
 msgid "Help placing"
-msgstr "Nápoveda s umiestnením"
+msgstr "Pomocník"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2432
+#: __init__.py:2730
 msgid "No sound effect in memory!"
-msgstr "Žiadny zvukový efekt v pamäti!"
+msgstr "Žiadne zvukové efekty!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2433
+#: __init__.py:2731
 msgid "I can't reproduce the sound."
-msgstr "Nemôžem opakovať zvuk."
+msgstr "Nemôžem prehrať zvuk."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2526
+#: __init__.py:2827
+msgid "Choose search key for"
+msgstr "Vyberte vyhľadávací kľúč pre"
+
+#: __init__.py:2847
+msgid "Unfortunately I could not recover enough data to find the city."
+msgstr "Bohužiaľ sa nepodarilo získať dostatok údajov na nájdenie mesta."
+
+#: __init__.py:2848
+msgid "Do I try anyway?"
+msgstr "Mám to skúšať aj tak?"
+
+#: __init__.py:2871
 msgid "not found! Press F1 for help on entering data."
-msgstr "Nenájdené! Stlačte F1 pre pomoc pri zadávaní dát"
+msgstr "Nenájdené! Stlačte F1 pre pomoc pri zadávaní dát."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2548
+#: __init__.py:2895
 msgid "Is not working properly or has been removed from the database of"
-msgstr "Nepracuje správne, alebo bol odobratý z databázy"
+msgstr "Nepracuje správne, alebo bol odstránený z databázy"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2552
+#: __init__.py:2899
 msgid "Is no longer valid!"
 msgstr "Už nie je platný!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2582
+#: __init__.py:2932
 msgid "This option requires the installation of some audio effects"
 msgstr "Táto voľba vyžaduje inštaláciu zvukových efektov"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2583
+#: __init__.py:2933
 msgid "Do you want to install them?"
 msgstr "Chcete ich nainštalovať?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2587
+#: __init__.py:2937
 msgid "The audio effects are installed!"
 msgstr "Zvukové efekty sú nainštalované!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2588
+#: __init__.py:2938
 msgid "Would you like to update?"
 msgstr "Chcete ich aktualizovať?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2589
+#: __init__.py:2939
 msgid "Or do you want to uninstall them?"
 msgstr "Alebo ich chcete odinštalovať?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2596
+#: __init__.py:2946
 msgid "Are you sure you want to uninstall the sound effects?"
 msgstr "Naozaj chcete odinštalovať zvukové efekty?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2623
+#: __init__.py:2974
 msgid "Update in progress"
 msgstr "Prebieha aktualizácia"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2624
+#: __init__.py:2975
 msgid "Installation in progress"
 msgstr "Prebieha inštalácia"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2625
-#: addon\globalPlugins\Weather_Plus\__init__.py:2835
-#: addon\globalPlugins\Weather_Plus\__init__.py:3295
-#: addon\globalPlugins\Weather_Plus\__init__.py:3409
-#: addon\globalPlugins\Weather_Plus\__init__.py:4850
-msgid "Please wait..."
-msgstr "Prosím čakajte ..."
-
-#. Installation Complete
-#: addon\globalPlugins\Weather_Plus\__init__.py:2651
+#: __init__.py:3004
 msgid "The installation of audio effects has been completed successfully!"
-msgstr "Inštalácia zvukových efektov prebehla úspešne!"
+msgstr "Inštalácia zvukových efektov bola dokončená!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2652
+#: __init__.py:3005
 msgid "Adding folder:"
-msgstr "Pridávam zložku:"
+msgstr "Pridaný priečinok:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2654
+#: __init__.py:3007
 msgid "The upgrade of audio effects has been completed successfully!"
-msgstr "Aktualizácia zvukových efektov prebehla úspešne!"
+msgstr "Aktualizácia zvukových efektov bola dokončená!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2659
+#: __init__.py:3014
 msgid "These sound effects are subject to change by the author."
-msgstr "Tieto zvukové efekty môže autor zmeniť"
+msgstr "Tieto zvukové efekty môže autor zmeniť."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2660
+#: __init__.py:3015
 msgid "Disable and re-enable this option in order to update or uninstall them."
 msgstr ""
-"Vypnite a zapnite túto voľbu pre ich aktualizáciu alebo ich odinštalujte."
+"Vypnite a zapnite túto voľbu pre ich opätovnú inštaláciu alebo aktualizáciu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2720
+#: __init__.py:3076
 msgid "Verify that your internet connection is active, or try again later."
-msgstr "Overte funkčnosť internetového pripojenia, a opakujte neskôr."
+msgstr "Overte funkčnosť internetového pripojenia, alebo skúste neskôr."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2721
+#: __init__.py:3077
 msgid "File corrupted or not available!"
-msgstr "Súbor je poškodený, alebo nie je dostupný"
+msgstr "Súbor je poškodený, alebo nie je dostupný!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2723
-msgid "Sorry, i could not complete the installation of the sound effects!"
+#: __init__.py:3079
+msgid "Sorry, I could not complete the installation of the sound effects!"
 msgstr "Inštalácia zvukových efektov nemohla byť dokončená!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2724
+#: __init__.py:3080
 msgid "Installation Error!"
 msgstr "Chyba pri inštalácii!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2825
-msgid ""
-"The details of this city are not in the database and so I added them to the "
-"list. Try again!"
-msgstr ""
-"Podrobnosti o tomto meste nie sú v databáze a preto boli pridané do zoznamu. "
-"Skúste to znova!"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2832
+#: __init__.py:3171
 msgid "Cannot identify your location, due to insufficient data."
-msgstr "Kvôli nedostatočným dátam nemôžem lokalizovať vašu polohu"
+msgstr "Kvôli nedostatočným dátam nemôžem lokalizovať vašu polohu."
 
-#. if there is daylight saving time
-#: addon\globalPlugins\Weather_Plus\__init__.py:2865
-msgid "Daylight saving time"
-msgstr "Letný čas"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2866
-msgid "ahead"
-msgstr "dopredu"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2866
-msgid "back"
-msgstr "dozadu"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-msgid "Starts on"
-msgstr "Začína"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
-msgid "set your clock"
-msgstr "nastavte hodiny"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2869
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
-msgid "hour"
-msgstr "hodina"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2872
-msgid "Ends on"
-msgstr "Končí"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:2875
+#: __init__.py:3199
 msgid "Details of"
 msgstr "Podrobnosti o"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2878
+#: __init__.py:3202
 msgid "Place"
 msgstr "Miesto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2879
+#: __init__.py:3203
 msgid "Current local time"
 msgstr "Aktuálny miestny čas"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2880
+#: __init__.py:3204
 msgid "Degrees latitude"
-msgstr "Stupňa zemepisnej šírky"
+msgstr "Zemepisná šírka"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2881
+#: __init__.py:3205
 msgid "Degrees longitude"
-msgstr "Stupňa zemepisnej dĺžky"
+msgstr "zemepisná dĺžka"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2882
+#: __init__.py:3206
 msgid "Elevation above sea level"
-msgstr "Kóta nadmorskej výšky"
+msgstr "Nadmorská výška"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2882
+#: __init__.py:3206
 msgid "meters"
 msgstr "Metrov"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2901
+#: __init__.py:3227
 msgid "Define the area for"
 msgstr "Definujte oblasť pre"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2904
+#: __init__.py:3231
 msgid "Hinterland"
-msgstr "Vnútrozemské"
+msgstr "Vnútrozemie"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2905
+#: __init__.py:3232
 msgid "Maritime area"
 msgstr "Prímorská oblasť"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2906
+#: __init__.py:3233
 msgid "Desert zone"
 msgstr "Púštna oblasť"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2907
+#: __init__.py:3234
 msgid "Arctic zone"
 msgstr "Arktická oblasť"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2908
+#: __init__.py:3235
 msgid "Mountain zone"
 msgstr "Horská oblasť"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3101
+#: __init__.py:3387
 msgid "Enter new name."
 msgstr "Zadajte nový názov."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3109
+#: __init__.py:3396
 msgid "it can't be used because it already exists!"
 msgstr "nie je možné ho použiť, pretože už existuje!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3208
+#: __init__.py:3508
 msgid "is correct"
 msgstr "Je správne"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3209
+#: __init__.py:3509
 msgid "But the name"
 msgstr "Ale zadaný názov"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3211
+#: __init__.py:3511
 msgid "already exists"
 msgstr "už existuje"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3212
+#: __init__.py:3512
 msgid "You have to change it!"
-msgstr "Je potrebné to zmeniť!"
+msgstr "Je potrebné ho zmeniť!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3213
+#: __init__.py:3513
 msgid "The city proper is"
-msgstr "Správne mesto je"
+msgstr "Správny názov je"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3215
+#: __init__.py:3515
 msgid "Want to use the suggested name?"
 msgstr "Chcete použiť navrhnutý názov?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3227
+#: __init__.py:3527
 msgid "Import cities"
 msgstr "Importovať kódy miest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3254
-msgid "Do you want to replace your list with this?"
-msgstr "Chcete nahradiť svoj zoznam týmto?"
+#: __init__.py:3545
+msgid "Empty file or not in cities format compatible!"
+msgstr "Prázdny súbor alebo nie v kompatibilnom formáte s mestami!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3255
+#: __init__.py:3551
+msgid "Do you want to replace your list with this?"
+msgstr "Chcete nahradiť svoj zoznam týmto novým zoznamom?"
+
+#: __init__.py:3552
 msgid "If you select yes, your list will be completely replaced."
 msgstr "Ak zvolíte áno, váš zoznam bude úplne nahradený."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3256
+#: __init__.py:3553
 msgid "If you select no, the new cities will be added to your list."
 msgstr "Ak zvolíte nie, nové mestá budú pridané do vášho zoznamu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3258
+#: __init__.py:3556
 msgid "Select import mode"
-msgstr "Vyberte si režim importu."
+msgstr "Vyberte režim importu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3269
+#: __init__.py:3567
 msgid "File contents"
-msgstr "Obsahy súboru"
+msgstr "obsah súboru"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3270
+#: __init__.py:3568
 msgid "cities"
 msgstr "mestá"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3273
+#: __init__.py:3571
 msgid "Activate the check boxes of the cities you want to import."
-msgstr "Začiarknite políčko kódu mesta, ktoré chcete importovať."
+msgstr "Začiarknite mestá, ktoré chcete importovať."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3294
+#: __init__.py:3592
 msgid "Importing cities in progress"
-msgstr "prebieha import kódov miest"
+msgstr "prebieha import miest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3368
+#: __init__.py:3684
 msgid "Were added"
 msgstr "Boli pridané"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3368
+#: __init__.py:3684
 msgid "new cities to the list"
-msgstr "nové kódy miest do zoznamu"
+msgstr "nové mestá do zoznamu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3369
+#: __init__.py:3685
 msgid "Have been ignored because existing"
-msgstr "boli ignorované kvôli existujúcim"
+msgstr "Boli preskočené, lebo už boli v zozname"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3370
+#: __init__.py:3686
 msgid "Content of imported list"
 msgstr "Obsah importovaného zoznamu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3371
+#: __init__.py:3687
+msgid "Containing incomplete data"
+msgstr "Obsahuje neúplné údaje"
+
+#: __init__.py:3688
 msgid "selected by the user"
-msgstr "Vybrané používateľom"
+msgstr "Vybraté používateľom"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3372
+#: __init__.py:3689
 msgid "Import finished"
-msgstr "Import bol dokončený."
+msgstr "Import dokončený"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3383
+#: __init__.py:3701
 msgid "A copy of"
 msgstr "Kópia"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3385
+#: __init__.py:3703
 msgid "It will be exported"
-msgstr "Bude exportované"
+msgstr "Bude exportovaná"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3386
+#: __init__.py:3704
 msgid "But it does not yet contain the changes you just made the list!"
-msgstr "Ale ešte neobsahuje zmeny, ktoré ste práve vykonali v zozname!"
+msgstr "Ale ešte neobsahuje zmeny, ktoré ste práve vykonali!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3387
+#: __init__.py:3705
 msgid "I proceed?"
-msgstr "Mám vykonať?"
+msgstr "Chcete pokračovať?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3392
+#: __init__.py:3711
 msgid "Export cities"
-msgstr "Exportovať kódy imest"
+msgstr "Exportovať mestá"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3407
+#: __init__.py:3726
 msgid "You can not export the same file at the same path!"
 msgstr "Nemôžete exportovať rovnaký súbor na to isté miesto!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4019
+#: __init__.py:3746
+msgid "Hourlyforecast data report values."
+msgstr "Hodnoty prehľadu údajov podľa hodinových predpovedí."
+
+#: __init__.py:3746
+msgid "Disable the data you don't want to be processed:"
+msgstr "Zakážte údaje, ktoré nechcete spracúvať:"
+
+#: __init__.py:4492
 msgid "january"
 msgstr "január"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4020
+#: __init__.py:4493
 msgid "february"
 msgstr "február"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4021
+#: __init__.py:4494
 msgid "march"
 msgstr "marec"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4022
+#: __init__.py:4495
 msgid "april"
 msgstr "apríl"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4023
+#: __init__.py:4496
 msgid "may"
 msgstr "máj"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4024
+#: __init__.py:4497
 msgid "june"
 msgstr "jún"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4025
+#: __init__.py:4498
 msgid "july"
 msgstr "júl"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4026
+#: __init__.py:4499
 msgid "august"
 msgstr "august"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4027
+#: __init__.py:4500
 msgid "september"
 msgstr "september"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4028
+#: __init__.py:4501
 msgid "october"
 msgstr "október"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4029
+#: __init__.py:4502
 msgid "november"
 msgstr "november"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4030
+#: __init__.py:4503
 msgid "december"
 msgstr "december"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4031
+#: __init__.py:4504
 msgid "Monday"
 msgstr "Pondelok"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4032
+#: __init__.py:4505
 msgid "Tuesday"
 msgstr "Utorok"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4033
+#: __init__.py:4506
 msgid "Wednesday"
 msgstr "Streda"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4034
+#: __init__.py:4507
 msgid "Thursday"
 msgstr "Štvrtok"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4035
+#: __init__.py:4508
 msgid "Friday"
 msgstr "Piatok"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4036
+#: __init__.py:4509
 msgid "Saturday"
 msgstr "Sobota"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4037
+#: __init__.py:4510
 msgid "Sunday"
 msgstr "Nedeľa"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4076
+#: __init__.py:4568
 #, python-format
-msgid "It was not possible find the acronym of %s!"
-msgstr "Nebolo možné nájsť akronym %s!"
+msgid "It was not possible find the acronym of \"%s\"!"
+msgstr "Nebolo možné nájsť skratku „% s“!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4077
-msgid ""
-"This does not allow to get the city local time, the sound effects will not "
-"be consistent."
-msgstr ""
-"To neumožňuje získať miestny čas v meste, zvukové efekty nebudú konzistentné."
+#: __init__.py:4569
+msgid "This may not allow you to get the city details."
+msgstr "To nemusí umožniť získať podrobnosti o meste."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4078
+#: __init__.py:4570
 msgid ""
 "Please report this to the author so he can add this country in database."
 msgstr "Oznámte to prosím autorovi, aby mohol túto krajinu pridať do databázy."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4079
+#: __init__.py:4571
 #, python-format
 msgid "Send an email to %s"
-msgstr "Odoslať e-mail na % s"
+msgstr "Odoslať e-mail na %s"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4080
+#: __init__.py:4572
 msgid "With  object the line below, thanks."
-msgstr "s predmetom pod čiarou, vďaka."
+msgstr "Do predmetu uveďte nasledujúci riadok:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4140
-#: addon\globalPlugins\Weather_Plus\__init__.py:4158
+#: __init__.py:4640 __init__.py:4658
 msgid "Downloaded"
 msgstr "Stiahnuté"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4141
+#: __init__.py:4641
 msgid "of"
 msgstr "z"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4176
+#: __init__.py:4679
 msgid "Find..."
-msgstr "Nájsť"
+msgstr "Vyhľadať..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4177
+#: __init__.py:4680
 msgid "Find next"
-msgstr "Nájsť ďalšie"
+msgstr "Vyhľadať nasledujúce"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4178
+#: __init__.py:4681
 msgid "Find previous"
-msgstr "Nájsť predchádzajúce"
+msgstr "Vyhľadať predchádzajújce"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4213
-msgid "Empty file or not in cities woeID format compatible!"
-msgstr "Prázdny súbor, alebo nekompatibilný formát s kódmi miest WOEID!"
-
-#: addon\globalPlugins\Weather_Plus\__init__.py:4392
+#: __init__.py:4880
 msgid "Be an error has occurred."
 msgstr "Vyskytla sa chyba."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4393
+#: __init__.py:4881
 msgid "See the log for more information."
-msgstr "Ďalšie informácie nájdete v logu."
+msgstr "Ďalšie informácie nájdete v zázname."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4394
+#: __init__.py:4882
 msgid "Error: failure writing file!"
 msgstr "Chyba pri zápise do súboru!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4499
+#: __init__.py:5026
 msgid "occurrences found"
 msgstr "nájdené výskyty"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4499
+#: __init__.py:5026
 msgid "for"
 msgstr "pre"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4501
+#: __init__.py:5028
 msgid "Choose a city."
 msgstr "Vyberte mesto."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4503
+#: __init__.py:5030
 msgid "List of availables Cities"
 msgstr "Zoznam dostupných miest"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4536
+#: __init__.py:5062
 msgid "Do not show this message again!"
-msgstr "Túto správu znovu nezobrazovať!"
+msgstr "Túto správu viac nezobrazovať!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4546
+#: __init__.py:5072
 msgid "&Install..."
 msgstr "&Inštalovať ..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4546
+#: __init__.py:5072
 msgid "Upd&ate..."
 msgstr "&Aktualizovať ..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4548
+#: __init__.py:5074
 msgid "&Close"
 msgstr "&Zavrieť"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4549
+#: __init__.py:5075
 msgid "&Uninstall..."
-msgstr "&Odinštalovať"
+msgstr "&Odinštalovať..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4627
+#: __init__.py:5177
 msgid "Type the search string"
-msgstr "Napíšte, čo chcete nájsť"
+msgstr "Napíšte text, ktorý chcete vyhľadať"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4628
-#: addon\globalPlugins\Weather_Plus\__init__.py:4678
+#: __init__.py:5177 __init__.py:5231
 msgid "Find"
-msgstr "Nájsť"
+msgstr "hľadať"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4676
+#: __init__.py:5228
 msgid "next"
-msgstr "Ďalšie"
+msgstr "Nasledujúce"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4676
+#: __init__.py:5228
 msgid "previous"
 msgstr "Predchádzajúce"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4680
+#: __init__.py:5235
 msgid "No results next for"
 msgstr "Žiadne ďalšie výsledky pre"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4680
+#: __init__.py:5235
 msgid "No previous results for"
 msgstr "Žiadne predchádzajúce výsledky pre"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4722
+#: __init__.py:5277
 msgid "&Select all"
 msgstr "&Vybrať všetko"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4724
+#: __init__.py:5279
 msgid "&Deselect all"
 msgstr "&Zrušiť výber"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4764
+#: __init__.py:5319
 msgid "not checked"
 msgstr "nezačiarknuté"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4766
+#: __init__.py:5321
 msgid "checked"
 msgstr "začiarknuté"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4770
+#: __init__.py:5325
 msgid "check box"
-msgstr "začiarkavacie pole"
+msgstr "začiarkavacie políčko"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4780
+#: __init__.py:5335
 msgid "check boxes checked"
-msgstr "začiarkávacie polia začiarknuté"
+msgstr "začiarkávacie políčka začiarknuté"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4789
+#: __init__.py:5344
 msgid "check boxes not checked"
-msgstr "začiarkávacie polia nezačiarknuté"
+msgstr "začiarkávacie políčka nezačiarknuté"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4851
+#: __init__.py:5406
 msgid "Saving in progress"
 msgstr "Priebeh ukladania"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4853
+#: __init__.py:5408
 msgid "Download canceled."
-msgstr "Sťahovanie je zrušené."
+msgstr "Sťahovanie prerušené."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4906
+#: __init__.py:5462
 msgid "&Copy to clipboard"
-msgstr "&Skopírovať do schránky"
+msgstr "&kopírovať do schránky"
 
 #: buildVars.py:23
 msgid ""
-"Adds local temperature and forecast 24 ours and prediction up to 9 days.\n"
+"Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
 msgstr ""
-"Ohlasuje aktuálnu teplotu, predpoveď počasia od 24 hod až na 9 dní a "
-"umožňuje vybrať si mesto.\n"
+"Pridá miestnu teplotu a predpoveď na 24 hodín a predpoveď až na 2 dni. \\ N\n"
 
 #: buildVars.py:24
 msgid "NVDA+w for the current bulletin.\n"
-msgstr "NVDA+w  Ohlási aktuálnu správu o počasí.\n"
+msgstr "NVDA+w  oznámy aktuálne počasie.\n"
 
 #: buildVars.py:25
 msgid ""
 "NVDA+shift+w for the prediction in the current 24 hours and prediction up to "
-"9 days.\n"
-msgstr "NVDA+shift+w Ohlási predpoveď od 24 hod až na 9 dní.\n"
+"2 days.\n"
+msgstr ""
+"NVDA+shift+w predpoveď na aktuálnych 24 hodín až na 2 dni. \\ n\n"
+"predpoveď na aktuálnych 24 hodín až na 2 dni. \\ n\n"
 
 #: buildVars.py:26
-msgid "NVDA+shift+control+w for quickly enter a temporary city.\n"
-msgstr "NVDA+shift+control+w pre rýchle zadanie dočasného mesta.\n"
+msgid ""
+"NVDA+shift+w, pressed twice provides the hourlyforecast of the weather "
+"conditions.\n"
+msgstr ""
+"NVDA+shift+w, dvojité stlačenie poskytuje hodinovú predpoveď poveternostných "
+"podmienok. \\ n\n"
 
 #: buildVars.py:27
-msgid "NVDA + shift + control + alt + w for open the Weather Plus settings.\n"
-msgstr ""
-"NVDA+shift+control+alt+w Otvorí dialóg nastavenia doplnku Weather Plus.\n"
+msgid "NVDA+shift+control+w for quickly enter a temporary city.\n"
+msgstr "NVDA+shift+ctrl+w umožní zadať dočasné mesto.\n"
 
 #: buildVars.py:28
-msgid ""
-"NVDA+alt+w announces the date of the last update of the weather report.\n"
-msgstr ""
-"NVDA+alt+w ohlási dátum poslednej aktualizácie aktuálnej správy o počasí.\n"
+msgid "NVDA + shift + control + alt + w for open the Weather Plus settings.\n"
+msgstr "NVDA+shift+ctrl+alt+w Otvorí nastavenia doplnku Počasie.\n"
 
 #: buildVars.py:29
-msgid "Shift+control+w alternates between Fahrenheit, Celsius and Kelvin.\n"
-msgstr ""
-"Shift+control+w  prepne medzi stupňami Fahrenheita, Celzia a Kelvina.\n"
+msgid ""
+"NVDA+alt+w announces the date of the last update of the weather report.\n"
+msgstr "NVDA+alt+w oznámi dátum poslednej aktualizácie dát o počasí.\n"
 
 #: buildVars.py:30
+msgid "Shift+control+w alternates between Fahrenheit, Celsius and Kelvin.\n"
+msgstr ""
+"Shift+ctrl+w  prepína oznamovanie teploty v stupňoch Fahrenheita, Celzia a "
+"Kelvina.\n"
+
+#: buildVars.py:31
 msgid ""
 "For other instructions, you can also press Add-on Help button in Add-ons "
 "manager."
-msgstr "Pre ďalšie informácie otvorte nápovedu v správcovi doplnku."
+msgstr "Pre ďalšie informácie otvorte nápovedu v správcovi doplnkov."
+
+#~ msgid "precipitation"
+#~ msgstr "dažďové zrážky"
+
+#~ msgid "Enter a City, woeId or choose one from the list, if available."
+#~ msgstr ""
+#~ "Zadajte mesto, WOEID alebo ho vyberte zo zoznamu, ak je k dispozícii."
+
+#~ msgid "The woeID"
+#~ msgstr "kód miest WOEID"
+
+#~ msgid "assigned to"
+#~ msgstr "Patrí k"
+
+#~ msgid "The cities on your list are not compatible with the Yahoo API!"
+#~ msgstr "Mestá vo vašom zozname nie sú kompatibilné s rozhraním Yahoo API!"
+
+#~ msgid "steady"
+#~ msgstr "ustálený"
+
+#~ msgid "rising"
+#~ msgstr "stúpajúci"
+
+#~ msgid "falling"
+#~ msgstr "klesajúci"
+
+#~ msgid "and the state of the barometric pressure is"
+#~ msgstr "a stav barometrického tlaku je"
+
+#~ msgid "The state of the barometric pressure is"
+#~ msgstr "Stav barometrického tlaku je"
+
+#~ msgid "Sorry, the woeID is not set!"
+#~ msgstr "Kód mesta woeID nie je nastavený!"
+
+#~ msgid "in the morning"
+#~ msgstr "Ráno"
+
+#~ msgid "in the evening"
+#~ msgstr "večer"
+
+#~ msgid " and "
+#~ msgstr " a "
+
+#~ msgid " to "
+#~ msgstr " do "
+
+#~ msgid "in the vicinity"
+#~ msgstr "V okolí"
+
+#~ msgid "tornado"
+#~ msgstr "tornádo"
+
+#~ msgid "tropical storm"
+#~ msgstr "tropická búrka"
+
+#~ msgid "hurricane"
+#~ msgstr "hurikán"
+
+#~ msgid "severe thunderstorms"
+#~ msgstr "silné búrky"
+
+#~ msgid "mixed rain and snow"
+#~ msgstr "dážď so snehom"
+
+#~ msgid "mixed rain and hail"
+#~ msgstr "dážď s krúpami"
+
+#~ msgid "mixed rain and sleet"
+#~ msgstr "dážď a zmiešaný dážď so snehom"
+
+#~ msgid "mixed snow and sleet"
+#~ msgstr "sneh a zmiešaný dážď so snehom"
+
+#~ msgid "snow flurries"
+#~ msgstr "snehová fujavica"
+
+#~ msgid "smoke"
+#~ msgstr "opar"
+
+#~ msgid "smoky"
+#~ msgstr "zahmlené"
+
+#~ msgid "sunny intervals"
+#~ msgstr "občas slnečno"
+
+#~ msgid "sunny period"
+#~ msgstr "slnečné obdobie"
+
+#~ msgid "light snow"
+#~ msgstr "slabé sneženie"
+
+#~ msgid "scattered snow showers"
+#~ msgstr "ojedinelé snehové prehánky"
+
+#~ msgid "snow showers"
+#~ msgstr "snehové prehánky"
+
+#~ msgid "snow shower"
+#~ msgstr "snehová prehánka"
+
+#~ msgid "snowstorm"
+#~ msgstr "Snehová búrka"
+
+#~ msgid "snowdrift"
+#~ msgstr "zvírený sneh"
+
+#~ msgid "drifting snow"
+#~ msgstr "zvírený sneh"
+
+#~ msgid "wintry Mix"
+#~ msgstr "mrznúci dážď"
+
+#~ msgid "ice to rain"
+#~ msgstr "dážď s ľadom"
+
+#~ msgid "ice"
+#~ msgstr "poľadovica"
+
+#~ msgid "blizzard"
+#~ msgstr "snehová búrka"
+
+#~ msgid "blowing snow"
+#~ msgstr "Sneženie s prudkým vetrom"
+
+#~ msgid "snow"
+#~ msgstr "sneženie"
+
+#~ msgid "light rain with thunder"
+#~ msgstr "slabý dážď s hrmením"
+
+#~ msgid "few showers"
+#~ msgstr "slabé prehánky"
+
+#~ msgid "heavy showers"
+#~ msgstr "silné prehánky"
+
+#~ msgid "heavy thunderstorms"
+#~ msgstr "silné búrky"
+
+#~ msgid "heavy thunderstorm"
+#~ msgstr "silná búrka"
+
+#~ msgid "lightning"
+#~ msgstr "blýskanie"
+
+#~ msgid "isolated clouds"
+#~ msgstr "ojedinelé mraky"
+
+#~ msgid "partly cloudy"
+#~ msgstr "čiastočne oblačno"
+
+#~ msgid "partly bright"
+#~ msgstr "čiastočne jasno"
+
+#~ msgid "showers early"
+#~ msgstr "ranné prehánky"
+
+#~ msgid "light rain"
+#~ msgstr "slabý dážď"
+
+#~ msgid "heavy rain"
+#~ msgstr "hustý dážď"
+
+#~ msgid "isolated showers"
+#~ msgstr "ojedinelé prehánky"
+
+#~ msgid "isolated thunderstorms"
+#~ msgstr "ojedinelé búrky"
+
+#~ msgid "isolated thundershowers"
+#~ msgstr "ojedinelé prehánky s hrmením"
+
+#~ msgid "mostly cloudy"
+#~ msgstr "väčšinou oblačno"
+
+#~ msgid "mostly dry"
+#~ msgstr "väčšinou sucho"
+
+#~ msgid "mostly clear"
+#~ msgstr "väčšinou jasno"
+
+#~ msgid "clearing"
+#~ msgstr "vyjasnenie"
+
+#~ msgid "no rain"
+#~ msgstr "žiadny dážď"
+
+#~ msgid "sleet"
+#~ msgstr "dážď so snehom"
+
+#~ msgid "blowing dust"
+#~ msgstr "poletujúci prach"
+
+#~ msgid "widespread dust"
+#~ msgstr "väčšinou prach"
+
+#~ msgid "low drifting sand"
+#~ msgstr "nízko poletujúci piesok"
+
+#~ msgid "sandstorm"
+#~ msgstr "piesočná búrka"
+
+#~ msgid "sand storm"
+#~ msgstr "piesočná búrka"
+
+#~ msgid "dust"
+#~ msgstr "prach"
+
+#~ msgid "sand"
+#~ msgstr "piesok"
+
+#~ msgid "thundery showers"
+#~ msgstr "prehánky s hrmením"
+
+#~ msgid "thundershowers"
+#~ msgstr "prehánky s hrmením"
+
+#~ msgid "scattered thunderstorms"
+#~ msgstr "miestami búrky"
+
+#~ msgid "scattered showers"
+#~ msgstr "ojedinelé prehánky"
+
+#~ msgid "thunderstorms"
+#~ msgstr "búrky"
+
+#~ msgid "thunderstorm"
+#~ msgstr "búrka"
+
+#~ msgid "storm"
+#~ msgstr "búrka"
+
+#~ msgid "hail"
+#~ msgstr "krupobitie"
+
+#~ msgid "foggy"
+#~ msgstr "hmlisto"
+
+#~ msgid "fog"
+#~ msgstr "hmla"
+
+#~ msgid "haze"
+#~ msgstr "opar"
+
+#~ msgid "mist"
+#~ msgstr "hmla"
+
+#~ msgid "clear"
+#~ msgstr "jasno"
+
+#~ msgid "fair"
+#~ msgstr "pekne"
+
+#~ msgid "fine"
+#~ msgstr "pekne"
+
+#~ msgid "overcast"
+#~ msgstr "zamračené"
+
+#~ msgid "light showers"
+#~ msgstr "slabé prehánky"
+
+#~ msgid "light drizzle"
+#~ msgstr "slabé mrholenie"
+
+#~ msgid "freezing rain"
+#~ msgstr "mrznúci dážď"
+
+#~ msgid "frequent showers"
+#~ msgstr "časté prehánky"
+
+#~ msgid "rain shower"
+#~ msgstr "dažďová prehánka"
+
+#~ msgid "rain"
+#~ msgstr "dážď"
+
+#~ msgid "freezing drizzle"
+#~ msgstr "mrznúce mrholenie"
+
+#~ msgid "showers"
+#~ msgstr "prehánky"
+
+#~ msgid "drizzle"
+#~ msgstr "mrholenie"
+
+#~ msgid "dry"
+#~ msgstr "sucho"
+
+#~ msgid "mild"
+#~ msgstr "mierny"
+
+#~ msgid "clouds"
+#~ msgstr "mraky"
+
+#~ msgid "cloudy"
+#~ msgstr "oblačno"
+
+#~ msgid "mostly sunny"
+#~ msgstr "väčšinou slnečno"
+
+#~ msgid "sunny"
+#~ msgstr "slnečno"
+
+#~ msgid "sun"
+#~ msgstr "slnko"
+
+#~ msgid "bright"
+#~ msgstr "jasno"
+
+#~ msgid "thunder"
+#~ msgstr "hrmenie"
+
+#~ msgid "shower"
+#~ msgstr "prehánka"
+
+#~ msgid "breezy"
+#~ msgstr "veterno"
+
+#~ msgid "blustery"
+#~ msgstr "búrlivý"
+
+#~ msgid "windy"
+#~ msgstr "veterno"
+
+#~ msgid "wind"
+#~ msgstr "vietor"
+
+#~ msgid "flurries"
+#~ msgstr "prívaly dažďa"
+
+#~ msgid "late"
+#~ msgstr "neskôr"
+
+#~ msgid "early"
+#~ msgstr "ranné"
+
+#~ msgid "isolated"
+#~ msgstr "ojedinelé"
+
+#~ msgid "shallow fog"
+#~ msgstr "slabá hmla"
+
+#~ msgid "heavy"
+#~ msgstr "silný"
+
+#~ msgid "cold"
+#~ msgstr "chladno"
+
+#~ msgid "hot"
+#~ msgstr "horúco"
+
+#~ msgid "Sorry, the woeID set is not valid or contains incomplete data!"
+#~ msgstr ""
+#~ "Prepáčte, nastavený woeID nie je platný, alebo obsahuje neúplné údaje!"
+
+#~ msgid ""
+#~ "Is not working properly, contains incomplete data or has been removed "
+#~ "from the database of"
+#~ msgstr ""
+#~ "Nepracuje správne, obsahuje neúplné údaje, alebo bol odobratý z databázy"
+
+#~ msgid ""
+#~ "Provides the weather forecast and current temperature for 24 hours and "
+#~ "the next 9 days."
+#~ msgstr "Oznámy aktuálne počasie a predpoveď na 24 hodín až 9 dní."
+
+#~ msgid "Add status of &barometric pressure"
+#~ msgstr "Oznamovať &barometrický tlak"
+
+#~ msgid ""
+#~ "Testing the validity of city woeID entry and find the name of city "
+#~ "assigned, or viceversa."
+#~ msgstr "Skontroluje platnosť zadaného mesta alebo WOEID."
+
+#~ msgid "Displays information on the current city."
+#~ msgstr "Zobrazí informácie o aktuálnom meste."
+
+#~ msgid ""
+#~ "You can also indicate how to proceed by prefixing the following commands"
+#~ msgstr "Nasledujúce príkazy určujú spôsob spracovania"
+
+#~ msgid "Direct (the Recursive cities they will not appear), by typing D:City"
+#~ msgstr ""
+#~ "Ak chcete zadať presný názov mesta a štandardné vyhľadávanie nezobrazuje "
+#~ "správny výsledok, skúste D:Názov. Napríklad zadanie Brat vyhľadá mesto "
+#~ "Karpinianka. Skúste D:Brat a nájdete mesto Brat v Indii."
+
+#~ msgid "Geographic coordinates, by typing G:City"
+#~ msgstr "Ak poznáte GPS súradnice, môžete ich zadať s použitím parametra G:"
+
+#~ msgid "Postal code, by typing P:City"
+#~ msgstr ""
+#~ "Ak chcete hľadať podľa poštového smerovacieho čísla, použite parameter p. "
+#~ "Napríklad: p:974 11"
+
+#~ msgid "Text string, by typing T:City"
+#~ msgstr ""
+#~ "Ak chcete vyhľadať textový reťazec, použite parameter T. Napríklad T:"
+#~ "Banska"
+
+#~ msgid ""
+#~ "The city can be preceded by the region and / or state, separated by a "
+#~ "comma or space"
+#~ msgstr "Pred mesto môžete zadať región alebo štát. Údaje oddeľujte čiarkou."
+
+#~ msgid "Australia, Queensland, Cona Creek"
+#~ msgstr "Australia, Queensland, Cona Creek"
+
+#~ msgid "By city woeID: 715399"
+#~ msgstr "Podľa WOEID mesta: 715399"
+
+#~ msgid "By only city name: Ferrara"
+#~ msgstr "Podľa názvu mesta: Ferrara"
+
+#~ msgid "By state or region and city name: Emilia Romagna Ferrara"
+#~ msgstr "Podľa štátu alebo regiónu a názvu mesta: Emilia Romagna, Ferrara"
+
+#~ msgid "By city name and country: Ferrara,it"
+#~ msgstr "Podľa názvu mesta a krajiny: Ferrara,it"
+
+#~ msgid "By postal code: 44100,it"
+#~ msgstr "Podľa PSČ mesta: 44100,it"
+
+#~ msgid "By geographic coordinates: latitude, longitude"
+#~ msgstr "Podľa zemepisných súradníc: zemepisná šírka, zemepisná dĺžka"
+
+#~ msgid "Try to merge the name with hyphens, or separate it with spaces"
+#~ msgstr "Skúste rozdeliť názov spojovníkom alebo medzerou"
+
+#~ msgid ""
+#~ "The details of this city are not in the database and so I added them to "
+#~ "the list. Try again!"
+#~ msgstr ""
+#~ "Podrobnosti o tomto meste nie sú v databáze a preto boli pridané do "
+#~ "zoznamu. Skúste to znova!"
+
+#~ msgid "It was not possible find the acronym of %s!"
+#~ msgstr "Nepodarilo sa nájsť skratku %s!"
+
+#~ msgid "This does not allow to get the city details."
+#~ msgstr "To neumožňuje získať podrobnosti o meste."
+
+#~ msgid "Empty file or not in cities woeID format compatible!"
+#~ msgstr "Prázdny súbor, alebo nekompatibilný formát s kódmi miest WOEID!"
+
+#~ msgid ""
+#~ "Adds local temperature and forecast 24 ours and prediction up to 9 days.\n"
+#~ msgstr ""
+#~ "Oznamuje aktuálne počasie a predpoveď na 24 hodín až 9 dní dopredu.\n"
+
+#~ msgid ""
+#~ "NVDA+shift+w for the prediction in the current 24 hours and prediction up "
+#~ "to 9 days.\n"
+#~ msgstr ""
+#~ "NVDA+shift+w Oznámy predpoveď počasia na 24 hodín prípadne až 9dní "
+#~ "dopredu.\n"
+
+#~ msgid "Don't specify"
+#~ msgstr "Neurčovať"
+
+#~ msgid ""
+#~ "You have installed the Weather Plus add-on which is incompatible with "
+#~ "this one. The new name of this add-on is Weather_Plus with an underscore. "
+#~ "Click OK to update it."
+#~ msgstr ""
+#~ "Nainštalovali ste doplnok Weather Plus, ktorý nie je kompatibilný s týmto "
+#~ "doplnkom. Nový názov tohto doplnku je Weather_Plus s podčiarkovníkom. "
+#~ "Kliknutím na tlačidlo OK ho aktualizujte."
+
+#~ msgid "Update confirmation"
+#~ msgstr "Potvrdenie aktualizácie"
+
+#~ msgid "Daylight saving time"
+#~ msgstr "Letný čas"
+
+#~ msgid "ahead"
+#~ msgstr "dopredu"
+
+#~ msgid "back"
+#~ msgstr "dozadu"
+
+#~ msgid "Starts on"
+#~ msgstr "Začína"
+
+#~ msgid "set your clock"
+#~ msgstr "nastavte hodiny"
+
+#~ msgid "hour"
+#~ msgstr "hodina"
+
+#~ msgid "Ends on"
+#~ msgstr "Končí"
 
 #~ msgid ""
 #~ "In&dicates the wait with a beep while you search for the latest bulletin"
@@ -1867,9 +2025,6 @@ msgstr "Pre ďalšie informácie otvorte nápovedu v správcovi doplnku."
 #~ msgstr ""
 #~ "zadajte mesto, kód mesta, geo-súradnice, alebo ho vyberte zo zoznamu, ak "
 #~ "je dostupné."
-
-#~ msgid "The cloudiness is of"
-#~ msgstr "Oblačnosť je"
 
 #~ msgid "hectopascal"
 #~ msgstr "hektopascal"
