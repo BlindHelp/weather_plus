@@ -58,13 +58,13 @@ Link:
 
 [http://sourceforge.net/projects/poedit/files/latest/download](http://sourceforge.net/projects/poedit/files/latest/download)
 
-Download poeditMadeEasy-3.1.nvda-addon for NVDA here; (Link via BlindHelp.github.io):
+Download poeditMadeEasy-3.1.nvda-addon for NVDA compatible 2021.1 here; (Link via BlindHelp.github.io):
 
-[https://blindhelp.github.io/poeditMadeEasy-3.1.nvda-addon](https://blindhelp.github.io/poeditMadeEasy-3.1.nvda-addon)
+[https://blindhelp.github.io/nvda-poeditMadeEasy-3.1-p03.nvda-addon)
 
 File name:
 
-poeditMadeEasy-3.1.nvda-addon
+nvda-poeditMadeEasy-3.1-p03.nvda-addon
 
 `3.` The manifest.ini file must be manually in  the same folder of the local language ; (not translation system).
 
@@ -261,4 +261,4 @@ End of document.
 
 --------------------------------------------------------------------------------
 
-Last revised 04 03, 2019
+Last revised 06 07, 2021

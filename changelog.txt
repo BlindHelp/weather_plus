@@ -1,0 +1,74 @@
+06-07-2021
+
+## FYI:
+
+This repository was forked from:
+https://github.com/zstanecic/weather_plus
+
+You can find this new modified repository for the Addon Weather_Plus at:
+https://github.com/BlindHelp/weather_plus
+
+# Deleted:
+
+I have deleted all the Master branch files relating to Weather_Plus who came in the root of the original weather_plus repository forked.
+I have deleted oldest readme.md, buildVars.py files.
+I have deleted oldest folders inside the addon folder.
+
+# Added:
+
+I have put all the folders and files found in the Weather_Plus8.1  addon, including the DOC-Local folders updated by Adriano.
+I have added the new Readme.md file and the BuildVars.py file modified by Adriano with its latest changes for Weather_Plus8.1.
+We only have the Master branch. I think it is not necessary to create any stable branch, much confusion in my opinion and so file conflicts are avoided as in the previous cloned weather_plus repository.
+
+# Created the new tag:
+
+git tag v8.1
+
+# Some useful git commands:
+
+git add .
+
+git commit -m "Explanatory message"
+
+git push origin stable
+or
+git push
+
+This also works for me
+
+If Adriano has decided, for example, that the version must be incremented, for example from 8.1 to 8.2, after correcting the buildVars.py file for example, change line 33 as follows:
+
+	"addon_version" : "8.1",
+
+Put in place:
+
+	"addon_version" : "8.2",
+
+tap the following command, to create the  new TAG v8.2 in our local repositori.
+
+git tag v8.2
+
+However, if we still remain in the same version as before, for example 8.1 currently, it is necessary to ignore the step before.
+
+Then delete the tag locally and then recreate it, as follows:
+
+To delete  use this command:
+
+git tag -d v8.1
+
+To recreate use this command:
+
+git tag v8.1
+
+#
+
+After building the addon with the command scons, you can clean the working directory by running the following command:
+
+scons -c
+
+To create the message file used in Poedit to send it to the ADDON WEATHER_PLUS translators, do the command:
+
+scons pot
+
+You can use this file To clean-up  the repository and be able to create the addon:
+gen_pot_and_bundle.bat
