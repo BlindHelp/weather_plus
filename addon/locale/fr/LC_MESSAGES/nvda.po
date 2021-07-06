@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
-"POT-Creation-Date: 2021-06-26 22:44+0200\n"
-"PO-Revision-Date: 2021-06-26 22:45+0200\n"
+"POT-Creation-Date: 2021-07-06 13:14+0200\n"
+"PO-Revision-Date: 2021-07-06 18:16+0200\n"
 "Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
 "Language-Team: Rémy Ruiz <remyruiz@gmail.com>\n"
 "Language: fr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 1.8.13\n"
+"X-Generator: Poedit 1.8.8\n"
 "X-Poedit-Basepath: ../../../globalPlugins/Weather_Plus\n"
 "Plural-Forms: nplurals=2; plural=(n > 1);\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -118,11 +118,11 @@ msgstr "millimètres de mercure"
 msgid "Settings"
 msgstr "Paramètres"
 
-#: __init__.py:203 __init__.py:2245
+#: __init__.py:203 __init__.py:2257
 msgid "Preset"
 msgstr "Prédéfini"
 
-#: __init__.py:203 __init__.py:3358 __init__.py:3680
+#: __init__.py:203 __init__.py:3394 __init__.py:3716
 msgid "None"
 msgstr "Aucun"
 
@@ -131,7 +131,7 @@ msgid "Enter a City or choose one from the list, if available."
 msgstr ""
 "Saisissez une Ville ou sélectionnez-en une dans la liste, si disponible."
 
-#: __init__.py:379 __init__.py:1819 __init__.py:2903 __init__.py:3508
+#: __init__.py:379 __init__.py:1830 __init__.py:2915 __init__.py:3544
 msgid "The city"
 msgstr "La ville"
 
@@ -143,10 +143,10 @@ msgstr "n'a pas été définie."
 msgid "Will be used in temporary mode!"
 msgstr "Sera utilisé en mode temporaire !"
 
-#: __init__.py:384 __init__.py:412 __init__.py:474 __init__.py:1825
-#: __init__.py:2733 __init__.py:2941 __init__.py:2946 __init__.py:3016
-#: __init__.py:3396 __init__.py:3517 __init__.py:3707 __init__.py:3726
-#: __init__.py:4574
+#: __init__.py:384 __init__.py:412 __init__.py:474 __init__.py:1836
+#: __init__.py:2745 __init__.py:2953 __init__.py:2958 __init__.py:3028
+#: __init__.py:3432 __init__.py:3553 __init__.py:3743 __init__.py:3762
+#: __init__.py:4611
 msgid "Notice!"
 msgstr "Attention !"
 
@@ -191,7 +191,8 @@ msgstr ""
 "Désolé, je ne peux pas recevoir les données, des problèmes avec la page de "
 "téléchargement, réessayez plus tard  s'il vous plaît !"
 
-#: __init__.py:574 __init__.py:1686 __init__.py:2864 __init__.py:3186
+#: __init__.py:574 __init__.py:1697 __init__.py:2876 __init__.py:3187
+#: __init__.py:3218
 msgid ""
 "Sorry, I can not receive data, verify that your internet connection is "
 "active, or try again later!"
@@ -219,7 +220,7 @@ msgstr "Voulez-vous la télécharger et l'installer ?"
 msgid "Sorry, at the time an update is not available."
 msgstr "Désolé, aucune mise à jour disponible."
 
-#: __init__.py:1071 __init__.py:2872 __init__.py:5231
+#: __init__.py:1071 __init__.py:2884 __init__.py:5268
 msgid "not found!"
 msgstr "pas trouvé !"
 
@@ -251,203 +252,203 @@ msgstr "Je ne peux pas enregistrer les paramètres !"
 msgid "invalid name"
 msgstr "Nom invalide"
 
-#: __init__.py:1421
+#: __init__.py:1422
 msgid "The cloudiness is"
 msgstr "La nébulosité est"
 
-#: __init__.py:1422
+#: __init__.py:1423
 msgid "The precipitation is"
 msgstr "La précipitation est"
 
-#: __init__.py:1466
+#: __init__.py:1467
 msgid "the weather report is currently"
 msgstr "il fait actuellement"
 
-#: __init__.py:1467 __init__.py:1507 __init__.py:1612 __init__.py:1639
-#: __init__.py:1952
+#: __init__.py:1468 __init__.py:1508 __init__.py:1614 __init__.py:1641
+#: __init__.py:1963
 msgid "degrees"
 msgstr "degrés"
 
-#: __init__.py:1474
+#: __init__.py:1475
 msgid "The wind direction is from"
 msgstr "La direction du vent est de"
 
-#: __init__.py:1480 __init__.py:1492
+#: __init__.py:1481 __init__.py:1493
 msgid "with speed of"
 msgstr "avec une vitesse de"
 
-#: __init__.py:1485 __init__.py:1496
+#: __init__.py:1486 __init__.py:1497
 msgid "The wind speed is"
 msgstr "La vitesse du vent est"
 
-#: __init__.py:1504
+#: __init__.py:1505
 msgid "The wind gusts are of"
 msgstr "Les rafales de vent sont de"
 
-#: __init__.py:1507
+#: __init__.py:1508
 msgid "The perceived temperature is"
 msgstr "La température ressentie est"
 
-#: __init__.py:1514
+#: __init__.py:1515
 msgid "The humidity is"
 msgstr "L'humidité est"
 
-#: __init__.py:1516
+#: __init__.py:1517
 msgid "The cloudiness is of"
 msgstr "La nébulosité est de"
 
-#: __init__.py:1518
+#: __init__.py:1519
 msgid "The precipitation is of"
 msgstr "La précipitation est de"
 
-#: __init__.py:1523
+#: __init__.py:1524
 msgid "and the visibility is up to"
 msgstr "et la visibilité maximale est de"
 
-#: __init__.py:1532
+#: __init__.py:1533
 msgid "The visibility is up to"
 msgstr "La visibilité maximale est de"
 
-#: __init__.py:1537
+#: __init__.py:1538
 msgid "and the precipitation is"
 msgstr "et la précipitation est"
 
-#: __init__.py:1554
+#: __init__.py:1555
 msgid "The pressure is"
 msgstr "La pression est"
 
-#: __init__.py:1558
+#: __init__.py:1559
 msgid "The UV radiation is of"
 msgstr "Le rayonnement UV est de"
 
-#: __init__.py:1578
+#: __init__.py:1580
 msgid "The sun rises at"
 msgstr "Le soleil se lève à"
 
-#: __init__.py:1579 __init__.py:1581
+#: __init__.py:1581 __init__.py:1583
 msgid "and sets at"
 msgstr "et se couche à"
 
-#: __init__.py:1580
+#: __init__.py:1582
 msgid "The moon rises at"
 msgstr "La lune se lève à"
 
-#: __init__.py:1608
+#: __init__.py:1610
 msgid "the forecast for today is"
 msgstr "les prévisions pour aujourd'hui sont"
 
-#: __init__.py:1610 __init__.py:1637
+#: __init__.py:1612 __init__.py:1639
 msgid "with a maximum temperature of"
 msgstr "avec une température maximale de"
 
-#: __init__.py:1611 __init__.py:1638
+#: __init__.py:1613 __init__.py:1640
 msgid "and a minimum of"
 msgstr "et une minimale de"
 
-#: __init__.py:1645
+#: __init__.py:1647
 msgid "not available"
 msgstr "indisponible"
 
-#: __init__.py:1649
+#: __init__.py:1651
 msgid "In"
 msgstr "À"
 
-#: __init__.py:1649
+#: __init__.py:1651
 msgid "Unnamed"
 msgstr "Sans nom"
 
-#: __init__.py:1661 __init__.py:1877 __init__.py:2069
+#: __init__.py:1663 __init__.py:1888 __init__.py:2080
 msgid "Sorry, the city is not set!"
 msgstr "Désolé, la ville n'est pas définie !"
 
-#: __init__.py:1667 __init__.py:2976 __init__.py:3158 __init__.py:3593
-#: __init__.py:3728 __init__.py:5405
+#: __init__.py:1678 __init__.py:2988 __init__.py:3170 __init__.py:3629
+#: __init__.py:3764 __init__.py:5442
 msgid "Please wait..."
 msgstr "Veuillez patienter..."
 
-#: __init__.py:1710
+#: __init__.py:1721
 msgid "Sorry, it was not possible to load the most recent update!"
 msgstr "Désolé, impossible de charger la dernière mise à jour !"
 
-#: __init__.py:1711
+#: __init__.py:1722
 msgid "Please try again later."
 msgstr "Veuillez réessayez plus tard."
 
-#: __init__.py:1754 __init__.py:1755
+#: __init__.py:1765 __init__.py:1766
 msgid "meters per second"
 msgstr "mètres par seconde"
 
-#: __init__.py:1794
+#: __init__.py:1805
 msgid "Sorry, the city set is not valid or contains incomplete data!"
 msgstr ""
 "Désolé, la ville définie n'est pas valide ou contient des données "
 "incomplètes !"
 
-#: __init__.py:1802
+#: __init__.py:1813
 msgid "north"
 msgstr "Nord"
 
-#: __init__.py:1802
+#: __init__.py:1813
 msgid "north northeast"
 msgstr "Nord Nord-Est"
 
-#: __init__.py:1802
+#: __init__.py:1813
 msgid "northeast"
 msgstr "Nord-Est"
 
-#: __init__.py:1802
+#: __init__.py:1813
 msgid "east northeast"
 msgstr "Est Nord-Est"
 
-#: __init__.py:1802
+#: __init__.py:1813
 msgid "east"
 msgstr "Est"
 
-#: __init__.py:1802
+#: __init__.py:1813
 msgid "east southeast"
 msgstr "Est Sud-Est"
 
-#: __init__.py:1802
+#: __init__.py:1813
 msgid "southeast"
 msgstr "Sud-Est"
 
-#: __init__.py:1802
+#: __init__.py:1813
 msgid "south southeast"
 msgstr "Sud Sud-Est"
 
-#: __init__.py:1803
+#: __init__.py:1814
 msgid "south"
 msgstr "Sud"
 
-#: __init__.py:1803
+#: __init__.py:1814
 msgid "south southwest"
 msgstr "Sud Sud-Ouest"
 
-#: __init__.py:1803
+#: __init__.py:1814
 msgid "southwest"
 msgstr "Sud-Ouest"
 
-#: __init__.py:1803
+#: __init__.py:1814
 msgid "west southwest"
 msgstr "Ouest Sud-Ouest"
 
-#: __init__.py:1803
+#: __init__.py:1814
 msgid "west"
 msgstr "Ouest"
 
-#: __init__.py:1803
+#: __init__.py:1814
 msgid "west northwest"
 msgstr "Ouest Nord-Ouest"
 
-#: __init__.py:1803
+#: __init__.py:1814
 msgid "northwest"
 msgstr "Nord-Ouest"
 
-#: __init__.py:1803
+#: __init__.py:1814
 msgid "north northwest"
 msgstr "Nord Nord-Ouest"
 
-#: __init__.py:1820
+#: __init__.py:1831
 msgid ""
 "Is not working properly, contains incomplete data or has been removed from "
 "the"
@@ -455,65 +456,65 @@ msgstr ""
 "Ne fonctionne pas correctement, contient des données incomplètes ou a été "
 "supprimée de"
 
-#: __init__.py:1822 __init__.py:2897
+#: __init__.py:1833 __init__.py:2909
 msgid "It could be a temporary problem and you may wait a while '..."
 msgstr ""
 "C'est peut-être un problème temporaire et vous pouvez attendre un certain "
 "temps'..."
 
-#: __init__.py:1823
+#: __init__.py:1834
 msgid "Do you want to delete it from your list?"
 msgstr "Voulez-vous le supprimer de votre liste ?"
 
-#: __init__.py:1894
+#: __init__.py:1905
 msgid "Chance of rain"
 msgstr "Possibilité de pluie"
 
-#: __init__.py:1895
+#: __init__.py:1906
 msgid "Chance of snow"
 msgstr "Possibilité de neige"
 
-#: __init__.py:1940
+#: __init__.py:1951
 msgid "Wind speed"
 msgstr "Vitesse du vent"
 
-#: __init__.py:1941
+#: __init__.py:1952
 msgid "Direction"
 msgstr "Direction"
 
-#: __init__.py:1942
+#: __init__.py:1953
 msgid "Wind direction"
 msgstr "Direction du vent"
 
-#: __init__.py:1943
+#: __init__.py:1954
 msgid "Wind gusts"
 msgstr "Rafales de vent"
 
-#: __init__.py:1944
+#: __init__.py:1955
 msgid "Cloudiness"
 msgstr "Nébulosité"
 
-#: __init__.py:1945
+#: __init__.py:1956
 msgid "Precipitation"
 msgstr "Précipitation"
 
-#: __init__.py:1946
+#: __init__.py:1957
 msgid "Humidity"
 msgstr "Humidité"
 
-#: __init__.py:1947
+#: __init__.py:1958
 msgid "Visibility"
 msgstr "Visibilité"
 
-#: __init__.py:1966
+#: __init__.py:1977
 msgid "Hourly forecast for"
 msgstr "Prévisions horaires pour"
 
-#: __init__.py:1991
+#: __init__.py:2002
 msgid "Provides the current temperature and weather conditions."
 msgstr "Indique les conditions de température et de météo actuelles."
 
-#: __init__.py:2003
+#: __init__.py:2014
 #, python-format
 msgid ""
 "If pressed once, announce the weather forecast and current temperature for "
@@ -524,39 +525,39 @@ msgstr ""
 "actuelle pendant 24 heures et les %d prochains jours. Si vous appuyez deux "
 "fois, indique  la température horaire et les conditions météo."
 
-#: __init__.py:2011
+#: __init__.py:2022
 msgid "Sorry, no list available!"
 msgstr "Désolé, aucune liste disponible !"
 
-#: __init__.py:2044
+#: __init__.py:2055
 msgid "Allows you to set a temporary city."
 msgstr "Permet de définir une ville temporaire."
 
-#: __init__.py:2058
+#: __init__.py:2069
 msgid "Scale of temperature measurement set into"
 msgstr "Échelle de mesure de la température définie en"
 
-#: __init__.py:2060
+#: __init__.py:2071
 msgid "Allows you to set a temporary scale of temperature mesurement."
 msgstr "Permet de définir une échelle temporaire de mesure de la température."
 
-#: __init__.py:2090
+#: __init__.py:2101
 msgid "at"
 msgstr "à"
 
-#: __init__.py:2093
+#: __init__.py:2104
 msgid "Last update of the current weather report"
 msgstr "Dernière mise à jour du bulletin météo actuel"
 
-#: __init__.py:2095
+#: __init__.py:2106
 msgid "Announces the date of the last update of the weather report."
 msgstr "Annonce la date de la dernière mise à jour du bulletin météo."
 
-#: __init__.py:2155
+#: __init__.py:2166
 msgid "Open the Weather Plus settings dialog."
 msgstr "Ouvre le dialogue Paramètres Weather Plus."
 
-#: __init__.py:2197
+#: __init__.py:2209
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast, f5: volume controls."
@@ -565,7 +566,7 @@ msgstr ""
 "zone d'édition, F4: contrôle de la durée des Prévisions Météo, F5: contrôles "
 "du volume."
 
-#: __init__.py:2198
+#: __init__.py:2210
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast."
@@ -573,67 +574,67 @@ msgstr ""
 "F1: aide à la localisation, F2: dernière sélection avec TAB, F3: liste et "
 "zone d'édition, F4: contrôle de la durée des Prévisions Météo."
 
-#: __init__.py:2241
+#: __init__.py:2253
 msgid "Test"
 msgstr "Tester"
 
-#: __init__.py:2242
+#: __init__.py:2254
 msgid "Details"
 msgstr "Détails"
 
-#: __init__.py:2243
+#: __init__.py:2255
 msgid "Define"
 msgstr "Définir"
 
-#: __init__.py:2244
+#: __init__.py:2256
 msgid "Add"
 msgstr "Ajouter"
 
-#: __init__.py:2246
+#: __init__.py:2258
 msgid "Remove"
 msgstr "Supprimer"
 
-#: __init__.py:2247
+#: __init__.py:2259
 msgid "Rename"
 msgstr "Renommer"
 
-#: __init__.py:2273
+#: __init__.py:2285
 msgid "&Import new cities..."
 msgstr "&Importer de nouvelles villes..."
 
-#: __init__.py:2274
+#: __init__.py:2286
 msgid "&Export your cities..."
 msgstr "&Exporter vos villes..."
 
-#: __init__.py:2275
+#: __init__.py:2287
 msgid "&hourlyforecast setting..."
 msgstr "Réglage des prévisions &horaires..."
 
-#: __init__.py:2290
+#: __init__.py:2302
 msgid "Scale of temperature measurement:"
 msgstr "Échelle de mesure de la température :"
 
-#: __init__.py:2298
+#: __init__.py:2310
 msgid "Degrees shown as:"
 msgstr "Indiquer les degrés comme:"
 
-#: __init__.py:2301
+#: __init__.py:2313
 msgid "C - F - K"
 msgstr "C - F - K"
 
-#: __init__.py:2302
+#: __init__.py:2314
 msgid "Unspecified"
 msgstr "Non spécifié"
 
-#: __init__.py:2310
+#: __init__.py:2322
 msgid "Weather Forecasts up to days:"
 msgstr "Prévisions Météo jusqu'à jours:"
 
-#: __init__.py:2321
+#: __init__.py:2333
 msgid "API response language:"
 msgstr "Langue de réponse de l'API:"
 
-#: __init__.py:2330
+#: __init__.py:2342
 msgid ""
 "&Copy the weather report and weather forecast, including city details to "
 "clipboard"
@@ -641,120 +642,120 @@ msgstr ""
 "&Copier le Bulletin météo et les prévisions météo, ainsi que les détails de "
 "la ville dans le presse-papiers"
 
-#: __init__.py:2335
+#: __init__.py:2347
 msgid "Enable &audio effects (only for the current weather conditions)"
 msgstr ""
 "&Activer les effets sonores (seulement pour les conditions météo en cours)"
 
-#: __init__.py:2338
+#: __init__.py:2350
 msgid "Use only &weather effects"
 msgstr "N'utiliser que des &effets météo"
 
-#: __init__.py:2343
+#: __init__.py:2355
 msgid "General audio volume"
 msgstr "Volume audio général"
 
-#: __init__.py:2344
+#: __init__.py:2356
 msgid "Current audio volume"
 msgstr "Volume audio actuel"
 
-#: __init__.py:2376
+#: __init__.py:2388
 msgid "Enable &help buttons in the settings window"
 msgstr "Activez le bouton aide dans la &fenêtre de paramètres"
 
-#: __init__.py:2383
+#: __init__.py:2395
 msgid "Read &wind information"
 msgstr "Lire les informations sur le &vent"
 
-#: __init__.py:2388 __init__.py:5810
+#: __init__.py:2400 __init__.py:5847
 msgid "Add wind directi&on"
 msgstr "Ajouter la directi&on du vent"
 
-#: __init__.py:2392 __init__.py:5806
+#: __init__.py:2404 __init__.py:5843
 msgid "Add wi&nd speed"
 msgstr "Ajouter la vitesse du ve&nt"
 
-#: __init__.py:2396
+#: __init__.py:2408
 msgid "Add speed in &meters per second of the wind"
 msgstr "Ajouter la vitesse du vent en &mètres par seconde"
 
-#: __init__.py:2400 __init__.py:5814
+#: __init__.py:2412 __init__.py:5851
 msgid "Add wind &gust speed"
 msgstr "Ajouter la vitesse &rafale de vent"
 
-#: __init__.py:2404
+#: __init__.py:2416
 msgid "Add perceived &temperature"
 msgstr "Ajouter la &température ressentie"
 
-#: __init__.py:2409
+#: __init__.py:2421
 msgid "&Read atmospherical information"
 msgstr "&Lire les informations atmosphériques"
 
-#: __init__.py:2414 __init__.py:5822
+#: __init__.py:2426 __init__.py:5859
 msgid "Add humidity va&lue"
 msgstr "Ajouter le taux d'&humidité"
 
-#: __init__.py:2418 __init__.py:5826
+#: __init__.py:2430 __init__.py:5863
 msgid "Add &visibility value"
 msgstr "A&jouter la valeur de visibilité"
 
-#: __init__.py:2422 __init__.py:5818
+#: __init__.py:2434 __init__.py:5855
 msgid "Add cloudiness &value"
 msgstr "Ajouter la &valeur de nébulosité"
 
-#: __init__.py:2426 __init__.py:5830
+#: __init__.py:2438 __init__.py:5867
 msgid "Add precipitation &value"
 msgstr "Ajouter la &valeur de précipitation"
 
-#: __init__.py:2430 __init__.py:5834
+#: __init__.py:2442 __init__.py:5871
 msgid "Add &ultraviolet radiation value"
 msgstr "Ajouter la valeur du rayonnement &ultraviolet"
 
-#: __init__.py:2434
+#: __init__.py:2446
 msgid "Add atmospheric &pressure value"
 msgstr "Ajouter la valeur de la &pression atmosphérique"
 
-#: __init__.py:2438
+#: __init__.py:2450
 msgid "Indicates the atmospheric pressure in millimeters of mercur&y (mmHg)"
 msgstr "Indique la pression atmosphérique en millimètres de mercure (mmH&g)"
 
-#: __init__.py:2443
+#: __init__.py:2455
 msgid "Read a&stronomical information"
 msgstr "Lire les informations astronomi&ques"
 
-#: __init__.py:2447
+#: __init__.py:2459
 msgid "Enable reading of the hours in &24-hour format"
 msgstr "Activer la lecture des heures au format &24-heures"
 
-#: __init__.py:2452
+#: __init__.py:2464
 msgid "Use the comma to separate decimals, example (4,&15)"
 msgstr "Utiliser la virgule pour séparer les décimales, exemple (4,&15)"
 
-#: __init__.py:2456
+#: __init__.py:2468
 msgid "&Displays output in a window"
 msgstr "Affiche la sortie dans une &fenêtre"
 
-#: __init__.py:2460
+#: __init__.py:2472
 msgid "Check for &upgrade"
 msgstr "Recherche d'une mise à jo&ur"
 
-#: __init__.py:2487
+#: __init__.py:2499
 msgid "Test the city validity  and find the data of it."
 msgstr "Testez la validité de la ville et trouvez les données de celle-ci."
 
-#: __init__.py:2488
+#: __init__.py:2500
 msgid "Add the current city into your list."
 msgstr "Ajoute la ville en cours dans votre liste."
 
-#: __init__.py:2489
+#: __init__.py:2501
 msgid "Displays information about the current city."
 msgstr "Affiche les informations sur la ville en cours."
 
-#: __init__.py:2490
+#: __init__.py:2502
 msgid "Allows you to define the area, in order to adapt the sound effects."
 msgstr "Vous permet de définir la région, afin d'adapter les effets sonores."
 
-#: __init__.py:2491
+#: __init__.py:2503
 msgid ""
 "Presets the current city as the default, will be used every time you restart "
 "the plugin."
@@ -762,15 +763,15 @@ msgstr ""
 "Définit la ville actuelle par défaut, elle sera donc utilisée chaque fois "
 "que vous redémarrerez l'extension."
 
-#: __init__.py:2492
+#: __init__.py:2504
 msgid "Delete  the current city from your list."
 msgstr "Supprimer la ville courante de votre liste."
 
-#: __init__.py:2493
+#: __init__.py:2505
 msgid "Rename the current city."
 msgstr "Renommer la vile en cours."
 
-#: __init__.py:2494
+#: __init__.py:2506
 msgid ""
 "Permits to incorporate in your list new cities importing them from another "
 "list with the extension *.zipcodes; you can select the city you want to "
@@ -780,77 +781,77 @@ msgstr ""
 "autre liste avec l'extension *.zipcodes ; vous pouvez choisir la ville que "
 "vous souhaitez importer, en activant la case à cocher associée."
 
-#: __init__.py:2495
+#: __init__.py:2507
 msgid "Permits to save your list of cities in a specified path."
 msgstr ""
 "Vous permet d'enregistrer votre liste de villes dans un chemin d'accès "
 "spécifié."
 
-#: __init__.py:2496
+#: __init__.py:2508
 msgid "Allows you to choose the contents of the hourly forecast report."
 msgstr "Vous permet de choisir le contenu du bulletin des prévisions horaires"
 
-#: __init__.py:2603
+#: __init__.py:2615
 msgid "You can enter or search for a city"
 msgstr "Vous pouvez saisir ou rechercher une ville"
 
-#: __init__.py:2604
+#: __init__.py:2616
 msgid "By Latitude and Longitude: 48.8567,2.3508"
 msgstr "Par Latitude et Longitude: 48.8567,2.3508"
 
-#: __init__.py:2605
+#: __init__.py:2617
 msgid "By City name: Paris"
 msgstr "Par Nom de ville: Paris"
 
-#: __init__.py:2606
+#: __init__.py:2618
 msgid "By City name and country: Toronto,Canada"
 msgstr "Par nom de ville et pays: Toronto,Canada"
 
-#: __init__.py:2607
+#: __init__.py:2619
 msgid "Or Toronto,CA"
 msgstr "Ou Toronto,CA"
 
-#: __init__.py:2608
+#: __init__.py:2620
 msgid "By City name and region: Toronto,Ontario"
 msgstr "Par nom de ville et région: Toronto,Ontario"
 
-#: __init__.py:2609
+#: __init__.py:2621
 msgid "By US zip: 10001"
 msgstr "Par code postal Américain: 10001"
 
-#: __init__.py:2610
+#: __init__.py:2622
 msgid "By UK postcode: SW1"
 msgstr "Par code postal Britannique: SW1"
 
-#: __init__.py:2611
+#: __init__.py:2623
 msgid "By Canada postal code: G2J"
 msgstr "Par code postal du Canada: G2J"
 
-#: __init__.py:2612
+#: __init__.py:2624
 msgid "By metar:<metar code>: metar:EGLL"
 msgstr "Par metar:<code metar>: metar:EGLL"
 
-#: __init__.py:2613
+#: __init__.py:2625
 msgid "By iata:<3 digit airport code>: iata:DXB"
 msgstr "Par iata:<3 chiffres code aéroport>: iata:DXB"
 
-#: __init__.py:2614
+#: __init__.py:2626
 msgid "By auto:ip IP lookup: auto:ip"
 msgstr "Par auto:ip recherche IP: auto:ip"
 
-#: __init__.py:2615
+#: __init__.py:2627
 msgid "By IP address (IPv4 and IPv6 supported): 100.0.0.1"
 msgstr "Par adresse IP (IPv4 et IPv6 pris en charge): 100.0.0.1"
 
-#: __init__.py:2616
+#: __init__.py:2628
 msgid "if there will be cities with the same name, will be listed"
 msgstr "s'il y aura des villes avec le même nom, sera listé"
 
-#: __init__.py:2617
+#: __init__.py:2629
 msgid "By default, confirming a selection, is used the postal code"
 msgstr "Par défaut, confirmer une sélection quand est utilisé le code postal"
 
-#: __init__.py:2618
+#: __init__.py:2630
 msgid ""
 "If the postal code is not valid, will be used a text string: city, state, "
 "region"
@@ -858,12 +859,12 @@ msgstr ""
 "Si le code postal n'est pas valide, sera utilisé une chaîne de texte: ville, "
 "état, région"
 
-#: __init__.py:2619
+#: __init__.py:2631
 msgid "You can indicate how to proceed by prefixing the following commands"
 msgstr ""
 "Vous pouvez indiquer comment procéder en préfixant les commandes suivantes"
 
-#: __init__.py:2620
+#: __init__.py:2632
 msgid ""
 "Direct (cities with the same name, will not listed), by typing D:City: D:"
 "Paris"
@@ -871,581 +872,589 @@ msgstr ""
 "Direct (villes avec le même nom, ne sera pas listé), en tapant D:Ville: D:"
 "Paris"
 
-#: __init__.py:2621
+#: __init__.py:2633
 msgid "Geographic coordinates, by typing G:City: G:Venezia"
 msgstr "Coordonnées géographiques, en tapant G:Ville: G:Venezia"
 
-#: __init__.py:2622
+#: __init__.py:2634
 msgid "Text string, by typing T:City: T:Bologna"
 msgstr "Chaîne de texte, en tapant T:Ville: T:Bologna"
 
-#: __init__.py:2623
+#: __init__.py:2635
 msgid "If the city is not found"
 msgstr "Si la ville est introuvable"
 
-#: __init__.py:2624
+#: __init__.py:2636
 msgid "Try to reverse the order in the search key"
 msgstr "Essayez d'inverser l'ordre dans les mots-clés de recherche"
 
-#: __init__.py:2625
+#: __init__.py:2637
 msgid "Try with or without the country of origin"
 msgstr "Essayez avec ou sans le pays d'origine"
 
-#: __init__.py:2626
+#: __init__.py:2638
 msgid "Try to merge the name with hyphens, or separate it with separator"
 msgstr ""
 "Essayez de combiner le nom avec des tirets ou de le séparer par un séparateur"
 
-#: __init__.py:2627
+#: __init__.py:2639
 msgid "Try deleting apostrophes"
 msgstr "Essayez de supprimer les apostrophes"
 
-#: __init__.py:2628
+#: __init__.py:2640
 msgid "Try changing the vowels accented with normal vowels"
 msgstr "Essayez de remplacer les voyelles accentuées par des voyelles normales"
 
-#: __init__.py:2629
+#: __init__.py:2641
 msgid "Try to change in English some parts"
 msgstr "Essayez de changer certaines parties en anglais"
 
-#: __init__.py:2630
+#: __init__.py:2642
 msgid "Try with a closest location"
 msgstr "Essayez avec une localisation plus proche"
 
-#: __init__.py:2633
+#: __init__.py:2645
 msgid "Help placing"
 msgstr "Aide à la localisation"
 
-#: __init__.py:2730
+#: __init__.py:2742
 msgid "No sound effect in memory!"
 msgstr "Aucun effet sonore en mémoire !"
 
-#: __init__.py:2731
+#: __init__.py:2743
 msgid "I can't reproduce the sound."
 msgstr "Je ne peux pas reproduire le son."
 
-#: __init__.py:2827
+#: __init__.py:2839
 msgid "Choose search key for"
 msgstr "Choisissez les mots-clés de recherche pour"
 
-#: __init__.py:2847
+#: __init__.py:2859
 msgid "Unfortunately I could not recover enough data to find the city."
 msgstr ""
 "Malheureusement, je ne pouvais pas récupérer suffisamment de données pour "
 "trouver la ville."
 
-#: __init__.py:2848
+#: __init__.py:2860
 msgid "Do I try anyway?"
 msgstr "Est-ce que j'essaie de toute façon?"
 
-#: __init__.py:2871
+#: __init__.py:2883
 msgid "not found! Press F1 for help on entering data."
 msgstr ""
 "pas trouvé ! Appuyez sur F1 pour obtenir l'aide à la saisie des données."
 
-#: __init__.py:2895
+#: __init__.py:2907
 msgid "Is not working properly or has been removed from the database of"
 msgstr ""
 "Ne fonctionne pas correctement ou a été supprimée de la base de données de"
 
-#: __init__.py:2899
+#: __init__.py:2911
 msgid "Is no longer valid!"
 msgstr "N'est plus valide !"
 
-#: __init__.py:2932
+#: __init__.py:2944
 msgid "This option requires the installation of some audio effects"
 msgstr "Cette option nécessite l'installation de quelques effets sonores"
 
-#: __init__.py:2933
+#: __init__.py:2945
 msgid "Do you want to install them?"
 msgstr "Voulez-vous les installer ?"
 
-#: __init__.py:2937
+#: __init__.py:2949
 msgid "The audio effects are installed!"
 msgstr "Les effets sonores sont installés !"
 
-#: __init__.py:2938
+#: __init__.py:2950
 msgid "Would you like to update?"
 msgstr "Souhaitez-vous mettre à jour ?"
 
-#: __init__.py:2939
+#: __init__.py:2951
 msgid "Or do you want to uninstall them?"
 msgstr "Ou voulez-vous les désinstaller ?"
 
-#: __init__.py:2946
+#: __init__.py:2958
 msgid "Are you sure you want to uninstall the sound effects?"
 msgstr "Êtes-vous sûr de vouloir désinstaller les effets sonores ?"
 
-#: __init__.py:2974
+#: __init__.py:2986
 msgid "Update in progress"
 msgstr "Mise à jour en cours"
 
-#: __init__.py:2975
+#: __init__.py:2987
 msgid "Installation in progress"
 msgstr "Installation en cours"
 
-#: __init__.py:3004
+#: __init__.py:3016
 msgid "The installation of audio effects has been completed successfully!"
 msgstr "L'installation des effets sonores s'est terminée avec succès !"
 
-#: __init__.py:3005
+#: __init__.py:3017
 msgid "Adding folder:"
 msgstr "ajout du dossier :"
 
-#: __init__.py:3007
+#: __init__.py:3019
 msgid "The upgrade of audio effects has been completed successfully!"
 msgstr "La mise à jour des effets sonores s'est terminée avec succès !"
 
-#: __init__.py:3014
+#: __init__.py:3026
 msgid "These sound effects are subject to change by the author."
 msgstr "Ces effets sonores sont sujets à changements de la part de l'auteur."
 
-#: __init__.py:3015
+#: __init__.py:3027
 msgid "Disable and re-enable this option in order to update or uninstall them."
 msgstr ""
 "Désactiver et réactiver cette option pour les mettre à jour ou pour les "
 "désinstaller."
 
-#: __init__.py:3076
+#: __init__.py:3088
 msgid "Verify that your internet connection is active, or try again later."
 msgstr ""
 "Vérifiez que votre connexion à internet est active, ou réessayez plus tard."
 
-#: __init__.py:3077
+#: __init__.py:3089
 msgid "File corrupted or not available!"
 msgstr "Fichier corrompu ou non disponible !"
 
-#: __init__.py:3079
+#: __init__.py:3091
 msgid "Sorry, I could not complete the installation of the sound effects!"
 msgstr "Désolé, je n'ai pas pu terminer l'installation des effets sonores !"
 
-#: __init__.py:3080
+#: __init__.py:3092
 msgid "Installation Error!"
 msgstr "Erreur d'installation !"
 
-#: __init__.py:3171
+#: __init__.py:3196
+msgid ""
+"The details of this city are not in the database and so I added them to the "
+"list."
+msgstr ""
+"Les détails de cette ville ne sont pas dans la base de données et je les ai "
+"donc ajoutés à la liste."
+
+#: __init__.py:3203
 msgid "Cannot identify your location, due to insufficient data."
 msgstr ""
 "Impossible d'identifier votre localisation, en raison de données "
 "insuffisantes."
 
-#: __init__.py:3199
+#: __init__.py:3231
 msgid "Details of"
 msgstr "Détails de"
 
-#: __init__.py:3202
+#: __init__.py:3234
 msgid "Place"
 msgstr "Lieu"
 
-#: __init__.py:3203
+#: __init__.py:3235
 msgid "Current local time"
 msgstr "Heure locale actuelle"
 
-#: __init__.py:3204
+#: __init__.py:3236
 msgid "Degrees latitude"
 msgstr "Degrés de latitude"
 
-#: __init__.py:3205
+#: __init__.py:3237
 msgid "Degrees longitude"
 msgstr "Degrés de longitude"
 
-#: __init__.py:3206
+#: __init__.py:3238
 msgid "Elevation above sea level"
 msgstr "Hauteur au-dessus du niveau de la mer"
 
-#: __init__.py:3206
+#: __init__.py:3238
 msgid "meters"
 msgstr "mètres"
 
-#: __init__.py:3227
+#: __init__.py:3263
 msgid "Define the area for"
 msgstr "Définir la zone pour"
 
-#: __init__.py:3231
+#: __init__.py:3267
 msgid "Hinterland"
 msgstr "Arrière-pays"
 
-#: __init__.py:3232
+#: __init__.py:3268
 msgid "Maritime area"
 msgstr "Zone maritime"
 
-#: __init__.py:3233
+#: __init__.py:3269
 msgid "Desert zone"
 msgstr "Zone de désert"
 
-#: __init__.py:3234
+#: __init__.py:3270
 msgid "Arctic zone"
 msgstr "Zone arctique"
 
-#: __init__.py:3235
+#: __init__.py:3271
 msgid "Mountain zone"
 msgstr "Zone de montagne"
 
-#: __init__.py:3387
+#: __init__.py:3423
 msgid "Enter new name."
 msgstr "Saisissez le nouveau nom."
 
-#: __init__.py:3396
+#: __init__.py:3432
 msgid "it can't be used because it already exists!"
 msgstr "il ne peut pas être utilisé car il existe déjà !"
 
-#: __init__.py:3508
+#: __init__.py:3544
 msgid "is correct"
 msgstr "est correct"
 
-#: __init__.py:3509
+#: __init__.py:3545
 msgid "But the name"
 msgstr "mais le nom"
 
-#: __init__.py:3511
+#: __init__.py:3547
 msgid "already exists"
 msgstr "existe déjà"
 
-#: __init__.py:3512
+#: __init__.py:3548
 msgid "You have to change it!"
 msgstr "Vous devez le changer !"
 
-#: __init__.py:3513
+#: __init__.py:3549
 msgid "The city proper is"
 msgstr "La ville proprement dite est"
 
-#: __init__.py:3515
+#: __init__.py:3551
 msgid "Want to use the suggested name?"
 msgstr "Voulez-vous utiliser le nom suggéré ?"
 
-#: __init__.py:3527
+#: __init__.py:3563
 msgid "Import cities"
 msgstr "Importer des villes"
 
-#: __init__.py:3545
+#: __init__.py:3581
 msgid "Empty file or not in cities format compatible!"
 msgstr "Fichier vide ou format de villes non compatible !"
 
-#: __init__.py:3551
+#: __init__.py:3587
 msgid "Do you want to replace your list with this?"
 msgstr "Voulez-vous remplacer votre liste par ceci ?"
 
-#: __init__.py:3552
+#: __init__.py:3588
 msgid "If you select yes, your list will be completely replaced."
 msgstr "Si vous sélectionnez oui, votre liste sera complètement remplacée."
 
-#: __init__.py:3553
+#: __init__.py:3589
 msgid "If you select no, the new cities will be added to your list."
 msgstr ""
 "Si vous sélectionnez non, les nouvelles villes seront ajoutées à votre liste."
 
-#: __init__.py:3556
+#: __init__.py:3592
 msgid "Select import mode"
 msgstr "Sélectionnez le mode d'importation"
 
-#: __init__.py:3567
+#: __init__.py:3603
 msgid "File contents"
 msgstr "Contenu du fichier"
 
-#: __init__.py:3568
+#: __init__.py:3604
 msgid "cities"
 msgstr "villes"
 
-#: __init__.py:3571
+#: __init__.py:3607
 msgid "Activate the check boxes of the cities you want to import."
 msgstr "Activez la case à cocher des villes que vous souhaitez importer."
 
-#: __init__.py:3592
+#: __init__.py:3628
 msgid "Importing cities in progress"
 msgstr "Importation des villes en cours"
 
-#: __init__.py:3684
+#: __init__.py:3720
 msgid "Were added"
 msgstr "Ont été ajoutées"
 
-#: __init__.py:3684
+#: __init__.py:3720
 msgid "new cities to the list"
 msgstr "nouvelles villes à la liste"
 
-#: __init__.py:3685
+#: __init__.py:3721
 msgid "Have been ignored because existing"
 msgstr "Ont été ignorées parce qu'elles existent"
 
-#: __init__.py:3686
+#: __init__.py:3722
 msgid "Content of imported list"
 msgstr "Contenu de la liste importée"
 
-#: __init__.py:3687
+#: __init__.py:3723
 msgid "Containing incomplete data"
 msgstr "Contenant des données incomplètes"
 
-#: __init__.py:3688
+#: __init__.py:3724
 msgid "selected by the user"
 msgstr "sélectionné par l'utilisateur"
 
-#: __init__.py:3689
+#: __init__.py:3725
 msgid "Import finished"
 msgstr "Importation terminée"
 
-#: __init__.py:3701
+#: __init__.py:3737
 msgid "A copy of"
 msgstr "Une copie de"
 
-#: __init__.py:3703
+#: __init__.py:3739
 msgid "It will be exported"
 msgstr "Il sera exporté"
 
-#: __init__.py:3704
+#: __init__.py:3740
 msgid "But it does not yet contain the changes you just made the list!"
 msgstr ""
 "Mais il ne contient pas encore les changements que vous venez de faire dans "
 "la liste !"
 
-#: __init__.py:3705
+#: __init__.py:3741
 msgid "I proceed?"
 msgstr "Dois-je procéder ?"
 
-#: __init__.py:3711
+#: __init__.py:3747
 msgid "Export cities"
 msgstr "Exporter les villes"
 
-#: __init__.py:3726
+#: __init__.py:3762
 msgid "You can not export the same file at the same path!"
 msgstr "Vous ne pouvez pas exporter le même fichier dans le même chemin !"
 
-#: __init__.py:3746
+#: __init__.py:3782
 msgid "Hourlyforecast data report values."
 msgstr "Valeurs du bulletin  de données des prévisions horaires."
 
-#: __init__.py:3746
+#: __init__.py:3782
 msgid "Disable the data you don't want to be processed:"
 msgstr "Désactiver les données que vous ne voulez pas qu'elles soient traités:"
 
-#: __init__.py:4492
+#: __init__.py:4529
 msgid "january"
 msgstr "janvier"
 
-#: __init__.py:4493
+#: __init__.py:4530
 msgid "february"
 msgstr "février"
 
-#: __init__.py:4494
+#: __init__.py:4531
 msgid "march"
 msgstr "mars"
 
-#: __init__.py:4495
+#: __init__.py:4532
 msgid "april"
 msgstr "avril"
 
-#: __init__.py:4496
+#: __init__.py:4533
 msgid "may"
 msgstr "mai"
 
-#: __init__.py:4497
+#: __init__.py:4534
 msgid "june"
 msgstr "juin"
 
-#: __init__.py:4498
+#: __init__.py:4535
 msgid "july"
 msgstr "juillet"
 
-#: __init__.py:4499
+#: __init__.py:4536
 msgid "august"
 msgstr "août"
 
-#: __init__.py:4500
+#: __init__.py:4537
 msgid "september"
 msgstr "septembre"
 
-#: __init__.py:4501
+#: __init__.py:4538
 msgid "october"
 msgstr "octobre"
 
-#: __init__.py:4502
+#: __init__.py:4539
 msgid "november"
 msgstr "novembre"
 
-#: __init__.py:4503
+#: __init__.py:4540
 msgid "december"
 msgstr "décembre"
 
-#: __init__.py:4504
+#: __init__.py:4541
 msgid "Monday"
 msgstr "Lundi"
 
-#: __init__.py:4505
+#: __init__.py:4542
 msgid "Tuesday"
 msgstr "Mardi"
 
-#: __init__.py:4506
+#: __init__.py:4543
 msgid "Wednesday"
 msgstr "Mercredi"
 
-#: __init__.py:4507
+#: __init__.py:4544
 msgid "Thursday"
 msgstr "Jeudi"
 
-#: __init__.py:4508
+#: __init__.py:4545
 msgid "Friday"
 msgstr "Vendredi"
 
-#: __init__.py:4509
+#: __init__.py:4546
 msgid "Saturday"
 msgstr "Samedi"
 
-#: __init__.py:4510
+#: __init__.py:4547
 msgid "Sunday"
 msgstr "Dimanche"
 
-#: __init__.py:4568
+#: __init__.py:4605
 #, python-format
 msgid "It was not possible find the acronym of \"%s\"!"
 msgstr "Impossible de trouver l'acronyme de \"%s\" !"
 
-#: __init__.py:4569
+#: __init__.py:4606
 msgid "This may not allow you to get the city details."
 msgstr "Cela peut ne pas permettre d'obtenir les détails de la ville."
 
-#: __init__.py:4570
+#: __init__.py:4607
 msgid ""
 "Please report this to the author so he can add this country in database."
 msgstr ""
 "Veuillez signaler ceci à l'auteur pour que nous puissions ajouter ce pays "
 "dans la base de données."
 
-#: __init__.py:4571
+#: __init__.py:4608
 #, python-format
 msgid "Send an email to %s"
 msgstr "Envoyer un courriel à %s"
 
-#: __init__.py:4572
+#: __init__.py:4609
 msgid "With  object the line below, thanks."
 msgstr "Avec pour objet la ligne ci-dessous, merci."
 
-#: __init__.py:4640 __init__.py:4658
+#: __init__.py:4677 __init__.py:4695
 msgid "Downloaded"
 msgstr "Téléchargé"
 
-#: __init__.py:4641
+#: __init__.py:4678
 msgid "of"
 msgstr "de"
 
-#: __init__.py:4679
+#: __init__.py:4716
 msgid "Find..."
 msgstr "Trouver..."
 
-#: __init__.py:4680
+#: __init__.py:4717
 msgid "Find next"
 msgstr "Trouver suivant"
 
-#: __init__.py:4681
+#: __init__.py:4718
 msgid "Find previous"
 msgstr "Trouver précédent"
 
-#: __init__.py:4880
+#: __init__.py:4917
 msgid "Be an error has occurred."
 msgstr "une erreur s'est produite."
 
-#: __init__.py:4881
+#: __init__.py:4918
 msgid "See the log for more information."
 msgstr "Veuillez consulter le journal pour plus d'informations."
 
-#: __init__.py:4882
+#: __init__.py:4919
 msgid "Error: failure writing file!"
 msgstr "Erreur : l'écriture du fichier a échoué !"
 
-#: __init__.py:5026
+#: __init__.py:5063
 msgid "occurrences found"
 msgstr "occurrences trouvées"
 
-#: __init__.py:5026
+#: __init__.py:5063
 msgid "for"
 msgstr "pour"
 
-#: __init__.py:5028
+#: __init__.py:5065
 msgid "Choose a city."
 msgstr "Choisir une ville."
 
-#: __init__.py:5030
+#: __init__.py:5067
 msgid "List of availables Cities"
 msgstr "Liste des villes disponibles"
 
-#: __init__.py:5062
+#: __init__.py:5099
 msgid "Do not show this message again!"
 msgstr "Ne plus afficher ce message !"
 
-#: __init__.py:5072
+#: __init__.py:5109
 msgid "&Install..."
 msgstr "&Installer..."
 
-#: __init__.py:5072
+#: __init__.py:5109
 msgid "Upd&ate..."
 msgstr "&Mise à jour..."
 
-#: __init__.py:5074
+#: __init__.py:5111
 msgid "&Close"
 msgstr "&Fermer"
 
-#: __init__.py:5075
+#: __init__.py:5112
 msgid "&Uninstall..."
 msgstr "&Désinstaller..."
 
-#: __init__.py:5177
+#: __init__.py:5214
 msgid "Type the search string"
 msgstr "Tapez la chaîne à rechercher"
 
-#: __init__.py:5177 __init__.py:5231
+#: __init__.py:5214 __init__.py:5268
 msgid "Find"
 msgstr "Trouver"
 
-#: __init__.py:5228
+#: __init__.py:5265
 msgid "next"
 msgstr "suivant"
 
-#: __init__.py:5228
+#: __init__.py:5265
 msgid "previous"
 msgstr "précédent"
 
-#: __init__.py:5235
+#: __init__.py:5272
 msgid "No results next for"
 msgstr "Aucun résultat suivant pour"
 
-#: __init__.py:5235
+#: __init__.py:5272
 msgid "No previous results for"
 msgstr "Aucun résultat précédent pour"
 
-#: __init__.py:5277
+#: __init__.py:5314
 msgid "&Select all"
 msgstr "&Sélectionner tout"
 
-#: __init__.py:5279
+#: __init__.py:5316
 msgid "&Deselect all"
 msgstr "&Désélectionner tout"
 
-#: __init__.py:5319
+#: __init__.py:5356
 msgid "not checked"
 msgstr "non coché"
 
-#: __init__.py:5321
+#: __init__.py:5358
 msgid "checked"
 msgstr "coché"
 
-#: __init__.py:5325
+#: __init__.py:5362
 msgid "check box"
 msgstr "case à cocher"
 
-#: __init__.py:5335
+#: __init__.py:5372
 msgid "check boxes checked"
 msgstr "cases à cocher cochées"
 
-#: __init__.py:5344
+#: __init__.py:5381
 msgid "check boxes not checked"
 msgstr "cases à cocher non cochées"
 
-#: __init__.py:5406
+#: __init__.py:5443
 msgid "Saving in progress"
 msgstr "Enregistrement en cours"
 
-#: __init__.py:5408
+#: __init__.py:5445
 msgid "Download canceled."
 msgstr "Téléchargement annulé."
 
-#: __init__.py:5462
+#: __init__.py:5499
 msgid "&Copy to clipboard"
 msgstr "&Copier dans le presse-papiers"
 

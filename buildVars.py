@@ -31,7 +31,7 @@ addon_info = {
 	_("For other instructions, you can also press Add-on Help button in Add-ons manager."),
 	],
 	# version
-	"addon_version" : "8.1",
+	"addon_version" : "8.2",
 	# Author(s)
 	"addon_author" : "Adriano Barbieri <adrianobarb@yahoo.it>",
 	# URL for the add-on documentation support

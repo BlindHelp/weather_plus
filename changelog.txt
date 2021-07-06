@@ -24,13 +24,33 @@ We only have the Master branch. I think it is not necessary to create any stable
 
 git tag v8.1
 
+06-07-2021
+
+# Created the new tag:
+
+git tag v8.2
+Replaced the locale folder by the new locale  folder sent by Adriano, including files:
+__init__.py
+buildVars.py
+for Weather_Plus8.2
+
+Translated new string in french and spanish.
+
+scons -c # To clean the content of the unnotuous files in the Locale folder, manifest.ini, nvda.mo.
+
+Created the new file:
+Weather_Plus.pot
+With the scons pot command.
+
+---
+
 # Some useful git commands:
 
 git add .
 
 git commit -m "Explanatory message"
 
-git push origin stable
+git push origin master
 or
 git push
 

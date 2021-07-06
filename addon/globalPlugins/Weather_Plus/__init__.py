@@ -9,9 +9,9 @@
 # Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 8.1.
+#Version 8.2.
 #NVDA compatibility: 2017.3 to beyond
-#Edit date June, 28th, 2021
+#Edit date July, 06th, 2021
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -1334,7 +1334,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			with open(_zipCodes_path, 'a') as file:
 				file.write("\n[Cities Location Key and Definitions]\n")
 				for i in self.define_dic:
-					r = '#%s\t%s\t%s\n' % (i, self.define_dic[i]["location"], self.define_dic[i]["define"])
+					if _pyVersion <= 2: r = '#%s\t%s\t%s\n' % (i, (self.define_dic[i]["location"].decode("mbcs")), self.define_dic[i]["define"])
+					else: r = '#%s\t%s\t%s\n' % (i, self.define_dic[i]["location"], self.define_dic[i]["define"])
 					if _pyVersion >= 3: file.write(r)
 					else:
 						try:
@@ -3177,10 +3178,30 @@ class EnterDataDialog(wx.Dialog):
 			if "ramdetails_dic" in globals() and encoded_value in ramdetails_dic: dic = ramdetails_dic
 			elif encoded_value in self.details_dic: dic = self.details_dic
 			if dic: city, region, country, country_acronym, timezone_id, latitude, longitude = self.GetFieldsValues(dic, encoded_value)
-			else:
-				Shared().Play_sound("warn", 1)
-				ui.message(_("Cannot identify your location, due to insufficient data."))
-				return self.cbx.SetFocus()
+			elif not dic:
+				#try to retrieve the city details from the API
+				api_query = Shared().GetLocation(value, self.define_dic)
+				connect, n = Shared().ParseEntry(api_query, self.apilang)
+				if connect == "no connect":
+					Shared().Play_sound("warn", 1)
+					ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!"))
+					return self.cbx.SetFocus()
+
+				if "ramdetails_dic" in globals() and value in ramdetails_dic:
+					self.details_dic.update(ramdetails_dic)
+					city, region, country, country_acronym, timezone_id, latitude, longitude = self.GetFieldsValues(ramdetails_dic, encoded_value)
+					if encoded_value in self.zipCodesList:
+						Shared().Play_sound(True, 1)
+						self.modifiedList = True
+						message = _("The details of this city are not in the database and so I added them to the list.")
+						if self.toOutputwindow:
+							wx.MessageBox(message, _addonSummary, wx.ICON_INFORMATION)
+						else: ui.message(message)
+
+				else:
+					Shared().Play_sound("warn", 1)
+					ui.message(_("Cannot identify your location, due to insufficient data."))
+					return self.cbx.SetFocus()
 
 		current_hour = Shared().GetTimezone(timezone_id, self.to24Hours)
 		lat = lon = ''
