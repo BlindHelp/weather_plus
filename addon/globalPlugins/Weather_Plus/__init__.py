@@ -11,7 +11,7 @@
 #See the file COPYING for more details.
 #Version 8.2.
 #NVDA compatibility: 2017.3 to beyond
-#Edit date July, 06th, 2021
+#Edit date July, 07th, 2021
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -373,32 +373,33 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self.ExtractData(self.tempZipCode)
 				test = self.tempZipCode
 				if _pyVersion <= 2: test = unicode(test.decode("mbcs"))
-				if (not self.defaultZipCode and not save) or (test != self.defaultZipCode) and not self.dontShowAgain:
-					#Translators: dialog message that advise that the city will be used in temporarily mode
-					message = '%s "%s" %s\n%s' % (
-					_("The city"), test,
-					_("has not been preset."),
-					_("Will be used in temporary mode!"))
-					dlg = NoticeAgainDialog(gui.mainFrame, message = message,
-					#Translators: the dialog title
-					title = '%s %s' % (_addonSummary, _("Notice!")))
-					if dlg.ShowModal():
-						dontShowAgain = dlg.GetValue()
-						if dontShowAgain != self.dontShowAgain:
-							self.dontShowAgain = dontShowAgain
-							#preserve the default zip code and celsius values
-							backup_celsius = self.celsius
-							celsius = self.ReadConfig('c')
-							if celsius is not None: self.celsius = celsius
-							backup_zipCode = self.zipCode
-							self.zipCode = self.defaultZipCode
-							self.SaveConfig()
-							#reassign the temporary zip code and celsius
-							self.zipCode = backup_zipCode
-							self.celsius = backup_celsius
-							del backup_celsius, backup_zipCode
+				if not self.dontShowAgain:
+					if (not self.defaultZipCode and not save) or (test != self.defaultZipCode):
+						#Translators: dialog message that advise that the city will be used in temporarily mode
+						message = '%s "%s" %s\n%s' % (
+						_("The city"), test,
+						_("has not been preset."),
+						_("Will be used in temporary mode!"))
+						dlg = NoticeAgainDialog(gui.mainFrame, message = message,
+						#Translators: the dialog title
+						title = '%s %s' % (_addonSummary, _("Notice!")))
+						if dlg.ShowModal():
+							dontShowAgain = dlg.GetValue()
+							if dontShowAgain != self.dontShowAgain:
+								self.dontShowAgain = dontShowAgain
+								#preserve the default zip code and celsius values
+								backup_celsius = self.celsius
+								celsius = self.ReadConfig('c')
+								if celsius is not None: self.celsius = celsius
+								backup_zipCode = self.zipCode
+								self.zipCode = self.defaultZipCode
+								self.SaveConfig()
+								#reassign the temporary zip code and celsius
+								self.zipCode = backup_zipCode
+								self.celsius = backup_celsius
+								del backup_celsius, backup_zipCode
 
-						dlg.Destroy()
+							dlg.Destroy()
 
 			else:
 				#button cancell or eskape key
@@ -1334,7 +1335,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			with open(_zipCodes_path, 'a') as file:
 				file.write("\n[Cities Location Key and Definitions]\n")
 				for i in self.define_dic:
-					if _pyVersion <= 2: r = '#%s\t%s\t%s\n' % (i, (self.define_dic[i]["location"].decode("mbcs")), self.define_dic[i]["define"])
+					if _pyVersion <= 2:
+						try:
+							r = '#%s\t%s\t%s\n' % (i, (self.define_dic[i]["location"].decode("mbcs")), self.define_dic[i]["define"])
+						except(UnicodeDecodeError, UnicodeEncodeError): 
+							r = '#%s\t%s\t%s\n' % (i, (self.define_dic[i]["location"]), self.define_dic[i]["define"])
 					else: r = '#%s\t%s\t%s\n' % (i, self.define_dic[i]["location"], self.define_dic[i]["define"])
 					if _pyVersion >= 3: file.write(r)
 					else:
