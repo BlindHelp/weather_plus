@@ -6,8 +6,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: nvda-translations@freelists.org\n"
-"POT-Creation-Date: 2021-07-06 13:19+0200\n"
-"PO-Revision-Date: 2021-07-06 13:19+0200\n"
+"POT-Creation-Date: 2021-07-07 17:36+0200\n"
+"PO-Revision-Date: 2021-07-07 17:36+0200\n"
 "Last-Translator: Dang Manh Cuong <dangmanhcuong@gmail.com>\n"
 "Language-Team: Sao Mai Center for the blind <danghoaiphuc@gmail.com>\n"
 "Language: vi\n"
@@ -119,11 +119,11 @@ msgstr "mi li mét thủy ngân"
 msgid "Settings"
 msgstr "Cài đặt"
 
-#: __init__.py:203 __init__.py:2257
+#: __init__.py:203 __init__.py:2262
 msgid "Preset"
 msgstr "Bản có sẵn"
 
-#: __init__.py:203 __init__.py:3394 __init__.py:3716
+#: __init__.py:203 __init__.py:3399 __init__.py:3721
 msgid "None"
 msgstr "Không"
 
@@ -131,39 +131,39 @@ msgstr "Không"
 msgid "Enter a City or choose one from the list, if available."
 msgstr "Nhập một tỉnh / thành, hoặc chọn từ danh sách nếu có."
 
-#: __init__.py:379 __init__.py:1830 __init__.py:2915 __init__.py:3544
+#: __init__.py:380 __init__.py:1835 __init__.py:2920 __init__.py:3549
 msgid "The city"
 msgstr "Tỉnh / thành"
 
-#: __init__.py:380
+#: __init__.py:381
 msgid "has not been preset."
 msgstr "không được khôi phục."
 
-#: __init__.py:381
+#: __init__.py:382
 msgid "Will be used in temporary mode!"
 msgstr "Sẽ được dùng trong chế độ tạm!"
 
-#: __init__.py:384 __init__.py:412 __init__.py:474 __init__.py:1836
-#: __init__.py:2745 __init__.py:2953 __init__.py:2958 __init__.py:3028
-#: __init__.py:3432 __init__.py:3553 __init__.py:3743 __init__.py:3762
-#: __init__.py:4611
+#: __init__.py:385 __init__.py:413 __init__.py:475 __init__.py:1841
+#: __init__.py:2750 __init__.py:2958 __init__.py:2963 __init__.py:3033
+#: __init__.py:3437 __init__.py:3558 __init__.py:3748 __init__.py:3767
+#: __init__.py:4616
 msgid "Notice!"
 msgstr "Lưu ý!"
 
-#: __init__.py:414
+#: __init__.py:415
 msgid "You have modified the list of your cities"
 msgstr "Bạn đã chỉnh sửa danh sách các tỉnh / thành của mình"
 
-#: __init__.py:414
+#: __init__.py:415
 msgid "Do you want to save it?"
 msgstr "Bạn có muốn lưu nó không?"
 
-#: __init__.py:471
+#: __init__.py:472
 msgid "The cities on your list are not compatible with the Weather API!"
 msgstr ""
 "Các tỉnh / thành trong danh sách của bạn không tương thích với Weather API!"
 
-#: __init__.py:472
+#: __init__.py:473
 msgid ""
 "They have to be tested and validated, you can do it from the addon settings "
 "window."
@@ -171,19 +171,19 @@ msgstr ""
 "Chúng phải được kiểm tra và xác nhận, bạn có thể làm điều đó trong cửa sổ "
 "cài đặt addon."
 
-#: __init__.py:486
+#: __init__.py:487
 msgid "Setting up a temporary city"
 msgstr "Đang cài đặt một tỉnh / thành tạm"
 
-#: __init__.py:490
+#: __init__.py:491
 msgid "Cities List available:"
 msgstr "Danh sách các tỉnh / thành đang có:"
 
-#: __init__.py:522
+#: __init__.py:523
 msgid "Documentation not available for the current language!"
 msgstr "Không có tài liệu hướng dẫn cho ngôn ngữ hiện tại!"
 
-#: __init__.py:571
+#: __init__.py:572
 msgid ""
 "Sorry, I can not receive data, problems with the download page, try again "
 "later please!"
@@ -191,8 +191,8 @@ msgstr ""
 "Xin lỗi. Tôi không thể lấy dữ liệu. Có vấn đề với trang tải về. Vui lòng thử "
 "lại sau!"
 
-#: __init__.py:574 __init__.py:1697 __init__.py:2876 __init__.py:3187
-#: __init__.py:3218
+#: __init__.py:575 __init__.py:1702 __init__.py:2881 __init__.py:3192
+#: __init__.py:3223
 msgid ""
 "Sorry, I can not receive data, verify that your internet connection is "
 "active, or try again later!"
@@ -200,31 +200,31 @@ msgstr ""
 "Xin lỗi. Tôi không thể lấy dữ liệu. Hãy chắc rằng kết nối internet của bạn "
 "đang hoạt động, hoặc thử lại sau!"
 
-#: __init__.py:586
+#: __init__.py:587
 msgid "version"
 msgstr "phiên bản"
 
-#: __init__.py:586
+#: __init__.py:587
 msgid "is available."
 msgstr "đã có"
 
-#: __init__.py:587
+#: __init__.py:588
 msgid "Installed version"
 msgstr "Phiên bản đã cài đặt"
 
-#: __init__.py:588
+#: __init__.py:589
 msgid "Do you want to download and install it?"
 msgstr "Bạn có muốn tải và cài đặt không?"
 
-#: __init__.py:593
+#: __init__.py:594
 msgid "Sorry, at the time an update is not available."
 msgstr "Xin lỗi. Không có bản cập nhật ở thời điểm hiện tại."
 
-#: __init__.py:1071 __init__.py:2884 __init__.py:5268
+#: __init__.py:1072 __init__.py:2889 __init__.py:5273
 msgid "not found!"
 msgstr "không tìm thấy!"
 
-#: __init__.py:1072
+#: __init__.py:1073
 msgid ""
 "You need to upgrade the sound effects by reactivating the appropriate option "
 "from the settings of"
@@ -232,286 +232,286 @@ msgstr ""
 "Bạn cần cập nhật các hiệu ứng âm thanh bằng cách kích hoạt lại các tùy chọn "
 "tương ứng từ các thiết lập của"
 
-#: __init__.py:1074
+#: __init__.py:1075
 msgid "But if these are already updated, then you need to update"
 msgstr "Nhưng nếu chúng đã được cập nhật thì bạn phải cập nhật"
 
-#: __init__.py:1246
+#: __init__.py:1247
 msgid "I can not load the settings!"
 msgstr "Tôi không thể gọi các thiết lập!"
 
-#: __init__.py:1246
+#: __init__.py:1247
 msgid "Attention!"
 msgstr "Chú ý!"
 
-#: __init__.py:1316
+#: __init__.py:1317
 msgid "I can not save the settings!"
 msgstr "Tôi không thể lưu các thiết lập"
 
-#: __init__.py:1331
+#: __init__.py:1332
 msgid "invalid name"
 msgstr "tên không hợp lệ"
 
-#: __init__.py:1422
+#: __init__.py:1427
 msgid "The cloudiness is"
 msgstr "Mây là"
 
-#: __init__.py:1423
+#: __init__.py:1428
 msgid "The precipitation is"
 msgstr "Lượng mưa là"
 
-#: __init__.py:1467
+#: __init__.py:1472
 msgid "the weather report is currently"
 msgstr "hiện tại, thông báo thời tiết là"
 
-#: __init__.py:1468 __init__.py:1508 __init__.py:1614 __init__.py:1641
-#: __init__.py:1963
+#: __init__.py:1473 __init__.py:1513 __init__.py:1619 __init__.py:1646
+#: __init__.py:1968
 msgid "degrees"
 msgstr "độ"
 
-#: __init__.py:1475
+#: __init__.py:1480
 msgid "The wind direction is from"
 msgstr "Hướng gió từ"
 
-#: __init__.py:1481 __init__.py:1493
+#: __init__.py:1486 __init__.py:1498
 msgid "with speed of"
 msgstr "tốc độ là"
 
-#: __init__.py:1486 __init__.py:1497
+#: __init__.py:1491 __init__.py:1502
 msgid "The wind speed is"
 msgstr "sức gió là"
 
-#: __init__.py:1505
+#: __init__.py:1510
 msgid "The wind gusts are of"
 msgstr "Sức gió là"
 
-#: __init__.py:1508
+#: __init__.py:1513
 msgid "The perceived temperature is"
 msgstr "Nhiệt độ nhận thức là"
 
-#: __init__.py:1515
+#: __init__.py:1520
 msgid "The humidity is"
 msgstr "Độ ẩm là"
 
-#: __init__.py:1517
+#: __init__.py:1522
 msgid "The cloudiness is of"
 msgstr "Mây là"
 
-#: __init__.py:1519
+#: __init__.py:1524
 msgid "The precipitation is of"
 msgstr "Lượng mưa là"
 
-#: __init__.py:1524
+#: __init__.py:1529
 msgid "and the visibility is up to"
 msgstr "và tầm nhìn lên đến"
 
-#: __init__.py:1533
+#: __init__.py:1538
 msgid "The visibility is up to"
 msgstr "Tầm nhìn lên đến"
 
-#: __init__.py:1538
+#: __init__.py:1543
 msgid "and the precipitation is"
 msgstr "và lượng mưa là"
 
-#: __init__.py:1555
+#: __init__.py:1560
 msgid "The pressure is"
 msgstr "Áp suất là"
 
-#: __init__.py:1559
+#: __init__.py:1564
 msgid "The UV radiation is of"
 msgstr "Bức xạ tia UV là"
 
-#: __init__.py:1580
+#: __init__.py:1585
 msgid "The sun rises at"
 msgstr "Mặt trời mọc lúc"
 
-#: __init__.py:1581 __init__.py:1583
+#: __init__.py:1586 __init__.py:1588
 msgid "and sets at"
 msgstr "và được đặt tại"
 
-#: __init__.py:1582
+#: __init__.py:1587
 msgid "The moon rises at"
 msgstr "Trăng mọc lúc"
 
-#: __init__.py:1610
+#: __init__.py:1615
 msgid "the forecast for today is"
 msgstr "Dự báo cho ngày hôm nay là"
 
-#: __init__.py:1612 __init__.py:1639
+#: __init__.py:1617 __init__.py:1644
 msgid "with a maximum temperature of"
 msgstr "nhiệt độ cao nhất là"
 
-#: __init__.py:1613 __init__.py:1640
+#: __init__.py:1618 __init__.py:1645
 msgid "and a minimum of"
 msgstr "và thấp nhất là"
 
-#: __init__.py:1647
+#: __init__.py:1652
 msgid "not available"
 msgstr "không có"
 
-#: __init__.py:1651
+#: __init__.py:1656
 msgid "In"
 msgstr "Trong"
 
-#: __init__.py:1651
+#: __init__.py:1656
 msgid "Unnamed"
 msgstr "Không tên"
 
-#: __init__.py:1663 __init__.py:1888 __init__.py:2080
+#: __init__.py:1668 __init__.py:1893 __init__.py:2085
 msgid "Sorry, the city is not set!"
 msgstr "Xin lỗi. Chưa cài đặt tỉnh / thành!"
 
-#: __init__.py:1678 __init__.py:2988 __init__.py:3170 __init__.py:3629
-#: __init__.py:3764 __init__.py:5442
+#: __init__.py:1683 __init__.py:2993 __init__.py:3175 __init__.py:3634
+#: __init__.py:3769 __init__.py:5447
 msgid "Please wait..."
 msgstr "Vui lòng chờ..."
 
-#: __init__.py:1721
+#: __init__.py:1726
 msgid "Sorry, it was not possible to load the most recent update!"
 msgstr "Xin lỗi. Không thể tải các cập nhật gần đây!"
 
-#: __init__.py:1722
+#: __init__.py:1727
 msgid "Please try again later."
 msgstr "Vui lòng thử lại sau."
 
-#: __init__.py:1765 __init__.py:1766
+#: __init__.py:1770 __init__.py:1771
 msgid "meters per second"
 msgstr "mét trên giây"
 
-#: __init__.py:1805
+#: __init__.py:1810
 msgid "Sorry, the city set is not valid or contains incomplete data!"
 msgstr ""
 "Xin lỗi. Tỉnh / thành được cài đặt không tồn tại hoặc chứa dữ liệu không "
 "hoàn chỉnh!"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "north"
 msgstr "bắc"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "north northeast"
 msgstr "bắc đông bắc"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "northeast"
 msgstr "đông bắc"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "east northeast"
 msgstr "đông đông bắc"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "east"
 msgstr "đông"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "east southeast"
 msgstr "đông đông nam"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "southeast"
 msgstr "đông nam"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "south southeast"
 msgstr "nam đông nam"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "south"
 msgstr "nam"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "south southwest"
 msgstr "nam tây nam"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "southwest"
 msgstr "tây nam"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "west southwest"
 msgstr "tây tây nam"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "west"
 msgstr "tây"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "west northwest"
 msgstr "tây tây bắc"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "northwest"
 msgstr "tây bắc"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "north northwest"
 msgstr "bắc tây bắc"
 
-#: __init__.py:1831
+#: __init__.py:1836
 msgid ""
 "Is not working properly, contains incomplete data or has been removed from "
 "the"
 msgstr "Không hoạt động được, chứa dữ liệu không đầy đủ hoặc đã bị xóa khỏi"
 
-#: __init__.py:1833 __init__.py:2909
+#: __init__.py:1838 __init__.py:2914
 msgid "It could be a temporary problem and you may wait a while '..."
 msgstr ""
 "Nó có thể là một trục trặc tạm thời và bạn có thể sẽ phải đợi một chút..."
 
-#: __init__.py:1834
+#: __init__.py:1839
 msgid "Do you want to delete it from your list?"
 msgstr "Bạn có muốn xóa nó khỏi danh sách của mình không?"
 
-#: __init__.py:1905
+#: __init__.py:1910
 msgid "Chance of rain"
 msgstr "Khả năng có mưa"
 
-#: __init__.py:1906
+#: __init__.py:1911
 msgid "Chance of snow"
 msgstr "Khả năng có tuyết"
 
-#: __init__.py:1951
+#: __init__.py:1956
 msgid "Wind speed"
 msgstr "Sức gió"
 
-#: __init__.py:1952
+#: __init__.py:1957
 msgid "Direction"
 msgstr "Hướng"
 
-#: __init__.py:1953
+#: __init__.py:1958
 msgid "Wind direction"
 msgstr "Hướng gió"
 
-#: __init__.py:1954
+#: __init__.py:1959
 msgid "Wind gusts"
 msgstr "Sức gió"
 
-#: __init__.py:1955
+#: __init__.py:1960
 msgid "Cloudiness"
 msgstr "Mây"
 
-#: __init__.py:1956
+#: __init__.py:1961
 msgid "Precipitation"
 msgstr "Mưa"
 
-#: __init__.py:1957
+#: __init__.py:1962
 msgid "Humidity"
 msgstr "Độ ẩm"
 
-#: __init__.py:1958
+#: __init__.py:1963
 msgid "Visibility"
 msgstr "Tầm nhìn"
 
-#: __init__.py:1977
+#: __init__.py:1982
 msgid "Hourly forecast for"
 msgstr "Dự báo từng giờ cho"
 
-#: __init__.py:2002
+#: __init__.py:2007
 msgid "Provides the current temperature and weather conditions."
 msgstr "Cung cấp thông tin thời tiết và nhiệt độ hiện tại."
 
-#: __init__.py:2014
+#: __init__.py:2019
 #, python-format
 msgid ""
 "If pressed once, announce the weather forecast and current temperature for "
@@ -521,39 +521,39 @@ msgstr ""
 "Bấm một lần, đọc dự báo thời tiết và nhiệt độ hiện tại cho 24 giờ và %d ngày "
 "tiếp theo. Bấm hai lần, đọc dự báo thời tiết và nhiệt độ từng giờ."
 
-#: __init__.py:2022
+#: __init__.py:2027
 msgid "Sorry, no list available!"
 msgstr "Xin lỗi. Không có danh sách nào!"
 
-#: __init__.py:2055
+#: __init__.py:2060
 msgid "Allows you to set a temporary city."
 msgstr "Cho phép bạn đặt một tỉnh / thành tạm"
 
-#: __init__.py:2069
+#: __init__.py:2074
 msgid "Scale of temperature measurement set into"
 msgstr "Đã thiết lập đơn vị đo nhiệt độ là"
 
-#: __init__.py:2071
+#: __init__.py:2076
 msgid "Allows you to set a temporary scale of temperature mesurement."
 msgstr "Cho phép bạn đặt một đơn vị đo nhiệt độ tạm thời."
 
-#: __init__.py:2101
+#: __init__.py:2106
 msgid "at"
 msgstr "tại"
 
-#: __init__.py:2104
+#: __init__.py:2109
 msgid "Last update of the current weather report"
 msgstr "Lần cập nhật dự báo cuối cùng của thời tiết hiện tại"
 
-#: __init__.py:2106
+#: __init__.py:2111
 msgid "Announces the date of the last update of the weather report."
 msgstr "Thông báo ngày cập nhật cuối cùng của dự báo thời tiết."
 
-#: __init__.py:2166
+#: __init__.py:2171
 msgid "Open the Weather Plus settings dialog."
 msgstr "Mở hộp thoại cài đặt Weather Plus."
 
-#: __init__.py:2209
+#: __init__.py:2214
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast, f5: volume controls."
@@ -561,7 +561,7 @@ msgstr ""
 "f1: thông tin giúp đỡ, f2: TAB được chọn cuối cùng, f3: danh sách và ô nhập "
 "liệu, f4: điều khiển thời gian dự báo thời tiết, f5: điều khiển âm lượng."
 
-#: __init__.py:2210
+#: __init__.py:2215
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast."
@@ -569,67 +569,67 @@ msgstr ""
 "f1: thông tin giúp đỡ, f2: TAB cuối cùng được chọn, f3: danh sách và ô nhập "
 "liệu, f4: điều khiển thời gian dự báo thời tiết."
 
-#: __init__.py:2253
+#: __init__.py:2258
 msgid "Test"
 msgstr "Kiểm tra"
 
-#: __init__.py:2254
+#: __init__.py:2259
 msgid "Details"
 msgstr "Chi tiết"
 
-#: __init__.py:2255
+#: __init__.py:2260
 msgid "Define"
 msgstr "Quy định"
 
-#: __init__.py:2256
+#: __init__.py:2261
 msgid "Add"
 msgstr "Thêm"
 
-#: __init__.py:2258
+#: __init__.py:2263
 msgid "Remove"
 msgstr "Gỡ bỏ"
 
-#: __init__.py:2259
+#: __init__.py:2264
 msgid "Rename"
 msgstr "Đổi tên"
 
-#: __init__.py:2285
+#: __init__.py:2290
 msgid "&Import new cities..."
 msgstr "&Nạp các tỉnh / thành mới..."
 
-#: __init__.py:2286
+#: __init__.py:2291
 msgid "&Export your cities..."
 msgstr "&Xuất các tỉnh / thành của bạn..."
 
-#: __init__.py:2287
+#: __init__.py:2292
 msgid "&hourlyforecast setting..."
 msgstr "&cài đặt dự báo từng giờ..."
 
-#: __init__.py:2302
+#: __init__.py:2307
 msgid "Scale of temperature measurement:"
 msgstr "Đơn vị đo nhiệt độ:"
 
-#: __init__.py:2310
+#: __init__.py:2315
 msgid "Degrees shown as:"
 msgstr "Hiển thị nhiệt độ"
 
-#: __init__.py:2313
+#: __init__.py:2318
 msgid "C - F - K"
 msgstr "C - F - K"
 
-#: __init__.py:2314
+#: __init__.py:2319
 msgid "Unspecified"
 msgstr "Không xác định"
 
-#: __init__.py:2322
+#: __init__.py:2327
 msgid "Weather Forecasts up to days:"
 msgstr "Dự báo thời tiết đến ngày:"
 
-#: __init__.py:2333
+#: __init__.py:2338
 msgid "API response language:"
 msgstr "Ngôn ngữ trả về cho API:"
 
-#: __init__.py:2342
+#: __init__.py:2347
 msgid ""
 "&Copy the weather report and weather forecast, including city details to "
 "clipboard"
@@ -637,119 +637,119 @@ msgstr ""
 "&Sao chép thông tin và dự báo thời tiết, bao gồm chi tiết tỉnh / thành vào "
 "bộ nhớ tạm"
 
-#: __init__.py:2347
+#: __init__.py:2352
 msgid "Enable &audio effects (only for the current weather conditions)"
 msgstr "Bật hiệu ứng âm th&anh (chỉ cho điều kiện thời tiết hiện tại)"
 
-#: __init__.py:2350
+#: __init__.py:2355
 msgid "Use only &weather effects"
 msgstr "Chỉ dùng hiệu ứng &thời tiết"
 
-#: __init__.py:2355
+#: __init__.py:2360
 msgid "General audio volume"
 msgstr "Âm lượng âm thanh chung"
 
-#: __init__.py:2356
+#: __init__.py:2361
 msgid "Current audio volume"
 msgstr "Âm lượng âm thanh hiện tại"
 
-#: __init__.py:2388
+#: __init__.py:2393
 msgid "Enable &help buttons in the settings window"
 msgstr "Bật nút &trợ giúp trong cửa sổ cài đặt"
 
-#: __init__.py:2395
+#: __init__.py:2400
 msgid "Read &wind information"
 msgstr "Đọc thông tin &gió"
 
-#: __init__.py:2400 __init__.py:5847
+#: __init__.py:2405 __init__.py:5852
 msgid "Add wind directi&on"
 msgstr "Thêm &hướng gió"
 
-#: __init__.py:2404 __init__.py:5843
+#: __init__.py:2409 __init__.py:5848
 msgid "Add wi&nd speed"
 msgstr "Thêm tốc độ &gió"
 
-#: __init__.py:2408
+#: __init__.py:2413
 msgid "Add speed in &meters per second of the wind"
 msgstr "Thêm tốc độ gió tính bằng &mét trên giây"
 
-#: __init__.py:2412 __init__.py:5851
+#: __init__.py:2417 __init__.py:5856
 msgid "Add wind &gust speed"
 msgstr "Thêm &lượng gió"
 
-#: __init__.py:2416
+#: __init__.py:2421
 msgid "Add perceived &temperature"
 msgstr "Thêm &nhiệt độ nhận thức"
 
-#: __init__.py:2421
+#: __init__.py:2426
 msgid "&Read atmospherical information"
 msgstr "Đọc &thông tin khí quyển"
 
-#: __init__.py:2426 __init__.py:5859
+#: __init__.py:2431 __init__.py:5864
 msgid "Add humidity va&lue"
 msgstr "Thêm &giá trị độ ẩm"
 
-#: __init__.py:2430 __init__.py:5863
+#: __init__.py:2435 __init__.py:5868
 msgid "Add &visibility value"
 msgstr "Thêm giá trị &tầm nhìn"
 
-#: __init__.py:2434 __init__.py:5855
+#: __init__.py:2439 __init__.py:5860
 msgid "Add cloudiness &value"
 msgstr "Thêm &giá trị mây"
 
-#: __init__.py:2438 __init__.py:5867
+#: __init__.py:2443 __init__.py:5872
 msgid "Add precipitation &value"
 msgstr "Thêm &giá trị lượng mưa"
 
-#: __init__.py:2442 __init__.py:5871
+#: __init__.py:2447 __init__.py:5876
 msgid "Add &ultraviolet radiation value"
 msgstr "Thêm giá trị bức xạ tia &cực tím"
 
-#: __init__.py:2446
+#: __init__.py:2451
 msgid "Add atmospheric &pressure value"
 msgstr "Thêm giá trị á&p suất khí quyển"
 
-#: __init__.py:2450
+#: __init__.py:2455
 msgid "Indicates the atmospheric pressure in millimeters of mercur&y (mmHg)"
 msgstr "Cho biết áp suất khí quyển tính bằng mi li mét thủy ngân & y (mmHg)"
 
-#: __init__.py:2455
+#: __init__.py:2460
 msgid "Read a&stronomical information"
 msgstr "Đọc các thông tin &thiên văn"
 
-#: __init__.py:2459
+#: __init__.py:2464
 msgid "Enable reading of the hours in &24-hour format"
 msgstr "Bật đọc giờ ở định dạng &24-giờ"
 
-#: __init__.py:2464
+#: __init__.py:2469
 msgid "Use the comma to separate decimals, example (4,&15)"
 msgstr "Dùng dấu phảy để phân cách số thập phân. Ví dụ: 4,&15"
 
-#: __init__.py:2468
+#: __init__.py:2473
 msgid "&Displays output in a window"
 msgstr "&Hiển thị đầu ra trong một cửa sổ"
 
-#: __init__.py:2472
+#: __init__.py:2477
 msgid "Check for &upgrade"
 msgstr "Kiểm tra &cập nhật"
 
-#: __init__.py:2499
+#: __init__.py:2504
 msgid "Test the city validity  and find the data of it."
 msgstr "Kiểm tra tính hợp lệ của tỉnh / thành và tìm dữ liệu của nó."
 
-#: __init__.py:2500
+#: __init__.py:2505
 msgid "Add the current city into your list."
 msgstr "Thêm tỉnh / thành hiện tại vào danh sách của bạn"
 
-#: __init__.py:2501
+#: __init__.py:2506
 msgid "Displays information about the current city."
 msgstr "Hiển thị thông tin cho tỉnh / thành hiện tại."
 
-#: __init__.py:2502
+#: __init__.py:2507
 msgid "Allows you to define the area, in order to adapt the sound effects."
 msgstr "Cho phép bạn quy định một khu vực để gán hiệu ứng âm thanh."
 
-#: __init__.py:2503
+#: __init__.py:2508
 msgid ""
 "Presets the current city as the default, will be used every time you restart "
 "the plugin."
@@ -757,15 +757,15 @@ msgstr ""
 "Đặt sẵn tỉnh / thành hiện tại làm mặc định, sẽ dùng mỗi khi khởi động lại "
 "plugin."
 
-#: __init__.py:2504
+#: __init__.py:2509
 msgid "Delete  the current city from your list."
 msgstr "Xóa tỉnh / thành hiện tại khỏi danh sách của bạn"
 
-#: __init__.py:2505
+#: __init__.py:2510
 msgid "Rename the current city."
 msgstr "Đổi tên tỉnh / thành hiện tại."
 
-#: __init__.py:2506
+#: __init__.py:2511
 msgid ""
 "Permits to incorporate in your list new cities importing them from another "
 "list with the extension *.zipcodes; you can select the city you want to "
@@ -775,76 +775,76 @@ msgstr ""
 "chúng từ danh sách khác với phần mở rộng * .zipcodes; bạn có thể chọn tỉnh / "
 "thành muốn nhập bằng cách bật hộp kiểm liên quan."
 
-#: __init__.py:2507
+#: __init__.py:2512
 msgid "Permits to save your list of cities in a specified path."
 msgstr ""
 "Cho phép lưu danh sách các tỉnh / thành của bạn vào đường dẫn được quy định."
 
-#: __init__.py:2508
+#: __init__.py:2513
 msgid "Allows you to choose the contents of the hourly forecast report."
 msgstr "Cho phép bạn chọn các nội dung để dự báo từng giờ."
 
-#: __init__.py:2615
+#: __init__.py:2620
 msgid "You can enter or search for a city"
 msgstr "Bạn có thể nhập hoặc tìm một tỉnh / thành"
 
-#: __init__.py:2616
+#: __init__.py:2621
 msgid "By Latitude and Longitude: 48.8567,2.3508"
 msgstr "Bằng vĩ độ và kinh độ: 48.8567,2.3508"
 
-#: __init__.py:2617
+#: __init__.py:2622
 msgid "By City name: Paris"
 msgstr "Bằng tên tỉnh / thành: Paris"
 
-#: __init__.py:2618
+#: __init__.py:2623
 msgid "By City name and country: Toronto,Canada"
 msgstr "Bằng tên tỉnh / thành và quốc gia: Toronto,Canada"
 
-#: __init__.py:2619
+#: __init__.py:2624
 msgid "Or Toronto,CA"
 msgstr "Hoặc Toronto,CA"
 
-#: __init__.py:2620
+#: __init__.py:2625
 msgid "By City name and region: Toronto,Ontario"
 msgstr "Bằng tên tỉnh / thành và vùng lãnh thổ: Toronto,Ontario"
 
-#: __init__.py:2621
+#: __init__.py:2626
 msgid "By US zip: 10001"
 msgstr "Bằng mã zip của Mỹ: 10001"
 
-#: __init__.py:2622
+#: __init__.py:2627
 msgid "By UK postcode: SW1"
 msgstr "Bằng mã bưu chính của Anh: SW1"
 
-#: __init__.py:2623
+#: __init__.py:2628
 msgid "By Canada postal code: G2J"
 msgstr "Bằng mã bưu điện của Canada: G2J"
 
-#: __init__.py:2624
+#: __init__.py:2629
 msgid "By metar:<metar code>: metar:EGLL"
 msgstr "Bằng metar:<mã metar>: metar:EGLL"
 
-#: __init__.py:2625
+#: __init__.py:2630
 msgid "By iata:<3 digit airport code>: iata:DXB"
 msgstr "Bằng iata:<3 chữ số mã sân bay>: iata:DXB"
 
-#: __init__.py:2626
+#: __init__.py:2631
 msgid "By auto:ip IP lookup: auto:ip"
 msgstr "Bằng auto:ip IP tra cứu: auto:ip"
 
-#: __init__.py:2627
+#: __init__.py:2632
 msgid "By IP address (IPv4 and IPv6 supported): 100.0.0.1"
 msgstr "Bằng địa chỉ IP (hỗ trợ cả IPv4 và IPv6): 100.0.0.1"
 
-#: __init__.py:2628
+#: __init__.py:2633
 msgid "if there will be cities with the same name, will be listed"
 msgstr "Nếu có các tỉnh / thành cùng tên, chúng sẽ được liệt kê"
 
-#: __init__.py:2629
+#: __init__.py:2634
 msgid "By default, confirming a selection, is used the postal code"
 msgstr "Mặc định, việc xác nhận lựa chọn sẽ dùng mã bưu chính"
 
-#: __init__.py:2630
+#: __init__.py:2635
 msgid ""
 "If the postal code is not valid, will be used a text string: city, state, "
 "region"
@@ -852,587 +852,589 @@ msgstr ""
 "Nếu mã bưu chính không hợp lệ, sẽ dùng một chuỗi văn bản: tỉnh / thành, vùng "
 "lãnh thổ"
 
-#: __init__.py:2631
+#: __init__.py:2636
 msgid "You can indicate how to proceed by prefixing the following commands"
 msgstr "Bạn có thể chỉ ra cách tiến hành bằng các lệnh tiền tố sau"
 
-#: __init__.py:2632
+#: __init__.py:2637
 msgid ""
 "Direct (cities with the same name, will not listed), by typing D:City: D:"
 "Paris"
 msgstr "Chỉ ra (không liệt kê các tỉnh / thành cùng tên), nhập D:City: D:Paris"
 
-#: __init__.py:2633
+#: __init__.py:2638
 msgid "Geographic coordinates, by typing G:City: G:Venezia"
 msgstr "Tọa độ địa lý, nhập G:City: G:Venezia"
 
-#: __init__.py:2634
+#: __init__.py:2639
 msgid "Text string, by typing T:City: T:Bologna"
 msgstr "Chuỗi văn bản, nhập T:City: T:Bologna"
 
-#: __init__.py:2635
+#: __init__.py:2640
 msgid "If the city is not found"
 msgstr "Nếu tỉnh / thành không được tìm thấy"
 
-#: __init__.py:2636
+#: __init__.py:2641
 msgid "Try to reverse the order in the search key"
 msgstr "Thử  đảo ngược thứ tự trong khóa tìm kiếm"
 
-#: __init__.py:2637
+#: __init__.py:2642
 msgid "Try with or without the country of origin"
 msgstr "Thử bao gồm hoặc không bao gồm nguồn gốc địa phương"
 
-#: __init__.py:2638
+#: __init__.py:2643
 msgid "Try to merge the name with hyphens, or separate it with separator"
 msgstr "Thử ghép tên với các dấu gạch ngang, hoặc dấu phân cách"
 
-#: __init__.py:2639
+#: __init__.py:2644
 msgid "Try deleting apostrophes"
 msgstr "Thử xóa đi dấu phảy trên"
 
-#: __init__.py:2640
+#: __init__.py:2645
 msgid "Try changing the vowels accented with normal vowels"
 msgstr "Hãy thử thay đổi nguyên âm có dấu bằng nguyên âm bình thường"
 
-#: __init__.py:2641
+#: __init__.py:2646
 msgid "Try to change in English some parts"
 msgstr "Thử đổi một phần sang tiếng Anh"
 
-#: __init__.py:2642
+#: __init__.py:2647
 msgid "Try with a closest location"
 msgstr "Thử với một vị trí gần nhất"
 
-#: __init__.py:2645
+#: __init__.py:2650
 msgid "Help placing"
 msgstr "Thông tin trợ giúp"
 
-#: __init__.py:2742
+#: __init__.py:2747
 msgid "No sound effect in memory!"
 msgstr "Không có hiệu ứng âm thanh trong bộ nhớ!"
 
-#: __init__.py:2743
+#: __init__.py:2748
 msgid "I can't reproduce the sound."
 msgstr "Tôi không thể tái tạo âm thanh."
 
-#: __init__.py:2839
+#: __init__.py:2844
 msgid "Choose search key for"
 msgstr "Chọn khóa tìm kiếm cho"
 
-#: __init__.py:2859
+#: __init__.py:2864
 msgid "Unfortunately I could not recover enough data to find the city."
 msgstr "Không may, tôi không thể phục hồi đủ dữ liệu để tìm tỉnh / thành."
 
-#: __init__.py:2860
+#: __init__.py:2865
 msgid "Do I try anyway?"
 msgstr "Tôi có nên thử không?"
 
-#: __init__.py:2883
+#: __init__.py:2888
 msgid "not found! Press F1 for help on entering data."
 msgstr "Không tìm thấy! Bấm F1 để được trợ giúp về nhập dữ liệu."
 
-#: __init__.py:2907
+#: __init__.py:2912
 msgid "Is not working properly or has been removed from the database of"
 msgstr "Không hoạt động đúng hoặc đã bị xóa khỏi cơ sở dữ liệu của"
 
-#: __init__.py:2911
+#: __init__.py:2916
 msgid "Is no longer valid!"
 msgstr "Không còn hợp lệ!"
 
-#: __init__.py:2944
+#: __init__.py:2949
 msgid "This option requires the installation of some audio effects"
 msgstr "Tùy chọn này yêu cầu cài đặt vài hiệu ứng âm thanh"
 
-#: __init__.py:2945
+#: __init__.py:2950
 msgid "Do you want to install them?"
 msgstr "Bạn có muốn cài đặt chúng không?"
 
-#: __init__.py:2949
+#: __init__.py:2954
 msgid "The audio effects are installed!"
 msgstr "Hiệu ứng âm thanh đã được cài đặt!"
 
-#: __init__.py:2950
+#: __init__.py:2955
 msgid "Would you like to update?"
 msgstr "Bạn có muốn cập nhật không?"
 
-#: __init__.py:2951
+#: __init__.py:2956
 msgid "Or do you want to uninstall them?"
 msgstr "Hay bạn có muốn gỡ cài đặt chúng?"
 
-#: __init__.py:2958
+#: __init__.py:2963
 msgid "Are you sure you want to uninstall the sound effects?"
 msgstr "Bạn có chắc chắn gỡ cài đặt các hiệu ứng âm thanh không?"
 
-#: __init__.py:2986
+#: __init__.py:2991
 msgid "Update in progress"
 msgstr "Đang tiến hành cập nhật"
 
-#: __init__.py:2987
+#: __init__.py:2992
 msgid "Installation in progress"
 msgstr "Đang tiến hành cài đặt"
 
-#: __init__.py:3016
+#: __init__.py:3021
 msgid "The installation of audio effects has been completed successfully!"
 msgstr "Đã hoàn tất cài đặt các hiệu ứng âm thanh!"
 
-#: __init__.py:3017
+#: __init__.py:3022
 msgid "Adding folder:"
 msgstr "Đang thêm thư mục:"
 
-#: __init__.py:3019
+#: __init__.py:3024
 msgid "The upgrade of audio effects has been completed successfully!"
 msgstr "Việc cập nhật hiệu ứng audio đã hoàn tất!"
 
-#: __init__.py:3026
+#: __init__.py:3031
 msgid "These sound effects are subject to change by the author."
 msgstr "Những hiệu ứng âm thanh có thể thay đổi bởi tác giả."
 
-#: __init__.py:3027
+#: __init__.py:3032
 msgid "Disable and re-enable this option in order to update or uninstall them."
 msgstr "Tắt và bật lại tùy chọn này để cập nhật hay gỡ cài đặt chúng."
 
-#: __init__.py:3088
+#: __init__.py:3093
 msgid "Verify that your internet connection is active, or try again later."
 msgstr "Chắc rằng bạn đang có kết nối mạng hoặc thử lại sau."
 
-#: __init__.py:3089
+#: __init__.py:3094
 msgid "File corrupted or not available!"
 msgstr "Tập tin bị lỗi hoặc không tồn tại!"
 
-#: __init__.py:3091
+#: __init__.py:3096
 msgid "Sorry, I could not complete the installation of the sound effects!"
 msgstr "Xin lỗi. Tôi không thể cài đặt hiệu ứng âm thanh!"
 
-#: __init__.py:3092
+#: __init__.py:3097
 msgid "Installation Error!"
 msgstr "Lỗi cài đặt!"
 
-#: __init__.py:3196
+#: __init__.py:3201
 msgid ""
 "The details of this city are not in the database and so I added them to the "
 "list."
 msgstr ""
+"Các chi tiết của tỉnh / thành này không có trong cơ sở dữ liệu nên tôi đã "
+"thêm chúng vào danh sách."
 
-#: __init__.py:3203
+#: __init__.py:3208
 msgid "Cannot identify your location, due to insufficient data."
 msgstr "Không thể xác định vị trí của bạn, do không đủ dữ liệu."
 
-#: __init__.py:3231
+#: __init__.py:3236
 msgid "Details of"
 msgstr "Các chi tiết của"
 
-#: __init__.py:3234
+#: __init__.py:3239
 msgid "Place"
 msgstr "Nơi"
 
-#: __init__.py:3235
+#: __init__.py:3240
 msgid "Current local time"
 msgstr "Giờ địa phương hiện tại"
 
-#: __init__.py:3236
+#: __init__.py:3241
 msgid "Degrees latitude"
 msgstr "Độ vĩ độ"
 
-#: __init__.py:3237
+#: __init__.py:3242
 msgid "Degrees longitude"
 msgstr "Độ kinh độ"
 
-#: __init__.py:3238
+#: __init__.py:3243
 msgid "Elevation above sea level"
 msgstr "Độ cao so với mực nước biển"
 
-#: __init__.py:3238
+#: __init__.py:3243
 msgid "meters"
 msgstr "mét"
 
-#: __init__.py:3263
+#: __init__.py:3268
 msgid "Define the area for"
 msgstr "quy định vùng miền cho"
 
-#: __init__.py:3267
+#: __init__.py:3272
 msgid "Hinterland"
 msgstr "Nội địa"
 
-#: __init__.py:3268
+#: __init__.py:3273
 msgid "Maritime area"
 msgstr "Khu vực Maritime"
 
-#: __init__.py:3269
+#: __init__.py:3274
 msgid "Desert zone"
 msgstr "vùng sa mạc"
 
-#: __init__.py:3270
+#: __init__.py:3275
 msgid "Arctic zone"
 msgstr "vùng Bắc Cực"
 
-#: __init__.py:3271
+#: __init__.py:3276
 msgid "Mountain zone"
 msgstr "Vùng núi"
 
-#: __init__.py:3423
+#: __init__.py:3428
 msgid "Enter new name."
 msgstr "Nhập tên mới."
 
-#: __init__.py:3432
+#: __init__.py:3437
 msgid "it can't be used because it already exists!"
 msgstr "không thể dùng vì nó đã tồn tại!"
 
-#: __init__.py:3544
+#: __init__.py:3549
 msgid "is correct"
 msgstr "chính xác"
 
-#: __init__.py:3545
+#: __init__.py:3550
 msgid "But the name"
 msgstr "Nhưng tên"
 
-#: __init__.py:3547
+#: __init__.py:3552
 msgid "already exists"
 msgstr "đã tồn tại"
 
-#: __init__.py:3548
+#: __init__.py:3553
 msgid "You have to change it!"
 msgstr "Bạn phải thay đổi nó!"
 
-#: __init__.py:3549
+#: __init__.py:3554
 msgid "The city proper is"
 msgstr "Tỉnh / Thành thích hợp là"
 
-#: __init__.py:3551
+#: __init__.py:3556
 msgid "Want to use the suggested name?"
 msgstr "Có muốn dùng tên được gợi ý không?"
 
-#: __init__.py:3563
+#: __init__.py:3568
 msgid "Import cities"
 msgstr "Nạp tỉnh / thành"
 
-#: __init__.py:3581
+#: __init__.py:3586
 msgid "Empty file or not in cities format compatible!"
 msgstr "tập tin rỗng, hoặc định dạng tỉnh / thành không tương thích!"
 
-#: __init__.py:3587
+#: __init__.py:3592
 msgid "Do you want to replace your list with this?"
 msgstr "Bạn có muốn thay thế danh sách của bạn bằng cái này không?"
 
-#: __init__.py:3588
+#: __init__.py:3593
 msgid "If you select yes, your list will be completely replaced."
 msgstr "Nếu chọn có, danh sách của bạn sẽ bị thay thế hoàn toàn."
 
-#: __init__.py:3589
+#: __init__.py:3594
 msgid "If you select no, the new cities will be added to your list."
 msgstr "Nếu chọn không, tỉnh / thành mới sẽ được thêm vào danh sách của bạn."
 
-#: __init__.py:3592
+#: __init__.py:3597
 msgid "Select import mode"
 msgstr "Chọn chế độ nạp"
 
-#: __init__.py:3603
+#: __init__.py:3608
 msgid "File contents"
 msgstr "Nội dung tập tin"
 
-#: __init__.py:3604
+#: __init__.py:3609
 msgid "cities"
 msgstr "Tỉnh / thành"
 
-#: __init__.py:3607
+#: __init__.py:3612
 msgid "Activate the check boxes of the cities you want to import."
 msgstr "Bật hộp kiểm của các tỉnh / thành bạn muốn nạp."
 
-#: __init__.py:3628
+#: __init__.py:3633
 msgid "Importing cities in progress"
 msgstr "Đang tiến hành nạp các tỉnh / thành"
 
-#: __init__.py:3720
+#: __init__.py:3725
 msgid "Were added"
 msgstr "Đã thêm"
 
-#: __init__.py:3720
+#: __init__.py:3725
 msgid "new cities to the list"
 msgstr "tỉnh / thành mới vào danh sách"
 
-#: __init__.py:3721
+#: __init__.py:3726
 msgid "Have been ignored because existing"
 msgstr "Bị bỏ qua vì đã tồn tại"
 
-#: __init__.py:3722
+#: __init__.py:3727
 msgid "Content of imported list"
 msgstr "Nội dung danh sách đã nạp"
 
-#: __init__.py:3723
+#: __init__.py:3728
 msgid "Containing incomplete data"
 msgstr "Có chứa dữ liệu không hoàn chỉnh"
 
-#: __init__.py:3724
+#: __init__.py:3729
 msgid "selected by the user"
 msgstr "đã chọn bởi người dùng"
 
-#: __init__.py:3725
+#: __init__.py:3730
 msgid "Import finished"
 msgstr "Đã nạp xong"
 
-#: __init__.py:3737
+#: __init__.py:3742
 msgid "A copy of"
 msgstr "Bản sao của"
 
-#: __init__.py:3739
+#: __init__.py:3744
 msgid "It will be exported"
 msgstr "Nó sẽ được xuất ra"
 
-#: __init__.py:3740
+#: __init__.py:3745
 msgid "But it does not yet contain the changes you just made the list!"
 msgstr ""
 "Nhưng nó vẫn chưa chứa những thay đổi bạn vừa thực hiện trong danh sách!"
 
-#: __init__.py:3741
+#: __init__.py:3746
 msgid "I proceed?"
 msgstr "Có tiến hành không?"
 
-#: __init__.py:3747
+#: __init__.py:3752
 msgid "Export cities"
 msgstr "Xuất các tỉnh / thành"
 
-#: __init__.py:3762
+#: __init__.py:3767
 msgid "You can not export the same file at the same path!"
 msgstr "Bạn không thể xuất các tập tin giống nhau ra cùng đường dẫn!"
 
-#: __init__.py:3782
+#: __init__.py:3787
 msgid "Hourlyforecast data report values."
 msgstr "Giá trị dữ liệu dự báo từng giờ."
 
-#: __init__.py:3782
+#: __init__.py:3787
 msgid "Disable the data you don't want to be processed:"
 msgstr "Vô hiệu các dữ liệu bằng không muốn tra cứu:"
 
-#: __init__.py:4529
+#: __init__.py:4534
 msgid "january"
 msgstr "tháng một"
 
-#: __init__.py:4530
+#: __init__.py:4535
 msgid "february"
 msgstr "tháng hai"
 
-#: __init__.py:4531
+#: __init__.py:4536
 msgid "march"
 msgstr "tháng ba"
 
-#: __init__.py:4532
+#: __init__.py:4537
 msgid "april"
 msgstr "tháng tư"
 
-#: __init__.py:4533
+#: __init__.py:4538
 msgid "may"
 msgstr "tháng năm"
 
-#: __init__.py:4534
+#: __init__.py:4539
 msgid "june"
 msgstr "tháng sáu"
 
-#: __init__.py:4535
+#: __init__.py:4540
 msgid "july"
 msgstr "tháng bảy"
 
-#: __init__.py:4536
+#: __init__.py:4541
 msgid "august"
 msgstr "tháng tám"
 
-#: __init__.py:4537
+#: __init__.py:4542
 msgid "september"
 msgstr "tháng chín"
 
-#: __init__.py:4538
+#: __init__.py:4543
 msgid "october"
 msgstr "tháng mười"
 
-#: __init__.py:4539
+#: __init__.py:4544
 msgid "november"
 msgstr "tháng mười một"
 
-#: __init__.py:4540
+#: __init__.py:4545
 msgid "december"
 msgstr "tháng mười hai"
 
-#: __init__.py:4541
+#: __init__.py:4546
 msgid "Monday"
 msgstr "Thứ hai"
 
-#: __init__.py:4542
+#: __init__.py:4547
 msgid "Tuesday"
 msgstr "Thứ ba"
 
-#: __init__.py:4543
+#: __init__.py:4548
 msgid "Wednesday"
 msgstr "Thứ tư"
 
-#: __init__.py:4544
+#: __init__.py:4549
 msgid "Thursday"
 msgstr "Thứ năm"
 
-#: __init__.py:4545
+#: __init__.py:4550
 msgid "Friday"
 msgstr "Thứ sáu"
 
-#: __init__.py:4546
+#: __init__.py:4551
 msgid "Saturday"
 msgstr "Thứ bảy"
 
-#: __init__.py:4547
+#: __init__.py:4552
 msgid "Sunday"
 msgstr "Chủ nhật"
 
-#: __init__.py:4605
+#: __init__.py:4610
 #, python-format
 msgid "It was not possible find the acronym of \"%s\"!"
 msgstr "Không tìm được từ viết tắt của \"%s\"!"
 
-#: __init__.py:4606
+#: __init__.py:4611
 msgid "This may not allow you to get the city details."
 msgstr ""
 "Điều này có thể không cho phép bạn thu thập các thông tin chi tiết của "
 "tỉnh / thành."
 
-#: __init__.py:4607
+#: __init__.py:4612
 msgid ""
 "Please report this to the author so he can add this country in database."
 msgstr ""
 "Vui lòng thông báo điều này cho tác giả để chúng tôi có thể thêm tên này vào "
 "cơ sở dữ liệu."
 
-#: __init__.py:4608
+#: __init__.py:4613
 #, python-format
 msgid "Send an email to %s"
 msgstr "Gửi một thư điện tử đến %s"
 
-#: __init__.py:4609
+#: __init__.py:4614
 msgid "With  object the line below, thanks."
 msgstr "Với dòng bên dưới. Xin cảm ơn."
 
-#: __init__.py:4677 __init__.py:4695
+#: __init__.py:4682 __init__.py:4700
 msgid "Downloaded"
 msgstr "Đã tải"
 
-#: __init__.py:4678
+#: __init__.py:4683
 msgid "of"
 msgstr "của"
 
-#: __init__.py:4716
+#: __init__.py:4721
 msgid "Find..."
 msgstr "Tìm kiếm..."
 
-#: __init__.py:4717
+#: __init__.py:4722
 msgid "Find next"
 msgstr "Tìm tiếp"
 
-#: __init__.py:4718
+#: __init__.py:4723
 msgid "Find previous"
 msgstr "Tìm trước"
 
-#: __init__.py:4917
+#: __init__.py:4922
 msgid "Be an error has occurred."
 msgstr "Có lỗi xảy ra."
 
-#: __init__.py:4918
+#: __init__.py:4923
 msgid "See the log for more information."
 msgstr "Xem log để biết thêm thông tin"
 
-#: __init__.py:4919
+#: __init__.py:4924
 msgid "Error: failure writing file!"
 msgstr "Lỗi: ghi tập tin thật bại!"
 
-#: __init__.py:5063
+#: __init__.py:5068
 msgid "occurrences found"
 msgstr "Đã xảy ra lỗi"
 
-#: __init__.py:5063
+#: __init__.py:5068
 msgid "for"
 msgstr "cho"
 
-#: __init__.py:5065
+#: __init__.py:5070
 msgid "Choose a city."
 msgstr "Chọn một tỉnh / thành."
 
-#: __init__.py:5067
+#: __init__.py:5072
 msgid "List of availables Cities"
 msgstr "Danh sách các tỉnh / thành hiện có"
 
-#: __init__.py:5099
+#: __init__.py:5104
 msgid "Do not show this message again!"
 msgstr "Không hiện lại thông điệp này!"
 
-#: __init__.py:5109
+#: __init__.py:5114
 msgid "&Install..."
 msgstr "&Cài đặt..."
 
-#: __init__.py:5109
+#: __init__.py:5114
 msgid "Upd&ate..."
 msgstr "Cập &nhật..."
 
-#: __init__.py:5111
+#: __init__.py:5116
 msgid "&Close"
 msgstr "Đó&ng"
 
-#: __init__.py:5112
+#: __init__.py:5117
 msgid "&Uninstall..."
 msgstr "&Gỡ cài đặt..."
 
-#: __init__.py:5214
+#: __init__.py:5219
 msgid "Type the search string"
 msgstr "Nhập chuỗi muốn tìm"
 
-#: __init__.py:5214 __init__.py:5268
+#: __init__.py:5219 __init__.py:5273
 msgid "Find"
 msgstr "Tìm kiếm"
 
-#: __init__.py:5265
+#: __init__.py:5270
 msgid "next"
 msgstr "tiếp"
 
-#: __init__.py:5265
+#: __init__.py:5270
 msgid "previous"
 msgstr "trước"
 
-#: __init__.py:5272
+#: __init__.py:5277
 msgid "No results next for"
 msgstr "Không có kết quả tiếp theo cho"
 
-#: __init__.py:5272
+#: __init__.py:5277
 msgid "No previous results for"
 msgstr "Không có kết quả trước cho"
 
-#: __init__.py:5314
+#: __init__.py:5319
 msgid "&Select all"
 msgstr "&Chọn tất cả"
 
-#: __init__.py:5316
+#: __init__.py:5321
 msgid "&Deselect all"
 msgstr "&Bỏ chọn tất cả"
 
-#: __init__.py:5356
+#: __init__.py:5361
 msgid "not checked"
 msgstr "chưa chọn"
 
-#: __init__.py:5358
+#: __init__.py:5363
 msgid "checked"
 msgstr "đã chọn"
 
-#: __init__.py:5362
+#: __init__.py:5367
 msgid "check box"
 msgstr "hộp kiểm"
 
-#: __init__.py:5372
+#: __init__.py:5377
 msgid "check boxes checked"
 msgstr "các hộp kiểm đã chọn"
 
-#: __init__.py:5381
+#: __init__.py:5386
 msgid "check boxes not checked"
 msgstr "các hộp kiểm chưa chọn"
 
-#: __init__.py:5443
+#: __init__.py:5448
 msgid "Saving in progress"
 msgstr "Đang lưu"
 
-#: __init__.py:5445
+#: __init__.py:5450
 msgid "Download canceled."
 msgstr "Đã hủy tải về."
 
-#: __init__.py:5499
+#: __init__.py:5504
 msgid "&Copy to clipboard"
 msgstr "&Chép vào bộ nhớ tạm"
 
