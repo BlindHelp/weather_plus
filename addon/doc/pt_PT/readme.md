@@ -1,194 +1,151 @@
 # Weather Plus #
 
 * Autor: Adriano Barbieri
-* NVDA compatibility: 2017.3 to beyond
-* Baixar: [versão estável][1]
+* Compatibilidade com NVDA: 2017.3 e seguintes
+* Descarregar [versão estável][1]
 
 # Acerca do WEATHER PLUS: #
 
-* Este addon para o NVDA fornece a temperatura local e a previsão do tempo
-  actual para as próximas 24 horas e a previsão até 2días adicionais and hourlyforecast.
+* Este extra para o NVDA fornece a temperatura local e a previsão do tempo actual para as próximas 24 horas, para até os próximos dois días adicionais  e a previsão horária para o próprio dia.
 * Copyright (C) [Adriano Barbieri](mailto:adrianobarb@yahoo.it)
 * Lançado sob a licença GNU GPL (General Public License) v2
 
-* O Weather Plus funciona com base na utilização e presença dos seguintes
+# O Weather Plus funciona com base na utilização e presença dos seguintes
   serviços:
 * [https://www.weatherapi.com/](https://www.weatherapi.com/)
 * [http://www.geonames.org/](http://www.geonames.org/)
 * [http://veloroutes.org/elevation/](http://veloroutes.org/elevation/)
 * [https://www.nvda.it/](https://www.nvda.it/)
 
-# USAGE: #
-* Press NVDA+w to get the information about current temperature and weather
-  conditions.
-* Press NVDA+shift+W to get 24 hours forecast and forecast up to 2 days.
-* Press NVDA+shift+W twice to get hourlyforecast of temperature and atmospheric conditions.
-* Press NVDA+shift+ctrl+w to set a temporary city.
-* Pressione NVDA+shift+control+alt+w Para abrir o diálogo de configurações
-  do weather plus;
-* Press NVDA+alt+w to get the date and time, when the weather report was
-  updated.
-* Press control+shift+w to toggle between Fahrenheit, Celsius or Kelvin
-  temperature scales.
+# Utilização #
+* Pressione NVDA+w para ouvir a temperatura e as condições atmosféricas actuais;
+* Pressione NVDA + shift + W para obter as condições atmosféricas das próximas 24 horas e dos próximos 2 dias.
+* Pressione NVDA+shift+W duas vezes para obter uma previsão horária da temperatura e das condições atmosféricas.
+* Pressione NVDA+shift+ctrl +w para definir uma cidade em modo temporário;
+* Pressione NVDA+shift+control+alt+w Para abrir a janela de configurações do weather plus;
+* Pressione NVDA+alt+w para ouvir a data da última actualização das condições atmosféricas.
+* Pressione control+shift+w para alternar entre Fahrenheit, Celsius ou Kelvin.
 
-# Weather Plus setup: #
+# Configuração do Weather Plus: #
 
-* You must set the Weather Plus addon before its first use! Go to the
-  Preferences submenu, Weather Plus Settings submenu and choose one of the
-  following options:
+* Deve configurar o Weather Plus antes da sua primeira utilização!
+Ir para o submenu Preferências, configurações do Weather Plus e escolher uma das seguintes opções:
+ * Configurações gerais... - Apresenta ou permite definir a cidade actual a partir de uma lista.
+ * Definir uma cidade temporária... - Mostra e permite definir uma cidade temporária de uma lista, se disponível.
+ * Documentação - Abre o ficheiro de ajuda para a língua actual.
+ * Verificar actualizações... - Notifica sobre a disponibilidade da existência de nova versão.
 
+Para acrescentar uma nova cidade: prima o seguinte item:
+* Configurações gerais... - Apresenta ou permite definir a cidade actual a partir de uma lista.
 
-* Set and Manage Your Cities... - Displays or allows to set the current city
-  from a list.
-* Documentation - opens the help file for the current language.
-* Check for Update... - notifies about the availability of the new version.
+* A seguinte mensagem é apresentada apenas na primeira utilização!
+Configurações (Nenhuma predefinição) F1: ajuda à localização, F2: selecção do último tab, F3: listas e caixas combinação, F4: controlo da duração da previsão do tempo, F5: controlos do volume.
 
-To add a new city: press the following item:
+* Na caixa de edição, introduza uma Cidade ou escolha uma da lista, se disponível.
+Nota: A tecla F5 está disponível se os efeitos sonoros estiverem activados.
 
-* Set and Manage Your Cities... Displays or allows to set the current city
-  from a list
+* Depois de pressionar enter na opção "Configurações Gerais" encontrará os seguintes botões:
 
-* The following message is displayed only for the first time! Settings
-  Preset None F1: help placing, F2: last TAB selection, F3: list and edit
-  box, F4: control duration Weather Forecast, F5: volume controls.
+* Testar - Testar a validade da cidade e encontrar os dados da mesma;
 
-* In the edit box, enter a City or choose one from the list, if
-  available. Note: The F5 key is available if the sound effects are
-  activated.
+* Adicionar - Adiciona a cidade actual à sua lista.
+Este botão pode ser activado se seleccionar uma cidade da lista, ou quando a cidade introduzida passou no teste.
 
-* After pressing enter on the item "Set and Manage Your Cities...", you will
-  find other buttons as follows:
+* Detalhes - Apresenta informação sobre a cidade actual.
+Este botão é activado se seleccionar uma cidade da lista, ou se esta tiver passado no teste.
 
-* Test - Test the validity of the city and find the data of it.
+* Definir - Permite definir a área, de modo a adaptar os efeitos sonoros.
+Este botão pode ser activado se os efeitos sonoros forem instalados e activados, e seleccionar uma cidade da lista.
 
-* Add - adds the current city into your list. This button can be activated
-  if you select a city from the list, when the city entered passed the test.
+* Predefinir - definir uma cidade como padrão, que será utilizada cada vez que reiniciar o extra.
+Este botão é activado se seleccionar uma cidade previamente inserida na lista e não pré-definida, e se esta tiver passado no teste.
 
-* Details - displays information about the current city. This button is
-  activated if you select a city from the list, or it has passed the test.
+* Remover - Elimina a cidade actual da sua lista.
+Este botão pode ser activado se seleccionar uma cidade previamente inserida na lista.
 
-* Define - Allows you to define the area, in order to adapt the sound
-  effects. This button can be activated if the audio effects are installed
-  and activated, and you select a city from the list.
+* Renomear - Renomear a cidade actual.
+Este botão pode ser activado se se seleccionar uma cidade previamente inserida na lista.
 
-* Preset - Presets a city as the default, will be used every time you
-  restart the plugin. This button is activated if you select a city
-  previously inserted in the list and not preset, or it has passed the test.
+* Importar novas cidades... - Este botão permite-lhe importar cidades de outra lista de cidades com a extensão *.zipcodes;
+pode seleccionar a cidade que pretende importar, marcando a respectiva caixa de verificação.
 
-* Remove - Deletes the current city from your list. This button can be
-  activated if you select a city previously inserted in the list.
+* Exportar as suas cidades... - Permite-lhe guardar as cidades no ficheiro especificado com a extensão *.zipcodes.
+Este botão é activado se tiver adicionado e guardado pelo menos uma cidade na lista.
 
-* Rename - Rename the current city. This button can be activated if you
-  select a city previously inserted in the list.
+* Configuração das previsões horárias... - Este botão permite que escolha o conteúdo do relatório de previsão por hora.
 
-* Import new cities... - This button allows you to import cities from the
-  another list of cities with the extension *.zipcodes; you can select the
-  city you want to import, by turning on the check box associated with it.
+* Escala de medição da temperatura: permite Utilizar os botões de rádio para seleccionar entre Celsius (por padrão), Fahrenheit e Kelvin.
 
-* Export your cities... - It allows you to save the cities in the specified
-  file with the extension *.zipcodes. This button is activated if you have
-  added and saved at least one city into the list.
+* Mostrar os graus como: Use os botões de rádio para seleccionar entre: Celsius `-` Fahrenheit `-` Kelvin (por padrão) C `-` F `-` K ou não especificado.
 
-* hourly forecast setting... - This button allows you to choose the contents of the hourly forecast report.
+* Caixa de Combinação: Previsão do tempo até dias: 1; pode escolher entre 1 a 3 (1 dia por padrão)
 
-* Scale of temperature measurement: Use the radio button to select between
-  Celsius (by default), Fahrenheit and Kelvin.
+* Caixa de Combinação: Idioma de resposta da API: Inglês, pt; pode escolher o idioma do texto das condições meteorológicas.
 
-* Degrees shown as: Use the radio button to select between: Celsius `-`
-  Fahrenheit `-` Kelvin (by default C `-` F `-` K or unspecified.
+* Para realizar as acções, marque ou desmarque as seguintes caixas de verificação:
 
-* Combo box: Weather Forecasts up to days: 1 You can choose between 1 to 3
-  (1 days by default)
+* Copiar o boletim meteorológico e a previsão do tempo, incluindo detalhes da cidade para a área de transferência; caixa de verificação não marcada (por padrão)
 
-* Combo box: API response language:: English, en; you can choose the language of the weather conditions text.
+* Activar efeitos de som (apenas para as condições meteorológicas actuais); esta caixa de verificação também permite gerir a instalação de efeitos sonoros; se os efeitos sonoros forem instalados e a caixa de verificação for marcada, a tecla F5 e a definição do volume tornam-se disponíveis.
 
-* To perform the following actions, toggle the following checkboxes:
+* Estará também disponível uma caixa de verificação adicional: "Usar apenas efeitos climáticos".
 
-* Copy the weather report and weather forecast, including city details to
-  clipboard check box not checked (by default)
+* Ppode alterar o volume geral ou modificar o último efeito de som ouvido e filtrar os outros sons do seu ambiente.
 
-* Enable audio effects (only for the current weather conditions) This check
-  box also allows you to manage the installation of sound effects; If the
-  sound effects are installed and the check box is activated, the F5 key and
-  the volume setting becomes available.
+* Utilizar apenas efeitos climáticos - Esta opção está disponível se os efeitos sonoros estiverem activados; se estiver activada, permite ouvir apenas efeitos climáticos como chuva, vento, trovões, etc., filtrando todos os efeitos ambientais. (desmarcado por defeito)
 
-* There will also be available an additional check box: Use only weather
-  effects.
+* Permitir a leitura das horas em formato de 24 horas. - Se esta caixa de verificação estiver desmarcada, anuncia a hora no formato das horas com A M e P M.
+A caixa de verificação é marcada (por padrão)
 
-* You can change the overall volume or change the last heard sound effect
-  and filter out the others sounds in your environment. Checkbox is not
-  checked by default.)
+* Activar botões de ajuda na janela de configurações; caixa de verificação marcada (por padrão)
 
-* Use only weather effects - This option is available if sound effects are
-  enabled; If is enabled, allows to listen only weather effects such as
-  rain, wind, thunder, etc., filtering out all environmental
-  ones. (unchecked by default)
+* Ler informação sobre o vento; caixa de verificação não marcada (por padrão). Se esta caixa de verificação estiver marcada, pode também activar as seguintes caixas de verificação:
 
-* Enable the reading of the hours in 24-hour format. - If this checkbox is
-  unchecked, announces the time in 12-hour format for example, 12 AM `-` 12
-  PM. check box is checked (by default)
+* Adicionar a direcção do vento; indica a proveniência do vento. Caixa de verificação marcada (por padrão)
 
-* Enable help buttons in the settings window check box checked (by default)
+* Adicionar a velocidade do vento; indica a velocidade em quilómetros ou milhas por hora. Caixa de verificação marcada (por padrão)
 
-* Read wind information check box not checked (by default) If this checkbox
-  is enabled, you can also activate the following checkboxes:
+* Adicionar a velocidade do vento em metros por segundo; caixa de verificação marcada (por padrão)
 
-* Add wind direction; Indicates the provenance of the wind. check box
-  checked (by default)
+* Adicionar a velocidade das rajadas de vento; Caixa de verificação marcada, por padrão.
 
-* Add speed of the wind; Indicates the speed in kilometers or miles per
-  hour. check box checked (by default)
+* Adicionar sensação térmica. Caixa de verificação marcada, por padrão.
 
-* Add speed in meters per second of the wind; check box checked (by default)
+* Ler informação atmosférica; caixa de verificação não marcada (por padrão).
+Se marcada, pode também marcar as seguintes caixas de verificação:
 
-* Add wind gust speed of the wind; checkbox checked (by default)
+* Adicionar valor da humidade; indica a humidade em percentagem. Caixa de verificação marcada (por padrão)
 
-* Add perceived temperature; check box checked (by default)
+* Adicionar valor da visibilidade; indica em quilómetros ou milhas a distância visível. Caixa de verificação marcada (por padrão)
 
-* Read atmospherical information check box not checked (by default) If
-  enabled, you can also check the following checkboxes:
+* Adicionar o valor da pressão atmosférica; indica a pressão atmosférica em milibares ou polegadas de mercúrio.
+Se marcada, activa uma caixa de verificação adicional que lhe permite indicar a pressão em milímetros de mercúrio. Caixa de verificação marcada (por padrão)
 
-* Add humidity value; Indicates the humidity in percent. check box checked
-  (by default)
+* Adicionar valor da nebulosidade. Caixa de verificação marcada, por padrão.
 
-* Add visibility value; Indicate in kilometres or miles the distance
-  visible. check box checked (by default)
+* Adicionar valor da precipitação. Caixa de verificação marcada, por padrão.
 
-* Add atmospheric pressure value; Indicates the atmospheric pressure in
-  millibars or inches of mercury. If it's checked, enable an additional
-  check box that allows you to indicate the pressure in millimeters of
-  mercury. check box checked (by default)
+* Adicionar valor da radiação ultravioleta. Caixa de verificação marcada, por padrão.
 
-* Add cloudines value; check box checked (by default)
+* Ler informação astronómica; indica a hora do nascer e do pôr-do-sol e a hora do nascer e do pôr-da-lua. Caixa de verificação não marcada (por defeito)
 
-* Add precipitation value; check box checked (by default)
+* Usar a vírgula para separar as décimas; se marcada, é usada a vírgula como separador decimal, caso contrário, será usado o ponto. Caixa de verificação não marcada (por padrão)
 
-* Add ultraviolet radiation value; check box checked (by default)
+* Mostra os resultados numa janela; Se activada, mostra as previsões numa janela.
+Caixa de verificação não marcada, por padrão.
 
-* Read astronomical information; indicates the time of sunrise and sunset and the time of moonrise and moonset. Checkbox not checked (by default)
+* Verificar actualizações; se for activada esta opção será alertado quando houver uma actualização do extra. Caixa de verificação marcada (por padrão)
 
-* Use the comma to separate decimals If enabled, uses the comma as a decimal
-  separator, otherwise, use the point. check box not checked (by default)
+* Pressione "ok", para confirmar as configurações ou "cancelar", para as rejeitar.
 
-* Displays output in a window; if is activated, this displays the forecast in a window.
-  Checkbox not checked (by default)
-
-* Check for upgrade If is activated this alerts when there is an update of
-  the addon. check box checked (by default)
-
-* Pressione "ok", para confirmar as configurações ou "cancelar", para as
-  rejeitar.
-
-* If you have modified the cities list, by pressing "Cancel", you will be
-  remembered and you can still save it Note: your settings will be save in
-  the file named:
+* Se tiver modificado a lista de cidades, pressionando "Cancelar", será lembrado e ainda poderá guardá-la.
+Nota: As suas configurações serão guardadas no ficheiro chamado:
 
 * "Weather.ini": As configurações iniciais do weather plus.
-* "Weather.volumes": níveis de volume de áudio personalizados,
-  independentemente do volume total.
+* "Weather.volumes": níveis de volume de áudio personalizados, independentemente do volume total.
 * "Weather.zipcodes": lista de cidades com o seu código postal e definições.
-* "Weather.default": Your default city.
-* "Weather_searchkey": search key saved.
+* "Weather.default": A sua cidade predefinida.
+* "Weather_searchkey": Chave de pesquisa guardada.
 
 --------------------------------------------------------------------------------
 

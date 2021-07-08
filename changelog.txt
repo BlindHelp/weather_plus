@@ -1,3 +1,6 @@
+08/07/2021
+Updated the portuguese translation
+
 07/07/2021
 New __init__.py
 New translations.

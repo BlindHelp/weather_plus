@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Weather_Plus versão 8\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
 "POT-Creation-Date: 2021-07-06 13:16+0200\n"
-"PO-Revision-Date: 2021-07-06 16:09+0100\n"
+"PO-Revision-Date: 2021-07-08 01:18+0100\n"
 "Last-Translator: Rui Fontes  <rui.fontes@tiflotecnia.com>\n"
 "Language-Team: Equipa Portuguesa do NVDA: Ângelo Abrantes e Rui Fontes\n"
 "Language: pt_PT\n"
@@ -43,7 +43,7 @@ msgstr "Mostrar itens de configuração"
 
 #: __init__.py:106
 msgid "Set and &manage your cities..."
-msgstr "&Weather Plus - Configurações Gerais."
+msgstr "&Configurações Gerais."
 
 #: __init__.py:106
 msgid "Displays or allows to set the current cities from a list"
@@ -51,7 +51,7 @@ msgstr "Mostra ou permite definir as cidades a partir de  uma lista"
 
 #: __init__.py:109
 msgid "Set a &temporary city..."
-msgstr "Definir uma cidade &em modo temporário."
+msgstr "Definir uma cidade em modo &temporário."
 
 #: __init__.py:109
 msgid "Allows to set one temporary city from a list"
@@ -67,7 +67,7 @@ msgstr "Abre o ficheiro de ajuda para o idioma actual"
 
 #: __init__.py:117
 msgid "&Check for Upgrade..."
-msgstr "Verificar se há nova ver&são do Weather Plus disponível."
+msgstr "&Verificar actualizações..."
 
 #: __init__.py:117
 msgid "Notify if there is an upgraded version available"
@@ -135,7 +135,7 @@ msgstr "A cidade"
 
 #: __init__.py:380
 msgid "has not been preset."
-msgstr "não foi predefinido."
+msgstr "não foi predefinida."
 
 #: __init__.py:381
 msgid "Will be used in temporary mode!"
@@ -185,8 +185,8 @@ msgid ""
 "Sorry, I can not receive data, problems with the download page, try again "
 "later please!"
 msgstr ""
-"Desculpe, não é possível receber dados. Verifique se a sua conexão à "
-"internet está activa, ou tente novamente mais tarde!"
+"Desculpe, não é possível receber dados. Problemas com a página de descarga "
+"dos dados. Tente novamente mais tarde!"
 
 #: __init__.py:574 __init__.py:1697 __init__.py:2876 __init__.py:3187
 #: __init__.py:3218
@@ -211,7 +211,7 @@ msgstr "Versão instalada"
 
 #: __init__.py:588
 msgid "Do you want to download and install it?"
-msgstr "Quer baixá-lo e instalá-lo?"
+msgstr "Quer descarregar e e instalar esta versão?"
 
 #: __init__.py:593
 msgid "Sorry, at the time an update is not available."
@@ -219,7 +219,7 @@ msgstr "Desculpe. De momento não há nova versão disponível."
 
 #: __init__.py:1071 __init__.py:2884 __init__.py:5268
 msgid "not found!"
-msgstr "não encontrado!"
+msgstr "não encontrada!"
 
 #: __init__.py:1072
 msgid ""
@@ -227,11 +227,11 @@ msgid ""
 "from the settings of"
 msgstr ""
 "é necessário actualizar os efeitos sonoros, reactivando a opção apropriada a "
-"partir das opções de"
+"partir das configurações de"
 
 #: __init__.py:1074
 msgid "But if these are already updated, then you need to update"
-msgstr "Mas se já estiverem actualizados, então não precisa de actualizar"
+msgstr "Mas se já estiverem actualizados, então precisa de actualizar"
 
 #: __init__.py:1246
 msgid "I can not load the settings!"
@@ -365,7 +365,7 @@ msgstr "Por favor aguarde..."
 
 #: __init__.py:1721
 msgid "Sorry, it was not possible to load the most recent update!"
-msgstr "Desculpe, não é possível baixar a versão mais recente."
+msgstr "Desculpe, não é possível descarregar a versão mais recente."
 
 #: __init__.py:1722
 msgid "Please try again later."
@@ -483,7 +483,7 @@ msgstr "Direcção do vento;"
 
 #: __init__.py:1954
 msgid "Wind gusts"
-msgstr "Rajadas do vento"
+msgstr "Rajadas de vento"
 
 #: __init__.py:1955
 msgid "Cloudiness"
@@ -516,9 +516,9 @@ msgid ""
 "24 hours and the next %d days. If pressed twice announce the hourlyforecast "
 "temperature and weather conditions."
 msgstr ""
-"Se pressionada uma vez, anuncia a previsão meteorológica e a temperatura "
-"actual; se pressionada duas vezes, fornece as condições para os próximos %d "
-"dias."
+"Se pressionada uma vez, anuncia a previsão do tempo e a temperatura para o "
+"dia actual e os próximos %d dias. Se pressionada duas vezes, anuncia a "
+"previsão horária para as restantes horas do dia."
 
 #: __init__.py:2022
 msgid "Sorry, no list available!"
@@ -559,8 +559,8 @@ msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast, f5: volume controls."
 msgstr ""
-"f1: ajuda na localização, f2: selecção do último tab, f3: lista e caixa de "
-"edição, f4: controlo da duração da previsão do tempo, f5: controlos do "
+"f1: ajuda à localização, f2: selecção do último tab, f3: listas e caixas de "
+"combinação, f4: controlo da duração da previsão do tempo, f5: controlos do "
 "volume ."
 
 #: __init__.py:2210
@@ -625,7 +625,7 @@ msgstr "Não especificado"
 
 #: __init__.py:2322
 msgid "Weather Forecasts up to days:"
-msgstr "Previsão do tempo acima de dois dias: "
+msgstr "Previsão do tempo até dias: "
 
 #: __init__.py:2333
 msgid "API response language:"
@@ -679,11 +679,11 @@ msgstr "Adicionar a velocidade do vent&o em metros por segundo"
 
 #: __init__.py:2412 __init__.py:5851
 msgid "Add wind &gust speed"
-msgstr "Adiciona vento &rajadas "
+msgstr "Adicionar a velocidade  das &rajadas de vento"
 
 #: __init__.py:2416
 msgid "Add perceived &temperature"
-msgstr "Adicionar sensação &térmica"
+msgstr "Adicionar a sensação &térmica"
 
 #: __init__.py:2421
 msgid "&Read atmospherical information"
@@ -699,15 +699,15 @@ msgstr "Adicionar &valor da visibilidade"
 
 #: __init__.py:2434 __init__.py:5855
 msgid "Add cloudiness &value"
-msgstr "Adiciona nebulosidade &valor"
+msgstr "Adicionar &valor da nebulosidade"
 
 #: __init__.py:2438 __init__.py:5867
 msgid "Add precipitation &value"
-msgstr "Adiciona precipitação &valor"
+msgstr "Adicionar &valor da precipitação"
 
 #: __init__.py:2442 __init__.py:5871
 msgid "Add &ultraviolet radiation value"
-msgstr "Adiciona valor de radiação &ultravioleta"
+msgstr "Adicionar valor de radiação &ultravioleta"
 
 #: __init__.py:2446
 msgid "Add atmospheric &pressure value"
@@ -731,11 +731,11 @@ msgstr "Usar a vírgula para separar as décimas. Exemplo (4,&15)"
 
 #: __init__.py:2468
 msgid "&Displays output in a window"
-msgstr "&Exibe a saída em uma janela"
+msgstr "&Mostra os resultados numa janela"
 
 #: __init__.py:2472
 msgid "Check for &upgrade"
-msgstr "Procurar por actualização"
+msgstr "Verificar actualizações"
 
 #: __init__.py:2499
 msgid "Test the city validity  and find the data of it."
@@ -775,7 +775,7 @@ msgid ""
 msgstr ""
 "Permite incorporar, na sua lista, novas cidades, importando-as de outra "
 "lista com a extensão *.zipcodes; pode seleccionar a cidade que quer "
-"importar, marcando a caixa de marcação associada."
+"importar, marcando a respectiva caixa de verificação."
 
 #: __init__.py:2507
 msgid "Permits to save your list of cities in a specified path."
@@ -869,7 +869,7 @@ msgstr ""
 
 #: __init__.py:2633
 msgid "Geographic coordinates, by typing G:City: G:Venezia"
-msgstr "Coordenadas Geográficas, escrevendo G:Cidade: G:Venezia"
+msgstr "Coordenadas Geográficas, escrevendo G:Cidade: G:Veneza"
 
 #: __init__.py:2634
 msgid "Text string, by typing T:City: T:Bologna"
@@ -905,7 +905,7 @@ msgstr "Tente mudar algumas partes para inglês"
 
 #: __init__.py:2642
 msgid "Try with a closest location"
-msgstr "Tentar, juntando uma localização mais próxima"
+msgstr "Tentar uma localização próxima"
 
 #: __init__.py:2645
 msgid "Help placing"
@@ -936,7 +936,7 @@ msgstr "Quer tentar de qualquer maneira?"
 #: __init__.py:2883
 msgid "not found! Press F1 for help on entering data."
 msgstr ""
-"Não encontrado! Pressione \"f1\", para obter ajuda sobre entrada de dados."
+"Não encontrada! Pressione \"f1\", para obter ajuda sobre entrada de dados."
 
 #: __init__.py:2907
 msgid "Is not working properly or has been removed from the database of"
@@ -1001,7 +1001,7 @@ msgstr "Desativar e reativar esta opção para os atualizar ou desinstalar."
 #: __init__.py:3088
 msgid "Verify that your internet connection is active, or try again later."
 msgstr ""
-"Verifique se a sua conexão à internet está activa, ou tente novamente mais "
+"Verifique se a sua ligação à internet está activa, ou tente novamente mais "
 "tarde."
 
 #: __init__.py:3089
@@ -1035,7 +1035,7 @@ msgstr "Detalhes de"
 
 #: __init__.py:3234
 msgid "Place"
-msgstr "Lugar"
+msgstr "Local"
 
 #: __init__.py:3235
 msgid "Current local time"
@@ -1075,7 +1075,7 @@ msgstr "Zona de deserto"
 
 #: __init__.py:3270
 msgid "Arctic zone"
-msgstr "Zona do Árctico"
+msgstr "Zona do Ártico"
 
 #: __init__.py:3271
 msgid "Mountain zone"
@@ -1139,7 +1139,7 @@ msgstr "Seleccionar o modo \"importar\";"
 
 #: __init__.py:3603
 msgid "File contents"
-msgstr "Conteúdos do ficheiro;"
+msgstr "Conteúdo do ficheiro;"
 
 #: __init__.py:3604
 msgid "cities"
@@ -1147,7 +1147,7 @@ msgstr "Cidades;"
 
 #: __init__.py:3607
 msgid "Activate the check boxes of the cities you want to import."
-msgstr "Marque as caixas de selecção das cidades que deseja importar."
+msgstr "Marque as caixas de verificação das cidades que deseja importar."
 
 #: __init__.py:3628
 msgid "Importing cities in progress"
@@ -1155,7 +1155,7 @@ msgstr "a importar as cidades..."
 
 #: __init__.py:3720
 msgid "Were added"
-msgstr "Foram adicionados"
+msgstr "Foram adicionadas"
 
 #: __init__.py:3720
 msgid "new cities to the list"
@@ -1163,7 +1163,7 @@ msgstr "novas cidades à a lista"
 
 #: __init__.py:3721
 msgid "Have been ignored because existing"
-msgstr "Foram ignorados porque já existen"
+msgstr "Foram ignoradas porque já existen"
 
 #: __init__.py:3722
 msgid "Content of imported list"
@@ -1171,11 +1171,11 @@ msgstr "Conteúdo da lista importada"
 
 #: __init__.py:3723
 msgid "Containing incomplete data"
-msgstr "Contém dados incomplletos"
+msgstr "Contendo dados incomplletos"
 
 #: __init__.py:3724
 msgid "selected by the user"
-msgstr "seleccionado pelo utilizador"
+msgstr "seleccionada pelo utilizador"
 
 #: __init__.py:3725
 msgid "Import finished"
@@ -1191,7 +1191,7 @@ msgstr "Vai ser exportada"
 
 #: __init__.py:3740
 msgid "But it does not yet contain the changes you just made the list!"
-msgstr "Mas ainda não contém as alterações feitas na lista!"
+msgstr "Mas ainda não contém as alterações feitas à lista!"
 
 #: __init__.py:3741
 msgid "I proceed?"
@@ -1312,7 +1312,7 @@ msgstr "Envie um email para %s"
 
 #: __init__.py:4609
 msgid "With  object the line below, thanks."
-msgstr "Com objeto a linha abaixo, obrigado."
+msgstr "Com o assunto da linha abaixo, obrigado."
 
 #: __init__.py:4677 __init__.py:4695
 msgid "Downloaded"
@@ -1424,15 +1424,15 @@ msgstr "marcado"
 
 #: __init__.py:5362
 msgid "check box"
-msgstr "caixa de selecção"
+msgstr "caixa de verificação"
 
 #: __init__.py:5372
 msgid "check boxes checked"
-msgstr "caixas de selecção marcadas"
+msgstr "caixas de verificação marcadas"
 
 #: __init__.py:5381
 msgid "check boxes not checked"
-msgstr "caixas de selecção não marcadas"
+msgstr "caixas de verificação não marcadas"
 
 #: __init__.py:5443
 msgid "Saving in progress"
@@ -1461,7 +1461,7 @@ msgstr "NVDA+w informa as condições meteorológicas actuais.\n"
 msgid ""
 "NVDA+shift+w for the prediction in the current 24 hours and prediction up to "
 "2 days.\n"
-msgstr "NVDA+Shift+W para a previsão para 24 horas e previsões até 2 dias.\n"
+msgstr "NVDA+Shift+W para a previsão para 24 horas e próximos 2 dias.\n"
 
 #: buildVars.py:26
 msgid ""
