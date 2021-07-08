@@ -2,8 +2,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2021-07-06 13:17+0200\n"
-"PO-Revision-Date: 2021-07-06 13:17+0200\n"
+"POT-Creation-Date: 2021-07-08 10:12+0200\n"
+"PO-Revision-Date: 2021-07-08 10:17+0200\n"
 "Last-Translator: Florian Ionașcu <florianionascu@hotmail.com>\n"
 "Language-Team: Florian Ionașcu <florianionascu@hotmail.com>\n"
 "Language: ro\n"
@@ -117,11 +117,11 @@ msgstr "milimetri coloană de mercur"
 msgid "Settings"
 msgstr "Setări"
 
-#: __init__.py:203 __init__.py:2257
+#: __init__.py:203 __init__.py:2262
 msgid "Preset"
 msgstr "Presetat"
 
-#: __init__.py:203 __init__.py:3394 __init__.py:3716
+#: __init__.py:203 __init__.py:3399 __init__.py:3721
 msgid "None"
 msgstr "Fără"
 
@@ -129,38 +129,38 @@ msgstr "Fără"
 msgid "Enter a City or choose one from the list, if available."
 msgstr "Introduceți un oraș sau alegeți unul din listă dacă există."
 
-#: __init__.py:379 __init__.py:1830 __init__.py:2915 __init__.py:3544
+#: __init__.py:380 __init__.py:1835 __init__.py:2920 __init__.py:3549
 msgid "The city"
 msgstr "Orașul"
 
-#: __init__.py:380
+#: __init__.py:381
 msgid "has not been preset."
 msgstr "nu a fost presetat."
 
-#: __init__.py:381
+#: __init__.py:382
 msgid "Will be used in temporary mode!"
 msgstr "Va fi utilizat temporar!"
 
-#: __init__.py:384 __init__.py:412 __init__.py:474 __init__.py:1836
-#: __init__.py:2745 __init__.py:2953 __init__.py:2958 __init__.py:3028
-#: __init__.py:3432 __init__.py:3553 __init__.py:3743 __init__.py:3762
-#: __init__.py:4611
+#: __init__.py:385 __init__.py:413 __init__.py:475 __init__.py:1841
+#: __init__.py:2750 __init__.py:2958 __init__.py:2963 __init__.py:3033
+#: __init__.py:3437 __init__.py:3558 __init__.py:3748 __init__.py:3767
+#: __init__.py:4616
 msgid "Notice!"
 msgstr "Avertisment!"
 
-#: __init__.py:414
+#: __init__.py:415
 msgid "You have modified the list of your cities"
 msgstr "Ai modificat lista orașelor tale"
 
-#: __init__.py:414
+#: __init__.py:415
 msgid "Do you want to save it?"
 msgstr "Vrei s-o salvezi?"
 
-#: __init__.py:471
+#: __init__.py:472
 msgid "The cities on your list are not compatible with the Weather API!"
 msgstr "Orașele din lista dumneavoastră nu sunt compatibile cu API-ul Weather!"
 
-#: __init__.py:472
+#: __init__.py:473
 msgid ""
 "They have to be tested and validated, you can do it from the addon settings "
 "window."
@@ -168,19 +168,19 @@ msgstr ""
 "Ele trebuie să fie testate și validate, o puteți face din fereastra de "
 "setări a addonului."
 
-#: __init__.py:486
+#: __init__.py:487
 msgid "Setting up a temporary city"
 msgstr "Setarea unui oraș temporar"
 
-#: __init__.py:490
+#: __init__.py:491
 msgid "Cities List available:"
 msgstr "Lista orașelor disponibile:"
 
-#: __init__.py:522
+#: __init__.py:523
 msgid "Documentation not available for the current language!"
 msgstr "Documentația nu este disponibilă pentru limba curentă!"
 
-#: __init__.py:571
+#: __init__.py:572
 msgid ""
 "Sorry, I can not receive data, problems with the download page, try again "
 "later please!"
@@ -188,8 +188,8 @@ msgstr ""
 "Îmi pare rău, nu pot primi datele, sunt probleme cu pagina de descărcări. Te "
 "rog să încerci din nou mai târziu!"
 
-#: __init__.py:574 __init__.py:1697 __init__.py:2876 __init__.py:3187
-#: __init__.py:3218
+#: __init__.py:575 __init__.py:1702 __init__.py:2881 __init__.py:3192
+#: __init__.py:3223
 msgid ""
 "Sorry, I can not receive data, verify that your internet connection is "
 "active, or try again later!"
@@ -197,31 +197,31 @@ msgstr ""
 "Îmi pare rău, nu pot primi data, verifică dacă conecsiunea ta la internet "
 "este activă, sau încearcă din nou mai târziu!"
 
-#: __init__.py:586
+#: __init__.py:587
 msgid "version"
 msgstr "versiune"
 
-#: __init__.py:586
+#: __init__.py:587
 msgid "is available."
 msgstr "este disponibilă."
 
-#: __init__.py:587
+#: __init__.py:588
 msgid "Installed version"
 msgstr "Versiunea instalată"
 
-#: __init__.py:588
+#: __init__.py:589
 msgid "Do you want to download and install it?"
 msgstr "Vrei s-o descarci și s-o instalezi?"
 
-#: __init__.py:593
+#: __init__.py:594
 msgid "Sorry, at the time an update is not available."
 msgstr "Ne pare rău, nicio actualizare nu este disponibilă momentan."
 
-#: __init__.py:1071 __init__.py:2884 __init__.py:5268
+#: __init__.py:1072 __init__.py:2889 __init__.py:5273
 msgid "not found!"
 msgstr "negăsit!"
 
-#: __init__.py:1072
+#: __init__.py:1073
 msgid ""
 "You need to upgrade the sound effects by reactivating the appropriate option "
 "from the settings of"
@@ -229,285 +229,285 @@ msgstr ""
 "Este necesar să actualizați efectele de sunet activând opțiunea apropiată "
 "din setările lor"
 
-#: __init__.py:1074
+#: __init__.py:1075
 msgid "But if these are already updated, then you need to update"
 msgstr "Dar dacă acestea sunt deja actualizate, atunci trebuie să actualizați"
 
-#: __init__.py:1246
+#: __init__.py:1247
 msgid "I can not load the settings!"
 msgstr "Nu pot încărca setările!"
 
-#: __init__.py:1246
+#: __init__.py:1247
 msgid "Attention!"
 msgstr "Atenție!"
 
-#: __init__.py:1316
+#: __init__.py:1317
 msgid "I can not save the settings!"
 msgstr "Nu pot salva setările!"
 
-#: __init__.py:1331
+#: __init__.py:1332
 msgid "invalid name"
 msgstr "nume invalid"
 
-#: __init__.py:1422
+#: __init__.py:1427
 msgid "The cloudiness is"
 msgstr "Nebulozitatea este de"
 
-#: __init__.py:1423
+#: __init__.py:1428
 msgid "The precipitation is"
 msgstr "Nivelul de precipitații este de"
 
-#: __init__.py:1467
+#: __init__.py:1472
 msgid "the weather report is currently"
 msgstr "buletinul meteo este actual"
 
-#: __init__.py:1468 __init__.py:1508 __init__.py:1614 __init__.py:1641
-#: __init__.py:1963
+#: __init__.py:1473 __init__.py:1513 __init__.py:1619 __init__.py:1646
+#: __init__.py:1968
 msgid "degrees"
 msgstr "grade"
 
-#: __init__.py:1475
+#: __init__.py:1480
 msgid "The wind direction is from"
 msgstr "Direcția vântului este dinspre"
 
-#: __init__.py:1481 __init__.py:1493
+#: __init__.py:1486 __init__.py:1498
 msgid "with speed of"
 msgstr "cu viteza de"
 
-#: __init__.py:1486 __init__.py:1497
+#: __init__.py:1491 __init__.py:1502
 msgid "The wind speed is"
 msgstr "Viteza vântului este de"
 
-#: __init__.py:1505
+#: __init__.py:1510
 msgid "The wind gusts are of"
 msgstr "Rafalele de vânt sunt de"
 
-#: __init__.py:1508
+#: __init__.py:1513
 msgid "The perceived temperature is"
 msgstr "Temperatura percepută este de"
 
-#: __init__.py:1515
+#: __init__.py:1520
 msgid "The humidity is"
 msgstr "Umiditatea este de"
 
-#: __init__.py:1517
+#: __init__.py:1522
 msgid "The cloudiness is of"
 msgstr "La nuvolosità è del"
 
-#: __init__.py:1519
+#: __init__.py:1524
 msgid "The precipitation is of"
 msgstr "Nivelul de precipitații este de"
 
-#: __init__.py:1524
+#: __init__.py:1529
 msgid "and the visibility is up to"
 msgstr "și vizibilitatea este până la"
 
-#: __init__.py:1533
+#: __init__.py:1538
 msgid "The visibility is up to"
 msgstr "Vizibilitatea este până la"
 
-#: __init__.py:1538
+#: __init__.py:1543
 msgid "and the precipitation is"
 msgstr "și nivelul de precipitații este de"
 
-#: __init__.py:1555
+#: __init__.py:1560
 msgid "The pressure is"
 msgstr "Presiunea este de"
 
-#: __init__.py:1559
+#: __init__.py:1564
 msgid "The UV radiation is of"
 msgstr "Nivelul de raze ultraviolete este de"
 
-#: __init__.py:1580
+#: __init__.py:1585
 msgid "The sun rises at"
 msgstr "Soarele răsare la"
 
-#: __init__.py:1581 __init__.py:1583
+#: __init__.py:1586 __init__.py:1588
 msgid "and sets at"
 msgstr "și apune la"
 
-#: __init__.py:1582
+#: __init__.py:1587
 msgid "The moon rises at"
 msgstr "Luna răsare la"
 
-#: __init__.py:1610
+#: __init__.py:1615
 msgid "the forecast for today is"
 msgstr "prognoza pentru astăzi este"
 
-#: __init__.py:1612 __init__.py:1639
+#: __init__.py:1617 __init__.py:1644
 msgid "with a maximum temperature of"
 msgstr "cu o temperatură maximă de"
 
-#: __init__.py:1613 __init__.py:1640
+#: __init__.py:1618 __init__.py:1645
 msgid "and a minimum of"
 msgstr "și o minimă de"
 
-#: __init__.py:1647
+#: __init__.py:1652
 msgid "not available"
 msgstr "nedisponibil"
 
-#: __init__.py:1651
+#: __init__.py:1656
 msgid "In"
 msgstr "În"
 
-#: __init__.py:1651
+#: __init__.py:1656
 msgid "Unnamed"
 msgstr "Fără nume"
 
-#: __init__.py:1663 __init__.py:1888 __init__.py:2080
+#: __init__.py:1668 __init__.py:1893 __init__.py:2085
 msgid "Sorry, the city is not set!"
 msgstr "Ne pare rău, orașul nu este setat!"
 
-#: __init__.py:1678 __init__.py:2988 __init__.py:3170 __init__.py:3629
-#: __init__.py:3764 __init__.py:5442
+#: __init__.py:1683 __init__.py:2993 __init__.py:3175 __init__.py:3634
+#: __init__.py:3769 __init__.py:5447
 msgid "Please wait..."
 msgstr "Te rugăm să aștepți."
 
-#: __init__.py:1721
+#: __init__.py:1726
 msgid "Sorry, it was not possible to load the most recent update!"
 msgstr ""
 "Ne pare rău, nu a fost posibilă încărcarea celei mai recente actualizări!"
 
-#: __init__.py:1722
+#: __init__.py:1727
 msgid "Please try again later."
 msgstr "Te rugăm să încerci din nou mai târziu."
 
-#: __init__.py:1765 __init__.py:1766
+#: __init__.py:1770 __init__.py:1771
 msgid "meters per second"
 msgstr "metri pe secundă"
 
-#: __init__.py:1805
+#: __init__.py:1810
 msgid "Sorry, the city set is not valid or contains incomplete data!"
 msgstr "Ne pare rău, orașul setat nu este valid sau conține date incomplete!"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "north"
 msgstr "nord"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "north northeast"
 msgstr "nord nordest"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "northeast"
 msgstr "nordest"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "east northeast"
 msgstr "est nordest"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "east"
 msgstr "est"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "east southeast"
 msgstr "est sudest"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "southeast"
 msgstr "sudest"
 
-#: __init__.py:1813
+#: __init__.py:1818
 msgid "south southeast"
 msgstr "sud sudest"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "south"
 msgstr "sud"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "south southwest"
 msgstr "sud sudvest"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "southwest"
 msgstr "sudvest"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "west southwest"
 msgstr "vest sudvest"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "west"
 msgstr "vest"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "west northwest"
 msgstr "vest nordvest"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "northwest"
 msgstr "nordvest"
 
-#: __init__.py:1814
+#: __init__.py:1819
 msgid "north northwest"
 msgstr "nord nordvest"
 
-#: __init__.py:1831
+#: __init__.py:1836
 msgid ""
 "Is not working properly, contains incomplete data or has been removed from "
 "the"
 msgstr ""
 "Nu funcționează corespunzător, conține date incomplete sau a fost șters din"
 
-#: __init__.py:1833 __init__.py:2909
+#: __init__.py:1838 __init__.py:2914
 msgid "It could be a temporary problem and you may wait a while '..."
 msgstr "Ar putea să fie o problemă temporară, iar tu poți aștepta un timp '..."
 
-#: __init__.py:1834
+#: __init__.py:1839
 msgid "Do you want to delete it from your list?"
 msgstr "Vrei să-l elimini din listă?"
 
-#: __init__.py:1905
+#: __init__.py:1910
 msgid "Chance of rain"
 msgstr "Șanse de precipitații"
 
-#: __init__.py:1906
+#: __init__.py:1911
 msgid "Chance of snow"
 msgstr "Șanse de ninsoare"
 
-#: __init__.py:1951
+#: __init__.py:1956
 msgid "Wind speed"
 msgstr "Viteza vântului"
 
-#: __init__.py:1952
+#: __init__.py:1957
 msgid "Direction"
 msgstr "Direcție"
 
-#: __init__.py:1953
+#: __init__.py:1958
 msgid "Wind direction"
 msgstr "Direcția vântului"
 
-#: __init__.py:1954
+#: __init__.py:1959
 msgid "Wind gusts"
 msgstr "Rafalele de vânt"
 
-#: __init__.py:1955
+#: __init__.py:1960
 msgid "Cloudiness"
 msgstr "Nebulozitate"
 
-#: __init__.py:1956
+#: __init__.py:1961
 msgid "Precipitation"
 msgstr "Precipitații"
 
-#: __init__.py:1957
+#: __init__.py:1962
 msgid "Humidity"
 msgstr "Umiditate"
 
-#: __init__.py:1958
+#: __init__.py:1963
 msgid "Visibility"
 msgstr "Vizibilitate"
 
-#: __init__.py:1977
+#: __init__.py:1982
 msgid "Hourly forecast for"
 msgstr "Prognoza orară pentru"
 
-#: __init__.py:2002
+#: __init__.py:2007
 msgid "Provides the current temperature and weather conditions."
 msgstr "Furnizează temperatura curentă și condițiile meteo."
 
-#: __init__.py:2014
+#: __init__.py:2019
 #, python-format
 msgid ""
 "If pressed once, announce the weather forecast and current temperature for "
@@ -518,39 +518,39 @@ msgstr ""
 "24 de ore și pentru următoarele %d zile. Dacă e apăsată de două ori, anunță "
 "prognoza orară, temperatura și condițiile meteorologice."
 
-#: __init__.py:2022
+#: __init__.py:2027
 msgid "Sorry, no list available!"
 msgstr "Ne pare rău, nicio listă disponibilă!"
 
-#: __init__.py:2055
+#: __init__.py:2060
 msgid "Allows you to set a temporary city."
 msgstr "Îți permite să setezi un oraș temporar."
 
-#: __init__.py:2069
+#: __init__.py:2074
 msgid "Scale of temperature measurement set into"
 msgstr "Unitate de măsură a temperaturii setată în"
 
-#: __init__.py:2071
+#: __init__.py:2076
 msgid "Allows you to set a temporary scale of temperature mesurement."
 msgstr "Îți permite să setezi o unitate de măsură temporară a temperaturii."
 
-#: __init__.py:2101
+#: __init__.py:2106
 msgid "at"
 msgstr "la"
 
-#: __init__.py:2104
+#: __init__.py:2109
 msgid "Last update of the current weather report"
 msgstr "Ultima actualizare a buletinului meteo actual"
 
-#: __init__.py:2106
+#: __init__.py:2111
 msgid "Announces the date of the last update of the weather report."
 msgstr "Anunță data ultimei actualizări a buletinului meteo."
 
-#: __init__.py:2166
+#: __init__.py:2171
 msgid "Open the Weather Plus settings dialog."
 msgstr "&Deschide dialogul de setări Weather Plus."
 
-#: __init__.py:2209
+#: __init__.py:2214
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast, f5: volume controls."
@@ -558,7 +558,7 @@ msgstr ""
 "f1: ajutor, f2: ultima selecție cu Tab, f3: lista și caseta de editare, f4: "
 "controlează durata prognozei meteo, f5: setarea volumului."
 
-#: __init__.py:2210
+#: __init__.py:2215
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast."
@@ -566,67 +566,67 @@ msgstr ""
 "f1: ajutor, f2: ultima selecție cu Tab, f3: lista și caseta de editare, f4: "
 "controlează durata prognozei meteo."
 
-#: __init__.py:2253
+#: __init__.py:2258
 msgid "Test"
 msgstr "Test"
 
-#: __init__.py:2254
+#: __init__.py:2259
 msgid "Details"
 msgstr "Detalii"
 
-#: __init__.py:2255
+#: __init__.py:2260
 msgid "Define"
 msgstr "Definește"
 
-#: __init__.py:2256
+#: __init__.py:2261
 msgid "Add"
 msgstr "Adaugă"
 
-#: __init__.py:2258
+#: __init__.py:2263
 msgid "Remove"
 msgstr "Elimină"
 
-#: __init__.py:2259
+#: __init__.py:2264
 msgid "Rename"
 msgstr "Redenumiți"
 
-#: __init__.py:2285
+#: __init__.py:2290
 msgid "&Import new cities..."
 msgstr "&Importă orașe noi..."
 
-#: __init__.py:2286
+#: __init__.py:2291
 msgid "&Export your cities..."
 msgstr "&exportă-ți orașele..."
 
-#: __init__.py:2287
+#: __init__.py:2292
 msgid "&hourlyforecast setting..."
 msgstr "&Setarea prognozei orare..."
 
-#: __init__.py:2302
+#: __init__.py:2307
 msgid "Scale of temperature measurement:"
 msgstr "Unitatea de măsură a temperaturii:"
 
-#: __init__.py:2310
+#: __init__.py:2315
 msgid "Degrees shown as:"
 msgstr "Indică gradele ca:"
 
-#: __init__.py:2313
+#: __init__.py:2318
 msgid "C - F - K"
 msgstr "C - F - K"
 
-#: __init__.py:2314
+#: __init__.py:2319
 msgid "Unspecified"
 msgstr "Nespecificat"
 
-#: __init__.py:2322
+#: __init__.py:2327
 msgid "Weather Forecasts up to days:"
 msgstr "Prognozele meteo până la zile:"
 
-#: __init__.py:2333
+#: __init__.py:2338
 msgid "API response language:"
 msgstr "Limbajul de răspuns API:"
 
-#: __init__.py:2342
+#: __init__.py:2347
 msgid ""
 "&Copy the weather report and weather forecast, including city details to "
 "clipboard"
@@ -634,119 +634,119 @@ msgstr ""
 "&Copiază buletinul meteo și prognoza vremii, incluzând detaliile orașului pe "
 "planșetă"
 
-#: __init__.py:2347
+#: __init__.py:2352
 msgid "Enable &audio effects (only for the current weather conditions)"
 msgstr "Activează efectele &audio (doar pentru condițiile meteo actuale)"
 
-#: __init__.py:2350
+#: __init__.py:2355
 msgid "Use only &weather effects"
 msgstr "Utilizați numai &efecte meteorologice"
 
-#: __init__.py:2355
+#: __init__.py:2360
 msgid "General audio volume"
 msgstr "Volum audio general"
 
-#: __init__.py:2356
+#: __init__.py:2361
 msgid "Current audio volume"
 msgstr "Volum audio curent"
 
-#: __init__.py:2388
+#: __init__.py:2393
 msgid "Enable &help buttons in the settings window"
 msgstr "Activează butoanele de a&jutor din fereastra de setări"
 
-#: __init__.py:2395
+#: __init__.py:2400
 msgid "Read &wind information"
 msgstr "Citeș&te informațiile despre vânt"
 
-#: __init__.py:2400 __init__.py:5847
+#: __init__.py:2405 __init__.py:5852
 msgid "Add wind directi&on"
 msgstr "Adaugă &direcția vântului"
 
-#: __init__.py:2404 __init__.py:5843
+#: __init__.py:2409 __init__.py:5848
 msgid "Add wi&nd speed"
 msgstr "Adaugă viteza vâ&ntului"
 
-#: __init__.py:2408
+#: __init__.py:2413
 msgid "Add speed in &meters per second of the wind"
 msgstr "Adaugă viteza în &metri pe secundă a vântului"
 
-#: __init__.py:2412 __init__.py:5851
+#: __init__.py:2417 __init__.py:5856
 msgid "Add wind &gust speed"
 msgstr "Adaugă viteza rafalelor de v&ânt"
 
-#: __init__.py:2416
+#: __init__.py:2421
 msgid "Add perceived &temperature"
 msgstr "Adaugă &temperatura percepută"
 
-#: __init__.py:2421
+#: __init__.py:2426
 msgid "&Read atmospherical information"
 msgstr "Cite&ște informațiile atmosferice"
 
-#: __init__.py:2426 __init__.py:5859
+#: __init__.py:2431 __init__.py:5864
 msgid "Add humidity va&lue"
 msgstr "Adaugă va&loarea umidității"
 
-#: __init__.py:2430 __init__.py:5863
+#: __init__.py:2435 __init__.py:5868
 msgid "Add &visibility value"
 msgstr "Adau&gă valoarea vizibilității"
 
-#: __init__.py:2434 __init__.py:5855
+#: __init__.py:2439 __init__.py:5860
 msgid "Add cloudiness &value"
 msgstr "Adaugă &valoarea de nebulozitate"
 
-#: __init__.py:2438 __init__.py:5867
+#: __init__.py:2443 __init__.py:5872
 msgid "Add precipitation &value"
 msgstr "Adaug&ă valoarea de precipitații"
 
-#: __init__.py:2442 __init__.py:5871
+#: __init__.py:2447 __init__.py:5876
 msgid "Add &ultraviolet radiation value"
 msgstr "Adaugă valoarea de ra&ze ultraviolete"
 
-#: __init__.py:2446
+#: __init__.py:2451
 msgid "Add atmospheric &pressure value"
 msgstr "Adaugă valoarea &presiunii atmosferice"
 
-#: __init__.py:2450
+#: __init__.py:2455
 msgid "Indicates the atmospheric pressure in millimeters of mercur&y (mmHg)"
 msgstr "Indică presiunea atmosferică în milimetri coloană de mercur (mm&Hg)"
 
-#: __init__.py:2455
+#: __init__.py:2460
 msgid "Read a&stronomical information"
 msgstr "Citeș&te informațiile astronomice"
 
-#: __init__.py:2459
+#: __init__.py:2464
 msgid "Enable reading of the hours in &24-hour format"
 msgstr "Activează citirea orelor în &formatul de 24 de ore"
 
-#: __init__.py:2464
+#: __init__.py:2469
 msgid "Use the comma to separate decimals, example (4,&15)"
 msgstr "Utilizați o virgulă pentru a separa zecimale, exemplu (4,&15)"
 
-#: __init__.py:2468
+#: __init__.py:2473
 msgid "&Displays output in a window"
 msgstr "A&fișează ieșirea într-o fereastră"
 
-#: __init__.py:2472
+#: __init__.py:2477
 msgid "Check for &upgrade"
 msgstr "Caută actuali&zări"
 
-#: __init__.py:2499
+#: __init__.py:2504
 msgid "Test the city validity  and find the data of it."
 msgstr "Testați validitatea orașului și căutați-i datele."
 
-#: __init__.py:2500
+#: __init__.py:2505
 msgid "Add the current city into your list."
 msgstr "Adaugă orașul curent în lista ta."
 
-#: __init__.py:2501
+#: __init__.py:2506
 msgid "Displays information about the current city."
 msgstr "Afișează informații despre orașul actual."
 
-#: __init__.py:2502
+#: __init__.py:2507
 msgid "Allows you to define the area, in order to adapt the sound effects."
 msgstr "Îți permite să definești zona, ca să adapteze efectele de sunete."
 
-#: __init__.py:2503
+#: __init__.py:2508
 msgid ""
 "Presets the current city as the default, will be used every time you restart "
 "the plugin."
@@ -754,15 +754,15 @@ msgstr ""
 "Presetează orașul curent ca implicit, va fi utilizat de fiecare dată când "
 "reporniți suplimentul."
 
-#: __init__.py:2504
+#: __init__.py:2509
 msgid "Delete  the current city from your list."
 msgstr "Șterge un oraș curent din lista ta."
 
-#: __init__.py:2505
+#: __init__.py:2510
 msgid "Rename the current city."
 msgstr "Redenumiți orașul curent."
 
-#: __init__.py:2506
+#: __init__.py:2511
 msgid ""
 "Permits to incorporate in your list new cities importing them from another "
 "list with the extension *.zipcodes; you can select the city you want to "
@@ -772,75 +772,75 @@ msgstr ""
 "altă listă cu extensia * .zipcodes; puteți selecta orașul pe care doriți să-"
 "l importați, activând caseta de validare asociată."
 
-#: __init__.py:2507
+#: __init__.py:2512
 msgid "Permits to save your list of cities in a specified path."
 msgstr "Permite salvarea listei de orașe într-o cale specificată."
 
-#: __init__.py:2508
+#: __init__.py:2513
 msgid "Allows you to choose the contents of the hourly forecast report."
 msgstr "Vă permite să alegeți conținuturile raportului prognozei orare."
 
-#: __init__.py:2615
+#: __init__.py:2620
 msgid "You can enter or search for a city"
 msgstr "Poți să introduci sau să cauți un oraș"
 
-#: __init__.py:2616
+#: __init__.py:2621
 msgid "By Latitude and Longitude: 48.8567,2.3508"
 msgstr "După latitudine și longitudine: 48.8567,2.3508"
 
-#: __init__.py:2617
+#: __init__.py:2622
 msgid "By City name: Paris"
 msgstr "După numele orașului: Paris"
 
-#: __init__.py:2618
+#: __init__.py:2623
 msgid "By City name and country: Toronto,Canada"
 msgstr "După numele orașului și după țară: Toronto,Canada"
 
-#: __init__.py:2619
+#: __init__.py:2624
 msgid "Or Toronto,CA"
 msgstr "Sau Toronto,CA"
 
-#: __init__.py:2620
+#: __init__.py:2625
 msgid "By City name and region: Toronto,Ontario"
 msgstr "După numele orașului și al regiunii: Toronto,Ontario"
 
-#: __init__.py:2621
+#: __init__.py:2626
 msgid "By US zip: 10001"
 msgstr "După codul poștal din Statele Unite: 10001"
 
-#: __init__.py:2622
+#: __init__.py:2627
 msgid "By UK postcode: SW1"
 msgstr "După codul poștal din Regatul Unit: SW1"
 
-#: __init__.py:2623
+#: __init__.py:2628
 msgid "By Canada postal code: G2J"
 msgstr "După codul poștal din Canada: G2J"
 
-#: __init__.py:2624
+#: __init__.py:2629
 msgid "By metar:<metar code>: metar:EGLL"
 msgstr "După metar:<metar code>: metar:EGLL"
 
-#: __init__.py:2625
+#: __init__.py:2630
 msgid "By iata:<3 digit airport code>: iata:DXB"
 msgstr "După iata:<3 digit airport code>: iata:DXB"
 
-#: __init__.py:2626
+#: __init__.py:2631
 msgid "By auto:ip IP lookup: auto:ip"
 msgstr "După auto:ip IP lookup: auto:ip"
 
-#: __init__.py:2627
+#: __init__.py:2632
 msgid "By IP address (IPv4 and IPv6 supported): 100.0.0.1"
 msgstr "După adresa IP (sunt suportate IPv4 și IPv6): 100.0.0.1"
 
-#: __init__.py:2628
+#: __init__.py:2633
 msgid "if there will be cities with the same name, will be listed"
 msgstr "dacă vor exista orașe cu același nume, acestea vor fi listate"
 
-#: __init__.py:2629
+#: __init__.py:2634
 msgid "By default, confirming a selection, is used the postal code"
 msgstr "În mod implicit, la confirmarea unei alegeri se folosește codul poștal"
 
-#: __init__.py:2630
+#: __init__.py:2635
 msgid ""
 "If the postal code is not valid, will be used a text string: city, state, "
 "region"
@@ -848,590 +848,592 @@ msgstr ""
 "Dacă nu este valid codul poștal, se va utiliza un șir de text: oraș, țară, "
 "regiune"
 
-#: __init__.py:2631
+#: __init__.py:2636
 msgid "You can indicate how to proceed by prefixing the following commands"
 msgstr "Puteți indica cum să se procedeze inserând următoarele comenzi"
 
-#: __init__.py:2632
+#: __init__.py:2637
 msgid ""
 "Direct (cities with the same name, will not listed), by typing D:City: D:"
 "Paris"
 msgstr ""
 "Direct (orașele cu același nume nu vor fi listate), tastând D:City: D:Paris"
 
-#: __init__.py:2633
+#: __init__.py:2638
 msgid "Geographic coordinates, by typing G:City: G:Venezia"
 msgstr "Coordonate geoggrafice, tastând G:City: G:Venezia"
 
-#: __init__.py:2634
+#: __init__.py:2639
 msgid "Text string, by typing T:City: T:Bologna"
 msgstr "Șir de text, tastând T:City: T:Bologna"
 
-#: __init__.py:2635
+#: __init__.py:2640
 msgid "If the city is not found"
 msgstr "Dacă orașul nu este găsit"
 
-#: __init__.py:2636
+#: __init__.py:2641
 msgid "Try to reverse the order in the search key"
 msgstr "Încercați să inversați ordinea în cheia de căutare"
 
-#: __init__.py:2637
+#: __init__.py:2642
 msgid "Try with or without the country of origin"
 msgstr "Încearcă cu sau fără țara de origine"
 
-#: __init__.py:2638
+#: __init__.py:2643
 msgid "Try to merge the name with hyphens, or separate it with separator"
 msgstr "Încercați să uniți numele cu cratimă sau să îl separați cu separator"
 
-#: __init__.py:2639
+#: __init__.py:2644
 msgid "Try deleting apostrophes"
 msgstr "Încearcă să ștergi apostrofurile"
 
-#: __init__.py:2640
+#: __init__.py:2645
 msgid "Try changing the vowels accented with normal vowels"
 msgstr "Încercați să schimbați vocalele accentuate cu vocalele normale"
 
-#: __init__.py:2641
+#: __init__.py:2646
 msgid "Try to change in English some parts"
 msgstr "Încearcă să modifici niște părți în engleză"
 
-#: __init__.py:2642
+#: __init__.py:2647
 msgid "Try with a closest location"
 msgstr "Încearcă cu o locație învecinată"
 
-#: __init__.py:2645
+#: __init__.py:2650
 msgid "Help placing"
 msgstr "Ajutor"
 
-#: __init__.py:2742
+#: __init__.py:2747
 msgid "No sound effect in memory!"
 msgstr "Fără efecte de sunete în memorie!"
 
-#: __init__.py:2743
+#: __init__.py:2748
 msgid "I can't reproduce the sound."
 msgstr "Nu pot să redau sunetul."
 
-#: __init__.py:2839
+#: __init__.py:2844
 msgid "Choose search key for"
 msgstr "Alegeți cheia de căutare pentru"
 
-#: __init__.py:2859
+#: __init__.py:2864
 msgid "Unfortunately I could not recover enough data to find the city."
 msgstr "Din păcate nu am reușit să adun suficiente date pentru a găsi orașul."
 
-#: __init__.py:2860
+#: __init__.py:2865
 msgid "Do I try anyway?"
 msgstr "Să încerc din nou?"
 
-#: __init__.py:2883
+#: __init__.py:2888
 msgid "not found! Press F1 for help on entering data."
 msgstr "negăsit! Apasă F1 pentru ajutor în introducerea de date."
 
-#: __init__.py:2907
+#: __init__.py:2912
 msgid "Is not working properly or has been removed from the database of"
 msgstr "Nu funcționează corect sau a fost eliminat din baza de date a"
 
-#: __init__.py:2911
+#: __init__.py:2916
 msgid "Is no longer valid!"
 msgstr "Nu mai e valid!"
 
-#: __init__.py:2944
+#: __init__.py:2949
 msgid "This option requires the installation of some audio effects"
 msgstr "Această opțiune necesită instalarea unor efecte audio"
 
-#: __init__.py:2945
+#: __init__.py:2950
 msgid "Do you want to install them?"
 msgstr "Vrei să le instalezi?"
 
-#: __init__.py:2949
+#: __init__.py:2954
 msgid "The audio effects are installed!"
 msgstr "Efectele audio sunt instalate!"
 
-#: __init__.py:2950
+#: __init__.py:2955
 msgid "Would you like to update?"
 msgstr "Vreți să le actualizați?"
 
-#: __init__.py:2951
+#: __init__.py:2956
 msgid "Or do you want to uninstall them?"
 msgstr "Sau vrei să le dezinstalezi?"
 
-#: __init__.py:2958
+#: __init__.py:2963
 msgid "Are you sure you want to uninstall the sound effects?"
 msgstr "Ești sigur că vrei să dezinstalezi efectele de sunet?"
 
-#: __init__.py:2986
+#: __init__.py:2991
 msgid "Update in progress"
 msgstr "Actualizare în curs"
 
-#: __init__.py:2987
+#: __init__.py:2992
 msgid "Installation in progress"
 msgstr "Instalare în curs"
 
-#: __init__.py:3016
+#: __init__.py:3021
 msgid "The installation of audio effects has been completed successfully!"
 msgstr "Instalarea efectelor audio a fost completată cu succes!"
 
-#: __init__.py:3017
+#: __init__.py:3022
 msgid "Adding folder:"
 msgstr "Adăugare dosar:"
 
-#: __init__.py:3019
+#: __init__.py:3024
 msgid "The upgrade of audio effects has been completed successfully!"
 msgstr "Actualizarea efectelor audio a fost completată cu succes!"
 
-#: __init__.py:3026
+#: __init__.py:3031
 msgid "These sound effects are subject to change by the author."
 msgstr "Aceste efecte de sunet pot fi modificate de către autor."
 
-#: __init__.py:3027
+#: __init__.py:3032
 msgid "Disable and re-enable this option in order to update or uninstall them."
 msgstr ""
 "Dezactivează sau reactivează această opțiune pentru a le actualiza sau "
 "dezinstala."
 
-#: __init__.py:3088
+#: __init__.py:3093
 msgid "Verify that your internet connection is active, or try again later."
 msgstr ""
 "Verifică dacă conexiunea la internet este activă, sau încearcă din nou mai "
 "târziu."
 
-#: __init__.py:3089
+#: __init__.py:3094
 msgid "File corrupted or not available!"
 msgstr "Fișier corupt sau indisponibil!"
 
-#: __init__.py:3091
+#: __init__.py:3096
 msgid "Sorry, I could not complete the installation of the sound effects!"
 msgstr "Îmi pare rău, nu aș putea să completez instalarea efectelor de sunet!"
 
-#: __init__.py:3092
+#: __init__.py:3097
 msgid "Installation Error!"
 msgstr "Eroare la instalare!"
 
-#: __init__.py:3196
+#: __init__.py:3201
 msgid ""
 "The details of this city are not in the database and so I added them to the "
 "list."
 msgstr ""
+"Detaliile acestui oraș nu se află în baza de date, așa că le-am adăugat în "
+"listă."
 
-#: __init__.py:3203
+#: __init__.py:3208
 msgid "Cannot identify your location, due to insufficient data."
 msgstr "Nu-ți pot identifica locația datorită datelor insuficiente."
 
-#: __init__.py:3231
+#: __init__.py:3236
 msgid "Details of"
 msgstr "Detalii ale"
 
-#: __init__.py:3234
+#: __init__.py:3239
 msgid "Place"
 msgstr "Loc"
 
-#: __init__.py:3235
+#: __init__.py:3240
 msgid "Current local time"
 msgstr "Oră locală curentă"
 
-#: __init__.py:3236
+#: __init__.py:3241
 msgid "Degrees latitude"
 msgstr "Grade latitudine"
 
-#: __init__.py:3237
+#: __init__.py:3242
 msgid "Degrees longitude"
 msgstr "Grade longitudine"
 
-#: __init__.py:3238
+#: __init__.py:3243
 msgid "Elevation above sea level"
 msgstr "Altitudine deasupra nivelului mării"
 
-#: __init__.py:3238
+#: __init__.py:3243
 msgid "meters"
 msgstr "metri"
 
-#: __init__.py:3263
+#: __init__.py:3268
 msgid "Define the area for"
 msgstr "Definește ținutul pentru"
 
-#: __init__.py:3267
+#: __init__.py:3272
 msgid "Hinterland"
 msgstr "Hinterland"
 
-#: __init__.py:3268
+#: __init__.py:3273
 msgid "Maritime area"
 msgstr "Zonă maritimă"
 
-#: __init__.py:3269
+#: __init__.py:3274
 msgid "Desert zone"
 msgstr "Zonă deșertică"
 
-#: __init__.py:3270
+#: __init__.py:3275
 msgid "Arctic zone"
 msgstr "Zonă arctică"
 
-#: __init__.py:3271
+#: __init__.py:3276
 msgid "Mountain zone"
 msgstr "Zonă montană"
 
-#: __init__.py:3423
+#: __init__.py:3428
 msgid "Enter new name."
 msgstr "Introduceți un nume nou."
 
-#: __init__.py:3432
+#: __init__.py:3437
 msgid "it can't be used because it already exists!"
 msgstr "nu poate fi folosit deoarece există deja!"
 
-#: __init__.py:3544
+#: __init__.py:3549
 msgid "is correct"
 msgstr "este corect"
 
-#: __init__.py:3545
+#: __init__.py:3550
 msgid "But the name"
 msgstr "Dar numele"
 
-#: __init__.py:3547
+#: __init__.py:3552
 msgid "already exists"
 msgstr "există deja"
 
-#: __init__.py:3548
+#: __init__.py:3553
 msgid "You have to change it!"
 msgstr "Este necesar să-l modifici!"
 
-#: __init__.py:3549
+#: __init__.py:3554
 msgid "The city proper is"
 msgstr "Orașul corect este"
 
-#: __init__.py:3551
+#: __init__.py:3556
 msgid "Want to use the suggested name?"
 msgstr "Vrei să folosești numele sugerat?"
 
-#: __init__.py:3563
+#: __init__.py:3568
 msgid "Import cities"
 msgstr "Importă orașe"
 
-#: __init__.py:3581
+#: __init__.py:3586
 msgid "Empty file or not in cities format compatible!"
 msgstr "Fișier gol sau incompatibil cu formatul de orașe!"
 
-#: __init__.py:3587
+#: __init__.py:3592
 msgid "Do you want to replace your list with this?"
 msgstr "Vrei să înlocuiești lista ta cu aceasta?"
 
-#: __init__.py:3588
+#: __init__.py:3593
 msgid "If you select yes, your list will be completely replaced."
 msgstr "Dacă selectezi da, lista ta va fi complet înlocuită."
 
-#: __init__.py:3589
+#: __init__.py:3594
 msgid "If you select no, the new cities will be added to your list."
 msgstr "Dacă selectezi da, noile orașe vor fi adăugate în lista ta."
 
-#: __init__.py:3592
+#: __init__.py:3597
 msgid "Select import mode"
 msgstr "Selectează modalitatea de importare"
 
-#: __init__.py:3603
+#: __init__.py:3608
 msgid "File contents"
 msgstr "Conținutul fișierelor"
 
-#: __init__.py:3604
+#: __init__.py:3609
 msgid "cities"
 msgstr "orașe"
 
-#: __init__.py:3607
+#: __init__.py:3612
 msgid "Activate the check boxes of the cities you want to import."
 msgstr "Activează casetele de bifat ale orașelor pe care vrei să le imporți."
 
-#: __init__.py:3628
+#: __init__.py:3633
 msgid "Importing cities in progress"
 msgstr "Importarea orașelor este în curs"
 
-#: __init__.py:3720
+#: __init__.py:3725
 msgid "Were added"
 msgstr "Au fost adăugate"
 
-#: __init__.py:3720
+#: __init__.py:3725
 msgid "new cities to the list"
 msgstr "noi orașe la listă"
 
-#: __init__.py:3721
+#: __init__.py:3726
 msgid "Have been ignored because existing"
 msgstr "Au fost ignorate pentru că există deja"
 
-#: __init__.py:3722
+#: __init__.py:3727
 msgid "Content of imported list"
 msgstr "Conținutul listei importate"
 
-#: __init__.py:3723
+#: __init__.py:3728
 msgid "Containing incomplete data"
 msgstr "Conține date incomplete"
 
-#: __init__.py:3724
+#: __init__.py:3729
 msgid "selected by the user"
 msgstr "selectat de utilizator"
 
-#: __init__.py:3725
+#: __init__.py:3730
 msgid "Import finished"
 msgstr "Importare terminată"
 
-#: __init__.py:3737
+#: __init__.py:3742
 msgid "A copy of"
 msgstr "O copie a"
 
-#: __init__.py:3739
+#: __init__.py:3744
 msgid "It will be exported"
 msgstr "Va fi exportat"
 
-#: __init__.py:3740
+#: __init__.py:3745
 msgid "But it does not yet contain the changes you just made the list!"
 msgstr "Dar nu conține încă modificările pe care tocmai le-ai făcut în listă!"
 
-#: __init__.py:3741
+#: __init__.py:3746
 msgid "I proceed?"
 msgstr "Continui?"
 
-#: __init__.py:3747
+#: __init__.py:3752
 msgid "Export cities"
 msgstr "Exportă orașe"
 
-#: __init__.py:3762
+#: __init__.py:3767
 msgid "You can not export the same file at the same path!"
 msgstr "Nu poți exporta același fișier pe aceeași cale!"
 
-#: __init__.py:3782
+#: __init__.py:3787
 msgid "Hourlyforecast data report values."
 msgstr "Valorile raportului care conține datele cu privire la prognoza orară."
 
-#: __init__.py:3782
+#: __init__.py:3787
 msgid "Disable the data you don't want to be processed:"
 msgstr "Dezactivați datele care să nu fie procesate:"
 
-#: __init__.py:4529
+#: __init__.py:4534
 msgid "january"
 msgstr "ianuarie"
 
-#: __init__.py:4530
+#: __init__.py:4535
 msgid "february"
 msgstr "februarie"
 
-#: __init__.py:4531
+#: __init__.py:4536
 msgid "march"
 msgstr "martie"
 
-#: __init__.py:4532
+#: __init__.py:4537
 msgid "april"
 msgstr "aprilie"
 
-#: __init__.py:4533
+#: __init__.py:4538
 msgid "may"
 msgstr "mai"
 
-#: __init__.py:4534
+#: __init__.py:4539
 msgid "june"
 msgstr "iunie"
 
-#: __init__.py:4535
+#: __init__.py:4540
 msgid "july"
 msgstr "iulie"
 
-#: __init__.py:4536
+#: __init__.py:4541
 msgid "august"
 msgstr "august"
 
-#: __init__.py:4537
+#: __init__.py:4542
 msgid "september"
 msgstr "septembrie"
 
-#: __init__.py:4538
+#: __init__.py:4543
 msgid "october"
 msgstr "octombrie"
 
-#: __init__.py:4539
+#: __init__.py:4544
 msgid "november"
 msgstr "noiembrie"
 
-#: __init__.py:4540
+#: __init__.py:4545
 msgid "december"
 msgstr "decembrie"
 
-#: __init__.py:4541
+#: __init__.py:4546
 msgid "Monday"
 msgstr "Luni"
 
-#: __init__.py:4542
+#: __init__.py:4547
 msgid "Tuesday"
 msgstr "Marți"
 
-#: __init__.py:4543
+#: __init__.py:4548
 msgid "Wednesday"
 msgstr "Miercuri"
 
-#: __init__.py:4544
+#: __init__.py:4549
 msgid "Thursday"
 msgstr "Joi"
 
-#: __init__.py:4545
+#: __init__.py:4550
 msgid "Friday"
 msgstr "Vineri"
 
-#: __init__.py:4546
+#: __init__.py:4551
 msgid "Saturday"
 msgstr "Sâmbătă"
 
-#: __init__.py:4547
+#: __init__.py:4552
 msgid "Sunday"
 msgstr "Duminică"
 
-#: __init__.py:4605
+#: __init__.py:4610
 #, python-format
 msgid "It was not possible find the acronym of \"%s\"!"
 msgstr "Nu s-a putut găsi acronimul lui \"%s\"!"
 
-#: __init__.py:4606
+#: __init__.py:4611
 msgid "This may not allow you to get the city details."
 msgstr ""
 "Acest lucru ar putea să nu vă permită să obțineți informații despre oraș."
 
-#: __init__.py:4607
+#: __init__.py:4612
 msgid ""
 "Please report this to the author so he can add this country in database."
 msgstr ""
 "Raportați acest lucru autorului pentru a putea adăuga această țară în baza "
 "de date."
 
-#: __init__.py:4608
+#: __init__.py:4613
 #, python-format
 msgid "Send an email to %s"
 msgstr "Trimiteți un e-mail la %s"
 
-#: __init__.py:4609
+#: __init__.py:4614
 msgid "With  object the line below, thanks."
 msgstr "Cu obiectul linia de mai jos, mulțumesc."
 
-#: __init__.py:4677 __init__.py:4695
+#: __init__.py:4682 __init__.py:4700
 msgid "Downloaded"
 msgstr "Descărcat"
 
-#: __init__.py:4678
+#: __init__.py:4683
 msgid "of"
 msgstr "din"
 
-#: __init__.py:4716
+#: __init__.py:4721
 msgid "Find..."
 msgstr "Găsește..."
 
-#: __init__.py:4717
+#: __init__.py:4722
 msgid "Find next"
 msgstr "Găsește succedentul"
 
-#: __init__.py:4718
+#: __init__.py:4723
 msgid "Find previous"
 msgstr "Găsește precedentul"
 
-#: __init__.py:4917
+#: __init__.py:4922
 msgid "Be an error has occurred."
 msgstr "A apărut o eroare."
 
-#: __init__.py:4918
+#: __init__.py:4923
 msgid "See the log for more information."
 msgstr "Consultați jurnalul pentru mai multe informații."
 
-#: __init__.py:4919
+#: __init__.py:4924
 msgid "Error: failure writing file!"
 msgstr "Eroare: eșuare la scrierea fișierului!"
 
-#: __init__.py:5063
+#: __init__.py:5068
 msgid "occurrences found"
 msgstr "apariții găsite"
 
-#: __init__.py:5063
+#: __init__.py:5068
 msgid "for"
 msgstr "pentru"
 
-#: __init__.py:5065
+#: __init__.py:5070
 msgid "Choose a city."
 msgstr "Alege un oraș."
 
-#: __init__.py:5067
+#: __init__.py:5072
 msgid "List of availables Cities"
 msgstr "Lista orașelor disponibile"
 
-#: __init__.py:5099
+#: __init__.py:5104
 msgid "Do not show this message again!"
 msgstr "Nu afișați acest mesaj din nou!"
 
-#: __init__.py:5109
+#: __init__.py:5114
 msgid "&Install..."
 msgstr "&Instalează..."
 
-#: __init__.py:5109
+#: __init__.py:5114
 msgid "Upd&ate..."
 msgstr "&Actualizează."
 
-#: __init__.py:5111
+#: __init__.py:5116
 msgid "&Close"
 msgstr "&Închide"
 
-#: __init__.py:5112
+#: __init__.py:5117
 msgid "&Uninstall..."
 msgstr "&Dezinstalează..."
 
-#: __init__.py:5214
+#: __init__.py:5219
 msgid "Type the search string"
 msgstr "Tastează textul de căutare"
 
-#: __init__.py:5214 __init__.py:5268
+#: __init__.py:5219 __init__.py:5273
 msgid "Find"
 msgstr "Găsește"
 
-#: __init__.py:5265
+#: __init__.py:5270
 msgid "next"
 msgstr "succesiv"
 
-#: __init__.py:5265
+#: __init__.py:5270
 msgid "previous"
 msgstr "precedent"
 
-#: __init__.py:5272
+#: __init__.py:5277
 msgid "No results next for"
 msgstr "Fără rezultate succedente pentru"
 
-#: __init__.py:5272
+#: __init__.py:5277
 msgid "No previous results for"
 msgstr "Fără rezultate precedente pentru"
 
-#: __init__.py:5314
+#: __init__.py:5319
 msgid "&Select all"
 msgstr "&Selectare tot"
 
-#: __init__.py:5316
+#: __init__.py:5321
 msgid "&Deselect all"
 msgstr "&Deselectare tot"
 
-#: __init__.py:5356
+#: __init__.py:5361
 msgid "not checked"
 msgstr "nebifat"
 
-#: __init__.py:5358
+#: __init__.py:5363
 msgid "checked"
 msgstr "bifat"
 
-#: __init__.py:5362
+#: __init__.py:5367
 msgid "check box"
 msgstr "casetă de bifat"
 
-#: __init__.py:5372
+#: __init__.py:5377
 msgid "check boxes checked"
 msgstr "casete de bifat bifate"
 
-#: __init__.py:5381
+#: __init__.py:5386
 msgid "check boxes not checked"
 msgstr "casete de bifat nebifate"
 
-#: __init__.py:5443
+#: __init__.py:5448
 msgid "Saving in progress"
 msgstr "Salvare în curs"
 
-#: __init__.py:5445
+#: __init__.py:5450
 msgid "Download canceled."
 msgstr "Descărcare anulată."
 
-#: __init__.py:5499
+#: __init__.py:5504
 msgid "&Copy to clipboard"
 msgstr "&Copiați în clipboard"
 

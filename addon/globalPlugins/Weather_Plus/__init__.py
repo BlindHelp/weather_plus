@@ -11,7 +11,7 @@
 #See the file COPYING for more details.
 #Version 8.2.
 #NVDA compatibility: 2017.3 to beyond
-#Edit date July, 07th, 2021
+#Edit date July, 08th, 2021
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -249,7 +249,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		toUpgrade = self.toUpgrade,
 		toComma = self.toComma,
 		toOutputwindow = self.toOutputwindow,
-		toWeatherEffects = self.toWeatherEffects
+		toWeatherEffects = self.toWeatherEffects,
+		dontShowAgainAddDetails = self.dontShowAgainAddDetails
 		)
 
 
@@ -297,6 +298,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				toComma,
 				toOutputwindow,
 				toWeatherEffects,
+				dontShowAgainAddDetails,
 				toAssign) = _mainSettingsDialog.GetValue()
 				#save the configuration if some data were changed
 				save = beep = False
@@ -347,6 +349,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				if _volume != self.volume: self.volume = _volume; save = True
 				if toAssign != self.toAssign: self.toAssign = toAssign; save = True
 				if toUpgrade != self.toUpgrade: self.toUpgrade = toUpgrade; save = True
+				if dontShowAgainAddDetails != self.dontShowAgainAddDetails: self.dontShowAgainAddDetails = dontShowAgainAddDetails; save = True
 				if (any(map(lambda x: True, (k for k in samplesvolumes_dic if k not in self.samplesvolumes_dic)))\
 				or sorted(samplesvolumes_dic.values()) != sorted(self.samplesvolumes_dic.values())):
 					#save the individual volumes of the sound effects
@@ -403,7 +406,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 			else:
 				#button cancell or eskape key
-				n, n, n, zipCodesList, define_dic, details_dic, defaultZipCode, n, modifiedList, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n = _mainSettingsDialog.GetValue()
+				n, n, n, zipCodesList, define_dic, details_dic, defaultZipCode, n, modifiedList, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n = _mainSettingsDialog.GetValue()
 				del n
 				volume = self.volume
 				samplesvolumes_dic = dict(self.samplesvolumes_dic)
@@ -1179,6 +1182,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.toUltraviolet_hf = True
 			self.to24Hours = True #use 24 hours format
 			self.dontShowAgain = False #check box no longer display this message
+			self.dontShowAgainAddDetails = False #check box no longer display this message
 			self.toComma = False #use the comma as decimal separator
 			self.toOutputwindow = False #use a window as output
 			self.toUpgrade = True #check for upgrades
@@ -1241,6 +1245,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				if 'Use a window as output' in cws: self.toOutputwindow = config.bools[cws['Use a window as output']]
 				if 'Check for upgrade' in cws: self.toUpgrade = config.bools[cws['Check for upgrade']]
 				if 'Dont show again' in cws: self.dontShowAgain = config.bools[cws['Dont show again']]
+				if 'Dont show again add details' in cws: self.dontShowAgainAddDetails = config.bools[cws['Dont show again add details']]
 				self.zipCode = self.MyDefault()
 			except IOError:
 				Shared().Play_sound("warn", 1)
@@ -1307,7 +1312,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		"Use a comma as separator": self.toComma,
 		"Use a window as output": self.toOutputwindow,
 		"Use only weather effects": self.toWeatherEffects,
-		"Dont show again": self.dontShowAgain
+		"Dont show again": self.dontShowAgain,
+		"Dont show again add details": self.dontShowAgainAddDetails
 		}
 		try:
 			config.write()
@@ -2191,7 +2197,7 @@ class EnterDataDialog(wx.Dialog):
 			toHelp = None, toClip = None, toSample = None, toWind = None, toAtmosphere = None, toAstronomy = None, to24Hours = None,
 			toSpeedmeters = None, toAssign = None, scaleAs = None, volume_dic = {},
 			define_dic = {}, details_dic = {}, forecast_days = "", apilang = "", toUpgrade = None, toPerceived = None, toHumidity = None, toVisibility = None, toPressure = None, toMmhgpressure = None, toUltraviolet = None, toCloud = None, toPrecip = None, toWinddir = None, toWindspeed = None, toWindgust = None, toComma = None, toOutputwindow = None, toWeatherEffects = None,
-			toWinddir_hf = None, toWindspeed_hf = None, toWindgust_hf = None, toHumidity_hf = None, toVisibility_hf = None, toCloud_hf = None, toPrecip_hf = None, toUltraviolet_hf = None):
+			toWinddir_hf = None, toWindspeed_hf = None, toWindgust_hf = None, toHumidity_hf = None, toVisibility_hf = None, toCloud_hf = None, toPrecip_hf = None, toUltraviolet_hf = None, dontShowAgainAddDetails = False):
 		wx.Dialog.__init__(self, parent=parent, id=id, title=title, pos=pos,
 		size=size, style=style)
 
@@ -2205,6 +2211,7 @@ class EnterDataDialog(wx.Dialog):
 		self.toCloud_hf = toCloud_hf
 		self.toPrecip_hf = toPrecip_hf
 		self.toUltraviolet_hf = toUltraviolet_hf
+		self.dontShowAgainAddDetails = dontShowAgainAddDetails
 		sizer = wx.BoxSizer(wx.VERTICAL)
 		#loads cities list from Weather.zipcodes
 		zipCodesList, define_dic, details_dic = Shared().LoadZipCodes()
@@ -3166,6 +3173,7 @@ class EnterDataDialog(wx.Dialog):
 		self.cbt_toComma.GetValue(),
 		self.cbt_toOutputwindow.GetValue(),
 		self.cbt_toWeatherEffects.GetValue(),
+		self.dontShowAgainAddDetails	,
 		self.ch_vol.GetSelection()
 		)
 
@@ -3198,10 +3206,19 @@ class EnterDataDialog(wx.Dialog):
 					if encoded_value in self.zipCodesList:
 						Shared().Play_sound(True, 1)
 						self.modifiedList = True
-						message = _("The details of this city are not in the database and so I added them to the list.")
-						if self.toOutputwindow:
-							wx.MessageBox(message, _addonSummary, wx.ICON_INFORMATION)
-						else: ui.message(message)
+						if not self.dontShowAgainAddDetails:
+							message = _("The details of this city are not in the database and so I added them to the list.")
+							if self.toOutputwindow:
+								#Translators: dialog message that advise that the missing city details have been reloaded and added to the city
+								dl = NoticeAgainDialog(gui.mainFrame, message = message,
+								#Translators: the dialog title
+								title = '%s %s' % (_addonSummary, _("Notice!")))
+								if dl.ShowModal():
+									dontShowAgainAddDetails = dl.GetValue()
+									if dontShowAgainAddDetails != self.dontShowAgainAddDetails:
+										self.dontShowAgainAddDetails = dontShowAgainAddDetails
+									dl.Destroy()
+							else: ui.message(message)
 
 				else:
 					Shared().Play_sound("warn", 1)
