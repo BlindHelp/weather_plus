@@ -1,3 +1,7 @@
+16/07/2021
+New __init__.py
+Updated translation in  PL and SR localization
+
 08/07/2021
 Introduction of a box to stop displaying the window when notifying that you have added the details of a city ... if there are a lot of them, this window would disturb; no new strings were added :)DA and RO translations
 

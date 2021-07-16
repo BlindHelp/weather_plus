@@ -11,7 +11,7 @@
 #See the file COPYING for more details.
 #Version 8.2.
 #NVDA compatibility: 2017.3 to beyond
-#Edit date July, 08th, 2021
+#Edit date July, 15th, 2021
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -3192,7 +3192,7 @@ class EnterDataDialog(wx.Dialog):
 			elif encoded_value in self.details_dic: dic = self.details_dic
 			if dic: city, region, country, country_acronym, timezone_id, latitude, longitude = self.GetFieldsValues(dic, encoded_value)
 			elif not dic:
-				#try to retrieve the city details from the API
+				#no city details, try to retrieve the city details from the API
 				api_query = Shared().GetLocation(value, self.define_dic)
 				connect, n = Shared().ParseEntry(api_query, self.apilang)
 				if connect == "no connect":
@@ -3217,7 +3217,9 @@ class EnterDataDialog(wx.Dialog):
 									dontShowAgainAddDetails = dl.GetValue()
 									if dontShowAgainAddDetails != self.dontShowAgainAddDetails:
 										self.dontShowAgainAddDetails = dontShowAgainAddDetails
+
 									dl.Destroy()
+
 							else: ui.message(message)
 
 				else:
