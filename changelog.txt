@@ -1,3 +1,8 @@
+17/07/2021
+New BuildVars.py with this fix:
+_("Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"),
+The "h" in hour was missing.
+
 16/07/2021
 New __init__.py
 Updated translation in  PL and SR localization
