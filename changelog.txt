@@ -1,3 +1,18 @@
+25/07/2021
+Weather_Plus8.3 #update by Adriano
+* Improved the city search function, now it gives more results and it accepts only the postal codes compatible with the API, i.e. those indicated in the help window by pressing F1.
+* Eliminated a check for the previous Yahoo API that pressing NVDA + shift + w gave an IndexError for a city with a local date greater or less than that of the system.
+* Added local date in city details.
+* Improved coding in Remove, Rename and Save cities (for NVDA with python 2)
+* Improved the forecast output windows, now the commands ctrl + a and ctrl + c also work and you can also close them with the enter key.
+
+Files sent by Adriano to update in the repository
+buildVars.py updated with 8.3 version
+__init__.py Last Edit date July, 24th, 2021.
+
+# Created the new tag:
+git tag v8.3
+
 17/07/2021
 New BuildVars.py with this fix:
 _("Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"),
@@ -21,8 +36,7 @@ ar, da, gl, pl (still 73 messages not translated...), ro, sr (still 73 messages 
 
 New .pot and .nvda-addon created.
 
-
-06-07-2021
+06/07/2021
 
 ## FYI:
 
