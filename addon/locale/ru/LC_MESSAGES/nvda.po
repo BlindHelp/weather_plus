@@ -1436,7 +1436,7 @@ msgstr "&Скопировать в буфер обмена"
 
 #: buildVars.py:23
 msgid ""
-"Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
+"Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"
 msgstr ""
 "Добавляет локальную температуру и прогноз на 24 часа и прогноз на 2 дня.\n"
 

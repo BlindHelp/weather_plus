@@ -1431,7 +1431,7 @@ msgstr "&kopírovať do schránky"
 
 #: buildVars.py:23
 msgid ""
-"Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
+"Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"
 msgstr ""
 "Pridá miestnu teplotu a predpoveď na 24 hodín a predpoveď až na 2 dni. \\ N\n"
 

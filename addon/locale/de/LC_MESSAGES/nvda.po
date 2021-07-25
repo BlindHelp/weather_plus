@@ -1469,7 +1469,7 @@ msgstr "In die Zwischenablage &kopieren"
 
 #: buildVars.py:23
 msgid ""
-"Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
+"Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"
 msgstr ""
 "Fügt lokale Temperatur und Vorhersage für 24 Stunden sowie die Vorhersage "
 "bis zu 2 Tagen hinzu.\n"

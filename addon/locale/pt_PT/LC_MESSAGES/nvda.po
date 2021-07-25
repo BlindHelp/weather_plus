@@ -1448,7 +1448,7 @@ msgstr "&Copiar para área de transferência"
 
 #: buildVars.py:23
 msgid ""
-"Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
+"Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"
 msgstr ""
 "Adiciona a temperatura local e a previsão para 24 horas e previsões até 3 "
 "dias.\n"

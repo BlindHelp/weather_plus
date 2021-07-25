@@ -1418,7 +1418,7 @@ msgid "&Copy to clipboard"
 msgstr "&نسخ إلى الحافظة"
 
 #: buildVars.py:23
-msgid "Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
+msgid "Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"
 msgstr ""
 "يُضيفُ درجة الحرارة المحلية وتوقُّعات الطقس لأربع وعشرين ساعة، إضافةً لتوقُّعات الطقس "
 "ليويمن قادمين.\n"

@@ -1439,7 +1439,7 @@ msgstr "&Copiați în clipboard"
 
 #: buildVars.py:23
 msgid ""
-"Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
+"Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"
 msgstr ""
 "Adaugă temperatura locală și prognoza pe 24 de ore, precum și previziunile "
 "meteorologice pentru următoarele două zile.\n"

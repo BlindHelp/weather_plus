@@ -1460,7 +1460,7 @@ msgstr "&Copier dans le presse-papiers"
 
 #: buildVars.py:23
 msgid ""
-"Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
+"Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"
 msgstr ""
 "Ajoute la température locale et les prévisions à 24 heures et jusqu'à 2 "
 "jours au-delà.\n"

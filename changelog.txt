@@ -1,4 +1,14 @@
 25/07/2021
+Adds local temperature and forecast 24 ours and prediction up to 2 days.
+Adriano said: This string, however, has not been translated in the nvda.po files as I suggested last week, it was not possible to use the already made correct translations of this string and update only the English one that we corrected by adding the missing h?
+Done!
+Corrected the previous string in English in all nvda.po  files manually (using Notepad++)
+Adds local temperature and forecast 24 hours and prediction up to 2 days.
+
+Built again the Addon and sent in the:
+Release Version 8.3  BlindHelp/weather_plus
+https://github.com/BlindHelp/weather_plus/releases/tag/8.3
+
 Weather_Plus8.3 #update by Adriano
 * Improved the city search function, now it gives more results and it accepts only the postal codes compatible with the API, i.e. those indicated in the help window by pressing F1.
 * Eliminated a check for the previous Yahoo API that pressing NVDA + shift + w gave an IndexError for a city with a local date greater or less than that of the system.

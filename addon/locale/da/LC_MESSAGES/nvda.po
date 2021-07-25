@@ -1384,7 +1384,7 @@ msgid "&Copy to clipboard"
 msgstr "&Kopiér til udklipsholder"
 
 #: buildVars.py:23
-msgid "Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
+msgid "Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"
 msgstr "Tilføjer lokal temperatur og prognose for 24 timer og vejrudsigt op til 2 dage.\n"
 
 #: buildVars.py:24

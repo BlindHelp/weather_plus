@@ -1434,7 +1434,7 @@ msgstr "&Panoya kopyala"
 
 #: buildVars.py:23
 msgid ""
-"Adds local temperature and forecast 24 ours and prediction up to 2 days.\n"
+"Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"
 msgstr ""
 "Seçili şehrin sıcaklık bilgisini; 24 saatlik ve sonraki iki gün için hava "
 "tahmin raporunu verir.\n"
