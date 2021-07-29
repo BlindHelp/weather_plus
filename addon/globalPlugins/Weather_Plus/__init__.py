@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 8.3.
+#Version 8.4.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date July, 24th, 2021.
+#Last Edit date July, 29th, 2021.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -64,6 +64,7 @@ _fields = ['city', 'region', 'country', 'country_acronym', 'timezone_id', 'lat',
 _npc = "NPC" #non postal code
 _nr = _("unknown")
 _na = _("not available")
+_plzw = _("Please wait...")
 _maxDaysApi = 3 #maximum allowed for free api plan
 _wait_delay = 10 #it's necessary to update after at least 10 minutes to limit frequent API calls, please don't change it!
 _mainSettingsDialog = None
@@ -188,7 +189,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if dialog or dialog.IsShown():
 				#returns if the dialog specified is open
 				wx.Bell()
-				Dialog.Raise(); return True
+				Dialog.Raise()
+				dialog.Show()
+				return True
 		except: return False
 
 
@@ -1068,9 +1071,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					BASS_ChannelPlay(_handle, False)
 					BASS_ChannelSetAttribute(_handle, BASS_ATTRIB_VOL, _volume_dic[playVol]) #set volume (0 = mute, 1 = full)
 				except Exception as e:
-					e = str(e)
-					if _pyVersion <= 2: e = e.decode("mbcs")
-					log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
+					Shared().LogError(e)
 
 			else:
 				#sample not found, notify and disable audio check box
@@ -1395,7 +1396,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def getWeather(self, zip_code, forecast = False):
 		"""Main getWeather function gets weather from Weather API"""
 		if zip_code != "" and not zip_code.isspace():
-
 			mess = ""
 			if self.dom == "no connect" or self.dom and (self.tempZipCode != self.test[0]) or not self.dom or (datetime.now() - self.test[-1]).seconds/60 >= _wait_delay:
 				#but refresh dom if the city are changed or if the waiting time is finished
@@ -1424,9 +1424,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				wind_chill = self.dom['current']['feelslike_f']
 				wind_f = wind_speed = self.dom['current']['wind_mph'] #wind_f for sound effects param
 				wind_gust = self.dom['current']['gust_mph']
-				pressure = self.dom["current"]["pressure_in"]
+				#I withdraw the most reliable pressure in millibars because the API does not exactly convert millibars to inHg
+				press = self.dom["current"]["pressure_mb"]
+				#and convert it to inHg
+				pressure = self.Pressure_convert(press)
 				if self.toMmhgpressure:
-					pressure = self.Pressure_convert(pressure, mmHg = True) #takes the value in mmHg from pressure_in
+					#takes the value in mmHg from pressure_mb
+					pressure = self.Pressure_convert(press, mmHg = True)
 
 				visibility = self.dom['current']['vis_miles']
 				precipitation = self.dom['current']['precip_in']
@@ -1609,7 +1613,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						week_day = date.fromtimestamp(self.dom['forecast']['forecastday'][i]['date_epoch'])
 					except IndexError:
 						#limit days weather forecast reached
-						error = i; break
+						break
 
 					month = week_day.month
 					if month1 == month:
@@ -1658,7 +1662,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def Open_Dom(self, zip_code):
 		"""Upload DOM data from the Weather API"""
-		ui.message(_("Please wait..."))
+		ui.message(_plzw)
 		attempts = 2 #connection attempts
 		curDate = datetime.now()
 		api_query = Shared().GetLocation(zip_code, self.define_dic) or _testCode
@@ -1755,12 +1759,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 
 	def Pressure_convert(self, pressure, mmHg = None):
-		"""convert inhg to millibar or mmHg"""
+		"""convert millibars to inces of mercury or millibars to mmHg"""
 		if not pressure: return ""
+		#pressure value must be in millibars
 		pressure = float(pressure)
-		c = 33.863782
-		if mmHg: c = 25.4
-		pre = round((c*pressure)*100/100) #round to 2 decimals
+		#convert millibars to incis of mercury
+		pressure = pressure/33.8639
+		pre = round(pressure,2)
+		if mmHg:
+			#convert inHg to mmHg
+			pre = round((25.4*pressure),2)
+
 		pre = self.IntClean(pre)
 		if self.toComma: pre = pre.replace('.', ',')
 		return pre
@@ -1864,7 +1873,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def getHourlyForecast(self):
 		"""announces the hourly forecast"""
-		if self.IsOpenDialog(self.cityDialog): return
 		if not self.zipCode or self.zipCode.isspace():
 			#warn if there is no city set
 			Shared().Play_sound(False, 1)
@@ -2027,6 +2035,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				return wx.Bell()
 			else:
 				try:
+					Shared().CloseDialog(_weatherReportDialog)
+				except NameError: pass
+				try:
 					_tempSettingsDialog.Raise()
 					_temSettingsDialog.Show()
 				except: pass
@@ -2073,7 +2084,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		#not documented, displays API response json data  debugging
 		repeatCount =scriptHandler.getLastScriptRepeatCount()
 		if repeatCount == 2:
-			if self.IsOpenDialog(self.cityDialog): return
 			title = '%s - %s' % (_addonSummary, "Note: Feature not documented, only for debiugging.")
 			message ='Location: %s.\r\n' % (self.dom["location"]["name"] or '""')
 			message += 'Region: %s.\r\n' % (self.dom["location"]["region"] or '""')
@@ -2100,7 +2110,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 			message += '_testCode (temporary api query): %s.' % (m or '""')
 			message += '\r\n\r\n[API response json]\n%s' % self.dom
-			Shared().ViewDatas('%s\r\n%s' % (title, message)); return
+			Shared().ViewDatas(message, title); return
 
 		lbd = Shared().GetLastUpdate(self.dom)
 		last_build_date = _nr
@@ -2167,9 +2177,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				return wx.Bell()
 
 			elif "_tempSettingsDialog" in globals() and _tempSettingsDialog:
+				Shared().CloseDialog(_weatherReportDialog)
+				try:
+					_tempSettingsDialog.Raise()
+					_tempSettingsDialog.Show()
+				except: return
 				return wx.Bell()
 
 			else:
+				try:
+					Shared().CloseDialog(_weatherReportDialog)
+				except NameError: pass
 				try:
 					_mainSettingsDialog.Raise()
 					_mainSettingsDialog.Show()
@@ -2671,8 +2689,7 @@ class EnterDataDialog(wx.Dialog):
 			_("Try with a closest location")
 			),
 			#Translators: the title of the help window
-			title = _("Help placing")
-			)
+			title = _("Help placing"))
 			if helpDialog.ShowModal()is not None:
 				helpDialog.Destroy()
 				Shared().Play_sound("subwindow", 1)
@@ -2742,9 +2759,7 @@ class EnterDataDialog(wx.Dialog):
 			BASS_ChannelPlay(_handle, True)
 			BASS_ChannelSetAttribute(_handle, BASS_ATTRIB_VOL, _volume_dic[volTest]) #set vol (0 = mute, 1 = full)
 		except Exception as e:
-			e = str(e)
-			if _pyVersion <= 2: e = e.decode("mbcs")
-			log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
+			Shared().LogError(e)
 
 		evt.Skip()
 
@@ -3021,7 +3036,7 @@ class EnterDataDialog(wx.Dialog):
 			#Translators: title and message used in tthe progress qdialog
 			title = _("Update in progress")
 			if not reload: title = _("Installation in progress")
-			message = _("Please wait...")
+			message = _plzw
 			wx.CallAfter(ui.message, message)
 			result = Shared().Download_file(source, target, title, message)
 			if result == "Error":
@@ -3038,9 +3053,7 @@ class EnterDataDialog(wx.Dialog):
 					with zipfile.ZipFile(target, "r") as z:
 						z.extractall(unZip)
 				except Exception as e:
-					e = str(e)
-					if _pyVersion <= 2: e = e.decode("mbcs")
-					log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
+					Shared().LogError(e)
 					self.ErrorMessage(True)
 					self.cbt_toSample.SetValue(False) #disable audio check box
 					self.AudioControlsEnable(False)
@@ -3204,7 +3217,7 @@ class EnterDataDialog(wx.Dialog):
 
 	def OnDetails(self, evt):
 		"""Displays information about selected city"""
-		ui.message(_("Please wait..."))
+		ui.message(_plzw)
 		dic = ''
 		encoded_value = value = self.cbx.GetValue()
 		if _pyVersion <= 2: encoded_value = value.encode("mbcs")
@@ -3275,9 +3288,11 @@ class EnterDataDialog(wx.Dialog):
 		city_details = Shared().FindForGeoName(real_city_name, city_name, latitude, longitude)
 		if not city_details: city_details = '%s, %s, %s, %s' % (city, region, country, country_acronym)
 		city_details += ', %s' % timezone_id
-		Shared().Play_sound("details", 1)
 		title = "%s %s" % (_("Details of"), value)
-		ui.message(title)
+		if not self.toOutputwindow:
+			Shared().Play_sound("details", 1)
+			ui.message(title)
+
 		cd = city_details
 		if _pyVersion < 3:
 			try:
@@ -3288,7 +3303,6 @@ class EnterDataDialog(wx.Dialog):
 		message += "%s: %s.\r\n" % (_("Degrees latitude"), (lat or _nr))
 		message += "%s: %s.\r\n" % (_("Degrees longitude"), (lon or _nr))
 		message += "%s: %s %s." % (_("Elevation above sea level"), elevation, _("meters"))
-		ui.message(message) 
 		self.cbx.SetFocus()
 		if self.toClip:
 			# Copy the city details to the clipboard.
@@ -3297,6 +3311,7 @@ class EnterDataDialog(wx.Dialog):
 		if self.toOutputwindow:
 			#output to a window
 			Shared().ViewDatas('%s\r\n%s' % (title, message))
+		else: ui.message(message) 
 
 
 	def OnDefine(self, evt):
@@ -3691,7 +3706,7 @@ checkbox_values = [],
 		max = 100
 		dl = wx.ProgressDialog(
 		_("Importing cities in progress"),
-		_("Please wait..."),
+		_plzw,
 		maximum = max,
 		parent=self,
 		style = 0
@@ -3826,7 +3841,7 @@ checkbox_values = [],
 		if  destPath == _zipCodes_path:
 			wx.MessageBox(_("You can not export the same file at the same path!"), '%s - %s' % (_addonSummary, _("Notice!")), wx.ICON_EXCLAMATION)
 			return evt.GetEventObject()
-		wx.CallAfter(ui.message, _("Please wait..."))
+		wx.CallAfter(ui.message, _plzw)
 		if os.path.isfile(_zipCodes_path):
 			import shutil 
 			try:
@@ -3834,9 +3849,7 @@ checkbox_values = [],
 				shutil .copy(_zipCodes_path, destPath)
 				winsound.MessageBeep(winsound.MB_ICONASTERISK)
 			except Exception as e:
-				e = str(e)
-				if _pyVersion <= 2: e = e.decode("mbcs")
-				log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
+				Shared().LogError(e)
 				return Shared().WriteError(_addonSummary)
 
 			evt.GetEventObject().SetFocus()
@@ -3891,6 +3904,20 @@ checkbox_values = [],
 
 class Shared:
 	"""shared functions"""
+	def CloseDialog(self, dialog):
+		try:
+			if dialog:
+				if dialog.IsShown(): dialog.Close()
+				self.Play_sound("subwindow", 1)
+		except Exception: pass
+
+
+	def LogError(self, e):
+		e = str(e)
+		if _pyVersion <= 2: e = e.decode("mbcs")
+		log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
+
+
 	def ConvertDate(self, dd, m = True):
 		"""Convert day and month into translated date string"""
 		dt = '%s %s' % (
@@ -3904,11 +3931,11 @@ class Shared:
 		return dt
 
 
-	def ViewDatas(self, message):
+	def ViewDatas(self, message, title = _addonSummary):
 		"""view weather report or details in a window"""
 		if "_weatherReportDialog" not in globals(): global _weatherReportDialog; _weatherReportDialog = None
-		self.CloseDialog(_weatherReportDialog)
-		_weatherReportDialog = HelpEntryDialog(gui.mainFrame, title = _addonSummary, message = message, verbose = True)
+		Shared().CloseDialog(_weatherReportDialog)
+		_weatherReportDialog = HelpEntryDialog(gui.mainFrame, title = title, message = message, verbose = True)
 		def callback4(result):
 			if result:
 				try:
@@ -3917,14 +3944,6 @@ class Shared:
 				except: pass
 
 		gui.runScriptModalDialog(_weatherReportDialog, callback4)
-
-
-	def CloseDialog(self, dialog):
-		error = None
-		try:
-			if dialog: dialog.Close()
-		except Exception as e: error = e
-		if not error: self.Play_sound("subwindow", 1)
 
 
 	def SetCityString(self, zipcode):
@@ -4796,8 +4815,7 @@ class Shared:
 				Shared().WriteError(title)
 
 			_downloadDialog.Hide(); _downloadDialog.Destroy()
-			if _pyVersion <= 2: e = e.decode("mbcs")
-			log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
+			Shared().LogError(e)
 			return "Error"
 
 
@@ -5029,11 +5047,6 @@ class Shared:
 
 	def GetUrlData(self, address, verbosity = True):
 		"""Gets the contents of a web page"""
-		def sendlog(error):
-			e = str(error)
-			if _pyVersion <= 2: e = e.decode("mbcs")
-			log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
-
 		error = data = ""
 		try:
 			with closing(urlopen(address)) as response:
@@ -5050,11 +5063,12 @@ class Shared:
 				except Exception as e:
 					error = e
 					data = "no connect"
-					if verbosity: sendlog(error)
+					if verbosity: Shared().LogError(error)
 
-			elif "failed" in repr(e):
+			elif "failed" in repr(error):
 				data = "no connect"
-				if verbosity: sendlog(e)
+				if verbosity: Shared().LogError(error)
+
 		if "Not Found" in repr(error): data = "not found"
 		return data
 
@@ -5562,7 +5576,7 @@ class MyDialog(wx.Dialog):
 			url = '%s/weather_plus%s.nvda-addon?download=1' % (_addonBaseUrl, self.newVersion.split()[0])
 			import tempfile
 			target = "/".join((tempfile.gettempdir(), file))
-			message = _("Please wait...")
+			message = _plzw
 			title = _("Saving in progress")
 			result = Shared().Download_file(url, target, title, message)
 			message = _("Download canceled.")
@@ -5610,10 +5624,9 @@ class HelpEntryDialog(wx.Dialog):
 		wx.Dialog.__init__(self, parent = parent, id = id, title = title, pos = pos,
 		size = size, style = style)
 		vbox = wx.BoxSizer(wx.VERTICAL)
-		text = wx.TextCtrl(self, -1, value = message, pos = wx.DefaultPosition, size=(800,400), style = wx.TE_MULTILINE|wx.TE_READONLY)
-		text.Bind(wx.EVT_CHAR, self.OnChar)
+		text = wx.TextCtrl(self, -1, value = message.rstrip('\r\n'), pos = wx.DefaultPosition, size=(800,400), style = wx.TE_MULTILINE|wx.TE_READONLY)
 		vbox.Add(text, 1, wx.EXPAND|wx.ALL, 5)
-		self.text = text
+		text.Bind(wx.EVT_CHAR, self.OnChar)
 		if not verbose:
 			winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
 			hbox = wx.BoxSizer(wx.HORIZONTAL)
@@ -5631,7 +5644,13 @@ class HelpEntryDialog(wx.Dialog):
 		vbox.Add(hbox1)
 		self.SetSizerAndFit(vbox)
 		self.Centre()
+		#gets the text ending
+		text.SetInsertionPointEnd()
+		self.bottomText =  text.GetInsertionPoint()
+		#set again the cursor to top
+		text.SetInsertionPoint(0)
 		text.SetFocus()
+		self.text = text
 		if verbose: Shared().Play_sound("subwindow", 1)
 
 
@@ -5649,17 +5668,23 @@ class HelpEntryDialog(wx.Dialog):
 		elif key == wx.WXK_UP\
 		or key == wx.WXK_DOWN\
 		or key == wx.WXK_LEFT\
-		or key == wx.WXK_RIGHT:
+		or key == wx.WXK_RIGHT\
+		or key == wx.WXK_HOME\
+		or key == wx.WXK_END:
 			evt.Skip()
+		elif key == wx.WXK_PAGEUP:
+			if self.text.GetInsertionPoint() != 0: self.text.SetInsertionPoint(0)
+			else: wx.Bell()
+		elif key == wx.WXK_PAGEDOWN:
+			if self.text.GetInsertionPoint() != self.bottomText: self.text.SetInsertionPoint(self.bottomText)
+			else: wx.Bell()
 		elif key == wx.WXK_CONTROL_A:
 			#select all content
 			self.text.SetSelection(-1, -1)
 		elif key == wx.WXK_CONTROL_C:
 			#copy the selection
-			clipdata = wx.TextDataObject()
-			clipdata.SetText(self.text.GetValue()[self.text.GetSelection()[0]:self.text.GetSelection()[-1]])
-			wx.TheClipboard.Open()
-			wx.TheClipboard.SetData(clipdata)
+			text = self.FindFocus()
+			if text is not None: text.Copy()
 
 
 class FindDialog(wx.Dialog):
@@ -5941,9 +5966,7 @@ class FindDialog(wx.Dialog):
 				try:
 					w.write(i)
 				except Exception as e:
-					e = str(e)
-					if _pyVersion <= 2: e = e.decode("mbcs")
-					log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
+					Shared().LogError(e)
 
 		if not e: Shared().Play_sound("save")
 		self.defaultStrings.pop() #remove key index from list

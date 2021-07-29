@@ -1,3 +1,6 @@
+29/07/2021
+• Fixed copy function of partial text selection using control + c, and enabled the home, end and pageup keys, pagedown in enabled windows.
+• Correct response pressure in mmHg.
 25/07/2021
 Adds local temperature and forecast 24 ours and prediction up to 2 days.
 Adriano said: This string, however, has not been translated in the nvda.po files as I suggested last week, it was not possible to use the already made correct translations of this string and update only the English one that we corrected by adding the missing h?

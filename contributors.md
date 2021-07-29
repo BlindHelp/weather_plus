@@ -28,3 +28,4 @@
 | sk | Slovak | Slovak | Peter Halada | pietro4044@gmail.com |
 | sr | Serbian | Croatian | Gašić Dejan (Gashich Deyan) | gasicd@gmail.com |
 | uk | Ukrainian | Ukrainian | Alex Yeshanu | eshanuap@gmail.com |
+| vi | Vietnamese | Vietnamese | Cuong Dang Manh | dangmanhcuong@gmail.com |
