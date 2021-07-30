@@ -20,7 +20,7 @@ import buildVars
 def md2html(source, dest):
 	import markdown
 	lang = os.path.basename(os.path.dirname(source)).replace('_', '-')
-	title="{addonSummary} {addonVersion}".format(addonSummary=buildVars.addon_info["addon_summary"], addonVersion=buildVars.addon_info["addon_version"])
+	title="{addonSummary}".format(addonSummary=buildVars.addon_info["addon_summary"])
 	headerDic = {
 		"[[!meta title=\"": "# ",
 		"\"]]": " #",
