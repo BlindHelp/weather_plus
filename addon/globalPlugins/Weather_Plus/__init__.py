@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 8.4.
+#Version 8.5.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date July, 29th, 2021.
+#Last Edit date July, 30th, 2021.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -548,8 +548,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		listDocs = os.listdir(docFolder.split("globalPlugins")[0]+"\\doc\\")
 		if lang not in listDocs: lang = 'en'
 		docFolder = docFolder.split("globalPlugins")[0]+"\\doc\\"+lang
-		if os.listdir(docFolder) == []:
-			docFolder = docFolder.split("doc")[0]+"\\doc\\"+'en'
+		try:
+			#prevents error if the en folder is missing
+			if os.listdir(docFolder) == []:
+				docFolder = docFolder.split("doc")[0]+"\\doc\\"+'en'
+		except WindowsError: return False
 		if os.path.exists(docFolder):
 			self._docFolder = docFolder
 			return True
@@ -4549,7 +4552,7 @@ class Shared:
 			if m.lower() == "pm":
 				h = hour[:hour.find(':')] #hour
 				m = hour[hour.find(':')+1:] #minute
-				t = self.Add_zero('%s:%s' % (int(h)+12, m), None)
+				t = self.Add_zero('%s:%s' % (int(h)+12 if int(h) < 12 else 12, m), None)
 
 		return t
 
