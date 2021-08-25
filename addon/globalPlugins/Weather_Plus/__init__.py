@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 8.5.
+#Version 8.4.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date July, 30th, 2021.
+#Last Edit date August, 24th, 2021.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -1563,7 +1563,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 				if self.toAstronomy:
 					#addss astronomical information
-					sr = self.dom['forecast']['forecastday'][0]['astro']['sunrise']
+					try:
+						sr = self.dom['forecast']['forecastday'][0]['astro']['sunrise']
+					except IndexError: return Shared().JsonError()
 					ss = self.dom['forecast']['forecastday'][0]['astro']['sunset']
 					lr = self.dom['forecast']['forecastday'][0]['astro']['moonrise']
 					ls = self.dom['forecast']['forecastday'][0]['astro']['moonset']
@@ -1598,8 +1600,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					self.forecast_days = str(lenForecast)
 
 				month1 = ""
-				high = self.dom['forecast']['forecastday'][0]['day']['maxtemp_f']
-				low = self.dom['forecast']['forecastday'][0]['day']['mintemp_f']
+				try:
+					high = self.dom['forecast']['forecastday'][0]['day']['maxtemp_f'] or _nr
+				except IndexError: return Shared().JsonError()
+				low = self.dom['forecast']['forecastday'][0]['day']['mintemp_f'] or _nr
 				if self.celsius != 0: #conversion only for Celsius and Kelvin degrees scale
 					high = self.dom['forecast']['forecastday'][0]['day']['maxtemp_c'] or _nr
 					low = self.dom['forecast']['forecastday'][0]['day']['mintemp_c'] or _nr
@@ -1901,13 +1905,15 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		weatherReport = ''
 		for h in range(hour, 24):
 			#hourly forecast start from the current hour
-			condition = self.dom['forecast']['forecastday'][0]['hour'][h]['condition']['text']
+			try:
+				condition = self.dom['forecast']['forecastday'][0]['hour'][h]['condition']['text']
+			except IndexError: return Shared().JsonError()
 			wind_degree = self.dom['forecast']['forecastday'][0]['hour'][h]['wind_degree']
 			wind_degree = self.GetCardinalDirection('%s' % wind_degree) or _nr
 			cloud = self.dom['forecast']['forecastday'][0]['hour'][h]['cloud']
 			humidity = self.dom['forecast']['forecastday'][0]['hour'][h]['humidity']
-			rain = self.dom['forecast']['forecastday'][0]['hour'][h]['chance_of_rain']
-			snow = self.dom['forecast']['forecastday'][0]['hour'][h]['chance_of_snow']
+			rain = str(self.dom['forecast']['forecastday'][0]['hour'][h]['chance_of_rain']) or _nr
+			snow = str(self.dom['forecast']['forecastday'][0]['hour'][h]['chance_of_snow']) or _nr
 			uv = self.dom['forecast']['forecastday'][0]['hour'][h]['uv']
 			if self.celsius != 0:
 				#is not Fahrenheit:
@@ -1958,7 +1964,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			line)
 			weatherReport = weatherReport.replace('..', '.')
 			#adds chance of rain and snow
-			if rain != "0" and snow != "0":
+			if str(rain) != "0" and str(snow) != "0":
 				weatherReport += '%s %s%%, %s %s%%.\n' % (
 			wir,rain, wis, snow)
 			elif rain!= "0" and snow == "0":
@@ -3907,6 +3913,12 @@ checkbox_values = [],
 
 class Shared:
 	"""shared functions"""
+	def JsonError(self):
+		"""notify if the json datas hare incomplete"""
+		self.Play_sound(False,1)
+		return ui.message('%s %s' % (_("Sorry, the city set is not valid or contains incomplete data!"), _("It could be a temporary problem and you may wait a while '...")))
+
+
 	def CloseDialog(self, dialog):
 		try:
 			if dialog:

@@ -1,7 +1,26 @@
+24/08/2021
+Weather_Plus8.4 #update by Adriano
+• updated filter for percentage of chance of rain or snow because the value returned by the API is changed from string type to integer; these 2 items must be displayed only if their value is greater than zero, now it works correctly.
+• updated croatian locale translation.
+• added checks in case of empty list returned by the API response.
+
+p.s. note in the code __init__.py the line #Last Edit date August, 24th, 2021, is the last change made.
+
+Note: Added clean_py.sh file, thanks to Abdel!
+This serves to clean recursively "__pycache__" directories.
+
+30/07/2021
+Weather_Plus8.4 #update by Adriano
+• Fixed a bug duringthe conversion of string to 24 hour format.
+• Prevented fatal error if folder en is missing.
+
 29/07/2021
+Weather_Plus8.4 #update by Adriano
 • Fixed copy function of partial text selection using control + c, and enabled the home, end and pageup keys, pagedown in enabled windows.
 • Correct response pressure in mmHg.
+
 25/07/2021
+Weather_Plus8.3 #update by Adriano
 Adds local temperature and forecast 24 ours and prediction up to 2 days.
 Adriano said: This string, however, has not been translated in the nvda.po files as I suggested last week, it was not possible to use the already made correct translations of this string and update only the English one that we corrected by adding the missing h?
 Done!
