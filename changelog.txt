@@ -1,3 +1,11 @@
+07/09/2021
+Weather_Plus8.5 #update by Adriano
+Considering the changes made to the code and that WP seems stable it is necessary to upgrade to 8.5.
+Updated the compatibility flag for nvda 2021.2 just released, for the Weather_Plus version 8.5.
+
+# Created the new tag:
+git tag v8.5
+
 24/08/2021
 Weather_Plus8.4 #update by Adriano
 • updated filter for percentage of chance of rain or snow because the value returned by the API is changed from string type to integer; these 2 items must be displayed only if their value is greater than zero, now it works correctly.

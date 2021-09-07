@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 8.4.
+#Version 8.5.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date August, 24th, 2021.
+#Last Edit date September, 06th, 2021.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -1964,7 +1964,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			line)
 			weatherReport = weatherReport.replace('..', '.')
 			#adds chance of rain and snow
-			if str(rain) != "0" and str(snow) != "0":
+			if rain != "0" and str(snow) != "0":
 				weatherReport += '%s %s%%, %s %s%%.\n' % (
 			wir,rain, wis, snow)
 			elif rain!= "0" and snow == "0":
