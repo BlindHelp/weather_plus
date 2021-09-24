@@ -1,3 +1,7 @@
+24/09/2021
+Fix for ukranian documentation
+Alex sent a request and an update of the Ukrainian documentation to Adriano.
+
 07/09/2021
 Weather_Plus8.5 #update by Adriano
 Considering the changes made to the code and that WP seems stable it is necessary to upgrade to 8.5.
