@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 8.5.
+#Version 8.6.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date September, 06th, 2021.
+#Last Edit date October, 14th, 2021.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -1569,7 +1569,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					ss = self.dom['forecast']['forecastday'][0]['astro']['sunset']
 					lr = self.dom['forecast']['forecastday'][0]['astro']['moonrise']
 					ls = self.dom['forecast']['forecastday'][0]['astro']['moonset']
-					sr, ss, lr, ls = self.CheckValues([sr, ss, lr, ls])
 					if self.to24Hours:
 						sr = Shared().To24h(sr) #sunrise
 						ss = Shared().To24h(ss) #sunset
@@ -1586,6 +1585,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					_("and sets at"), ss or _nr,
 					_("The moon rises at"), lr or _nr,
 					_("and sets at"), ls or _nr)
+					weatherReport = weatherReport.replace("No moonrise",_("No moonrise"))
+					weatherReport = weatherReport.replace("No moonset",_("No moonset"))
+					weatherReport = weatherReport.replace("No sunrise", _("No sunrise"))
+					weatherReport = weatherReport.replace("No sunset", _("No sunset"))
 
 				if self.toSample and os.path.exists(_samples_path):
 					self.Play_Sample(condition_code, temperature, wind_f) #He plays the appropriate sound effect if present
@@ -1656,15 +1659,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			Shared().Play_sound(False, 1)
 			weatherReport = _("Sorry, the city is not set!")
 		return weatherReport
-
-	def CheckValues(self, listvalues):
-		"""Check if valid timetables"""
-		ret = []
-		for v in listvalues:
-			if v in ["No moonrise", "No moonset", "No sunrise", "No sunset"]: ret.append("")
-			else: ret.append(v)
-
-		return ret
 
 
 	def Open_Dom(self, zip_code):
@@ -4521,7 +4515,7 @@ class Shared:
 
 	def Add_zero(self, hour, p = True):
 		""" add zero  to left of number with len 1"""
-		if hour == "": return hour
+		if hour in ["No moonrise", "No moonset", "No sunrise", "No sunset", ""]: return hour
 		if p:
 			p = hour[-2:] #pm or am
 			hour = hour[:-3] # hour and minute
@@ -4534,7 +4528,7 @@ class Shared:
 
 	def To24h(self, hour, viceversa = None):
 		"""Convert from 12 to 24 hours and viceversa"""
-		if hour == "": return hour
+		if hour in ["No moonrise", "No moonset", "No sunrise", "No sunset", ""]: return hour
 		if 'datetime' in str(type(hour)):
 			#datetime format get from lastbuilddate returned in 24 hour format
 			hour = '%s:%s' % (hour.hour, hour.minute)

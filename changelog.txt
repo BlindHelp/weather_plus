@@ -1,3 +1,16 @@
+14/10/2021
+Weather_Plus8.6 #update by Adriano
+Last Edit date October, 14th, 2021.
+Updated files: __init__.py, buildVars.py
+Adriano said:
+Added 4 new strings relating to the no rising / no setting of the sun and the moon,, previously synthesized as "Unknown", but it is better to specify the API response.
+I have sent all the translators the updated local folder to be translated, as soon as I have the translations I will send them to you.
+Now we have 349 strings in total.
+
+# Created the new tag:
+git tag 8.6
+git push origin 8.6
+
 24/09/2021
 Fix for ukranian documentation
 Alex sent a request and an update of the Ukrainian documentation to Adriano.

@@ -8,8 +8,8 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2021-08-19 19:07+0200\n"
-"PO-Revision-Date: 2021-08-19 19:11+0200\n"
+"POT-Creation-Date: 2021-10-14 17:22+0200\n"
+"PO-Revision-Date: 2021-10-14 17:36+0200\n"
 "Last-Translator: Tarik Hadžirović <tarik.hadzirovic.official@gmail.com>\n"
 "Language-Team: Tarik Hadžirovi <tarik.hadzirovic.official@gmail.com>\n"
 "Language: hr_HR\n"
@@ -144,7 +144,7 @@ msgstr "Nema"
 msgid "Enter a City or choose one from the list, if available."
 msgstr "Unesi grad ili odaberi jedan s popisa ako je dostupan."
 
-#: __init__.py:391 __init__.py:1825 __init__.py:2969 __init__.py:3627
+#: __init__.py:391 __init__.py:1823 __init__.py:2969 __init__.py:3627
 msgid "The city"
 msgstr "Grad"
 
@@ -156,10 +156,10 @@ msgstr "nije postavljen kao zadano."
 msgid "Will be used in temporary mode!"
 msgstr "Koristit će se u privremenom modusu!"
 
-#: __init__.py:396 __init__.py:424 __init__.py:486 __init__.py:1831
+#: __init__.py:396 __init__.py:424 __init__.py:486 __init__.py:1829
 #: __init__.py:2792 __init__.py:3007 __init__.py:3012 __init__.py:3080
 #: __init__.py:3255 __init__.py:3507 __init__.py:3636 __init__.py:3826
-#: __init__.py:3845 __init__.py:4724
+#: __init__.py:3845 __init__.py:4730
 msgid "Notice!"
 msgstr "Oprez!"
 
@@ -203,7 +203,7 @@ msgstr ""
 "Na žalost, nije moguće preuzeti podatke. Došlo je do problema sa stranicom "
 "za preuzimanje. Pokušaj ponovo kasnije!"
 
-#: __init__.py:589 __init__.py:1687 __init__.py:2927 __init__.py:3240
+#: __init__.py:589 __init__.py:1685 __init__.py:2927 __init__.py:3240
 #: __init__.py:3282
 msgid ""
 "Sorry, I can not receive data, verify that your internet connection is "
@@ -232,7 +232,7 @@ msgstr "Želiš li je preuzeti i instalirati?"
 msgid "Sorry, at the time an update is not available."
 msgstr "Na žalost, nadogradnja trenutačno nije dostupna."
 
-#: __init__.py:1084 __init__.py:2934 __init__.py:5408
+#: __init__.py:1084 __init__.py:2934 __init__.py:5414
 msgid "not found!"
 msgstr "nije pronađena!"
 
@@ -275,7 +275,7 @@ msgstr "Oborina je"
 msgid "the weather report is currently"
 msgstr "trenutačni vremenski izvještaj glasi"
 
-#: __init__.py:1471 __init__.py:1511 __init__.py:1611 __init__.py:1638
+#: __init__.py:1471 __init__.py:1511 __init__.py:1618 __init__.py:1645
 #: __init__.py:1957
 msgid "degrees"
 msgstr "stupnjeva"
@@ -332,142 +332,158 @@ msgstr "Tlak iznosi"
 msgid "The UV radiation is of"
 msgstr "UV zračenje je od"
 
-#: __init__.py:1583
+#: __init__.py:1584
 msgid "The sun rises at"
 msgstr "Sunce izlazi u"
 
-#: __init__.py:1584 __init__.py:1586
+#: __init__.py:1585 __init__.py:1587
 msgid "and sets at"
 msgstr "i zalazi u"
 
-#: __init__.py:1585
+#: __init__.py:1586
 msgid "The moon rises at"
 msgstr "Mjesec izlazi u"
 
-#: __init__.py:1607
+#: __init__.py:1588
+msgid "No moonrise"
+msgstr ""
+
+#: __init__.py:1589
+msgid "No moonset"
+msgstr ""
+
+#: __init__.py:1590
+msgid "No sunrise"
+msgstr ""
+
+#: __init__.py:1591
+msgid "No sunset"
+msgstr ""
+
+#: __init__.py:1614
 msgid "the forecast for today is"
 msgstr "prognoza za danas glasi"
 
-#: __init__.py:1609 __init__.py:1636
+#: __init__.py:1616 __init__.py:1643
 msgid "with a maximum temperature of"
 msgstr "s maksimalnom temperaturom od"
 
-#: __init__.py:1610 __init__.py:1637
+#: __init__.py:1617 __init__.py:1644
 msgid "and a minimum of"
 msgstr "i minimalnom od"
 
-#: __init__.py:1643
+#: __init__.py:1650
 msgid "In"
 msgstr "Za"
 
-#: __init__.py:1643
+#: __init__.py:1650
 msgid "Unnamed"
 msgstr "Neimenovan"
 
-#: __init__.py:1653 __init__.py:1882 __init__.py:2077
+#: __init__.py:1660 __init__.py:1880 __init__.py:2077
 msgid "Sorry, the city is not set!"
 msgstr "Na žalost, grad nije postavljen!"
 
-#: __init__.py:1711
+#: __init__.py:1709
 msgid "Sorry, it was not possible to load the most recent update!"
 msgstr "Na žalost, nije bilo moguće učitati zadnju nadogradnju!"
 
-#: __init__.py:1712
+#: __init__.py:1710
 msgid "Please try again later."
 msgstr "Pokušaj ponovo kasnije."
 
-#: __init__.py:1755 __init__.py:1756
+#: __init__.py:1753 __init__.py:1754
 msgid "meters per second"
 msgstr "metara u sekundi"
 
-#: __init__.py:1800
+#: __init__.py:1798 __init__.py:3913
 msgid "Sorry, the city set is not valid or contains incomplete data!"
 msgstr "Žao nam je, skup gradova nije važeći ili sadrži nepotpune podatke!"
 
-#: __init__.py:1808
+#: __init__.py:1806
 msgid "north"
 msgstr "sjever"
 
-#: __init__.py:1808
+#: __init__.py:1806
 msgid "north northeast"
 msgstr "sjever sjeveroistok"
 
-#: __init__.py:1808
+#: __init__.py:1806
 msgid "northeast"
 msgstr "sjeveroistok"
 
-#: __init__.py:1808
+#: __init__.py:1806
 msgid "east northeast"
 msgstr "istok sjeveroistok"
 
-#: __init__.py:1808
+#: __init__.py:1806
 msgid "east"
 msgstr "istok"
 
-#: __init__.py:1808
+#: __init__.py:1806
 msgid "east southeast"
 msgstr "istok jugoistok"
 
-#: __init__.py:1808
+#: __init__.py:1806
 msgid "southeast"
 msgstr "jugoistok"
 
-#: __init__.py:1808
+#: __init__.py:1806
 msgid "south southeast"
 msgstr "jug jugoistok"
 
-#: __init__.py:1809
+#: __init__.py:1807
 msgid "south"
 msgstr "jug"
 
-#: __init__.py:1809
+#: __init__.py:1807
 msgid "south southwest"
 msgstr "jug jugozapad"
 
-#: __init__.py:1809
+#: __init__.py:1807
 msgid "southwest"
 msgstr "jugozapad"
 
-#: __init__.py:1809
+#: __init__.py:1807
 msgid "west southwest"
 msgstr "zapad jugozapad"
 
-#: __init__.py:1809
+#: __init__.py:1807
 msgid "west"
 msgstr "zapad"
 
-#: __init__.py:1809
+#: __init__.py:1807
 msgid "west northwest"
 msgstr "zapad sjeverozapad"
 
-#: __init__.py:1809
+#: __init__.py:1807
 msgid "northwest"
 msgstr "sjeverozapad"
 
-#: __init__.py:1809
+#: __init__.py:1807
 msgid "north northwest"
 msgstr "sjever sjeverozapad"
 
-#: __init__.py:1826
+#: __init__.py:1824
 msgid ""
 "Is not working properly, contains incomplete data or has been removed from "
 "the"
 msgstr "Ne radi ispravno, sadrži nepotpune podatke ili je uklonjen iz"
 
-#: __init__.py:1828 __init__.py:2963
+#: __init__.py:1826 __init__.py:2963 __init__.py:3913
 msgid "It could be a temporary problem and you may wait a while '..."
 msgstr ""
 "Možda se radi o privremenom problemu i treba pričekati neko vrijeme '..."
 
-#: __init__.py:1829
+#: __init__.py:1827
 msgid "Do you want to delete it from your list?"
 msgstr "Želiš li ga izbrisati s popisa?"
 
-#: __init__.py:1899
+#: __init__.py:1897
 msgid "Chance of rain"
 msgstr "Mogućnost kiše"
 
-#: __init__.py:1900
+#: __init__.py:1898
 msgid "Chance of snow"
 msgstr "Mogućnost snijega"
 
@@ -663,11 +679,11 @@ msgstr "Aktiviraj gumbe &pomoći u prozoru postavki"
 msgid "Read &wind information"
 msgstr "Pročitaj informacije o &vjetru"
 
-#: __init__.py:2450 __init__.py:6019
+#: __init__.py:2450 __init__.py:6025
 msgid "Add wind directi&on"
 msgstr "Doda&j smjer vjetra"
 
-#: __init__.py:2454 __init__.py:6015
+#: __init__.py:2454 __init__.py:6021
 msgid "Add wi&nd speed"
 msgstr "&Dodaj brzinu vjetra"
 
@@ -675,7 +691,7 @@ msgstr "&Dodaj brzinu vjetra"
 msgid "Add speed in &meters per second of the wind"
 msgstr "Dodaj brzinu vjetra u &metrima po sekundi"
 
-#: __init__.py:2462 __init__.py:6023
+#: __init__.py:2462 __init__.py:6029
 msgid "Add wind &gust speed"
 msgstr "Dodaj brzinu vjetra i udara"
 
@@ -687,23 +703,23 @@ msgstr "Dodaj osjetnu &temperaturu"
 msgid "&Read atmospherical information"
 msgstr "P&ročitaj informacije o atmosferi"
 
-#: __init__.py:2476 __init__.py:6031
+#: __init__.py:2476 __init__.py:6037
 msgid "Add humidity va&lue"
 msgstr "Dodaj vrijednost &za vlagu"
 
-#: __init__.py:2480 __init__.py:6035
+#: __init__.py:2480 __init__.py:6041
 msgid "Add &visibility value"
 msgstr "Dodaj i vrijednost za vidljivost"
 
-#: __init__.py:2484 __init__.py:6027
+#: __init__.py:2484 __init__.py:6033
 msgid "Add cloudiness &value"
 msgstr "Dodaj vrijednost za naoblaku"
 
-#: __init__.py:2488 __init__.py:6039
+#: __init__.py:2488 __init__.py:6045
 msgid "Add precipitation &value"
 msgstr "Dodaj vrijednost oborina"
 
-#: __init__.py:2492 __init__.py:6043
+#: __init__.py:2492 __init__.py:6049
 msgid "Add &ultraviolet radiation value"
 msgstr "Dodaj vrijednost ultraljubičastog zračenja"
 
@@ -1206,234 +1222,234 @@ msgstr "Vrijednosti izvješća podataka po satima."
 msgid "Disable the data you don't want to be processed:"
 msgstr "Onemogućite podatke koje ne želite obrađivati:"
 
-#: __init__.py:4642
+#: __init__.py:4648
 msgid "january"
 msgstr "siječanj"
 
-#: __init__.py:4643
+#: __init__.py:4649
 msgid "february"
 msgstr "veljača"
 
-#: __init__.py:4644
+#: __init__.py:4650
 msgid "march"
 msgstr "ožujak"
 
-#: __init__.py:4645
+#: __init__.py:4651
 msgid "april"
 msgstr "travanj"
 
-#: __init__.py:4646
+#: __init__.py:4652
 msgid "may"
 msgstr "svibanj"
 
-#: __init__.py:4647
+#: __init__.py:4653
 msgid "june"
 msgstr "lipanj"
 
-#: __init__.py:4648
+#: __init__.py:4654
 msgid "july"
 msgstr "srpanj"
 
-#: __init__.py:4649
+#: __init__.py:4655
 msgid "august"
 msgstr "kolovoz"
 
-#: __init__.py:4650
+#: __init__.py:4656
 msgid "september"
 msgstr "rujan"
 
-#: __init__.py:4651
+#: __init__.py:4657
 msgid "october"
 msgstr "listopad"
 
-#: __init__.py:4652
+#: __init__.py:4658
 msgid "november"
 msgstr "studeni"
 
-#: __init__.py:4653
+#: __init__.py:4659
 msgid "december"
 msgstr "prosinac"
 
-#: __init__.py:4654
+#: __init__.py:4660
 msgid "Monday"
 msgstr "Ponedjeljak"
 
-#: __init__.py:4655
+#: __init__.py:4661
 msgid "Tuesday"
 msgstr "Utorak"
 
-#: __init__.py:4656
+#: __init__.py:4662
 msgid "Wednesday"
 msgstr "Srijeda"
 
-#: __init__.py:4657
+#: __init__.py:4663
 msgid "Thursday"
 msgstr "Četvrtak"
 
-#: __init__.py:4658
+#: __init__.py:4664
 msgid "Friday"
 msgstr "Petak"
 
-#: __init__.py:4659
+#: __init__.py:4665
 msgid "Saturday"
 msgstr "Subota"
 
-#: __init__.py:4660
+#: __init__.py:4666
 msgid "Sunday"
 msgstr "Nedjelja"
 
-#: __init__.py:4718
+#: __init__.py:4724
 #, python-format
 msgid "It was not possible find the acronym of \"%s\"!"
 msgstr "Nije bilo moguće pronaći kraticu \"% s\"!"
 
-#: __init__.py:4719
+#: __init__.py:4725
 msgid "This may not allow you to get the city details."
 msgstr "To ti možda neće omogućiti da dobijete detalje o gradu."
 
-#: __init__.py:4720
+#: __init__.py:4726
 msgid ""
 "Please report this to the author so he can add this country in database."
 msgstr "Ovo prijavi autoru kako bi dodao ovu zemlju u bazu podataka."
 
-#: __init__.py:4721
+#: __init__.py:4727
 #, python-format
 msgid "Send an email to %s"
 msgstr "Pošalji e-poruku na %s"
 
-#: __init__.py:4722
+#: __init__.py:4728
 msgid "With  object the line below, thanks."
 msgstr "S predmetom ispod retka, hvala."
 
-#: __init__.py:4790 __init__.py:4808
+#: __init__.py:4796 __init__.py:4814
 msgid "Downloaded"
 msgstr "Preuzeto"
 
-#: __init__.py:4791
+#: __init__.py:4797
 msgid "of"
 msgstr "od"
 
-#: __init__.py:4828
+#: __init__.py:4834
 msgid "Find..."
 msgstr "Pronađi …"
 
-#: __init__.py:4829
+#: __init__.py:4835
 msgid "Find next"
 msgstr "Pronađi sljedeće"
 
-#: __init__.py:4830
+#: __init__.py:4836
 msgid "Find previous"
 msgstr "Pronađi prethodno"
 
-#: __init__.py:5029
+#: __init__.py:5035
 msgid "Be an error has occurred."
 msgstr "Došlo je do greške."
 
-#: __init__.py:5030
+#: __init__.py:5036
 msgid "See the log for more information."
 msgstr "Dodatne informacije potraži u zapisniku."
 
-#: __init__.py:5031
+#: __init__.py:5037
 msgid "Error: failure writing file!"
 msgstr "Greška: nije moguće prepisati datoteku!"
 
-#: __init__.py:5202
+#: __init__.py:5208
 msgid "occurrences found"
 msgstr "pronađenih pojava"
 
-#: __init__.py:5202
+#: __init__.py:5208
 msgid "for"
 msgstr "za"
 
-#: __init__.py:5205
+#: __init__.py:5211
 msgid "Choose a city."
 msgstr "Odaberi grad."
 
-#: __init__.py:5207
+#: __init__.py:5213
 msgid "List of availables Cities"
 msgstr "Popis dostupnih gradova"
 
-#: __init__.py:5239
+#: __init__.py:5245
 msgid "Do not show this message again!"
 msgstr "Ne prikazuj ponovo ovu poruku!"
 
-#: __init__.py:5249
+#: __init__.py:5255
 msgid "&Install..."
 msgstr "&Instaliraj …"
 
-#: __init__.py:5249
+#: __init__.py:5255
 msgid "Upd&ate..."
 msgstr "A&žuriraj …"
 
-#: __init__.py:5251
+#: __init__.py:5257
 msgid "&Close"
 msgstr "&Zatvori"
 
-#: __init__.py:5252
+#: __init__.py:5258
 msgid "&Uninstall..."
 msgstr "&Deinstaliraj …"
 
-#: __init__.py:5354
+#: __init__.py:5360
 msgid "Type the search string"
 msgstr "Upiši pojam za pretragu"
 
-#: __init__.py:5354 __init__.py:5408
+#: __init__.py:5360 __init__.py:5414
 msgid "Find"
 msgstr "Pronađi"
 
-#: __init__.py:5405
+#: __init__.py:5411
 msgid "next"
 msgstr "sljedeće"
 
-#: __init__.py:5405
+#: __init__.py:5411
 msgid "previous"
 msgstr "prethodno"
 
-#: __init__.py:5412
+#: __init__.py:5418
 msgid "No results next for"
 msgstr "Nema sljedećih rezultata za"
 
-#: __init__.py:5412
+#: __init__.py:5418
 msgid "No previous results for"
 msgstr "Nema prethodnih rezultata za"
 
-#: __init__.py:5454
+#: __init__.py:5460
 msgid "&Select all"
 msgstr "&Označi sve"
 
-#: __init__.py:5456
+#: __init__.py:5462
 msgid "&Deselect all"
 msgstr "Od&znači sve"
 
-#: __init__.py:5496
+#: __init__.py:5502
 msgid "not checked"
 msgstr "nije označeno"
 
-#: __init__.py:5498
+#: __init__.py:5504
 msgid "checked"
 msgstr "označeno"
 
-#: __init__.py:5502
+#: __init__.py:5508
 msgid "check box"
 msgstr "potvrdni okvir"
 
-#: __init__.py:5512
+#: __init__.py:5518
 msgid "check boxes checked"
 msgstr "potvrdni okviri označeni"
 
-#: __init__.py:5521
+#: __init__.py:5527
 msgid "check boxes not checked"
 msgstr "potvrdni okviri nisu označeni"
 
-#: __init__.py:5583
+#: __init__.py:5589
 msgid "Saving in progress"
 msgstr "Spremanje je u tijeku"
 
-#: __init__.py:5585
+#: __init__.py:5591
 msgid "Download canceled."
 msgstr "Preuzimanje je otkazano"
 
-#: __init__.py:5640
+#: __init__.py:5646
 msgid "&Copy to clipboard"
 msgstr "&Kopiraj u međuspremnik"
 
