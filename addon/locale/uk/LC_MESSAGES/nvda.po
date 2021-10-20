@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2021-10-14 17:31+0200\n"
-"PO-Revision-Date: 2021-10-14 17:31+0200\n"
+"PO-Revision-Date: 2021-10-17 19:12+0200\n"
 "Last-Translator: Rui Fontes <rui.fontes@tiflotecnia.com>\n"
 "Language-Team: Alex Yeshanu <eshanuap@gmail.com>\n"
 "Language: uk\n"
@@ -339,19 +339,19 @@ msgstr "Схід місяця в"
 
 #: __init__.py:1588
 msgid "No moonrise"
-msgstr ""
+msgstr "Сходу місяця немає"
 
 #: __init__.py:1589
 msgid "No moonset"
-msgstr ""
+msgstr "Заходу місяця немає"
 
 #: __init__.py:1590
 msgid "No sunrise"
-msgstr ""
+msgstr "Сходу сонця немає"
 
 #: __init__.py:1591
 msgid "No sunset"
-msgstr ""
+msgstr "Заходу сонця немає"
 
 #: __init__.py:1614
 msgid "the forecast for today is"

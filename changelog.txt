@@ -1,3 +1,8 @@
+20/10/2021
+Weather_Plus8.6 #update by Adriano
+1 complete local folder, I omitted es and fr as I requested to Adriano because the last time was already translated and updated into this repository by myself.
+2 doc ru and uk updated readme.md only.
+
 14/10/2021
 Weather_Plus8.6 #update by Adriano
 Last Edit date October, 14th, 2021.

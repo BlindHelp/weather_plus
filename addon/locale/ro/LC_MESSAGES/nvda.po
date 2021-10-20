@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2021-10-14 17:26+0200\n"
-"PO-Revision-Date: 2021-10-14 17:26+0200\n"
+"PO-Revision-Date: 2021-10-17 13:32+0200\n"
 "Last-Translator: Rui Fontes <rui.fontes@tiflotecnia.com>\n"
 "Language-Team: Florian Ionașcu <florianionascu@hotmail.com>\n"
 "Language: ro\n"
@@ -340,19 +340,19 @@ msgstr "Luna răsare la"
 
 #: __init__.py:1588
 msgid "No moonrise"
-msgstr ""
+msgstr "Fără răsărit de lună"
 
 #: __init__.py:1589
 msgid "No moonset"
-msgstr ""
+msgstr "Fără apus de lună"
 
 #: __init__.py:1590
 msgid "No sunrise"
-msgstr ""
+msgstr "Fără răsărit"
 
 #: __init__.py:1591
 msgid "No sunset"
-msgstr ""
+msgstr "Fără apus"
 
 #: __init__.py:1614
 msgid "the forecast for today is"

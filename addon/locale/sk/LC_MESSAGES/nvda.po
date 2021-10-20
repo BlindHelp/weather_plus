@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2021-10-14 17:27+0200\n"
-"PO-Revision-Date: 2021-10-14 17:28+0200\n"
+"PO-Revision-Date: 2021-10-15 07:44+0200\n"
 "Last-Translator: Rui Fontes <rui.fontes@tiflotecnia.com>\n"
 "Language-Team: Peter Halada <pietro4044@gmail.com>\n"
 "Language: sk\n"
@@ -287,7 +287,7 @@ msgstr "Rýchlosť vetra je"
 
 #: __init__.py:1508
 msgid "The wind gusts are of"
-msgstr "Nárazy vetra sú z"
+msgstr "Nárazy vetra sú "
 
 #: __init__.py:1511
 msgid "The perceived temperature is"
@@ -339,19 +339,19 @@ msgstr "Mesiac vychádza o"
 
 #: __init__.py:1588
 msgid "No moonrise"
-msgstr ""
+msgstr "Žiadny východ mesiaca"
 
 #: __init__.py:1589
 msgid "No moonset"
-msgstr ""
+msgstr "Žiadny západ mesiaca"
 
 #: __init__.py:1590
 msgid "No sunrise"
-msgstr ""
+msgstr "Žiadny východ slnka"
 
 #: __init__.py:1591
 msgid "No sunset"
-msgstr ""
+msgstr "Žiadny západ slnka"
 
 #: __init__.py:1614
 msgid "the forecast for today is"
@@ -395,67 +395,67 @@ msgstr "Je nám ľúto, sada miest nie je platná alebo obsahuje neúplné údaj
 
 #: __init__.py:1806
 msgid "north"
-msgstr "severu"
+msgstr "severný"
 
 #: __init__.py:1806
 msgid "north northeast"
-msgstr "sever až severovýchod"
+msgstr "severný až severovýchodný"
 
 #: __init__.py:1806
 msgid "northeast"
-msgstr "severovýchod"
+msgstr "severovýchodný"
 
 #: __init__.py:1806
 msgid "east northeast"
-msgstr "východ až severovýchod"
+msgstr "východný až severovýchodný"
 
 #: __init__.py:1806
 msgid "east"
-msgstr "východu"
+msgstr "východný"
 
 #: __init__.py:1806
 msgid "east southeast"
-msgstr "východu až juhovýchodu"
+msgstr "východný až juhovýchodný"
 
 #: __init__.py:1806
 msgid "southeast"
-msgstr "juhovýchodu"
+msgstr "juhovýchodný"
 
 #: __init__.py:1806
 msgid "south southeast"
-msgstr "juhu až juhovýchodu"
+msgstr "južný až juhovýchodný"
 
 #: __init__.py:1807
 msgid "south"
-msgstr "juhu"
+msgstr "južný"
 
 #: __init__.py:1807
 msgid "south southwest"
-msgstr "juhu až juhozápadu"
+msgstr "južný až juhozápadný"
 
 #: __init__.py:1807
 msgid "southwest"
-msgstr "juhozápadu"
+msgstr "juhozápadný"
 
 #: __init__.py:1807
 msgid "west southwest"
-msgstr "západu až juhozápadu"
+msgstr "západný až juhozápadný"
 
 #: __init__.py:1807
 msgid "west"
-msgstr "západu"
+msgstr "západný"
 
 #: __init__.py:1807
 msgid "west northwest"
-msgstr "západu až severozápadu"
+msgstr "západný až severozápadný"
 
 #: __init__.py:1807
 msgid "northwest"
-msgstr "severozápadu"
+msgstr "severozápadný"
 
 #: __init__.py:1807
 msgid "north northwest"
-msgstr "severu až severozápadu"
+msgstr "severný až severozápadný"
 
 #: __init__.py:1824
 msgid ""

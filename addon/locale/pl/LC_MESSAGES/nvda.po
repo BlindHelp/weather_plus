@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2021-10-14 17:23+0200\n"
-"PO-Revision-Date: 2021-10-14 17:24+0200\n"
+"PO-Revision-Date: 2021-10-17 13:28+0200\n"
 "Last-Translator: Rui Fontes <rui.fontes@tiflotecnia.com>\n"
 "Language-Team: Zvonimir Stanecic <zvonimirek222@yandex.com>\n"
 "Language: pl\n"
@@ -342,19 +342,19 @@ msgstr "Księżyc wschodzi o"
 
 #: __init__.py:1588
 msgid "No moonrise"
-msgstr ""
+msgstr "Brak wschodu księżyca"
 
 #: __init__.py:1589
 msgid "No moonset"
-msgstr ""
+msgstr "Brak zachodu księżyca"
 
 #: __init__.py:1590
 msgid "No sunrise"
-msgstr ""
+msgstr "Brak wschodu słońca"
 
 #: __init__.py:1591
 msgid "No sunset"
-msgstr ""
+msgstr "Brak zachodu słońca"
 
 #: __init__.py:1614
 msgid "the forecast for today is"

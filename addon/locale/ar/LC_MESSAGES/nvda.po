@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2021-10-14 17:07+0200\n"
-"PO-Revision-Date: 2021-10-14 17:07+0200\n"
-"Last-Translator: Rui Fontes  <rui.fontes@tiflotecnia.com>\n"
+"PO-Revision-Date: 2021-10-20 13:07+0200\n"
+"Last-Translator: Hatoon <h.felemban@hotmail.com>\n"
 "Language-Team: Hatoon felemban <h.felemban@hotmail.com>\n"
 "Language: ar\n"
 "MIME-Version: 1.0\n"
@@ -149,10 +149,9 @@ msgstr "لم تُضبَط مسبقا"
 msgid "Will be used in temporary mode!"
 msgstr "ستستخدم في وضع مؤقت!"
 
-#: __init__.py:396 __init__.py:424 __init__.py:486 __init__.py:1829
-#: __init__.py:2792 __init__.py:3007 __init__.py:3012 __init__.py:3080
-#: __init__.py:3255 __init__.py:3507 __init__.py:3636 __init__.py:3826
-#: __init__.py:3845 __init__.py:4730
+#: __init__.py:396 __init__.py:424 __init__.py:486 __init__.py:1829 __init__.py:2792
+#: __init__.py:3007 __init__.py:3012 __init__.py:3080 __init__.py:3255 __init__.py:3507
+#: __init__.py:3636 __init__.py:3826 __init__.py:3845 __init__.py:4730
 msgid "Notice!"
 msgstr "تنبيه "
 
@@ -166,13 +165,10 @@ msgstr "هل ترغب في حفظ التعديل؟"
 
 #: __init__.py:483
 msgid "The cities on your list are not compatible with the Weather API!"
-msgstr ""
-"المدنُ في قائمتك غير متوافقة مع الواجهة البرمجية لتطبيقات الطقس Weather API!"
+msgstr "المدنُ في قائمتك غير متوافقة مع الواجهة البرمجية لتطبيقات الطقس Weather API!"
 
 #: __init__.py:484
-msgid ""
-"They have to be tested and validated, you can do it from the addon settings "
-"window."
+msgid "They have to be tested and validated, you can do it from the addon settings window."
 msgstr "يجب اختبارها والتحقق من صحتها ، يمكنك القيام بذلك من نافذة إعدادات الملحق."
 
 #: __init__.py:498
@@ -188,20 +184,15 @@ msgid "Documentation not available for the current language!"
 msgstr "ملف المساعدة غير متوفر للغة الحالية!"
 
 #: __init__.py:586
-msgid ""
-"Sorry, I can not receive data, problems with the download page, try again later "
-"please!"
-msgstr ""
-"عذرًا ، لا يمكنني تلقي بيانات ، مشاكل في صفحة التنزيل ، حاول مرة أخرى لاحقًا!"
+msgid "Sorry, I can not receive data, problems with the download page, try again later please!"
+msgstr "عذرًا ، لا يمكنني تلقي بيانات ، مشاكل في صفحة التنزيل ، حاول مرة أخرى لاحقًا!"
 
-#: __init__.py:589 __init__.py:1685 __init__.py:2927 __init__.py:3240
-#: __init__.py:3282
+#: __init__.py:589 __init__.py:1685 __init__.py:2927 __init__.py:3240 __init__.py:3282
 msgid ""
-"Sorry, I can not receive data, verify that your internet connection is active, "
-"or try again later!"
+"Sorry, I can not receive data, verify that your internet connection is active, or try again "
+"later!"
 msgstr ""
-"عذرًا ، لا يمكنني تلقي البيانات أو التحقق من أن اتصال الإنترنت نشط أو إعادة "
-"المحاولة لاحقًا!"
+"عذرًا ، لا يمكنني تلقي البيانات أو التحقق من أن اتصال الإنترنت نشط أو إعادة المحاولة لاحقًا!"
 
 #: __init__.py:601
 msgid "version"
@@ -225,14 +216,13 @@ msgstr "عفواً, لا يوجد تحديث في الوقت الحالي."
 
 #: __init__.py:1084 __init__.py:2934 __init__.py:5414
 msgid "not found!"
-msgstr "لم يتم العصور !"
+msgstr "غير موجود"
 
 #: __init__.py:1085
 msgid ""
-"You need to upgrade the sound effects by reactivating the appropriate option "
-"from the settings of"
-msgstr ""
-"تحتاج إلى ترقية المؤثرات الصوتية عن طريق إعادة تنشيط الخيار المناسب من الإعدادات"
+"You need to upgrade the sound effects by reactivating the appropriate option from the settings "
+"of"
+msgstr "تحتاج إلى ترقية المؤثرات الصوتية عن طريق إعادة تنشيط الخيار المناسب من الإعدادات"
 
 #: __init__.py:1087
 msgid "But if these are already updated, then you need to update"
@@ -248,11 +238,11 @@ msgstr "انتباه!"
 
 #: __init__.py:1332
 msgid "I can not save the settings!"
-msgstr "لم يتم حفظ المدينة!"
+msgstr "تعذّر حفظُ الإعدادات!"
 
 #: __init__.py:1347
 msgid "invalid name"
-msgstr "الإسم غير موجود !"
+msgstr "اسم غير صالح"
 
 #: __init__.py:1422
 msgid "The cloudiness is"
@@ -266,8 +256,7 @@ msgstr "كمية هُطول الأمطار"
 msgid "the weather report is currently"
 msgstr "تقرير حالة الطقس حاليًا"
 
-#: __init__.py:1471 __init__.py:1511 __init__.py:1618 __init__.py:1645
-#: __init__.py:1957
+#: __init__.py:1471 __init__.py:1511 __init__.py:1618 __init__.py:1645 __init__.py:1957
 msgid "degrees"
 msgstr "درجات"
 
@@ -337,19 +326,19 @@ msgstr "وقت طلوع القمر"
 
 #: __init__.py:1588
 msgid "No moonrise"
-msgstr ""
+msgstr "وقت طلوع القمر غير متوفر"
 
 #: __init__.py:1589
 msgid "No moonset"
-msgstr ""
+msgstr "وقت غروب القمر غير متوفر"
 
 #: __init__.py:1590
 msgid "No sunrise"
-msgstr ""
+msgstr "وقت شروق الشمس غير متوفر"
 
 #: __init__.py:1591
 msgid "No sunset"
-msgstr ""
+msgstr "وقت غروب الشمس غير متوفر"
 
 #: __init__.py:1614
 msgid "the forecast for today is"
@@ -456,8 +445,7 @@ msgid "north northwest"
 msgstr "شمالية شمالية غربية"
 
 #: __init__.py:1824
-msgid ""
-"Is not working properly, contains incomplete data or has been removed from the"
+msgid "Is not working properly, contains incomplete data or has been removed from the"
 msgstr "لا تعمل, لا تحتوي بياناتٍ مكتملة, أو أنها أُزيلت من"
 
 #: __init__.py:1826 __init__.py:2963 __init__.py:3913
@@ -519,13 +507,11 @@ msgstr "يوفر درجة الحرارة وأحوال الطقس الحالية.
 #: __init__.py:2008
 #, python-format
 msgid ""
-"If pressed once, announce the weather forecast and current temperature for 24 "
-"hours and the next %d days. If pressed twice announce the hourlyforecast "
-"temperature and weather conditions."
+"If pressed once, announce the weather forecast and current temperature for 24 hours and the "
+"next %d days. If pressed twice announce the hourlyforecast temperature and weather conditions."
 msgstr ""
-"عند الضغط عليه مرة واحدة، يُعلن حالة الطقس ودرجة الحرارة لأربع وعشرين ساعة إضافةً "
-"ل %d أيام قادمة. عند الضغط مرتين، يُعلن درجات الحرارة وأحوال الطقس المتوقّعة لكلّ "
-"ساعة."
+"عند الضغط عليه مرة واحدة، يُعلن حالة الطقس ودرجة الحرارة لأربع وعشرين ساعة إضافةً ل %d أيام "
+"قادمة. عند الضغط مرتين، يُعلن درجات الحرارة وأحوال الطقس المتوقّعة لكلّ ساعة."
 
 #: __init__.py:2016
 msgid "Sorry, no list available!"
@@ -561,19 +547,19 @@ msgstr "إعدادات الط&قس."
 
 #: __init__.py:2246
 msgid ""
-"f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
-"duration Weather Forecast, f5: volume controls."
+"f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control duration Weather "
+"Forecast, f5: volume controls."
 msgstr ""
-"F1: وضع المساعدة, F2: الانتقال لصندوق اختيار المدن, F3: قائمة تحرير وسرد, F4: "
-"التحكُّم في عدد الأيام  لعرض الأحوال الجوية, F5: التحكُّم في مستوى الصوت."
+"F1: وضع المساعدة, F2: الانتقال لصندوق اختيار المدن, F3: قائمة تحرير وسرد, F4: التحكُّم في عدد "
+"الأيام  لعرض الأحوال الجوية, F5: التحكُّم في مستوى الصوت."
 
 #: __init__.py:2247
 msgid ""
-"f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
-"duration Weather Forecast."
+"f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control duration Weather "
+"Forecast."
 msgstr ""
-"F1: وضع المساعدة, F2: الانتقال لصندوق اختيار المدن, F3: قائمة تحرير وسرد, F4: "
-"التحكُّم في عدد الأيام  لعرض الأحوال الجوية."
+"F1: وضع المساعدة, F2: الانتقال لصندوق اختيار المدن, F3: قائمة تحرير وسرد, F4: التحكُّم في عدد "
+"الأيام  لعرض الأحوال الجوية."
 
 #: __init__.py:2303
 msgid "Test"
@@ -636,11 +622,8 @@ msgid "API response language:"
 msgstr "لغة استجابة واجهة التطبيق البرمجية (API):"
 
 #: __init__.py:2392
-msgid ""
-"&Copy the weather report and weather forecast, including city details to "
-"clipboard"
-msgstr ""
-"نسخ تقرير الأحوال الجوية وحالة الطقس، بما في ذلك تفاصيل المدينة إلى الحافظة"
+msgid "&Copy the weather report and weather forecast, including city details to clipboard"
+msgstr "نسخ تقرير الأحوال الجوية وحالة الطقس، بما في ذلك تفاصيل المدينة إلى الحافظة"
 
 #: __init__.py:2397
 msgid "Enable &audio effects (only for the current weather conditions)"
@@ -755,12 +738,9 @@ msgid "Allows you to define the area, in order to adapt the sound effects."
 msgstr "يتيح لك تحديد المنطقة ، من أجل تكييف المؤثرات الصوتية"
 
 #: __init__.py:2553
-msgid ""
-"Presets the current city as the default, will be used every time you restart the "
-"plugin."
+msgid "Presets the current city as the default, will be used every time you restart the plugin."
 msgstr ""
-"الضبط للمدينة الحالية كخيار افتراضي، سوف تُستخدَمُ في كل مرة تُعيدُ فيها تشغيل "
-"الإضافة البرمجية."
+"الضبط للمدينة الحالية كخيار افتراضي، سوف تُستخدَمُ في كل مرة تُعيدُ فيها تشغيل الإضافة البرمجية."
 
 #: __init__.py:2554
 msgid "Delete  the current city from your list."
@@ -772,12 +752,12 @@ msgstr "إعادة تسمية المدينة الحالية."
 
 #: __init__.py:2556
 msgid ""
-"Permits to incorporate in your list new cities importing them from another list "
-"with the extension *.zipcodes; you can select the city you want to import, by "
-"turning on the check box associated."
+"Permits to incorporate in your list new cities importing them from another list with the "
+"extension *.zipcodes; you can select the city you want to import, by turning on the check box "
+"associated."
 msgstr ""
-"يُتيحُ استيراد مدن من قائمة مدن أخرى ذات امتداد *.zipcodes; يمكنك اختيار المدينة "
-"التي ترغب في استيرادهابوضع علامة التحديد على مربّع التحديد الخاص بها"
+"يُتيحُ استيراد مدن من قائمة مدن أخرى ذات امتداد *.zipcodes; يمكنك اختيار المدينة التي ترغب في "
+"استيرادهابوضع علامة التحديد على مربّع التحديد الخاص بها"
 
 #: __init__.py:2557
 msgid "Permits to save your list of cities in a specified path."
@@ -837,8 +817,7 @@ msgstr "بواسطة auto:ip فحص IP: auto:ip"
 
 #: __init__.py:2677
 msgid "By IP address (IPv4 and IPv6 supported): 100.0.0.1"
-msgstr ""
-"بواسطة عنوان بروتوكول الشبكة العالمية IP (إصدار IP4 و IP6 مدعوم): 100.0.0.1"
+msgstr "بواسطة عنوان بروتوكول الشبكة العالمية IP (إصدار IP4 و IP6 مدعوم): 100.0.0.1"
 
 #: __init__.py:2678
 msgid "if there will be cities with the same name, will be listed"
@@ -849,19 +828,15 @@ msgid "By default, confirming a selection, is used the postal code"
 msgstr "افتراضيا، تأكيد الخيار، يكون بواسطة الرمز البريدي."
 
 #: __init__.py:2680
-msgid ""
-"If the postal code is not valid, will be used a text string: city, state, region"
-msgstr ""
-"إن لم يكُنِ الرمز البريدي مُتاحا، ستُستخدَمُ سلسلة نصية: المدينة، الولاية أو المحافظة، "
-"المنطقة"
+msgid "If the postal code is not valid, will be used a text string: city, state, region"
+msgstr "إن لم يكُنِ الرمز البريدي مُتاحا، ستُستخدَمُ سلسلة نصية: المدينة، الولاية أو المحافظة، المنطقة"
 
 #: __init__.py:2681
 msgid "You can indicate how to proceed by prefixing the following commands"
 msgstr "بإمكانك تحديد كيفية المتابعة بإضافة الأوامر الآتية"
 
 #: __init__.py:2682
-msgid ""
-"Direct (cities with the same name, will not listed), by typing D:City: D:Paris"
+msgid "Direct (cities with the same name, will not listed), by typing D:City: D:Paris"
 msgstr "مباشر (المدن المشتركة في الاسم لن تُدرج للقائمة), بكتابة D:City: D:Paris"
 
 #: __init__.py:2683
@@ -1009,8 +984,7 @@ msgid "Installation Error!"
 msgstr "خطأ في التثبيت "
 
 #: __init__.py:3250
-msgid ""
-"The details of this city are not in the database and so I added them to the list."
+msgid "The details of this city are not in the database and so I added them to the list."
 msgstr "تفاصيلُ هذه المدينة ليست في قاعدة البيانات، ولذلك أضفتُها لهذه القائمة"
 
 #: __init__.py:3267
@@ -1288,8 +1262,7 @@ msgstr "قد لا يُتيح لك هذا الحصول على تفاصيل الم
 
 #: __init__.py:4726
 msgid "Please report this to the author so he can add this country in database."
-msgstr ""
-"الرجاء الإبلاغ عن هذا للمؤلف حتى يتمكن من إضافة هذا البلد في قاعدة البيانات."
+msgstr "الرجاء الإبلاغ عن هذا للمؤلف حتى يتمكن من إضافة هذا البلد في قاعدة البيانات."
 
 #: __init__.py:4727
 #, python-format
@@ -1435,8 +1408,7 @@ msgstr "&نسخ إلى الحافظة"
 #: buildVars.py:27
 msgid "Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"
 msgstr ""
-"يُضيفُ درجة الحرارة المحلية وتوقُّعات الطقس لأربع وعشرين ساعة، إضافةً لتوقُّعات الطقس "
-"ليويمن قادمين.\n"
+"يُضيفُ درجة الحرارة المحلية وتوقُّعات الطقس لأربع وعشرين ساعة، إضافةً لتوقُّعات الطقس ليويمن قادمين.\n"
 "\n"
 
 #: buildVars.py:28
@@ -1444,17 +1416,11 @@ msgid "NVDA+w for the current bulletin.\n"
 msgstr "NVDA+w لمعرفة النشرة الجوية  الحالية.\n"
 
 #: buildVars.py:29
-msgid ""
-"NVDA+shift+w for the prediction in the current 24 hours and prediction up to 2 "
-"days.\n"
-msgstr ""
-"NVDA+shift+w للحصول على توقُّعات الطقس للأربع وعشرين ساعة وتوقُّعات الطقس ليومين "
-"قادمين.\n"
+msgid "NVDA+shift+w for the prediction in the current 24 hours and prediction up to 2 days.\n"
+msgstr "NVDA+shift+w للحصول على توقُّعات الطقس للأربع وعشرين ساعة وتوقُّعات الطقس ليومين قادمين.\n"
 
 #: buildVars.py:30
-msgid ""
-"NVDA+shift+w, pressed twice provides the hourlyforecast of the weather "
-"conditions.\n"
+msgid "NVDA+shift+w, pressed twice provides the hourlyforecast of the weather conditions.\n"
 msgstr "NVDA+shift+w, الضغط عليه مرتين يوفّر توقُّعات أحوال الطقس لكلّ ساعة.\n"
 
 #: buildVars.py:31
@@ -1474,11 +1440,8 @@ msgid "Shift+control+w alternates between Fahrenheit, Celsius and Kelvin.\n"
 msgstr "Shift+control+w للتبديل بين وحدة القياس .\n"
 
 #: buildVars.py:35
-msgid ""
-"For other instructions, you can also press Add-on Help button in Add-ons manager."
-msgstr ""
-"للحصول على تعليمات أخرى ، يمكنك أيضا الضغط على زر المساعدة للإضافة في مدير "
-"الإضافات."
+msgid "For other instructions, you can also press Add-on Help button in Add-ons manager."
+msgstr "للحصول على تعليمات أخرى ، يمكنك أيضا الضغط على زر المساعدة للإضافة في مدير الإضافات."
 
 #~ msgid "precipitation"
 #~ msgstr "هطول "
@@ -1835,24 +1798,18 @@ msgstr ""
 #~ msgstr "عذرًا ، مجموعة woeID غير صالحة أو تحتوي على بيانات غير كاملة!"
 
 #~ msgid ""
-#~ "Is not working properly, contains incomplete data or has been removed from "
-#~ "the database of"
-#~ msgstr ""
-#~ "لا يعمل بشكل صحيح أو يحتوي على بيانات غير كاملة أو تمت إزالته من قاعدة بيانات"
+#~ "Is not working properly, contains incomplete data or has been removed from the database of"
+#~ msgstr "لا يعمل بشكل صحيح أو يحتوي على بيانات غير كاملة أو تمت إزالته من قاعدة بيانات"
 
-#~ msgid ""
-#~ "Provides the weather forecast and current temperature for 24 hours and the "
-#~ "next 9 days."
+#~ msgid "Provides the weather forecast and current temperature for 24 hours and the next 9 days."
 #~ msgstr "يوفر توقعات الطقس ودرجة الحرارة الحالية لمدة 24 ساعة و 9 أيام القادمة."
 
 #~ msgid "Add status of &barometric pressure"
 #~ msgstr "إضافة حالة ال&ضغط الجوي"
 
 #~ msgid ""
-#~ "Testing the validity of city woeID entry and find the name of city assigned, "
-#~ "or viceversa."
-#~ msgstr ""
-#~ "اختبار صلاحية إدخال woeID للمدينة وابحث عن اسم المدينة المعينة أو viceversa."
+#~ "Testing the validity of city woeID entry and find the name of city assigned, or viceversa."
+#~ msgstr "اختبار صلاحية إدخال woeID للمدينة وابحث عن اسم المدينة المعينة أو viceversa."
 
 #~ msgid "Displays information on the current city."
 #~ msgstr "يعرض معلومات عن المدينة الحالية."
@@ -1872,9 +1829,7 @@ msgstr ""
 #~ msgid "Text string, by typing T:City"
 #~ msgstr "سلسلة نصية بكتابة T: City"
 
-#~ msgid ""
-#~ "The city can be preceded by the region and / or state, separated by a comma "
-#~ "or space"
+#~ msgid "The city can be preceded by the region and / or state, separated by a comma or space"
 #~ msgstr "يمكن أن تسبق المدينة المنطقة و / أو الولاية ، مفصولة بفاصلة أو مساحة"
 
 #~ msgid "Australia, Queensland, Cona Creek"
@@ -1902,11 +1857,8 @@ msgstr ""
 #~ msgstr "أو حاول لدمج الاسم مع  المنطقة بفاصلة ، أو فصلهما بمسافات"
 
 #~ msgid ""
-#~ "The details of this city are not in the database and so I added them to the "
-#~ "list. Try again!"
-#~ msgstr ""
-#~ "تفاصيل هذه المدينة ليست في قاعدة البيانات ولذا أضفتها إلى القائمة. حاول مرة "
-#~ "أخري!"
+#~ "The details of this city are not in the database and so I added them to the list. Try again!"
+#~ msgstr "تفاصيل هذه المدينة ليست في قاعدة البيانات ولذا أضفتها إلى القائمة. حاول مرة أخري!"
 
 #~ msgid "It was not possible find the acronym of %s!"
 #~ msgstr "لم يكن من الممكن العثور على اختصار %s!"
@@ -1917,13 +1869,10 @@ msgstr ""
 #~ msgid "Empty file or not in cities woeID format compatible!"
 #~ msgstr "الملف فارغ أو لا يوجد تنسيق مناسب لمعرف المدن!"
 
-#~ msgid ""
-#~ "Adds local temperature and forecast 24 ours and prediction up to 9 days.\n"
+#~ msgid "Adds local temperature and forecast 24 ours and prediction up to 9 days.\n"
 #~ msgstr "يضيف درجات الحرارة المحلية والتنبؤات 24 لدينا والتنبؤ تصل إلى 9 أيام.\n"
 
-#~ msgid ""
-#~ "NVDA+shift+w for the prediction in the current 24 hours and prediction up to "
-#~ "9 days.\n"
+#~ msgid "NVDA+shift+w for the prediction in the current 24 hours and prediction up to 9 days.\n"
 #~ msgstr "NVDA + shift + w لرؤية التوقعات الحالية وأيضًا الأيام التسعة التالية.\n"
 
 #~ msgid "Don't specify"

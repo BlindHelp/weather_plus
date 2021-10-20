@@ -3,8 +3,8 @@ msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2021-10-14 17:21+0200\n"
-"PO-Revision-Date: 2021-10-14 17:22+0200\n"
-"Last-Translator: Rui Fontes <rui.fontes@tiflotecnia.com>\n"
+"PO-Revision-Date: 2021-10-20 13:01+0200\n"
+"Last-Translator: Iván Novegil Cancelas <ivan.novegil.cancelas@gmail.com>\n"
 "Language-Team: Iván Novegil Cancelas <ivan.novegil.cancelas@gmail.com>\n"
 "Language: gl\n"
 "MIME-Version: 1.0\n"
@@ -339,19 +339,19 @@ msgstr "A lúa sae ás"
 
 #: __init__.py:1588
 msgid "No moonrise"
-msgstr ""
+msgstr "Sen saída da lúa"
 
 #: __init__.py:1589
 msgid "No moonset"
-msgstr ""
+msgstr "Sen posta da lúa"
 
 #: __init__.py:1590
 msgid "No sunrise"
-msgstr ""
+msgstr "Sen saída do sol"
 
 #: __init__.py:1591
 msgid "No sunset"
-msgstr ""
+msgstr "Sen posta do sol"
 
 #: __init__.py:1614
 msgid "the forecast for today is"

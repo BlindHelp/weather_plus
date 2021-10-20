@@ -8,8 +8,8 @@ msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2021-10-14 17:14+0200\n"
-"PO-Revision-Date: 2021-10-14 17:16+0200\n"
-"Last-Translator: Rui Fontes <rui.fontes@tiflotecnia.com>\n"
+"PO-Revision-Date: 2021-10-17 08:49+0200\n"
+"Last-Translator: Nicolai Svendsen <chojiro1990@gmail.com>\n"
 "Language-Team: Nicolai Svendsen <chojiro1990@gmail.com>\n"
 "Language: da\n"
 "MIME-Version: 1.0\n"
@@ -323,19 +323,19 @@ msgstr "Månen står op ved"
 
 #: __init__.py:1588
 msgid "No moonrise"
-msgstr ""
+msgstr "ingen måneopgang"
 
 #: __init__.py:1589
 msgid "No moonset"
-msgstr ""
+msgstr "ingen månenedgang"
 
 #: __init__.py:1590
 msgid "No sunrise"
-msgstr ""
+msgstr "ingen solopgang"
 
 #: __init__.py:1591
 msgid "No sunset"
-msgstr ""
+msgstr "ingen solnedgang"
 
 #: __init__.py:1614
 msgid "the forecast for today is"
