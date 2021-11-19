@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 8.6.
+#Version 8.7.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date October, 14th, 2021.
+#Last Edit date November, 19th, 2021.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -1410,10 +1410,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			try:
 				self.dom['current']['last_updated_epoch']
 			except (KeyError, TypeError): self.dom = None; return self.ZipCodeError()
-			if mess:
-				#notify last build date failed
-				Shared().Play_sound("messagefailure", 1)
-				ui.message(mess)
 
 			scale_as = self.GetScaleAs() #degrees indication selected
 			if not forecast:
@@ -1605,11 +1601,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				month1 = ""
 				try:
 					high = self.dom['forecast']['forecastday'][0]['day']['maxtemp_f'] or _nr
+					low = self.dom['forecast']['forecastday'][0]['day']['mintemp_f'] or _nr
 				except IndexError: return Shared().JsonError()
-				low = self.dom['forecast']['forecastday'][0]['day']['mintemp_f'] or _nr
 				if self.celsius != 0: #conversion only for Celsius and Kelvin degrees scale
 					high = self.dom['forecast']['forecastday'][0]['day']['maxtemp_c'] or _nr
 					low = self.dom['forecast']['forecastday'][0]['day']['mintemp_c'] or _nr
+
 				weatherReport = '%s %s %s %s %s %s %s %s.' % (
 				_("the forecast for today is"),
 				self.dom['forecast']['forecastday'][0]['day']['condition']['text'],
@@ -1631,8 +1628,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					else:
 						week_day = Shared().ConvertDate(week_day)
 						month1 = month
-					high = self.dom['forecast']['forecastday'][i]['day']['maxtemp_f']
-					low = self.dom['forecast']['forecastday'][i]['day']['mintemp_f']
+					high = self.dom['forecast']['forecastday'][i]['day']['maxtemp_f'] or _nr
+					low = self.dom['forecast']['forecastday'][i]['day']['mintemp_f'] or _nr
 					if self.celsius != 0: #Celsius and Kelvin degrees scale
 						high = self.dom['forecast']['forecastday'][i]['day']['maxtemp_c'] or _nr
 						low = self.dom['forecast']['forecastday'][i]['day']['mintemp_c'] or _nr
@@ -1648,6 +1645,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			#puts the city name at the left top 
 			weatherReport = '%s %s, %s' % \
 			(_("In"), self.city or _("Unnamed"), weatherReport)
+			if mess:
+				#notify last build date failed
+				Shared().Play_sound("messagefailure", 1)
+				weatherReport = '%s\n%s' % (mess, weatherReport)
+
 			if self.toClip:
 				# Copy the bulletin or weather forecasts to the clipboard.
 				api.copyToClip(weatherReport)
@@ -2129,7 +2131,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			week_day, day, month, year, _("at"), lbdTime
 			)
 
-		ui.message('%s: %s.' % (_("Last update of the current weather report"), last_build_date))
+		weatherReport = ('%s: %s.' % (_("Last update of the current weather report"), last_build_date))
+		ui.message(weatherReport)
+		if self.toClip:
+			# Copy the bulletin last edit date to the clipboard.
+			api.copyToClip(weatherReport)
 
 	script_announceLastBuildDate.__doc__ = _("Announces the date of the last update of the weather report.")
 

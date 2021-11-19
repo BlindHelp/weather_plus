@@ -1,3 +1,23 @@
+19/11/2021
+Weather_Plus8.7 #update by Adriano
+Adriano said:
+Did you notice that the "en" folder in doc is missing in the package I downloaded?
+I get reports from those who have nvda set in English, that help on the add-on is not available, and obviously not from the add-on's documentation menu.
+Changes:
+* Added "en" folder missing in the documentation.
+* if the Copy the weather report and weather forecast, including city details to clipboard item is enabled, pressing nvda + alt + w will now also copy the date of the last update of the bulletin to the clipboard.
+
+I just added __init__.py and buildVars.py for version 8.7 in this repository.
+oldest sconstruct by Rui no build readme.md doc in english what a problem!
+Well I have erased it and I have replaced it with another done by Abdel, and this if I create the doc "en" folder with readme.md and readme.html files!
+Please Rui, do not change it for yours if we are not with this problem!
+By the way this addon is with - in the name:
+Weather_Plus-8.7.nvda-addon
+renamed manually by:
+Weather_Plus8.7.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus8.7.nvda-addon
+
 20/10/2021
 Weather_Plus8.6 #update by Adriano
 1 complete local folder, I omitted es and fr as I requested to Adriano because the last time was already translated and updated into this repository by myself.
