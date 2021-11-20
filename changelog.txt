@@ -18,6 +18,10 @@ Weather_Plus8.7.nvda-addon
 You can download it here:
 https://blindhelp.github.io/Weather_Plus8.7.nvda-addon
 
+# Created the new tag:
+git tag 8.7
+git push origin 8.7
+
 20/10/2021
 Weather_Plus8.6 #update by Adriano
 1 complete local folder, I omitted es and fr as I requested to Adriano because the last time was already translated and updated into this repository by myself.
