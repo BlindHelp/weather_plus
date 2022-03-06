@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 8.7.
+#Version 8.8.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date November, 19th, 2021.
+#Last Edit date March, 05th, 2022.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -2537,6 +2537,12 @@ class EnterDataDialog(wx.Dialog):
 		self.f1 = 0 #after a few errors recommend you press F1
 		self.WidgetFocusControl()
 		self.ButtonsEnable(False)
+		if globalVars.appArgs.secure:
+			#disable possible FileDialog openings in safe mode
+			btn_Import.Enable(False)
+			btn_Export.Enable(False)
+			self.cbt_toSample.Enable(False)
+
 		self.OnText()
 		if cbx.GetValue() == "":
 			#primary combo box empty

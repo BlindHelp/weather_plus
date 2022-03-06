@@ -1,3 +1,38 @@
+05/03/2022
+Weather_Plus8.8 #security update2  by Adriano
+Adriano said:
+I am very worried about the current crisis and honestly do not want to write some code, but Cyrille has begged me privately to make these neccessary changes and I did.
+I improved the last change, WP will not allow FileDialog openings in safe mode, but it will continue to work.
+
+I just added new __init__.py for version 8.8 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-8.8.nvda-addon
+renamed manually by:
+Weather_Plus8.8.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus8.8.nvda-addon
+
+04/03/2022
+Weather_Plus8.8 #security update by Adriano
+Adriano said:
+fixing security issue, as recently requested
+No other modification or addition of strings.
+buildVars.py and __init__.py updated to 8.8 version.
+
+I just added __init__.py and buildVars.py for version 8.8 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-8.8.nvda-addon
+renamed manually by:
+Weather_Plus8.8.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus8.8.nvda-addon
+
+# Created the new tag:
+git tag 8.8
+git push origin 8.8
+
 19/11/2021
 Weather_Plus8.7 #update by Adriano
 Adriano said:
