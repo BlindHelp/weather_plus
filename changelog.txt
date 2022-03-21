@@ -1,3 +1,19 @@
+20/03/2022
+Weather_Plus8.8 #addon_lastTestedNVDAVersion updated by Adriano Barbieri
+Adriano said:
+Changed to : "2022.1, buildVars.py in attachment
+You just have to update your repositories, I have already updated the Italian page.
+
+I just added new buildVars.py for version 8.8 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-8.8.nvda-addon
+renamed manually by:
+Weather_Plus8.8.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus8.8.nvda-addon
+
+
 05/03/2022
 Weather_Plus8.8 #security update2  by Adriano
 Adriano said:
