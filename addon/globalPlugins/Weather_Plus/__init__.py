@@ -9,7 +9,7 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 8.8.
+#Version 8.9.
 #NVDA compatibility: 2017.3 to beyond.
 #Last Edit date March, 05th, 2022.
 
@@ -121,6 +121,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.onUpgrade, self.UpgradeAddonItem)
 		#check if a new version is available
 		if self.toUpgrade: self.onUpgrade()
+		#disable documentation menu items and check for updates if you are in safe screen mode
+		if globalVars.appArgs.secure:
+			self.AboutItem.Enable(False)
+			self.UpgradeAddonItem.Enable(False)
+
 		#delete the update file from the temporary folder
 		self.Removeupdate()
 
