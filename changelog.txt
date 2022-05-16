@@ -6,7 +6,6 @@ Changes:
 * The menus (Documentation and Check for Updates) in safe screen mode are now disabled.
 As soon as you send me the updated package, I publish it and launch the automatic update.
 
-
 I just added new __init__.py and buildVars.py for new version 8.9 in this repository.
 
 By the way this addon is with - in the name:
@@ -15,6 +14,10 @@ renamed manually by:
 Weather_Plus8.9.nvda-addon
 You can download it here:
 https://blindhelp.github.io/Weather_Plus8.9.nvda-addon
+
+# Created the new tag:
+git tag 8.9
+git push origin 8.9
 
 20/03/2022
 Weather_Plus8.8 #addon_lastTestedNVDAVersion updated by Adriano Barbieri
