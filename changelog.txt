@@ -1,3 +1,25 @@
+06/12/2022
+Weather_Plus9.0 by Adriano Barbieri
+
+Changes:
+
+Deprecated wx.yield replaced with wx.GetApp().Yield()
+Added new cauntries tothe database
+Improved management of some hidden windows.
+
+I just added new __init__.py and buildVars.py for new version 9.0 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.0.nvda-addon
+renamed manually by:
+Weather_Plus9.0.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.0.nvda-addon
+
+# Created the new tag:
+git tag 9.0
+git push origin 9.0
+
 14/05/2022
 Weather_Plus8.9 #secure update by Adriano Barbieri
 Adriano said:
