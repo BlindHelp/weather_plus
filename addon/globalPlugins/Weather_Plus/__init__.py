@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 9.0.
+#Version 9.1.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date December, 06th, 2022.
+#Last Edit date December, 10th, 2022.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -1719,7 +1719,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				api.copyToClip(weatherReport)
 			if self.toOutputwindow:
 				#output to a window
+				gui.mainFrame.prePopup()
 				Shared().ViewDatas(weatherReport)
+				gui.mainFrame.postPopup()
 
 		else:
 			Shared().Play_sound(False, 1)
@@ -3304,7 +3306,9 @@ class EnterDataDialog(wx.Dialog):
 
 		if self.toOutputwindow:
 			#output to a window
+			gui.mainFrame.prePopup()
 			Shared().ViewDatas('%s\r\n%s' % (title, message))
+			gui.mainFrame.postPopup()
 
 		else: ui.message(message) 
 
