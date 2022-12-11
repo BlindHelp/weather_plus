@@ -11,11 +11,11 @@
 #See the file COPYING for more details.
 #Version 9.1.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date December, 10th, 2022.
+#Last Edit date December, 11th, 2022.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
-import random, ui, gui, wx, re, calendar, math, api, threading
+import random, ui, gui, wx, re, calendar, math, api
 from time import sleep
 from logHandler import log
 from gui import guiHelper
@@ -548,10 +548,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			_("They have to be tested and validated, you can do it from the addon settings window."))
 			#Translators: the dialog title
 			title = '%s %s' % (_addonSummary, _("Notice!"))
-			gui.mainFrame.prePopup()
+			gui.mainFrame.prePopup
 			dialog = MyDialog(gui.mainFrame, message, title, zipCodesList = None, newVersion = '', setZipCodeItem = self.setZipCodeItem, setTempZipCodeItem = self.setTempZipCodeItem, UpgradeAddonItem = self.UpgradeAddonItem, buttons = None, simple = True)
 			dialog.Show()
-			gui.mainFrame.postPopup()
+			gui.mainFrame.postPopup
 			return
 
 		s = Find_index(zipCodesList, self.tempZipCode)
@@ -631,10 +631,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		def NoteDialog(message = "", title = "", newVersion = "", buttons = None):
 			"""call the upgrade dialog"""
 			self.EnableMenu(False)
-			gui.mainFrame.prePopup()
+			gui.mainFrame.prePopup
 			dialog = MyDialog(gui.mainFrame, message, title, self.zipCodesList, newVersion, self.setZipCodeItem, self.setTempZipCodeItem, self.UpgradeAddonItem, buttons)
 			dialog.Show()
-			gui.mainFrame.postPopup()
+			gui.mainFrame.postPopup
 
 		message, ask = "", False
 		#title of the dialog box
@@ -3910,7 +3910,7 @@ checkbox_values = [],
 		self.cbx.SetFocus()
 
 
-class Shared(object):
+class Shared:
 	"""shared functions"""
 
 	def ShowWind(self, wind):
@@ -5072,18 +5072,30 @@ class Shared(object):
 
 
 	def GetUrlData(self, address, verbosity = True):
-		thread = MyGetUrlData(address, verbosity)
-		thread.start()
-		t = 0
-		while thread.is_alive():
-			sleep(0.1)
-			t = (t +1)% 40
-			if verbosity and t == 0:
-				ui.message(_plzw)
-				self.Play_sound("wait", 1)
+		"""open url"""
+		try:
+			data = error = ""
+			with closing(urlopen(address)) as response:
+				data = response.read()
+		except Exception as e: error = e
+		if "CERTIFICATE_VERIFY_FAILED" in repr(error):
+			#retry using ssl
+			data = "no connect"
+			gcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
+			try:
+				with closing(urlopen(address, context=gcontext)) as response:
+					data = response.read()
+			except Exception as e:
+				error = e
+				data = "no connect"
+				if verbosity: self.LogError(error)
 
-		thread.join()
-		return thread.data
+		elif "failed" in repr(error):
+			data = "no connect"
+			if verbosity: self.LogError(error)
+
+		elif "Not Found" in repr(error): data = "not found"
+		return data
 
 
 	def Find_cities(self, value):
@@ -6087,47 +6099,3 @@ class HourlyforecastDataSelect(wx.Dialog):
 		self.cbt_toVisibility_hf.GetValue(),
 		self.cbt_toPrecip_hf.GetValue(),
 		self.cbt_toUltraviolet_hf.GetValue())
-
-
-class MyGetUrlData(threading.Thread):
-
-	def __init__(self, address, verbosity, *args, **kwargs):
-		super(MyGetUrlData, self).__init__(*args, **kwargs)
-		self._stopEvent = threading.Event()
-		self.lock = threading.Lock()
-		self.data = ''
-		self.address = address
-		self.verbosity = verbosity
-	def stop(self):
-		self._stopEvent.set()
-
-
-	def run(self):
-		"""open url"""
-		self.lock.acquire()
-		try:
-			data = error = ""
-			try:
-				with closing(urlopen(self.address)) as response:
-					data = response.read()
-			except Exception as e: error = e
-			if "CERTIFICATE_VERIFY_FAILED" in repr(error):
-				#retry using ssl
-				data = "no connect"
-				gcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
-				try:
-					with closing(urlopen(self.address, context=gcontext)) as response:
-						data = response.read()
-				except Exception as e:
-					error = e
-					data = "no connect"
-					if self.verbosity: Shared().LogError(error)
-
-			elif "failed" in repr(error):
-				data = "no connect"
-				if self.verbosity: Shared().LogError(error)
-
-			elif "Not Found" in repr(error): data = "not found"
-			self.data = data
-		finally:
-			self.lock.release()

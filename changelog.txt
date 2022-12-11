@@ -1,3 +1,16 @@
+11/12/2022
+Adriano said:
+please Replace __init__.py with this one I attached.
+
+I just added new __init__.py for version 9.1 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.1.nvda-addon
+renamed manually by:
+Weather_Plus9.1.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.1.nvda-addon
+
 10/12/2022
 Weather_Plus9.1 by Adriano Barbieri
 
