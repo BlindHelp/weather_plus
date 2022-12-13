@@ -6037,7 +6037,7 @@ class MyDialog2(wx.Dialog):
 			cHelper = wx.Choice(self, choices=[clip])
 			sHelper.addItem(cHelper)
 			cHelper.SetSelection(0)
-			copyHelper = wx.Button(self, label=_("Copy to clipboard"), style=wx.BU_EXACTFIT)
+			copyHelper = wx.Button(self, label=_("&Copy to clipboard"), style=wx.BU_EXACTFIT)
 			sHelper.addItem(copyHelper)
 			self.Bind(wx.EVT_BUTTON, self.OnCopytoclip, copyHelper)
 		self.clip = clip

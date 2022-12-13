@@ -2,15 +2,15 @@ msgid ""
 msgstr ""
 "Project-Id-Version: WeatherPlus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
-"POT-Creation-Date: 2021-10-14 17:19+0200\n"
-"PO-Revision-Date: 2022-12-12 19:56+0300\n"
+"POT-Creation-Date: 2022-12-13 17:22+0100\n"
+"PO-Revision-Date: 2022-12-13 17:31+0100\n"
 "Last-Translator: Umut KORKMAZ <umutkork@gmail.com>\n"
 "Language-Team: Çağrı DOğan <cagrid@hotmail.com>\n"
 "Language: tr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Generator: Poedit 3.2.2\n"
+"X-Generator: Poedit 1.8.13\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: ../../../globalPlugins/Weather_Plus\n"
 "X-Poedit-SourceCharset: UTF-8\n"
@@ -40,134 +40,134 @@ msgstr "kullanılamaz"
 msgid "Please wait..."
 msgstr "Lütfen bekleyin..."
 
-#: __init__.py:107
+#: __init__.py:118
 msgid "Weather Plus &Settings"
 msgstr "&Weather Plus Ayarları"
 
-#: __init__.py:107
+#: __init__.py:118
 msgid "Show configuration items."
 msgstr "Konfigürasyon öğelerini göster."
 
-#: __init__.py:109
+#: __init__.py:120
 msgid "Set and &manage your cities..."
 msgstr "&Şehirlerinizi Ayarlayın / Yönetin..."
 
-#: __init__.py:109
+#: __init__.py:120
 msgid "Displays or allows to set the current cities from a list"
 msgstr "Mevcut şehirleri listeler ve arasından seçim yapmanıza olanak tanır"
 
-#: __init__.py:112
+#: __init__.py:123
 msgid "Set a &temporary city..."
 msgstr "&Geçici bir şehir belirleyin..."
 
-#: __init__.py:112
+#: __init__.py:123
 msgid "Allows to set one temporary city from a list"
 msgstr "Listeden geçici olarak bir şehir belirlemenizi sağlar."
 
-#: __init__.py:116
+#: __init__.py:127
 msgid "&Documentation"
 msgstr "&Dokümantasyon"
 
-#: __init__.py:116
+#: __init__.py:127
 msgid "Opens the help file for the current language"
 msgstr "Geçerli dil için yardım dosyasını açar"
 
-#: __init__.py:120
+#: __init__.py:131
 msgid "&Check for Upgrade..."
 msgstr "&Güncelleme için kontrol et..."
 
-#: __init__.py:120
+#: __init__.py:131
 msgid "Notify if there is an upgraded version available"
 msgstr "Güncelleme olup olmadığını bildir"
 
-#: __init__.py:169
+#: __init__.py:232
 msgid "nanometers"
 msgstr "nanometre"
 
-#: __init__.py:172
+#: __init__.py:235
 msgid "miles per hour"
 msgstr "mil bölü saat"
 
-#: __init__.py:173
+#: __init__.py:236
 msgid "miles"
 msgstr "mil"
 
-#: __init__.py:174
+#: __init__.py:237
 msgid "inches"
 msgstr "inch"
 
-#: __init__.py:175
+#: __init__.py:238
 msgid "inches of mercury"
 msgstr "inç cıva"
 
-#: __init__.py:178
+#: __init__.py:241
 msgid "kilometers per hour"
 msgstr "kilometre bölü saat"
 
-#: __init__.py:179
+#: __init__.py:242
 msgid "kilometers"
 msgstr "kilometre"
 
-#: __init__.py:180
+#: __init__.py:243
 msgid "millimeters"
 msgstr "milimetre"
 
-#: __init__.py:181
+#: __init__.py:244
 msgid "millibars"
 msgstr "milibar"
 
-#: __init__.py:183
+#: __init__.py:246
 msgid "millimeters of mercury"
 msgstr "milimetre cıva"
 
-#: __init__.py:211
+#: __init__.py:271
 msgid "Settings"
 msgstr "Ayarlar"
 
-#: __init__.py:211 __init__.py:2307
+#: __init__.py:271 __init__.py:2285
 msgid "Preset"
 msgstr "Varsayılan yap"
 
-#: __init__.py:211 __init__.py:3464 __init__.py:3799
+#: __init__.py:271 __init__.py:3458 __init__.py:3801
 msgid "None"
 msgstr "Yok"
 
-#: __init__.py:213
+#: __init__.py:273
 msgid "Enter a City or choose one from the list, if available."
 msgstr "Bir Şehir girin veya varsa listeden birini seçin."
 
-#: __init__.py:391 __init__.py:1823 __init__.py:2969 __init__.py:3627
+#: __init__.py:451 __init__.py:1884 __init__.py:2956 __init__.py:3623
 msgid "The city"
 msgstr "Şehir"
 
-#: __init__.py:392
+#: __init__.py:452
 msgid "has not been preset."
 msgstr "ön ayarlara yüklenmedi."
 
-#: __init__.py:393
+#: __init__.py:453
 msgid "Will be used in temporary mode!"
 msgstr "Geçici kipte kullanılacak!"
 
-#: __init__.py:396 __init__.py:424 __init__.py:486 __init__.py:1829
-#: __init__.py:2792 __init__.py:3007 __init__.py:3012 __init__.py:3080
-#: __init__.py:3255 __init__.py:3507 __init__.py:3636 __init__.py:3826
-#: __init__.py:3845 __init__.py:4730
+#: __init__.py:456 __init__.py:484 __init__.py:550 __init__.py:1890
+#: __init__.py:2775 __init__.py:2995 __init__.py:3000 __init__.py:3069
+#: __init__.py:3245 __init__.py:3502 __init__.py:3632 __init__.py:3828
+#: __init__.py:3846 __init__.py:4738
 msgid "Notice!"
 msgstr "Uyarı!"
 
-#: __init__.py:426
+#: __init__.py:486
 msgid "You have modified the list of your cities"
 msgstr "Şehir listenizde değişiklik yaptınız"
 
-#: __init__.py:426
+#: __init__.py:486
 msgid "Do you want to save it?"
 msgstr "Kaydetmek ister misiniz?"
 
-#: __init__.py:483
+#: __init__.py:547
 msgid "The cities on your list are not compatible with the Weather API!"
 msgstr "Listenizdeki şehirler Hava Durumu API'si ile uyumlu değil!"
 
-#: __init__.py:484
+#: __init__.py:548
 msgid ""
 "They have to be tested and validated, you can do it from the addon settings "
 "window."
@@ -175,19 +175,19 @@ msgstr ""
 "Test edilmeleri ve onaylanmaları gerekir, bunu eklenti ayarları "
 "penceresinden yapabilirsiniz."
 
-#: __init__.py:498
+#: __init__.py:562
 msgid "Setting up a temporary city"
 msgstr "Geçici bir şehir belirleniyor"
 
-#: __init__.py:502
+#: __init__.py:566
 msgid "Cities List available:"
 msgstr "Mevcut şehir listesi:"
 
-#: __init__.py:534
+#: __init__.py:598
 msgid "Documentation not available for the current language!"
 msgstr "Dokümantasyon Geçerli dil için kullanılabilir değil!"
 
-#: __init__.py:586
+#: __init__.py:650
 msgid ""
 "Sorry, I can not receive data, problems with the download page, try again "
 "later please!"
@@ -195,8 +195,8 @@ msgstr ""
 "Üzgünüm, veri alınamıyor, indirme sayfasında sorun var, lütfen daha sonra "
 "tekrar deneyin!"
 
-#: __init__.py:589 __init__.py:1685 __init__.py:2927 __init__.py:3240
-#: __init__.py:3282
+#: __init__.py:653 __init__.py:1750 __init__.py:2913 __init__.py:3229
+#: __init__.py:3273
 msgid ""
 "Sorry, I can not receive data, verify that your internet connection is "
 "active, or try again later!"
@@ -204,31 +204,31 @@ msgstr ""
 "Üzgünüm, veriler alınamıyor, internet bağlantısının etkin olduğundan emin "
 "olun, ya da daha sonra tekrar deneyin!"
 
-#: __init__.py:601
+#: __init__.py:665
 msgid "version"
 msgstr "sürüm"
 
-#: __init__.py:601
+#: __init__.py:665
 msgid "is available."
 msgstr "mevcut."
 
-#: __init__.py:602
+#: __init__.py:666
 msgid "Installed version"
 msgstr "Yüklü sürüm"
 
-#: __init__.py:603
+#: __init__.py:667
 msgid "Do you want to download and install it?"
 msgstr "İndirip yüklemek istiyor musunuz?"
 
-#: __init__.py:608
+#: __init__.py:672
 msgid "Sorry, at the time an update is not available."
 msgstr "Üzgünüm, şu anda bir güncelleme mevcut değil."
 
-#: __init__.py:1084 __init__.py:2934 __init__.py:5414
+#: __init__.py:1148 __init__.py:2920 __init__.py:5427
 msgid "not found!"
 msgstr "bulunamadı!"
 
-#: __init__.py:1085
+#: __init__.py:1149
 msgid ""
 "You need to upgrade the sound effects by reactivating the appropriate option "
 "from the settings of"
@@ -236,290 +236,290 @@ msgstr ""
 "Ayarlardan uygun seçeneği yeniden etkinleştirerek ses efektlerini "
 "güncellemeniz gerekir"
 
-#: __init__.py:1087
+#: __init__.py:1151
 msgid "But if these are already updated, then you need to update"
 msgstr "Ancak bunlar zaten güncellendiyse, güncellemeniz gerekir"
 
-#: __init__.py:1261
+#: __init__.py:1325
 msgid "I can not load the settings!"
 msgstr "Ayarlar yüklenemedi!"
 
-#: __init__.py:1261
+#: __init__.py:1325
 msgid "Attention!"
 msgstr "Dikkat!"
 
-#: __init__.py:1332
+#: __init__.py:1396
 msgid "I can not save the settings!"
 msgstr "Ayarlar kaydedilemedi!"
 
-#: __init__.py:1347
+#: __init__.py:1411
 msgid "invalid name"
 msgstr "geçersiz isim"
 
-#: __init__.py:1422
+#: __init__.py:1482
 msgid "The cloudiness is"
 msgstr "Bulutluluk"
 
-#: __init__.py:1423
+#: __init__.py:1483
 msgid "The precipitation is"
 msgstr "Yağış"
 
-#: __init__.py:1470
+#: __init__.py:1530
 msgid "the weather report is currently"
 msgstr "mevcut hava durumu"
 
-#: __init__.py:1471 __init__.py:1511 __init__.py:1618 __init__.py:1645
-#: __init__.py:1957
+#: __init__.py:1531 __init__.py:1571 __init__.py:1679 __init__.py:1706
+#: __init__.py:2018
 msgid "degrees"
 msgstr "derece"
 
-#: __init__.py:1478
+#: __init__.py:1538
 msgid "The wind direction is from"
 msgstr "Rüzgar yönü"
 
-#: __init__.py:1484 __init__.py:1496
+#: __init__.py:1544 __init__.py:1556
 msgid "with speed of"
 msgstr "rüzgar hızı"
 
-#: __init__.py:1489 __init__.py:1500
+#: __init__.py:1549 __init__.py:1560
 msgid "The wind speed is"
 msgstr "Rüzgar hızı"
 
-#: __init__.py:1508
+#: __init__.py:1568
 msgid "The wind gusts are of"
 msgstr "Rüzgar kuvveti"
 
-#: __init__.py:1511
+#: __init__.py:1571
 msgid "The perceived temperature is"
 msgstr "Hissedilen sıcaklık"
 
-#: __init__.py:1518
+#: __init__.py:1578
 msgid "The humidity is"
 msgstr "Nem oranı"
 
-#: __init__.py:1520
+#: __init__.py:1580
 msgid "The cloudiness is of"
 msgstr "Bulutluluk"
 
-#: __init__.py:1522
+#: __init__.py:1582
 msgid "The precipitation is of"
 msgstr "Yağış"
 
-#: __init__.py:1527
+#: __init__.py:1587
 msgid "and the visibility is up to"
 msgstr "görüş mesafesi"
 
-#: __init__.py:1536
+#: __init__.py:1596
 msgid "The visibility is up to"
 msgstr "Görüş mesafesi"
 
-#: __init__.py:1541
+#: __init__.py:1601
 msgid "and the precipitation is"
 msgstr "ve yağış"
 
-#: __init__.py:1558
+#: __init__.py:1618
 msgid "The pressure is"
 msgstr "Basınç"
 
-#: __init__.py:1562
+#: __init__.py:1622
 msgid "The UV radiation is of"
 msgstr "UV radyasyonu"
 
-#: __init__.py:1584
+#: __init__.py:1644
 msgid "The sun rises at"
 msgstr "Gündoğumu"
 
-#: __init__.py:1585 __init__.py:1587
+#: __init__.py:1645 __init__.py:1647
 msgid "and sets at"
 msgstr "ve ayarlar"
 
-#: __init__.py:1586
+#: __init__.py:1646
 msgid "The moon rises at"
 msgstr "Aydoğumu"
 
-#: __init__.py:1588
+#: __init__.py:1648
 msgid "No moonrise"
 msgstr "Aydoğumu yok"
 
-#: __init__.py:1589
+#: __init__.py:1649
 msgid "No moonset"
 msgstr "Aybatımı yok"
 
-#: __init__.py:1590
+#: __init__.py:1650
 msgid "No sunrise"
 msgstr "Gündoğumu yok"
 
-#: __init__.py:1591
+#: __init__.py:1651
 msgid "No sunset"
 msgstr "Günbatımı yok"
 
-#: __init__.py:1614
+#: __init__.py:1675
 msgid "the forecast for today is"
 msgstr "bugün için hava raporu"
 
-#: __init__.py:1616 __init__.py:1643
+#: __init__.py:1677 __init__.py:1704
 msgid "with a maximum temperature of"
 msgstr "en yüksek sıcaklık"
 
-#: __init__.py:1617 __init__.py:1644
+#: __init__.py:1678 __init__.py:1705
 msgid "and a minimum of"
 msgstr "ve en düşük"
 
-#: __init__.py:1650
+#: __init__.py:1711
 msgid "In"
 msgstr "Bölge"
 
-#: __init__.py:1650
+#: __init__.py:1711
 msgid "Unnamed"
 msgstr "İsimsiz"
 
-#: __init__.py:1660 __init__.py:1880 __init__.py:2077
+#: __init__.py:1728 __init__.py:1941 __init__.py:2113
 msgid "Sorry, the city is not set!"
 msgstr "Üzgünüm, şehir ayarlanmamış!"
 
-#: __init__.py:1709
+#: __init__.py:1770
 msgid "Sorry, it was not possible to load the most recent update!"
 msgstr "Üzgünüm, son güncelleme yüklenemedi!"
 
-#: __init__.py:1710
+#: __init__.py:1771
 msgid "Please try again later."
 msgstr "Lütfen daha sonra tekrar deneyin."
 
-#: __init__.py:1753 __init__.py:1754
+#: __init__.py:1814 __init__.py:1815
 msgid "meters per second"
 msgstr "metre bölü saniye"
 
-#: __init__.py:1798 __init__.py:3913
+#: __init__.py:1859 __init__.py:3926
 msgid "Sorry, the city set is not valid or contains incomplete data!"
 msgstr "Üzgünüm, belirlenen şehir geçerli değil veya eksik veriler içeriyor!"
 
-#: __init__.py:1806
+#: __init__.py:1867
 msgid "north"
 msgstr "kuzey"
 
-#: __init__.py:1806
+#: __init__.py:1867
 msgid "north northeast"
 msgstr "kuzey v kuzeydoğu"
 
-#: __init__.py:1806
+#: __init__.py:1867
 msgid "northeast"
 msgstr "kuzeydoğu"
 
-#: __init__.py:1806
+#: __init__.py:1867
 msgid "east northeast"
 msgstr "doğu ve kuzeydoğu"
 
-#: __init__.py:1806
+#: __init__.py:1867
 msgid "east"
 msgstr "doğu"
 
-#: __init__.py:1806
+#: __init__.py:1867
 msgid "east southeast"
 msgstr "doğu güneydoğu"
 
-#: __init__.py:1806
+#: __init__.py:1867
 msgid "southeast"
 msgstr "güneydoğu"
 
-#: __init__.py:1806
+#: __init__.py:1867
 msgid "south southeast"
 msgstr "güney ve güneydoğu"
 
-#: __init__.py:1807
+#: __init__.py:1868
 msgid "south"
 msgstr "güney"
 
-#: __init__.py:1807
+#: __init__.py:1868
 msgid "south southwest"
 msgstr "güney ve güneybatı"
 
-#: __init__.py:1807
+#: __init__.py:1868
 msgid "southwest"
 msgstr "güneybatı"
 
-#: __init__.py:1807
+#: __init__.py:1868
 msgid "west southwest"
 msgstr "batı ve güneybatı"
 
-#: __init__.py:1807
+#: __init__.py:1868
 msgid "west"
 msgstr "batı"
 
-#: __init__.py:1807
+#: __init__.py:1868
 msgid "west northwest"
 msgstr "batı ve kuzeybatı"
 
-#: __init__.py:1807
+#: __init__.py:1868
 msgid "northwest"
 msgstr "kuzeybatı"
 
-#: __init__.py:1807
+#: __init__.py:1868
 msgid "north northwest"
 msgstr "kuzey ve kuzeybatı"
 
-#: __init__.py:1824
+#: __init__.py:1885
 msgid ""
 "Is not working properly, contains incomplete data or has been removed from "
 "the"
 msgstr "Düzgün çalışmıyor, yanlış very içeriyor  ya da veritabanından silinmiş"
 
-#: __init__.py:1826 __init__.py:2963 __init__.py:3913
+#: __init__.py:1887 __init__.py:2951 __init__.py:3926
 msgid "It could be a temporary problem and you may wait a while '..."
 msgstr "Geçici bir problem olabilir ve bir süre bekleyebilirsiniz !..."
 
-#: __init__.py:1827
+#: __init__.py:1888
 msgid "Do you want to delete it from your list?"
 msgstr "Listenizden silmek ister misiniz?"
 
-#: __init__.py:1897
+#: __init__.py:1958
 msgid "Chance of rain"
 msgstr "Yağmur olasılığı"
 
-#: __init__.py:1898
+#: __init__.py:1959
 msgid "Chance of snow"
 msgstr "Kar olasılığı"
 
-#: __init__.py:1945
+#: __init__.py:2006
 msgid "Wind speed"
 msgstr "Rüzgar hızı"
 
-#: __init__.py:1946
+#: __init__.py:2007
 msgid "Direction"
 msgstr "Yön"
 
-#: __init__.py:1947
+#: __init__.py:2008
 msgid "Wind direction"
 msgstr "Rüzgar yönü"
 
-#: __init__.py:1948
+#: __init__.py:2009
 msgid "Wind gusts"
 msgstr "Rüzgar kuvveti"
 
-#: __init__.py:1949
+#: __init__.py:2010
 msgid "Cloudiness"
 msgstr "Bulutluluk"
 
-#: __init__.py:1950
+#: __init__.py:2011
 msgid "Precipitation"
 msgstr "Yağış"
 
-#: __init__.py:1951
+#: __init__.py:2012
 msgid "Humidity"
 msgstr "Nem"
 
-#: __init__.py:1952
+#: __init__.py:2013
 msgid "Visibility"
 msgstr "Görüş"
 
-#: __init__.py:1971
+#: __init__.py:2032
 msgid "Hourly forecast for"
 msgstr "Saatlik tahmin"
 
-#: __init__.py:1996
+#: __init__.py:2057
 msgid "Provides the current temperature and weather conditions."
 msgstr "Sıcaklık ve hava durumunu verir."
 
-#: __init__.py:2008
+#: __init__.py:2069
 #, python-format
 msgid ""
 "If pressed once, announce the weather forecast and current temperature for "
@@ -530,39 +530,39 @@ msgstr ""
 "sıcaklık bilgisini verir. İki kez basılırsa, sıcaklık ve hava koşullarını "
 "saatlik tahmin olarak verir."
 
-#: __init__.py:2016
+#: __init__.py:2077
 msgid "Sorry, no list available!"
 msgstr "Üzgünüm, liste mevcut değil!"
 
-#: __init__.py:2052
+#: __init__.py:2088
 msgid "Allows you to set a temporary city."
 msgstr "Geçici şehir belirlemenizi sağlar."
 
-#: __init__.py:2066
+#: __init__.py:2102
 msgid "Scale of temperature measurement set into"
 msgstr "Sıcaklık ölçeği ayarlandı"
 
-#: __init__.py:2068
+#: __init__.py:2104
 msgid "Allows you to set a temporary scale of temperature mesurement."
 msgstr "Sıcaklık birimini geçici olarak ayarlamanızı sağlar."
 
-#: __init__.py:2129
+#: __init__.py:2158
 msgid "at"
 msgstr ","
 
-#: __init__.py:2132
+#: __init__.py:2161
 msgid "Last update of the current weather report"
 msgstr "Hava raporu Son güncelleme"
 
-#: __init__.py:2134
+#: __init__.py:2167
 msgid "Announces the date of the last update of the weather report."
 msgstr "Hava Raporunun son güncelleme zamanını seslendirir."
 
-#: __init__.py:2202
+#: __init__.py:2180
 msgid "Open the Weather Plus settings dialog."
 msgstr "Weather plus ayarları iletişim kutusunu açar."
 
-#: __init__.py:2246
+#: __init__.py:2224
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast, f5: volume controls."
@@ -570,7 +570,7 @@ msgstr ""
 "f1: yardımı göster, F2: son SEKME seçimi, F3: liste ve düzenleme kutusu, F4: "
 "Hava Tahmini süre kontrolü, F5: ses denetimleri."
 
-#: __init__.py:2247
+#: __init__.py:2225
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast."
@@ -578,188 +578,188 @@ msgstr ""
 "f1: yardımı göster, F2: son SEKME seçimi, F3: liste ve düzenleme kutusu, F4: "
 "Hava Tahmini süre kontrolü."
 
-#: __init__.py:2303
+#: __init__.py:2281
 msgid "Test"
 msgstr "Sına"
 
-#: __init__.py:2304
+#: __init__.py:2282
 msgid "Details"
 msgstr "Ayrıntılar"
 
-#: __init__.py:2305
+#: __init__.py:2283
 msgid "Define"
 msgstr "Tanımla"
 
-#: __init__.py:2306
+#: __init__.py:2284
 msgid "Add"
 msgstr "Ekle"
 
-#: __init__.py:2308
+#: __init__.py:2286
 msgid "Remove"
 msgstr "Kaldır"
 
-#: __init__.py:2309
+#: __init__.py:2287
 msgid "Rename"
 msgstr "Yeniden adlandır"
 
-#: __init__.py:2335
+#: __init__.py:2312
 msgid "&Import new cities..."
 msgstr "Yeni Şehirleri &İçe Aktar..."
 
-#: __init__.py:2336
+#: __init__.py:2313
 msgid "&Export your cities..."
 msgstr "Şehirleri &Dışa Aktar..."
 
-#: __init__.py:2337
+#: __init__.py:2314
 msgid "&hourlyforecast setting..."
 msgstr "&saatlik tahmin ayarı..."
 
-#: __init__.py:2352
+#: __init__.py:2329
 msgid "Scale of temperature measurement:"
 msgstr "Sıcaklık ölçüm birimi:"
 
-#: __init__.py:2360
+#: __init__.py:2337
 msgid "Degrees shown as:"
 msgstr "Derece şu şekilde gösterilsin:"
 
-#: __init__.py:2363
+#: __init__.py:2340
 msgid "C - F - K"
 msgstr "C - f - k"
 
-#: __init__.py:2364
+#: __init__.py:2341
 msgid "Unspecified"
 msgstr "Belirlenmemiş"
 
-#: __init__.py:2372
+#: __init__.py:2349
 msgid "Weather Forecasts up to days:"
 msgstr "Şu kadar günlük hava tahmini:"
 
-#: __init__.py:2383
+#: __init__.py:2360
 msgid "API response language:"
 msgstr "API yanıt dili:"
 
-#: __init__.py:2392
+#: __init__.py:2369
 msgid ""
 "&Copy the weather report and weather forecast, including city details to "
 "clipboard"
 msgstr "&Panoya şehir ayrıntıları dahil hava raporu ve hava tahminini Kopyala"
 
-#: __init__.py:2397
+#: __init__.py:2374
 msgid "Enable &audio effects (only for the current weather conditions)"
 msgstr "&ses efektlerini etkinleştir (sadece mevcut hava koşulları için)"
 
-#: __init__.py:2400
+#: __init__.py:2377
 msgid "Use only &weather effects"
 msgstr "Yalnızca &hava efektlerini kullanın"
 
-#: __init__.py:2405
+#: __init__.py:2382
 msgid "General audio volume"
 msgstr "Genel ses düzeyi"
 
-#: __init__.py:2406
+#: __init__.py:2383
 msgid "Current audio volume"
 msgstr "Mevcut ses seviyesi"
 
-#: __init__.py:2438
+#: __init__.py:2415
 msgid "Enable &help buttons in the settings window"
 msgstr ""
 "Ayarlar penceresindeki düğmelerle ilgili &yardım mesajlarını etkinleştir"
 
-#: __init__.py:2445
+#: __init__.py:2422
 msgid "Read &wind information"
 msgstr "&Rüzgar bilgisini seslendir"
 
-#: __init__.py:2450 __init__.py:6025
+#: __init__.py:2427 __init__.py:5967
 msgid "Add wind directi&on"
 msgstr "&Rüzgar yönü bilgisini ekle"
 
-#: __init__.py:2454 __init__.py:6021
+#: __init__.py:2431 __init__.py:5963
 msgid "Add wi&nd speed"
 msgstr "&rüzgar hızını ekle"
 
-#: __init__.py:2458
+#: __init__.py:2435
 msgid "Add speed in &meters per second of the wind"
 msgstr "&Rüzgarın saniyede kaç metre hızla estiği  bilgisini ekle"
 
-#: __init__.py:2462 __init__.py:6029
+#: __init__.py:2439 __init__.py:5971
 msgid "Add wind &gust speed"
 msgstr "Rüzgar &esinti hızını ekle"
 
-#: __init__.py:2466
+#: __init__.py:2443
 msgid "Add perceived &temperature"
 msgstr "Hissedilen s&ıcaklık bilgisini ekle"
 
-#: __init__.py:2471
+#: __init__.py:2448
 msgid "&Read atmospherical information"
 msgstr "&Atmosferik bilgileri seslendir"
 
-#: __init__.py:2476 __init__.py:6037
+#: __init__.py:2453 __init__.py:5979
 msgid "Add humidity va&lue"
 msgstr "Nem de&ğerini ekle"
 
-#: __init__.py:2480 __init__.py:6041
+#: __init__.py:2457 __init__.py:5983
 msgid "Add &visibility value"
 msgstr "&görüş mesafe değerini ekle"
 
-#: __init__.py:2484 __init__.py:6033
+#: __init__.py:2461 __init__.py:5975
 msgid "Add cloudiness &value"
 msgstr "Bulutluluk &değerini ekle"
 
-#: __init__.py:2488 __init__.py:6045
+#: __init__.py:2465 __init__.py:5987
 msgid "Add precipitation &value"
 msgstr "&Yağış değerini ekle"
 
-#: __init__.py:2492 __init__.py:6049
+#: __init__.py:2469 __init__.py:5991
 msgid "Add &ultraviolet radiation value"
 msgstr "&Ultraviyole radyasyon değerini ekle"
 
-#: __init__.py:2496
+#: __init__.py:2473
 msgid "Add atmospheric &pressure value"
 msgstr "Atmosferik &basınç değerini ekle"
 
-#: __init__.py:2500
+#: __init__.py:2477
 msgid "Indicates the atmospheric pressure in millimeters of mercur&y (mmHg)"
 msgstr "Atmosferik basıncı gösterir milimetre cinsinden &cıva (mmHg)"
 
-#: __init__.py:2505
+#: __init__.py:2482
 msgid "Read a&stronomical information"
 msgstr "&Astronomik bilgileri seslendir"
 
-#: __init__.py:2509
+#: __init__.py:2486
 msgid "Enable reading of the hours in &24-hour format"
 msgstr "Saatler 24 &saat formatında seslendirilsin"
 
-#: __init__.py:2514
+#: __init__.py:2491
 msgid "Use the comma to separate decimals, example (4,&15)"
 msgstr "Ondalık ayracı olarak virgül kullanın, örnek (4,&15)"
 
-#: __init__.py:2518
+#: __init__.py:2495
 msgid "&Displays output in a window"
 msgstr "&Çıktıyı bir pencerede görüntüler"
 
-#: __init__.py:2522
+#: __init__.py:2499
 msgid "Check for &upgrade"
 msgstr "&Güncelleme olup olmadığını denetle"
 
-#: __init__.py:2549
+#: __init__.py:2532
 msgid "Test the city validity  and find the data of it."
 msgstr "Şehir geçerliliğini test edin ve verilerini bulun."
 
-#: __init__.py:2550
+#: __init__.py:2533
 msgid "Add the current city into your list."
 msgstr "Mevcut şehri listenize ekler."
 
-#: __init__.py:2551
+#: __init__.py:2534
 msgid "Displays information about the current city."
 msgstr "Seçili şehirle ilgili ayrıntıları gösterir."
 
-#: __init__.py:2552
+#: __init__.py:2535
 msgid "Allows you to define the area, in order to adapt the sound effects."
 msgstr ""
 "Bununla, Hangi ses efektlerinin kullanılacağının belirlenmesi için bölgeyi "
 "tarif edebilirsiniz."
 
-#: __init__.py:2553
+#: __init__.py:2536
 msgid ""
 "Presets the current city as the default, will be used every time you restart "
 "the plugin."
@@ -767,15 +767,15 @@ msgstr ""
 "Mevcut şehri, eklenti yeniden başlatıldığında geçerli olacak şekilde, "
 "varsayılan olarak ayarlar."
 
-#: __init__.py:2554
+#: __init__.py:2537
 msgid "Delete  the current city from your list."
 msgstr "Mevcut şehri listeden siler."
 
-#: __init__.py:2555
+#: __init__.py:2538
 msgid "Rename the current city."
 msgstr "Mevcut şehri yeniden adlandırın."
 
-#: __init__.py:2556
+#: __init__.py:2539
 msgid ""
 "Permits to incorporate in your list new cities importing them from another "
 "list with the extension *.zipcodes; you can select the city you want to "
@@ -785,75 +785,75 @@ msgstr ""
 "aktarmanızı sağlar. Örneğin arkadaşlarınızın paylaştığı listeler. ilişkili "
 "onay kutusunu işaretleyerek içe aktarmak istediğiniz şehri seçebilirsiniz."
 
-#: __init__.py:2557
+#: __init__.py:2540
 msgid "Permits to save your list of cities in a specified path."
 msgstr "Şehir listesinin bir yere kaydedilmesine olanak tanır."
 
-#: __init__.py:2558
+#: __init__.py:2541
 msgid "Allows you to choose the contents of the hourly forecast report."
 msgstr "Saatlik tahmin raporunun içeriğini belirlemenizi sağlar."
 
-#: __init__.py:2665
+#: __init__.py:2648
 msgid "You can enter or search for a city"
 msgstr "Bir şehir girebilir ya da arayabilirsiniz"
 
-#: __init__.py:2666
+#: __init__.py:2649
 msgid "By Latitude and Longitude: 48.8567,2.3508"
 msgstr "Enlem ve Boylam ile: 48.8567,2.3508"
 
-#: __init__.py:2667
+#: __init__.py:2650
 msgid "By City name: Paris"
 msgstr "Şehir adı ile: Ankara"
 
-#: __init__.py:2668
+#: __init__.py:2651
 msgid "By City name and country: Toronto,Canada"
 msgstr "Şehir ve ülke adı ile: Ankara,Türkiye"
 
-#: __init__.py:2669
+#: __init__.py:2652
 msgid "Or Toronto,CA"
 msgstr "Veya Hatay,TR"
 
-#: __init__.py:2670
+#: __init__.py:2653
 msgid "By City name and region: Toronto,Ontario"
 msgstr "Şehir adına ve bölgeye göre: Ankara, İçanadolu"
 
-#: __init__.py:2671
+#: __init__.py:2654
 msgid "By US zip: 10001"
 msgstr "ABD posta kodu ile: 10001"
 
-#: __init__.py:2672
+#: __init__.py:2655
 msgid "By UK postcode: SW1"
 msgstr "Birleşik Krallık posta koduna göre: SW1"
 
-#: __init__.py:2673
+#: __init__.py:2656
 msgid "By Canada postal code: G2J"
 msgstr "Kanada posta koduna göre: G2J"
 
-#: __init__.py:2674
+#: __init__.py:2657
 msgid "By metar:<metar code>: metar:EGLL"
 msgstr "Metar ile:<metar code>: metar:EGLL"
 
-#: __init__.py:2675
+#: __init__.py:2658
 msgid "By iata:<3 digit airport code>: iata:DXB"
 msgstr "Iata ile:<3 haneli havaalanı kodu>: iata:DXB"
 
-#: __init__.py:2676
+#: __init__.py:2659
 msgid "By auto:ip IP lookup: auto:ip"
 msgstr "Auto:ip IP araması: auto:ip"
 
-#: __init__.py:2677
+#: __init__.py:2660
 msgid "By IP address (IPv4 and IPv6 supported): 100.0.0.1"
 msgstr "IP adresine göre (IPv4 ve IPv6 desteklenir): 100.0.0.1"
 
-#: __init__.py:2678
+#: __init__.py:2661
 msgid "if there will be cities with the same name, will be listed"
 msgstr "aynı isimde şehirler varsa listelenecektir"
 
-#: __init__.py:2679
+#: __init__.py:2662
 msgid "By default, confirming a selection, is used the postal code"
 msgstr "Varsayılan olarak, bir seçimi onaylamak için posta kodu kullanılır"
 
-#: __init__.py:2680
+#: __init__.py:2663
 msgid ""
 "If the postal code is not valid, will be used a text string: city, state, "
 "region"
@@ -861,282 +861,282 @@ msgstr ""
 "Posta kodu geçerli değilse, bir metin dizesi kullanılacaktır: şehir, eyalet, "
 "bölge"
 
-#: __init__.py:2681
+#: __init__.py:2664
 msgid "You can indicate how to proceed by prefixing the following commands"
 msgstr ""
 "Aşağıdaki komutlara şu ön eklerle nasıl devam edeceğinizi belirleyebilirsiniz"
 
-#: __init__.py:2682
+#: __init__.py:2665
 msgid ""
 "Direct (cities with the same name, will not listed), by typing D:City: D:"
 "Paris"
 msgstr ""
 "Doğrudan (aynı ada sahip şehirler listelenmeyecek), D:Şehir yazarak, d:ankara"
 
-#: __init__.py:2683
+#: __init__.py:2666
 msgid "Geographic coordinates, by typing G:City: G:Venezia"
 msgstr "Coğrafik koordinatlar, G:Şehir yazarak: g:ankara"
 
-#: __init__.py:2684
+#: __init__.py:2667
 msgid "Text string, by typing T:City: T:Bologna"
 msgstr "Metin dizesi, T:Şehir yazarak: t:ankara"
 
-#: __init__.py:2685
+#: __init__.py:2668
 msgid "If the city is not found"
 msgstr "Şehir bulunamazsa"
 
-#: __init__.py:2686
+#: __init__.py:2669
 msgid "Try to reverse the order in the search key"
 msgstr "Arama dizgesindeki sırayı tersine çevirmeyi deneyin"
 
-#: __init__.py:2687
+#: __init__.py:2670
 msgid "Try with or without the country of origin"
 msgstr "Menşe ülke ile veya olmadan deneyin"
 
-#: __init__.py:2688
+#: __init__.py:2671
 msgid "Try to merge the name with hyphens, or separate it with separator"
 msgstr "Adı tire ile birleştirmeyi deneyin, ya da boşluk ile ayırın"
 
-#: __init__.py:2689
+#: __init__.py:2672
 msgid "Try deleting apostrophes"
 msgstr "Kesme işaretlerini silip deneyin"
 
-#: __init__.py:2690
+#: __init__.py:2673
 msgid "Try changing the vowels accented with normal vowels"
 msgstr ""
 "Aksanlı harfleri (şapkalı karakterler) normal olanlarla değiştirip deneyin"
 
-#: __init__.py:2691
+#: __init__.py:2674
 msgid "Try to change in English some parts"
 msgstr "Bazı durumlarda İngilizce yazın"
 
-#: __init__.py:2692
+#: __init__.py:2675
 msgid "Try with a closest location"
 msgstr "En yakın lokasyonu bulup deneyin"
 
-#: __init__.py:2695
+#: __init__.py:2678
 msgid "Help placing"
 msgstr "Yardım mesajı"
 
-#: __init__.py:2789
+#: __init__.py:2772
 msgid "No sound effect in memory!"
 msgstr "Bellekte ses efekti yok!"
 
-#: __init__.py:2790
+#: __init__.py:2773
 msgid "I can't reproduce the sound."
 msgstr "sesi yeniden üretemiyorum."
 
-#: __init__.py:2886
+#: __init__.py:2870
 msgid "Choose search key for"
 msgstr "İçin arama dizgesini seçin"
 
-#: __init__.py:2906
+#: __init__.py:2890
 msgid "Unfortunately I could not recover enough data to find the city."
 msgstr "Maalesef şehri bulmak için yeterli veriyi kurtaramadım."
 
-#: __init__.py:2907
+#: __init__.py:2891
 msgid "Do I try anyway?"
 msgstr "Tekrar deneyeyim mi?"
 
-#: __init__.py:2933
+#: __init__.py:2919
 msgid "not found! Press F1 for help on entering data."
 msgstr "bulunamadı, veri girişiyle ilgili yardım almak için F1'e basın."
 
-#: __init__.py:2961
+#: __init__.py:2949
 msgid "Is not working properly or has been removed from the database of"
 msgstr "Düzgün çalışmıyor ya da veritabanından silinmiş"
 
-#: __init__.py:2965
+#: __init__.py:2953
 msgid "Is no longer valid!"
 msgstr "Artık geçerli değil!"
 
-#: __init__.py:2998
+#: __init__.py:2985
 msgid "This option requires the installation of some audio effects"
 msgstr "Bu seçenek, bazı ses efektlerinin yüklenmesini gerektirir"
 
-#: __init__.py:2999
+#: __init__.py:2986
 msgid "Do you want to install them?"
 msgstr "Bunları yüklemek istiyor musunuz?"
 
-#: __init__.py:3003
+#: __init__.py:2990
 msgid "The audio effects are installed!"
 msgstr "Ses efektleri yüklendi!"
 
-#: __init__.py:3004
+#: __init__.py:2991
 msgid "Would you like to update?"
 msgstr "Güncellemek ister misiniz?"
 
-#: __init__.py:3005
+#: __init__.py:2992
 msgid "Or do you want to uninstall them?"
 msgstr "Yoksa bunları kaldırmak mı istersiniz?"
 
-#: __init__.py:3012
+#: __init__.py:3000
 msgid "Are you sure you want to uninstall the sound effects?"
 msgstr "Ses efektlerini kaldırmak istediğinizden emin misiniz?"
 
-#: __init__.py:3040
+#: __init__.py:3028
 msgid "Update in progress"
 msgstr "Güncelleme işlemi devam ediyor"
 
-#: __init__.py:3041
+#: __init__.py:3029
 msgid "Installation in progress"
 msgstr "Kurulum yapılıyor"
 
-#: __init__.py:3068
+#: __init__.py:3057
 msgid "The installation of audio effects has been completed successfully!"
 msgstr "Ses efektleri kurulumu başarıyla tamamlandı!"
 
-#: __init__.py:3069
+#: __init__.py:3058
 msgid "Adding folder:"
 msgstr "Klasör ekleniyor:"
 
-#: __init__.py:3071
+#: __init__.py:3060
 msgid "The upgrade of audio effects has been completed successfully!"
 msgstr "Ses efektleri yükseltme işlemi başarıyla tamamlandı!"
 
-#: __init__.py:3078
+#: __init__.py:3067
 msgid "These sound effects are subject to change by the author."
 msgstr "Bu ses efektleri yazar tarafından değiştirilebilir."
 
-#: __init__.py:3079
+#: __init__.py:3068
 msgid "Disable and re-enable this option in order to update or uninstall them."
 msgstr ""
 "Kaldırmak ya da güncellemek için bu seçeneği devre dışı bırakıp yeniden "
 "etkinleştirin."
 
-#: __init__.py:3140
+#: __init__.py:3129
 msgid "Verify that your internet connection is active, or try again later."
 msgstr ""
 "Internet bağlantısının etkin olduğunu doğrulayın veya daha sonra tekrar "
 "deneyin."
 
-#: __init__.py:3141
+#: __init__.py:3130
 msgid "File corrupted or not available!"
 msgstr "Dosya bozuk veya mevcut değil!"
 
-#: __init__.py:3143
+#: __init__.py:3132
 msgid "Sorry, I could not complete the installation of the sound effects!"
 msgstr "Üzgünüm, ses efektleri kurulumunu tamamlayamadım!"
 
-#: __init__.py:3144
+#: __init__.py:3133
 msgid "Installation Error!"
 msgstr "Yükleme Hatası!"
 
-#: __init__.py:3250
+#: __init__.py:3239
 msgid ""
 "The details of this city are not in the database and so I added them to the "
 "list."
 msgstr "Bölgeyle ilgili veri tabanında bulunmayan detaylar listeye eklendi."
 
-#: __init__.py:3267
+#: __init__.py:3258
 msgid "Cannot identify your location, due to insufficient data."
 msgstr "Bulunduğunuz yer veri yetersizliği nedeniyle belirlenemiyor."
 
-#: __init__.py:3294
+#: __init__.py:3285
 msgid "Details of"
 msgstr "Detayları"
 
-#: __init__.py:3304
+#: __init__.py:3295
 msgid "Place"
 msgstr "Konum"
 
-#: __init__.py:3305
+#: __init__.py:3296
 msgid "Current local time"
 msgstr "Geçerli yerel saat"
 
-#: __init__.py:3306
+#: __init__.py:3297
 msgid "Degrees latitude"
 msgstr "Enlem"
 
-#: __init__.py:3307
+#: __init__.py:3298
 msgid "Degrees longitude"
 msgstr "Boylam"
 
-#: __init__.py:3308
+#: __init__.py:3299
 msgid "Elevation above sea level"
 msgstr "Deniz seviyesinden yükseklik"
 
-#: __init__.py:3308
+#: __init__.py:3299
 msgid "meters"
 msgstr "metre"
 
-#: __init__.py:3333
+#: __init__.py:3329
 msgid "Define the area for"
 msgstr "Alanı tanımlayın"
 
-#: __init__.py:3337
+#: __init__.py:3333
 msgid "Hinterland"
 msgstr "İç bölge"
 
-#: __init__.py:3338
+#: __init__.py:3334
 msgid "Maritime area"
 msgstr "Deniz kıyısı"
 
-#: __init__.py:3339
+#: __init__.py:3335
 msgid "Desert zone"
 msgstr "Çöl bölgesi"
 
-#: __init__.py:3340
+#: __init__.py:3336
 msgid "Arctic zone"
 msgstr "Arktik bölge"
 
-#: __init__.py:3341
+#: __init__.py:3337
 msgid "Mountain zone"
 msgstr "Dağlık bölge"
 
-#: __init__.py:3495
+#: __init__.py:3490
 msgid "Enter new name."
 msgstr "Yeni isim girin."
 
-#: __init__.py:3507
+#: __init__.py:3502
 msgid "it can't be used because it already exists!"
 msgstr "kullanılamaz çünkü zaten var!"
 
-#: __init__.py:3627
+#: __init__.py:3623
 msgid "is correct"
 msgstr "doğru"
 
-#: __init__.py:3628
+#: __init__.py:3624
 msgid "But the name"
 msgstr "Ama isim"
 
-#: __init__.py:3630
+#: __init__.py:3626
 msgid "already exists"
 msgstr "zaten var"
 
-#: __init__.py:3631
+#: __init__.py:3627
 msgid "You have to change it!"
 msgstr "Bunu değiştirmeniz gerekiyor!"
 
-#: __init__.py:3632
+#: __init__.py:3628
 msgid "The city proper is"
 msgstr "Uygun şehir"
 
-#: __init__.py:3634
+#: __init__.py:3630
 msgid "Want to use the suggested name?"
 msgstr "Önerilen adı kullanmak ister misiniz?"
 
-#: __init__.py:3646
+#: __init__.py:3644
 msgid "Import cities"
 msgstr "Şehirleri içe aktar"
 
-#: __init__.py:3664
+#: __init__.py:3663
 msgid "Empty file or not in cities format compatible!"
 msgstr "Boş dosya veya şehirler formatına uyumlu değil!"
 
-#: __init__.py:3670
+#: __init__.py:3669
 msgid "Do you want to replace your list with this?"
 msgstr "Listenizi bununla değiştirmek ister misiniz?"
 
-#: __init__.py:3671
+#: __init__.py:3670
 msgid "If you select yes, your list will be completely replaced."
 msgstr "Evet derseniz listeniz tamamen değiştirilecektir."
 
-#: __init__.py:3672
+#: __init__.py:3671
 msgid "If you select no, the new cities will be added to your list."
 msgstr "Hayır derseniz listenize yeni şehirler eklenir."
 
-#: __init__.py:3675
+#: __init__.py:3674
 msgid "Select import mode"
 msgstr "İçe aktarma kipini seçin"
 
@@ -1152,298 +1152,298 @@ msgstr "şehirler"
 msgid "Activate the check boxes of the cities you want to import."
 msgstr "Almak istediğiniz şehirlerin onay kutularını işaretleyin."
 
-#: __init__.py:3711
+#: __init__.py:3712
 msgid "Importing cities in progress"
 msgstr "Şehirlerin içe aktarımı sürüyor"
 
-#: __init__.py:3803
+#: __init__.py:3805
 msgid "Were added"
 msgstr "İlave edildi"
 
-#: __init__.py:3803
+#: __init__.py:3805
 msgid "new cities to the list"
 msgstr "listeye yeni şehirler"
 
-#: __init__.py:3804
+#: __init__.py:3806
 msgid "Have been ignored because existing"
 msgstr "Yok sayıldı çünkü listede var"
 
-#: __init__.py:3805
+#: __init__.py:3807
 msgid "Content of imported list"
 msgstr "İçe aktarılan liste içeriği"
 
-#: __init__.py:3806
+#: __init__.py:3808
 msgid "Containing incomplete data"
 msgstr "Eksik veri içeriyor"
 
-#: __init__.py:3807
+#: __init__.py:3809
 msgid "selected by the user"
 msgstr "kullanıcı tarafından seçilen"
 
-#: __init__.py:3808
+#: __init__.py:3810
 msgid "Import finished"
 msgstr "İçe aktarım tamamlandı"
 
-#: __init__.py:3820
+#: __init__.py:3822
 msgid "A copy of"
 msgstr "Bir kopyası"
 
-#: __init__.py:3822
+#: __init__.py:3824
 msgid "It will be exported"
 msgstr "Bu dışa aktarılacak"
 
-#: __init__.py:3823
+#: __init__.py:3825
 msgid "But it does not yet contain the changes you just made the list!"
 msgstr "Ama henüz listede yapılan değişiklikleri içermiyor!"
 
-#: __init__.py:3824
+#: __init__.py:3826
 msgid "I proceed?"
 msgstr "Devam edeyim mi?"
 
-#: __init__.py:3830
+#: __init__.py:3832
 msgid "Export cities"
 msgstr "Şehirleri dışa aktar"
 
-#: __init__.py:3845
+#: __init__.py:3846
 msgid "You can not export the same file at the same path!"
 msgstr "Aynı adresteki aynı dosyayı dışa aktaramazsınız!"
 
-#: __init__.py:3863
+#: __init__.py:3865
 msgid "Hourlyforecast data report values."
 msgstr "Saatlik tahmin veri raporu değerleri."
 
-#: __init__.py:3863
+#: __init__.py:3865
 msgid "Disable the data you don't want to be processed:"
 msgstr "İşlenmesini istemediğiniz verileri devre dışı bırakın:"
 
-#: __init__.py:4648
+#: __init__.py:4653
 msgid "january"
 msgstr "ocak"
 
-#: __init__.py:4649
+#: __init__.py:4654
 msgid "february"
 msgstr "şubat"
 
-#: __init__.py:4650
+#: __init__.py:4655
 msgid "march"
 msgstr "mart"
 
-#: __init__.py:4651
+#: __init__.py:4656
 msgid "april"
 msgstr "nisan"
 
-#: __init__.py:4652
+#: __init__.py:4657
 msgid "may"
 msgstr "mayıs"
 
-#: __init__.py:4653
+#: __init__.py:4658
 msgid "june"
 msgstr "haziran"
 
-#: __init__.py:4654
+#: __init__.py:4659
 msgid "july"
 msgstr "temmuz"
 
-#: __init__.py:4655
+#: __init__.py:4660
 msgid "august"
 msgstr "ağustos"
 
-#: __init__.py:4656
+#: __init__.py:4661
 msgid "september"
 msgstr "eylül"
 
-#: __init__.py:4657
+#: __init__.py:4662
 msgid "october"
 msgstr "ekim"
 
-#: __init__.py:4658
+#: __init__.py:4663
 msgid "november"
 msgstr "kasım"
 
-#: __init__.py:4659
+#: __init__.py:4664
 msgid "december"
 msgstr "aralık"
 
-#: __init__.py:4660
+#: __init__.py:4665
 msgid "Monday"
 msgstr "Pazartesi"
 
-#: __init__.py:4661
+#: __init__.py:4666
 msgid "Tuesday"
 msgstr "Salı"
 
-#: __init__.py:4662
+#: __init__.py:4667
 msgid "Wednesday"
 msgstr "Çarşamba"
 
-#: __init__.py:4663
+#: __init__.py:4668
 msgid "Thursday"
 msgstr "Perşembe"
 
-#: __init__.py:4664
+#: __init__.py:4669
 msgid "Friday"
 msgstr "Cuma"
 
-#: __init__.py:4665
+#: __init__.py:4670
 msgid "Saturday"
 msgstr "Cumartesi"
 
-#: __init__.py:4666
+#: __init__.py:4671
 msgid "Sunday"
 msgstr "Pazar"
 
-#: __init__.py:4724
+#: __init__.py:4732
 #, python-format
 msgid "It was not possible find the acronym of \"%s\"!"
 msgstr "\"%s\" kısaltmasını bulamadım!"
 
-#: __init__.py:4725
+#: __init__.py:4733
 msgid "This may not allow you to get the city details."
 msgstr "Bu, şehir detaylarını almanıza izin vermeyebilir."
 
-#: __init__.py:4726
+#: __init__.py:4734
 msgid ""
 "Please report this to the author so he can add this country in database."
 msgstr "Lütfen bu ülkeyi veritabanına ekleyebilmesi için yazara bildiriniz."
 
-#: __init__.py:4727
+#: __init__.py:4735
 #, python-format
 msgid "Send an email to %s"
 msgstr "%s Adresine bir e-posta gönderin"
 
-#: __init__.py:4728
+#: __init__.py:4736
 msgid "With  object the line below, thanks."
 msgstr "Nesneyle aşağıdaki satırı sağlayın, teşekkürler."
 
-#: __init__.py:4796 __init__.py:4814
+#: __init__.py:4808 __init__.py:4826
 msgid "Downloaded"
 msgstr "İndirildi"
 
-#: __init__.py:4797
+#: __init__.py:4809
 msgid "of"
 msgstr "toplam"
 
-#: __init__.py:4834
+#: __init__.py:4846
 msgid "Find..."
 msgstr "Bul..."
 
-#: __init__.py:4835
+#: __init__.py:4847
 msgid "Find next"
 msgstr "Sonrakini bul"
 
-#: __init__.py:4836
+#: __init__.py:4848
 msgid "Find previous"
 msgstr "Öncekini bul"
 
-#: __init__.py:5035
+#: __init__.py:5048
 msgid "Be an error has occurred."
 msgstr "Bir hata oluştu."
 
-#: __init__.py:5036
+#: __init__.py:5049
 msgid "See the log for more information."
 msgstr "Daha fazla bilgi için günlüğe bakın."
 
-#: __init__.py:5037
+#: __init__.py:5050
 msgid "Error: failure writing file!"
 msgstr "Hata: dosya yazmada başarısız!"
 
-#: __init__.py:5208
+#: __init__.py:5223
 msgid "occurrences found"
 msgstr "olanlar bulundu"
 
-#: __init__.py:5208
+#: __init__.py:5223
 msgid "for"
 msgstr "için"
 
-#: __init__.py:5211
+#: __init__.py:5226
 msgid "Choose a city."
 msgstr "Bir şehir seçin."
 
-#: __init__.py:5213
+#: __init__.py:5228
 msgid "List of availables Cities"
 msgstr "Mevcut Şehirlerin listesi"
 
-#: __init__.py:5245
+#: __init__.py:5258
 msgid "Do not show this message again!"
 msgstr "Bu mesajı tekrar gösterme!"
 
-#: __init__.py:5255
+#: __init__.py:5268
 msgid "&Install..."
 msgstr "K&ur..."
 
-#: __init__.py:5255
+#: __init__.py:5268
 msgid "Upd&ate..."
 msgstr "&Güncelle..."
 
-#: __init__.py:5257
+#: __init__.py:5270
 msgid "&Close"
 msgstr "&Kapat"
 
-#: __init__.py:5258
+#: __init__.py:5271
 msgid "&Uninstall..."
 msgstr "Kaldı&r..."
 
-#: __init__.py:5360
+#: __init__.py:5373
 msgid "Type the search string"
 msgstr "Aranacak ifadeyi yazın"
 
-#: __init__.py:5360 __init__.py:5414
+#: __init__.py:5373 __init__.py:5427
 msgid "Find"
 msgstr "Bul"
 
-#: __init__.py:5411
+#: __init__.py:5424
 msgid "next"
 msgstr "sonraki"
 
-#: __init__.py:5411
+#: __init__.py:5424
 msgid "previous"
 msgstr "önceki"
 
-#: __init__.py:5418
+#: __init__.py:5431
 msgid "No results next for"
 msgstr "Sonraki için bir sonuç bulunamadı"
 
-#: __init__.py:5418
+#: __init__.py:5431
 msgid "No previous results for"
 msgstr "Önceki için bir sonuç bulunamadı"
 
-#: __init__.py:5460
+#: __init__.py:5473
 msgid "&Select all"
 msgstr "&Tümünü seç"
 
-#: __init__.py:5462
+#: __init__.py:5475
 msgid "&Deselect all"
 msgstr "&Hiçbirini seçme"
 
-#: __init__.py:5502
+#: __init__.py:5515
 msgid "not checked"
 msgstr "işaretli değil"
 
-#: __init__.py:5504
+#: __init__.py:5517
 msgid "checked"
 msgstr "işaretli"
 
-#: __init__.py:5508
+#: __init__.py:5521
 msgid "check box"
 msgstr "onay kutusu"
 
-#: __init__.py:5518
+#: __init__.py:5531
 msgid "check boxes checked"
 msgstr "onay kutuları işaretli"
 
-#: __init__.py:5527
+#: __init__.py:5540
 msgid "check boxes not checked"
 msgstr "onay kutuları işaretli değil"
 
-#: __init__.py:5589
+#: __init__.py:5602
 msgid "Saving in progress"
 msgstr "Kaydetme işlemi devam ediyor"
 
-#: __init__.py:5591
+#: __init__.py:5604
 msgid "Download canceled."
 msgstr "İndirme iptal edildi."
 
-#: __init__.py:5646
+#: __init__.py:6040
 msgid "&Copy to clipboard"
 msgstr "&Panoya kopyala"
 

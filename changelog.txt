@@ -1,4 +1,20 @@
 13/12/2022
+Weather_Plus9.2_UpdatedFiles again by Adriano
+
+Changes:
+
+• fixed bug when closing the weather report and details view window that crashed nvda.
+
+I just added new __init__.py buildVars.py and all languages locale again for new version 9.2 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.2.nvda-addon
+renamed manually by:
+Weather_Plus9.2.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.2.nvda-addon
+
+13/12/2022
 Weather_Plus9.2 by Adriano Barbieri
 
 Changes:
