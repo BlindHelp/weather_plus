@@ -9,13 +9,13 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 9.1.
+#Version 9.2.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date December, 11th, 2022.
+#Last Edit date December, 13th, 2022.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
-import random, ui, gui, wx, re, calendar, math, api
+import random, ui, gui, wx, re, calendar, math, api, threading
 from time import sleep
 from logHandler import log
 from gui import guiHelper
@@ -2642,8 +2642,7 @@ class EnterDataDialog(wx.Dialog):
 
 		elif key == wx.WXK_F1:
 			#help input
-			global _helpDialog
-			_helpDialog = HelpEntryDialog(gui.mainFrame,
+			if "_helpDialog" not in globals(): global _helpDialog
 			#Translators: message in the help window
 			message = '%s:\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s:\n%s.\n%s.\n%s.\n%s:\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.' % (
 			_("You can enter or search for a city"),
@@ -2674,14 +2673,13 @@ class EnterDataDialog(wx.Dialog):
 			_("Try changing the vowels accented with normal vowels"),
 			_("Try to change in English some parts"),
 			_("Try with a closest location")
-			),
+			)
 			#Translators: the title of the help window
-			title = _("Help placing"))
-			if _helpDialog.ShowModal()is not None:
-				_helpDialog.Destroy()
-				del _helpDialog
-				Shared().Play_sound("subwindow", 1)
-			cur_tab.SetFocus()
+			title = _("Help placing")
+			gui.mainFrame.prePopup
+			_helpDialog = MyDialog2(gui.mainFrame, message, title)
+			_helpDialog.Show()
+			gui.mainFrame.postPopup
 
 		elif key == wx.WXK_F2:
 			#back to the last item
@@ -3930,8 +3928,8 @@ class Shared:
 
 	def CloseDialog(self, dialog):
 		try:
-			if dialog.IsShown():
-				dialog.Close()
+			if dialog and dialog.IsShown():
+				dialog.Destroy()
 		except Exception: pass
 		if dialog: self.Play_sound("subwindow", 1)
 
@@ -3959,12 +3957,10 @@ class Shared:
 		"""view weather report or details in a window"""
 		if "_weatherReportDialog" not in globals(): global _weatherReportDialog; _weatherReportDialog = None
 		self.CloseDialog(_weatherReportDialog)
-		_weatherReportDialog = HelpEntryDialog(gui.mainFrame, title = title, message = message, verbose = True)
-		def callback4(result):
-			if result:
-				self.CloseDialog(_weatherReportDialog)
-
-		gui.runScriptModalDialog(_weatherReportDialog, callback4)
+		gui.mainFrame.prePopup
+		_weatherReportDialog = MyDialog2(gui.mainFrame, message, title)
+		_weatherReportDialog.Show()
+		gui.mainFrame.postPopup
 
 
 	def SetCityString(self, zipcode):
@@ -4731,20 +4727,20 @@ class Shared:
 		if country and not country_acronym:
 			#Translators: diaalog message that asks the user to report to author the city code whose country could not be determined
 			if "_reqInfoCountry" not in globals(): global _reqInfoCountry
-			_reqInfoCountry = HelpEntryDialog(gui.mainFrame,
 			#Translators: the message in the window
 			message ='%s' % (
 			_("""It was not possible find the acronym of "%s"!""") % country+'\n'+
 			_("This may not allow you to get the city details.")+'\n'+
 			_("Please report this to the author so he can add this country in database.")+'\n'+
 			_("Send an email to %s") % _addonAuthor+'\n'+
-			_("With  object the line below, thanks.")),
+			_("With  object the line below, thanks."))
 			#Translators: the dialog title
-			title = '%s %s' % (_addonSummary, _("Notice!")),
-			clip = '%s %s' % (_addonSummary, 'Search key = %s - Country = %s' % (api_query, country)), verbose=False)
-			if _reqInfoCountry.ShowModal():
-				_reqInfoCountry.Destroy()
-				_reqInfoCountry = None
+			title = '%s %s' % (_addonSummary, _("Notice!"))
+			clip = '%s %s' % (_addonSummary, 'Search key = %s - Country = %s' % (api_query, country))
+			gui.mainFrame.prePopup
+			_reqInfoCountry = MyDialog2(gui.mainFrame, message, title, clip)
+			_reqInfoCountry.Show()
+			gui.mainFrame.postPopup
 
 		region_acronym = self.MakeRegionAcronym(region) or city[:2]
 		acronym = '%s%s' % (country_acronym or "--", region_acronym)
@@ -5642,90 +5638,6 @@ class MyDialog(wx.Dialog):
 		self.Destroy()
 
 
-class HelpEntryDialog(wx.Dialog):
-	"""help window for data entry"""
-	def __init__(self, parent, id = -1, pos = wx.DefaultPosition,
-		size=wx.DefaultSize, style = wx.DEFAULT_DIALOG_STYLE|wx.MAXIMIZE_BOX,
-		message='', title='', clip = '', verbose = True):
-		wx.Dialog.__init__(self, parent = parent, id = id, title = title, pos = pos,
-		size = size, style = style)
-		split_message = message.split('\n')
-		lines = len(split_message)
-		width = 500
-		heigth = lines * 15
-		#calculate aproximate text width
-		for i in split_message:
-			l = len(i)*6
-			if l > width: width = l
-		sizer = wx.BoxSizer(wx.VERTICAL)
-		hbox = wx.BoxSizer(wx.HORIZONTAL)
-		text = wx.TextCtrl(self, -1, value = message.rstrip('\r\n'), pos = wx.DefaultPosition,
-		size=(width+40, heigth + 50),
-		style = wx.TE_MULTILINE|wx.TE_READONLY)
-
-		hbox.Add(text, 1, wx.EXPAND|wx.ALL, 5)
-		sizer.Add(hbox, 1, wx.EXPAND|wx.ALL, 5)
-		text.Bind(wx.EVT_CHAR, self.OnChar)
-		if not verbose:
-			winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
-			hbox1 = wx.BoxSizer(wx.HORIZONTAL)
-			self.clip = clip
-			cb = wx.ComboBox(self, -1, choices=[clip], pos = wx.DefaultPosition, size=wx.DefaultSize,
-			style = wx.TE_READONLY)
-			cb.SetValue(clip)
-			btn_copytoclip = wx.Button(self, id=wx.ID_ANY, label=_("&Copy to clipboard"))
-			btn_copytoclip.Bind(wx.EVT_BUTTON, self.OnCopytoclip)
-			hbox1.AddMany([(cb, 0, wx.ALL, 5), (btn_copytoclip, 0, wx.ALL, 5)])
-			sizer.Add(hbox1)
-
-		hbox2 = wx.BoxSizer(wx.HORIZONTAL)
-		hbox2.Add(self.CreateButtonSizer(wx.OK), 0, wx.CENTRE| wx.ALL, 5)
-		sizer.Add(hbox)
-		self.SetSizerAndFit(sizer)
-		self.Center(wx.BOTH|wx.Center)
-		#gets the text ending
-		text.SetInsertionPointEnd()
-		self.bottomText =  text.GetInsertionPoint()
-		#set again the cursor to top
-		text.SetInsertionPoint(0)
-		text.SetFocus()
-		self.text = text
-		if verbose: Shared().Play_sound("subwindow", 1)
-
-
-	def OnCopytoclip(self, evt):
-		"""copy textctrl value to clipboard"""
-		api.copyToClip(self.clip)
-		evt.Skip()
-
-
-	def OnChar(self, evt):
-		"""check if the user have pressed enter key, ctrl-a, ctrl-c"""
-		key = evt.GetKeyCode()
-		if key == wx.WXK_RETURN:
-			self.EndModal(wx.ID_OK)
-		elif key == wx.WXK_UP\
-		or key == wx.WXK_DOWN\
-		or key == wx.WXK_LEFT\
-		or key == wx.WXK_RIGHT\
-		or key == wx.WXK_HOME\
-		or key == wx.WXK_END:
-			evt.Skip()
-		elif key == wx.WXK_PAGEUP:
-			if self.text.GetInsertionPoint() != 0: self.text.SetInsertionPoint(0)
-			else: wx.Bell()
-		elif key == wx.WXK_PAGEDOWN:
-			if self.text.GetInsertionPoint() != self.bottomText: self.text.SetInsertionPoint(self.bottomText)
-			else: wx.Bell()
-		elif key == wx.WXK_CONTROL_A:
-			#select all content
-			self.text.SetSelection(-1, -1)
-		elif key == wx.WXK_CONTROL_C:
-			#copy the selection
-			text = self.FindFocus()
-			if text is not None: text.Copy()
-
-
 class FindDialog(wx.Dialog):
 	def __init__(self, parent, id=-1, pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE,
 	title = '', message = ''):
@@ -6099,3 +6011,53 @@ class HourlyforecastDataSelect(wx.Dialog):
 		self.cbt_toVisibility_hf.GetValue(),
 		self.cbt_toPrecip_hf.GetValue(),
 		self.cbt_toUltraviolet_hf.GetValue())
+
+
+class MyDialog2(wx.Dialog):
+	"""dialog for _weatherDialog, _helpDialog, _detailDialog and _reqDialog"""
+	def __init__(self, parent, message = "", title = "", clip = ""):
+		super(MyDialog2, self).__init__(parent, title = title)
+		split_message = message.split('\n')
+		lines = len(split_message)
+		width = 500
+		heigth = lines * 15
+		#calculate aproximate text width
+		for i in split_message:
+			l = len(i)*6
+			if l > width: width = l
+
+		mainSizer = wx.BoxSizer(wx.VERTICAL)
+		sHelper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
+		##sHelper.addItem(wx.StaticText(self, label=message))
+		sHelper.addItem(wx.TextCtrl(self, value=message, size=(width+40, heigth+50), style=wx.TE_MULTILINE|wx.TE_READONLY))
+		if not clip:
+			Shared().Play_sound("subwindow", 1)
+		else:
+			winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
+			cHelper = wx.Choice(self, choices=[clip])
+			sHelper.addItem(cHelper)
+			cHelper.SetSelection(0)
+			copyHelper = wx.Button(self, label=_("Copy to clipboard"), style=wx.BU_EXACTFIT)
+			sHelper.addItem(copyHelper)
+			self.Bind(wx.EVT_BUTTON, self.OnCopytoclip, copyHelper)
+		self.clip = clip
+		bHelper = sHelper.addDialogDismissButtons(gui.guiHelper.ButtonHelper(wx.HORIZONTAL))
+		confirmButton = bHelper.addButton(self, id=wx.ID_OK)
+		confirmButton.SetDefault()
+		mainSizer.Add(sHelper.sizer, border=gui.guiHelper.BORDER_FOR_DIALOGS, flag=wx.ALL)
+		self.Sizer = mainSizer
+		mainSizer.Fit(self)
+		self.SetSizer(mainSizer)
+		self.Center(wx.BOTH|wx.Center)
+		confirmButton.Bind(wx.EVT_BUTTON, self.OnConfirm)
+
+	def OnConfirm(self, evt):
+		"""ok button event"""
+		self.Destroy()
+		if not self.clip: Shared().Play_sound("subwindow", 1)
+
+
+	def OnCopytoclip(self, evt):
+		"""copy textctrl value to clipboard"""
+		api.copyToClip(self.clip)
+		evt.Skip()

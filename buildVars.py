@@ -35,7 +35,7 @@ addon_info = {
 	_("For other instructions, you can also press Add-on Help button in Add-ons manager.")
 	],
 	# version
-	"addon_version" : "9.1",
+	"addon_version" : "9.2",
 	# Author(s)
 	"addon_author" : "Adriano Barbieri <adrianobarb@yahoo.it>",
 	# URL for the add-on documentation support
