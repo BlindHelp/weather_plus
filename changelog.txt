@@ -1,3 +1,26 @@
+28/12/2022
+Weather_Plus9.3 #update, by Adriano Barbieri
+
+Changes:
+
+• Fixed some minor bugs and the "define" button has been re-enabled.
+• Added new countries to the database.
+• It has been used more massive use of the guiHelper.
+• Added 2 new sounds
+
+I just added new __init__.py buildVars.py and 2 new sounds for new version 9.3 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.3.nvda-addon
+renamed manually by:
+Weather_Plus9.3.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.3.nvda-addon
+
+# Created the new tag:
+git tag 9.3
+git push origin 9.3
+
 13/12/2022
 Weather_Plus9.2_UpdatedFiles again by Adriano
 
