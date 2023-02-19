@@ -1,3 +1,23 @@
+19/02/2023
+Weather_Plus9.4 #update, by Adriano Barbieri
+
+Changes:
+
+• Weather_Plus9.4 is already compatible with NVDA 2023.1!
+
+I just added new buildVars.py for new version 9.4 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.4.nvda-addon
+renamed manually by:
+Weather_Plus9.4.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.4.nvda-addon
+
+# Created the new tag:
+git tag 9.4
+git push origin 9.4
+
 28/12/2022
 Weather_Plus9.3 #update, by Adriano Barbieri
 
