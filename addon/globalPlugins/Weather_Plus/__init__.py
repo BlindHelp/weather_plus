@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 9.3.
+#Version 9.5.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date December, 28th, 2022.
+#Last Edit date May, 08th, 2023.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -5913,7 +5913,8 @@ class FindDialog(wx.Dialog):
 			btn_ok.Enable(False)
 		sizer.Add(boxSizerH1)
 		textEntry.Bind(wx.EVT_CHAR, self.OnKey)
-		textEntry.Bind(wx.EVT_RIGHT_DOWN, self.OnContext)
+		##textEntry.Bind(wx.EVT_RIGHT_DOWN, self.OnContext)
+		textEntry.Bind(wx.EVT_CONTEXT_MENU, self.OnContext)
 		btn_ok.Bind(wx.EVT_CHAR, self.OnKey)
 		btn_canc.Bind(wx.EVT_CHAR, self.OnKey)
 		self.defaultStrings = _defaultStrings
