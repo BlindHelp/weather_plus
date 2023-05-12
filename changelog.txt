@@ -1,3 +1,23 @@
+08/05/2023
+Weather_Plus9.5 #update, by Adriano Barbieri
+
+Changes:
+
+• Restored context menu with "save" option in city search fields, replaced wx.EVT_RIGHT_DOWN with wx.EVT_CONTEXT_MENU
+
+I just added new buildVars.py and __init__.py for new version 9.5 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.5.nvda-addon
+renamed manually by:
+Weather_Plus9.5.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.5.nvda-addon
+
+# Created the new tag:
+git tag 9.5
+git push origin 9.5
+
 19/02/2023
 Weather_Plus9.4 #update, by Adriano Barbieri
 
