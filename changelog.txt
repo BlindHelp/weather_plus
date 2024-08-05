@@ -1,3 +1,25 @@
+04/08/2024
+Weather_Plus9.6 #update, by Adriano Barbieri
+
+Changes:
+
+• All configuration files have been grouped into the Weather_config folder.
+• Restored the title in the window for selecting cities to import.
+• Improved speeds in progress bars.
+
+I just added new buildVars.py, __init__.py, installTasks.py and localization it (nvda.po) for new version 9.6 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.6.nvda-addon
+renamed manually by:
+Weather_Plus9.6.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.6.nvda-addon
+
+# Created the new tag:
+git tag 9.6
+git push origin 9.6
+
 08/05/2023
 Weather_Plus9.5 #update, by Adriano Barbieri
 

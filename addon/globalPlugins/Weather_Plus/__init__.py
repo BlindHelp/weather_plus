@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 9.5.
+#Version 9.6.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date May, 08th, 2023.
+#Last Edit date August, 04th, 2024.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -25,7 +25,7 @@ from contextlib import closing
 from threading import Thread
 if wx.version().split(".")[0] >= "4": import wx.adv
 """other temporary imported libraries in the code
-tempfile, zipfile, stat"""
+tempfile, zipfile, stat, shutil"""
 #include the modules directory to the path
 sys.path.append(os.path.dirname(__file__))
 import dateutil.tz, dateutil.zoneinfo
@@ -56,21 +56,27 @@ _addonSummary = _curAddon.manifest['summary']
 _addonVersion = _curAddon.manifest['version']
 _addonPage = _curAddon.manifest['url']
 _addonBaseUrl = '%s/%s' % (_addonPage[:_addonPage.rfind('/weather')], "files/plugin")
-_zipCodes_path = os.path.join(globalVars.appArgs.configPath, "Weather.zipcodes")
-_volumes_path = os.path.join(globalVars.appArgs.configPath, "Weather.volumes")
-_samples_path = os.path.join(globalVars.appArgs.configPath, "Weather_samples")
-_searchKey_path = os.path.join(globalVars.appArgs.configPath, "Weather_searchkey")
-_mydefcity_path = os.path.join(globalVars.appArgs.configPath, "Weather.default")
 _sounds_path = _addonDir.replace('..\..', "") + "\sounds"
+config_path = os.path.join(globalVars.appArgs.configPath, "Weather_config")
+_config_weather = os.path.join(config_path,"Weather.ini")
+_zipCodes_path = os.path.join(config_path, "Weather.zipcodes")
+_volumes_path = os.path.join(config_path, "Weather.volumes")
+_samples_path = os.path.join(config_path, "Weather_samples")
+_searchKey_path = os.path.join(config_path, "Weather_searchkey")
+_mydefcity_path = os.path.join(config_path, "Weather.default")
+
 _volume_dic = {'0%': 0, '10%': 0.1, '20%': 0.2, '30%': 0.3, '40%': 0.4, '50%': 0.5, '60%': 0.6, '70%': 0.7, '80%': 0.8, '90%': 0.9, '100%': 1}
 _tempScale = [_("Fahrenheit"), _("Celsius"), _("Kelvin")]
 _fields = ['city', 'region', 'country', 'country_acronym', 'timezone_id', 'lat', 'lon']
+_testCode = ''
 _npc = "NPC" #no postal code
 _nr = _("unknown")
 _na = _("not available")
 _plzw = _("Please wait...")
 _maxDaysApi = 3 #maximum allowed for free api plan
 _wait_delay = 10 #it's necessary to update after at least 10 minutes to limit frequent API calls, please don't change it!
+#All dialog windows
+#Note: these variables names are called by WindInStandby()
 _upgradeDialog = None
 _searchKeyWarnDialog = None
 _mainSettingsDialog = None
@@ -97,7 +103,6 @@ _installDialog = None
 _citiesImportDialog = None
 _weatherReportDialog = None
 _citiesNotvalidWarnDialog = None
-_testCode = ''
 
 class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	scriptCategory = _addonSummary
@@ -187,75 +192,51 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def WindInStandby(self):
 		Shared().CloseDialog(_weatherReportDialog)
+		#Try bringing windows hidden by other applications back to the foreground
+		dialog_names = [
+			"_helpDialog",
+			"_HourlyforecastDataSelectDialog",
+			"_reqInfoCountry",
+			"_installDialog",
+			"cityDialog",
+			"_notifyDialog",
+			"_downloadDialog",
+			"_upgradeDialog",
+			"_searchDialog",
+			"_findDialog",
+			"_citiesNotvalidWarnDialog",
+			"_dlc",
+			"_dlc1",
+			"_NotValidWarn",
+			"_searchKeyWarnDialog",
+			"_defineDialog",
+			"_renameDialog",
+			"_importDialog",
+			"_importDialog2",
+			"_importProgressBarr",
+			"_importReportDialog",
+			"_exportFileDialog",
+			"_exportProgressBarr",
+			"_citiesImportDialog",
+			"_tempSettingsDialog",
+			"_mainSettingsDialog"
+		]
+
 		children_isalive = False
-		if "_helpDialog" in globals() and _helpDialog:
-			#help window opened
-			children_isalive = Shared().ShowWind(_helpDialog)
-		elif "_HourlyforecastDataSelectDialog" in globals() and _HourlyforecastDataSelectDialog:
-			#hearly forecast sett window opened
-			children_isalive = Shared().ShowWind(_HourlyforecastDataSelectDialog)
-		elif "_reqInfoCountry" in globals() and _reqInfoCountry:
-			#request country to author window opened
-			children_isalive = Shared().ShowWind(_reqInfoCountry)
-		elif "_installDialog" in globals() and _installDialog:
-			#manage file audio dialog opened
-			children_isalive = Shared().ShowWind(_installDialog)
-		elif self.cityDialog:
-			#city error dialog opened
-			children_isalive = Shared().ShowWind(self.cityDialog)
-		elif "_notifyDialog" in globals() and _notifyDialog:
-			#error notification opened
-			children_isalive = Shared().ShowWind(_notifyDialog)
-		elif "_downloadDialog" in globals() and _downloadDialog:
-			children_isalive = Shared().ShowWind(_downloadDialog)
-		elif "_upgradeDialog" in globals() and _upgradeDialog:
-			children_isalive = Shared().ShowWind(_upgradeDialog)
-		elif "_searchDialog" in globals() and _searchDialog:
-			children_isalive = Shared().ShowWind(_searchDialog)
-		elif "_findDialog" in globals() and _findDialog:
-			children_isalive = Shared().ShowWind(_findDialog)
-		elif "_citiesNotvalidWarnDialog" in globals() and _citiesNotvalidWarnDialog:
-			children_isalive = Shared().ShowWind(_citiesNotvalidWarnDialog)
-		elif "_dlc" in globals() and _dlc:
-			#window with 3 search keys open
-			children_isalive = Shared().ShowWind(_dlc)
-		elif "_dlc1" in globals() and _dlc1:
-			children_isalive = Shared().ShowWind(_dlc1)
-		elif "_NotValidWarn" in globals() and _NotValidWarn:
-			children_isalive = Shared().ShowWind(_NotValidWarn)
-		elif "_searchKeyWarnDialog" in globals() and _searchKeyWarnDialog:
-			children_isalive = Shared().ShowWind(_searchKeyWarnDialog)
-		elif "_defineDialog" in globals() and _defineDialog:
-			children_isalive = Shared().ShowWind(_defineDialog)
-		elif "_renameDialog" in globals() and _renameDialog:
-			children_isalive = Shared().ShowWind(_renameDialog)
-		elif "_importDialog" in globals() and _importDialog:
-			children_isalive = Shared().ShowWind(_importDialog)
-		elif "_importDialog2" in globals() and _importDialog2:
-			children_isalive = Shared().ShowWind(_importDialog2)
-		elif "_importProgressBarr" in globals() and _importProgressBarr:
-			children_isalive = Shared().ShowWind(_importProgressBarr)
-		elif "_importReportDialog" in globals() and _importReportDialog:
-			children_isalive = Shared().ShowWind(_importReportDialog)
-		elif "_exportFileDialog" in globals() and _exportFileDialog:
-			children_isalive = Shared().ShowWind(_exportFileDialog)
-		elif "_exportProgressBarr" in globals() and _exportProgressBarr:
-			children_isalive = Shared().ShowWind(_exportProgressBarr)
-		elif "_citiesImportDialog" in globals() and _citiesImportDialog:
-			children_isalive = Shared().ShowWind(_citiesImportDialog)
-		elif "_tempSettingsDialog" in globals() and _tempSettingsDialog: #temporary city setting opened
-			children_isalive = Shared().ShowWind(_tempSettingsDialog)
-		elif "_mainSettingsDialog" in globals() and _mainSettingsDialog:
-			children_isalive = Shared().ShowWind(_mainSettingsDialog)
+		for dialog in dialog_names:
+			#Use globals() to retrieve the dialog variable dynamically
+			if dialog in globals() and globals()[dialog]:
+				children_isalive = Shared().ShowWind(globals()[dialog])
+				break  #Exit the loop once an active dialog is found
 
 		return children_isalive
 
+
 	def GetScaleAs(self):
-		"""return degrees indication selected"""
+		"""Return degrees indication selected"""
 		scale_as = _tempScale[self.celsius]
-		if self.scaleAs == 1: scale_as = scale_as[0]
-		elif self.scaleAs == 2: scale_as = ""
-		return scale_as
+		scale_dict = {1: scale_as[0], 2: ""}
+		return scale_dict.get(self.scaleAs, scale_as)
 
 
 	def GetUnitValues(self, degrees):
@@ -280,9 +261,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def IsOpenDialog(self, dialog):
 		if dialog:
-			wx.Bell()
 			dialog.Show(True)
 			return True
+
 		return False
 
 
@@ -353,7 +334,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		dontShowAgainAddDetails = self.dontShowAgainAddDetails)
 		_mainSettingsDialog.Show()
 		gui.mainFrame.postPopup()
-
 
 		def callback2(result):
 			if result == wx.ID_OK:
@@ -548,28 +528,30 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def setZipCodeDialog(self, evt = None):
 		"""Create a dialog box for select a temporary city"""
-		def Find_index(cityList, city):
-			"""Try to find index from list"""
-			s =None
-			def Find_index2(cityList, city):
-				try:
-					return cityList.index(city)
-				except (AttributeError, IndexError, ValueError): return None
 
+		def Find_index(cityList, city):
+			"""Try to find index from list, handling encoding for both Python 2 and 3"""
+			possible_cities = [city]
+
+			#Coding management for Python 2
 			if _pyVersion < 3:
 				try:
-					s = Find_index2(cityList, city.encode("mbcs"))
-				except (UnicodeDecodeError, UnicodeEncodeError): s = None
+					possible_cities.append(city.encode("mbcs"))
+				except (UnicodeDecodeError, UnicodeEncodeError):
+					pass
 
-			if s == None:
 				try:
-					s = Find_index2(cityList, city.decode("mbcs"))
-				except (AttributeError, UnicodeDecodeError, UnicodeEncodeError): s = None
+					possible_cities.append(city.decode("mbcs"))
+				except (UnicodeDecodeError, UnicodeEncodeError):
+					pass
 
-			if s == None:
-				s = Find_index2(cityList, city)
+			for city_variant in possible_cities:
+				try:
+					return cityList.index(city_variant)
+				except ValueError:
+					continue
 
-			return s
+			return None
 
 		s = sel = 0
 		#discard old zipcodes fromthe list
@@ -609,6 +591,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		_tempSettingsDialog= SelectDialog(gui.mainFrame, title = title, message = message, choices = choices, last = [s], sel = 0)
 		_tempSettingsDialog.Show()
 		gui.mainFrame.postPopup()
+
 		def callback(result):
 			if result == wx.ID_OK:
 				selection = _tempSettingsDialog.GetValue()
@@ -1305,9 +1288,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.curSample = _curSample = None #name of audio effect in memory
 			_volume = self.volume = "60%" #default volume of the current sample
 
-		config_weather = os.path.join(globalVars.appArgs.configPath,"Weather.ini")
-		if os.path.isfile(config_weather):
-			config = ConfigObj(config_weather)
+		if os.path.isfile(_config_weather):
+			config = ConfigObj(_config_weather)
 			config.bools = {'True': True, 'False': False, 'true': True, 'false': False, '': False}
 			cws = config['Weather Settings']
 			try:
@@ -1379,8 +1361,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def SaveConfig(self):
 		"""Save datas into configuration Weather.ini"""
 		config = ConfigObj()
-		config_weather = os.path.join(globalVars.appArgs.configPath,"Weather.ini")
-		config.filename = config_weather
+		config.filename = _config_weather
 		config ["Weather Settings"] = {
 		"Celsius": self.celsius,
 		"To Clipboard": self.toClip,
@@ -1441,19 +1422,18 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					try:
 						file.write(r)
 					except(UnicodeDecodeError, UnicodeEncodeError):
-						file.write('%s, %s\t%s\n' % (
-						_("invalid name").title(), r.split()[1].upper(), r.split()[-1]))
+						file.write(_("invalid name") + ': ' + repr(r))
 
 			#addss cities definitions
 			with open(_zipCodes_path, 'a') as file:
 				file.write("\n[Cities Location Key and Definitions]\n")
 				for i in self.define_dic:
-					if _pyVersion < 3:
+					if _pyVersion >= 3: r = '#%s\t%s\t%s\n' % (i, self.define_dic[i]["location"], self.define_dic[i]["define"])
+					else:
 						try:
 							r = '#%s\t%s\t%s\n' % (i, (self.define_dic[i]["location"].decode("mbcs")), self.define_dic[i]["define"])
-						except(UnicodeDecodeError, UnicodeEncodeError): 
+						except(UnicodeDecodeError, UnicodeEncodeError):
 							r = '#%s\t%s\t%s\n' % (i, (self.define_dic[i]["location"]), self.define_dic[i]["define"])
-					else: r = '#%s\t%s\t%s\n' % (i, self.define_dic[i]["location"], self.define_dic[i]["define"])
 					if _pyVersion >= 3: file.write(r)
 					else:
 						try:
@@ -1816,16 +1796,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if v.endswith('.0'): v = v[:-2]
 		if self.toComma: v = v.replace('.', ',')
 		return v
-
-
-	def CConvertDate(self, dd, m = True):
-		"""Convert month and day into date string"""
-		dt = '%s %s' % (
-		Shared().TranslateCalendar(calendar.weekday(dd.year, dd.month, dd.day)),
-		dd.day
-		)
-		if m: dt = '%s %s' % (dt, Shared().TranslateCalendar(str(dd.month).rjust(2,'0')))
-		return dt
 
 
 	def Speedtometers(self, v, convert = True, meters = None):
@@ -2224,9 +2194,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 class EnterDataDialog(wx.Dialog):
 	"""Main settings Dialog"""
-	def __init__(self, parent, id=-1, title=wx.EmptyString,
-			pos=wx.DefaultPosition, size=wx.DefaultSize,
-			style=wx.DEFAULT_DIALOG_STYLE,
+	def __init__(self, parent, title = '',
 			message = '',
 			defaultZipCode = '',
 			tempZipCode = '',
@@ -3437,6 +3405,7 @@ class EnterDataDialog(wx.Dialog):
 
 		def_define = [int(dd) if dd is not None else 0][0]
 		Shared().Play_sound("subwindow", 1)
+
 		#Translators: dialog message used in the setting window to specify a certain one area
 		if "_defineDialog" not in globals(): global _defineDialog
 		_defineDialog = wx.SingleChoiceDialog(
@@ -3922,10 +3891,9 @@ class EnterDataDialog(wx.Dialog):
 
 				else: td += 1
 
-			try:
-				count = c*100/mis
-			except ZeroDivisionError: count = max
-			wx.MilliSleep(250)
+			count = Shared().CalculateStep(c, mis, max)
+			millisleeps = Shared().CalculateStep(c, mis, 24, True)
+			wx.MilliSleep(millisleeps)
 			##wx.Yield()
 			wx.GetApp().Yield()
 			keepGoing = _importProgressBarr.Update(count)
@@ -4021,7 +3989,8 @@ class EnterDataDialog(wx.Dialog):
 			if result:
 				winsound.MessageBeep(winsound.MB_ICONASTERISK)
 				sleep(0.2)
-			evt.GetEventObject().SetFocus()
+
+		evt.GetEventObject().SetFocus()
 
 
 	def ProgressCopy(self, src, dest, buffer_size=1024):
@@ -4031,7 +4000,7 @@ class EnterDataDialog(wx.Dialog):
 		target = open(dest, 'wb')
 		if "_exportProgressBarr" not in globals(): global _exportProgressBarr
 		_exportProgressBarr = wx.GenericProgressDialog(_addonSummary, _plzw,
-		maximum = steps, parent = None,
+		maximum = int(steps), parent = None,
 		style=wx.PD_AUTO_HIDE
 		| wx.PD_ELAPSED_TIME
 		|wx.PD_REMAINING_TIME
@@ -4041,7 +4010,7 @@ class EnterDataDialog(wx.Dialog):
 			count = 0
 			while count <= (steps):
 				chunk = source.read(buffer_size)
-				wx.MilliSleep(250)
+				wx.MilliSleep(180)
 				##wx.Yield()
 				wx.GetApp().Yield()
 				if chunk:
@@ -4144,6 +4113,16 @@ class Shared:
 		e = str(e)
 		if _pyVersion < 3: e = e.decode("mbcs")
 		log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
+
+
+	def CalculateStep(self, c, mis, max, flag=False):
+		try:
+			if not flag:
+				count = int(c*100/mis)
+			else:
+				count = int(max+(c*max/mis))
+		except ZeroDivisionError: count = max
+		return count
 
 
 	def ConvertDate(self, dd, m = True):
@@ -5021,7 +5000,7 @@ class Shared:
 				while keepGoing:
 					count += 1
 					if count >= max: count = 99
-					wx.MilliSleep(300)
+					wx.MilliSleep(120)
 					##wx.Yield()
 					wx.GetApp().Yield()
 					(keepGoing, skip) = _downloadDialog.Update(count,
@@ -5276,18 +5255,25 @@ class Shared:
 	def ZipCodeInList(self, v, zipCodesList):
 		"""Check if the city already exists on cities list"""
 		i, t = 0, False
-		zc = v
+		if _pyVersion < 3:
+			zc = self.DecodeValue(v)
+		else: zc = v
+
 		for i, n in enumerate(zipCodesList):
 			if _pyVersion < 3:
-				try:
-					zc1 = n.decode("mbcs")
-				except(UnicodeDecodeError, UnicodeEncodeError): zc1 = n
+				zc1 = self.DecodeValue(n)
 			else: zc1 = n
 			if zc.upper() == zc1.upper():
 				t = True; break
 
 		return t, zc, i
 
+
+	def DecodeValue(self, v):
+		try:
+			v1 = v.decode("mbcs")
+		except(UnicodeDecodeError, UnicodeEncodeError): v1 = v
+		return v1
 
 	def GetUrlData(self, address, verbosity = True):
 		#threading
@@ -5478,7 +5464,7 @@ class Shared:
 
 
 class NoticeAgainDialog(wx.Dialog):
-	"""Dialog with variables buttons and check box to not show it again"""
+	"""Dialog with configurable buttons and check box to not show it again"""
 	def __init__(self, parent, id = -1, title='', message = '', again = False, bUninstall = None, uninstall_button = None):
 		super(NoticeAgainDialog, self).__init__(parent, id, title)
 		self.bUninstall = bUninstall
@@ -5676,7 +5662,7 @@ class SelectDialog(wx.Dialog):
 class SelectImportDialog(wx.Dialog):
 	"""Dialog for selecting cities to import"""
 	def __init__(self, parent, title = '', message = '', zip_list = []):
-		super(SelectImportDialog, self).__init__(parent, id = wx.ID_ANY)
+		super(SelectImportDialog, self).__init__(parent, id = wx.ID_ANY, title=title)
 		mainSizer = wx.BoxSizer(wx.VERTICAL)
 		sizerHelper = guiHelper.BoxSizerHelper(self, orientation = wx.VERTICAL)
 		guiHelper.SPACE_BETWEEN_ASSOCIATED_CONTROL_HORIZONTAL = 5
@@ -5734,7 +5720,7 @@ class SelectImportDialog(wx.Dialog):
 		"""enter key event"""
 		if len(self.checkedItems):
 			#selections have been made
-			#*if self.btn_ok.IsEnabled(): self.EndModal(wx.ID_OK)
+			##if self.btn_ok.IsEnabled(): self.EndModal(wx.ID_OK)
 			self.EndModal(wx.ID_OK)
 		else: return wx.Bell()
 
@@ -5893,9 +5879,8 @@ class MyDialog(wx.Dialog):
 
 
 class FindDialog(wx.Dialog):
-	def __init__(self, parent, id=-1, pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE,
-	title = '', message = ''):
-		wx.Dialog.__init__(self, parent=parent, id=id, title=title, pos=pos, size=size, style=style)
+	def __init__(self, parent, id=-1, title = '', message = ''):
+		super(FindDialog, self).__init__(parent, id = wx.ID_ANY, title=title)
 		sizer = wx.BoxSizer(wx.VERTICAL)
 		if message:
 			sizer.Add(wx.StaticText(self, -1, message), 0, wx.ALL, 10)
@@ -6126,7 +6111,9 @@ class FindDialog(wx.Dialog):
 		v = tegv.GetValue()
 		selected = tegv.GetStringSelection()
 		tegv.SetValue(v.replace(selected, ''))
-		api.copyToClip(selected)
+		try:
+			api.copyToClip(selected)
+		except Exception: pass
 		if selected in self.defaultStrings:
 			index = self.defaultStrings.index(selected)
 			if index < len(self.defaultStrings)-1:
@@ -6205,11 +6192,18 @@ class FindDialog(wx.Dialog):
 
 
 class HourlyforecastDataSelect(wx.Dialog):
-	"""dialog to select hourlyforecast report data"""
-	def __init__(self, parent, id=-1, title='', pos=wx.DefaultPosition, size=wx.DefaultSize, style=wx.DEFAULT_DIALOG_STYLE,
+	"""dialog to configure the hourlyforecast report data"""
+	def __init__(self, parent, id=-1, title='',
 		message = '',
-		toWinddir_hf = None, toWindspeed_hf = None, toWindgust_hf = None, toHumidity_hf = None, toVisibility_hf = None, toCloud_hf = None, toPrecip_hf = None, toUltraviolet_hf = None):
-		wx.Dialog.__init__(self, parent=parent, id=id, title=title, pos=pos, size=size, style=style)
+		toWinddir_hf = None,
+		toWindspeed_hf = None,
+		toWindgust_hf = None,
+		toHumidity_hf = None,
+		toVisibility_hf = None,
+		toCloud_hf = None,
+		toPrecip_hf = None,
+		toUltraviolet_hf = None):
+		super(HourlyforecastDataSelect, self).__init__(parent, id = wx.ID_ANY, title=title)
 		sizer = wx.BoxSizer(wx.VERTICAL)
 		if message:
 			sizer.Add(wx.StaticText(self, -1, message), 0, wx.ALL, 10)

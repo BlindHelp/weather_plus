@@ -3,7 +3,7 @@ msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@groups.io'\n"
 "POT-Creation-Date: 2021-10-14 16:55+0200\n"
-"PO-Revision-Date: 2021-10-14 17:23+0200\n"
+"PO-Revision-Date: 2024-08-02 16:28+0200\n"
 "Last-Translator: Rui Fontes <rui.fontes@tiflotecnia.com>\n"
 "Language-Team: Adriano Barbieri <adrianobarb@yahoo.it>\n"
 "Language: it\n"
@@ -1167,7 +1167,7 @@ msgstr "Importazione delle città in corso"
 
 #: __init__.py:3803
 msgid "Were added"
-msgstr "Sono stati aggiunti"
+msgstr "Sono state aggiunte"
 
 #: __init__.py:3803
 msgid "new cities to the list"
@@ -1175,7 +1175,7 @@ msgstr "nuove città alla lista"
 
 #: __init__.py:3804
 msgid "Have been ignored because existing"
-msgstr "Sono stati ignorati perché già esistenti"
+msgstr "Sono state ignorate perché già esistenti"
 
 #: __init__.py:3805
 msgid "Content of imported list"
@@ -1183,11 +1183,11 @@ msgstr "Contenuto dell'elenco importato"
 
 #: __init__.py:3806
 msgid "Containing incomplete data"
-msgstr "Contiene dati incompleti"
+msgstr "Contenenti dati incompleti"
 
 #: __init__.py:3807
 msgid "selected by the user"
-msgstr "selezionati dall'utente"
+msgstr "Selezionate dall'utente"
 
 #: __init__.py:3808
 msgid "Import finished"
