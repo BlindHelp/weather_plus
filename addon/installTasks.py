@@ -3,6 +3,10 @@
 #note: This file groups all Weather_Plus configuration files saved by the user into one folder.
 
 import config, globalVars, gui, os, shutil
+def IsEmptyFolder(file):
+	if os.path.isdir(file):
+		return len(os.listdir(file)) == 0
+	return None
 
 def MoveConfigFile(dest_folder):
 	"""Move all Weather_Plus configuration files to a dedicated folder"""
@@ -27,6 +31,8 @@ def MoveConfigFile(dest_folder):
 		#Extract only the file name from the source path
 		file_name = os.path.basename(src_path)
 		dest_path = os.path.join(dest_folder, file_name)
+		if IsEmptyFolder(dest_path):
+			os.rmdir(dest_path)
 
 		#Check if the file already exists in the destination folder
 		if not os.path.exists(dest_path):

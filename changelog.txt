@@ -1,3 +1,23 @@
+25/08/2024
+Weather_Plus9.7 #update, by Adriano Barbieri
+
+Changes:
+
+• Fixed sound effects installation path.
+
+I just added new buildVars.py, __init__.py and installTasks.py for new version 9.7 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.7.nvda-addon
+renamed manually by:
+Weather_Plus9.7.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.7.nvda-addon
+
+# Created the new tag:
+git tag 9.7
+git push origin 9.7
+
 04/08/2024
 Weather_Plus9.6 #update, by Adriano Barbieri
 

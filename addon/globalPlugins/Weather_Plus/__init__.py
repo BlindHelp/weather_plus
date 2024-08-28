@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 9.6.
+#Version 9.7.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date August, 04th, 2024.
+#Last Edit date August, 25th, 2024.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -60,6 +60,7 @@ _sounds_path = _addonDir.replace('..\..', "") + "\sounds"
 config_path = os.path.join(globalVars.appArgs.configPath, "Weather_config")
 _config_weather = os.path.join(config_path,"Weather.ini")
 _zipCodes_path = os.path.join(config_path, "Weather.zipcodes")
+_unZip_path = os.path.join(config.getUserDefaultConfigPath(), config_path)
 _volumes_path = os.path.join(config_path, "Weather.volumes")
 _samples_path = os.path.join(config_path, "Weather_samples")
 _searchKey_path = os.path.join(config_path, "Weather_searchkey")
@@ -2130,8 +2131,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					return v.decode("mbcs")
 				except (UnicodeDecodeError, UnicodeEncodeError): return v
 
+			cur_date = datetime.now().strftime('%Y-%m-%d %H:%M') or '""'
 			title = '%s - %s' % (_addonSummary, "Note: Feature not documented, only for debiugging.")
-			message ='Location: %s.\r\n' % (self.dom["location"]["name"] or '""')
+			message ='Computer time: %s.\nLocation time: %s.\nLocation: %s.\r\n' % (cur_date, self.dom["location"]["localtime"], self.dom["location"]["name"] or '""') #*
 			message += 'Region: %s.\r\n' % (self.dom["location"]["region"] or '""')
 			message += 'Country: %s.\r\n' % (self.dom["location"]["country"] or '""')
 			m = self.zipCode
@@ -3122,10 +3124,9 @@ class EnterDataDialog(wx.Dialog):
 				#Unpack archive
 				self.DelTemp(_samples_path) #Delete old files and the Weather_samples folder
 				import zipfile
-				unZip = config.getUserDefaultConfigPath()
 				try:
 					with zipfile.ZipFile(target, "r") as z:
-						z.extractall(unZip)
+						z.extractall(_unZip_path)
 				except Exception as e:
 					Shared().LogError(e)
 					self.ErrorMessage(True)
@@ -3228,8 +3229,9 @@ class EnterDataDialog(wx.Dialog):
 					if os.path.isfile(file_path):
 						os.remove(file_path)
 				except: pass
+
 		try:
-			if uninstall:os.rmdir(file)
+			if uninstall: os.rmdir(file)
 		except:pass
 
 
