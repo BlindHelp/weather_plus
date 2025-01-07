@@ -13,7 +13,6 @@
 # Vejret Plus virker vha. følgende tjenester: #
 * [https://www.weatherapi.com/](https://www.weatherapi.com/)
 * [http://www.geonames.org/](http://www.geonames.org/)
-* [http://veloroutes.org/elevation/](http://veloroutes.org/elevation/)
 * [https://www.nvda.it/](https://www.nvda.it/)
 
 # Brug #

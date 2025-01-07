@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 9.7.
+#Version 9.8.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date August, 25th, 2024.
+#Last Edit date January, 07th, 2025.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -109,6 +109,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	scriptCategory = _addonSummary
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
+
 		#variables definition
 		if "_wbdat" not in globals():
 			global _wbdat
@@ -2133,7 +2134,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 			cur_date = datetime.now().strftime('%Y-%m-%d %H:%M') or '""'
 			title = '%s - %s' % (_addonSummary, "Note: Feature not documented, only for debiugging.")
-			message ='Computer time: %s.\nLocation time: %s.\nLocation: %s.\r\n' % (cur_date, self.dom["location"]["localtime"], self.dom["location"]["name"] or '""') #*
+			message ='Computer time: %s.\nLocation time: %s.\nLocation: %s.\r\n' % (cur_date, self.dom["location"]["localtime"], self.dom["location"]["name"] or '""')
 			message += 'Region: %s.\r\n' % (self.dom["location"]["region"] or '""')
 			message += 'Country: %s.\r\n' % (self.dom["location"]["country"] or '""')
 			m = self.zipCode
@@ -4305,6 +4306,7 @@ class Shared:
 		'BOTSWANA': 'BW',
 		'BOUVET ISLAND': 'BV',
 		'BRAZIL': 'BR',
+		'BRASIL': 'BR',
 		'BRITISH INDIAN OCEAN TERRITORY': 'IO',
 		'BRUNEI': 'BN',
 		'BRUNEI DARUSSALAM': 'BN',
@@ -5204,14 +5206,9 @@ class Shared:
 
 	def GetElevation(self, lat, lon):
 		"""Returns elevation above sea level"""
-		p = re.compile(r'>(-*\d+)</span> meters<')
-		data = self.GetUrlData("http://veloroutes.org/elevation/?location=%s,%s&units=m" % (lat, lon))
-		if data == "no connect": return data
-		if data and _pyVersion >= 3: data = data.decode()
 		try:
-			elevation = p.search(data).group(1)
-		except AttributeError: elevation = None
-		return elevation
+			return int(json.loads(self.GetUrlData("https://api.open-meteo.com/v1/elevation?latitude=%s&longitude=%s" % (lat, lon))).get('elevation', [None])[0])
+		except Exception: return None
 
 
 	def Play_sound(self, t, s = 0):

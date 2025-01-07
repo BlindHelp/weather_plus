@@ -1,3 +1,23 @@
+07/01/2025
+Weather_Plus9.8 #update, by Adriano Barbieri
+
+Changes:
+
+• Fixed connection problem; changed api service for altitude reading in "Details" display function.
+
+I just added new buildVars.py, __init__.py, readme.md (english) and doc folder containing the documentation for the other updated languages for new version 9.8 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.8.nvda-addon
+renamed manually by:
+Weather_Plus9.8.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.8.nvda-addon
+
+# Created the new tag:
+git tag 9.8
+git push origin 9.8
+
 25/08/2024
 Weather_Plus9.7 #update, by Adriano Barbieri
 
