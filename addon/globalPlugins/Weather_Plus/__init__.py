@@ -11,7 +11,7 @@
 #See the file COPYING for more details.
 #Version 9.8.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date January, 07th, 2025.
+#Last Edit date January, 08th, 2025.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -3021,7 +3021,9 @@ class EnterDataDialog(wx.Dialog):
 
 		self.OnText()
 		self.btn_Test.Enable(False)
-		self.btn_Ok.Enable(True)
+		try:
+			self.btn_Ok.Enable(True)
+		except: pass
 		self.cbx.SetFocus()
 
 

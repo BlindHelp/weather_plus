@@ -1,3 +1,22 @@
+08/01/2025
+Weather_Plus9.8_UpdatedFiles again by Adriano
+
+Changes:
+
+Adriano has  updated the link, it is more correct to mention the new service:
+* [http://veloroutes.org/elevation/](http://veloroutes.org/elevation/)
+with:
+* [https://api.open-meteo.com/v1/elevation/](https://api.open-meteo.com/v1/elevation/)
+
+I just added new __init__.py, readme.md (english) and doc folder containing this new modification made in the documentation for the other updated languages requested by Adriano for new version 9.8 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.8.nvda-addon
+renamed manually by:
+Weather_Plus9.8.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.8.nvda-addon
+
 07/01/2025
 Weather_Plus9.8 #update, by Adriano Barbieri
 

@@ -13,6 +13,7 @@
 * Wetter Plus arbeitet durch die Nutzung und Präsenz folgender Dienste:
 * [https://www.weatherapi.com/](https://www.weatherapi.com/)
 * [http://www.geonames.org/](http://www.geonames.org/)
+* [https://api.open-meteo.com/v1/elevation/](https://api.open-meteo.com/v1/elevation/)
 * [https://www.nvda.it/](https://www.nvda.it/)
 
 # VERWENDUNG: #

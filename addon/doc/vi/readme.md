@@ -12,6 +12,7 @@
 * Weather Plus hoạt động bằng cách sử dụng các dịch vụ sau:
 * [https://www.weatherapi.com/](https://www.weatherapi.com/)
 * [http://www.geonames.org/](http://www.geonames.org/)
+* [https://api.open-meteo.com/v1/elevation/](https://api.open-meteo.com/v1/elevation/)
 * [https://www.nvda.it/](https://www.nvda.it/)
 
 # Sử dụng: #
