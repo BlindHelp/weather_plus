@@ -162,4 +162,5 @@ Um eine neue Stadt hinzuzufügen: klicken Sie auf den folgenden Eintrag:
 
 [[!tag dev stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=wetp
+[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus
+

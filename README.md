@@ -48,7 +48,7 @@ To add a new city: press the following item:
 * Rename - Rename the current city. This button can be activated if you select a city previously inserted in the list.
 * Import new cities... - This button allows you to import cities from the another list of cities with the extension *.zipcodes; you can select the city you want to import, by turning on the checkbox associated with it.
 * Export your cities... - It allows you to save the cities in the specified file with the extension *.zipcodes. This button is activated if you have added and saved at least one city into the list.
-* hourly forecast setting... - This button allows you to choose the contents of the hourly forecast report.
+* Hourly forecast setting... - This button allows you to choose the contents of the hourly forecast report.
 * Scale of temperature measurement: Use the radio button to select between Celsius (by default), Fahrenheit and Kelvin.
 * Degrees shown as: Use the radio button to select between: Celsius `-` Fahrenheit `-` Kelvin (by default) C `-` F `-` K or Unspecified.
 * Combo box: Weather Forecasts up to days: 1; you can choose between 1 to 3 (1 days by default)
@@ -86,6 +86,8 @@ To add a new city: press the following item:
 * "Weather_searchkey": search key saved.
 
 --------------------------------------------------------------------------------
+
 [[!tag dev stable]]
 
-[1]: https://addons.nvda-project.org/files/get.php?file=wetp
+[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus
+
