@@ -1,3 +1,52 @@
+05/02/2025
+
+Changes:
+
+New restructuring of the buildVars.py file for the manifest.ini file in English in order to display correctly (the messages have been displayed in a separate string, they are now rewritten in a single string, in translation messages for each language).
+
+FYI
+
+Part of the last buildVars.py file (07.01.2025):
+
+	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+	"addon_description" : [
+	_("Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"),
+	_("NVDA+w for the current bulletin.\n"),
+	_("NVDA+shift+w for the prediction in the current 24 hours and prediction up to 2 days.\n"),
+	_("NVDA+shift+w, pressed twice provides the hourlyforecast of the weather conditions.\n"),
+	_("NVDA+shift+control+w for quickly enter a temporary city.\n"),
+	_("NVDA + shift + control + alt + w for open the Weather Plus settings.\n"),
+	_("NVDA+alt+w announces the date of the last update of the weather report.\n"),
+	_("Shift+control+w alternates between Fahrenheit, Celsius and Kelvin.\n"),
+	_("For other instructions, you can also press Add-on Help button in Add-ons manager.")
+	],
+
+
+Part of the new buildVars.py file (05.02.2025):
+
+	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
+	"addon_description": _("""Adds local temperature and forecast 24 hours and prediction up to 2 days.
+NVDA+w for the current bulletin.
+NVDA+shift+w for the prediction in the current 24 hours and prediction up to 2 days.
+NVDA+shift+w, pressed twice provides the hourlyforecast of the weather conditions.
+NVDA+shift+control+w for quickly enter a temporary city.
+NVDA + shift + control + alt + w for open the Weather Plus settings.
+NVDA+alt+w announces the date of the last update of the weather report.
+Shift+control+w alternates between Fahrenheit, Celsius and Kelvin.
+For other instructions, you can also press Add-on Help button in Add-ons manager."""),
+
+
+I added the previous translated strings by rewriting them in a single string in the nvda.po file for each language by helping me from the content of each manifest. Iini of the respective language.
+
+I have just changed the latest buildvars.py, updated the nvda.po of localization for each language for the new version 9.8 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.8.nvda-addon
+renamed manually by:
+Weather_Plus9.8.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.8.nvda-addon
+
 08/01/2025
 Weather_Plus9.8_UpdatedFiles again by Adriano
 
