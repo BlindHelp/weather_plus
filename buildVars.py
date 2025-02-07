@@ -23,17 +23,15 @@ addon_info = {
 	"addon_summary" : "Weather_Plus",
 	# Add-on description
 	# Translators: Long description to be shown for this add-on on add-on information from add-ons manager
-	"addon_description" : [
-	_("Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"),
-	_("NVDA+w for the current bulletin.\n"),
-	_("NVDA+shift+w for the prediction in the current 24 hours and prediction up to 2 days.\n"),
-	_("NVDA+shift+w, pressed twice provides the hourlyforecast of the weather conditions.\n"),
-	_("NVDA+shift+control+w for quickly enter a temporary city.\n"),
-	_("NVDA + shift + control + alt + w for open the Weather Plus settings.\n"),
-	_("NVDA+alt+w announces the date of the last update of the weather report.\n"),
-	_("Shift+control+w alternates between Fahrenheit, Celsius and Kelvin.\n"),
-	_("For other instructions, you can also press Add-on Help button in Add-ons manager.")
-	],
+	"addon_description": _("""Adds local temperature and forecast 24 hours and prediction up to 2 days.
+NVDA+w for the current bulletin.
+NVDA+shift+w for the prediction in the current 24 hours and prediction up to 2 days.
+NVDA+shift+w, pressed twice provides the hourlyforecast of the weather conditions.
+NVDA+shift+control+w for quickly enter a temporary city.
+NVDA + shift + control + alt + w for open the Weather Plus settings.
+NVDA+alt+w announces the date of the last update of the weather report.
+Shift+control+w alternates between Fahrenheit, Celsius and Kelvin.
+For other instructions, you can also press Add-on Help button in Add-ons manager."""),
 	# version
 	"addon_version" : "9.8",
 	# Author(s)
