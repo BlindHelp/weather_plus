@@ -1,12 +1,38 @@
 07/02/2025
 Request to change the colors of the Auto file by @CyrilleB79
 
+author
+Cyrille Bougot
+Update color style to help visually impaired people
+
 Changed in style.css file:
-color : #FFFFFF;
-background-color : #000000;
-in:
-color : #000000;
-background-color : #FFFFFF;
+@charset "utf-8";
+body { 
+font-family : Verdana, Arial, Helvetica, Sans-serif;
+line-height: 1.2em;
+} 
+h1, h2 {text-align: center}
+dt { 
+font-weight : bold; 
+float : left; 
+width: 10%;
+clear: left
+} 
+dd { 
+margin : 0 0 0.4em 0; 
+float : left;
+width: 90%;
+display: block;
+} 
+p { clear : both; 
+} 
+a { text-decoration : underline; 
+} 
+:active { 
+text-decoration : none; 
+}
+a:focus, a:hover {outline: solid}
+
 
 By the way this addon is with - in the name:
 Weather_Plus-9.8.nvda-addon
