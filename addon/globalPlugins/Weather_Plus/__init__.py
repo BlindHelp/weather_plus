@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 9.8.
+#Version 9.9.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date January, 08th, 2025.
+#Last Edit date March, 25th, 2025.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -5357,11 +5357,12 @@ class Shared:
 							(math.ceil(float(re.search(p[c], m).group(7))*100)/100) #longitude
 							)
 							city1 = city1.replace('</td><td>', ', ').replace('<tr><td>', '').replace('<tr class="odd"><td>, ', ', ').replace(', , ', ', ')
+							city1 = city1.split('html">')[-1].replace('</a>', '')
 							name = '%s, %s' % (city1.split(', ')[0], city1.split(', ')[3])
 						else:
 							city1 = '%s, %s, %s, %s, %s, %s, %s' % (
 							re.search(p[c], m).group(8).title(), #city name
-							_npc,
+							_npc, #No postal code
 							self.TranslatePlaces(re.search(p[c], m).group(6)), #region
 							re.search(p[c], m).group(5), #country
 							re.search(p[c], m).group(7).rstrip(' & gt'), #province

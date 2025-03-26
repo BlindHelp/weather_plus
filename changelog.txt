@@ -1,3 +1,26 @@
+25/03/2025
+Weather_Plus9.9 #update, by Adriano Barbieri
+
+Changes:
+
+• Updated the display in the list of occurrences for the searched city.
+Files:
+_init_.py 25.03.2025
+buildVars.py, version from 9.8 to 9.9
+
+I just added new buildVars.py and __init__.py for new version 9.9 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.9.nvda-addon
+renamed manually by:
+Weather_Plus9.9.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.9.nvda-addon
+
+# Created the new tag:
+git tag 9.9
+git push origin 9.9
+
 07/02/2025
 Request to change the colors of the Auto file by @CyrilleB79
 
