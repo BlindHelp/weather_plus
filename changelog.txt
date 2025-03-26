@@ -1,3 +1,18 @@
+26/03/2025
+Update in buildVars.py version of Nvda at 2024.4.
+
+See the line:
+"addon_lastTestedNVDAVersion" : "2024.4",
+
+I just added new buildVars.py modified again for new version 9.9 in this repository.
+
+By the way this addon is with - in the name:
+Weather_Plus-9.9.nvda-addon
+renamed manually by:
+Weather_Plus9.9.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus9.9.nvda-addon
+
 25/03/2025
 Weather_Plus9.9 #update, by Adriano Barbieri
 
