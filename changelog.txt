@@ -1,3 +1,31 @@
+14/05/2025
+Changes version 10.0:
+
+• Sperimental compatibility for 64 bit NVDA versions.
+• Deleted download link from readme, the download link for future updates will now only be available from the add-on store.
+
+Added a new folder and the modified files for this Add-on in the repository
+# Added new folder:
+bass
+Note: bass folder that replaces in globalPlugin/Weather_Plus/bass.dll; The old bass.dll located in globalPlugin/Weather_Plus/ must be eliminated.
+The bass  folder now contains the dll for the sound effects for 32 and 64 bit, which pybass.py now chooses based on NVDA's architecture.
+
+# Modified files:
+_init_.py,
+buildVars.py,
+pybass.py.
+
+By the way this addon is with - in the name:
+Weather_Plus-10.0.nvda-addon
+renamed manually by:
+Weather_Plus10.0.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus10.0.nvda-addon
+
+# Created the new tag:
+git tag 10.0
+git push origin 10.0
+
 26/03/2025
 Update in buildVars.py version of Nvda at 2024.4.
 

@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 9.9.
+#Version 10.0.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date March, 25th, 2025.
+#Last Edit date May, 13th, 2025.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -3899,7 +3899,6 @@ class EnterDataDialog(wx.Dialog):
 			count = Shared().CalculateStep(c, mis, max)
 			millisleeps = Shared().CalculateStep(c, mis, 24, True)
 			wx.MilliSleep(millisleeps)
-			##wx.Yield()
 			wx.GetApp().Yield()
 			keepGoing = _importProgressBarr.Update(count)
 
@@ -4015,8 +4014,6 @@ class EnterDataDialog(wx.Dialog):
 			count = 0
 			while count <= (steps):
 				chunk = source.read(buffer_size)
-				wx.MilliSleep(180)
-				##wx.Yield()
 				wx.GetApp().Yield()
 				if chunk:
 					count += 1
@@ -5006,8 +5003,6 @@ class Shared:
 				while keepGoing:
 					count += 1
 					if count >= max: count = 99
-					wx.MilliSleep(120)
-					##wx.Yield()
 					wx.GetApp().Yield()
 					(keepGoing, skip) = _downloadDialog.Update(count,
 					'%s %s %s %s %s' %(

@@ -2,7 +2,6 @@
 
 * Autor: Adriano Barbieri
 * Compatibilidade com NVDA: 2017.3 e seguintes
-* Descarregar [versão estável][1]
 
 # Acerca do WEATHER PLUS: #
 
@@ -150,6 +149,4 @@ Nota: As suas configurações serão guardadas no ficheiro chamado:
 --------------------------------------------------------------------------------
 
 [[!tag dev stable]]
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus
 

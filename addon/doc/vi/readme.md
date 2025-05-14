@@ -2,7 +2,6 @@
 
 * Tác giả: Adriano Barbieri
 * NVDA tương thích: 2017.3 trở đi
-* Tải về: [Phiên bản chính thức][1]
 
 # VỀ WEATHER PLUS: #
 
@@ -89,6 +88,4 @@
 --------------------------------------------------------------------------------
 
 [[!tag dev stable]]
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus
 

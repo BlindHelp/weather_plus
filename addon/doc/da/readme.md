@@ -2,7 +2,6 @@
 
 * Forfatter: Adriano Barbieri
 * NVDA-kompatibilitet: 2017.3 og nyere
-* Download: [Stabil Version][1]
 
 # Om Vejret PLUS #
 
@@ -281,6 +280,4 @@ du kan stadig gemme den.
 --------------------------------------------------------------------------------
 
 [[!tag dev stable]]
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus
 

@@ -2,7 +2,6 @@
 
 * Autor: Adriano Barbieri
 * NVDA compatibility: 2017.3 to beyond
-* Pobierz: [Wersja stabilna][1]
 
 # O Weather Plus: #
 
@@ -312,6 +311,4 @@ Ci o zmianach na liście i umożliwi jej zapisanie.
 --------------------------------------------------------------------------------
 
 [[!tag dev stable]]
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus
 

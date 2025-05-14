@@ -2,7 +2,6 @@
 
 * Autore: Adriano Barbieri
 * Compatibilità NVDA: 2017.3 e oltre
-* Scarica: [versione stabile][1]
 
 # A PROPOSITO DI WEATHER PLUS: #
 
@@ -75,7 +74,7 @@ Per aggiungere una nuova città: premere il seguente elemento:
 * Esporta le tue città... - Esso consente di salvare le città nel file
   specificato con estensione *.zipcodes. Questo pulsante viene attivato se
   avete aggiunto e salvato almeno una città nell'elenco.
-* impostazione di previsione oraria... - Questo pulsante consente di scegliere i contenuti del rapporto di previsione oraria.
+* Impostazione di previsione oraria... - Questo pulsante consente di scegliere i contenuti del rapporto di previsione oraria.
 * Scala di misura della temperatura: Utilizzare il Pulsante radio per
   selezionare tra Centigradi (predefinito), Fahrenheit e Kelvin.
 * Indica i gradi come: Utilizzare il Pulsante radio per selezionare tra:
@@ -162,6 +161,4 @@ Per aggiungere una nuova città: premere il seguente elemento:
 --------------------------------------------------------------------------------
 
 [[!tag dev stable]]
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus
 

@@ -2,7 +2,6 @@
 
 * المطوِّر: Adriano Barbieri
 * التوافُق مع NVDA: 2017.3 وما بعده.
-* رابط التنزيل: [Stable Version][1]
 
 # حول إضافة WEATHER PLUS: #
 
@@ -90,4 +89,3 @@ To add a new city: press the following item:
 
 [[!tag dev stable]]
 
-[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus

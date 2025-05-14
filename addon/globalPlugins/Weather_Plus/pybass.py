@@ -60,8 +60,11 @@ if sys.hexversion < 0x02060000:
 
 #if platform.system().lower() == 'windows':
 if True:
-	#Path modified for NVDA
-	bass_module = ctypes.WinDLL('%s\%s' % (os.path.dirname(__file__), 'bass'))
+	# Determine architecture and set the correct path for nvda
+	architecture = '64' if sys.maxsize > 2**32 else '32'
+	bass_path = os.path.join(os.path.dirname(__file__), 'bass', architecture, 'bass.dll')
+	bass_module = ctypes.WinDLL(bass_path)
+
 	func_type = ctypes.WINFUNCTYPE
 else:
 	# correct by Wasylews (sabov.97@mail.ru), thank him

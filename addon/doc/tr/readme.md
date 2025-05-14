@@ -2,7 +2,6 @@
 
 * Yazar: Adriano Barbieri
 * NVDA uyumluluğu: 2017.3 ve  sonrası
-* İndir: [Kararlı sürüm][1]
 
 # WEATHER PLUS Hakkında: #
 
@@ -89,6 +88,4 @@ Yeni bir şehir eklemek için: aşağıdaki seçeneği kullanın:
 --------------------------------------------------------------------------------
 
 [[!tag dev stable]]
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus
 

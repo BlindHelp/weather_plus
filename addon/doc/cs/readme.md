@@ -2,7 +2,6 @@
 
 * Autor: Adriano Barbieri
 * NVDA kompatibilita: 2017.3 a vyžší
-* Stáhnout: [Stabilní verzi] [1]
 
 # O doplnku #
 
@@ -127,6 +126,4 @@ Nové město na sledování přidáte nasledovně:
 --------------------------------------------------------------------------------
 
 [[!tag dev stable]]
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus
 

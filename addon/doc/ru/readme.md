@@ -2,7 +2,6 @@
 
 * Авторы: Adriano Barbieri
 * Совместимость NVDA: 2017.3 и выше
-* Загрузить [стабильную версию][1]
 
 # О WEATHER PLUS: #
 
@@ -88,6 +87,4 @@
 --------------------------------------------------------------------------------
 
 [[!tag dev stable]]
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus
 

@@ -2,7 +2,6 @@
 
 * Autor: Adriano Barbieri
 * NVDA compatibility: 2017.3 to beyond
-* Preuzmi [stabilnu verziju][1]
 
 # INFORMACIJE O VREMENSKOJ PROGNOZI PLUS: #
 
@@ -145,6 +144,4 @@ Za dodavanje novog grada: pritisni sljedeću stavku:
 --------------------------------------------------------------------------------
 
 [[!tag dev stable]]
-
-[1]: https://www.nvaccess.org/addonStore/legacy?file=Weather_Plus
 
