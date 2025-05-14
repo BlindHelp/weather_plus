@@ -1,4 +1,26 @@
 14/05/2025
+Changes version 10.1:
+
+• Due to a bug, correct in this last version, this will not be automatically downloaded.
+It will be necessary to download it manually.
+https://www.nvda.it/sites/default/files/plugin/weather_plus10.1.nvda-addon
+
+# Modified files:
+_init_.py,
+buildVars.py.
+
+By the way this addon is with - in the name:
+Weather_Plus-10.1.nvda-addon
+renamed manually by:
+Weather_Plus10.1.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus10.1.nvda-addon
+
+# Created the new tag:
+git tag 10.1
+git push origin 10.1
+
+14/05/2025
 Changes version 10.0:
 
 • Sperimental compatibility for 64 bit NVDA versions.

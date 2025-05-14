@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 10.0.
+#Version 10.1.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date May, 13th, 2025.
+#Last Edit date May, 14th, 2025.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -675,7 +675,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 		#search for new version string
 		try:
-			newVersion = re.search(r'Version\: (\d\.\d( - \d{1,2}\.\d{1,2}\.\d{4})*)', data).group(1)
+			newVersion = re.search(r'Version\: (\d{1,2}\.\d{1,2}( - \d{1,2}\.\d{1,2}\.\d{4})*)', data).group(1)
 		except AttributeError: newVersion = ""
 		#finally checks to see if a new version is available
 		if newVersion and (float(newVersion.split()[0]) > float(_addonVersion.split()[0])):

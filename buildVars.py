@@ -33,7 +33,7 @@ NVDA+alt+w announces the date of the last update of the weather report.
 Shift+control+w alternates between Fahrenheit, Celsius and Kelvin.
 For other instructions, you can also press Add-on Help button in Add-ons manager."""),
 	# version
-	"addon_version" : "10.0",
+	"addon_version" : "10.1",
 	# Author(s)
 	"addon_author" : "Adriano Barbieri <adrianobarb@yahoo.it>",
 	# URL for the add-on documentation support
