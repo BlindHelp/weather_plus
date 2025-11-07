@@ -1,3 +1,25 @@
+06/11/2025
+Changes version 10.2:
+• Updated the flag of the latest tested version for compatibility with NVDA 2026.1.
+• Since version 10.1, Weather_Plus has already supported both 32-bit and 64-bit NVDA.
+
+# Modified files:
+_init_.py,
+buildVars.py.
+
+Added another file called: Changes.txt by Adriano.
+
+By the way this addon is with - in the name:
+Weather_Plus-10.2.nvda-addon
+renamed manually by:
+Weather_Plus10.2.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus10.2.nvda-addon
+
+# Created the new tag:
+git tag 10.2
+git push origin 10.2
+
 14/05/2025
 Changes version 10.1:
 

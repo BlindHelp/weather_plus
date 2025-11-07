@@ -9,9 +9,9 @@
 #Released under GPL 2
 #This file is covered by the GNU General Public License.
 #See the file COPYING for more details.
-#Version 10.1.
+#Version 10.2.
 #NVDA compatibility: 2017.3 to beyond.
-#Last Edit date May, 14th, 2025.
+#Last Edit date November, 06th, 2025.
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
