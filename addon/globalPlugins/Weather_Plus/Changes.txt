@@ -1,3 +1,6 @@
+Changes version 10.3:
+• Updated the six library to version 1.17.0.
+• Updated the onUpgrade version check function which now accepts up to 4 digits (e.g. 9999.00).
 Changes version 10.2:
 • Updated the flag of the latest tested version for compatibility with NVDA 2026.1.
 • Since version 10.1, Weather_Plus has already supported both 32-bit and 64-bit NVDA.
