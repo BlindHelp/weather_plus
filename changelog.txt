@@ -1,3 +1,23 @@
+14/05/2026
+Changes version 10.4:
+• Updated compatibility flag for nvda 2026.1
+
+# Modified files:
+_init_.py,
+buildVars.py,
+Changes.txt,
+
+By the way this addon is with - in the name:
+Weather_Plus-10.4.nvda-addon
+renamed manually by:
+Weather_Plus10.4.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus10.4.nvda-addon
+
+# Created the new tag:
+git tag 10.4
+git push origin 10.4
+
 19/12/2025
 Changes version 10.3:
 • Updated the six library to version 1.17.0.

@@ -1,17 +1,17 @@
 #-*- coding:utf-8 -*-
-#Weather Plus Addon for NVDA
-#WeatherAPI (powered by WeatherAPI.com)
-#Weather and 24 hour forecast
-#More forecast up to 2 days
-#Hourlyforecast
-#Copyright (C) Adriano Barbieri 
-#Email: adrianobarb@yahoo.it
-#Released under GPL 2
-#This file is covered by the GNU General Public License.
-#See the file COPYING for more details.
-#Version 10.3.
-#NVDA compatibility: 2017.3 to beyond.
-#Last Edit date November, 06th, 2025.
+"""Weather Plus Addon for NVDA
+WeatherAPI (powered by WeatherAPI.com)
+Weather and 24 hour forecast
+More forecast up to 2 days
+Hourlyforecast
+Copyright (C) 2010 to beyond by Adriano Barbieri
+Email: adrianobarb@yahoo.it
+Released under GPL 2
+This file is covered by the GNU General Public License
+See the file COPYING for more details
+Version 10.4
+NVDA compatibility: 2017.3 to beyond
+Last Edit date May, 14th, 2026"""
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -30,7 +30,8 @@ tempfile, zipfile, stat, shutil"""
 sys.path.append(os.path.dirname(__file__))
 import dateutil.tz, dateutil.zoneinfo
 from pybass  import *
-_pyVersion = int(sys.version[:1])
+
+_pyVersion =sys.version_info.major
 if _pyVersion >= 3:
 	import queue as Queue
 	from urllib.request import urlopen
@@ -2139,7 +2140,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			message += 'Country: %s.\r\n' % (self.dom["location"]["country"] or '""')
 			m = self.zipCode
 			if _pyVersion < 3: m = Deco(self.zipCode)
-			message += 'self.zipCode: %s.\r\n' % (m or '""')
+			message += 'zipCode: %s.\r\n' % (m or '""')
 			m = Shared().GetLocation(self.zipCode, self.define_dic) or _testCode
 			if _pyVersion < 3: m = Deco(m)
 			message += '_api_query: %s.\r\n' % m
