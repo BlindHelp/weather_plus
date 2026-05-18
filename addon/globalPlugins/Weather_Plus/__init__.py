@@ -9,9 +9,9 @@ Email: adrianobarb@yahoo.it
 Released under GPL 2
 This file is covered by the GNU General Public License
 See the file COPYING for more details
-Version 10.4
+Version 10.5
 NVDA compatibility: 2017.3 to beyond
-Last Edit date May, 14th, 2026"""
+Last Edit date May, 17th, 2026"""
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -33,11 +33,13 @@ from pybass  import *
 
 _pyVersion =sys.version_info.major
 if _pyVersion >= 3:
+	import certifi
 	import queue as Queue
 	from urllib.request import urlopen
 	from urllib.parse import urlencode
 else:
 	#nvda with python version earlier than 3
+	import certifi2 as certifi
 	import Queue
 	from urllib2 import urlopen
 	from urllib import urlencode
@@ -2139,7 +2141,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			message += 'Region: %s.\r\n' % (self.dom["location"]["region"] or '""')
 			message += 'Country: %s.\r\n' % (self.dom["location"]["country"] or '""')
 			m = self.zipCode
-			if _pyVersion < 3: m = Deco(self.zipCode)
+			if isinstance(m, bytes) or _pyVersion < 3: m = Deco(self.zipCode)
 			message += 'zipCode: %s.\r\n' % (m or '""')
 			m = Shared().GetLocation(self.zipCode, self.define_dic) or _testCode
 			if _pyVersion < 3: m = Deco(m)
@@ -5291,23 +5293,18 @@ class Shared:
 	def GetUrlData2(self, address, verbosity):
 		"""open url"""
 		try:
-			data = error = ""
-			with closing(urlopen(address)) as response:
-				data = response.read()
-		except Exception as e: error = e
-		if "CERTIFICATE_VERIFY_FAILED" in repr(error):
-			#retry using ssl
-			data = "no connect"
-			gcontext = ssl.SSLContext(ssl.PROTOCOL_TLSv1)
-			try:
-				with closing(urlopen(address, context=gcontext)) as response:
-					data = response.read()
-			except Exception as e:
-				error = e
-				data = "no connect"
-				if verbosity: self.LogError(error)
+			data, error ="no connect", ""
+			gcontext = ssl.create_default_context()
+			gcontext.load_verify_locations(certifi.where())
 
-		elif "failed" in repr(error):
+			with closing(urlopen(address, context=gcontext)) as response:
+				data = response.read()
+		except Exception as e:
+			error = e
+			data = "no connect"
+			if verbosity: self.LogError(error)
+
+		if "failed" in repr(error):
 			data = "no connect"
 			if verbosity: self.LogError(error)
 

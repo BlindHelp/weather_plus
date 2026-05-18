@@ -1,3 +1,5 @@
+Changes version 10.5:
+• Fixed display of string in bytes in undocumented test window.
 Changes version 10.4:
 • Updated compatibility flag for nvda 2026.1
 Changes version 10.3:

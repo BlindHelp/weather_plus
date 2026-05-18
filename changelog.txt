@@ -1,3 +1,25 @@
+17/05/2026
+Changes version 10.5:
+• Fixed display of string in bytes in undocumented test window.
+
+# Modified files:
+_init_.py,
+buildVars.py,
+Changes.txt,
+
+Added another folder called: certifi2 by Adriano.
+
+By the way this addon is with - in the name:
+Weather_Plus-10.5.nvda-addon
+renamed manually by:
+Weather_Plus10.5.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus10.5.nvda-addon
+
+# Created the new tag:
+git tag 10.5
+git push origin 10.5
+
 14/05/2026
 Changes version 10.4:
 • Updated compatibility flag for nvda 2026.1
