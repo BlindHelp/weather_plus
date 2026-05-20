@@ -1,3 +1,6 @@
+Changes version 10.6:
+• Improved connection security with the integration of the certifi module
+• Forced import of the certifi2 module for versions of nvda with python 2.xx and python 3.xx without the certifi module.
 Changes version 10.5:
 • Fixed display of string in bytes in undocumented test window.
 Changes version 10.4:

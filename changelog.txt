@@ -1,3 +1,27 @@
+18/05/2026
+Changes version 10.6:
+• Improved connection security with the integration of the certifi module
+• Forced import of the certifi2 module for versions of nvda with python 2.xx and python 3.xx without the certifi module.
+
+# Modified files:
+_init_.py,
+buildVars.py,
+Changes.txt,
+
+Updated again all folders and files found in globalPlugins, Weather_Plus
+
+By the way this addon is with - in the name:
+Weather_Plus-10.6.nvda-addon
+renamed manually by:
+Weather_Plus10.6.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus10.6.nvda-addon
+
+# Created the new tag:
+git tag 10.6
+git push origin 10.6
+
+
 17/05/2026
 Changes version 10.5:
 • Fixed display of string in bytes in undocumented test window.

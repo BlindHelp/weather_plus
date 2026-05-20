@@ -9,9 +9,9 @@ Email: adrianobarb@yahoo.it
 Released under GPL 2
 This file is covered by the GNU General Public License
 See the file COPYING for more details
-Version 10.5
+Version 10.6
 NVDA compatibility: 2017.3 to beyond
-Last Edit date May, 17th, 2026"""
+Last Edit date May, 18th, 2026"""
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -30,16 +30,18 @@ tempfile, zipfile, stat, shutil"""
 sys.path.append(os.path.dirname(__file__))
 import dateutil.tz, dateutil.zoneinfo
 from pybass  import *
+try:
+	import certifi
+except ModuleNotFoundError:
+	import certifi2 as certifi
 
 _pyVersion =sys.version_info.major
 if _pyVersion >= 3:
-	import certifi
 	import queue as Queue
 	from urllib.request import urlopen
 	from urllib.parse import urlencode
 else:
 	#nvda with python version earlier than 3
-	import certifi2 as certifi
 	import Queue
 	from urllib2 import urlopen
 	from urllib import urlencode
