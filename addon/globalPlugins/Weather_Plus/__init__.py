@@ -9,9 +9,9 @@ Email: adrianobarb@yahoo.it
 Released under GPL 2
 This file is covered by the GNU General Public License
 See the file COPYING for more details
-Version 10.6
+Version 10.7
 NVDA compatibility: 2017.3 to beyond
-Last Edit date May, 18th, 2026"""
+Last Edit date May, 23th, 2026"""
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -32,7 +32,7 @@ import dateutil.tz, dateutil.zoneinfo
 from pybass  import *
 try:
 	import certifi
-except ModuleNotFoundError:
+except ImportError:
 	import certifi2 as certifi
 
 _pyVersion =sys.version_info.major
