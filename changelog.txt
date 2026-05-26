@@ -1,3 +1,23 @@
+26/05/2026
+Changes version 10.8:
+• Updated bass.dll.
+
+# Modified files:
+buildVars.py,
+
+Updated the folder globalPlugins with the latest changes made by Adriano.
+
+By the way this addon is with - in the name:
+Weather_Plus-10.8.nvda-addon
+renamed manually by:
+Weather_Plus10.8.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus10.8.nvda-addon
+
+# Created the new tag:
+git tag 10.8
+git push origin 10.8
+
 23/05/2026
 Adriano corrected one line in the  code.
 

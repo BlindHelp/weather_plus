@@ -9,9 +9,9 @@ Email: adrianobarb@yahoo.it
 Released under GPL 2
 This file is covered by the GNU General Public License
 See the file COPYING for more details
-Version 10.7
+Version 10.8
 NVDA compatibility: 2017.3 to beyond
-Last Edit date May, 23th, 2026"""
+Last Edit date May, 26th, 2026"""
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -33,6 +33,7 @@ from pybass  import *
 try:
 	import certifi
 except ImportError:
+	# certify for nvda with python 2 or early versions of nvda with python 3
 	import certifi2 as certifi
 
 _pyVersion =sys.version_info.major
