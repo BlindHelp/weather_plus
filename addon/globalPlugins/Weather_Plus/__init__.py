@@ -9,9 +9,9 @@ Email: adrianobarb@yahoo.it
 Released under GPL 2
 This file is covered by the GNU General Public License
 See the file COPYING for more details
-Version 10.8
+Version 10.9
 NVDA compatibility: 2017.3 to beyond
-Last Edit date May, 26th, 2026"""
+Last Edit date June, 3th, 2026"""
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -1667,6 +1667,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					_("and sets at"), ss or _nr,
 					_("The moon rises at"), lr or _nr,
 					_("and sets at"), ls or _nr)
+					weatherReport = weatherReport.replace("Does not rise toda:Does not rise today", _("Does not rise today"))
 					weatherReport = weatherReport.replace("No moonrise",_("No moonrise"))
 					weatherReport = weatherReport.replace("No moonset",_("No moonset"))
 					weatherReport = weatherReport.replace("No sunrise", _("No sunrise"))
@@ -4728,7 +4729,8 @@ class Shared:
 
 	def To24h(self, hour, viceversa = None):
 		"""Convert from 12 to 24 hours and viceversa"""
-		if hour in ["No moonrise", "No moonset", "No sunrise", "No sunset", ""]: return hour
+		m = ''
+		if hour in ["not rise ", "No moonrise", "No moonset", "No sunrise", "No sunset", ""]: return hour
 		if 'datetime' in str(type(hour)):
 			#datetime format get from lastbuilddate returned in 24 hour format
 			hour = '%s:%s' % (hour.hour, hour.minute)

@@ -1,3 +1,25 @@
+03/06/2026
+Changes version 10.9:
+• Corrected and translated a new response string "Does not rise toda:Does not rise today" to "Does not rise today"".
+
+# Modified files:
+_init_.py,
+buildVars.py,
+Changes.txt,
+
+Updated folder locale in addon folder.
+
+By the way this addon is with - in the name:
+Weather_Plus-10.9.nvda-addon
+renamed manually by:
+Weather_Plus10.9.nvda-addon
+You can download it here:
+https://blindhelp.github.io/Weather_Plus10.9.nvda-addon
+
+# Created the new tag:
+git tag 10.9
+git push origin 10.9
+
 26/05/2026
 Changes version 10.8:
 • Updated bass.dll.

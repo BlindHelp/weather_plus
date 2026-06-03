@@ -8,208 +8,174 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Weather_Plus\n"
 "Report-Msgid-Bugs-To: 'nvda-translations@freelists.org'\n"
-"POT-Creation-Date: 2025-02-05 12:26+0100\n"
-"PO-Revision-Date: 2025-02-05 14:20+0100\n"
+"POT-Creation-Date: 2026-06-03 09:46+0200\n"
+"PO-Revision-Date: 2026-06-03 09:46+0200\n"
 "Last-Translator: Rémy Ruiz <remyruiz@gmail.com>\n"
 "Language-Team: Tarik Jingy Hadžirović <tarik.hadzirovic.official@gmail.com>\n"
 "Language: hr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
-"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: Poedit 3.5\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
+"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Poedit 1.8.13\n"
 "X-Poedit-KeywordsList: _;gettext;gettext_noop\n"
 "X-Poedit-Basepath: ../../../globalPlugins/Weather_Plus\n"
 "X-Poedit-SearchPath-0: __init__.py\n"
 "X-Poedit-SearchPath-1: buildVars.py\n"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:70
+#: __init__.py:76
 msgid "Fahrenheit"
 msgstr "Fahrenhaita"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:70
+#: __init__.py:76
 msgid "Celsius"
 msgstr "Celzija"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:70
+#: __init__.py:76
 msgid "Kelvin"
 msgstr "Kelvina"
 
-#. no postal code
-#: addon\globalPlugins\Weather_Plus\__init__.py:74
+#: __init__.py:80
 msgid "unknown"
 msgstr "nepoznato"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:75
+#: __init__.py:81
 msgid "not available"
 msgstr "nije dostupna"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:76
+#: __init__.py:82
 msgid "Please wait..."
 msgstr "Pričekaj …"
 
-#. Translators: the configuration submenu in NVDA Preferences menu
-#: addon\globalPlugins\Weather_Plus\__init__.py:138
+#: __init__.py:144
 msgid "Weather Plus &Settings"
 msgstr "Po&stavke Vremena_Plus"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:138
+#: __init__.py:144
 msgid "Show configuration items."
 msgstr "Prikaži stavke konfiguracije."
 
-#. Translators: item to open primary configuration window
-#: addon\globalPlugins\Weather_Plus\__init__.py:140
+#: __init__.py:146
 msgid "Set and &manage your cities..."
 msgstr "Postavi i upravljaj gradovi&ma …"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:140
+#: __init__.py:146
 msgid "Displays or allows to set the current cities from a list"
 msgstr "Prikazuje ili dozvoljava postavljanje trenutačnih gradova s popisa"
 
-#. Translators: item to open window to set up a temporary city
-#: addon\globalPlugins\Weather_Plus\__init__.py:143
+#: __init__.py:149
 msgid "Set a &temporary city..."
 msgstr "Pos&tavi privremeni grad …"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:143
+#: __init__.py:149
 msgid "Allows to set one temporary city from a list"
 msgstr "Dozvoljava postavljanje privremenog grada s popisa"
 
-#. Translators: item to open the help file for the current language
-#: addon\globalPlugins\Weather_Plus\__init__.py:147
+#: __init__.py:153
 msgid "&Documentation"
 msgstr "&Dokumentacija"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:147
+#: __init__.py:153
 msgid "Opens the help file for the current language"
 msgstr "Otvara datoteku pomoći za trenutačni jezik"
 
-#. Translators: item to notify if there is an upgraded version available
-#: addon\globalPlugins\Weather_Plus\__init__.py:151
+#: __init__.py:157
 msgid "&Check for Upgrade..."
 msgstr "&Provjeri nadogradnje …"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:151
+#: __init__.py:157
 msgid "Notify if there is an upgraded version available"
 msgstr "Obavijesti ako je dostupna nova verzija"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:246
+#: __init__.py:252
 msgid "nanometers"
 msgstr "Nanometara"
 
-#. Fahrenheit degrees
-#: addon\globalPlugins\Weather_Plus\__init__.py:249
+#: __init__.py:255
 msgid "miles per hour"
 msgstr "milja na sat"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:250
+#: __init__.py:256
 msgid "miles"
 msgstr "Milja"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:251
+#: __init__.py:257
 msgid "inches"
 msgstr "Inča"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:252
+#: __init__.py:258
 msgid "inches of mercury"
 msgstr "inča žive"
 
-#. Celsius and Kelvin
-#: addon\globalPlugins\Weather_Plus\__init__.py:255
+#: __init__.py:261
 msgid "kilometers per hour"
 msgstr "kilometara na sat"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:256
+#: __init__.py:262
 msgid "kilometers"
 msgstr "kilometara"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:257
+#: __init__.py:263
 msgid "millimeters"
 msgstr "Milimetara"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:258
+#: __init__.py:264
 msgid "millibars"
 msgstr "milibara"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:260
+#: __init__.py:266
 msgid "millimeters of mercury"
 msgstr "milimetara žive"
 
-#. opens the Weather Plus settings window
-#. Translators: the title of main settings window
-#: addon\globalPlugins\Weather_Plus\__init__.py:285
+#: __init__.py:291
 msgid "Settings"
 msgstr "Postavke"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:285
-#: addon\globalPlugins\Weather_Plus\__init__.py:2325
+#: __init__.py:291 __init__.py:2333
 msgid "Preset"
 msgstr "Predodredi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:285
-#: addon\globalPlugins\Weather_Plus\__init__.py:3552
-#: addon\globalPlugins\Weather_Plus\__init__.py:3933
+#: __init__.py:291 __init__.py:3560 __init__.py:3940
 msgid "None"
 msgstr "Nema"
 
-#. Translators: the message in the main settings window
-#: addon\globalPlugins\Weather_Plus\__init__.py:287
+#: __init__.py:293
 msgid "Enter a City or choose one from the list, if available."
 msgstr "Unesi grad ili odaberi jedan s popisa ako je dostupan."
 
-#. Translators: dialog message in case of invalid city or with incomplete data
-#: addon\globalPlugins\Weather_Plus\__init__.py:466
-#: addon\globalPlugins\Weather_Plus\__init__.py:1888
-#: addon\globalPlugins\Weather_Plus\__init__.py:3041
-#: addon\globalPlugins\Weather_Plus\__init__.py:3740
+#: __init__.py:472 __init__.py:1896 __init__.py:3049 __init__.py:3748
 msgid "The city"
 msgstr "Grad"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:467
+#: __init__.py:473
 msgid "has not been preset."
 msgstr "nije postavljen kao zadano."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:468
+#: __init__.py:474
 msgid "Will be used in temporary mode!"
 msgstr "Koristit će se u privremenom modusu!"
 
-#. Translators: the dialog title
-#. offers to save the list changed
-#. Translators: the dialog title
-#. Translators: title dialog
-#. Translators: the dialog title
-#: addon\globalPlugins\Weather_Plus\__init__.py:471
-#: addon\globalPlugins\Weather_Plus\__init__.py:499
-#: addon\globalPlugins\Weather_Plus\__init__.py:567
-#: addon\globalPlugins\Weather_Plus\__init__.py:1894
-#: addon\globalPlugins\Weather_Plus\__init__.py:2847
-#: addon\globalPlugins\Weather_Plus\__init__.py:3082
-#: addon\globalPlugins\Weather_Plus\__init__.py:3087
-#: addon\globalPlugins\Weather_Plus\__init__.py:3155
-#: addon\globalPlugins\Weather_Plus\__init__.py:3607
-#: addon\globalPlugins\Weather_Plus\__init__.py:3626
-#: addon\globalPlugins\Weather_Plus\__init__.py:3749
-#: addon\globalPlugins\Weather_Plus\__init__.py:3964
-#: addon\globalPlugins\Weather_Plus\__init__.py:3987
-#: addon\globalPlugins\Weather_Plus\__init__.py:4943
+#: __init__.py:477 __init__.py:505 __init__.py:573 __init__.py:1902
+#: __init__.py:2855 __init__.py:3090 __init__.py:3095 __init__.py:3163
+#: __init__.py:3615 __init__.py:3634 __init__.py:3757 __init__.py:3971
+#: __init__.py:3994 __init__.py:4949
 msgid "Notice!"
 msgstr "Oprez!"
 
-#. Translators: dialog message to warn that the list has not been saved
-#: addon\globalPlugins\Weather_Plus\__init__.py:501
+#: __init__.py:507
 msgid "You have modified the list of your cities"
 msgstr "Tvoj popis gradova je promijenjen"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:501
+#: __init__.py:507
 msgid "Do you want to save it?"
 msgstr "Želiš li ga spremiti?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:564
+#: __init__.py:570
 msgid "The cities on your list are not compatible with the Weather API!"
 msgstr "Gradovi na tvom popisu nisu kompatibilni s vremenskim API-jem!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:565
+#: __init__.py:571
 msgid ""
 "They have to be tested and validated, you can do it from the addon settings "
 "window."
@@ -217,22 +183,19 @@ msgstr ""
 "Moraju se provjeriti i potvrditi. To je moguće uraditi u prozoru postavki "
 "dodatka."
 
-#. Translators: the dialog title to  setting a temporary city
-#: addon\globalPlugins\Weather_Plus\__init__.py:580
+#: __init__.py:586
 msgid "Setting up a temporary city"
 msgstr "Postavljanje privremenog grada"
 
-#. addss short cut keys
-#: addon\globalPlugins\Weather_Plus\__init__.py:584
+#: __init__.py:590
 msgid "Cities List available:"
 msgstr "Dostupni popis gradova:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:616
+#: __init__.py:622
 msgid "Documentation not available for the current language!"
 msgstr "Dokumentacija nije dostupna za trenutačni jezik!"
 
-#. Translators: dialog message and title used when it was not possible to find data
-#: addon\globalPlugins\Weather_Plus\__init__.py:669
+#: __init__.py:675
 msgid ""
 "Sorry, I can not receive data, problems with the download page, try again "
 "later please!"
@@ -240,13 +203,8 @@ msgstr ""
 "Na žalost, nije moguće preuzeti podatke. Došlo je do problema sa stranicom "
 "za preuzimanje. Pokušaj ponovo kasnije!"
 
-#. Translators: dialog message and title used when it not possible to connect and receive data
-#: addon\globalPlugins\Weather_Plus\__init__.py:672
-#: addon\globalPlugins\Weather_Plus\__init__.py:1764
-#: addon\globalPlugins\Weather_Plus\__init__.py:2990
-#: addon\globalPlugins\Weather_Plus\__init__.py:3313
-#: addon\globalPlugins\Weather_Plus\__init__.py:3337
-#: addon\globalPlugins\Weather_Plus\__init__.py:3365
+#: __init__.py:678 __init__.py:1772 __init__.py:2998 __init__.py:3321
+#: __init__.py:3345 __init__.py:3373
 msgid ""
 "Sorry, I can not receive data, verify that your internet connection is "
 "active, or try again later!"
@@ -254,343 +212,326 @@ msgstr ""
 "Na žalost, nije moguće preuzeti podatke. Provjeri internetsku vezu ili "
 "pokušaj ponovo kasnije!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:684
+#: __init__.py:690
 msgid "version"
 msgstr "verzija"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:684
+#: __init__.py:690
 msgid "is available."
 msgstr "je dostupna."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:685
+#: __init__.py:691
 msgid "Installed version"
 msgstr "Instalirana verzija"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:686
+#: __init__.py:692
 msgid "Do you want to download and install it?"
 msgstr "Želiš li je preuzeti i instalirati?"
 
-#. Translators: dialog message used when a new version is not available
-#: addon\globalPlugins\Weather_Plus\__init__.py:691
+#: __init__.py:697
 msgid "Sorry, at the time an update is not available."
 msgstr "Na žalost, nadogradnja trenutačno nije dostupna."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1167
-#: addon\globalPlugins\Weather_Plus\__init__.py:2997
-#: addon\globalPlugins\Weather_Plus\__init__.py:5642
+#: __init__.py:1173 __init__.py:3005 __init__.py:5642
 msgid "not found!"
 msgstr "nije pronađena!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1168
+#: __init__.py:1174
 msgid ""
 "You need to upgrade the sound effects by reactivating the appropriate option "
 "from the settings of"
 msgstr ""
 "Moraš nadograditi zvučne efekte reaktiviranjem odgovarajuće opcije postavke"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1170
+#: __init__.py:1176
 msgid "But if these are already updated, then you need to update"
 msgstr "Ali ako su već nadograđeni, moraš ih ponovo nadograditi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1343
+#: __init__.py:1349
 msgid "I can not load the settings!"
 msgstr "Nije moguće učitati postavke!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1343
+#: __init__.py:1349
 msgid "Attention!"
 msgstr "Upozorenje!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1413
+#: __init__.py:1419
 msgid "I can not save the settings!"
 msgstr "Nije moguće spremiti postavke!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1427
+#: __init__.py:1433
 msgid "invalid name"
 msgstr "neispravan naziv"
 
-#. for sound effects param
-#: addon\globalPlugins\Weather_Plus\__init__.py:1498
+#: __init__.py:1504
 msgid "The cloudiness is"
 msgstr "Naoblaka je"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1499
+#: __init__.py:1505
 msgid "The precipitation is"
 msgstr "Oborina je"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1546
+#: __init__.py:1552
 msgid "the weather report is currently"
 msgstr "trenutačni vremenski izvještaj glasi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1547
-#: addon\globalPlugins\Weather_Plus\__init__.py:1587
-#: addon\globalPlugins\Weather_Plus\__init__.py:1695
-#: addon\globalPlugins\Weather_Plus\__init__.py:1722
-#: addon\globalPlugins\Weather_Plus\__init__.py:2022
+#: __init__.py:1553 __init__.py:1593 __init__.py:1703 __init__.py:1730
+#: __init__.py:2030
 msgid "degrees"
 msgstr "stupnjeva"
 
-#. addss wind information to the string
-#: addon\globalPlugins\Weather_Plus\__init__.py:1554
+#: __init__.py:1560
 msgid "The wind direction is from"
 msgstr "Vjetar dolazi iz smjera"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1560
-#: addon\globalPlugins\Weather_Plus\__init__.py:1572
+#: __init__.py:1566 __init__.py:1578
 msgid "with speed of"
 msgstr "brzine"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1565
-#: addon\globalPlugins\Weather_Plus\__init__.py:1576
+#: __init__.py:1571 __init__.py:1582
 msgid "The wind speed is"
 msgstr "Brzina vjetra iznosi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1584
+#: __init__.py:1590
 msgid "The wind gusts are of"
 msgstr "Udari vjetra su od"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1587
+#: __init__.py:1593
 msgid "The perceived temperature is"
 msgstr "Osjetna temperatura iznosi"
 
-#. addss information on the atmosphere
-#: addon\globalPlugins\Weather_Plus\__init__.py:1594
+#: __init__.py:1600
 msgid "The humidity is"
 msgstr "Vlaga zraka iznosi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1596
+#: __init__.py:1602
 msgid "The cloudiness is of"
 msgstr "Naoblaka je od"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1598
+#: __init__.py:1604
 msgid "The precipitation is of"
 msgstr "Oborina je od"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1603
+#: __init__.py:1609
 msgid "and the visibility is up to"
 msgstr "i vidljivost je do"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1612
+#: __init__.py:1618
 msgid "The visibility is up to"
 msgstr "Vidljivost je do"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1617
+#: __init__.py:1623
 msgid "and the precipitation is"
 msgstr "a oborina je"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1634
+#: __init__.py:1640
 msgid "The pressure is"
 msgstr "Tlak iznosi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1638
+#: __init__.py:1644
 msgid "The UV radiation is of"
 msgstr "UV zračenje je od"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1660
+#: __init__.py:1666
 msgid "The sun rises at"
 msgstr "Sunce izlazi u"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1661
-#: addon\globalPlugins\Weather_Plus\__init__.py:1663
+#: __init__.py:1667 __init__.py:1669
 msgid "and sets at"
 msgstr "i zalazi u"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1662
+#: __init__.py:1668
 msgid "The moon rises at"
 msgstr "Mjesec izlazi u"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1664
+#: __init__.py:1671
+msgid "Does not rise today"
+msgstr "Ne izlazi danas"
+
+#: __init__.py:1672
 msgid "No moonrise"
 msgstr "Nema izlaska Mjeseca"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1665
+#: __init__.py:1673
 msgid "No moonset"
 msgstr "Nema zalaska Mjeseca"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1666
+#: __init__.py:1674
 msgid "No sunrise"
 msgstr "Nema izlaska Sunca"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1667
+#: __init__.py:1675
 msgid "No sunset"
 msgstr "Nema zalaska Sunca"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1691
+#: __init__.py:1699
 msgid "the forecast for today is"
 msgstr "prognoza za danas glasi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1693
-#: addon\globalPlugins\Weather_Plus\__init__.py:1720
+#: __init__.py:1701 __init__.py:1728
 msgid "with a maximum temperature of"
 msgstr "s maksimalnom temperaturom od"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1694
-#: addon\globalPlugins\Weather_Plus\__init__.py:1721
+#: __init__.py:1702 __init__.py:1729
 msgid "and a minimum of"
 msgstr "i minimalnom od"
 
-#. puts the city name at the left top
-#: addon\globalPlugins\Weather_Plus\__init__.py:1727
+#: __init__.py:1735
 msgid "In"
 msgstr "Za"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1727
+#: __init__.py:1735
 msgid "Unnamed"
 msgstr "Neimenovan"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1742
-#: addon\globalPlugins\Weather_Plus\__init__.py:1945
-#: addon\globalPlugins\Weather_Plus\__init__.py:2117
+#: __init__.py:1750 __init__.py:1953 __init__.py:2125
 msgid "Sorry, the city is not set!"
 msgstr "Na žalost, grad nije postavljen!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1784
+#: __init__.py:1792
 msgid "Sorry, it was not possible to load the most recent update!"
 msgstr "Na žalost, nije bilo moguće učitati zadnju nadogradnju!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1785
+#: __init__.py:1793
 msgid "Please try again later."
 msgstr "Pokušaj ponovo kasnije."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1818
-#: addon\globalPlugins\Weather_Plus\__init__.py:1819
+#: __init__.py:1826 __init__.py:1827
 msgid "meters per second"
 msgstr "metara u sekundi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1863
-#: addon\globalPlugins\Weather_Plus\__init__.py:4106
+#: __init__.py:1871 __init__.py:4111
 msgid "Sorry, the city set is not valid or contains incomplete data!"
 msgstr "Žao nam je, skup gradova nije važeći ili sadrži nepotpune podatke!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1871
+#: __init__.py:1879
 msgid "north"
 msgstr "sjever"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1871
+#: __init__.py:1879
 msgid "north northeast"
 msgstr "sjever sjeveroistok"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1871
+#: __init__.py:1879
 msgid "northeast"
 msgstr "sjeveroistok"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1871
+#: __init__.py:1879
 msgid "east northeast"
 msgstr "istok sjeveroistok"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1871
+#: __init__.py:1879
 msgid "east"
 msgstr "istok"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1871
+#: __init__.py:1879
 msgid "east southeast"
 msgstr "istok jugoistok"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1871
+#: __init__.py:1879
 msgid "southeast"
 msgstr "jugoistok"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1871
+#: __init__.py:1879
 msgid "south southeast"
 msgstr "jug jugoistok"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1872
+#: __init__.py:1880
 msgid "south"
 msgstr "jug"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1872
+#: __init__.py:1880
 msgid "south southwest"
 msgstr "jug jugozapad"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1872
+#: __init__.py:1880
 msgid "southwest"
 msgstr "jugozapad"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1872
+#: __init__.py:1880
 msgid "west southwest"
 msgstr "zapad jugozapad"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1872
+#: __init__.py:1880
 msgid "west"
 msgstr "zapad"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1872
+#: __init__.py:1880
 msgid "west northwest"
 msgstr "zapad sjeverozapad"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1872
+#: __init__.py:1880
 msgid "northwest"
 msgstr "sjeverozapad"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1872
+#: __init__.py:1880
 msgid "north northwest"
 msgstr "sjever sjeverozapad"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1889
+#: __init__.py:1897
 msgid ""
 "Is not working properly, contains incomplete data or has been removed from "
 "the"
 msgstr "Ne radi ispravno, sadrži nepotpune podatke ili je uklonjen iz"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1891
-#: addon\globalPlugins\Weather_Plus\__init__.py:3036
-#: addon\globalPlugins\Weather_Plus\__init__.py:4106
+#: __init__.py:1899 __init__.py:3044 __init__.py:4111
 msgid "It could be a temporary problem and you may wait a while '..."
 msgstr ""
 "Možda se radi o privremenom problemu i treba pričekati neko vrijeme '..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1892
+#: __init__.py:1900
 msgid "Do you want to delete it from your list?"
 msgstr "Želiš li ga izbrisati s popisa?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1962
+#: __init__.py:1970
 msgid "Chance of rain"
 msgstr "Mogućnost kiše"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:1963
+#: __init__.py:1971
 msgid "Chance of snow"
 msgstr "Mogućnost snijega"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2010
+#: __init__.py:2018
 msgid "Wind speed"
 msgstr "Brzina vjetra"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2011
+#: __init__.py:2019
 msgid "Direction"
 msgstr "Smjer"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2012
+#: __init__.py:2020
 msgid "Wind direction"
 msgstr "Smjer vjetra"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2013
+#: __init__.py:2021
 msgid "Wind gusts"
 msgstr "Udari vjetra"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2014
+#: __init__.py:2022
 msgid "Cloudiness"
 msgstr "Naoblaka"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2015
+#: __init__.py:2023
 msgid "Precipitation"
 msgstr "Oborine"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2016
+#: __init__.py:2024
 msgid "Humidity"
 msgstr "Vlažnost"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2017
+#: __init__.py:2025
 msgid "Visibility"
 msgstr "Vidljivost"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2036
+#: __init__.py:2044
 msgid "Hourly forecast for"
 msgstr "Prognoza po satima zaa"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2061
+#: __init__.py:2069
 msgid "Provides the current temperature and weather conditions."
 msgstr "Pruža trenutačnu vremensku prognozu i vremenske uvjete."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2073
+#: __init__.py:2081
 #, python-format
 msgid ""
 "If pressed once, announce the weather forecast and current temperature for "
@@ -601,39 +542,39 @@ msgstr ""
 "za 24 sata i sljedećih% d dana. Ako se dvaput pritisne, najavite vremensku "
 "prognozu i vremenske uvjete po satima."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2081
+#: __init__.py:2089
 msgid "Sorry, no list available!"
 msgstr "Na žalost, nema dostupnog popisa!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2092
+#: __init__.py:2100
 msgid "Allows you to set a temporary city."
 msgstr "Dozvoljava postavljanje privremenog grada."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2106
+#: __init__.py:2114
 msgid "Scale of temperature measurement set into"
 msgstr "Temperaturna ljestvica postavljena u"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2108
+#: __init__.py:2116
 msgid "Allows you to set a temporary scale of temperature mesurement."
 msgstr "Dozvoljava postavljanje privremene temperaturne ljestvice."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2163
+#: __init__.py:2171
 msgid "at"
 msgstr "u"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2166
+#: __init__.py:2174
 msgid "Last update of the current weather report"
 msgstr "Zadnje aktualiziranje trenutačnog vremenskog izvještaja"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2172
+#: __init__.py:2180
 msgid "Announces the date of the last update of the weather report."
 msgstr "Najavljuje datum zadnjeg aktualiziranja vremenskog izvještaja."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2185
+#: __init__.py:2193
 msgid "Open the Weather Plus settings dialog."
 msgstr "Otvori dijaloški okvir s postavkama za Vrijeme_Plus."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2265
+#: __init__.py:2273
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast, f5: volume controls."
@@ -642,7 +583,7 @@ msgstr ""
 "popisni okvir i okvir za uređivanje, F4: odredi trajanje Vremenske prognoze, "
 "F5: kontrole za glasnoću."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2266
+#: __init__.py:2274
 msgid ""
 "f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control "
 "duration Weather Forecast."
@@ -650,70 +591,67 @@ msgstr ""
 "F1: pomoć za određivanje mjesta, F2: zadnji odabir pomoću tabulatora, F3: "
 "popisni okvir i okvir za uređivanje, F4: odredi trajanje Vremenske prognoze."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2321
+#: __init__.py:2329
 msgid "Test"
 msgstr "Provjeri"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2322
+#: __init__.py:2330
 msgid "Details"
 msgstr "Detalji"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2323
+#: __init__.py:2331
 msgid "Define"
 msgstr "Odredi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2324
+#: __init__.py:2332
 msgid "Add"
 msgstr "Dodaj"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2326
+#: __init__.py:2334
 msgid "Remove"
 msgstr "Ukloni"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2327
+#: __init__.py:2335
 msgid "Rename"
 msgstr "Preimenuj"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2355
+#: __init__.py:2363
 msgid "&Import new cities..."
 msgstr "Uvez&i nove gradove …"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2356
+#: __init__.py:2364
 msgid "&Export your cities..."
 msgstr "Izv&ezi gradove …"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2357
+#: __init__.py:2365
 msgid "&hourlyforecast setting..."
 msgstr "&postavke vremenske prognoze po satima..."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2372
+#: __init__.py:2380
 msgid "Scale of temperature measurement:"
 msgstr "Temperaturna ljestvica:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2380
+#: __init__.py:2388
 msgid "Degrees shown as:"
 msgstr "Stupnjevi prikazani kao:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2383
+#: __init__.py:2391
 msgid "C - F - K"
 msgstr "C - F - K"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2384
+#: __init__.py:2392
 msgid "Unspecified"
 msgstr "neodređen"
 
-#. cchoices forecast days
-#: addon\globalPlugins\Weather_Plus\__init__.py:2389
+#: __init__.py:2397
 msgid "Weather Forecasts up to days:"
 msgstr "Vremenska prognoza do dana:"
 
-#. choices API languages
-#: addon\globalPlugins\Weather_Plus\__init__.py:2398
+#: __init__.py:2406
 msgid "API response language:"
 msgstr "Jezik prikaza API-ja:"
 
-#. check boxes
-#: addon\globalPlugins\Weather_Plus\__init__.py:2406
+#: __init__.py:2414
 msgid ""
 "&Copy the weather report and weather forecast, including city details to "
 "clipboard"
@@ -721,128 +659,119 @@ msgstr ""
 "&Kopiraj izvještaj o vremenu i vremensku prognozu, uključujući podatke o "
 "gradu u međuspremnik"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2412
+#: __init__.py:2420
 msgid "Enable &audio effects (only for the current weather conditions)"
 msgstr "Aktiviraj &zvučne efekte (samo za trenutačne vremenske uvjete)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2416
+#: __init__.py:2424
 msgid "Use only &weather effects"
 msgstr "Koristi samo &vremenske efekte"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2422
+#: __init__.py:2430
 msgid "General audio volume"
 msgstr "Opća glasnoća"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2423
+#: __init__.py:2431
 msgid "Current audio volume"
 msgstr "Trenutačna glasnoća"
 
-#. check boxes
-#: addon\globalPlugins\Weather_Plus\__init__.py:2454
+#: __init__.py:2462
 msgid "Enable &help buttons in the settings window"
 msgstr "Aktiviraj gumbe &pomoći u prozoru postavki"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2462
+#: __init__.py:2470
 msgid "Read &wind information"
 msgstr "Pročitaj informacije o &vjetru"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2468
-#: addon\globalPlugins\Weather_Plus\__init__.py:6217
+#: __init__.py:2476 __init__.py:6217
 msgid "Add wind directi&on"
 msgstr "Doda&j smjer vjetra"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2473
-#: addon\globalPlugins\Weather_Plus\__init__.py:6213
+#: __init__.py:2481 __init__.py:6213
 msgid "Add wi&nd speed"
 msgstr "&Dodaj brzinu vjetra"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2478
+#: __init__.py:2486
 msgid "Add speed in &meters per second of the wind"
 msgstr "Dodaj brzinu vjetra u &metrima po sekundi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2483
-#: addon\globalPlugins\Weather_Plus\__init__.py:6221
+#: __init__.py:2491 __init__.py:6221
 msgid "Add wind &gust speed"
 msgstr "Dodaj brzinu vjetra i udara"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2488
+#: __init__.py:2496
 msgid "Add perceived &temperature"
 msgstr "Dodaj osjetnu &temperaturu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2494
+#: __init__.py:2502
 msgid "&Read atmospherical information"
 msgstr "P&ročitaj informacije o atmosferi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2500
-#: addon\globalPlugins\Weather_Plus\__init__.py:6229
+#: __init__.py:2508 __init__.py:6229
 msgid "Add humidity va&lue"
 msgstr "Dodaj vrijednost &za vlagu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2505
-#: addon\globalPlugins\Weather_Plus\__init__.py:6233
+#: __init__.py:2513 __init__.py:6233
 msgid "Add &visibility value"
 msgstr "Dodaj i vrijednost za vidljivost"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2510
-#: addon\globalPlugins\Weather_Plus\__init__.py:6225
+#: __init__.py:2518 __init__.py:6225
 msgid "Add cloudiness &value"
 msgstr "Dodaj vrijednost za naoblaku"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2515
-#: addon\globalPlugins\Weather_Plus\__init__.py:6237
+#: __init__.py:2523 __init__.py:6237
 msgid "Add precipitation &value"
 msgstr "Dodaj vrijednost oborina"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2520
-#: addon\globalPlugins\Weather_Plus\__init__.py:6241
+#: __init__.py:2528 __init__.py:6241
 msgid "Add &ultraviolet radiation value"
 msgstr "Dodaj vrijednost ultraljubičastog zračenja"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2525
+#: __init__.py:2533
 msgid "Add atmospheric &pressure value"
 msgstr "Dodaj vrijednost za atmos&ferski tlak"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2530
+#: __init__.py:2538
 msgid "Indicates the atmospheric pressure in millimeters of mercur&y (mmHg)"
 msgstr "Ukazuje na atmosferski tlak u milimetrima žive (mm&Hg)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2536
+#: __init__.py:2544
 msgid "Read a&stronomical information"
 msgstr "Pročitaj informacije o a&stronomiji"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2541
+#: __init__.py:2549
 msgid "Enable reading of the hours in &24-hour format"
 msgstr "Aktiviraj čitanje sata u &24-satnom formatu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2547
+#: __init__.py:2555
 msgid "Use the comma to separate decimals, example (4,&15)"
 msgstr "Koristi decimalni zarez, na primjer (4,&15)"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2552
+#: __init__.py:2560
 msgid "&Displays output in a window"
 msgstr "&Prikazuje izlaz u prozoru"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2557
+#: __init__.py:2565
 msgid "Check for &upgrade"
 msgstr "Provjeri nadogradnj&e"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2604
+#: __init__.py:2612
 msgid "Test the city validity  and find the data of it."
 msgstr "Testiraj ispravnost grada i pronađi podatke o njemu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2605
+#: __init__.py:2613
 msgid "Add the current city into your list."
 msgstr "Dodaj trenutačni grad u popis."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2606
+#: __init__.py:2614
 msgid "Displays information about the current city."
 msgstr "Prikazuje informacije o trenutnom gradu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2607
+#: __init__.py:2615
 msgid "Allows you to define the area, in order to adapt the sound effects."
 msgstr "Omogućuje određivanje područja, kako bi se prilagodio zvučni efekt."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2608
+#: __init__.py:2616
 msgid ""
 "Presets the current city as the default, will be used every time you restart "
 "the plugin."
@@ -850,15 +779,15 @@ msgstr ""
 "Predodređuje trenutačni grad kao standardni. Učitat će se svaki put kad se "
 "dodatak ponovo pokrene."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2609
+#: __init__.py:2617
 msgid "Delete  the current city from your list."
 msgstr "Brisanje grada iz popisa."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2610
+#: __init__.py:2618
 msgid "Rename the current city."
 msgstr "Preimenuj trenutačni grad."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2611
+#: __init__.py:2619
 msgid ""
 "Permits to incorporate in your list new cities importing them from another "
 "list with the extension *.zipcodes; you can select the city you want to "
@@ -868,75 +797,75 @@ msgstr ""
 "nastavkom *.zipcodes. Moguće je odabrati grad koji se želi uvesti, "
 "uključivanjem odgovarajućeg potvrdnog okvira."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2612
+#: __init__.py:2620
 msgid "Permits to save your list of cities in a specified path."
 msgstr "Dozvoljava spremanje popisa gradova u određenu putanju."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2613
+#: __init__.py:2621
 msgid "Allows you to choose the contents of the hourly forecast report."
 msgstr "Dozvoljava odabir sadržaja izvještaja o prognozi po satu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2720
+#: __init__.py:2728
 msgid "You can enter or search for a city"
 msgstr "Moguće je upisati ili tražiti grad"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2721
+#: __init__.py:2729
 msgid "By Latitude and Longitude: 48.8567,2.3508"
 msgstr "Prema geografskoj širini i dužini: 48,8567,2,3508"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2722
+#: __init__.py:2730
 msgid "By City name: Paris"
 msgstr "Po imenu grada: Pariz"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2723
+#: __init__.py:2731
 msgid "By City name and country: Toronto,Canada"
 msgstr "Po imenu grada i države: Toronto,Kanada"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2724
+#: __init__.py:2732
 msgid "Or Toronto,CA"
 msgstr "Ili Toronto,CA"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2725
+#: __init__.py:2733
 msgid "By City name and region: Toronto,Ontario"
 msgstr "Po nazivu grada i regije: Toronto,Oncario"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2726
+#: __init__.py:2734
 msgid "By US zip: 10001"
 msgstr "Po američkom poštanskom broju: 10001"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2727
+#: __init__.py:2735
 msgid "By UK postcode: SW1"
 msgstr "Po britanskom poštanskom broju: SW1"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2728
+#: __init__.py:2736
 msgid "By Canada postal code: G2J"
 msgstr "Po poštanskom broju Kanade: G2J"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2729
+#: __init__.py:2737
 msgid "By metar:<metar code>: metar:EGLL"
 msgstr "Po metru:<metar code>: metar:EGLL"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2730
+#: __init__.py:2738
 msgid "By iata:<3 digit airport code>: iata:DXB"
 msgstr "Po iata:<Troznamenkastom kodu zračne luke>: iata: DXB"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2731
+#: __init__.py:2739
 msgid "By auto:ip IP lookup: auto:ip"
 msgstr "Automobilom:ip IP lookup: auto: ip"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2732
+#: __init__.py:2740
 msgid "By IP address (IPv4 and IPv6 supported): 100.0.0.1"
 msgstr "Po IP adresi (IPv4 i IPv6 podržani): 100.0.0.1"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2733
+#: __init__.py:2741
 msgid "if there will be cities with the same name, will be listed"
 msgstr "ako će postojati gradovi s istim imenom, bit će navedeni"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2734
+#: __init__.py:2742
 msgid "By default, confirming a selection, is used the postal code"
 msgstr "Po zadanim postavkama, pri potvrdi odabira, koristi se poštanski broj"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2735
+#: __init__.py:2743
 msgid ""
 "If the postal code is not valid, will be used a text string: city, state, "
 "region"
@@ -944,11 +873,11 @@ msgstr ""
 "Ako poštanski broj nije valjan, koristit će se tekstualni niz: grad, država, "
 "regija"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2736
+#: __init__.py:2744
 msgid "You can indicate how to proceed by prefixing the following commands"
 msgstr "Prefiksom sljedećih naredbi možeš naznačiti kako postupiti"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2737
+#: __init__.py:2745
 msgid ""
 "Direct (cities with the same name, will not listed), by typing D:City: D:"
 "Paris"
@@ -956,599 +885,580 @@ msgstr ""
 "Izravno (gradovi s istim imenom, neće biti navedeni), tipkanjem D: Grad: D: "
 "Pariz"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2738
+#: __init__.py:2746
 msgid "Geographic coordinates, by typing G:City: G:Venezia"
 msgstr "Geografske kordinate upisivanjem G: Grad: G: Venezia"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2739
+#: __init__.py:2747
 msgid "Text string, by typing T:City: T:Bologna"
 msgstr "Tekstualni niz, upisivanjem T: Grad: T: Bologna"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2740
+#: __init__.py:2748
 msgid "If the city is not found"
 msgstr "Ako se grad ne pronađe"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2741
+#: __init__.py:2749
 msgid "Try to reverse the order in the search key"
 msgstr "Pokušaj obrnuti redoslijed u polju za pretraživanje"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2742
+#: __init__.py:2750
 msgid "Try with or without the country of origin"
 msgstr "Pokušaj sa ili bez zemlje porijekla"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2743
+#: __init__.py:2751
 msgid "Try to merge the name with hyphens, or separate it with separator"
 msgstr "Pokušaj spojiti ime s crticama ili ga odvojiti razmakom"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2744
+#: __init__.py:2752
 msgid "Try deleting apostrophes"
 msgstr "Pokušaj izbrisati izostavnike"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2745
+#: __init__.py:2753
 msgid "Try changing the vowels accented with normal vowels"
 msgstr "Pokušaj zamijeniti naglašene samoglasnike s običnim samoglasnicima"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2746
+#: __init__.py:2754
 msgid "Try to change in English some parts"
 msgstr "Pokušaj neke dijelove na negleskom promijeniti"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2747
+#: __init__.py:2755
 msgid "Try with a closest location"
 msgstr "Pokušaj s najbližim mjestom"
 
-#. Translators: the title of the help window
-#: addon\globalPlugins\Weather_Plus\__init__.py:2750
+#: __init__.py:2758
 msgid "Help placing"
 msgstr "Pomoć za određivanje mjesta"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2844
+#: __init__.py:2852
 msgid "No sound effect in memory!"
 msgstr "Nema zvučnog efekta u memoriji!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2845
+#: __init__.py:2853
 msgid "I can't reproduce the sound."
 msgstr "Nije moguće reproducirati zvuk."
 
-#. Translators: message dialog
-#: addon\globalPlugins\Weather_Plus\__init__.py:2941
+#: __init__.py:2949
 msgid "Choose search key for"
 msgstr "Odaberi polje za pretraživanje za"
 
-#. Translators: the dialog message
-#: addon\globalPlugins\Weather_Plus\__init__.py:2964
+#: __init__.py:2972
 msgid "Unfortunately I could not recover enough data to find the city."
 msgstr ""
 "Na žalost, nije bilo moguće prikupiti dovoljno podataka za pronalazak grada."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2965
+#: __init__.py:2973
 msgid "Do I try anyway?"
 msgstr "Da li ipak pokušati?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:2996
+#: __init__.py:3004
 msgid "not found! Press F1 for help on entering data."
 msgstr "nije pronađeno! Pritisni F1 za pomoć o upisivanju podataka."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3034
+#: __init__.py:3042
 msgid "Is not working properly or has been removed from the database of"
 msgstr "Ne radi pravilno ili je uklonjeno iz baze podataka"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3038
+#: __init__.py:3046
 msgid "Is no longer valid!"
 msgstr "Više ne važi!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3072
+#: __init__.py:3080
 msgid "This option requires the installation of some audio effects"
 msgstr "Ova opcija zahtijeva instaliranje dodatnih zvučnih efekata"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3073
+#: __init__.py:3081
 msgid "Do you want to install them?"
 msgstr "Želiš li ih instalirati?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3077
+#: __init__.py:3085
 msgid "The audio effects are installed!"
 msgstr "Zvučni efekti su instalirani!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3078
+#: __init__.py:3086
 msgid "Would you like to update?"
 msgstr "Želiš li ažurirati?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3079
+#: __init__.py:3087
 msgid "Or do you want to uninstall them?"
 msgstr "Ili ih želiš deinstalirati?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3087
+#: __init__.py:3095
 msgid "Are you sure you want to uninstall the sound effects?"
 msgstr "Jesi li siguran da želiš deinstalirati zvučne efekte?"
 
-#. Translators: title and message used in tthe progress qdialog
-#: addon\globalPlugins\Weather_Plus\__init__.py:3115
+#: __init__.py:3123
 msgid "Update in progress"
 msgstr "Ažuriranje je u tijeku"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3116
+#: __init__.py:3124
 msgid "Installation in progress"
 msgstr "Instaliranje je u tijeku"
 
-#. Installation Complete
-#: addon\globalPlugins\Weather_Plus\__init__.py:3143
+#: __init__.py:3151
 msgid "The installation of audio effects has been completed successfully!"
 msgstr "Instaliranje zvučnih efekata je uspješno završena!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3144
+#: __init__.py:3152
 msgid "Adding folder:"
 msgstr "Dodavanje mape:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3146
+#: __init__.py:3154
 msgid "The upgrade of audio effects has been completed successfully!"
 msgstr "Nadogradnja zvučnih efekata je uspješno završena!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3153
+#: __init__.py:3161
 msgid "These sound effects are subject to change by the author."
 msgstr "Ove zvučne efekte mijenja autor."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3154
+#: __init__.py:3162
 msgid "Disable and re-enable this option in order to update or uninstall them."
 msgstr ""
 "Isključi i ponovo uključi ovu opciju, kako bi se ažurirali ili deinstalirali."
 
-#. Translators: dialog message and title used to notify lack of connection or corrupt file, during the sound effects installation
-#: addon\globalPlugins\Weather_Plus\__init__.py:3215
+#: __init__.py:3223
 msgid "Verify that your internet connection is active, or try again later."
 msgstr "Provjeri internetsku vezu ili pokušaj kasnije ponovo."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3216
+#: __init__.py:3224
 msgid "File corrupted or not available!"
 msgstr "Datoteka je oštećena ili nije dostupna!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3218
+#: __init__.py:3226
 msgid "Sorry, I could not complete the installation of the sound effects!"
 msgstr "Na žalost, nije bilo moguće dovršiti instaliranje zvučnih efekata!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3219
+#: __init__.py:3227
 msgid "Installation Error!"
 msgstr "Greška pri instaliranju!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3350
+#: __init__.py:3358
 msgid "Cannot identify your location, due to insufficient data."
 msgstr "Nije moguće pronaći mjesto, nema dovoljno podataka."
 
-#. Translators: the details title
-#: addon\globalPlugins\Weather_Plus\__init__.py:3372
+#: __init__.py:3380
 msgid "Details of"
 msgstr "Detalji za"
 
-#. Translators: the details message
-#: addon\globalPlugins\Weather_Plus\__init__.py:3384
+#: __init__.py:3392
 msgid "Place"
 msgstr "Mjesto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3385
+#: __init__.py:3393
 msgid "Current local time"
 msgstr "Trenutačno lokalno vrijeme"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3386
+#: __init__.py:3394
 msgid "Degrees latitude"
 msgstr "Stupnjeve geografske širine"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3387
+#: __init__.py:3395
 msgid "Degrees longitude"
 msgstr "Stupnjeve geografske dužine"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3388
+#: __init__.py:3396
 msgid "Elevation above sea level"
 msgstr "Nadmorsku visinu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3388
+#: __init__.py:3396
 msgid "meters"
 msgstr "metara"
 
-#. Translators: the message
-#: addon\globalPlugins\Weather_Plus\__init__.py:3419
+#: __init__.py:3427
 msgid "Define the area for"
 msgstr "Odredi područje za"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3424
+#: __init__.py:3432
 msgid "Hinterland"
 msgstr "Zaleđe"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3425
+#: __init__.py:3433
 msgid "Maritime area"
 msgstr "Priobalno područje"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3426
+#: __init__.py:3434
 msgid "Desert zone"
 msgstr "Pustinjska zona"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3427
+#: __init__.py:3435
 msgid "Arctic zone"
 msgstr "Arktička zona"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3428
+#: __init__.py:3436
 msgid "Mountain zone"
 msgstr "Planinska zona"
 
-#. Translators: the dialog message
-#: addon\globalPlugins\Weather_Plus\__init__.py:3584
+#: __init__.py:3592
 msgid "Enter new name."
 msgstr "Upiši novo ime."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3601
+#: __init__.py:3609
 msgid ""
 "The details of this city are not in the database and so I added them to the "
 "list."
 msgstr ""
 "Pojedinosti o ovom gradu nisu u bazi podataka, pa sam ih dodao na popis."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3626
+#: __init__.py:3634
 msgid "it can't be used because it already exists!"
 msgstr "ne može se koristiti jer već postoji!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3740
+#: __init__.py:3748
 msgid "is correct"
 msgstr "je točno"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3741
+#: __init__.py:3749
 msgid "But the name"
 msgstr "Ali ime"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3743
+#: __init__.py:3751
 msgid "already exists"
 msgstr "već postoji"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3744
+#: __init__.py:3752
 msgid "You have to change it!"
 msgstr "Moraš ga promijeniti!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3745
+#: __init__.py:3753
 msgid "The city proper is"
 msgstr "Pravi grad je"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3747
+#: __init__.py:3755
 msgid "Want to use the suggested name?"
 msgstr "Želiš li koristiti predloženo ime?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3760
+#: __init__.py:3768
 msgid "Import cities"
 msgstr "Uvezi gradove"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3780
+#: __init__.py:3788
 msgid "Empty file or not in cities format compatible!"
 msgstr "Prazna datoteka ili nije kompatibilna s formatom gradova!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3786
+#: __init__.py:3794
 msgid "Do you want to replace your list with this?"
 msgstr "Želiš li zamijeniti popis gradova ovim popisom?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3787
+#: __init__.py:3795
 msgid "If you select yes, your list will be completely replaced."
 msgstr "Ako odabereš „Da”, popis će se kompletno zamijeniti."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3788
+#: __init__.py:3796
 msgid "If you select no, the new cities will be added to your list."
 msgstr "Ako odabereš „Ne”, u popis će se dodati novi gradovi."
 
-#. Translators: the title window
-#: addon\globalPlugins\Weather_Plus\__init__.py:3791
+#: __init__.py:3799
 msgid "Select import mode"
 msgstr "Odaberi način uvoza"
 
 #. translators: the dialog title
-#: addon\globalPlugins\Weather_Plus\__init__.py:3810
+#: __init__.py:3818
 msgid "File contents"
 msgstr "Datoteka sadrži"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3810
+#: __init__.py:3818
 msgid "cities"
 msgstr "gradove"
 
 #. translators: the dialog message
-#: addon\globalPlugins\Weather_Plus\__init__.py:3812
+#: __init__.py:3820
 msgid "Activate the check boxes of the cities you want to import."
 msgstr "Označi potvrdne okvire gradova koje želiš uvesti."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3843
+#: __init__.py:3851
 msgid "Importing cities in progress"
 msgstr "Uvoz gradova je u tijeku"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3938
+#: __init__.py:3945
 msgid "Were added"
 msgstr "Dodani su"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3938
+#: __init__.py:3945
 msgid "new cities to the list"
 msgstr "novi gradovi u popis"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3939
+#: __init__.py:3946
 msgid "Have been ignored because existing"
 msgstr "Zanemareni su jer postoje"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3940
+#: __init__.py:3947
 msgid "Content of imported list"
 msgstr "Sadržaj uvezenog popisa"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3941
+#: __init__.py:3948
 msgid "Containing incomplete data"
 msgstr "Sadrži nepotpune podatke"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3942
+#: __init__.py:3949
 msgid "selected by the user"
 msgstr "odabrano od korisnika"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3943
+#: __init__.py:3950
 msgid "Import finished"
 msgstr "Uvoz je završen"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3958
+#: __init__.py:3965
 msgid "A copy of"
 msgstr "Kopija od"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3960
+#: __init__.py:3967
 msgid "It will be exported"
 msgstr "Izvest će se"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3961
+#: __init__.py:3968
 msgid "But it does not yet contain the changes you just made the list!"
 msgstr "Ali još ne sadrži upravo napravljene promjene u popisu!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3962
+#: __init__.py:3969
 msgid "I proceed?"
 msgstr "Nastaviti?"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3969
+#: __init__.py:3976
 msgid "Export cities"
 msgstr "Izvezi gradove"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:3987
+#: __init__.py:3994
 msgid "You can not export the same file at the same path!"
 msgstr "Nije moguće izvesti istu datoteku na istu putanju!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4043
+#: __init__.py:4048
 msgid "Hourlyforecast data report values."
 msgstr "Vrijednosti izvješća podataka po satima."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4043
+#: __init__.py:4048
 msgid "Disable the data you don't want to be processed:"
 msgstr "Onemogućite podatke koje ne želite obrađivati:"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4845
+#: __init__.py:4851
 msgid "january"
 msgstr "siječanj"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4846
+#: __init__.py:4852
 msgid "february"
 msgstr "veljača"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4847
+#: __init__.py:4853
 msgid "march"
 msgstr "ožujak"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4848
+#: __init__.py:4854
 msgid "april"
 msgstr "travanj"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4849
+#: __init__.py:4855
 msgid "may"
 msgstr "svibanj"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4850
+#: __init__.py:4856
 msgid "june"
 msgstr "lipanj"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4851
+#: __init__.py:4857
 msgid "july"
 msgstr "srpanj"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4852
+#: __init__.py:4858
 msgid "august"
 msgstr "kolovoz"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4853
+#: __init__.py:4859
 msgid "september"
 msgstr "rujan"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4854
+#: __init__.py:4860
 msgid "october"
 msgstr "listopad"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4855
+#: __init__.py:4861
 msgid "november"
 msgstr "studeni"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4856
+#: __init__.py:4862
 msgid "december"
 msgstr "prosinac"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4857
+#: __init__.py:4863
 msgid "Monday"
 msgstr "Ponedjeljak"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4858
+#: __init__.py:4864
 msgid "Tuesday"
 msgstr "Utorak"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4859
+#: __init__.py:4865
 msgid "Wednesday"
 msgstr "Srijeda"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4860
+#: __init__.py:4866
 msgid "Thursday"
 msgstr "Četvrtak"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4861
+#: __init__.py:4867
 msgid "Friday"
 msgstr "Petak"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4862
+#: __init__.py:4868
 msgid "Saturday"
 msgstr "Subota"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4863
+#: __init__.py:4869
 msgid "Sunday"
 msgstr "Nedjelja"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4937
+#: __init__.py:4943
 #, python-format
 msgid "It was not possible find the acronym of \"%s\"!"
 msgstr "Nije bilo moguće pronaći kraticu \"% s\"!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4938
+#: __init__.py:4944
 msgid "This may not allow you to get the city details."
 msgstr "To ti možda neće omogućiti da dobijete detalje o gradu."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4939
+#: __init__.py:4945
 msgid ""
 "Please report this to the author so he can add this country in database."
 msgstr "Ovo prijavi autoru kako bi dodao ovu zemlju u bazu podataka."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4940
+#: __init__.py:4946
 #, python-format
 msgid "Send an email to %s"
 msgstr "Pošalji e-poruku na %s"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:4941
+#: __init__.py:4947
 msgid "With  object the line below, thanks."
 msgstr "S predmetom ispod retka, hvala."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5014
-#: addon\globalPlugins\Weather_Plus\__init__.py:5032
+#: __init__.py:5018 __init__.py:5036
 msgid "Downloaded"
 msgstr "Preuzeto"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5015
+#: __init__.py:5019
 msgid "of"
 msgstr "od"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5052
+#: __init__.py:5056
 msgid "Find..."
 msgstr "Pronađi …"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5053
+#: __init__.py:5057
 msgid "Find next"
 msgstr "Pronađi sljedeće"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5054
+#: __init__.py:5058
 msgid "Find previous"
 msgstr "Pronađi prethodno"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5250
+#: __init__.py:5254
 msgid "Be an error has occurred."
 msgstr "Došlo je do greške."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5251
+#: __init__.py:5255
 msgid "See the log for more information."
 msgstr "Dodatne informacije potraži u zapisniku."
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5252
+#: __init__.py:5256
 msgid "Error: failure writing file!"
 msgstr "Greška: nije moguće prepisati datoteku!"
 
-#. Translators: window that allows you to choose a city among the found occurrences
-#. Translators: the window title
-#: addon\globalPlugins\Weather_Plus\__init__.py:5448
+#: __init__.py:5448
 msgid "occurrences found"
 msgstr "pronađenih pojava"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5448
+#: __init__.py:5448
 msgid "for"
 msgstr "za"
 
-#. Translators: message dialog
-#: addon\globalPlugins\Weather_Plus\__init__.py:5451
+#: __init__.py:5451
 msgid "Choose a city."
 msgstr "Odaberi grad."
 
-#. get hotkeys
-#: addon\globalPlugins\Weather_Plus\__init__.py:5453
+#: __init__.py:5453
 msgid "List of availables Cities"
 msgstr "Popis dostupnih gradova"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5478
+#: __init__.py:5478
 msgid "Do not show this message again!"
 msgstr "Ne prikazuj ponovo ovu poruku!"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5488
+#: __init__.py:5488
 msgid "&Install..."
 msgstr "&Instaliraj …"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5488
+#: __init__.py:5488
 msgid "Upd&ate..."
 msgstr "A&žuriraj …"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5490
+#: __init__.py:5490
 msgid "&Close"
 msgstr "&Zatvori"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5491
+#: __init__.py:5491
 msgid "&Uninstall..."
 msgstr "&Deinstaliraj …"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5588
+#: __init__.py:5588
 msgid "Type the search string"
 msgstr "Upiši pojam za pretragu"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5588
-#: addon\globalPlugins\Weather_Plus\__init__.py:5642
+#: __init__.py:5588 __init__.py:5642
 msgid "Find"
 msgstr "Pronađi"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5639
+#: __init__.py:5639
 msgid "next"
 msgstr "sljedeće"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5639
+#: __init__.py:5639
 msgid "previous"
 msgstr "prethodno"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5646
+#: __init__.py:5646
 msgid "No results next for"
 msgstr "Nema sljedećih rezultata za"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5646
+#: __init__.py:5646
 msgid "No previous results for"
 msgstr "Nema prethodnih rezultata za"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5679
+#: __init__.py:5679
 msgid "&Select all"
 msgstr "&Označi sve"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5680
+#: __init__.py:5680
 msgid "&Deselect all"
 msgstr "Od&znači sve"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5744
+#: __init__.py:5744
 msgid "not checked"
 msgstr "nije označeno"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5746
+#: __init__.py:5746
 msgid "checked"
 msgstr "označeno"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5751
+#: __init__.py:5751
 msgid "check box"
 msgstr "potvrdni okvir"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5762
+#: __init__.py:5762
 msgid "check boxes checked"
 msgstr "potvrdni okviri označeni"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5771
+#: __init__.py:5771
 msgid "check boxes not checked"
 msgstr "potvrdni okviri nisu označeni"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5843
+#: __init__.py:5843
 msgid "Saving in progress"
 msgstr "Spremanje je u tijeku"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:5845
+#: __init__.py:5845
 msgid "Download canceled."
 msgstr "Preuzimanje je otkazano"
 
-#: addon\globalPlugins\Weather_Plus\__init__.py:6292
+#: __init__.py:6292
 msgid "&Copy to clipboard"
 msgstr "&Kopiraj u međuspremnik"
 
-#. Add-on description
-#. Translators: Long description to be shown for this add-on on add-on information from add-ons manager
 #: buildVars.py:26
 msgid ""
 "Adds local temperature and forecast 24 hours and prediction up to 2 days.\n"

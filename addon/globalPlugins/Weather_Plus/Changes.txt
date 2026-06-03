@@ -1,3 +1,5 @@
+Changes version 10.9:
+• Corrected and translated a new response string "Does not rise toda:Does not rise today" to "Does not rise today"".
 Changes version 10.8:
 • Updated bass.dll.
 Changes version 10.7:
