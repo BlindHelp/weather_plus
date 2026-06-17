@@ -48,8 +48,8 @@ To add a new city: press the following item:
 * Import new cities... - This button allows you to import cities from the another list of cities with the extension *.zipcodes; you can select the city you want to import, by turning on the checkbox associated with it.
 * Export your cities... - It allows you to save the cities in the specified file with the extension *.zipcodes. This button is activated if you have added and saved at least one city into the list.
 * Hourly forecast setting... - This button allows you to choose the contents of the hourly forecast report.
-* Scale of temperature measurement: Use the radio button to select between Celsius (by default), Fahrenheit and Kelvin.
-* Degrees shown as: Use the radio button to select between: Celsius `-` Fahrenheit `-` Kelvin (by default) C `-` F `-` K or Unspecified.
+* Scale of temperature measurement: Use the combo box to select between Celsius (by default), Fahrenheit and Kelvin.
+* Degrees shown as: Use the combo box to select between: Celsius `-` Fahrenheit `-` Kelvin (by default) C `-` F `-` K or Unspecified.
 * Combo box: Weather Forecasts up to days: 1; you can choose between 1 to 3 (1 days by default)
 * Combo box: API response language: English, en; you can choose the language of the weather conditions text.
 * To perform the following actions, toggle the following checkboxes:
