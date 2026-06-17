@@ -75,9 +75,9 @@ Per aggiungere una nuova città: premere il seguente elemento:
   specificato con estensione *.zipcodes. Questo pulsante viene attivato se
   avete aggiunto e salvato almeno una città nell'elenco.
 * Impostazione di previsione oraria... - Questo pulsante consente di scegliere i contenuti del rapporto di previsione oraria.
-* Scala di misura della temperatura: Utilizzare il Pulsante radio per
+* Scala di misura della temperatura: Utilizzare la casella combinata per
   selezionare tra Centigradi (predefinito), Fahrenheit e Kelvin.
-* Indica i gradi come: Utilizzare il Pulsante radio per selezionare tra:
+* Indica i gradi come: Utilizzare la casella combinata per selezionare tra:
   Centigradi `-` Fahrenheit `-` Kelvin (predefinito) C `-` F `-` K o Non
   specificato.
 * Casella combinata: Previsioni del tempo fino a giorni: 1; selezionare tra

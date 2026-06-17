@@ -75,9 +75,9 @@ Para adicionar uma nova cidade: pressione o seguinte item:
   especificado com a extensão *.zipcodes. Este botão é ativado se você
   adicionou e salvou pelo menos uma cidade na lista.
 * configuração de previsão horária... - Este botão permite que você escolha o conteúdo do relatório de previsão horária.
-* Escala de medição de temperatura: use o botão de opção para selecionar
+* Escala de medição de temperatura: use a caixa de combinação para selecionar
   entre Celsius (por padrão), Fahrenheit e Kelvin.
-* Graus mostrados como: Use o botão de opção para selecionar entre: Celsius
+* Graus mostrados como: Use a caixa de combinação para selecionar entre: Celsius
   `-` Fahrenheit `-` Kelvin (por padrão) C `-` F `-` K ou Não Especificado.
 * Caixa de combinação: Previsões do Tempo até dias: 1; você pode escolher
   entre 1 a 3 (1 dia por padrão)

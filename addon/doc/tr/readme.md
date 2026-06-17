@@ -48,8 +48,8 @@ Yeni bir şehir eklemek için: aşağıdaki seçeneği kullanın:
 * Yeni şehirleri içe aktar... - Bu düğme, *.zipcodes uzantılı bir başka dosyada kayıtlı şehirleri listenize eklemenizi sağlar; İçe aktarmak istediğiniz şehri, onunla ilişkili onay kutusunu işaretleyerek seçebilirsiniz.
 * Şehirlerinizi dışa aktarın... - Şehirleri *.zipcodes uzantısıyla belirtilen dosyaya kaydetmenizi sağlar. Listeye en az bir şehir eklediyseniz ve kaydettiyseniz bu düğme etkinleştirilebilir.
 * saatlik tahmin ayarı... - Bu düğme, saatlik tahmin raporunun içeriğini seçmenizi sağlar.
-* Sıcaklık ölçüm birimi: Celsius (varsayılan olarak), Fahrenheit ve Kelvin arasında seçim yapmak için radyo düğmesini kullanın.
-* Derece şu şekilde gösterilsin: Şunlar arasında seçim yapmak için radyo düğmesini kullanın: Celsius `-` Fahrenheit `-` Kelvin (varsayılan olarak) C `-` F `-` K veya Belirtilmemiş.
+* Sıcaklık ölçüm birimi: Celsius (varsayılan olarak), Fahrenheit ve Kelvin arasında seçim yapmak için açılır birleşik kutuyu kullanın.
+* Derece şu şekilde gösterilsin: Şunlar arasında seçim yapmak için açılır birleşik kutuyu kullanın: : Celsius `-` Fahrenheit `-` Kelvin (varsayılan olarak) C `-` F `-` K veya Belirtilmemiş.
 * Şu kadar günlük hava tahmini seçim kutusu: Günlere kadar Hava Tahminleri: 1; 1 ila 3 arasında seçim yapabilirsiniz (varsayılan olarak 1 gün)
 * Seçim kutusu: API yanıt dili:: İngilizce, tr; hava durumu metninin dilini seçebilirsiniz.
 * Aşağıdaki eylemleri gerçekleştirmek için aşağıdaki onay kutularını işaretleyin:

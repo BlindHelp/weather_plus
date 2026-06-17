@@ -74,7 +74,7 @@ Za dodavanje novog grada: pritisni sljedeću stavku:
 * hourly forecast setting... - This button allows you to choose the contents of the hourly forecast report.
 * Temperaturna ljestvica: Koristi odabirni gumb za biranje između Celzijevih
   stupnjeva (standardno), Fahrenheitovih stupnjeva i kelvina.
-* Stupnjevi prikazani kao: Koristi odabirni gumb za biranje između: Celzija
+* Stupnjevi prikazani kao: Odabirni okvir za biranje između: Celzija
   `-` Fahrenheita `-` Kelvina (standardno) C `-` F `-` K ili neodređeno.
 * Odabirni okvir: Vremenska prognoza do dana: 3; odaberi između 1 do 10
   (standardno je postavljeno na 3 dana)

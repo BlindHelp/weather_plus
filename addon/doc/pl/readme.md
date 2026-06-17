@@ -144,7 +144,7 @@ This button allows you to choose the contents of the hourly forecast report.
 
 # Skala pomiaru temperatury: #
 
-Użyj przycisku opcji aby wybrać:
+Użyj pola kombi, aby: wybrać:
 
 * Celsjusz (domyślnie)
 * Farenhajt
@@ -152,7 +152,7 @@ Użyj przycisku opcji aby wybrać:
 
 # Pokazuj stopnie jako: #
 
-Użyj przycisku opcji aby wybrać:
+Użyj pola kombi, aby wybrać:
 
 * Celsjusz `-` Farenhajt `-` Kelwin (domyślnie)
 * C `-` F `-` K

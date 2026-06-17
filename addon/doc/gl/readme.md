@@ -73,9 +73,9 @@ Para engadir unha nova cidade: preme o elemento seguinte:
   especificado coa extensión *.zipcodes. Este botón está activo se engadiu e
   gardou alomenos unha cidade á lista.
 * opción de previsión por horas... - Este botón permíteche escoller o contido do informe da previsión por horas.
-* Escala de temperatura: Utiliza o botón de opción para seleccionar entre
+* Escala de temperatura: Utiliza a caixa combinada para seleccionar entre
   Celsius (por defecto), Fahrenheit e Kelvin.
-* Graos mostrados coma: Utiliza o botón de opción para seleccionar entre:
+* Graos mostrados coma: Utiliza a caixa combinada para seleccionar entre:
   Celsius `-` Fahrenheit `-` Kelvin (por defecto) C `-` F `-` K ou sen
   especificar.
 * Caixa combinada: Previsión meteorolóxica ata días: 1; Podes escoller de 1

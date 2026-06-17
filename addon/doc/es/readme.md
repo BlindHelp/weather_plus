@@ -76,9 +76,9 @@ Para añadir una nueva Ciudad: pulsa el siguiente elemento:
   especificado con la extensión * .zipcodes. Este botón se activa si tienes
   añadido y guardado al menos una ciudad en la lista.
 * Configuración del pronóstico horario... - Este botón te permite elegir loscontenidos del boletín del pronóstico horario.
-* Escala de medición de la temperatura: Utiliza los botones de opciones para
+* Escala de medición de la temperatura: Utiliza el cuadro combinado para
   seleccionar entre Celsius (por defecto), Fahrenheit y Kelvin.
-* Indica los grados como: Utiliza los botones de opciones para seleccionar
+* Indica los grados como: Utiliza el cuadro combinado para seleccionar
   entre: Celsius `-` Fahrenheit `-` Kelvin (por defecto) C `-` F `-` K o No
   especificado.
 * Cuadro combinado: Pronóstico del Tiempo hasta días: 1; elija entre 1 a 3

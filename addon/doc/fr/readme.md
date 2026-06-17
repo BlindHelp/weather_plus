@@ -78,9 +78,9 @@ Pour ajouter une nouvelle ville : appuyer sur l'élément suivant :
   fichier spécifié avec l'extension * .zipcodes. Ce bouton est activé si
   vous avez ajouté et enregistré au moins une ville dans la liste.
 * Réglage des prévisions horaires... - Ce bouton vous permet de choisir le contenu du bulletin des prévisions horaires.
-* Échelle de mesure de la température : Utiliser le bouton radio pour
+* Échelle de mesure de la température : Utiliser la zone de liste déroulante pour
   choisir entre Celsius (par défaut), Fahrenheit et Kelvin.
-* Degrés affichés comme : Utiliser le bouton radio pour choisir entre :
+* Degrés affichés comme : Utiliser la zone de liste déroulante pour choisir entre :
   Celsius `-` Fahrenheit `-` Kelvin (par défaut) C `-` F `-` K ou Non
   spécifié.
 * Liste déroulante : Prévisions Météo jusqu'à jours : 1; choisissez une

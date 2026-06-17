@@ -48,8 +48,8 @@
 * Nạp các tỉnh / thành mới... - nút này cho phép bạn nạp các tỉnh / thành từ một danh sách tỉnh / thành khác với phần mở rộng *.zipcodes; bạn có thể chọn tỉnh / thành muốn nạp vào bằng cách bật các hộp kiểm được gắn với nó.
 * Xuất các tỉnh / thành của bạn... - cho phép lưu các tỉnh / thành vào một tập tin với phần mở rộng là *.zipcodes. Có thể bấm nút này nếu bạn đã thêm và lưu  ít nhất một tỉnh / thành vào danh sách.
 * Cài đặt dự báo từng giờ... - nút này cho phép bạn chọn nội dung của việc dự báo theo từng giờ.
-* Đơn vị đo nhiệt độ: dùng các nút radio để chọn giữa Celsius (mặc định), Fahrenheit và Kelvin.
-* Hiển thị nhiệt độ: dùng các nút radio để chọn giữa: Celsius `-` Fahrenheit `-` Kelvin (làm mặc định) C `-` F `-` K hoặc không quy định.
+* Đơn vị đo nhiệt độ: dùng hộp kết hợp để chọn giữa Celsius (mặc định), Fahrenheit và Kelvin.
+* Hiển thị nhiệt độ: dùng hộp kết hợp để chọn giữa: Celsius - Fahrenheit - Kelvin (làm mặc định) C - F - K hoặc không quy định.
 * Hộp xổ: dự báo thời tiết đến ngày: 1; bạn có thể chọn từ 1 đến 3 (mặc định là một ngày).
 * Hộp xổ: Ngôn ngữ trả về cho API: English, en; bạn có thể chọn ngôn ngữ của nội dung dự báo thời tiết.
 * Để thực hiện các hoạt động sau đây, hay bật / tắt các hộp kiểm tương ứng:

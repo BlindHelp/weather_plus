@@ -119,7 +119,7 @@ Denne knap kan aktiveres, hvis du har tilføjet og gemt mindst én by i listen.
 
 # Måleenhed for temperatur: #
 
-Brug radioknappen for at vælge mellem:
+Brug kombinationsfeltet til at vælge mellem:
 
 * Celsius (standard)
 * Fahrenheit
@@ -127,7 +127,7 @@ Brug radioknappen for at vælge mellem:
 
 # Grader vist som: #
 
-Brug radioknappen for at vælge mellem:
+Brug kombinationsfeltet til at vælge mellem:
 
 * Celsius `-` Fahrenheit` -` Kelvin (standard)
 * C - F - K

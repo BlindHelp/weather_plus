@@ -77,9 +77,9 @@ Um eine neue Stadt hinzuzufügen: klicken Sie auf den folgenden Eintrag:
   Erweiterung *.zipcodes speichern. Diese Schaltfläche wird aktiviert, wenn
   Sie mindestens eine Stadt in die Liste vorhanden ist.
 * stündliche Vorhersage... - Mit dieser Schaltfläche können Sie den Inhalt der stündlichen Vorhersage auswählen.
-* Temperaturskala: Verwenden Sie die Auswahlschalter, um Celsius (Standard),
+* Temperaturskala: Verwenden Sie das Kombinationsfeld, um Celsius (Standard),
   Fahrenheit oder Kelvin auszuwählen.
-* Grad-Einheit anzeigen als: Verwenden Sie den Auswahlschalter, um die
+* Grad-Einheit anzeigen als: Verwenden Sie das Kombinationsfeld, um die
   verschiedenen Grad-Einheiten auszuwählen: Celsius `-` Fahrenheit `-`
   Kelvin (Standard), C `-` F `-` K oder Nicht angeben.
 * Kombinationsfeld: Wettervorhersagen bis zu Tagen: 1. Sie können zwischen

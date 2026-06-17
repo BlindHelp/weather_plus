@@ -66,9 +66,9 @@ Nové mesto na sledovanie pridáte nasledovne:
 * Exportovať: Umožňuje vám uložiť mestá do súboru s príponou *
   .zipcodes. Exportovať môžete len vtedy, ak je v zozname aspoň jedno mesto.
 * nastavenie hodinovej predpovede... - Toto tlačidlo umožňuje zvoliť obsah správy hodinovej predpovede.
-* Jednotky merania teploty: Pomocou prepínača vyberte medzi stupňami Celzia
+* Jednotky merania teploty: Pomocou Použite rozbaľovacie pole na vyberte medzi stupňami Celzia
   (predvolené), Fahrenheita alebo Kelvina.
-* Zobraziť stupne ako: Pomocou prepínača vyberte medzi Celzia `-`
+* Zobraziť stupne ako: Použite rozbaľovacie pole na vyberte medzi Celzia `-`
   Fahrenheita `-` Kelvina (predvolené) C` -` F `-` K alebo neurčovať.
 * Dĺžka predpovede: Nastavte počet dní predpovede počasia. Maximálne 3.
 * Zoznamový rámik: API zodpovedajúci jazyk:: English, en; môžete zvoliť jazyk textu predpovede.

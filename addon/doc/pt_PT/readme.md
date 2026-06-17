@@ -1,150 +1,154 @@
 # Weather Plus #
 
 * Autor: Adriano Barbieri
-* Compatibilidade com NVDA: 2017.3 e seguintes
+* Baixar: [Versão Estável][1]
 
-# Acerca do WEATHER PLUS: #
+# SOBRE O WEATHER PLUS: #
 
-* Este extra para o NVDA fornece a temperatura local e a previsão do tempo actual para as próximas 24 horas, para até os próximos dois días adicionais  e a previsão horária para o próprio dia.
+* Este plug-in para o NVDA fornece temperatura local e previsões do
+  tempo  de 24 horas até 2 dias adicionais e previsão horária.
 * Copyright (C) [Adriano Barbieri](mailto:adrianobarb@yahoo.it)
-* Lançado sob a licença GNU GPL (General Public License) v2
-
-# O Weather Plus funciona com base na utilização e presença dos seguintes
+* Lançado sob a licença GNU GPL (General Public License — Licença Pública
+  Geral) v2
+* O Weather Plus funciona com base na utilização e presença dos seguintes
   serviços:
 * [https://www.weatherapi.com/](https://www.weatherapi.com/)
 * [http://www.geonames.org/](http://www.geonames.org/)
 * [https://api.open-meteo.com/v1/elevation/](https://api.open-meteo.com/v1/elevation/)
 * [https://www.nvda.it/](https://www.nvda.it/)
 
-# Utilização #
-* Pressione NVDA+w para ouvir a temperatura e as condições atmosféricas actuais;
-* Pressione NVDA + shift + W para obter as condições atmosféricas das próximas 24 horas e dos próximos 2 dias.
-* Pressione NVDA+shift+W duas vezes para obter uma previsão horária da temperatura e das condições atmosféricas.
-* Pressione NVDA+shift+ctrl +w para definir uma cidade em modo temporário;
-* Pressione NVDA+shift+control+alt+w Para abrir a janela de configurações do weather plus;
-* Pressione NVDA+alt+w para ouvir a data da última actualização das condições atmosféricas.
-* Pressione control+shift+w para alternar entre Fahrenheit, Celsius ou Kelvin.
+# USO: #
+
+* Pressione NVDA+w para obter informações sobre a temperatura atual e as
+  condições climáticas.
+* Pressione NVDA+shift+W para obter uma previsão de 24 horas e previsão de
+  até 2 dias.
+* Pressione NVDA+shift+W duas vezes para obter uma previsão horária de temperatura e condições atmosféricas.
+* Pressione NVDA+shift+control+w para definir uma cidade temporária.
+* Pressione NVDA+shift+control+alt+w para abrir o diálogo de configurações
+  do Weather Plus.
+* Pressione NVDA+alt+w para obter a data e a hora em que o boletim
+  meteorológico foi atualizado.
+* Pressione control+shift+w para alternar entre as escalas de temperatura
+  Fahrenheit, Celsius ou Kelvin.
 
 # Configuração do Weather Plus: #
 
-* Deve configurar o Weather Plus antes da sua primeira utilização!
-Ir para o submenu Preferências, configurações do Weather Plus e escolher uma das seguintes opções:
- * Configurações gerais... - Apresenta ou permite definir a cidade actual a partir de uma lista.
- * Definir uma cidade temporária... - Mostra e permite definir uma cidade temporária de uma lista, se disponível.
- * Documentação - Abre o ficheiro de ajuda para a língua actual.
- * Verificar actualizações... - Notifica sobre a disponibilidade da existência de nova versão.
+* Você deve configurar o complemento Weather Plus antes de seu primeiro uso! Vá para o submenu Preferências, submenu Configurações do Weather Plus e escolha uma das seguintes opções:
+ * Defina e Gerencie Suas Cidades... - Exibe ou permite definir a cidade atual numa lista.
+ * Definir uma cidade em modo temporário... - Exibe e permite definir uma cidade temporária duma lista, se disponível.
+ * Documentação - Abre o arquivo de ajuda para o idioma atual.
+ * Verificar se há atualização... - notifica sobre a disponibilidade da nova versão.
 
-Para acrescentar uma nova cidade: prima o seguinte item:
-* Configurações gerais... - Apresenta ou permite definir a cidade actual a partir de uma lista.
+Para adicionar uma nova cidade: pressione o seguinte item:
 
-* A seguinte mensagem é apresentada apenas na primeira utilização!
-Configurações (Nenhuma predefinição) F1: ajuda à localização, F2: selecção do último tab, F3: listas e caixas combinação, F4: controlo da duração da previsão do tempo, F5: controlos do volume.
-
-* Na caixa de edição, introduza uma Cidade ou escolha uma da lista, se disponível.
-Nota: A tecla F5 está disponível se os efeitos sonoros estiverem activados.
-
-* Depois de pressionar enter na opção "Configurações Gerais" encontrará os seguintes botões:
-
-* Testar - Testar a validade da cidade e encontrar os dados da mesma;
-
-* Adicionar - Adiciona a cidade actual à sua lista.
-Este botão pode ser activado se seleccionar uma cidade da lista, ou quando a cidade introduzida passou no teste.
-
-* Detalhes - Apresenta informação sobre a cidade actual.
-Este botão é activado se seleccionar uma cidade da lista, ou se esta tiver passado no teste.
-
-* Definir - Permite definir a área, de modo a adaptar os efeitos sonoros.
-Este botão pode ser activado se os efeitos sonoros forem instalados e activados, e seleccionar uma cidade da lista.
-
-* Predefinir - definir uma cidade como padrão, que será utilizada cada vez que reiniciar o extra.
-Este botão é activado se seleccionar uma cidade previamente inserida na lista e não pré-definida, e se esta tiver passado no teste.
-
-* Remover - Elimina a cidade actual da sua lista.
-Este botão pode ser activado se seleccionar uma cidade previamente inserida na lista.
-
-* Renomear - Renomear a cidade actual.
-Este botão pode ser activado se se seleccionar uma cidade previamente inserida na lista.
-
-* Importar novas cidades... - Este botão permite-lhe importar cidades de outra lista de cidades com a extensão *.zipcodes;
-pode seleccionar a cidade que pretende importar, marcando a respectiva caixa de verificação.
-
-* Exportar as suas cidades... - Permite-lhe guardar as cidades no ficheiro especificado com a extensão *.zipcodes.
-Este botão é activado se tiver adicionado e guardado pelo menos uma cidade na lista.
-
-* Configuração das previsões horárias... - Este botão permite que escolha o conteúdo do relatório de previsão por hora.
-
-* Escala de medição da temperatura: permite Utilizar os botões de rádio para seleccionar entre Celsius (por padrão), Fahrenheit e Kelvin.
-
-* Mostrar os graus como: Use os botões de rádio para seleccionar entre: Celsius `-` Fahrenheit `-` Kelvin (por padrão) C `-` F `-` K ou não especificado.
-
-* Caixa de Combinação: Previsão do tempo até dias: 1; pode escolher entre 1 a 3 (1 dia por padrão)
-
-* Caixa de Combinação: Idioma de resposta da API: Inglês, pt; pode escolher o idioma do texto das condições meteorológicas.
-
-* Para realizar as acções, marque ou desmarque as seguintes caixas de verificação:
-
-* Copiar o boletim meteorológico e a previsão do tempo, incluindo detalhes da cidade para a área de transferência; caixa de verificação não marcada (por padrão)
-
-* Activar efeitos de som (apenas para as condições meteorológicas actuais); esta caixa de verificação também permite gerir a instalação de efeitos sonoros; se os efeitos sonoros forem instalados e a caixa de verificação for marcada, a tecla F5 e a definição do volume tornam-se disponíveis.
-
-* Estará também disponível uma caixa de verificação adicional: "Usar apenas efeitos climáticos".
-
-* Ppode alterar o volume geral ou modificar o último efeito de som ouvido e filtrar os outros sons do seu ambiente.
-
-* Utilizar apenas efeitos climáticos - Esta opção está disponível se os efeitos sonoros estiverem activados; se estiver activada, permite ouvir apenas efeitos climáticos como chuva, vento, trovões, etc., filtrando todos os efeitos ambientais. (desmarcado por defeito)
-
-* Permitir a leitura das horas em formato de 24 horas. - Se esta caixa de verificação estiver desmarcada, anuncia a hora no formato das horas com A M e P M.
-A caixa de verificação é marcada (por padrão)
-
-* Activar botões de ajuda na janela de configurações; caixa de verificação marcada (por padrão)
-
-* Ler informação sobre o vento; caixa de verificação não marcada (por padrão). Se esta caixa de verificação estiver marcada, pode também activar as seguintes caixas de verificação:
-
-* Adicionar a direcção do vento; indica a proveniência do vento. Caixa de verificação marcada (por padrão)
-
-* Adicionar a velocidade do vento; indica a velocidade em quilómetros ou milhas por hora. Caixa de verificação marcada (por padrão)
-
-* Adicionar a velocidade do vento em metros por segundo; caixa de verificação marcada (por padrão)
-
-* Adicionar a velocidade das rajadas de vento; Caixa de verificação marcada, por padrão.
-
-* Adicionar sensação térmica. Caixa de verificação marcada, por padrão.
-
-* Ler informação atmosférica; caixa de verificação não marcada (por padrão).
-Se marcada, pode também marcar as seguintes caixas de verificação:
-
-* Adicionar valor da humidade; indica a humidade em percentagem. Caixa de verificação marcada (por padrão)
-
-* Adicionar valor da visibilidade; indica em quilómetros ou milhas a distância visível. Caixa de verificação marcada (por padrão)
-
-* Adicionar o valor da pressão atmosférica; indica a pressão atmosférica em milibares ou polegadas de mercúrio.
-Se marcada, activa uma caixa de verificação adicional que lhe permite indicar a pressão em milímetros de mercúrio. Caixa de verificação marcada (por padrão)
-
-* Adicionar valor da nebulosidade. Caixa de verificação marcada, por padrão.
-
-* Adicionar valor da precipitação. Caixa de verificação marcada, por padrão.
-
-* Adicionar valor da radiação ultravioleta. Caixa de verificação marcada, por padrão.
-
-* Ler informação astronómica; indica a hora do nascer e do pôr-do-sol e a hora do nascer e do pôr-da-lua. Caixa de verificação não marcada (por defeito)
-
-* Usar a vírgula para separar as décimas; se marcada, é usada a vírgula como separador decimal, caso contrário, será usado o ponto. Caixa de verificação não marcada (por padrão)
-
-* Mostra os resultados numa janela; Se activada, mostra as previsões numa janela.
-Caixa de verificação não marcada, por padrão.
-
-* Verificar actualizações; se for activada esta opção será alertado quando houver uma actualização do extra. Caixa de verificação marcada (por padrão)
-
-* Pressione "ok", para confirmar as configurações ou "cancelar", para as rejeitar.
-
-* Se tiver modificado a lista de cidades, pressionando "Cancelar", será lembrado e ainda poderá guardá-la.
-Nota: As suas configurações serão guardadas no ficheiro chamado:
-
+* Defina e Gerencie Suas Cidades... - Exibe ou permite definir a cidade
+  atual numa lista.
+* A seguinte mensagem é exibida apenas pela primeira vez! Configurações
+  Predefinição Nenhuma F1: ajuda na localização, F2: seleção do último TAB,
+  F3: lista e caixa de edição, F4: controle da duração da previsão do tempo,
+  F5: controles de volume.
+* Na caixa de edição, digite uma cidade ou escolha uma da lista, se disponível. Nota: A tecla F5 estará
+  disponível se os efeitos sonoros estiverem ativados.
+* Depois de pressionar enter no item "Defina e Gerencie Suas Cidades...",
+  você encontrará outros botões, como a seguir:
+* Testar - Testa a validade da cidade e localiza os dados dela.
+* Adicionar - Adiciona a cidade atual à sua lista. Este botão pode ser
+  ativado se você selecionar uma cidade da lista, quando a cidade inserida
+  passou no teste.
+* Detalhes - Exibe informações sobre a cidade atual. Este botão é ativado se
+  você selecionar uma cidade da lista ou se passou no teste.
+* Definir - Permite definir a área, a fim de adaptar os efeitos
+  sonoros. Este botão pode ser ativado se os efeitos de áudio estiverem
+  instalados e ativados, e você selecionar uma cidade da lista.
+* Predefinir - Predefine uma cidade como padrão, será usada sempre que você
+  reiniciar o plug-in. Este botão é ativado se você selecionar uma cidade
+  inserida anteriormente na lista e não predefinida, ou se passou no teste.
+* Remover - exclue a cidade atual da sua lista. Este botão pode ser ativado
+  se você selecionar uma cidade inserida anteriormente na lista.
+* Renomear - renomeia a cidade atual. Este botão pode ser ativado se você
+  selecionar uma cidade inserida anteriormente na lista.
+* Importar novas cidades... - Este botão permite importar cidades de outra
+  lista de cidades com a extensão *.zipcodes; você pode selecionar a cidade
+  que deseja importar, ativando a caixa de seleção associada a ela.
+* Exportar suas cidades... - Permite salvar as cidades no arquivo
+  especificado com a extensão *.zipcodes. Este botão é ativado se você
+  adicionou e salvou pelo menos uma cidade na lista.
+* configuração de previsão horária... - Este botão permite que você escolha o conteúdo do relatório de previsão horária.
+* Escala de medição de temperatura: use a caixa de combinação para selecionar
+  entre Celsius (por padrão), Fahrenheit e Kelvin.
+* Graus mostrados como: Use a caixa de combinação para selecionar entre: Celsius
+  `-` Fahrenheit `-` Kelvin (por padrão) C `-` F `-` K ou Não Especificado.
+* Caixa de combinação: Previsões do Tempo até dias: 1; você pode escolher
+  entre 1 a 3 (1 dia por padrão)
+* Caixa de combinação: Idioma de resposta da API: Inglês, en; você pode escolher o idioma do texto das condições meteorológicas.
+* Para executar as seguintes ações, alterne as seguintes caixas de seleção:
+* Copia o boletim meteorológico e a previsão do tempo, incluindo os detalhes
+  da cidade para a área de transferência; caixa de seleção não marcada (por
+  padrão)
+* Habilitar efeitos de áudio (apenas para as condições climáticas atuais);
+  essa caixa de seleção também permite gerenciar a instalação de efeitos
+  sonoros; se os efeitos sonoros estiverem instalados e a caixa de seleção
+  estiver ativada, a tecla F5 e a configuração do volume ficam disponíveis.
+* Também estará disponível uma caixa de seleção adicional: "Use apenas
+  efeitos climáticos".
+* Pode alterar o volume geral ou o último efeito sonoro ouvido e filtrar os
+  outros sons em seu ambiente. A caixa de seleção não está marcada por
+  padrão.
+* Use apenas efeitos climáticos - Esta opção estará disponível se os efeitos
+  sonoros estiverem ativados; se estiver ativado, permite ouvir apenas
+  efeitos climáticos, como chuva, vento, trovão, etc., filtrando todos os
+  efeitos ambientais. (desmarcado por padrão)
+* Habilitar a leitura das horas no formato de 24 horas. - Se esta caixa de
+  controle estiver desmarcada, anuncia a hora no formato de 12 horas, por
+  exemplo, 12 AM `-` 12 PM. A caixa de seleção está marcada (por padrão)
+* Habilitar os botões de ajuda na janela de configurações; caixa de seleção
+  marcada (por padrão)
+* Ler as informações do vento; caixa de seleção não marcada (por padrão). Se
+  esta caixa de seleção estiver ativada, você também poderá ativar as
+  seguintes caixas de seleção:
+* Adicionar direção do vento; indica a procedência do vento. Caixa de
+  seleção marcada (por padrão)
+* Adicionar velocidade do vento; indica a velocidade em quilômetros ou
+  milhas por hora. Caixa de seleção marcada (por padrão)
+* Adicionar velocidade em metros por segundo do vento; caixa de seleção
+  marcada (por padrão)
+* Adicionar velocidade da rajada do vento; caixa de seleção marcada (por padrão)
+* Adicionar sensação térmica; caixa de seleção marcada (por padrão)
+* Ler informações atmosféricas; caixa de seleção não marcada (por
+  padrão). Se ativada, você também pode marcar as seguintes caixas de
+  seleção:
+* Adicionar valor de umidade; indica a umidade em porcentagem. Caixa de
+  seleção marcada (por padrão)
+* Adicionar valor de visibilidade; indica em quilômetros ou milhas a
+  distância visível. Caixa de seleção marcada (por padrão)
+* Adicionar valor da pressão atmosférica; indica a pressão atmosférica em
+  milibares ou polegadas de mercúrio. Se estiver marcada, habilita uma caixa
+  de seleção adicional que permite indicar a pressão em milímetros de
+  mercúrio. Caixa de seleção marcada (por padrão)
+* Adicionar valor de nebulosidade; caixa de seleção marcada (por padrão)
+* Adicionar o valor da precipitação; caixa de seleção marcada (por padrão)
+* Adicionar o valor da radiação ultravioleta; caixa de seleção marcada (por padrão)
+* Ler informações astronômicas; indica a hora do nascer e do pôr do sol e a hora do nascer e do pôr da lua. Caixa de seleção não marcada (por padrão)
+* Use a vírgula para separar decimais; se ativado, usa a vírgula como um
+  separador decimal; caso contrário, usa o ponto. Caixa de seleção não
+  marcada (por padrão)
+* Exibe a saída em uma janela; se ativado, isso exibe a previsão em uma janela.
+  Caixa de seleção nãomarcada (por padrão)
+* Verificar se há atualização; se estiver ativada, este alerta quando houver
+  uma atualização do complemento. Caixa de seleção marcada (por padrão)
+* Pressione "ok", para confirmar as configurações ou "cancelar", para as
+  rejeitar.
+* Se você modificou a lista de cidades, pressionando "Cancelar", você será
+  lembrado e ainda poderá salvá-la. Nota: suas configurações serão salvas no
+  arquivo chamado:
 * "Weather.ini": As configurações iniciais do weather plus.
-* "Weather.volumes": níveis de volume de áudio personalizados, independentemente do volume total.
-* "Weather.zipcodes": lista de cidades com o seu código postal e definições.
-* "Weather.default": A sua cidade predefinida.
-* "Weather_searchkey": Chave de pesquisa guardada.
+* "Weather.volumes": níveis de volume de áudio personalizados,
+  independentemente do volume total.
+* "Weather.zipcodes": lista de cidades com o seu código de área e
+  definições.
+* "Weather.default": Sua cidade padrão.
+* "Weather_searchkey": chave de pesquisa salva.
 
 --------------------------------------------------------------------------------
 

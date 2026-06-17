@@ -9,9 +9,9 @@ Email: adrianobarb@yahoo.it
 Released under GPL 2
 This file is covered by the GNU General Public License
 See the file COPYING for more details
-Version 10.9
+Version 11.0
 NVDA compatibility: 2017.3 to beyond
-Last Edit date June, 3th, 2026"""
+Last Edit date June, 17th, 2026"""
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -41,18 +41,24 @@ if _pyVersion >= 3:
 	import queue as Queue
 	from urllib.request import urlopen
 	from urllib.parse import urlencode
+	from urllib.parse import quote
+	from urllib.error import HTTPError, URLError
+	from urllib.parse import urljoin
 else:
 	#nvda with python version earlier than 3
 	import Queue
 	from urllib2 import urlopen
 	from urllib import urlencode
+	from urllib import quote
+	from urllib2 import urlopen, HTTPError, URLError
+	from urlparse import urljoin
 
 del sys.path[-1]
 addonHandler.initTranslation()
 
 #global constants
 if _pyVersion < 3:
-	_addonDir = os.path.join(os.path.dirname(__file__), "..\\..").decode("mbcs")
+	_addonDir = os.path.join(os.path.dirname(__file__), "..\\..").decode("utf-8")
 else:
 	_addonDir = os.path.join(os.path.dirname(__file__), "..\\..")
 
@@ -182,7 +188,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		"""Delete the update file from the temporary folder"""
 		import tempfile, stat
 		if _pyVersion < 3:
-			temp = tempfile.gettempdir().decode("mbcs")
+			temp = tempfile.gettempdir().decode("utf-8")
 			(_, _, filenames) = os.walk(temp).next()
 		else:
 			temp = tempfile.gettempdir()
@@ -282,7 +288,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		try:
 			#set the correct encoding in the title
 			if _pyVersion < 3:
-				preset = self.defaultZipCode.decode("mbcs")
+				preset = self.defaultZipCode.decode("utf-8")
 			else:
 				preset = self.defaultZipCode
 		except(UnicodeDecodeError, UnicodeEncodeError): preset = self.defaultZipCode
@@ -464,7 +470,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				#Set temporary Zip Code
 				self.ExtractData(self.tempZipCode)
 				test = self.tempZipCode
-				if _pyVersion < 3: test = unicode(test.decode("mbcs"))
+				if _pyVersion < 3: test = unicode(test.decode("utf-8"))
 				if not self.dontShowAgain:
 					if (not self.defaultZipCode and not save) or (test != self.defaultZipCode):
 						#Translators: dialog message that advise that the city will be used in temporarily mode
@@ -544,12 +550,12 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			#Coding management for Python 2
 			if _pyVersion < 3:
 				try:
-					possible_cities.append(city.encode("mbcs"))
+					possible_cities.append(city.encode("utf-8"))
 				except (UnicodeDecodeError, UnicodeEncodeError):
 					pass
 
 				try:
-					possible_cities.append(city.decode("mbcs"))
+					possible_cities.append(city.decode("utf-8"))
 				except (UnicodeDecodeError, UnicodeEncodeError):
 					pass
 
@@ -630,7 +636,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		langs = [i[-2].split('_')[-1] for i in availableLangs if i[-2].split('_')[-1].isupper()]
 		if '_' in lang and pre not in langs: lang = lang.split('_')[0]
 		if _pyVersion < 3:
-			docFolder = os.path.dirname(__file__).decode("mbcs")
+			docFolder = os.path.dirname(__file__).decode("utf-8")
 		else:
 			docFolder = os.path.dirname(__file__)
 		listDocs = os.listdir(docFolder.split("globalPlugins")[0]+"\\doc\\")
@@ -706,10 +712,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		"""get city name from zip code and assign new value to current zip code"""
 		self.zipCode = v
 		self.city = v[:v.find(',')]
-		if _pyVersion < 3:
-			try:
-				self.city = self.city.decode("mbcs")
-			except(UnicodeDecodeError, UnicodeEncodeError): pass
+		if _pyVersion < 3 and not isinstance(self.city, unicode):
+			self.city = self.city.decode("utf-8")
 
 
 	def Play_Sample(self, condition_code = None, degrees = None, wind_f= None):
@@ -1159,7 +1163,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				Shared().FreeHandle() #cleanup previous stream into memory
 				try:
 					BASS_Init(-1, 44100, 0, 0, 0)
-					_handle = BASS_StreamCreateFile(False, b'%s' % filename.encode("mbcs"), 0, 0, 0)
+					_handle = BASS_StreamCreateFile(False, b'%s' % filename.encode("utf-8"), 0, 0, 0)
 					BASS_ChannelPlay(_handle, False)
 					BASS_ChannelSetAttribute(_handle, BASS_ATTRIB_VOL, _volume_dic[playVol]) #set volume (0 = mute, 1 = full)
 				except Exception as e:
@@ -1224,22 +1228,42 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 
 	def MyDefault(self, default_city=None):
-		"""manage default city, read and write"""
-		if default_city:
-			with open(_mydefcity_path, 'wb') as w:
-				try:
-					w.write(default_city.encode("mbcs"))
-				except(UnicodeDecodeError, UnicodeEncodeError): w.write(default_city)
-				except IOError: pass
+		"""Manage default city, read and write"""
 
-		else:
-			#load default_city
+		import io
+		# WRITE
+		if default_city is not None:
+			if _pyVersion < 3:
+				if isinstance(default_city, str): default_city = default_city.decode("utf-8")
+
 			try:
-				with open(_mydefcity_path, 'rb') as r:
-					default_city = r.read()
-			except: default_city = ''
+				with io.open(_mydefcity_path, 'w', encoding='utf-8') as w:
+					w.write(default_city)
+			except IOError: pass
+			return
 
-			return default_city
+		# READ
+		if not os.path.isfile(_mydefcity_path):
+			return u''
+
+		# First try with UTF-8
+		try:
+			with io.open(_mydefcity_path, 'r', encoding='utf-8') as r:
+				return r.read()
+		except UnicodeDecodeError:
+			# fallback old mbcs format
+			try:
+				with io.open(_mydefcity_path, 'r', encoding='mbcs') as r:
+					default_city = r.read()
+
+				# AUTOMATIC MIGRATION TO UTF-8
+				with io.open(_mydefcity_path, 'w', encoding='utf-8') as w:
+					w.write(default_city)
+
+				return default_city
+
+			except:
+				return u''
 
 
 	def ReadConfig(self, singleRead = None):
@@ -1247,7 +1271,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		#Default values
 		if not singleRead:
 			self.city = self.defaultZipCode = self.tempZipCode = self.zipCode = ""
-			#radio buttons values
+			#temperature scale definitions values
 			self.celsius = 1 #Fahrenheit, Celsius, Kelvin
 			self.scaleAs = 0 #indication degrees: Celsius Fahrenheit Kelvin - C f k - do not specify
 			#check boxes
@@ -1352,13 +1376,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if not self.zipCode or self.zipCode.isspace(): return
 			#search in list
 			self.zipCodesList, self.define_dic, details_dic = Shared().LoadZipCodes()
-			if _pyVersion >= 3: city = self.FindCity(self.zipCode.decode("mbcs"))
-			else: city = self.FindCity(self.zipCode)
+			city = self.FindCity(self.zipCode)
 			if city:
-				if _pyVersion < 3:
-					self.defaultZipCode = self.tempZipCode= city =city.decode("mbcs")
-				else:
-					self.defaultZipCode = self.tempZipCode= city
+				self.defaultZipCode = self.tempZipCode= city
 
 				self.city = city[:city.rfind(',')] #takes the cityname
 				_testCode = Shared().GetLocation(self.defaultZipCode, self.define_dic)
@@ -1413,63 +1433,53 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		}
 		try:
 			config.write()
-			self.MyDefault(self.zipCode)
+			self.MyDefault( self.zipCode) # save the default city
 		except IOError:
 			Shared().Play_sound("warn", 1)
 			return ui.message(_("I can not save the settings!"))
 
 
 	def WriteList(self, zipCodesList):
-		"""Save cities list """
+		"""Save cities list"""
+		import io
 		try:
-			with open(_zipCodes_path, 'w') as file:
-				file.write("[cities list]\n")
-				for r in sorted(zipCodesList):
-					#citi and (zipcode or acronim)
-					r = '%s\t%s\n' % (r[:-len(r.split()[-1])-1], r.split()[-1])
-					try:
-						file.write(r)
-					except(UnicodeDecodeError, UnicodeEncodeError):
-						file.write(_("invalid name") + ': ' + repr(r))
+			# initial writing
+			with io.open(_zipCodes_path, 'w', encoding='utf-8') as file:
+				file.write(u"[cities list]\n")
+				for r in sorted(zipCodesList, key=lambda x: x.split()[0].lower()):
+					parts = r.split()
+					city = parts[-1]
+					rest = u" ".join(parts[:-1])
 
-			#addss cities definitions
-			with open(_zipCodes_path, 'a') as file:
-				file.write("\n[Cities Location Key and Definitions]\n")
-				for i in self.define_dic:
-					if _pyVersion >= 3: r = '#%s\t%s\t%s\n' % (i, self.define_dic[i]["location"], self.define_dic[i]["define"])
-					else:
-						try:
-							r = '#%s\t%s\t%s\n' % (i, (self.define_dic[i]["location"].decode("mbcs")), self.define_dic[i]["define"])
-						except(UnicodeDecodeError, UnicodeEncodeError):
-							r = '#%s\t%s\t%s\n' % (i, (self.define_dic[i]["location"]), self.define_dic[i]["define"])
-					if _pyVersion >= 3: file.write(r)
-					else:
-						try:
-							file.write(r.encode("mbcs"))
-						except(UnicodeDecodeError, UnicodeEncodeError): file.write(r)
+					r = u'%s\t%s\n' % (rest, city)
+					file.write(r)
 
-			#addss cities details
-			with open(_zipCodes_path, 'a') as file:
-				file.write("\n[Cities Details]")
-				for i in self.details_dic:
-					r = '\n%s' % i #adds zip code number (record name)
+			# Cities definitions
+			with io.open(_zipCodes_path, 'a', encoding='utf-8') as file:
+				file.write(u"\n[Cities Location Key and Definitions]\n")
+				for i in sorted(self.define_dic.keys()):
+					r = u'#%s\t%s\t%s\n' % (
+						i,
+						self.define_dic[i]["location"],
+						self.define_dic[i]["define"]
+					)
+					file.write(r)
+
+			# Cities details
+			with io.open(_zipCodes_path, 'a', encoding='utf-8') as file:
+				file.write(u"\n[Cities Details]")
+				for i in sorted(self.details_dic.keys()):
+					r = u'\n%s' % i
 					for f in _fields:
-						#addss all the fields to record
-						r += '\t%s' % self.details_dic[i][f]
+						r += u'\t%s' % self.details_dic[i][f]
 
-					if _pyVersion >= 3: file.write(r)
-					else:
-						try:
-							file.write(r.encode("mbcs"))
-						except(UnicodeDecodeError, UnicodeEncodeError):
-							try:
-								file.write(r)
-							except(UnicodeDecodeError, UnicodeEncodeError): continue
+					file.write(r)
 
 		except IOError:
 			Shared().WriteError(_addonSummary)
 			return False
-		else: return True
+		else:
+			return True
 
 
 	def FindCity(self, zipCode):
@@ -1484,6 +1494,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def getWeather(self, zip_code, forecast = False):
 		"""Main getWeather function gets weather from Weather API"""
+
 		if zip_code != "" and not zip_code.isspace():
 			mess = ""
 			if self.dom == "no connect" or self.dom and (self.tempZipCode != self.test[0]) or not self.dom or (datetime.now() - self.test[-1]).seconds/60 >= _wait_delay:
@@ -1913,7 +1924,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					else:
 						zc = self.zipCodesList.pop(index)
 						decoded_zc = zc
-						if _pyVersion < 3: decoded_zc = zc.decode("mbcs")
+						if _pyVersion < 3: decoded_zc = zc.decode("utf-8")
 						code = zc
 						if code in self.define_dic: del self.define_dic[code]
 						if code in self.details_dic: del self.details_dic[code]
@@ -1946,6 +1957,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def getHourlyForecast(self):
 		"""announces the hourly forecast"""
+
 		if not self.zipCode or self.zipCode.isspace():
 			#warn if there is no city set
 			Shared().Play_sound(False, 1)
@@ -1958,7 +1970,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.test[-1] = datetime.now()
 
 		if not self.dom: self.dom, n = self.Open_Dom(self.zipCode)
-		if not self.dom or self.dom in["not authorized", "no connect"]: self.dom = None; return
+		if not self.dom or self.dom in ["not authorized", "no connect"]: self.dom = None; return
 		#reads city local time
 		timezone_id = self.dom['location']['tz_id']
 		h, n = Shared().GetTimezone(timezone_id, to24Hours = True)
@@ -2104,10 +2116,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		self.celsius = (self.celsius + 1) %3 # This construct cycles between 0, 2
 		if _mainSettingsDialog:
 			#change the radio button in the settings window
-			self.celsius = _mainSettingsDialog.rb.GetSelection()
+			self.celsius = _mainSettingsDialog.choiceDegrees.GetSelection()
 			self.celsius = (self.celsius + 1) % 3
-			_mainSettingsDialog.rb.SetSelection(self.celsius)
-			_mainSettingsDialog.rb.SetFocus()
+			_mainSettingsDialog.choiceDegrees.SetSelection(self.celsius)
+			_mainSettingsDialog.choiceDegrees.SetFocus()
 
 		Shared().Play_sound("swap", 1)
 		ui.message('%s %s' % (_("Scale of temperature measurement set into"), _tempScale[self.celsius]))
@@ -2136,7 +2148,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if repeatCount == 2:
 			def Deco(v):
 				try:
-					return v.decode("mbcs")
+					return v.decode("utf-8")
 				except (UnicodeDecodeError, UnicodeEncodeError): return v
 
 			cur_date = datetime.now().strftime('%Y-%m-%d %H:%M') or '""'
@@ -2282,19 +2294,18 @@ class EnterDataDialog(wx.Dialog):
 		sizerHelper.addItem(wx.StaticText(self, -1, message))
 
 		hboxHelper = guiHelper.BoxSizerHelper(self, orientation=wx.HORIZONTAL)
-		if _pyVersion < 3: choices = [i.decode("mbcs") for i in zipCodesList]
-		else: choices = zipCodesList
+		choices = zipCodesList
 		cbx=wx.ComboBox(self, -1, style=wx.CB_DROPDOWN|wx.TE_RICH, choices =choices)
 		s = tempZipCode
 		if not s: s = defaultZipCode
 		if _pyVersion < 3:
 			try:
-				s = s.encode("mbcs")
+				s = s.encode("utf-8")
 			except(UnicodeDecodeError, UnicodeEncodeError): pass
 
 		if zipCodesList and s in zipCodesList:
 			if _pyVersion < 3:
-				cbx.SetStringSelection(s.decode("mbcs"))
+				cbx.SetStringSelection(s.decode("utf-8"))
 			else:
 				cbx.SetStringSelection(s)
 
@@ -2304,10 +2315,10 @@ class EnterDataDialog(wx.Dialog):
 					cbx.SetValue(s or "")
 				except(UnicodeDecodeError, UnicodeEncodeError):
 					try:
-						cbx.SetValue(s.encode("mbcs") or "")
+						cbx.SetValue(s.encode("utf-8") or "")
 					except(UnicodeDecodeError, UnicodeEncodeError):
 						try:
-							cbx.SetValue(s.decode("mbcs") or "")
+							cbx.SetValue(s.decode("utf-8") or "")
 						except(UnicodeDecodeError, UnicodeEncodeError): pass
 
 			else:
@@ -2374,25 +2385,29 @@ class EnterDataDialog(wx.Dialog):
 		self.btn_Hourlyforecast = btn_Hourlyforecast
 		if not os.path.exists(_zipCodes_path):
 			btn_Export.Enable(False)
-		#radio buttons
-		self.rb=wx.RadioBox(
-			self, -1, _("Scale of temperature measurement:"),
-			wx.DefaultPosition, wx.DefaultSize,
-			_tempScale,
-			3, style=wx.RB_GROUP)
-		self.rb.SetSelection(celsius)
+		#Choice of temperature scale
+		st = wx.StaticText(self, -1, _("Scale of temperature measurement:"))
+		choiceDegrees = wx.Choice(self, -1, choices=_tempScale)
+		choiceDegrees.SetSelection(celsius)
+		hboxChoiceDegreesHelper = guiHelper.associateElements(st, choiceDegrees)
+		sizerHelper.addItem(hboxChoiceDegreesHelper)
 		self.celsius = celsius
-		sizerHelper.addItem(self.rb)
-		self.rb1=wx.RadioBox(
-			self, -1, _("Degrees shown as:"),
-			wx.DefaultPosition, wx.DefaultSize,
-			['%s - %s - %s' % (_tempScale[1], _tempScale[0], _tempScale[-1]),
+		self.choiceDegrees = choiceDegrees
+
+		# Choice of temperature scale representation
+		st = wx.StaticText(self, -1, _("Degrees shown as:"))
+		choiceDegrees1=wx.Choice(self, -1,
+		choices=[
+		'%s - %s - %s' % (_tempScale[1], _tempScale[0], _tempScale[-1]),
 			_("C - F - K"),
-			_("Unspecified")],
-			3, style=wx.RB_GROUP)
-		self.rb1.SetSelection(scaleAs)
-		sizerHelper.addItem(self.rb1)
-		#cchoices forecast days
+			_("Unspecified")
+			])
+		choiceDegrees1.SetSelection(scaleAs)
+		sizehboxChoiceDegrees1Helper = guiHelper.associateElements(st, choiceDegrees1)
+		sizerHelper.addItem(sizehboxChoiceDegrees1Helper)
+		self.choiceDegrees1 = choiceDegrees1
+
+				#cchoices forecast days
 		st = wx.StaticText(self, -1, _("Weather Forecasts up to days:"))
 		choice_days=wx.Choice(self, -1, choices = ['%d' % i for i in range(1, _maxDaysApi+1, 1)]) #set from 1 to max days api days
 		if not forecast_days or not str(forecast_days).isdigit(): forecast_days = '1'
@@ -2648,6 +2663,10 @@ class EnterDataDialog(wx.Dialog):
 		self.btn_Import.Bind(wx.EVT_CHAR, self.OnKey)
 		self.btn_Export.Bind(wx.EVT_CHAR, self.OnKey)
 		self.btn_Hourlyforecast.Bind(wx.EVT_CHAR, self.OnKey)
+		self.choiceDegrees.Bind(wx.EVT_CHAR, self.OnKey)
+		self.Bind(wx.EVT_TEXT_ENTER, self.OnEnter_wbdat, self.choiceDegrees)
+		self.choiceDegrees1.Bind(wx.EVT_CHAR, self.OnKey)
+		self.Bind(wx.EVT_TEXT_ENTER, self.OnEnter_wbdat, self.choiceDegrees1)
 		self.choice_days.Bind(wx.EVT_CHAR, self.OnKey)
 		self.Bind(wx.EVT_TEXT_ENTER, self.OnEnter_wbdat, self.choice_days)
 		self.choices_apilang.Bind(wx.EVT_CHAR, self.OnKey)
@@ -2871,8 +2890,7 @@ class EnterDataDialog(wx.Dialog):
 
 		else:
 			#value is in list
-			if _pyVersion < 3:zcs = self.zipCodesList[i].decode("mbcs")
-			else: zcs = self.zipCodesList[i]
+			zcs = self.zipCodesList[i]
 			if Shared().IsOldZipCode(zcs):
 				Shared().Play_sound("totest", 1)
 				self.ButtonsEnable(False)
@@ -2911,6 +2929,155 @@ class EnterDataDialog(wx.Dialog):
 		elif not self.btn_Test.IsEnabled() and not v.isspace() and v:
 			self.EndModal(wx.ID_OK)
 		evt.Skip()
+
+
+	def OOnTest(self, evt=None): #new
+		"""button Test event"""
+		selected_city = value = value2 = self.cbx.GetValue()
+
+		# normalize coords if present
+		coords = Shared().GetCoords(value)
+		if coords:
+			value = coords
+
+		elif Shared().IsOldZipCode(value):
+			value2 = value[:value.rfind(' ')]
+
+			c = value.split(',')[0]
+			z = value.split()[-1]
+
+			search_keys = []
+			self.testDefine = '0'
+
+			if z in self.define_dic:
+				self.testDefine = self.define_dic[z]['define']
+
+			if z in self.details_dic and 'fail' not in self.details_dic[z]['city']:
+				search_keys.append('%s, %s, %s' % (
+					self.details_dic[z]['city'],
+					self.details_dic[z]['region'],
+					self.details_dic[z]['country']
+				))
+
+				search_keys.append('%s, %s' % (
+					self.details_dic[z]['city'],
+					self.details_dic[z]['country']
+				))
+
+				search_keys.append('%s, %s' % (
+					self.details_dic[z]['lat'],
+					self.details_dic[z]['lon']
+				))
+
+				Shared().Play_sound("subwindow", 1)
+
+				gui.mainFrame.prePopup()
+				dlg = wx.SingleChoiceDialog(
+					self,
+					'%s: "%s"' % (_("Choose search key for"), c),
+					_addonSummary,
+					choices=search_keys
+				)
+
+				dlg.SetSelection(0)
+
+				try:
+					if dlg.ShowModal() == wx.ID_CANCEL:
+						return
+					value = search_keys[dlg.GetSelection()]
+					value2 = value
+				finally:
+					Shared().Play_sound("subwindow", 1)
+					dlg.Destroy()
+					gui.mainFrame.postPopup()
+
+			else:
+				winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
+
+				gui.mainFrame.prePopup()
+				dlg1 = wx.MessageDialog(
+					self,
+					'%s\n%s' % (
+						_("Unfortunately I could not recover enough data to find the city."),
+						_("Do I try anyway?")
+					),
+					_addonSummary,
+					wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION
+				)
+
+				try:
+					if dlg1.ShowModal() == wx.ID_NO:
+						self.cbx.SetFocus()
+						return
+
+					value = value[:value.rfind(' ')]
+
+				finally:
+					dlg1.Destroy()
+					gui.mainFrame.postPopup()
+
+		else:
+			selected_city = Shared().Search_cities(value)
+			if not selected_city:
+				self.cbx.SetFocus()
+				return
+			elif selected_city not in ["Error", "noresult"]:
+				value2 = value = selected_city
+
+		# --- API parse ---
+		cityName, v = Shared().ParseEntry(value, self.apilang)
+
+		if cityName == "no connect":
+			self.Disable_all(False)
+			Shared().Play_sound("warn", 1)
+			return ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!"))
+
+		elif not cityName:
+			self.Disable_all()
+
+			if (selected_city == value) and value.isdigit() and ',' not in value:
+				return self.API_errorDialog(selected_city, True)
+
+		elif cityName == "not found":
+			self.f1 = (self.f1 + 1) % 3
+
+			message = ('"%s", %s' % (value2, _("not found! Press F1 for help on entering data."))
+				if self.f1 == 1
+				else '"%s", %s' % (value2, _("not found!")))
+
+			gui.mainFrame.prePopup()
+			dlg2 = wx.MessageDialog(self, message, _addonSummary, wx.OK)
+
+			try:
+				dlg2.ShowModal()
+			finally:
+				dlg2.Destroy()
+				gui.mainFrame.postPopup()
+
+			return
+
+		# --- final formatting ---
+		value = Shared().SetCityString('%s, %s' % (cityName, v))
+
+		self.cbx.SetValue(value)
+
+		check, n, n = Shared().ZipCodeInList(value, self.zipCodesList)
+
+		if not check:
+			Shared().Play_sound(True)
+
+			self.testCode = value2
+			self.testName = value
+
+		else:
+			Shared().Play_sound("alreadyinlist")
+
+		self.OnText()
+
+		self.btn_Test.Enable(False)
+		self.btn_Ok.Enable(True)
+
+		self.cbx.SetFocus()
 
 
 	def OnTest(self, evt = None):
@@ -2995,7 +3162,7 @@ class EnterDataDialog(wx.Dialog):
 			self.Disable_all(False)
 			Shared().Play_sound("warn", 1)
 			return ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!"))
-		elif not cityName:
+		elif not cityName or cityName == "not found":
 			self.Disable_all()
 			if (selected_city == value) and value.isdigit() and not ',' in value: return self.API_errorDialog(selected_city, True)
 			else:
@@ -3011,17 +3178,13 @@ class EnterDataDialog(wx.Dialog):
 				_searchKeyWarnDialog = None; return
 
 		value = Shared().SetCityString('%s, %s' % (cityName, v))
-		try:
-			self.cbx.SetValue(value)
-		except(UnicodeDecodeError, UnicodeEncodeError):
-			self.cbx.SetValue(value.encode("mbcs"))
+		self.cbx.SetValue(value)
 
 		check, n, n =Shared().ZipCodeInList(value, self.zipCodesList)
 		if not check:
 			Shared().Play_sound(True)
 			if "_testCode" not in globals(): global _testCode
-			if _pyVersion < 3: _testCode = self.testCode = value2.encode("mbcs")
-			else: _testCode = self.testCode = value2
+			_testCode = self.testCode = value2
 			self.testName = value
 
 		else:Shared().Play_sound("alreadyinlist")
@@ -3117,7 +3280,7 @@ class EnterDataDialog(wx.Dialog):
 			import tempfile
 			if _pyVersion >= 3:
 				target = "/".join((tempfile.gettempdir(), 'Weather_samples.zip'))
-			else: target = "/".join((tempfile.gettempdir().decode("mbcs"), 'Weather_samples.zip'))
+			else: target = "/".join((tempfile.gettempdir().decode("utf-8"), 'Weather_samples.zip'))
 			#Translators: title and message used in tthe progress qdialog
 			title = _("Update in progress")
 			if not reload: title = _("Installation in progress")
@@ -3250,7 +3413,7 @@ class EnterDataDialog(wx.Dialog):
 		if _pyVersion >= 3: gv = self.cbx.GetValue()
 		else:
 			try:
-				gv = self.cbx.GetValue().encode("mbcs")
+				gv = self.cbx.GetValue().encode("utf-8")
 			except(UnicodeDecodeError, UnicodeEncodeError): gv = self.cbx.GetValue()
 
 		return (
@@ -3263,8 +3426,8 @@ class EnterDataDialog(wx.Dialog):
 		self.defaultZipCode,
 		gv,
 		self.modifiedList,
-		self.rb.GetSelection(),
-		self.rb1.GetSelection(),
+		self.choiceDegrees.GetSelection(),
+		self.choiceDegrees1.GetSelection(),
 		self.cbt_toClip.GetValue(),
 		self.cbt_toSample.GetValue(),
 		self.cbt_toHelp.GetValue(),
@@ -3305,7 +3468,7 @@ class EnterDataDialog(wx.Dialog):
 		ui.message(_plzw)
 		dic = ''
 		encoded_value = value = self.cbx.GetValue()
-		if _pyVersion < 3: encoded_value = value.encode("mbcs")
+		if _pyVersion < 3: encoded_value = value.encode("utf-8")
 		if "ramdetails_dic" in globals() and value in ramdetails_dic: dic = ramdetails_dic
 		elif value in self.details_dic: dic = self.details_dic
 		if dic:
@@ -3325,9 +3488,9 @@ class EnterDataDialog(wx.Dialog):
 					city = list(ramdetails_dic.keys())[0] #get the city key
 					if encoded_value in self.zipCodesList:
 						#puts the correct acronym for the city 
-						self.Relabel(value, city)
+						valid = self.Relabel(value, city)
 						self.details_dic.update(ramdetails_dic)
-						Shared().Play_sound(True, 1)
+						if valid: Shared().Play_sound(True, 1)
 						self.modifiedList = True
 						self.NoticeChanges()
 
@@ -3384,7 +3547,7 @@ class EnterDataDialog(wx.Dialog):
 		cd = city_details
 		if _pyVersion < 3:
 			try:
-				cd = city_details.decode("mbcs")
+				cd = city_details.decode("utf-8")
 			except(UnicodeDecodeError, UnicodeEncodeError): pass
 
 		#Translators: the details message
@@ -3408,7 +3571,7 @@ class EnterDataDialog(wx.Dialog):
 	def OnDefine(self, evt):
 		"""Defines the current city area"""
 		encoded_value = value = self.cbx.GetValue()
-		if _pyVersion < 3: encoded_value = value.encode("mbcs")
+		if _pyVersion < 3: encoded_value = value.encode("utf-8")
 
 		#try to retrieve area definition from database based on city name
 		dd = Shared().GetDefine(value, self.define_dic)
@@ -3465,140 +3628,193 @@ class EnterDataDialog(wx.Dialog):
 
 	def OnAdd(self, evt):
 		"""Add city button event"""
-		value = self.cbx.GetValue()
-		if value not in self.zipCodesList:
-			v = value
 
-			if self.testName: value2 = self.testName
-			elif self.tempZipCode: value2 = self.tempZipCode
-			double, name, v1 = self.CheckName(value2, value)
-			if double:
-				result = self.Warning(value2,v1,  v)
-				if result == wx.ID_CANCEL: return self.cbx.SetFocus()
-				elif result == wx.ID_NO:
-					value = name
-				else: value = value2
+		value = self.Normalize(self.cbx.GetValue(), True)
 
-			elif name == value2: value = value2
-			else: value = name
-			if _pyVersion < 3:
-				try:
-					value = value.encode("mbcs")
-				except(UnicodeDecodeError, UnicodeEncodeError): pass
+		if value in self.zipCodesList:
+			return self.cbx.SetFocus()
 
-			self.zipCodesList.append(value)
-			self.zipCodesList.sort()
-			#adds search key and default define to value
-			self	.define_dic.update({v: {"location": self.testCode.title() or _testCode.title(), "define": self.testDefine or '0'}})
+		v = value
 
-			#addss cities details
-			if "ramdetails_dic" in globals() and v in ramdetails_dic:
-				self.details_dic.update({v: ramdetails_dic[v]})
-			self.ComboSet(value, True)
-			self.testCode = self.testName = ''
-			Shared().Play_sound("add", 1)
-			self.cbx.SetFocus()
-			self.OnText()
+		value2 = (
+			self.Normalize(self.testName)
+			or self.Normalize(self.tempZipCode)
+			or value
+		)
+
+		double, name, v1 = self.CheckName(value2, value)
+
+		if double:
+			result = self.Warning(value2, v1, v)
+
+			if result == wx.ID_CANCEL:
+				return self.cbx.SetFocus()
+			elif result == wx.ID_NO:
+				value = name
+			else:
+				value = value2
+		elif name == value2:
+			value = value2
+		else:
+			value = name
+
+		value = self.Normalize(value, True)
+		v = self.Normalize(v, True)
+
+		self.zipCodesList.append(value)
+		self.zipCodesList.sort()
+
+		self.define_dic[v] = {
+			"location": (self.testCode or _testCode or u"").title(),
+			"define": self.testDefine or "0"
+		}
+
+		if "ramdetails_dic" in globals() and v in ramdetails_dic:
+			self.details_dic[v] = ramdetails_dic[v]
+
+		self.ComboSet(value, True)
+
+		self.testCode = self.testName = u""
+
+		Shared().Play_sound("add", 1)
+		self.cbx.SetFocus()
+		self.OnText()
 
 
 	def OnApply(self, evt):
 		"""Apply predefined city button event"""
-		value = self.cbx.GetValue()
-		encoded_value = value
-		if _pyVersion < 3: encoded_value = value.encode("mbcs")
-		if encoded_value not in self.zipCodesList:
-			v = value
 
-			if self.testName: value2 = self.testName
-			elif self.tempZipCode: value2 = self.tempZipCode
-			double, name, v1 = self.CheckName(value2, value)
-			if double:
-				result = self.Warning(value2, v1,  v)
-				if result == wx.ID_CANCEL: return self.cbx.SetFocus()
-				elif result == wx.ID_NO:
-					value = name
-				else: value = value2
+		value = self.Normalize(self.cbx.GetValue(), True)
 
-			elif name == value2: value = value2
-			else: value = name
-			if _pyVersion < 3:
-				try:
-					value = value.encode("mbcs")
-				except(UnicodeDecodeError, UnicodeEncodeError): pass
+		if value in self.zipCodesList:
+			self.defaultZipCode = value
+			self.ReTitle(self.defaultZipCode)
+			self.cbx.SetFocus()
+			Shared().Play_sound("apply", 1)
+			self.btn_Ok.Enable(True)
+			self.OnText()
+			return
 
-			self.zipCodesList.append(value)
-			self.zipCodesList.sort()
-			#adds search key and default define to value
-			self	.define_dic.update({v: {"location": self.testCode.title() or _testCode.title(), "define": self.testDefine or '0'}})
+		v = value
 
-			#addss cities details
-			if "ramdetails_dic" in globals() and str(v) in ramdetails_dic:
-				self.details_dic.update({v: ramdetails_dic[v]})
+		value2 = (
+			self.Normalize(self.testName)
+			or self.Normalize(self.tempZipCode)
+			or value
+		)
 
-			self.testName = self.testCode = ''
-			self.ComboSet(value, True)
+		double, name, v1 = self.CheckName(value2, value)
+
+		if double:
+			result = self.Warning(value2, v1, v)
+
+			if result == wx.ID_CANCEL:
+				return self.cbx.SetFocus()
+			elif result == wx.ID_NO:
+				value = name
+			else:
+				value = value2
+		elif name == value2:
+			value = value2
+		else:
+			value = name
+
+		value = self.Normalize(value, True)
+		v = self.Normalize(v, True)
+
+		self.zipCodesList.append(value)
+		self.zipCodesList.sort()
+
+		self.define_dic[v] = {
+			"location": (self.testCode or _testCode or u"").title(),
+			"define": self.testDefine or "0"
+		}
+
+		if "ramdetails_dic" in globals() and v in ramdetails_dic:
+			self.details_dic[v] = ramdetails_dic[v]
+
+		self.testName = self.testCode = u""
 
 		self.defaultZipCode = value
+		self.ComboSet(value, True)
+
 		self.cbx.SetFocus()
 		Shared().Play_sound("apply", 1)
-		self.OnText()
 		self.btn_Ok.Enable(True)
+		self.OnText()
 		self.ReTitle(self.defaultZipCode)
 
 
-	def OnRemove(self, evt = None):
-		"""Remove the city from cities list button event"""
-		value = self.cbx.GetValue()
-		encoded_value = value
-		if _pyVersion < 3: encoded_value = value.encode("mbcs")
-		if encoded_value in self.zipCodesList:
-			index = self.GetIndex(value, self.zipCodesList)
-			self.zipCodesList.remove(encoded_value)
-			if value == self.defaultZipCode:
-				self.defaultZipCode = ""
-				self.ReTitle(_("None")) #removes the city from the title bar
-				self.btn_Apply.Enable(True) #enable preset button
+	def OnRemove(self, evt=None):
+		"""Remove city"""
 
-			self.cbx.Delete(index)
-			self.cbx.SetValue('')
-			try:
-				if len(self.zipCodesList) == 0: self.ComboSet('')
-				elif index == len(self.zipCodesList): self.ComboSet(self.zipCodesList[-1])
-				else: self.ComboSet(self.zipCodesList[index])
-			except IndexError: pass
+		value = self.Normalize(self.cbx.GetValue(), True)
 
-			#Remove city definition and city details
-			if value in self.define_dic: del self.define_dic[value]
-			elif encoded_value in self.define_dic: del self.define_dic[encoded_value]
-			if value in self.details_dic: del self.details_dic[value]
-			elif encoded_value in self.details_dic: del self.details_dic[encoded_value]
-			Shared().Play_sound("del", 1)
-			if Shared().IsOldZipCode(self.cbx.GetValue()): sleep(0.5)
-			self.OnText()
-			self.cbx.SetFocus()
+		if value not in self.zipCodesList: return
+
+		index = self.zipCodesList.index(value)
+
+		self.zipCodesList.pop(index)
+
+		self.define_dic.pop(value, None)
+		self.details_dic.pop(value, None)
+
+		self.cbx.Delete(index)
+		self.cbx.SetValue(u"")
+
+		if value == self.defaultZipCode:
+			self.defaultZipCode = u""
+			self.ReTitle(_("None"))
+			self.btn_Apply.Enable(True)
+
+		if self.zipCodesList:
+			if index >= len(self.zipCodesList):
+				self.ComboSet(self.zipCodesList[-1])
+			else:
+				self.ComboSet(self.zipCodesList[index])
+		else:
+			self.ComboSet(u"")
+
+		Shared().Play_sound("del", 2)
+
+		self.OnText()
+		self.cbx.SetFocus()
+		self.btn_Ok.Enable(True)
 
 
 	def OnRename(self, evt):
-		"""rename the city selected"""
-		value = self.cbx.GetValue()
-		name = value.split(', ')[0]
-		part_right = value.split(', ')[-1]
-		if "_renameDialog" not in globals(): global _renameDialog
-		Shared().Play_sound("subwindow", 1)
-		#Translators: dialog to change the city name
-		_renameDialog = wx.TextEntryDialog(self,
-		#Translators: the dialog message
-		_("Enter new name."),
-		#Translators: title dialog
-		_addonSummary,
-		name)
-		if _renameDialog.ShowModal() == wx.ID_OK:
-			new_name = '%s, %s' % (_renameDialog.GetValue().lstrip(' ').rstrip(' ').title(), part_right)
-			self.Relabel(value, new_name)
-			Shared().Play_sound(True)
+		"""rename city"""
 
-		_renameDialog.Destroy()
-		_renameDialog = None
+		value = self.Normalize(self.cbx.GetValue(), True)
+
+		parts = value.split(", ")
+		name = parts[0]
+		part_right = ", ".join(parts[1:]) if len(parts) > 1 else u""
+
+		Shared().Play_sound("subwindow", 1)
+
+		#Translators: dialog to change the city name
+		dlg = wx.TextEntryDialog(
+			self,
+			#Translators: title dialog
+			_("Enter new name."),
+			_addonSummary,
+			name
+		)
+
+		if dlg.ShowModal() == wx.ID_OK:
+			new_name = self.Normalize(
+				u"%s, %s" % (
+					dlg.GetValue().strip().title(),
+					part_right
+				),
+			True)
+
+			self.Relabel(value, new_name)
+			if value != new_name: Shared().Play_sound(True, 2)
+
+		dlg.Destroy()
+
 		Shared().Play_sound("subwindow", 1)
 		self.cbx.SetFocus()
 
@@ -3624,48 +3840,55 @@ class EnterDataDialog(wx.Dialog):
 
 
 	def Relabel(self, value, new_name):
-		encoded_new_name = new_name
-		if _pyVersion < 3:
-			encoded_new_name = new_name.encode("mbcs")
-			encoded_value = value.encode("mbcs")
+		"""Rename a city"""
 
-		if encoded_new_name in self.zipCodesList:
-			if value != new_name: wx.MessageBox('%s %s' % (new_name, _("it can't be used because it already exists!")), '%s %s' % (_addonSummary, _("Notice!")), wx.ICON_EXCLAMATION)
-		else:
-			index = self.GetIndex(value, self.zipCodesList)
-			self.zipCodesList[index] = encoded_new_name
-			self.cbx.Delete(index)
-			self.zipCodesList.sort()
-			#update combobox
-			self.ComboSet(new_name, True)
-			if value == self.defaultZipCode:
-				self.defaultZipCode = new_name
-				self.ReTitle(_(new_name))
+		value = self.Normalize(value, True)
+		new_name = self.Normalize(new_name, True)
 
-			#update definitions and details
-			if value in self.details_dic:
-				dic_values = self.details_dic[value]
-				del self.details_dic[value]
-				self.details_dic.update({new_name: dic_values})
-			elif encoded_value in self.details_dic:
-				dic_values = self.details_dic[encoded_value]
-				del self.details_dic[encoded_value]
-				self.details_dic.update({new_name: dic_values})
+		# duplicate check
+		if new_name in self.zipCodesList and value != new_name:
+			wx.MessageBox(
+				u'%s %s' % (
+					new_name,
+					_("it can't be used because it already exists!")
+				),
+				u'%s %s' % (_addonSummary, _("Notice!")),
+				wx.ICON_EXCLAMATION
+			)
+			return
 
-			if value in self.define_dic:
-				dic_values = self.define_dic[value]
-				del self.define_dic[value]
-				self.define_dic.update({new_name: dic_values})
-			elif encoded_value in self.define_dic:
-				dic_values = self.define_dic[encoded_value]
-				del self.define_dic[encoded_value]
-				self.define_dic.update({new_name: dic_values})
+		# find index safely
+		try:
+			index = self.zipCodesList.index(value)
+		except ValueError:
+			return
+
+		# update list
+		self.zipCodesList[index] = new_name
+		self.zipCodesList.sort()
+
+		# UI update
+		self.cbx.Delete(index)
+		self.ComboSet(new_name, True)
+
+		# default city update
+		if value == self.defaultZipCode:
+			self.defaultZipCode = new_name
+			self.ReTitle(new_name)
+
+		# update details_dic
+		if value in self.details_dic:
+			self.details_dic[new_name] = self.details_dic.pop(value)
+
+		# update define_dic
+		if value in self.define_dic:
+			self.define_dic[new_name] = self.define_dic.pop(value)
 
 
 	def GetIndex(self, v, l):
 		"""Get position of item in list"""
 		try:
-			i = l.index(v.encode("mbcs"))
+			i = l.index(v.encode("utf-8"))
 		except ValueError:
 			try:
 				i = l.index(v)
@@ -3680,7 +3903,7 @@ class EnterDataDialog(wx.Dialog):
 		t = self.GetLabel()
 		if _pyVersion < 3:
 			try:
-				s = s.decode("mbcs")
+				s = s.decode("utf-8")
 			except(UnicodeDecodeError, UnicodeEncodeError): pass
 
 		title = '%s: %s)' %(t[:t.find(':')], s)
@@ -3731,7 +3954,6 @@ class EnterDataDialog(wx.Dialog):
 		value = name[:-len(name.split()[-1])-1]
 		for zc in self.zipCodesList:
 			part = zc[:-len(zc.split()[-1])-1]
-			if _pyVersion < 3: part = part.decode("mbcs")
 			if part == value:
 				double = True
 				break
@@ -3864,8 +4086,6 @@ class EnterDataDialog(wx.Dialog):
 				i = zipCodesList2[c] #get city name from imported list
 				t, zc, n = Shared().ZipCodeInList(i, self.zipCodesList)
 				encoded_v = v; encoded_defaultZipCode = self.defaultZipCode
-				if _pyVersion < 3:
-					encoded_v = v.encode("mbcs"); encoded_defaultZipCode = self.defaultZipCode.encode("mbcs")
 
 				if zc1 == zc and i == encoded_v and i == encoded_defaultZipCode:
 					#The city found in the list it's set to default
@@ -3899,7 +4119,8 @@ class EnterDataDialog(wx.Dialog):
 						self.details_dic.update({zc: details_dic[zc]})
 
 					ti += 1
-					if (new_zd or old_zd) <2: tr += 1
+					if new_zd > 0 and new_zd <= 2: tr += 1
+					if old_zd > 0 and old_zd <= 2: tr += 1
 
 				else: td += 1
 
@@ -3915,20 +4136,10 @@ class EnterDataDialog(wx.Dialog):
 		if ti:
 			self.zipCodesList = list(sorted(zipCodesList))
 			self.cbx.Clear()
-			if _pyVersion >= 3:
-				self.cbx.Append(self.zipCodesList)
-			else:
-				[self.cbx.Append(i.decode("mbcs")) for i in self.zipCodesList]
+			self.cbx.Append(self.zipCodesList)
 			self.ComboSet(v)
 			if found:
-				if _pyVersion >= 3:
-					self.defaultZipCode = self.tempZipCode = v
-				else:
-					try:
-						self.defaultZipCode = self.tempZipCode = v.decode("mbcs")
-					except(UnicodeDecodeError, UnicodeEncodeError):
-						self.defaultZipCode = self.tempZipCode = v
-
+				self.defaultZipCode = self.tempZipCode = v
 				self.OnText()
 				self.ReTitle(self.defaultZipCode)
 
@@ -4076,7 +4287,7 @@ class EnterDataDialog(wx.Dialog):
 		"""Update choices List ComboBox"""
 		if _pyVersion < 3:
 			try:
-				v = v.decode("mbcs")
+				v = v.decode("utf-8")
 			except(UnicodeDecodeError, UnicodeEncodeError): pass
 
 		if add:
@@ -4090,8 +4301,29 @@ class EnterDataDialog(wx.Dialog):
 		self.cbx.SetFocus()
 
 
+	def Normalize(self, v, strip=False):
+		"""Ensures Unicode consistency (Python 2/3)"""
+
+		if v is None:
+			return u""
+
+		if _pyVersion < 3:
+			if isinstance(v, str):
+				try:
+					v = v.decode("utf-8")
+				except UnicodeDecodeError:
+					pass
+
+			result = v
+		else:
+			result = v
+
+		return result.strip() if strip else result
+
+
 class Shared:
 	"""shared functions"""
+
 	def ShowWind(self, wind):
 		try:
 			#does everything to bring the window back to the foreground
@@ -4120,7 +4352,7 @@ class Shared:
 
 	def LogError(self, e):
 		e = str(e)
-		if _pyVersion < 3: e = e.decode("mbcs")
+		if _pyVersion < 3: e = e.decode("utf-8")
 		log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
 
 
@@ -4158,15 +4390,15 @@ class Shared:
 
 
 	def SetCityString(self, zipcode):
-		""" titles city and upper country acronym"""
-		try:
-			zipcode = str(zipcode)
-		except(UnicodeDecodeError, UnicodeEncodeError):
+		if _pyVersion < 3 and isinstance(zipcode, str):
 			try:
-				zipcode = zipcode.decode("mbcs")
-			except(UnicodeDecodeError, UnicodeEncodeError): pass
+				zipcode = zipcode.decode('utf-8')
+			except UnicodeDecodeError:
+				pass
 
-		return '%s%s' % (zipcode[:zipcode.find(',')].title(), zipcode[zipcode.rfind(','):].upper())
+		return u'%s%s' % (
+			zipcode[:zipcode.find(',')].title(),
+			zipcode[zipcode.rfind(','):].upper())
 
 
 	def IsOldZipCode(self, zipcode):
@@ -4177,8 +4409,9 @@ class Shared:
 
 	def GetLocation(self, value, define_dic):
 		"""get city location assigned to zipcode in use"""
-		if isinstance(value, bytes): value = value.decode("mbcs")
-		if _pyVersion < 3: value = value.encode("mbcs")
+		if _pyVersion < 3:
+			if not isinstance(value, unicode):
+				value = value.decode("utf-8")
 		return define_dic[value]['location'] if value in define_dic else ''
 
 
@@ -4194,12 +4427,14 @@ class Shared:
 
 		#load acronym database updates
 		try:
-			dbase = self.GetUrlData('%s/%s' % (_addonBaseUrl, "weather.dbase"), False)
-			if isinstance(dbase, bytes) and _pyVersion >= 3: dbase = dbase.decode()
-			dbase = dbase.split('\n')
-			for i in dbase:
-				_acronym_dic.update({i.split('\t')[0]: i.split('\t')[-1]})
+			url = urljoin(_addonBaseUrl+'/', 'weather.dbase')
+			dbase = self.GetUrlData(url, False)
+			try:
+				dbase = dbase.decode('utf-8-sig')
+			except AttributeError: pass
 
+			for i in dbase.splitlines():
+				_acronym_dic.update({i.split('\t')[0]: i.split('\t')[1]})
 		except: _acronym_dic = {}
 
 
@@ -4344,6 +4579,7 @@ class Shared:
 		'CUBA': 'CU',
 		'CYPRUS': 'CY',
 		'CZECH REPUBLIC': 'CZ',
+		'RÉPUBLIQUE TCHÈQUE': 'CZ',
 		'CZECHIA': 'CZ',
 		'DENMARK': 'DK',
 		'DJIBOUTI': 'DJ',
@@ -4685,7 +4921,8 @@ class Shared:
 		'YUKON TERRITORY': 'YT',
 		'YUKON': 'YT'
 		}
-		#addss online acronym database updates
+
+		# Check online for a country update
 		Shared().DbaseUpdate()
 		if len(_acronym_dic):
 			acronym_dic.update(_acronym_dic)
@@ -4899,18 +5136,13 @@ class Shared:
 			 api_query = '%s, %s' % (value[0], value[-1].lstrip(' '))
 		else:
 			api_query = '%s' % value
-			if _pyVersion < 3:
-				try:
-					api_query = '%s' % value.encode("mbcs")
-				except (UnicodeDecodeError, UnicodeEncodeError): pass
-
 			if api_query.count(',') > 2:
 				#reduces search key length to max 3 elements
 				aq  = [i.lstrip(' ').rstrip(' ').replace(', , ', ', ') for i in api_query.split(',')]
 				api_query = '%s, %s, %s' % (aq[0], aq[1], aq[2])
 
 		dom = self.WeatherConnect(api_query, apilang)
-		if dom == "no connect": return dom, None
+		if dom in ["no connect", "not found", "no key"]: return dom, None
 		elif not dom: return "", None
 		try:
 			city = dom['location']['name']
@@ -4924,7 +5156,7 @@ class Shared:
 		country_acronymFind = ''
 		if not country or not country_acronym:
 			#tries to recover the country from geonames url
-			city_test = '%s, %s' % (city, country_acronym); wx.Bell(); wx.Bell()
+			city_test = '%s, %s' % (city, country_acronym)
 			city_find = self.FindForGeoName(city_test, city_test, lat, lon)
 			if city_find:
 				city_find = city_find.split(', ')
@@ -4969,6 +5201,7 @@ class Shared:
 
 	def WeatherConnect(self, api_query, apilang):
 		"""return Weather API values"""
+
 		base_url = "http://api.weatherapi.com/v1/forecast.json"
 		keywords ={
 		"key":_wbdat,
@@ -4976,9 +5209,23 @@ class Shared:
 		"lang": apilang[-2:],
 		"days": _maxDaysApi
 		}
-		weather_url = base_url + "?" + urlencode(keywords, "mbcs")
+
+		if _pyVersion < 3:
+			keywords2 = {}
+
+			for k, v in keywords.items():
+				if isinstance(v, unicode):
+					keywords2[k] = v.encode("utf-8")
+				else:
+					keywords2[k] = v
+
+			weather_url = base_url + "?" + urlencode(keywords2)
+
+		else:
+			weather_url = base_url + "?" + urlencode(keywords)
+
 		data = self.GetUrlData(weather_url)
-		if not data or data in ["no connect", "no key"]: return data
+		if not data or data in ["no connect", "no key", "not found"]: return data
 		return json.loads(data)
 
 
@@ -5078,41 +5325,59 @@ class Shared:
 		except Exception: pass
 
 
-	def LoadZipCodes(self, i = None):
+	def LoadZipCodes(self, i=None):
 		"""Load cities, city definitions and city details"""
-		citiesPath = _zipCodes_path
-		if i:
-			#There is an import file
-			citiesPath = i
+		import io
+		citiesPath = i if i else _zipCodes_path
 
 		zipCodesList = []
 		define_dic = {}
 		details_dic = {}
-		if os.path.isfile(citiesPath):
-			with open(citiesPath, 'r') as file:
-				for r in file:
-					if r != '' and not r.startswith('['):
-						r = r.rstrip('\r\n')
-						zc = r.split('\t')
-						if len(zc) in [2, 3]:
-							if zc[0].startswith('#'):
-								#location and define data
-								define_fields = {"location": zc[1], "define": zc[-1].rstrip('\r\n')}
-								define_dic.update({zc[0][1:]: define_fields})
-							else: zipCodesList.append('%s %s' % (self.SetCityString(zc[0]), zc[-1].rstrip('\r\n')))
 
-						elif len(zc) == 8:
-							#city details
-							fields_dic = {}
-							n = 1
-							[fields_dic.update({i: ''}) for i in _fields]
-							for f in _fields:
-								#load fields data
-								fields_dic.update({f: zc[n]}); n += 1
+		if not os.path.isfile(citiesPath):
+			return [], {}, {}
 
-							details_dic.update({zc[0]: fields_dic}) #load record (city + fields)
+		# try UTF-8 first
+		try:
+			file = io.open(citiesPath, 'r', encoding='utf-8')
+			file.read()
+			file.seek(0)
+		except UnicodeDecodeError:
+			# fallback to old Windows format
+			file = io.open(citiesPath, 'r', encoding='mbcs')
+		except:
+			return [], {}, {}
 
-		return sorted(list(set(zipCodesList))), define_dic, details_dic
+		with file:
+			for r in file:
+				if r and not r.startswith('['):
+
+					r = r.rstrip('\r\n')
+					zc = r.split('\t')
+
+					if len(zc) in (2, 3):
+
+						if zc[0].startswith('#'):
+							define_dic[zc[0][1:]] = {
+								"location": zc[1],
+								"define": zc[-1]
+							}
+						else:
+							zipCodesList.append(
+								u"%s %s" % (
+									self.SetCityString(zc[0]),
+									zc[-1]
+								)
+							)
+
+					elif len(zc) == 8:
+						fields_dic = {}
+						for index, f in enumerate(_fields, start=1):
+							fields_dic[f] = zc[index]
+
+						details_dic[zc[0]] = fields_dic
+
+		return sorted(set(zipCodesList)), define_dic, details_dic
 
 
 	def Personal_volumes(self, dictionary = None, sav = False):
@@ -5174,8 +5439,7 @@ class Shared:
 		data = self.GetUrlData(address, False)
 		if not data: return None
 		if isinstance(data, bytes) and _pyVersion >= 3: data = data.decode()
-		##elif _pyVersion < 3: data = data.decode("utf-8")
-		elif _pyVersion < 3: data = data.decode("mbcs")
+		elif _pyVersion < 3: data = data.decode("utf-8")
 		for m in data.split('\n'):
 			if "geonames" and "latitude" in m:
 				pos = latitude = longitude = acronym = country = region = ""
@@ -5242,7 +5506,7 @@ class Shared:
 		if t in sound_dic:
 			filename = '%s\\%s.wav' % (_sounds_path, sound_dic[t])
 			if _pyVersion < 3:
-				winsound.PlaySound(filename.encode("mbcs"), s)
+				winsound.PlaySound(filename.encode("utf-8"), s)
 			else:
 				winsound.PlaySound(filename, s)
 
@@ -5275,9 +5539,10 @@ class Shared:
 
 	def DecodeValue(self, v):
 		try:
-			v1 = v.decode("mbcs")
+			v1 = v.decode("utf-8")
 		except(UnicodeDecodeError, UnicodeEncodeError): v1 = v
 		return v1
+
 
 	def GetUrlData(self, address, verbosity = True):
 		#threading
@@ -5297,24 +5562,28 @@ class Shared:
 
 	def GetUrlData2(self, address, verbosity):
 		"""open url"""
+
 		try:
-			data, error ="no connect", ""
 			gcontext = ssl.create_default_context()
 			gcontext.load_verify_locations(certifi.where())
 
 			with closing(urlopen(address, context=gcontext)) as response:
-				data = response.read()
+				return response.read()
+
+		except HTTPError as e:
+			if verbosity:
+				self.LogError("HTTP %s: %s" % (e.code, e))
+			return "not found"
+
+		except URLError as e:
+			if verbosity:
+				self.LogError("URL Error: %s" % e)
+			return "no connect"
+
 		except Exception as e:
-			error = e
-			data = "no connect"
-			if verbosity: self.LogError(error)
-
-		if "failed" in repr(error):
-			data = "no connect"
-			if verbosity: self.LogError(error)
-
-		elif "Not Found" in repr(error): data = "not found"
-		return data
+			if verbosity:
+				self.LogError(e)
+			return "no connect"
 
 
 	def Find_cities(self, value):
@@ -5326,16 +5595,23 @@ class Shared:
 			country = value[value.find(',')+1:].lstrip(' ')
 
 		cities_found = []
+		if _pyVersion >= 3:
+			city_enc = quote(city)
+		else:
+			if isinstance(city, unicode):
+				city_enc = quote(city.encode("utf-8"))
+			else:
+				city_enc = quote(city)
+
 		addresses = [
-		'http://www.geonames.org/postalcode-search.html?q=%s&country=%s' % (city, country),
-		'http://www.geonames.org/search.html?q=%s&country=%s' % (city, country)
+		'http://www.geonames.org/postalcode-search.html?q=%s&country=%s' % (city_enc, country),
+		'http://www.geonames.org/search.html?q=%s&country=%s' % (city_enc, country)
 		]
 		p=[
 		re.compile(r'</small></td><td>(.+)</td><td>(.+)</td><td>(.+)</td><td>(.+)</td><td>(.+)</td>.+<small>(-*\d+\.\d+)/(-*\d+\.\d+)</small>'), #geonames with posttal codes
 		re.compile(r'latitude">(-*\d+\.\d+)</span><span class="longitude">(-*\d+\.\d+)</span></span></td><td><a href="/countries/([A-Z][A-Z])/(.+)\.html">(.+)</a>, (.+)<br><small>(.+); (.+)</small>')] #geonames without postal codes
 		for c in [0, -1]:
 			data = self.GetUrlData(addresses[c])
-			##if isinstance(data, bytes) or _pyVersion < 3: data = data.decode("mbcs")
 			if isinstance(data, bytes) or _pyVersion < 3: data = data.decode("utf-8")
 			if not data or "noresult" in data:
 				if c == 0: continue
@@ -5406,7 +5682,7 @@ class Shared:
 					country_wpc = v.split(', ')[2] #get country
 					if m == _npc\
 					or country_wpc not in valid_countries: mode = 3
-				if mode is 1:
+				if mode == 1:
 					m = v.split(', ')[1]
 				elif mode == 2:
 					#get geographical coordinates from city
@@ -5525,7 +5801,7 @@ class SelectDialog(wx.Dialog):
 
 		if _pyVersion < 3:
 			try:
-				choices = [i.decode("mbcs") for i in choices]
+				choices = [i.decode("utf-8") for i in choices]
 			except(UnicodeDecodeError, UnicodeEncodeError): pass
 
 		chb = wx.Choice(self, -1, choices = choices)
@@ -5575,7 +5851,7 @@ class SelectDialog(wx.Dialog):
 				if os.path.isfile(_searchKey_path):
 					with open(_searchKey_path, 'r') as r:
 						for i in r:
-							if _pyVersion < 3: i = i.decode("mbcs")
+							if _pyVersion < 3: i = i.decode("utf-8")
 							if i.startswith('\t'): sel = int(i.lstrip('\t')); continue
 							_defaultStrings.append(i.rstrip('\n'))
 
@@ -5603,7 +5879,7 @@ class SelectDialog(wx.Dialog):
 		elif key == wx.WXK_F3 and defaultString:
 			#Find next
 			self.FindText(self.choices, defaultString, direction = 1)
-        
+		
 		evt.Skip()
 
 
@@ -5627,7 +5903,7 @@ class SelectDialog(wx.Dialog):
 			if _pyVersion >= 3: t = strings[line].lower()
 			else:
 				try:
-					t = strings[line].lower().decode("mbcs")
+					t = strings[line].lower().decode("utf-8")
 				except(UnicodeDecodeError, UnicodeEncodeError): t = strings[line].lower()
 
 			if t.find(text.lower()) != -1:
@@ -5654,7 +5930,7 @@ class SelectDialog(wx.Dialog):
 			t = self.chb.GetStringSelection()
 			s = strings.index(t) + direction
 		except ValueError:
-			if _pyVersion < 3: s = strings.index(t.encode("mbcs")) +direction
+			if _pyVersion < 3: s = strings.index(t.encode("utf-8")) +direction
 
 		return s
 
@@ -5671,7 +5947,6 @@ class SelectImportDialog(wx.Dialog):
 		guiHelper.SPACE_BETWEEN_BUTTONS_VERTICAL = 5
 		sizerHelper.addItem(wx.StaticText(self, -1, label=message))
 		sizerHelper.addItem(wx.StaticLine(self))
-		if _pyVersion < 3: zip_list = [i.decode("mbcs") for i in zip_list]
 		clb = sizerHelper.addItem(wx.CheckListBox(self, choices = zip_list))
 		clb.SetSelection(0)
 		bHelper = guiHelper.BoxSizerHelper(self, orientation = wx.HORIZONTAL)
@@ -6155,7 +6430,7 @@ class FindDialog(wx.Dialog):
 		with open(_searchKey_path, 'w') as w:
 			for i in self.defaultStrings:
 				if _pyVersion >= 3: i += "\n"
-				else: i =i.encode("mbcs") + "\n"
+				else: i =i.encode("utf-8") + "\n"
 				try:
 					w.write(i)
 				except Exception as e:
