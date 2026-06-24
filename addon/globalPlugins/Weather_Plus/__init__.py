@@ -11,7 +11,7 @@ This file is covered by the GNU General Public License
 See the file COPYING for more details
 Version 11.0
 NVDA compatibility: 2017.3 to beyond
-Last Edit date June, 23th, 2026"""
+Last Edit date June, 24th, 2026"""
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -609,9 +609,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def onAbout(self, evt):
 		"""Open the readme.html from the folder of the local documentation"""
 		try:
-			os.startfile(self._docFile)
-		except OSError:
-			wx.MessageBox(_("Documentation not available!"), _("Notice!"), wx.OK|wx.ICON_ERROR)
+			wx.CallLater(100, os.startfile, self._docFile)
+		except OSError as e:
+			wx.MessageBox('%s\n%s' % (_("Documentation not available!"), Shared().Normalize(e)), _("Notice!"), wx.OK|wx.ICON_ERROR)
 
 
 	def isDocFolder(self):
