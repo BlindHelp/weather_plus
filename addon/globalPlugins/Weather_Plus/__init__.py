@@ -1,4 +1,4 @@
-#-*- coding:utf-8 -*-
+# -*- coding:utf-8 -*-
 """Weather Plus Addon for NVDA
 WeatherAPI (powered by WeatherAPI.com)
 Weather and 24 hour forecast
@@ -11,7 +11,7 @@ This file is covered by the GNU General Public License
 See the file COPYING for more details
 Version 11.0
 NVDA compatibility: 2017.3 to beyond
-Last Edit date June, 17th, 2026"""
+Last Edit date June, 23th, 2026"""
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -25,15 +25,15 @@ from contextlib import closing
 from threading import Thread
 if wx.version().split(".")[0] >= "4": import wx.adv
 """other temporary imported libraries in the code
-tempfile, zipfile, stat, shutil"""
-#include the modules directory to the path
+tempfile, zipfile, stat, shutil, pickle"""
+# Include the modules directory to the path
 sys.path.append(os.path.dirname(__file__))
 import dateutil.tz, dateutil.zoneinfo
 from pybass  import *
 try:
 	import certifi
 except ImportError:
-	# certify for nvda with python 2 or early versions of nvda with python 3
+	# Certify for nvda with python 2 or early versions of nvda with python 3
 	import certifi2 as certifi
 
 _pyVersion =sys.version_info.major
@@ -45,7 +45,7 @@ if _pyVersion >= 3:
 	from urllib.error import HTTPError, URLError
 	from urllib.parse import urljoin
 else:
-	#nvda with python version earlier than 3
+	# Nvda with python version earlier than 3
 	import Queue
 	from urllib2 import urlopen
 	from urllib import urlencode
@@ -56,11 +56,12 @@ else:
 del sys.path[-1]
 addonHandler.initTranslation()
 
-#global constants
+# Global constants
+base = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", ".."))
 if _pyVersion < 3:
-	_addonDir = os.path.join(os.path.dirname(__file__), "..\\..").decode("utf-8")
+	_addonDir = unicode(base, "utf-8")
 else:
-	_addonDir = os.path.join(os.path.dirname(__file__), "..\\..")
+	_addonDir = base
 
 _curAddon = addonHandler.Addon(_addonDir)
 _addonAuthor = _curAddon.manifest['author']
@@ -68,8 +69,9 @@ _addonSummary = _curAddon.manifest['summary']
 _addonVersion = _curAddon.manifest['version']
 _addonPage = _curAddon.manifest['url']
 _addonBaseUrl = '%s/%s' % (_addonPage[:_addonPage.rfind('/weather')], "files/plugin")
-_sounds_path = _addonDir.replace('..\..', "") + "\sounds"
-config_path = os.path.join(globalVars.appArgs.configPath, "Weather_config")
+_sounds_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "sounds"))
+config_path = os.path.abspath(globalVars.appArgs.configPath)
+config_path = os.path.join(config_path, "Weather_config")
 _config_weather = os.path.join(config_path,"Weather.ini")
 _zipCodes_path = os.path.join(config_path, "Weather.zipcodes")
 _unZip_path = os.path.join(config.getUserDefaultConfigPath(), config_path)
@@ -82,14 +84,15 @@ _volume_dic = {'0%': 0, '10%': 0.1, '20%': 0.2, '30%': 0.3, '40%': 0.4, '50%': 0
 _tempScale = [_("Fahrenheit"), _("Celsius"), _("Kelvin")]
 _fields = ['city', 'region', 'country', 'country_acronym', 'timezone_id', 'lat', 'lon']
 _testCode = ''
-_npc = "NPC" #no postal code
+_npc = "NPC" # No postal code
 _nr = _("unknown")
+defaultString = "" # The last search string
 _na = _("not available")
 _plzw = _("Please wait...")
-_maxDaysApi = 3 #maximum allowed for free api plan
-_wait_delay = 10 #it's necessary to update after at least 10 minutes to limit frequent API calls, please don't change it!
-#All dialog windows
-#Note: these variables names are called by WindInStandby()
+_maxDaysApi = 3 # Maximum allowed for free api plan
+_wait_delay = 10 # It's necessary to update after at least 10 minutes to limit frequent API calls, please don't change it!
+# All dialog windows
+# Note: these variables names are called by WindInStandby()
 _upgradeDialog = None
 _searchKeyWarnDialog = None
 _mainSettingsDialog = None
@@ -121,55 +124,52 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	scriptCategory = _addonSummary
 	def __init__(self):
 		super(globalPluginHandler.GlobalPlugin, self).__init__()
+		# Variables definition
+		global _wbdat
+		_wbdat = Shared().Weather_PlusDat()
 
-		#variables definition
-		if "_wbdat" not in globals():
-			global _wbdat
-			_wbdat = Shared().Weather_PlusDat()
-
-		self.note = [1, ''] #errors counter and city in use
-		self.cityDialog = None #city error dialog opened
-		self.dom = "" #Weather API data corresponding to the city in use
-		self.defaultZipCode = "" #city preset
-		self.tempZipCode = "" #temporary city
-		self.test = [""] * 2 #temporary city and current time
-		self.defaultString = "" #the last search string
-		self.randomizedSamples = [] #used by Play_samples()
-		self.current_zipCode = "" #used by Play_samples()
-		self.current_condition = "" #used by Play_samples()
-		#load cities list and definitions from Weather.zipcodes
+		self.note = [1, ''] # Errors counter and city in use
+		self.cityDialog = None # City error dialog opened
+		self.dom = "" # Weather API data corresponding to the city in use
+		self.defaultZipCode = "" # City preset
+		self.tempZipCode = "" # Temporary city
+		self.test = [""] * 2 # Temporary city and current time
+		self.randomizedSamples = [] # Used by Play_samples()
+		self.current_zipCode = "" # Used by Play_samples()
+		self.current_condition = "" # Used by Play_samples()
+		# Load cities list and definitions from Weather.zipcodes
 		self.zipCodesList, self.define_dic, self.details_dic = Shared().LoadZipCodes()
-		#load sounds effects volumes
+		# Load sounds effects volumes
 		global samplesvolumes_dic
 		samplesvolumes_dic = Shared().Personal_volumes()
-		#Reads the settings from weather.ini
+		# Reads the settings from weather.ini
 		self.ReadConfig()
 		self.menu = gui.mainFrame.sysTrayIcon.menu.GetMenuItems()[0].GetSubMenu()
 		self.WeatherMenu = wx.Menu()
-		#Translators: the configuration submenu in NVDA Preferences menu
+		# Translators: the configuration submenu in NVDA Preferences menu
 		self.mainItem = self.menu.AppendSubMenu(self.WeatherMenu, _("Weather Plus &Settings"), _("Show configuration items."))
-		#Translators: item to open primary configuration window
+		# Translators: item to open primary configuration window
 		self.setZipCodeItem = self.WeatherMenu.Append(wx.ID_ANY, _("Set and &manage your cities..."), _("Displays or allows to set the current cities from a list"))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.onSetZipCodeDialog, self.setZipCodeItem)
-		#Translators: item to open window to set up a temporary city
+		# Translators: item to open window to set up a temporary city
 		self.setTempZipCodeItem = self.WeatherMenu.Append(wx.ID_ANY, _("Set a &temporary city..."), _("Allows to set one temporary city from a list"))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.setZipCodeDialog, self.setTempZipCodeItem)
 		if not self.zipCodesList: self.setTempZipCodeItem.Enable(False)
-		#Translators: item to open the help file for the current language
+		# Translators: item to open the help file for the current language
 		self.AboutItem = self.WeatherMenu.Append(wx.ID_ANY, _("&Documentation"), _("Opens the help file for the current language"))
 		self.AboutItem.Enable(self.isDocFolder())
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.onAbout, self.AboutItem)
-		#Translators: item to notify if there is an upgraded version available
+		# Translators: item to notify if there is an upgraded version available
 		self.UpgradeAddonItem = self.WeatherMenu.Append(wx.ID_ANY, _("&Check for Upgrade..."), _("Notify if there is an upgraded version available"))
 		gui.mainFrame.sysTrayIcon.Bind(wx.EVT_MENU, self.onUpgrade, self.UpgradeAddonItem)
-		#check if a new version is available
+		# Check if a new version is available
 		if self.toUpgrade: self.onUpgrade(verbosity = False)
-		#disable documentation menu items and check for updates if you are in safe screen mode
+		# Disable documentation menu items and check for updates if you are in safe screen mode
 		if globalVars.appArgs.secure:
 			self.AboutItem.Enable(False)
 			self.UpgradeAddonItem.Enable(False)
 
-		#delete the update file from the temporary folder
+		# Delete the update file from the temporary folder
 		self.Removeupdate()
 
 
@@ -179,8 +179,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self.menu.Remove(self.mainItem)
 			else:
 				self.menu.RemoveItem(self.mainItem)
-		except: pass #(wx.PyDeadObjectError, RuntimeError, AttributeError)
-		#frees the memory allocated by the audio sample
+		except: pass # (wx.PyDeadObjectError, RuntimeError, AttributeError)
+		# Frees the memory allocated by the audio sample
 		Shared().FreeHandle()
 
 
@@ -205,8 +205,8 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 
 	def WindInStandby(self):
+		"""Try bringing windows hidden by other applications back to the foreground"""
 		Shared().CloseDialog(_weatherReportDialog)
-		#Try bringing windows hidden by other applications back to the foreground
 		dialog_names = [
 			"_helpDialog",
 			"_HourlyforecastDataSelectDialog",
@@ -238,10 +238,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 		children_isalive = False
 		for dialog in dialog_names:
-			#Use globals() to retrieve the dialog variable dynamically
+			# Use globals() to retrieve the dialog variable dynamically
 			if dialog in globals() and globals()[dialog]:
 				children_isalive = Shared().ShowWind(globals()[dialog])
-				break  #Exit the loop once an active dialog is found
+				break  # Exit the loop once an active dialog is found
 
 		return children_isalive
 
@@ -257,13 +257,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		"""unit strings values"""
 		unit_uv = _("nanometers")
 		if degrees == 0:
-			#Fahrenheit degrees
+			# Fahrenheit degrees
 			unit_speed = _("miles per hour")
 			unit_distance = _("miles")
 			unit_precip = _("inches")
 			unit_pressure = _("inches of mercury")
 		else:
-			#Celsius and Kelvin
+			# Celsius and Kelvin
 			unit_speed = _("kilometers per hour")
 			unit_distance = _("kilometers")
 			unit_precip = _("millimeters")
@@ -274,6 +274,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 
 	def IsOpenDialog(self, dialog):
+		"""Show the open dialog"""
 		if dialog:
 			dialog.Show(True)
 			return True
@@ -283,22 +284,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def onSetZipCodeDialog(self, evt):
 		"""Opens the Weather Plus settings window"""
-		#prevents multiple windows open at the same time
+		# Prevents multiple windows open at the same time
 		self.EnableMenu(False)
-		try:
-			#set the correct encoding in the title
-			if _pyVersion < 3:
-				preset = self.defaultZipCode.decode("utf-8")
-			else:
-				preset = self.defaultZipCode
-		except(UnicodeDecodeError, UnicodeEncodeError): preset = self.defaultZipCode
-		#opens the Weather Plus settings window
-		#Translators: the title of main settings window
+			# Set the correct encoding in the title
+		preset = Shared().Normalize(self.defaultZipCode)
+		# Opens the Weather Plus settings window
+		# Translators: the title of main settings window
 		title = '%s - %s - (%s: %s)' % (_addonSummary, _("Settings"), _("Preset"), preset or _("None"))
-		#Translators: the message in the main settings window
+		# Translators: the message in the main settings window
 		message = _("Enter a City or choose one from the list, if available.")
 		saved_celsius = self.ReadConfig("c") or self.celsius
-		if "_mainSettingsDialog" not in globals(): global _mainSettingsDialog
+		global _mainSettingsDialog
 		Shared().Play_sound("winopen", 1)
 		gui.mainFrame.prePopup()
 		_mainSettingsDialog = EnterDataDialog(gui.mainFrame, message =message, title = title,
@@ -350,8 +346,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.postPopup()
 
 		def callback2(result):
+			# Main settings dialog callback
 			if result == wx.ID_OK:
-				#update the settings modified by the user
+				# Update the settings modified by the user
 				(forecast_days,
 				apilang,
 				toUpgrade,
@@ -395,10 +392,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				toWeatherEffects,
 				dontShowAgainAddDetails,
 				toAssign) = _mainSettingsDialog.GetValue()
-				#save the configuration if some data were changed
+				# Save the configuration if some data were changed
 				save = beep = False
 				if modifiedList:
-					#Save current cities list, area definitions and cities details
+					# Save current cities list, area definitions and cities details
 					self.define_dic = define_dic
 					self.details_dic = details_dic
 					if self.WriteList(zipCodesList):
@@ -447,7 +444,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				if dontShowAgainAddDetails != self.dontShowAgainAddDetails: self.dontShowAgainAddDetails = dontShowAgainAddDetails; save = True
 				if (any(map(lambda x: True, (k for k in samplesvolumes_dic if k not in self.samplesvolumes_dic)))\
 				or sorted(samplesvolumes_dic.values()) != sorted(self.samplesvolumes_dic.values())):
-					#save the individual volumes of the sound effects
+					# Save the individual volumes of the sound effects
 					beep = Shared().Personal_volumes(samplesvolumes_dic, sav = True)
 					self.samplesvolumes_dic = dict(samplesvolumes_dic)
 
@@ -458,7 +455,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				if save:
 					beep = True
 					if self.zipCode != self.defaultZipCode:
-						#preserve the  city in use
+						# Preserve the  city in use
 						backup = self.zipCode
 						self.zipCode = self.defaultZipCode
 						self.SaveConfig()
@@ -467,32 +464,32 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					else: self.SaveConfig()
 
 				if beep: Shared().Play_sound("save")
-				#Set temporary Zip Code
+				# Set temporary Zip Code
 				self.ExtractData(self.tempZipCode)
 				test = self.tempZipCode
-				if _pyVersion < 3: test = unicode(test.decode("utf-8"))
+				test = Shared().Normalize(test)
 				if not self.dontShowAgain:
 					if (not self.defaultZipCode and not save) or (test != self.defaultZipCode):
-						#Translators: dialog message that advise that the city will be used in temporarily mode
+						# Translators: dialog message that advise that the city will be used in temporarily mode
 						message = '%s "%s" %s\n%s' % (
 						_("The city"), test,
 						_("has not been preset."),
 						_("Will be used in temporary mode!"))
 						dlg = NoticeAgainDialog(gui.mainFrame, message = message,
-						#Translators: the dialog title
+						# Translators: the dialog title
 						title = '%s %s' % (_addonSummary, _("Notice!")))
 						if dlg.ShowModal():
 							dontShowAgain = dlg.GetValue()
 							if dontShowAgain != self.dontShowAgain:
 								self.dontShowAgain = dontShowAgain
-								#preserve the default zip code and celsius values
+								# Preserve the default zip code and celsius values
 								backup_celsius = self.celsius
 								celsius = self.ReadConfig('c')
 								if celsius is not None: self.celsius = celsius
 								backup_zipCode = self.zipCode
 								self.zipCode = self.defaultZipCode
 								self.SaveConfig()
-								#reassign the temporary zip code and celsius
+								# Reassign the temporary zip code and celsius
 								self.zipCode = backup_zipCode
 								self.celsius = backup_celsius
 								del backup_celsius, backup_zipCode
@@ -500,21 +497,21 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 							dlg.Destroy()
 
 			else:
-				#button cancell or eskape key
+				# Button cancell or eskape key
 				n, n, n, zipCodesList, define_dic, details_dic, defaultZipCode, n, modifiedList, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n, n = _mainSettingsDialog.GetValue()
 				del n
 				_volume = self.volume
 				samplesvolumes_dic = dict(self.samplesvolumes_dic)
 				if modifiedList:
-					#offers to save the list changed
-					#Translators: the dialog title
+					# Offers to save the list changed
+					# Translators: the dialog title
 					title = '%s %s' % (_addonSummary, _("Notice!"))
-					#Translators: dialog message to warn that the list has not been saved
+					# Translators: dialog message to warn that the list has not been saved
 					message = '%s.\n%s' % (_("You have modified the list of your cities"), _("Do you want to save it?"))
 					winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
 					dlg= wx.MessageBox(message, title, wx.YES_NO | wx.YES_DEFAULT | wx.ICON_QUESTION)
 					if dlg == wx.YES:
-						#Save current cities list
+						# Save current cities list
 						self.defaultZipCode = defaultZipCode
 						self.define_dic = define_dic
 						self.details_dic = details_dic
@@ -524,7 +521,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 			_mainSettingsDialog.Destroy()
 			Shared().Play_sound("winclose", 1)
-			#enable the window for fast access of cities and Weather setting menu
+			# Enable the window for fast access of cities and Weather setting menu
 			self.EnableMenu(True)
 
 		gui.runScriptModalDialog(_mainSettingsDialog, callback2)
@@ -542,23 +539,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def setZipCodeDialog(self, evt = None):
 		"""Create a dialog box for select a temporary city"""
-
 		def Find_index(cityList, city):
-			"""Try to find index from list, handling encoding for both Python 2 and 3"""
-			possible_cities = [city]
+			# Try to find index from list, handling encoding for both Python 2 and 3
+			possible_cities = []
 
-			#Coding management for Python 2
-			if _pyVersion < 3:
-				try:
-					possible_cities.append(city.encode("utf-8"))
-				except (UnicodeDecodeError, UnicodeEncodeError):
-					pass
-
-				try:
-					possible_cities.append(city.decode("utf-8"))
-				except (UnicodeDecodeError, UnicodeEncodeError):
-					pass
-
+			possible_cities.append(Shared().Normalize(city))
 			for city_variant in possible_cities:
 				try:
 					return cityList.index(city_variant)
@@ -568,16 +553,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return None
 
 		s = sel = 0
-		#discard old zipcodes fromthe list
+		# Discard old zipcodes fromthe list
 		zipCodesList = [x for x in self.zipCodesList if not x.startswith('#') and not x[x.rfind(' ')+1:].isdigit() and not Shared().IsOldZipCode(x) == True]
 		if not zipCodesList:
-			#Translators: dialog message of invalid city location
+			# Translators: dialog message of invalid city location
 			message = '%s\n%s' % (
 			_("The cities on your list are not compatible with the Weather API!"),
 			_("They have to be tested and validated, you can do it from the addon settings window."))
-			#Translators: the dialog title
+			# Translators: the dialog title
 			title = '%s %s' % (_addonSummary, _("Notice!"))
-			if "_citiesNotvalidWarnDialog" not in globals(): global _citiesNotvalidWarnDialog
+			global _citiesNotvalidWarnDialog
 			gui.mainFrame.prePopup()
 			_citiesNotvalidWarnDialog = MyDialog(gui.mainFrame, message, title, zipCodesList = None, newVersion = '', setZipCodeItem = self.setZipCodeItem, setTempZipCodeItem = self.setTempZipCodeItem, UpgradeAddonItem = self.UpgradeAddonItem, buttons = None, simple = True)
 			_citiesNotvalidWarnDialog.Show()
@@ -588,18 +573,18 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if s == None:
 			s = Find_index(zipCodesList, self.defaultZipCode)
 
-		#Translators: the dialog title to  setting a temporary city
+		# Translators: the dialog title to  setting a temporary city
 		title = '%s - %s' % (_addonSummary, _("Setting up a temporary city"))
-		#Translators: dialog message to  setting a temporary city
+		# Translators: dialog message to  setting a temporary city
 		message = '%s\n%s %d' % (
-		Shared().Find_wbdats(), #addss short cut keys
+		Shared().Find_wbdats(), # Addss short cut keys
 		_("Cities List available:"),
 		len(zipCodesList))
 		choices=zipCodesList
 		if s!= None: sel, t = s,0
 		else: s, sel, t = 0, 0, -1
 		Shared().Play_sound("winopen", 1)
-		if "_tempSettingsDialog" not in globals(): global _tempSettingsDialog
+		global _tempSettingsDialog
 		self.EnableMenu(False)
 		gui.mainFrame.prePopup()
 		_tempSettingsDialog= SelectDialog(gui.mainFrame, title = title, message = message, choices = choices, last = [s], sel = 0)
@@ -607,6 +592,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		gui.mainFrame.postPopup()
 
 		def callback(result):
+			# _tempSettingsDialog callback
 			if result == wx.ID_OK:
 				selection = _tempSettingsDialog.GetValue()
 				self.tempZipCode = zipCodesList[selection]
@@ -621,46 +607,51 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 
 	def onAbout(self, evt):
-		"""Open the folder of the local documentation"""
+		"""Open the readme.html from the folder of the local documentation"""
 		try:
-			os.startfile(self._docFolder)
-		except WindowsError:
-			ui.message (_("Documentation not available for the current language!"))
+			os.startfile(self._docFile)
+		except OSError:
+			wx.MessageBox(_("Documentation not available!"), _("Notice!"), wx.OK|wx.ICON_ERROR)
 
 
 	def isDocFolder(self):
-		"""Checks if there is documentation for the language set"""
 		lang = languageHandler.getLanguage()
+
 		pre = lang.split('_')[-1]
 		availableLangs = languageHandler.getAvailableLanguages()
-		langs = [i[-2].split('_')[-1] for i in availableLangs if i[-2].split('_')[-1].isupper()]
-		if '_' in lang and pre not in langs: lang = lang.split('_')[0]
-		if _pyVersion < 3:
-			docFolder = os.path.dirname(__file__).decode("utf-8")
-		else:
-			docFolder = os.path.dirname(__file__)
-		listDocs = os.listdir(docFolder.split("globalPlugins")[0]+"\\doc\\")
-		if lang not in listDocs: lang = 'en'
-		docFolder = docFolder.split("globalPlugins")[0]+"\\doc\\"+lang
-		try:
-			#prevents error if the en folder is missing
-			if os.listdir(docFolder) == []:
-				docFolder = docFolder.split("doc")[0]+"\\doc\\"+'en'
-		except WindowsError: return False
-		if os.path.exists(docFolder):
-			self._docFolder = docFolder
+		langs = [
+			i[-2].split('_')[-1]
+			for i in availableLangs
+			if i[-2].split('_')[-1].isupper()
+		]
+
+		if '_' in lang and pre not in langs:
+			lang = lang.split('_')[0]
+
+		docRoot = os.path.join(_addonDir, "doc")
+
+		if lang not in os.listdir(docRoot):
+			lang = "en"
+
+		readmeFile = os.path.join(docRoot, lang, "readme.html")
+
+		if not os.path.isfile(readmeFile):
+			readmeFile = os.path.join(docRoot, "en", "readme.html")
+
+		if os.path.isfile(readmeFile):
+			self._docFile = readmeFile
 			return True
-		else:
-			return False
+
+		return False
 
 
 	def onUpgrade(self, evt = None, verbosity = True):
-		"""Check for upgrade"""
-		if globalVars.appArgs.secure: return #if run from systemConfig, does not check anyting
+		"""Check for addon upgrade"""
+		if globalVars.appArgs.secure: return # If run from systemConfig, does not check anyting
 
 		def NoteDialog(message = "", title = "", newVersion = "", buttons = None):
-			"""call the upgrade dialog"""
-			if "_upgradeDialog" not in globals(): global _upgradeDialog
+			# call the upgrade dialog
+			global _upgradeDialog
 			self.EnableMenu(False)
 			gui.mainFrame.prePopup()
 			_upgradeDialog = MyDialog(gui.mainFrame, message, title, self.zipCodesList, newVersion, self.setZipCodeItem, self.setTempZipCodeItem, self.UpgradeAddonItem, buttons)
@@ -668,30 +659,31 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			gui.mainFrame.postPopup()
 
 		message, ask = "", False
-		#title of the dialog box
+		# Title of the dialog box
 		title = self.UpgradeAddonItem.GetItemLabelText().rstrip('.').replace("&", "")
-		#read the version from addon page
+		# Read the version from addon page
 		data = Shared().GetUrlData(_addonPage, verbosity)
 		if isinstance(data, bytes) and _pyVersion >= 3: data = data.decode()
 		if not data or [True for i in ["no connect", "not found"] if i in data]:
 			if evt:
 				Shared().Play_sound("warn", 1)
 				if "not found" in data:
-					#Translators: dialog message and title used when it was not possible to find data
+					# Translators: dialog message and title used when it was not possible to find data
 					NoteDialog(_("Sorry, I can not receive data, problems with the download page, try again later please!"), title)
 				else:
-					#Translators: dialog message and title used when it not possible to connect and receive data 
-					NoteDialog(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!"), title)
+					# Translators: dialog message and title used when it not possible to connect and receive data 
+					NoteDialog(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!") +
+					" " + _("See the log for more information."), title)
 
 			return
 
-		#search for new version string
+		# Search for new version string
 		try:
 			newVersion = re.search(r'Version\: (\d{1,4}\.\d{1,2}( - \d{1,2}\.\d{1,2}\.\d{4})*)', data).group(1)
 		except AttributeError: newVersion = ""
-		#finally checks to see if a new version is available
+		# Finally checks to see if a new version is available
 		if newVersion and (float(newVersion.split()[0]) > float(_addonVersion.split()[0])):
-			#Translators: dialog message that notifying the availability of a new version
+			# Translators: dialog message that notifying the availability of a new version
 			message = '%s %s %s %s\r\n%s: %s.\n%s' % (
 			_addonSummary, _("version"), newVersion, _("is available."),
 			_("Installed version"), _addonVersion,
@@ -699,9 +691,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			ask= view = True
 		else:
 			if evt: return NoteDialog(
-			#Translators: dialog message used when a new version is not available
+			# Translators: dialog message used when a new version is not available
 			_("Sorry, at the time an update is not available."),
-			#Translators: the dialog title
+			# Translators: the dialog title
 			title)
 
 		if ask:
@@ -711,62 +703,60 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def ExtractData(self, v):
 		"""get city name from zip code and assign new value to current zip code"""
 		self.zipCode = v
-		self.city = v[:v.find(',')]
-		if _pyVersion < 3 and not isinstance(self.city, unicode):
-			self.city = self.city.decode("utf-8")
+		self.city = Shared().Normalize(v[:v.find(',')])
 
 
 	def Play_Sample(self, condition_code = None, degrees = None, wind_f= None):
 		"""Plays the sound effect if found"""
 		samples_dic = {
-		1000: '*', #Sunny
-		1003: '*', #Partly cloudy
-		1006: '*', #Cloudy
-		1009: '*', #Overcast
-		1030: 'Fog ambience', #Mist
-		1063: 'Light rain', #Patchy rain possible
-		1066: 'Snow', #Patchy snow possible
-		1069: 'Sleet', #Patchy sleet possible
-		1072:'Rain and snow', #Patchy freezing drizzle possible
-		1087: 'Light rain', #Thundery outbreaks possible
-		1114: 'Snow storm', #Blowing snow
-		1117: 'Snow storm', #Blizzard
-		1135: 'Fog ambience', #Fog
-		1147: 'Fog ambience', #Freezing fog
-		1150: 'Light rain', #Patchy light drizzle
-		1153: 'Light rain', #Light drizzle
-		1168: 'Sleet', #Freezing drizzle
-		1171: 'Hailstorm00', #Heavy freezing drizzle
-		1180: 'Light rain', #Patchy light rain",
-		1183: 'Light rain', #Light rain
-		1186: 'Rain', #Moderate rain at times
-		1189: 'Rain', #Moderate rain
-		1192: 'Heavy rain', #Heavy rain at times
-		1195: 'Heavy rain', #Heavy rain
-		1198: 'Light rain', #Light freezing rain
-		1201: 'Rain and snow', #Moderate or heavy freezing rain
-		1204: 'Sleet', #Light sleet
-		1207: 'Rain and snow', #Moderate or heavy sleet
-		1210: 'Snow', #Patchy light snow
-		1213: 'Snow', #Light snow
-		1216: 'Snow', #Patchy moderate snow
-		1219: 'Snow', #Moderate snow
-		1222: 'Snow storm', #Patchy heavy snow
-		1225: 'Snow storm', #Heavy snow
-		1237: 'Hailstorm00', #Ice pellets
-		1240: 'Light rain', #Light rain shower
-		1243: 'Rain', #Moderate or heavy rain shower
-		1246: 'Heavy rain', #Torrential rain shower
-		1249: 'Sleet', #Light sleet showers
-		1252: 'Snow', #Moderate or heavy sleet showers
-		1255: 'Snow', #Light snow showers
-		1258: 'Snow', #Moderate or heavy snow showers
-		1261: 'Light rain', #Light showers of ice pellets
-		1264: 'Hailstorm00', #Moderate or heavy showers of ice pellets
-		1273: 'Continuous thunder', #Patchy light rain with thunder
-		1276: 'Heavy rain', #Moderate or heavy rain with thunder
-		1279: 'Snow', #Patchy light snow with thunder
-		1282: 'Snow storm', #Moderate or heavy snow with thunder
+		1000: '*', # Sunny
+		1003: '*', # Partly cloudy
+		1006: '*', # Cloudy
+		1009: '*', # Overcast
+		1030: 'Fog ambience', # Mist
+		1063: 'Light rain', # Patchy rain possible
+		1066: 'Snow', # Patchy snow possible
+		1069: 'Sleet', # Patchy sleet possible
+		1072:'Rain and snow', # Patchy freezing drizzle possible
+		1087: 'Light rain', # Thundery outbreaks possible
+		1114: 'Snow storm', # Blowing snow
+		1117: 'Snow storm', # Blizzard
+		1135: 'Fog ambience', # Fog
+		1147: 'Fog ambience', # Freezing fog
+		1150: 'Light rain', # Patchy light drizzle
+		1153: 'Light rain', # Light drizzle
+		1168: 'Sleet', # Freezing drizzle
+		1171: 'Hailstorm00', # Heavy freezing drizzle
+		1180: 'Light rain', # Patchy light rain",
+		1183: 'Light rain', # Light rain
+		1186: 'Rain', # Moderate rain at times
+		1189: 'Rain', # Moderate rain
+		1192: 'Heavy rain', # Heavy rain at times
+		1195: 'Heavy rain', # Heavy rain
+		1198: 'Light rain', # Light freezing rain
+		1201: 'Rain and snow', # Moderate or heavy freezing rain
+		1204: 'Sleet', # Light sleet
+		1207: 'Rain and snow', # Moderate or heavy sleet
+		1210: 'Snow', # Patchy light snow
+		1213: 'Snow', # Light snow
+		1216: 'Snow', # Patchy moderate snow
+		1219: 'Snow', # Moderate snow
+		1222: 'Snow storm', # Patchy heavy snow
+		1225: 'Snow storm', # Heavy snow
+		1237: 'Hailstorm00', # Ice pellets
+		1240: 'Light rain', # Light rain shower
+		1243: 'Rain', # Moderate or heavy rain shower
+		1246: 'Heavy rain', # Torrential rain shower
+		1249: 'Sleet', # Light sleet showers
+		1252: 'Snow', # Moderate or heavy sleet showers
+		1255: 'Snow', # Light snow showers
+		1258: 'Snow', # Moderate or heavy snow showers
+		1261: 'Light rain', # Light showers of ice pellets
+		1264: 'Hailstorm00', # Moderate or heavy showers of ice pellets
+		1273: 'Continuous thunder', # Patchy light rain with thunder
+		1276: 'Heavy rain', # Moderate or heavy rain with thunder
+		1279: 'Snow', # Patchy light snow with thunder
+		1282: 'Snow storm', # Moderate or heavy snow with thunder
 		'Unknown': 'Fog ambience',
 		}
 
@@ -775,19 +765,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if self.zipCode in self.define_dic: define = self.define_dic[self.zipCode]['define']
 
 		def No_double(samples_list):
-			#try to avoid repeating the last sample played
+			# Try to avoid repeating the last sample played
 			sample = _curSample
 			if samples_list.count(samples_list[0]) == len(samples_list):
-				#exit if the last 2 or more are the same
+				# Exit if the last 2 or more are the same
 				self.randomizedSamples = []; return samples_list[0]
 
-			#takes a samplle different from the last played
+			# Takes a samplle different from the last played
 			while sample == _curSample:
 				sample = random.choice(samples_list)
 			return sample
 
 		def SampleShuffle(sample_list):
-			#mix list contents
+			# Mix list contents
 			shuffled_list = []
 			while len(sample_list) != 0:
 				i = random.choice(sample_list)
@@ -796,31 +786,31 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			return shuffled_list
 
 		def RandomizeSamples(samples_list):
-			#Delete alwais from the list the last sample played
+			# Delete alwais from the list the last sample played
 			if (self.zipCode == self.current_zipCode) and (self.current_condition == condition_code)and len(self.randomizedSamples) > 1 and _curSample in self.randomizedSamples: self.randomizedSamples.remove(_curSample); return No_double(self.randomizedSamples)
 			self.current_zipCode = self.zipCode
 			self.current_condition = condition_code
-			#when the list is empty or zipCode is changed, is rebuilt
+			# When the list is empty or zipCode is changed, is rebuilt
 			self.randomizedSamples = SampleShuffle(samples_list)
 			return No_double(self.randomizedSamples)
 
 		def WindParse():
-			#Delete alwais from the list the last sample played
+			# Delete alwais from the list the last sample played
 			if (self.zipCode == self.current_zipCode) and (self.current_condition == condition_code) and len(self.randomizedSamples) > 1 and _curSample in self.randomizedSamples: self.randomizedSamples.remove(_curSample); return No_double(self.randomizedSamples)
 			self.current_zipCode = self.zipCode
 			self.current_condition = condition_code
-			#when the list is empty or zipCode is changed, is rebuilt
+			# When the list is empty or zipCode is changed, is rebuilt
 			if define == '3' or define == '4':
-				# arctic zone or mountain zone
+				# Arctic zone or mountain zone
 				self.randomizedSamples = ['Wind mountain canyon', 'Wind mountain storm, heavy howling whistling', 'Wind through big trees creaking', 'Wind whistling wind', 'Wind with metal banging', 'Wind00', 'Wind01', 'Wind02', 'Wind04', 'Wind05', 'Wind06']
 			elif define == '1':
-				#maritime area
+				# Maritime area
 				self.randomizedSamples = ['Sea storm00', 'Sea storm01', 'Sea storm02', 'Sea storm03', 'Sea storm04', 'Wind through big trees creaking', 'Wind with metal banging', 'Wind00', 'Wind01', 'Wind02', 'Sea storm00', 'Sea storm01', 'Sea storm02', 'Sea storm03', 'Sea storm04', 'Wind through big trees creaking', 'Wind with metal banging', 'Wind00', 'Wind01', 'Wind02']
 			elif define == '2':
-				#desert area
+				# Desert area
 				self.randomizedSamples = ['Desert wind00', 'Dry gusty and whistling wind, weather', 'Dry gusty wind, leaves and sand blowing, weather', 'Wind heavy storm very strong gusts', 'Wind heavy storm very strong gusts sand and light debris', 'Wind storm wind', 'Wind00', 'Wind01', 'Wind02']
 			else:
-				#interland (default)
+				# Interland (default)
 				self.randomizedSamples = ['Wind heavy gusting storm', 'Wind heavy storm very strong gusts', 'Wind strong metal rattles', 'Wind through big trees creaking', 'Wind violent storm very strong gusts', 'Wind with metal banging', 'Wind00', 'Wind01', 'Wind02', 'Wind03', 'Wind07', 'Windhowling and whistling']
 			return No_double(self.randomizedSamples)
 
@@ -830,7 +820,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if define == '1': sp_condition = 'Hurricane00'
 			else: sp_condition = 'Tornado00'
 
-		#special conditions
+		# Special conditions
 		if sp_condition:
 			if sp_condition == 'Wind':
 				if v in ['Snow', 'Sleet']:
@@ -861,43 +851,43 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			if p != 'night': play_list += ['Footsteps in snow00', 'Footsteps in snow01', 'shovel snow', 'Snowy road and a shovel']
 			v = RandomizeSamples(play_list)
 
-		elif self.toWeatherEffects: return #use only weather effects
+		elif self.toWeatherEffects: return # Use only weather effects
 		elif v == 'Fog ambience' or v == 'Unknown':
-			#Unknown, Mist, Fog, Foggy, Shallow Fog, Haze
+			# Unknown, Mist, Fog, Foggy, Shallow Fog, Haze
 			if define == '1':
-				#sea fog
+				# Sea fog
 				v = RandomizeSamples(
 				['Car09', 'Fog ambience', 'Car10', 'Fog ambience', 'Airplane00', 'Fog ambience', 'Airplane01', 'Airplane02', 'Fog ambience', 'Bus01', 'Bus02', 'Fog ambience', 'Foghorn00', 'Fog ambience', 'Foghorn01', 'Fog ambience', 'Level crossing',
 				'Fog ambience', 'Foghorn02', 'Dogs00', 'Fog ambience', 'Dogs01', 'Fog ambience', 'Car00', 'Fog ambience', 'Car01', 'Fog ambience', 'Car02', 'Car03', 'Fog ambience', 'Train passing00', 'Fog ambience', 'Train passing01', 'Truck', 'Fog ambience', 'Tram, door opening'])
 			elif define == '2':
-				#desert fog
+				# Desert fog
 				v = RandomizeSamples(
 				['Airplane00', 'Fog ambience', 'Airplane01', 'Airplane02', 'Fog ambience', 'Bus02', 'Fog ambience', 'Car06', 'Fog ambience', 'Car07', 'Fog ambience', 'Coyote00', 'Fog ambience', 'Coyote01', 'Fog ambience', 'Night dog01', 'Truck', 'Fog ambience', 'Tram, door opening'])
 			elif define == '3':
-				#arctic fog
+				# Arctic fog
 				v = RandomizeSamples(['Airplane00', 'Fog ambience', 'Airplane01', 'Airplane02', 'Fog ambience', 'Foghorn00', 'Fog ambience', 'Wind playground wind', 'Foghorn01', 'Foghorn02', 'Wind playground wind', 'Fog ambience', 'Night dog00', 'Fog ambience', 'Night dog01'])
 			else:
-				#interland and mountain fog
+				# Interland and mountain fog
 				v = RandomizeSamples(
 				['Car09', 'Fog ambience', 'Car10', 'Fog ambience', 'Airplane00', 'Fog ambience', 'Airplane01', 'Airplane02', 'Fog ambience', 'Bus00', 'Fog ambience', 'Bus01', 'Fog ambience', 'Tram, door opening',
 				'Level crossing', 'Fog ambience', 'Night dog00', 'Fog ambience', 'night dog01', 'Fog ambience', 'Car00', 'Car01', 'Fog ambience', 'Car02', 'Car03', 'Fog ambience', 'Truck', 'Fog ambience', 'Dogs01', 'Train passing00', 'Fog ambience', 'Train passing01'])
 
 		elif v == '*':
-			#Drizzle end so on
+			# Drizzle end so on
 			def LimitSeasonal(birds_date= None):
-				#checking a determinate time of the season
+				# Checking a determinate time of the season
 				current_month, current_day = self.Get_Season(return_date = True)
 				if birds_date:
-					#restricts birds after the 10 november
+					# Restricts birds after the 10 november
 					if current_month < 11\
 					or current_month == 11 and current_day < 10: return current_season
-					return "winter" #forced
-				#addss winter sports from November 5 to march
+					return "winter" # Forced
+				# Addss winter sports from November 5 to march
 				if current_month in [1, 2, 3, 12] or (current_month == 11 and current_day >= 5):
 					return True
 				return False
 
-			#constants
+			# Constants
 			aircraft = ['Airplane00', 'Airplane01', 'Airplane02']
 			bus = ['Bus00', 'Bus01', 'Bus02']
 			cars = ['Car' + str(i).rjust(2, '0') for i in range(11)] + ['Car park on gravel']
@@ -950,17 +940,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			+ ['Campfire & crickets'] * 3
 
 			def seasonalElements():
-				#addss bathers, cicadas if temperature exceed respectively 24 and 22 degrees celsius
-				bathers_dic = {0: 76, 1: 24, 2: 297} #temperatures for f, c, k scale
+				# Addss bathers, cicadas if temperature exceed respectively 24 and 22 degrees celsius
+				bathers_dic = {0: 76, 1: 24, 2: 297} # Temperatures for f, c, k scale
 				cicadas_dic = {0: 72, 1: 22, 2: 295}
 				samples_list = []
 				cicada_beach = []
 				dt = int(float(degrees.replace(',', '.')))
 				if dt > bathers_dic[self.celsius] and define == "1":
-					#addss bathers on the beach
+					# Addss bathers on the beach
 					samples_list = ['Bathers on the beach00', 'Bathers on the beach01', 'Bathers on the beach02', 'Bathers on the beach03']
 				if dt > cicadas_dic[self.celsius]:
-					#addss the cicadas
+					# Addss the cicadas
 					if define == '1': cicada_beach = ['Cicada beach']
 					samples_list += [
 					'Cicada00', 'Cicada01', 'Cicada02', 'Cicada03', 'Cicada04', 'Cicada05', 'Cicada06',
@@ -970,17 +960,17 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 				return samples_list
 
-		# parsing according to the seasons
+		# Parsing according to the seasons
 			if current_season in ['winter', 'autumn']:
 				if p == 'morning' or p == 'evening':
 					if define == '1':
-						#sea samples, winter and autumn
+						# Sea samples, winter and autumn
 						v = RandomizeSamples(
 						['Dogs00', 'Dogs01', 'Ferryboat', 'Helicopter00', 'Motorboat02', 'Motorboat04', 'Ship', 'Truck']\
 						+city_grounds + sea_dic[current_season] * 5 + bus\
 						+aircraft + cars + birds_dic[current_season] + trains)
 					elif define == '2':
-						#desert samples, winter and autumn
+						# Desert samples, winter and autumn
 						cars2 = cars; [cars2.remove(i) for i in ['Car00', 'Car09', 'Car10', 'Car park on gravel'] if i in cars2]
 						v = RandomizeSamples(
 						['Bedouins00', 'Bedouins01', 'Bedouins02', 'Bedouins03', 'Birds11', 'Birds12', 'Birds26', 'Birds27',
@@ -992,10 +982,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						+['Desert breeze'] * 2 + cars2\
 						+desert_city_grounds)
 					elif define == '3':
-						#arctic samples, winter and autumn
+						# Arctic samples, winter and autumn
 						v = RandomizeSamples(arctic_samples)
 					elif define == '4':
-						#mountain samples, winter and autumn
+						# Mountain samples, winter and autumn
 						city_grounds2 = city_grounds
 						sheeps = ['Sheep and car', 'Sheep and pawn']
 						sport_bikers2 = sport_bikers + ['Motorcycle00', 'Motorcycle07']
@@ -1010,7 +1000,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				+winter_sports_dic[LimitSeasonal()] + sheeps + mountain_creek * 2\
 				+aircraft + city_grounds2)
 					else:
-						#interland samples, winter and autumn
+						# Interland samples, winter and autumn
 						tractor = ['Tractor']; city_grounds2 = city_grounds
 						bikers2 = ['Motorcycle00', 'Motorcycle07']
 						if current_season == 'winter':
@@ -1022,7 +1012,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						+cars + tractor + trains + bikers2)
 				elif p == 'night':
 					if define == '1':
-						#sea night samples, winter and autumn
+						# Sea night samples, winter and autumn
 						sea = sea_dic[current_season]
 						[sea.remove(i) for i in sea if i in ['Sea light00', 'Sea medium03']]
 						volatile_dic = {"autumn": ['Desert, night owl, crickets01', 'Birds06', 'Birds13'], "winter": []}
@@ -1032,7 +1022,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						+sea * 4 + ['Winter night'] * 6 + volatile_dic[current_season]\
 						+city_grounds_night * 3)
 					elif define == '2':
-						#desert night samples, winter and autumn
+						# Desert night samples, winter and autumn
 						v = RandomizeSamples(
 						['Airplane00', 'Airplane02', 'Bus02', 'Car04', 'Car05', 'Car06', 'Car07', 'Car08', 'Coyote00', 'Coyote01',
 						'Kite', 'Night dog00', 'Night dog01', 'Truck']\
@@ -1040,10 +1030,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						+['Desert, night owl, crickets01', 'Desert, night owl, crickets02'] * 3 + ['Desert breeze'] * 6\
 						+['Campfire & crickets'] * 3)
 					elif define == '3':
-						#arctic night samples , winter and autumn
+						# Arctic night samples , winter and autumn
 						v = RandomizeSamples(arctic_night_samples) 
 					elif define == '4':
-						#mountain night samples, winter and autumn
+						# Mountain night samples, winter and autumn
 						volatile_dic = {"autumn": ['Eagle00', 'Eagle01', 'Falcon', 'Kite'], "winter": []}
 						v = RandomizeSamples(
 						['Airplane00', 'Airplane02', 'Bus02', 'Car01', 'Car03', 'Car04', 'Car05', 'Car06', 'Car07',
@@ -1052,7 +1042,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				+volatile_dic[current_season] + snow_machine_dic[LimitSeasonal()] * 6\
 				+city_grounds_night * 4)
 					else:
-						#interland night samples, winter and autumnn
+						# Interland night samples, winter and autumnn
 						v = RandomizeSamples(
 						['Airplane00', 'Airplane02', 'Bus02',
 				'Car01', 'Car03', 'Car04', 'Car05', 'Car06', 'Car07',
@@ -1062,7 +1052,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			elif current_season in ['summer', 'spring']:
 				if p == 'morning' or p == 'evening':
 					if define == '1':
-						#sea samples, summer and spring
+						# Sea samples, summer and spring
 						birds2 = birds; [birds2.remove(i) for i in birds2 if i in ['Birds16']]
 						v = RandomizeSamples(
 						['Dogs00', 'Dogs01', 'Helicopter00', 'Helicopter01', 'Truck', 'Wigeon', 'Swimming pool']\
@@ -1072,7 +1062,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						+seagulls * 2\
 						+seasonalElements() + bus)
 					elif define == '2':
-						#desert samples, summer and spring
+						# Desert samples, summer and spring
 						cars2 = cars; [cars2.remove(i) for i in ['Car00', 'Car09', 'Car10', 'Car park on gravel'] if i in cars2]
 						v = RandomizeSamples(
 						['Bedouins00', 'Bedouins01', 'Bedouins02', 'Bedouins03', 'Birds11',
@@ -1084,10 +1074,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						+['Desert breeze'] * 4 + cars2 + ['Swimming pool'] * 2\
 						+desert_city_grounds)
 					elif define == '3':
-						#arctic samples, summer and spring
+						# Arctic samples, summer and spring
 						v = RandomizeSamples(arctic_samples + ['Polar bear'] *2)
 					elif define == '4':
-						#mountain samples, summer and spring
+						# Mountain samples, summer and spring
 						birds2 = birds
 						[birds2.remove(i) for i in ['Birds00', 'Birds01', 'Birds02', 'Birds03', 'Birds04', 'Birds18'] if i in birds2]
 						v = RandomizeSamples(
@@ -1099,7 +1089,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						+birds2 + cars + bikers + bus + ['Mountain creek00', 'Mountain creek01'] * 3\
 						+['Swimming pool'] * 2 + sport_bikers)
 					else:
-						#interland samples, summer and spring
+						# Interland samples, summer and spring
 						v = RandomizeSamples(
 						['Birds05', 'Dogs00', 'Dogs01', 'Helicopter00', 'Helicopter01', 'Magpie thief',
 						'Sheep00', 'Sheep01', 'Sheep in the pasture', 'Tractor', 'Truck', 'Swimming pool']\
@@ -1108,7 +1098,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				+seasonalElements() + trains)
 				elif p == 'night':
 					if define == '1':
-						#sea night, summer and spring
+						# Sea night, summer and spring
 						sea = sea_dic[current_season]
 						[sea.remove(i) for i in sea if i in ['Sea light00', 'Sea medium03']]
 						v= RandomizeSamples(
@@ -1118,13 +1108,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						+['Frogs'] * 3 + sea * 5\
 						+city_grounds_night * 3)
 					elif define == '2':
-						#desert night samples, summer and spring
+						# Desert night samples, summer and spring
 						v = RandomizeSamples(desert_night_samples)
 					elif define == '3':
-						#arctic night samples, summer and spring
+						# Arctic night samples, summer and spring
 						v = RandomizeSamples(arctic_night_samples)
 					elif define == '4':
-						#mountain night samples, summer and spring
+						# Mountain night samples, summer and spring
 						night_elements_dic = {'summer': ['Night crickets'] * 10 + ['Frogs'] * 3,
 						'spring': ['Night crickets'] * 3}
 						v = RandomizeSamples(
@@ -1133,14 +1123,14 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						+['Winter night'] * 6 + night_elements_dic[current_season]\
 						+city_grounds_night * 3)
 					else:
-						#interland night samples, summer and spring
+						# Interland night samples, summer and spring
 						v = RandomizeSamples(
 						['Airplane00', 'Airplane02', 'Birds06', 'Birds13', 'Bus02', 'Car04', 'Car05', 'Car09', 'Car10',
 						'Falcon', 'Kite', 'Night cats', 'Night dog00', 'Night dog01', 'Truck']\
 						+['Winter night'] * 6 + ['Night crickets'] * 10\
 						+['Frogs'] * 3 + city_grounds_night * 3)
 
-		#create file path to play sample.
+		# Create file path to play sample.
 		filePath = _samples_path+"\\"
 		try:
 			if not v: v = samples_dic[condition]
@@ -1152,36 +1142,36 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				global _curSample, _handle
 				_curSample = v
 				if _curSample in samplesvolumes_dic:
-					#use the volume assigned to the sound effect
+					# Use the volume assigned to the sound effect
 					playVol = samplesvolumes_dic[_curSample]
-					#adjust sound effect volume proportioning to total volume
+					# Adjust sound effect volume proportioning to total volume
 					playVol = Shared(). AdjustVol(playVol)
 				else:
-					#use the overall volume
+					# Use the overall volume
 					playVol = _volume
 
-				Shared().FreeHandle() #cleanup previous stream into memory
+				Shared().FreeHandle() # Cleanup previous stream into memory
 				try:
 					BASS_Init(-1, 44100, 0, 0, 0)
 					_handle = BASS_StreamCreateFile(False, b'%s' % filename.encode("utf-8"), 0, 0, 0)
 					BASS_ChannelPlay(_handle, False)
-					BASS_ChannelSetAttribute(_handle, BASS_ATTRIB_VOL, _volume_dic[playVol]) #set volume (0 = mute, 1 = full)
+					BASS_ChannelSetAttribute(_handle, BASS_ATTRIB_VOL, _volume_dic[playVol]) # Set volume (0 = mute, 1 = full)
 				except Exception as e:
 					Shared().LogError(e)
 
 			else:
-				#sample not found, notify and disable audio check box
+				# Sample not found, notify and disable audio check box
 				self.toSample = 0
-				#Translators: dialog message used when audio file is not found
+				# Translators: dialog message used when audio file is not found
 				message = '"%s%s" %s\n%s %s.\n%s %s.' % (
 				v, ext, _("not found!"),
 				_("You need to upgrade the sound effects by reactivating the appropriate option from the settings of"),
 				_addonSummary,
 				_("But if these are already updated, then you need to update"),
-				#Translators: the dialog title
+				# Translators: the dialog title
 				_addonSummary)
 				wx.CallAfter(gui.messageBox, message, _addonSummary, wx.ICON_EXCLAMATION)
-				#Try to disable the audio controls in the Settings window
+				# Try to disable the audio controls in the Settings window
 				if "_mainSettingsDialog" in globals() and _mainSettingsDialog:
 					_mainSettingsDialog.message1.SetLabel(_mainSettingsDialog.hotkeys[-1])
 					_mainSettingsDialog.cbt_toSample.SetValue(False)
@@ -1198,21 +1188,21 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			current_hour = int(self.current_hour[:2])
 		except TipeError: current_hour = datetime.today().time().hour
 
-		#I decided to divide the day into 3 parts, morning and evening at the moment are equivalent
+		# I decided to divide the day into 3 parts, morning and evening at the moment are equivalent
 		day_parts = ['morning', 'evening', 'night']
 		day_time = [
-		[5, 6, 7, 8, 9, 10, 11, 12], #Morning
-		[13, 14, 15, 16, 17, 18, 19, 20], #evening
-		[21, 22, 23, 00, 1, 2, 3, 4]] #night
+		[5, 6, 7, 8, 9, 10, 11, 12], # Morning
+		[13, 14, 15, 16, 17, 18, 19, 20], # Evening
+		[21, 22, 23, 00, 1, 2, 3, 4]] # Night
 
 		seasons_names = ['winter', 'spring', 'summer', 'autumn']
 		''' [start day of the first mounth range, [mounth range], end day of the last mounth range]'''
 		seasons = [
-		[21, [12, 1, 2, 3],20], #winter
-		[21, [3, 4, 5, 6], 20], #spring
-		[21, [6, 7, 8, 9], 23], #summer
-		[24, [9, 10, 11, 12], 20]] #autumn
-		#Find the current season
+		[21, [12, 1, 2, 3],20], # Winter
+		[21, [3, 4, 5, 6], 20], # Spring
+		[21, [6, 7, 8, 9], 23], # Summer
+		[24, [9, 10, 11, 12], 20]] # Autumn
+		# Find the current season
 		for current_season in range(len(seasons)):
 			if current_month in seasons[current_season][1]:
 				if (current_day >= seasons[current_season][0] and current_month == seasons[current_season][1][0]) \
@@ -1220,7 +1210,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				elif current_month == seasons[current_season][1][1] \
 				or current_month == seasons[current_season][1][2]: break
 
-		#Find the part of the day
+		# Find the part of the day
 		for p in range(len(day_time)):
 			if current_hour in day_time[p]: break
 
@@ -1229,7 +1219,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def MyDefault(self, default_city=None):
 		"""Manage default city, read and write"""
-
 		import io
 		# WRITE
 		if default_city is not None:
@@ -1251,7 +1240,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			with io.open(_mydefcity_path, 'r', encoding='utf-8') as r:
 				return r.read()
 		except UnicodeDecodeError:
-			# fallback old mbcs format
+			# Fallback old mbcs format
 			try:
 				with io.open(_mydefcity_path, 'r', encoding='mbcs') as r:
 					default_city = r.read()
@@ -1268,33 +1257,33 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def ReadConfig(self, singleRead = None):
 		"""Read configuration set from Weather.ini"""
-		#Default values
+		# Default values
 		if not singleRead:
 			self.city = self.defaultZipCode = self.tempZipCode = self.zipCode = ""
-			#temperature scale definitions values
-			self.celsius = 1 #Fahrenheit, Celsius, Kelvin
-			self.scaleAs = 0 #indication degrees: Celsius Fahrenheit Kelvin - C f k - do not specify
-			#check boxes
-			self.toClip= False #copy into the clipboard
-			self.toSample = False #use sound effects
-			self.toWeatherEffects = False #uses only weather effects
-			self.toHelp = True #help on the buttons
-			self.toWind = False #adds wind values
-			self.toWinddir = True #adds wind direction
-			self.toWindspeed = True #adds wind speed
-			self.toSpeedmeters = True #adds speed in meters per second
-			self.toWindgust = True #adds wind gust
-			self.toPerceived = True #adds perceived temperature
-			self.toHumidity = True #adds umidity value
-			self.toVisibility = True #adds visibility value
-			self.toPressure = True #adds pressure value
-			self.toMmhgpressure = False #indicates pressure in mmHg
-			self.toUltraviolet = True #adds UV radiations
-			self.toCloud = True #adds cloudines values
-			self.toPrecip = True #adds precipitation values
-			self.toAtmosphere = False #adds atmosphere values
-			self.toAstronomy = False #adds astronomy values
-			self.toWindspeed_hf = True #hourlyforecast data report
+			# Temperature scale definitions values
+			self.celsius = 1 # Fahrenheit, Celsius, Kelvin
+			self.scaleAs = 0 # Indication degrees: Celsius Fahrenheit Kelvin - C f k - do not specify
+			# Check boxes
+			self.toClip= False # Copy into the clipboard
+			self.toSample = False # Use sound effects
+			self.toWeatherEffects = False # Uses only weather effects
+			self.toHelp = True # Help on the buttons
+			self.toWind = False # Adds wind values
+			self.toWinddir = True # Adds wind direction
+			self.toWindspeed = True # Adds wind speed
+			self.toSpeedmeters = True # Adds speed in meters per second
+			self.toWindgust = True # Adds wind gust
+			self.toPerceived = True # Adds perceived temperature
+			self.toHumidity = True # Adds umidity value
+			self.toVisibility = True # Adds visibility value
+			self.toPressure = True # Adds pressure value
+			self.toMmhgpressure = False # Indicates pressure in mmHg
+			self.toUltraviolet = True # Adds UV radiations
+			self.toCloud = True # Adds cloudines values
+			self.toPrecip = True # Adds precipitation values
+			self.toAtmosphere = False # Adds atmosphere values
+			self.toAstronomy = False # Adds astronomy values
+			self.toWindspeed_hf = True # Hourlyforecast data report
 			self.toWinddir_hf = True
 			self.toWindgust_hf = True
 			self.toCloud_hf = True
@@ -1302,23 +1291,23 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			self.toVisibility_hf = True
 			self.toPrecip_hf = True
 			self.toUltraviolet_hf = True
-			self.to24Hours = True #use 24 hours format
-			self.dontShowAgain = False #check box no longer display this message
-			self.dontShowAgainAddDetails = False #check box no longer display this message
-			self.toComma = False #use the comma as decimal separator
-			self.toOutputwindow = False #use a window as output
-			self.toUpgrade = True #check for upgrades
-			#total days forecast
-			self.forecast_days = "1" #forecasts from 1 to _maxDaysApi value
-			#api response language
+			self.to24Hours = True # Use 24 hours format
+			self.dontShowAgain = False # Check box no longer display this message
+			self.dontShowAgainAddDetails = False # Check box no longer display this message
+			self.toComma = False # Use the comma as decimal separator
+			self.toOutputwindow = False # Use a window as output
+			self.toUpgrade = True # Check for upgrades
+			# Total days forecast
+			self.forecast_days = "1" # Forecasts from 1 to _maxDaysApi value
+			# Api response language
 			self.apilang = 'English, en'
-			#volume controls
-			self.toAssign = 0 #general audio volume - 1 = current audio volume
-			self.samplesvolumes_dic = dict(samplesvolumes_dic)#set volume from percentage to float (0, 0.1, 0.2, etc. up to 1)
+			# Volume controls
+			self.toAssign = 0 # General audio volume - 1 = current audio volume
+			self.samplesvolumes_dic = dict(samplesvolumes_dic)# Set volume from percentage to float (0, 0.1, 0.2, etc. up to 1)
 			global _handle, _curSample, _volume
-			self.handle = _handle = None #sound allocated in memory
-			self.curSample = _curSample = None #name of audio effect in memory
-			_volume = self.volume = "60%" #default volume of the current sample
+			self.handle = _handle = None # Sound allocated in memory
+			self.curSample = _curSample = None # Name of audio effect in memory
+			_volume = self.volume = "60%" # Default volume of the current sample
 
 		if os.path.isfile(_config_weather):
 			config = ConfigObj(_config_weather)
@@ -1374,16 +1363,16 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			_volume = self.volume
 
 			if not self.zipCode or self.zipCode.isspace(): return
-			#search in list
+			# Search in list
 			self.zipCodesList, self.define_dic, details_dic = Shared().LoadZipCodes()
 			city = self.FindCity(self.zipCode)
 			if city:
 				self.defaultZipCode = self.tempZipCode= city
 
-				self.city = city[:city.rfind(',')] #takes the cityname
+				self.city = city[:city.rfind(',')] # Takes the cityname
 				_testCode = Shared().GetLocation(self.defaultZipCode, self.define_dic)
 
-			else: self.defaultZipCode = self.tempZipCode = self.zipCode = '' #if  no list available
+			else: self.defaultZipCode = self.tempZipCode = self.zipCode = '' # If  no list available
 
 
 	def SaveConfig(self):
@@ -1433,7 +1422,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		}
 		try:
 			config.write()
-			self.MyDefault( self.zipCode) # save the default city
+			self.MyDefault( self.zipCode) # Save the default city
 		except IOError:
 			Shared().Play_sound("warn", 1)
 			return ui.message(_("I can not save the settings!"))
@@ -1443,7 +1432,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		"""Save cities list"""
 		import io
 		try:
-			# initial writing
+			# Initial writing
 			with io.open(_zipCodes_path, 'w', encoding='utf-8') as file:
 				file.write(u"[cities list]\n")
 				for r in sorted(zipCodesList, key=lambda x: x.split()[0].lower()):
@@ -1494,11 +1483,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def getWeather(self, zip_code, forecast = False):
 		"""Main getWeather function gets weather from Weather API"""
-
 		if zip_code != "" and not zip_code.isspace():
 			mess = ""
 			if self.dom == "no connect" or self.dom and (self.tempZipCode != self.test[0]) or not self.dom or (datetime.now() - self.test[-1]).seconds/60 >= _wait_delay:
-				#but refresh dom if the city are changed or if the waiting time is finished
+				# But refresh dom if the city are changed or if the waiting time is finished
 				self.dom, mess = self.Open_Dom(zip_code)
 				self.test[0] = self.tempZipCode
 				self.test[-1] = datetime.now()
@@ -1508,37 +1496,37 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				self.dom['current']['last_updated_epoch']
 			except (KeyError, TypeError): self.dom = None; return self.ZipCodeError()
 
-			scale_as = self.GetScaleAs() #degrees indication selected
+			scale_as = self.GetScaleAs() # Degrees indication selected
 			if not forecast:
 				condition = self.dom['current']['condition']['text']
-				condition_code = self.dom['current']['condition']['code'] #for sound effects param
+				condition_code = self.dom['current']['condition']['code'] # For sound effects param
 				cloudiness_string = _("The cloudiness is")
 				precip_string = _("The precipitation is")
 				unit_speed, unit_distance, unit_precip, unit_pressure, unit_uv = self.GetUnitValues(self.celsius)
-				# default parameter _f for Fahrenheit
+				# Default parameter _f for Fahrenheit
 				temperature =self.dom['current']['temp_f']
 				wind_chill = self.dom['current']['feelslike_f']
-				wind_f = wind_speed = self.dom['current']['wind_mph'] #wind_f for sound effects param
+				wind_f = wind_speed = self.dom['current']['wind_mph'] # Wind_f for sound effects param
 				wind_gust = self.dom['current']['gust_mph']
-				#I withdraw the most reliable pressure in millibars because the API does not exactly convert millibars to inHg
+				# I withdraw the most reliable pressure in millibars because the API does not exactly convert millibars to inHg
 				press = self.dom["current"]["pressure_mb"]
-				#and convert it to inHg
+				# And convert it to inHg
 				pressure = self.Pressure_convert(press)
 				if self.toMmhgpressure:
-					#takes the value in mmHg from pressure_mb
+					# Takes the value in mmHg from pressure_mb
 					pressure = self.Pressure_convert(press, mmHg = True)
 
 				visibility = self.dom['current']['vis_miles']
 				precipitation = self.dom['current']['precip_in']
-				sptm = self.Speedtometers(wind_speed, convert = False, meters = True) #takes speed in meters per second
-				sptm_gust = self.Speedtometers(wind_gust, convert = False, meters = True) #takes gust speed in meters per second
+				sptm = self.Speedtometers(wind_speed, convert = False, meters = True) # Takes speed in meters per second
+				sptm_gust = self.Speedtometers(wind_gust, convert = False, meters = True) # Takes gust speed in meters per second
 				uv = self.dom['current']['uv']
 				if self.celsius != 0:
-					#only for Celsius and Kelvin
+					# Only for Celsius and Kelvin
 					temperature =self.dom['current']['temp_c']
 					wind_chill = self.dom['current']['feelslike_c']
 					if self.celsius == 2:
-						#convert c° to k°
+						# Convert c° to k°
 						temperature = self.Temperature_convert(temperature)
 						wind_chill = self.Temperature_convert(wind_chill)
 
@@ -1567,36 +1555,36 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				)
 				weatherReport = weatherReport.replace(" , ", ", ")
 				if self.toWind:
-					#addss wind information to the string 
+					# Addss wind information to the string 
 					winddirstring = _("The wind direction is from")
 					winddirvalue = self.GetCardinalDirection('%s' % self.dom['current']['wind_degree']) or _nr
 					if self.toWinddir and self.toWindspeed:
-						#adds  wind direction and speed
+						# Adds  wind direction and speed
 						weatherReport += '\n%s %s %s %s %s %s.' % (
 						winddirstring, winddirvalue,
 						_("with speed of"), wind_speed or _nr, unit_speed,
 						sptm)
 					elif self.toWindspeed and not self.toWinddir:
-						#adds only wind speed
+						# Adds only wind speed
 						weatherReport += '\n%s %s %s %s.' % (
 						_("The wind speed is"), wind_speed or _nr, unit_speed,
 						sptm
 						)
 					elif self.toSpeedmeters and self.toWinddir:
-						#adds wind direction and speed in meters per seconds
+						# Adds wind direction and speed in meters per seconds
 						weatherReport += '\n%s %s, %s %s.' % (
 						winddirstring, winddirvalue,
 						_("with speed of"), sptm[2:-1])
 					elif self.toSpeedmeters and not self.toWindspeed and not self.toWinddir:
-						#adds only wind speed
+						# Adds only wind speed
 						weatherReport += '\n%s %s.' % (
 						_("The wind speed is"), sptm[2:-1])
 					elif self.toWinddir and not self.toWindspeed and not self.toSpeedmeters:
-					#adds only wind direction
+					# Adds only wind direction
 						weatherReport += '\n%s %s.' % (
 						winddirstring, winddirvalue)
 					if self.toWindgust:
-						#adds wind gust
+						# Adds wind gust
 						weatherReport += '\n%s %s %s %s.' % (
 						_("The wind gusts are of"), wind_gust or _nr, unit_speed, sptm_gust)
 					if self.toPerceived:
@@ -1607,55 +1595,55 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					weatherReport = weatherReport.replace(" .", ".")
 
 				if self.toAtmosphere:
-					#addss information on the atmosphere
+					# Addss information on the atmosphere
 					humiditystring = _("The humidity is")
 					humidityvalue = self.dom['current']['humidity'] or _nr
 					cloudiness_string = _("The cloudiness is of")
 					cloudiness_value = self.dom['current']['cloud']
 					precip_string = _("The precipitation is of")
 					if self.toHumidity and self.toVisibility:
-						#adds humidity and visibility
+						# Adds humidity and visibility
 						weatherReport += '\n%s %s%%, %s %s %s.' % (
 						humiditystring, humidityvalue,
 						_("and the visibility is up to"),
 						visibility or _nr, unit_distance)
 					elif self.toHumidity and not self.toVisibility:
-						#adds only humidity
+						# Adds only humidity
 						weatherReport += '\n%s %s%%.' % (
 						humiditystring, humidityvalue)
 					elif self.toVisibility and not self.toHumidity:
-						#adds only visibility
+						# Adds only visibility
 						weatherReport += '\n%s %s %s.' % (
 						_("The visibility is up to"), visibility or _nr, unit_distance)
 					if  self.toCloud and self.toPrecip:
-						#adds cloudines and precipitation
+						# Adds cloudines and precipitation
 						weatherReport += '\n%s %s%%, %s %s %s.' % (
 						cloudiness_string, cloudiness_value,
 						_("and the precipitation is"),
 						precipitation or _nr, unit_precip)
 
 					elif self.toPrecip and not self.toCloud:
-						#adds only precipitation
+						# Adds only precipitation
 						weatherReport += '\n%s %s %s.' % (
 						precip_string,
 						precipitation or _nr, unit_precip)
 
 					elif self.toCloud and not self.toPrecip:
-						#adds only cloudines
+						# Adds only cloudines
 						weatherReport += '\n%s %s%%.' % (
 						cloudiness_string, cloudiness_value)
 
 					if self.toPressure:
-						#adds pressure
+						# Adds pressure
 						weatherReport += '\n%s %s %s.' % (
 						_("The pressure is"), pressure or _nr, unit_pressure)
 				if self.toUltraviolet:
-					#adds UV radiations
+					# Adds UV radiations
 					weatherReport += '\n%s %s %s.' % (
 					_("The UV radiation is of"), uv or _nr, unit_uv)
 
 				if self.toAstronomy:
-					#addss astronomical information
+					# Addss astronomical information
 					try:
 						sr = self.dom['forecast']['forecastday'][0]['astro']['sunrise']
 					except IndexError: return Shared().JsonError()
@@ -1663,10 +1651,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					lr = self.dom['forecast']['forecastday'][0]['astro']['moonrise']
 					ls = self.dom['forecast']['forecastday'][0]['astro']['moonset']
 					if self.to24Hours:
-						sr = Shared().To24h(sr) #sunrise
-						ss = Shared().To24h(ss) #sunset
-						lr = Shared().To24h(lr) #moonrise
-						ls = Shared().To24h(ls) #moonset
+						sr = Shared().To24h(sr) # Sunrise
+						ss = Shared().To24h(ss) # Sunset
+						lr = Shared().To24h(lr) # Moonrise
+						ls = Shared().To24h(ls) # Moonset
 					else:
 						sr = Shared().Add_zero(sr)
 						ss = Shared().Add_zero(ss)
@@ -1685,10 +1673,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					weatherReport = weatherReport.replace("No sunset", _("No sunset"))
 
 				if self.toSample and os.path.exists(_samples_path):
-					self.Play_Sample(condition_code, temperature, wind_f) #He plays the appropriate sound effect if present
+					self.Play_Sample(condition_code, temperature, wind_f) # He plays the appropriate sound effect if present
 
 			else:
-				#gets forecast from Weather API
+				# Gets forecast from Weather API
 				lenForecast = len(self.dom['forecast']['forecastday'])
 				if not self.forecast_days: self.forecast_days = "1"
 				intForecast = int (self.forecast_days)
@@ -1701,7 +1689,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					high = self.dom['forecast']['forecastday'][0]['day']['maxtemp_f'] or _nr
 					low = self.dom['forecast']['forecastday'][0]['day']['mintemp_f'] or _nr
 				except IndexError: return Shared().JsonError()
-				if self.celsius != 0: #conversion only for Celsius and Kelvin degrees scale
+				if self.celsius != 0: # Conversion only for Celsius and Kelvin degrees scale
 					high = self.dom['forecast']['forecastday'][0]['day']['maxtemp_c'] or _nr
 					low = self.dom['forecast']['forecastday'][0]['day']['mintemp_c'] or _nr
 
@@ -1712,23 +1700,23 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				_("and a minimum of"), self.IntClean(low),
 				_("degrees"), scale_as)
 				weatherReport = weatherReport.replace(" .", ".")
-				#addss the remaining days set from user
+				# Addss the remaining days set from user
 				for i in range(1, intForecast):
 					try:
 						week_day = date.fromtimestamp(self.dom['forecast']['forecastday'][i]['date_epoch'])
 					except IndexError:
-						#limit days weather forecast reached
+						# Limit days weather forecast reached
 						break
 
 					month = week_day.month
 					if month1 == month:
-						week_day = Shared().ConvertDate(week_day, False) #Omit the month
+						week_day = Shared().ConvertDate(week_day, False) # Omit the month
 					else:
 						week_day = Shared().ConvertDate(week_day)
 						month1 = month
 					high = self.dom['forecast']['forecastday'][i]['day']['maxtemp_f'] or _nr
 					low = self.dom['forecast']['forecastday'][i]['day']['mintemp_f'] or _nr
-					if self.celsius != 0: #Celsius and Kelvin degrees scale
+					if self.celsius != 0: # Celsius and Kelvin degrees scale
 						high = self.dom['forecast']['forecastday'][i]['day']['maxtemp_c'] or _nr
 						low = self.dom['forecast']['forecastday'][i]['day']['mintemp_c'] or _nr
 
@@ -1740,11 +1728,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 					_("degrees"))
 
 			weatherReport = weatherReport.replace(". ", ".\n")
-			#puts the city name at the left top 
+			# Puts the city name at the left top 
 			weatherReport = '%s %s, %s' % \
 			(_("In"), self.city or _("Unnamed"), weatherReport)
 			if mess:
-				#notify last build date failed
+				# Notify last build date failed
 				Shared().Play_sound("messagefailure", 1)
 				weatherReport = '%s\n%s' % (mess, weatherReport)
 
@@ -1752,7 +1740,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				# Copy the bulletin or weather forecasts to the clipboard.
 				api.copyToClip(weatherReport)
 			if self.toOutputwindow:
-				#output to a window
+				# Output to a window
 				Shared().ViewDatas(weatherReport)
 
 		else:
@@ -1768,9 +1756,9 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		api_query = Shared().GetLocation(zip_code, self.define_dic) or _testCode
 		if not api_query: return '', self.ZipCodeError()
 		def Read_API(): return Shared().WeatherConnect(api_query, self.apilang)
-		#try to receive the data a few times
+		# Try to receive the data a few times
 		dom = ''
-		repeat = 2 #connection attempts
+		repeat = 2 # Connection attempts
 		while not dom and repeat:
 			sleep(0.1)
 			dom = Read_API()
@@ -1779,18 +1767,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if not dom: return self.ZipCodeError(), ""
 		elif "no connect" in dom:
 			Shared().Play_sound("warn", 1)
-			wx.CallAfter(ui.message, _("Sorry, I can not receive data, verify that your internet connection is active, or try again later!"))
+			wx.CallAfter(ui.message, _("Sorry, I can not receive data, verify that your internet connection is active, or try again later!")+
+			" " + _("See the log for more information."))
 			return "no connect", ""
 
-		repeat = 2 #connection attempts
+		repeat = 2 # Connection attempts
 		error = False
 		while True and repeat:
 			pubDate = Shared().GetLastUpdate(dom)
 			if not pubDate: error = True; break
-			#Filter old data
+			# Filter old data
 			dt = pubDate.date() - curDate.date()
 			delta = dt.days
-			if delta >= 0 or (delta >= -2 and delta <= 0): break #pubDate build data found
+			if delta >= 0 or (delta >= -2 and delta <= 0): break # PubDate build data found
 			else:
 				sleep(0.1)
 				dom = Read_API()
@@ -1823,20 +1812,20 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if not v: return ""
 		v = vm = float(v)
 		if convert:
-			#Convert miles to kilometers
+			# Convert miles to kilometers
 			v = v * 1.61
 
 		if meters:
-			#convert miles into meters per second
+			# Convert miles into meters per second
 			ms = 0.44704*vm
-			ms = (math.ceil(ms*100)/100) #round to 2 decimals
+			ms = (math.ceil(ms*100)/100) # Round to 2 decimals
 			if ms == 0.0: return ""
 			ms = self.IntClean(ms)
 			if self.toComma:
 				return ' (%s %s)' % (ms.replace('.', ','), _("meters per second"))
 			else: return ' (%s %s)' % (str(ms), _("meters per second"))
 
-		v = self.IntClean((math.ceil(v*100)/100)) #round to 2 decimals
+		v = self.IntClean((math.ceil(v*100)/100)) # Round to 2 decimals
 		v = v.split('.')[0] 
 		if self.toComma: v = v.replace('.', ',')
 		return v
@@ -1845,13 +1834,13 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 	def Pressure_convert(self, pressure, mmHg = None):
 		"""convert millibars to inces of mercury or millibars to mmHg"""
 		if not pressure: return ""
-		#pressure value must be in millibars
+		# Pressure value must be in millibars
 		pressure = float(pressure)
-		#convert millibars to incis of mercury
+		# Convert millibars to incis of mercury
 		pressure = pressure/33.8639
 		pre = round(pressure,2)
 		if mmHg:
-			#convert inHg to mmHg
+			# Convert inHg to mmHg
 			pre = round((25.4*pressure),2)
 
 		pre = self.IntClean(pre)
@@ -1873,7 +1862,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if not self.setZipCodeItem.IsEnabled(): self.note[0] = 1
 		check, n, i = Shared().ZipCodeInList(self.zipCode, self.zipCodesList)
 		if self.note[0] and check:
-			#Problems with the city from the list
+			# Problems with the city from the list
 			self.Notice(i)
 			return ""
 
@@ -1902,17 +1891,18 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
 		self.EnableMenu(False)
 		self.cityDialog = wx.MessageDialog(gui.mainFrame, '%s "%s".\n%s\n%s %s\n%s.' % (
-		#Translators: dialog message in case of invalid city or with incomplete data
+		# Translators: dialog message in case of invalid city or with incomplete data
 		_("The city"), self.zipCode,
 		_("Is not working properly, contains incomplete data or has been removed from the"),
 		"Weather API Database.",
 		_("It could be a temporary problem and you may wait a while '..."),
 		_("Do you want to delete it from your list?")),
-		#Translators: the dialog title
+		# Translators: the dialog title
 		'%s %s' % (_addonSummary, _("Notice!")),
 		wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION)
 
 		def callback3(result):
+			# Dialog window in case of invalid city or with incomplete data callback
 			if result == wx.ID_YES:
 				try:
 					e = ''
@@ -1923,12 +1913,11 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						_mainSettingsDialog.OnRemove()
 					else:
 						zc = self.zipCodesList.pop(index)
-						decoded_zc = zc
-						if _pyVersion < 3: decoded_zc = zc.decode("utf-8")
+						zc1 = Shared().Normalize(zc)
 						code = zc
 						if code in self.define_dic: del self.define_dic[code]
 						if code in self.details_dic: del self.details_dic[code]
-						if decoded_zc == self.defaultZipCode:
+						if zc1 == self.defaultZipCode:
 							self.zipCode = self.defaultZipCode = ''
 							backup_celsius = self.celsius
 							self.celsius = self.ReadConfig('c')
@@ -1938,7 +1927,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				except ValueError as e: pass
 				if not e:
 					if not _mainSettingsDialog:
-						self.city = index #Temporarily for _mainSettingsDialog, deleted item position
+						self.city = index # Temporarily for _mainSettingsDialog, deleted item position
 						self.zipCode = self.tempZipCode = ''
 						if self.WriteList(self.zipCodesList): Shared().Play_sound("del", 1)
 
@@ -1947,6 +1936,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 						self.define_dic = rollBack2
 						self.details_dic = rollBack3
 						del rollBack, rollBack2, rollBack3
+
 				if not _mainSettingsDialog and not _tempSettingsDialog: self.EnableMenu(True)
 
 			else:
@@ -1957,32 +1947,31 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def getHourlyForecast(self):
 		"""announces the hourly forecast"""
-
 		if not self.zipCode or self.zipCode.isspace():
-			#warn if there is no city set
+			# Warn if there is no city set
 			Shared().Play_sound(False, 1)
 			return ui.message(_("Sorry, the city is not set!"))
 
 		if self.dom == "no connect" or self.dom and (self.tempZipCode != self.test[0]) or not self.dom or (datetime.now() - self.test[-1]).seconds/60 >= _wait_delay:
-			#but refresh dom if the city are changed or if the waiting time is finished
+			# But refresh dom if the city are changed or if the waiting time is finished
 			self.dom, n = self.Open_Dom(self.zipCode)
 			self.test[0] = self.tempZipCode
 			self.test[-1] = datetime.now()
 
 		if not self.dom: self.dom, n = self.Open_Dom(self.zipCode)
 		if not self.dom or self.dom in ["not authorized", "no connect"]: self.dom = None; return
-		#reads city local time
+		# Reads city local time
 		timezone_id = self.dom['location']['tz_id']
 		h, n = Shared().GetTimezone(timezone_id, to24Hours = True)
 		hour = int(h[:h.find(':')])
-		hour = (hour + 1) % 24 #this construct cicle from 0 to 23
+		hour = (hour + 1) % 24 # This construct cicle from 0 to 23
 		unit_speed, unit_distance, unit_precip, n, unit_uv = self.GetUnitValues(self.celsius)
 		scale_as = self.GetScaleAs()
 		wir =_("Chance of rain")
 		wis = _("Chance of snow")
 		weatherReport = ''
 		for h in range(hour, 24):
-			#hourly forecast start from the current hour
+			# Hourly forecast start from the current hour
 			try:
 				condition = self.dom['forecast']['forecastday'][0]['hour'][h]['condition']['text']
 			except IndexError: return Shared().JsonError()
@@ -1994,33 +1983,33 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			snow = str(self.dom['forecast']['forecastday'][0]['hour'][h]['chance_of_snow']) or _nr
 			uv = self.dom['forecast']['forecastday'][0]['hour'][h]['uv']
 			if self.celsius != 0:
-				#is not Fahrenheit:
+				# Is not Fahrenheit:
 				temperature = self.dom['forecast']['forecastday'][0]['hour'][h]['temp_c']
 				wind_speed = self.dom['forecast']['forecastday'][0]['hour'][h]['wind_kph']
 				wind_gust = self.dom['forecast']['forecastday'][0]['hour'][h]['gust_kph']
 				visibility = self.dom['forecast']['forecastday'][0]['hour'][h]['vis_km']
 				precipitation = self.dom['forecast']['forecastday'][0]['hour'][h]['precip_mm']
 				if self.celsius == 2:
-					#Celsius and Kelvin degrees
-					#convert c° to k°
+					# Celsius and Kelvin degrees
+					# Convert c° to k°
 					temperature = self.Temperature_convert(temperature)
 
 			else:
-				#Fahrenheit degrees
+				# Fahrenheit degrees
 				temperature = self.dom['forecast']['forecastday'][0]['hour'][h]['temp_f']
 				wind_speed = self.dom['forecast']['forecastday'][0]['hour'][h]['wind_mph']
 				wind_gust = self.dom['forecast']['forecastday'][0]['hour'][h]['gust_mph']
 				visibility = self.dom['forecast']['forecastday'][0]['hour'][h]['vis_miles']
 				precipitation = self.dom['forecast']['forecastday'][0]['hour'][h]['precip_in']
 
-			#clean zero values decimals and apply the comma if request
+			# Clean zero values decimals and apply the comma if request
 			temperature = self.IntClean(temperature)
 			wind_speed = self.IntClean(wind_speed)
 			wind_gust = self.IntClean(wind_gust)
 			visibility = self.IntClean(visibility)
 			precipitation = self.IntClean(precipitation)
 			uv = self.IntClean(precipitation)
-			hour = Shared().Add_zero(str(h)+":00", False) #24 hour format
+			hour = Shared().Add_zero(str(h)+":00", False) # 24 hour format
 			if not self.to24Hours:
 				if h in range(0, 13): hour = '%s AM' % str(h).rjust(2,'0')
 				else: hour = '%s PM' % (str(h-12).rjust(2, "0"))
@@ -2041,7 +2030,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 			hour, condition, temperature, _("degrees"), scale_as,
 			line)
 			weatherReport = weatherReport.replace('..', '.')
-			#adds chance of rain and snow
+			# Adds chance of rain and snow
 			if rain != "0" and str(snow) != "0":
 				weatherReport += '%s %s%%, %s %s%%.\n' % (
 			wir,rain, wis, snow)
@@ -2068,7 +2057,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		if self.IsOpenDialog(self.cityDialog): return
 		if self.zipCode != self.note[1]: self.note = [1, self.zipCode]
 		ui.message(self.getWeather(self.zipCode))
-		#try  to update the volume of new played sound effect, if  it's in dictionary 
+		# Try  to update the volume of new played sound effect, if  it's in dictionary 
 		if "_mainSettingsDialog"in globals() and _mainSettingsDialog:
 			select = _mainSettingsDialog.choices_assign.GetSelection()
 			if select == 1 and _curSample != "":
@@ -2099,7 +2088,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 				Shared().Play_sound(False, 1)
 				return ui.message(_("Sorry, no list available!"))
 		except AttributeError: pass
-		#do not proceed if the window temporary cities is open, but puts it in the foreground
+		# Do not proceed if the window temporary cities is open, but puts it in the foreground
 		children_isalive = False
 		if not self.setZipCodeItem.IsEnabled():
 			children_isalive = self.WindInStandby()
@@ -2115,7 +2104,7 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		"""swap and set a measurement degrees scale"""
 		self.celsius = (self.celsius + 1) %3 # This construct cycles between 0, 2
 		if _mainSettingsDialog:
-			#change the radio button in the settings window
+			# Change the the degrees in the choice in the settings window
 			self.celsius = _mainSettingsDialog.choiceDegrees.GetSelection()
 			self.celsius = (self.celsius + 1) % 3
 			_mainSettingsDialog.choiceDegrees.SetSelection(self.celsius)
@@ -2131,39 +2120,32 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		"""announces the date and time of last weather report"""
 		if self.IsOpenDialog(self.cityDialog): return
 		if not self.zipCode or self.zipCode.isspace():
-			#warn if there is no city set
+			# Warn if there is no city set
 			Shared().Play_sound(False, 1)
 			return ui.message(_("Sorry, the city is not set!"))
 
 		if self.dom == "no connect" or self.dom and (self.tempZipCode != self.test[0]) or not self.dom or (datetime.now() - self.test[-1]).seconds/60 >= _wait_delay:
-			#but refresh dom if the city are changed or if the waiting time is finished
+			# But refresh dom if the city are changed or if the waiting time is finished
 			self.dom, n = self.Open_Dom(self.zipCode)
 			self.test[0] = self.tempZipCode
 			self.test[-1] = datetime.now()
 
 		if not self.dom: self.dom, n = self.Open_Dom(self.zipCode)
 		if not self.dom or self.dom in["not authorized", "no connect"]: self.dom = None; return
-		#not documented, displays API response json data  debugging
+		# Not documented, displays API response json data  debugging
 		repeatCount =scriptHandler.getLastScriptRepeatCount()
 		if repeatCount == 2:
-			def Deco(v):
-				try:
-					return v.decode("utf-8")
-				except (UnicodeDecodeError, UnicodeEncodeError): return v
-
 			cur_date = datetime.now().strftime('%Y-%m-%d %H:%M') or '""'
 			title = '%s - %s' % (_addonSummary, "Note: Feature not documented, only for debiugging.")
 			message ='Computer time: %s.\nLocation time: %s.\nLocation: %s.\r\n' % (cur_date, self.dom["location"]["localtime"], self.dom["location"]["name"] or '""')
 			message += 'Region: %s.\r\n' % (self.dom["location"]["region"] or '""')
 			message += 'Country: %s.\r\n' % (self.dom["location"]["country"] or '""')
-			m = self.zipCode
-			if isinstance(m, bytes) or _pyVersion < 3: m = Deco(self.zipCode)
+			m = Shared().Normalize(self.zipCode)
 			message += 'zipCode: %s.\r\n' % (m or '""')
 			m = Shared().GetLocation(self.zipCode, self.define_dic) or _testCode
-			if _pyVersion < 3: m = Deco(m)
+			m = Shared().Normalize(m)
 			message += '_api_query: %s.\r\n' % m
-			m = _testCode
-			if _pyVersion < 3: m = Deco(m)
+			m = Shared().Normalize(_testCode)
 			message += '_testCode (temporary api query): %s.' % (m or '""')
 			message += '\r\n\r\n[API response json]\n%s' % self.dom
 			Shared().ViewDatas(message, title); return
@@ -2193,10 +2175,10 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 	def script_weatherPlusSettings(self, gesture):
 		"""Call the Weather Plus settings dialog"""
-		#do not proceed if the window settings is open, but puts it in the foreground
+		# Do not proceed if the window settings is open, but puts it in the foreground
 		children_isalive = False
 		Shared().CloseDialog(_weatherReportDialog)
-		if not self.setZipCodeItem.IsEnabled(): #the settings window is open
+		if not self.setZipCodeItem.IsEnabled(): # The settings window is open
 			children_isalive = self.WindInStandby()
 		if children_isalive: return
 		self.onSetZipCodeDialog(None)
@@ -2277,9 +2259,9 @@ class EnterDataDialog(wx.Dialog):
 		self.dontShowAgainAddDetails = dontShowAgainAddDetails
 		sizer = wx.BoxSizer(wx.VERTICAL)
 		sizerHelper = guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
-		#loads cities list from Weather.zipcodes
+		# Loads cities list from Weather.zipcodes
 		zipCodesList, define_dic, details_dic = Shared().LoadZipCodes()
-		_testCode = self.testCode = self.testName = self.testDefine = self.last_tab = ""
+		_testCode = self.testCode = self.testName = self.testDefine = self.last_tab = u""
 		self.hotkeys_dic = {
 		True: _("f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control duration Weather Forecast, f5: volume controls."),
 		False: _("f1: help placing, f2: last TAB selection, f3: list and edit box, f4: control duration Weather Forecast.")}
@@ -2298,31 +2280,12 @@ class EnterDataDialog(wx.Dialog):
 		cbx=wx.ComboBox(self, -1, style=wx.CB_DROPDOWN|wx.TE_RICH, choices =choices)
 		s = tempZipCode
 		if not s: s = defaultZipCode
-		if _pyVersion < 3:
-			try:
-				s = s.encode("utf-8")
-			except(UnicodeDecodeError, UnicodeEncodeError): pass
-
+		s = Shared().Normalize(s)
 		if zipCodesList and s in zipCodesList:
-			if _pyVersion < 3:
-				cbx.SetStringSelection(s.decode("utf-8"))
-			else:
-				cbx.SetStringSelection(s)
-
+			cbx.SetStringSelection(s)
 		else:
-			if _pyVersion < 3:
-				try:
-					cbx.SetValue(s or "")
-				except(UnicodeDecodeError, UnicodeEncodeError):
-					try:
-						cbx.SetValue(s.encode("utf-8") or "")
-					except(UnicodeDecodeError, UnicodeEncodeError):
-						try:
-							cbx.SetValue(s.decode("utf-8") or "")
-						except(UnicodeDecodeError, UnicodeEncodeError): pass
+			cbx.SetValue(s or u"")
 
-			else:
-				cbx.SetValue(s or "")
 			if s: self.testName = s
 
 		hboxHelper.addItem(cbx)
@@ -2368,7 +2331,7 @@ class EnterDataDialog(wx.Dialog):
 		self.btn_Apply = btn_Apply
 		self.btn_Remove = btn_Remove
 		self.btn_Rename = btn_Rename
-		#other buttons
+		# Other buttons
 		hbox2Helper = guiHelper.BoxSizerHelper(self, orientation=wx.HORIZONTAL)
 		btn_Import = helpButton(self, -1, _("&Import new cities..."), "", style=wx.BU_EXACTFIT)
 		btn_Export = helpButton(self, -1, _("&Export your cities..."), "", style=wx.BU_EXACTFIT)
@@ -2385,7 +2348,7 @@ class EnterDataDialog(wx.Dialog):
 		self.btn_Hourlyforecast = btn_Hourlyforecast
 		if not os.path.exists(_zipCodes_path):
 			btn_Export.Enable(False)
-		#Choice of temperature scale
+		# Choice of temperature scale
 		st = wx.StaticText(self, -1, _("Scale of temperature measurement:"))
 		choiceDegrees = wx.Choice(self, -1, choices=_tempScale)
 		choiceDegrees.SetSelection(celsius)
@@ -2407,24 +2370,24 @@ class EnterDataDialog(wx.Dialog):
 		sizerHelper.addItem(sizehboxChoiceDegrees1Helper)
 		self.choiceDegrees1 = choiceDegrees1
 
-				#cchoices forecast days
+				# Cchoices forecast days
 		st = wx.StaticText(self, -1, _("Weather Forecasts up to days:"))
-		choice_days=wx.Choice(self, -1, choices = ['%d' % i for i in range(1, _maxDaysApi+1, 1)]) #set from 1 to max days api days
+		choice_days=wx.Choice(self, -1, choices = ['%d' % i for i in range(1, _maxDaysApi+1, 1)]) # Set from 1 to max days api days
 		if not forecast_days or not str(forecast_days).isdigit(): forecast_days = '1'
 		elif str(forecast_days).isdigit()and int(forecast_days) > int(_maxDaysApi): forecast_days = '1'
 		choice_days.SetStringSelection(str(forecast_days))
 		hbox3Helper = guiHelper.associateElements(st, choice_days)
 		sizerHelper.addItem(hbox3Helper)
 		self.choice_days = choice_days
-		#choices API languages
+		# Choices API languages
 		st = wx.StaticText(self, -1, _("API response language:"))
-		choices = Shared().APILanguage() #get languages list
+		choices = Shared().APILanguage() # Get languages list
 		choices_apilang=wx.Choice(self, -1, choices = choices)
 		choices_apilang.SetStringSelection(apilang)
 		hbox4Helper = guiHelper.associateElements(st, choices_apilang)
 		sizerHelper.addItem(hbox4Helper)
 		self.choices_apilang = choices_apilang
-		#check boxes
+		# Check boxes
 		cbt_toClip = wx.CheckBox(self, -1, _("&Copy the weather report and weather forecast, including city details to clipboard"))
 		cbt_toClip.SetValue(bool(toClip))
 		sizerHelper.addItem(cbt_toClip)
@@ -2438,7 +2401,7 @@ class EnterDataDialog(wx.Dialog):
 		cbt_toWeatherEffects = wx.CheckBox(self, -1, _("Use only &weather effects"))
 		sizerHelper.addItem(cbt_toWeatherEffects)
 		self.cbt_toWeatherEffects = cbt_toWeatherEffects
-		#choicesassignment type volume and volume adjustment
+		# Choicesassignment type volume and volume adjustment
 		hbox5Helper = guiHelper.BoxSizerHelper(self, orientation = wx.HORIZONTAL)
 		choices_assign = wx.Choice(self, -1, choices = [
 		_("General audio volume"),
@@ -2447,7 +2410,7 @@ class EnterDataDialog(wx.Dialog):
 		choices_assign.SetSelection(toAssign)
 		self.toAssign = toAssign
 
-		choices_volume=wx.Choice(self, -1, choices = ['%s%%' % i for i in reversed(range(0, 110, 10))]) #set from 0% to 100% volume
+		choices_volume=wx.Choice(self, -1, choices = ['%s%%' % i for i in reversed(range(0, 110, 10))]) # Set from 0% to 100% volume
 		try:
 			vol =int(_volume[:-1])
 		except (NameError, ValueError): vol = None
@@ -2472,7 +2435,7 @@ class EnterDataDialog(wx.Dialog):
 			self.choices_volume.Enable(False)
 			self.cbt_toWeatherEffects.Enable(False)
 		self.Bind(wx.EVT_CHECKBOX, self.OnCheckBox, self.cbt_toSample)
-		#check boxes
+		# Check boxes
 		cbt_toHelp = wx.CheckBox(self, -1, _("Enable &help buttons in the settings window"))
 		cbt_toHelp.SetValue(bool(toHelp))
 		sizerHelper.addItem(cbt_toHelp)
@@ -2586,27 +2549,27 @@ class EnterDataDialog(wx.Dialog):
 		self.btn_Cancel = self.FindWindowById(wx.ID_CANCEL)
 		self.Bind(wx.EVT_BUTTON, self.OnEnter_wbdat, self.btn_Ok)
 		self.cbx = cbx
-		self.f1 = 0 #after a few errors recommend you press F1
+		self.f1 = 0 # After a few errors recommend you press F1
 		self.WidgetFocusControl()
 		self.ButtonsEnable(False)
 		if globalVars.appArgs.secure:
-			#disable possible FileDialog openings in safe mode
+			# Disable possible FileDialog openings in safe mode
 			btn_Import.Enable(False)
 			btn_Export.Enable(False)
 			self.cbt_toSample.Enable(False)
 
 		self.OnText()
 		if cbx.GetValue() == "":
-			#primary edit combo box empty
+			# Primary edit combo box empty
 			self.btn_Ok.Enable(False)
 
 		self.Sizer = sizer
 		sizer.Add(sizerHelper.sizer, border = guiHelper.BORDER_FOR_DIALOGS, flag = wx.ALL)
 		self.SetSizerAndFit(sizer)
 		self.Center(wx.BOTH|wx.Center)
-		self.cbx.SetFocus() #primary combo box
+		self.cbx.SetFocus() # Primary combo box
 		self.last_tab = cbx
-		#Set scroll dialog
+		# Set scroll dialog
 		self.DoLayoutAdaptation()
 		self.SetLayoutAdaptationLevel(self.GetLayoutAdaptationLevel())
 		self.Bind(wx.EVT_SCROLL_THUMBTRACK, self.OnCaptureMouse)
@@ -2728,20 +2691,20 @@ class EnterDataDialog(wx.Dialog):
 		key = evt.GetKeyCode()
 		controlDown = evt.CmdDown()
 		if key == wx.WXK_ESCAPE:
-			#exit from setting dialog
+			# Exit from setting dialog
 			self.EndModal(wx.ID_CANCEL)
 		elif key == wx.WXK_RETURN and self.btn_Ok.IsEnabled():
-			#exit from setting dialog
+			# Exit from setting dialog
 			self.EndModal(wx.ID_OK)
 
 		elif controlDown and key is 1:
-			#select value into combo box
+			# Select value into combo box
 			if cur_tab is self.cbx: cur_tab.SelectAll(); return
 
 		elif key == wx.WXK_F1:
-			#help input
-			if "_helpDialog" not in globals(): global _helpDialog
-			#Translators: message in the help window
+			# Help input
+			global _helpDialog
+			# Translators: message in the help window
 			message = '%s:\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s:\n%s.\n%s.\n%s.\n%s:\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.\n%s.' % (
 			_("You can enter or search for a city"),
 			_("By Latitude and Longitude: 48.8567,2.3508"),
@@ -2772,7 +2735,7 @@ class EnterDataDialog(wx.Dialog):
 			_("Try to change in English some parts"),
 			_("Try with a closest location")
 			)
-			#Translators: the title of the help window
+			# Translators: the title of the help window
 			title = _("Help placing")
 			gui.mainFrame.prePopup()
 			_helpDialog = MyDialog2(gui.mainFrame, message, title)
@@ -2780,24 +2743,24 @@ class EnterDataDialog(wx.Dialog):
 			gui.mainFrame.postPopup()
 
 		elif key == wx.WXK_F2:
-			#back to the last item
+			# Back to the last item
 			if self.last_tab:
 				if cur_tab != self.last_tab:
 					self.last_tab.SetFocus(); self.last_tab = cur_tab
 				else: wx.Bell()
 
 		elif key == wx.WXK_F3:
-			#moves the focus on the cities list
+			# Moves the focus on the cities list
 			if cur_tab != self.cbx: self.cbx.SetFocus(); self.last_tab = cur_tab
 			else: wx.Bell()
 
 		elif key == wx.WXK_F4:
-			#move the focus on the forecast days control
+			# Move the focus on the forecast days control
 			if cur_tab != self.choice_days: self.choice_days.SetFocus(); self.last_tab = cur_tab
 			else: wx.Bell()
 
 		elif key == wx.WXK_F5 and self.choices_assign.IsEnabled():
-			#moves the focus on the volume controls
+			# Moves the focus on the volume controls
 			if cur_tab != self.choices_assign: self.choices_assign.SetFocus(); self.last_tab = cur_tab
 			else: wx.Bell()
 
@@ -2814,34 +2777,34 @@ class EnterDataDialog(wx.Dialog):
 
 	def OnVolume(self, evt):
 		"""volume changes event"""
-		if not _handle: #no samples in memory
+		if not _handle: # No samples in memory
 			self.Warn_curSample()
-			#restores last volume value
+			# Restores last volume value
 			global _volume
 			self.choices_volume.SetStringSelection(_volume)
 			return self.choices_volume.SetFocus()
 
 		if self.choices_assign.GetSelection() == 1:
-			#assign volume to current sound effect
+			# Assign volume to current sound effect
 			volTest = self.choices_volume.GetStringSelection()
 			if volTest == '0%':
-				#fixed minimum volume for Safety
+				# Fixed minimum volume for Safety
 				volTest = '10%'
 				self.choices_volume.SetStringSelection(volTest)
 
 			samplesvolumes_dic.update({_curSample: volTest})
-			#adjust sound effect volume proportioning to total volume
+			# Adjust sound effect volume proportioning to total volume
 			volTest = Shared().AdjustVol(volTest)
 
 		elif self.choices_assign.GetSelection() == 0:
-			#general volume
+			# General volume
 			_volume = self.choices_volume.GetStringSelection()
 			volTest = _volume
 			volTest = Shared().AdjustVol(volTest)
 
 		try:
 			BASS_ChannelPlay(_handle, True)
-			BASS_ChannelSetAttribute(_handle, BASS_ATTRIB_VOL, _volume_dic[volTest]) #set vol (0 = mute, 1 = full)
+			BASS_ChannelSetAttribute(_handle, BASS_ATTRIB_VOL, _volume_dic[volTest]) # Set vol (0 = mute, 1 = full)
 		except Exception as e:
 			Shared().LogError(e)
 
@@ -2853,7 +2816,7 @@ class EnterDataDialog(wx.Dialog):
 		if not _curSample:
 			if evt:
 				self.Warn_curSample()
-				#restores last choice selection
+				# Restores last choice selection
 				self.choices_assign.SetSelection(self.toAssign)
 				return self.choices_assign.SetFocus()
 
@@ -2865,11 +2828,11 @@ class EnterDataDialog(wx.Dialog):
 
 	def Warn_curSample(self):
 		"""no sound effect into memory"""
-		#Translators: dialog used when there is no sound in memory
+		# Translators: dialog used when there is no sound in memory
 		wx.MessageBox('%s\n%s' % (
 		_("No sound effect in memory!"),
 		_("I can't reproduce the sound.")),
-		#Translators: the dialog title
+		# Translators: the dialog title
 		'%s - %s' % (_addonSummary, _("Notice!")), wx.ICON_EXCLAMATION)
 
 
@@ -2889,7 +2852,7 @@ class EnterDataDialog(wx.Dialog):
 				if not v.isspace(): self.btn_Test.Enable(True)
 
 		else:
-			#value is in list
+			# Value is in list
 			zcs = self.zipCodesList[i]
 			if Shared().IsOldZipCode(zcs):
 				Shared().Play_sound("totest", 1)
@@ -2931,168 +2894,19 @@ class EnterDataDialog(wx.Dialog):
 		evt.Skip()
 
 
-	def OOnTest(self, evt=None): #new
-		"""button Test event"""
-		selected_city = value = value2 = self.cbx.GetValue()
-
-		# normalize coords if present
-		coords = Shared().GetCoords(value)
-		if coords:
-			value = coords
-
-		elif Shared().IsOldZipCode(value):
-			value2 = value[:value.rfind(' ')]
-
-			c = value.split(',')[0]
-			z = value.split()[-1]
-
-			search_keys = []
-			self.testDefine = '0'
-
-			if z in self.define_dic:
-				self.testDefine = self.define_dic[z]['define']
-
-			if z in self.details_dic and 'fail' not in self.details_dic[z]['city']:
-				search_keys.append('%s, %s, %s' % (
-					self.details_dic[z]['city'],
-					self.details_dic[z]['region'],
-					self.details_dic[z]['country']
-				))
-
-				search_keys.append('%s, %s' % (
-					self.details_dic[z]['city'],
-					self.details_dic[z]['country']
-				))
-
-				search_keys.append('%s, %s' % (
-					self.details_dic[z]['lat'],
-					self.details_dic[z]['lon']
-				))
-
-				Shared().Play_sound("subwindow", 1)
-
-				gui.mainFrame.prePopup()
-				dlg = wx.SingleChoiceDialog(
-					self,
-					'%s: "%s"' % (_("Choose search key for"), c),
-					_addonSummary,
-					choices=search_keys
-				)
-
-				dlg.SetSelection(0)
-
-				try:
-					if dlg.ShowModal() == wx.ID_CANCEL:
-						return
-					value = search_keys[dlg.GetSelection()]
-					value2 = value
-				finally:
-					Shared().Play_sound("subwindow", 1)
-					dlg.Destroy()
-					gui.mainFrame.postPopup()
-
-			else:
-				winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
-
-				gui.mainFrame.prePopup()
-				dlg1 = wx.MessageDialog(
-					self,
-					'%s\n%s' % (
-						_("Unfortunately I could not recover enough data to find the city."),
-						_("Do I try anyway?")
-					),
-					_addonSummary,
-					wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION
-				)
-
-				try:
-					if dlg1.ShowModal() == wx.ID_NO:
-						self.cbx.SetFocus()
-						return
-
-					value = value[:value.rfind(' ')]
-
-				finally:
-					dlg1.Destroy()
-					gui.mainFrame.postPopup()
-
-		else:
-			selected_city = Shared().Search_cities(value)
-			if not selected_city:
-				self.cbx.SetFocus()
-				return
-			elif selected_city not in ["Error", "noresult"]:
-				value2 = value = selected_city
-
-		# --- API parse ---
-		cityName, v = Shared().ParseEntry(value, self.apilang)
-
-		if cityName == "no connect":
-			self.Disable_all(False)
-			Shared().Play_sound("warn", 1)
-			return ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!"))
-
-		elif not cityName:
-			self.Disable_all()
-
-			if (selected_city == value) and value.isdigit() and ',' not in value:
-				return self.API_errorDialog(selected_city, True)
-
-		elif cityName == "not found":
-			self.f1 = (self.f1 + 1) % 3
-
-			message = ('"%s", %s' % (value2, _("not found! Press F1 for help on entering data."))
-				if self.f1 == 1
-				else '"%s", %s' % (value2, _("not found!")))
-
-			gui.mainFrame.prePopup()
-			dlg2 = wx.MessageDialog(self, message, _addonSummary, wx.OK)
-
-			try:
-				dlg2.ShowModal()
-			finally:
-				dlg2.Destroy()
-				gui.mainFrame.postPopup()
-
-			return
-
-		# --- final formatting ---
-		value = Shared().SetCityString('%s, %s' % (cityName, v))
-
-		self.cbx.SetValue(value)
-
-		check, n, n = Shared().ZipCodeInList(value, self.zipCodesList)
-
-		if not check:
-			Shared().Play_sound(True)
-
-			self.testCode = value2
-			self.testName = value
-
-		else:
-			Shared().Play_sound("alreadyinlist")
-
-		self.OnText()
-
-		self.btn_Test.Enable(False)
-		self.btn_Ok.Enable(True)
-
-		self.cbx.SetFocus()
-
-
 	def OnTest(self, evt = None):
 		"""button Test event"""
 		selected_city = value = value2 = self.cbx.GetValue()
 		coords = Shared().GetCoords(value)
 		if coords: value = coords
 		elif Shared().IsOldZipCode(value):
-			value2 = value[:value.rfind(' ')] #search key with city name and country acronym
-			#create a search key list from the city details if available
-			c = value.split(',')[0] #get city name
-			z = value.split()[-1] #get zipcode number
+			value2 = value[:value.rfind(' ')] # Search key with city name and country acronym
+			# Create a search key list from the city details if available
+			c = value.split(',')[0] # Get city name
+			z = value.split()[-1] # Get zipcode number
 			search_keys = []
 			self.testDefine = '0'
-			if z in self.define_dic: self.testDefine = self.define_dic[z]['define'] #get a define value from old zipcode if available
+			if z in self.define_dic: self.testDefine = self.define_dic[z]['define'] # Get a define value from old zipcode if available
 			if z in self.details_dic and not 'fail' in self.details_dic[z]['city']:
 				search_keys.append('%s, %s, %s' % (
 				self.details_dic[z]['city'],
@@ -3104,16 +2918,16 @@ class EnterDataDialog(wx.Dialog):
 				search_keys.append('%s, %s' % (
 				self.details_dic[z]['lat'],
 				self.details_dic[z]['lon']))
-				#allows you to choose how to search for the city
+				# Allows you to choose how to search for the city
 				Shared().Play_sound("subwindow", 1)
-				#Translators: dialog message used in the setting window to specify a certain one area
-				if "_dlc" not in globals(): global _dlc
+				# Translators: dialog message used in the setting window to specify a certain one area
+				global _dlc
 				gui.mainFrame.prePopup()
 				_dlc = wx.SingleChoiceDialog(
 				self, '%s: "%s"' % (
-				#Translators: message dialog 
+				# Translators: message dialog 
 				_("Choose search key for"), c),
-				#Translators: title dialog
+				# Translators: title dialog
 				_addonSummary,
 				choices=search_keys)
 				_dlc.SetSelection(0)
@@ -3129,39 +2943,41 @@ class EnterDataDialog(wx.Dialog):
 					_dlc = None
 
 			else:
-				#translators: window that warns the user that it was not possible to retrieve data from the database details
+				# Translators: window that warns the user that it was not possible to retrieve data from the database details
 				winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
-				if "_dlc1" not in globals(): global _dlc1
+				global _dlc1
 				gui.mainFrame.prePopup()
 				_dlc1 = wx.MessageDialog(self, '%s\n%s' % (
-				#Translators: the dialog message
+				# Translators: the dialog message
 				_("Unfortunately I could not recover enough data to find the city."),
 				_("Do I try anyway?")),
-				#Translators: the dialog title
+				# Translators: the dialog title
 				_addonSummary, wx.YES_NO|wx.NO_DEFAULT|wx.ICON_QUESTION)
 				_dlc1.Show()
 				gui.mainFrame.postPopup()
 				try:
 					if _dlc1.ShowModal() == wx.ID_NO: self.cbx.SetFocus(); return
-					#try to locate the city deleting the number of the old zipcode
+					# Try to locate the city deleting the number of the old zipcode
 					value = value[:value.rfind(' ')]
 				finally:
 					_dlc1.Destroy()
 					_dlc1 = None
 
 		else:
-			#search for city recurrences with geonames
+			# Search for city recurrences with geonames
 			selected_city = Shared().Search_cities(value)
 			if not selected_city: self.cbx.SetFocus(); return
 			elif selected_city not in ["Error", "noresult"]:
 				value2 = value = selected_city
 
-		#Test as Cityname
+		# Test as Cityname
 		cityName, v = Shared().ParseEntry(value, self.apilang)
 		if cityName == "no connect":
 			self.Disable_all(False)
 			Shared().Play_sound("warn", 1)
-			return ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!"))
+			return ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!") +
+			" " + _("See the log for more information."))
+
 		elif not cityName or cityName == "not found":
 			self.Disable_all()
 			if (selected_city == value) and value.isdigit() and not ',' in value: return self.API_errorDialog(selected_city, True)
@@ -3169,7 +2985,7 @@ class EnterDataDialog(wx.Dialog):
 				self.f1 = (self.f1 + 1) % 3
 				message = '"%s", %s' % (value2, _("not found! Press F1 for help on entering data.")) if self.f1 == 1\
 				else '"%s", %s' % (value2, _("not found!"))
-				if "_searchKeyWarnDialog" not in globals(): global _searchKeyWarnDialog
+				global _searchKeyWarnDialog
 				gui.mainFrame.prePopup()
 				_searchKeyWarnDialog = wx.MessageDialog(self, message,_addonSummary, wx.OK)
 				_searchKeyWarnDialog.ShowModal()
@@ -3183,7 +2999,7 @@ class EnterDataDialog(wx.Dialog):
 		check, n, n =Shared().ZipCodeInList(value, self.zipCodesList)
 		if not check:
 			Shared().Play_sound(True)
-			if "_testCode" not in globals(): global _testCode
+			global _testCode
 			_testCode = self.testCode = value2
 			self.testName = value
 
@@ -3191,25 +3007,23 @@ class EnterDataDialog(wx.Dialog):
 
 		self.OnText()
 		self.btn_Test.Enable(False)
-		try:
-			self.btn_Ok.Enable(True)
-		except: pass
+		self.btn_Ok.Enable(True)
 		self.cbx.SetFocus()
 
 
 	def API_errorDialog(self, v, id_error = None):
 		"""Notice if the code is not valid, or poorly functioning"""
-		#Translators: the message dialog
+		# Translators: the message dialog
 		text = '%s\n%s\n%s' % (
 		_("Is not working properly or has been removed from the database of"),
 		"Weather API.",
 		_("It could be a temporary problem and you may wait a while '..."))
 		if id_error:
 			text = _("Is no longer valid!")
-			if "_NotValidWarn" not in globals(): global _NotValidWarn
+			global _NotValidWarn
 			gui.mainFrame.prePopup()
 		_NotValidWarn = wx.MessageDialog(self, '%s "%s"\n%s' % (_("The city"), v, text),
-		#Translators: the dialog title
+		# Translators: the dialog title
 		_addonSummary, wx.ICON_EXCLAMATION)
 		_NotValidWarn.ShowModal()
 		gui.mainFrame.postPopup()
@@ -3237,7 +3051,7 @@ class EnterDataDialog(wx.Dialog):
 			self.AudioControlsEnable(reload)
 
 		if not reload:
-			#Translators: dialog message and title to manage the sound effects
+			# Translators: dialog message and title to manage the sound effects
 			message = '%s.\n%s' % (
 			_("This option requires the installation of some audio effects"),
 			_("Do you want to install them?"))
@@ -3248,14 +3062,14 @@ class EnterDataDialog(wx.Dialog):
 			_("Would you like to update?"),
 			_("Or do you want to uninstall them?"))
 
-		if "_installDialog" not in globals(): global _installDialog
+		global _installDialog
 		_installDialog = NoticeAgainDialog(gui.mainFrame, message=message, title = '%s %s' % (_addonSummary, _("Notice!")), bUninstall= True, uninstall_button = reload)
 		result = _installDialog.ShowModal()
 		if result == 5102:
-			#Uninstall button
+			# Uninstall button
 			winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
 			if wx.MessageBox(_("Are you sure you want to uninstall the sound effects?"), '%s %s' % (_addonSummary, _("Notice!")), wx.ICON_QUESTION | wx.YES_NO) == wx.YES:
-				self.cbt_toSample.SetValue(False) #disable audio check box
+				self.cbt_toSample.SetValue(False) # Disable audio check box
 				self.AudioControlsEnable(False)
 				self.DelTemp(_samples_path, uninstall = True)
 				winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
@@ -3263,25 +3077,25 @@ class EnterDataDialog(wx.Dialog):
 			self.CloseWind(_installDialog); _installDialog = None
 			return
 		elif result == 5101:
-			#Close button
+			# Close button
 			if not reload:
-				self.cbt_toSample.SetValue(False) #disable audio check box
+				self.cbt_toSample.SetValue(False) # Disable audio check box
 				self.AudioControlsEnable(False)
 
 			self.CloseWind(_installDialog); _installDialog = None
 			return
 		else:
-			#Innstall button
+			# Innstall button
 			self.CloseWind(_installDialog); _installDialog = None
-			#Download and install the Weather_samples folder
+			# Download and install the Weather_samples folder
 			source = "/".join((_addonBaseUrl, 'weather_samples2.zip?download=1'))
 
-			#perform target in temporary folder
+			# Perform target in temporary folder
 			import tempfile
 			if _pyVersion >= 3:
 				target = "/".join((tempfile.gettempdir(), 'Weather_samples.zip'))
 			else: target = "/".join((tempfile.gettempdir().decode("utf-8"), 'Weather_samples.zip'))
-			#Translators: title and message used in tthe progress qdialog
+			# Translators: title and message used in tthe progress qdialog
 			title = _("Update in progress")
 			if not reload: title = _("Installation in progress")
 			message = _plzw
@@ -3290,12 +3104,12 @@ class EnterDataDialog(wx.Dialog):
 			result = Shared().Download_file(source, target, title, message)
 			if result == "Error":
 				self.ErrorMessage()
-				if not reload: self.cbt_toSample.SetValue(False) #disable audio check box
+				if not reload: self.cbt_toSample.SetValue(False) # Disable audio check box
 				self.DelTemp(target)
 
 			elif result:
-				#Unpack archive
-				self.DelTemp(_samples_path) #Delete old files and the Weather_samples folder
+				# Unpack archive
+				self.DelTemp(_samples_path) # Delete old files and the Weather_samples folder
 				import zipfile
 				try:
 					with zipfile.ZipFile(target, "r") as z:
@@ -3303,32 +3117,32 @@ class EnterDataDialog(wx.Dialog):
 				except Exception as e:
 					Shared().LogError(e)
 					self.ErrorMessage(True)
-					self.cbt_toSample.SetValue(False) #disable audio check box
+					self.cbt_toSample.SetValue(False) # Disable audio check box
 					self.AudioControlsEnable(False)
 					self.DelTemp(_samples_path, uninstall = True)
-					self.DelTemp(target) #delete the temporary file Weather_samples.zip
+					self.DelTemp(target) # Delete the temporary file Weather_samples.zip
 					return self.cbt_toSample.SetFocus()
 
-				#Installation Complete
+				# Installation Complete
 				info_string = _("The installation of audio effects has been completed successfully!")
 				path_string = '%s "%s".\n' % (_("Adding folder:"), _samples_path)
 				if reload:
 					info_string = _("The upgrade of audio effects has been completed successfully!")
 					path_string = ""
 
-				#Translators: dialog message and title used when the sound effects installation or upgrade is finished
+				# Translators: dialog message and title used when the sound effects installation or upgrade is finished
 				message = '%s\n%s%s\n%s' % (
 				info_string,
 				path_string,
 				_("These sound effects are subject to change by the author."),
 				_("Disable and re-enable this option in order to update or uninstall them."))
 				wx.MessageBox(message, '%s %s' % (_addonSummary, _("Notice!")), wx.ICON_INFORMATION)
-				self.cbt_toSample.SetValue(True) #enable audio check box
+				self.cbt_toSample.SetValue(True) # Enable audio check box
 				self.AudioControlsEnable(True)
 
-			self.DelTemp(target) #delete the temporary file samples.zip
+			self.DelTemp(target) # Delete the temporary file samples.zip
 			if not os.path.exists(_samples_path):
-				self.cbt_toSample.SetValue(False) #disable audio check box
+				self.cbt_toSample.SetValue(False) # Disable audio check box
 				self.AudioControlsEnable(False)
 
 			self.cbt_toSample.SetFocus()
@@ -3341,13 +3155,13 @@ class EnterDataDialog(wx.Dialog):
 		atmosphereCheckboxis = [self.cbt_toHumidity, self.cbt_toVisibility, self.cbt_toPressure, self.cbt_toCloud, self.cbt_toPrecip, self.cbt_toUltraviolet]
 		if self.last_tab in windCheckboxis:
 			if [x.GetValue() for x in windCheckboxis].count(False) == 4:
-			 	#prevents you from to disable all the check boxes in wind information
+			 	# Prevents you from to disable all the check boxes in wind information
 				wx.Bell()
 				self.last_tab.SetValue(True)
 
 		elif self.last_tab in atmosphereCheckboxis:
 			if [x.GetValue() for x in atmosphereCheckboxis].count(False) == 5:
-				#prevents you from to disable all the check boxes in atmosphere information
+				# Prevents you from to disable all the check boxes in atmosphere information
 				wx.Bell()
 				self.last_tab.SetValue(True)
 
@@ -3381,7 +3195,7 @@ class EnterDataDialog(wx.Dialog):
 
 
 	def ErrorMessage(self, e = None):
-		#Translators: dialog message and title used to notify lack of connection or corrupt file, during the sound effects installation
+		# Translators: dialog message and title used to notify lack of connection or corrupt file, during the sound effects installation
 		message = _("Verify that your internet connection is active, or try again later.")
 		if e: message = _("File corrupted or not available!")
 		wx.MessageBox('%s\n%s' %
@@ -3392,7 +3206,7 @@ class EnterDataDialog(wx.Dialog):
 
 	def DelTemp(self, file, uninstall=None):
 		"""Delete file"""
-		Shared().FreeHandle() #frees the memory allocated by the audio sample
+		Shared().FreeHandle() # Frees the memory allocated by the audio sample
 		if os.path.isfile(file):
 			os.remove(file)
 		elif os.path.isdir(file):
@@ -3410,12 +3224,7 @@ class EnterDataDialog(wx.Dialog):
 
 	def GetValue(self):
 		"""Return values from EnterDataDialog """
-		if _pyVersion >= 3: gv = self.cbx.GetValue()
-		else:
-			try:
-				gv = self.cbx.GetValue().encode("utf-8")
-			except(UnicodeDecodeError, UnicodeEncodeError): gv = self.cbx.GetValue()
-
+		gv = Shared().Normalize(self.cbx.GetValue())
 		return (
 		self.choice_days.GetStringSelection(),
 		self.choices_apilang.GetStringSelection(),
@@ -3474,20 +3283,21 @@ class EnterDataDialog(wx.Dialog):
 		if dic:
 			city, region, country, country_acronym, timezone_id, latitude, longitude = self.GetFieldsValues(dic, value) 
 			if country_acronym == '--':
-				#if acronym if the acronym starts with a double dash
-				#try to retrieve the city details from the API Weather
+				# If acronym if the acronym starts with a double dash
+				# Try to retrieve the city details from the API Weather
 				api_query = Shared().GetLocation(value, self.define_dic)
 				connect, n = Shared().ParseEntry(api_query, self.apilang)
 				if connect == "no connect":
 					Shared().Play_sound("warn", 1)
-					ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!"))
+					ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!") +
+					" " + _("See the log for more information."))
 					return self.cbx.SetFocus()
 
 				if "ramdetails_dic" in globals():
-					#update the details
-					city = list(ramdetails_dic.keys())[0] #get the city key
+					# Update the details
+					city = list(ramdetails_dic.keys())[0] # Get the city key
 					if encoded_value in self.zipCodesList:
-						#puts the correct acronym for the city 
+						# Puts the correct acronym for the city 
 						valid = self.Relabel(value, city)
 						self.details_dic.update(ramdetails_dic)
 						if valid: Shared().Play_sound(True, 1)
@@ -3499,12 +3309,13 @@ class EnterDataDialog(wx.Dialog):
 			elif encoded_value in self.details_dic: dic = self.details_dic
 			if dic: city, region, country, country_acronym, timezone_id, latitude, longitude = self.GetFieldsValues(dic, encoded_value)
 			elif not dic:
-				#no city details, try to retrieve the city details from the API
+				# No city details, try to retrieve the city details from the API
 				api_query = Shared().GetLocation(value, self.define_dic)
 				connect, n = Shared().ParseEntry(api_query, self.apilang)
 				if connect == "no connect":
 					Shared().Play_sound("warn", 1)
-					ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!"))
+					ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!") +
+					" " + _("See the log for more information."))
 					return self.cbx.SetFocus()
 
 				if "ramdetails_dic" in globals() and value in ramdetails_dic:
@@ -3525,32 +3336,29 @@ class EnterDataDialog(wx.Dialog):
 		if latitude: lat = (math.ceil(float(latitude)*100)/100)
 		if longitude: lon = (math.ceil(float(longitude)*100)/100)
 		elevation = Shared().GetElevation(latitude, longitude)
-		if elevation is None:
-			#try with rounded coordinates
+		if elevation == None:
+			# Try with rounded coordinates
 			elevation = Shared().GetElevation(lat, lon)
 
-		if elevation is None:elevation = _nr
+		if elevation == None:elevation = _nr
 		elif elevation == "no connect":
 			Shared().Play_sound("warn", 1)
-			ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!"))
+			ui.message(_("Sorry, I can not receive data, verify that your internet connection is active, or try again later!") +
+			" " + _("See the log for more information."))
 			return self.cbx.SetFocus()
 
 		city_details = '%s, %s, %s, %s, %s' % (city, region, country, country_acronym, timezone_id)
-		# it may be that the region is missing, so the acronym of the region is assigned by an algorithm that takes the first 2 characters of the city
+		# It may be that the region is missing, so the acronym of the region is assigned by an algorithm that takes the first 2 characters of the city
 		city_details = city_details.replace(', ,', ', --,')
-		#Translators: the details title
+		# Translators: the details title
 		title = "%s %s" % (_("Details of"), value)
 		if not self.toOutputwindow:
 			Shared().Play_sound("details", 1)
 			ui.message(title)
 
-		cd = city_details
-		if _pyVersion < 3:
-			try:
-				cd = city_details.decode("utf-8")
-			except(UnicodeDecodeError, UnicodeEncodeError): pass
+		cd = Shared().Normalize(city_details)
 
-		#Translators: the details message
+		# Translators: the details message
 		message = "%s: %s.\r\n" % (_("Place"), (cd or _nr))
 		message += "%s: %s (%s).\r\n" % (_("Current local time"), (current_hour or _nr),  (current_date or _nr))
 		message += "%s: %s.\r\n" % (_("Degrees latitude"), (lat or _nr))
@@ -3562,7 +3370,7 @@ class EnterDataDialog(wx.Dialog):
 			api.copyToClip('%s\r\n%s' % (title, message))
 
 		if self.toOutputwindow:
-			#the user has chosen to output to a window
+			# The user has chosen to output to a window
 			Shared().ViewDatas('%s\r\n%s' % (title, message))
 
 		else: ui.message(message)
@@ -3573,7 +3381,7 @@ class EnterDataDialog(wx.Dialog):
 		encoded_value = value = self.cbx.GetValue()
 		if _pyVersion < 3: encoded_value = value.encode("utf-8")
 
-		#try to retrieve area definition from database based on city name
+		# Try to retrieve area definition from database based on city name
 		dd = Shared().GetDefine(value, self.define_dic)
 		if dd is None:
 			dd = Shared().GetDefine(encoded_value, self.define_dic)
@@ -3581,28 +3389,28 @@ class EnterDataDialog(wx.Dialog):
 		def_define = [int(dd) if dd is not None else 0][0]
 		Shared().Play_sound("subwindow", 1)
 
-		#Translators: dialog message used in the setting window to specify a certain one area
-		if "_defineDialog" not in globals(): global _defineDialog
+		# Translators: dialog message used in the setting window to specify a certain one area
+		global _defineDialog
 		_defineDialog = wx.SingleChoiceDialog(
 		self, '%s: "%s"' % (
-		#Translators: the message
+		# Translators: the message
 		_("Define the area for"), value),
-		#Translators: title dialog
+		# Translators: title dialog
 		_addonSummary,
-		#Translators: the possible choices
+		# Translators: the possible choices
 		choices=[
 		_("Hinterland"),
 		_("Maritime area"),
 		_("Desert zone"),
 		_("Arctic zone"),
 		_("Mountain zone")])
-		#if an area has already been set for the city, then it selects itif an area has already been set for the city, then it selects it
+		# If an area has already been set for the city, then it selects itif an area has already been set for the city, then it selects it
 		_defineDialog.SetSelection(def_define)
 		try:
 			if _defineDialog.ShowModal() == wx.ID_OK:
 				define = str(_defineDialog.GetSelection())
 				if define != str(def_define):
-					#if the area has been modified, it updates it
+					# If the area has been modified, it updates it
 					self.modifiedList = True
 					if value in self.define_dic: self.define_dic[value]['define'] = define
 					elif encoded_value in self.define_dic: self.define_dic[encoded_value]['define'] = define
@@ -3628,8 +3436,7 @@ class EnterDataDialog(wx.Dialog):
 
 	def OnAdd(self, evt):
 		"""Add city button event"""
-
-		value = self.Normalize(self.cbx.GetValue(), True)
+		value = Shared().Normalize(self.cbx.GetValue(), True)
 
 		if value in self.zipCodesList:
 			return self.cbx.SetFocus()
@@ -3637,8 +3444,8 @@ class EnterDataDialog(wx.Dialog):
 		v = value
 
 		value2 = (
-			self.Normalize(self.testName)
-			or self.Normalize(self.tempZipCode)
+			Shared().Normalize(self.testName)
+			or Shared().Normalize(self.tempZipCode)
 			or value
 		)
 
@@ -3658,8 +3465,8 @@ class EnterDataDialog(wx.Dialog):
 		else:
 			value = name
 
-		value = self.Normalize(value, True)
-		v = self.Normalize(v, True)
+		value = Shared().Normalize(value, True)
+		v = Shared().Normalize(v, True)
 
 		self.zipCodesList.append(value)
 		self.zipCodesList.sort()
@@ -3683,8 +3490,7 @@ class EnterDataDialog(wx.Dialog):
 
 	def OnApply(self, evt):
 		"""Apply predefined city button event"""
-
-		value = self.Normalize(self.cbx.GetValue(), True)
+		value = Shared().Normalize(self.cbx.GetValue(), True)
 
 		if value in self.zipCodesList:
 			self.defaultZipCode = value
@@ -3698,8 +3504,8 @@ class EnterDataDialog(wx.Dialog):
 		v = value
 
 		value2 = (
-			self.Normalize(self.testName)
-			or self.Normalize(self.tempZipCode)
+			Shared().Normalize(self.testName)
+			or Shared().Normalize(self.tempZipCode)
 			or value
 		)
 
@@ -3719,8 +3525,8 @@ class EnterDataDialog(wx.Dialog):
 		else:
 			value = name
 
-		value = self.Normalize(value, True)
-		v = self.Normalize(v, True)
+		value = Shared().Normalize(value, True)
+		v = Shared().Normalize(v, True)
 
 		self.zipCodesList.append(value)
 		self.zipCodesList.sort()
@@ -3747,8 +3553,7 @@ class EnterDataDialog(wx.Dialog):
 
 	def OnRemove(self, evt=None):
 		"""Remove city"""
-
-		value = self.Normalize(self.cbx.GetValue(), True)
+		value = Shared().Normalize(self.cbx.GetValue(), True)
 
 		if value not in self.zipCodesList: return
 
@@ -3784,8 +3589,7 @@ class EnterDataDialog(wx.Dialog):
 
 	def OnRename(self, evt):
 		"""rename city"""
-
-		value = self.Normalize(self.cbx.GetValue(), True)
+		value = Shared().Normalize(self.cbx.GetValue(), True)
 
 		parts = value.split(", ")
 		name = parts[0]
@@ -3793,17 +3597,17 @@ class EnterDataDialog(wx.Dialog):
 
 		Shared().Play_sound("subwindow", 1)
 
-		#Translators: dialog to change the city name
+		# Translators: dialog to change the city name
 		dlg = wx.TextEntryDialog(
 			self,
-			#Translators: title dialog
+			# Translators: title dialog
 			_("Enter new name."),
 			_addonSummary,
 			name
 		)
 
 		if dlg.ShowModal() == wx.ID_OK:
-			new_name = self.Normalize(
+			new_name = Shared().Normalize(
 				u"%s, %s" % (
 					dlg.GetValue().strip().title(),
 					part_right
@@ -3820,13 +3624,14 @@ class EnterDataDialog(wx.Dialog):
 
 
 	def NoticeChanges(self):
+		"""Warns that city details are missing and attempts to retrieve them."""
 		if not self.dontShowAgainAddDetails:
 			message = _("The details of this city are not in the database and so I added them to the list.")
 			if self.toOutputwindow:
-				#Translators: dialog message that advise that the missing city details have been reloaded and added to the city
-				if "_dlc" not in globals(): global _dlc
+				# Translators: dialog message that advise that the missing city details have been reloaded and added to the city
+				global _dlc
 				_dlc = NoticeAgainDialog(gui.mainFrame, message = message,
-				#Translators: the dialog title
+				# Translators: the dialog title
 				title = '%s %s' % (_addonSummary, _("Notice!")))
 				if _dlc.ShowModal():
 					dontShowAgainAddDetails = _dlc.GetValue()
@@ -3841,11 +3646,10 @@ class EnterDataDialog(wx.Dialog):
 
 	def Relabel(self, value, new_name):
 		"""Rename a city"""
+		value = Shared().Normalize(value, True)
+		new_name = Shared().Normalize(new_name, True)
 
-		value = self.Normalize(value, True)
-		new_name = self.Normalize(new_name, True)
-
-		# duplicate check
+		# Duplicate check
 		if new_name in self.zipCodesList and value != new_name:
 			wx.MessageBox(
 				u'%s %s' % (
@@ -3857,13 +3661,13 @@ class EnterDataDialog(wx.Dialog):
 			)
 			return
 
-		# find index safely
+		# Find index safely
 		try:
 			index = self.zipCodesList.index(value)
 		except ValueError:
 			return
 
-		# update list
+		# Update list
 		self.zipCodesList[index] = new_name
 		self.zipCodesList.sort()
 
@@ -3871,16 +3675,16 @@ class EnterDataDialog(wx.Dialog):
 		self.cbx.Delete(index)
 		self.ComboSet(new_name, True)
 
-		# default city update
+		# Default city update
 		if value == self.defaultZipCode:
 			self.defaultZipCode = new_name
 			self.ReTitle(new_name)
 
-		# update details_dic
+		# Update details_dic
 		if value in self.details_dic:
 			self.details_dic[new_name] = self.details_dic.pop(value)
 
-		# update define_dic
+		# Update define_dic
 		if value in self.define_dic:
 			self.define_dic[new_name] = self.define_dic.pop(value)
 
@@ -3899,7 +3703,6 @@ class EnterDataDialog(wx.Dialog):
 
 	def ReTitle(self, s):
 		"""Change title window"""
-
 		t = self.GetLabel()
 		if _pyVersion < 3:
 			try:
@@ -3915,7 +3718,7 @@ class EnterDataDialog(wx.Dialog):
 		double = False
 		part_left = ''
 		if ',' in value:
-			part_left = value[:value.find(',')] #City name
+			part_left = value[:value.find(',')] # City name
 			state = value.split()
 			try:
 				state = state[-2]
@@ -3925,24 +3728,24 @@ class EnterDataDialog(wx.Dialog):
 				except IndexError: state = ''
 
 			if len(state) == 2 or len(state) == 4:
-				value = '%s, %s' % (part_left, state) #City name, state
+				value = '%s, %s' % (part_left, state) # City name, state
 		else:
-			part_left = value[:-len(value.split()[-1])-1] #City name
+			part_left = value[:-len(value.split()[-1])-1] # City name
 			part_right = value.split()[-1]
 			m = ''
 			if part_right.isdigit():
-				#Search for ID
+				# Search for ID
 				part_left = value[:-len(part_right)-1]
 			else:
-				#Search for Yahoo old zip codes
+				# Search for Yahoo old zip codes
 				try:
 					m = re.search('[A-Za-z]{4}[0-9]{4}', part_right).group()
 				except AttributeError: pass
 				if m: part_left = value[:-len(part_right)]
 				else: part_left = value
 
-		current = city[city.find(','):] #, it XXXXXXXX
-		#Searc for state (2 or 4 caracters)
+		current = city[city.find(','):] # , it XXXXXXXX
+		# Searc for state (2 or 4 caracters)
 		m = ''
 		try:
 			m=re.search(', [a-zA-Z]{2, 4}', part_left).group()
@@ -3962,9 +3765,8 @@ class EnterDataDialog(wx.Dialog):
 
 	def Warning(self, cityName, name, v):
 		"""Proposes an alternative name, but by offering the correct name"""
-
 		winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
-		#Translators: dialog message used when the city name already exists
+		# Translators: dialog message used when the city name already exists
 		dl =wx.MessageDialog(self, '%s "%s" %s.\n%s "%s" %s.\n%s\n%s "%s".\n%s' % (
 		_("The city"), v, _("is correct"),
 		_("But the name"),
@@ -3974,7 +3776,7 @@ class EnterDataDialog(wx.Dialog):
 		_("The city proper is"),
 		cityName[:cityName.rfind(' ')],
 		_("Want to use the suggested name?")),
-		#Translators: title dialog
+		# Translators: title dialog
 		'%s %s' % (_addonSummary, _("Notice!")),
 		wx.YES_NO |wx.CANCEL| wx.ICON_QUESTION)
 		result = dl.ShowModal()
@@ -3984,7 +3786,7 @@ class EnterDataDialog(wx.Dialog):
 
 	def OnImport(self, evt):
 		"""Import data from file Weather.zipcodes"""
-		if "_importDialog" not in globals(): global _importDialog
+		global _importDialog
 		_importDialog = wx.FileDialog(gui.mainFrame,
 		_("Import cities"),
 		defaultDir = os.path.expanduser('~/~'),
@@ -3997,7 +3799,7 @@ class EnterDataDialog(wx.Dialog):
 			if _importDialog.ShowModal() == wx.ID_CANCEL:
 				return evt.GetEventObject().SetFocus()
 
-			#Open the file
+			# Open the file
 			file = _importDialog.GetPath()
 		finally:
 			_importDialog.Destroy()
@@ -4010,36 +3812,36 @@ class EnterDataDialog(wx.Dialog):
 			return evt.GetEventObject().SetFocus()
 
 		if self.zipCodesList:
-			#Translators: dialog message and title that allows you to choose the import mode
+			# Translators: dialog message and title that allows you to choose the import mode
 			message = '%s\n%s\n%s' % (
 			_("Do you want to replace your list with this?"),
 			_("If you select yes, your list will be completely replaced."),
 			_("If you select no, the new cities will be added to your list.")
 			)
-			#Translators: the title window
+			# Translators: the title window
 			title = '%s - %s' % (_addonSummary, _("Select import mode"))
 			winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
-			if "_importDialog2" not in globals(): global _importDialog2
+			global _importDialog2
 			gui.mainFrame.prePopup()
 			_importDialog2 = wx.MessageDialog(gui.mainFrame, message, title, wx.YES_NO|wx.NO_DEFAULT|wx.ICON_QUESTION)
 			_importDialog2.Show()
 			gui.mainFrame.postPopup()
 			try:
 				if _importDialog2.ShowModal() == wx.YES:
-					#the list is totally replaced
+					# The list is totally replaced
 					zipCodesList = []
 					self.zipCodesList = []
 			finally:
 				_importDialog2.Destroy()
 				_importDialog2 = None
 
-		#It allows you to select the contents of the file Weather.zipcode
+		# It allows you to select the contents of the file Weather.zipcode
 		Shared().Play_sound("subwindow", 1)
-		#translators: the dialog title
+		# Translators: the dialog title
 		title = '%s - %d %s' % (_("File contents"), len(zipCodesList2), _("cities"))
-		#translators: the dialog message
+		# Translators: the dialog message
 		message = _("Activate the check boxes of the cities you want to import.")
-		if "_citiesImportDialog" not in globals(): global _citiesImportDialog
+		global _citiesImportDialog
 		gui.mainFrame.prePopup()
 		_citiesImportDialog = SelectImportDialog(gui.mainFrame, title = title, message = message, zip_list = zipCodesList2)
 		_citiesImportDialog.Show()
@@ -4058,16 +3860,16 @@ class EnterDataDialog(wx.Dialog):
 			_citiesImportDialog.Destroy()
 			_citiesImportDialog = None
 
-		ti = td = tr = 0 #total imported, total duplicates, total errors
+		ti = td = tr = 0 # Total imported, total duplicates, total errors
 		tl = len(zipCodesList2)
 		lis = len(item_selected)
-		mis = item_selected[-1] # max value
+		mis = item_selected[-1] # Max value
 		item_selected.reverse()
-		#get city displayed in the combo box
+		# Get city displayed in the combo box
 		zc1 = ""; v = self.cbx.GetValue(); found = False
 		if v: zc1 = v
 		max = 100
-		if "_importProgressBarr" not in globals(): global _importProgressBarr
+		global _importProgressBarr
 		_importProgressBarr = wx.GenericProgressDialog(
 		_("Importing cities in progress"),
 		_plzw,
@@ -4083,44 +3885,44 @@ class EnterDataDialog(wx.Dialog):
 		while keepGoing and count < max:
 			if len(item_selected) != 0:
 				c = item_selected.pop()
-				i = zipCodesList2[c] #get city name from imported list
+				i = zipCodesList2[c] # Get city name from imported list
 				t, zc, n = Shared().ZipCodeInList(i, self.zipCodesList)
 				encoded_v = v; encoded_defaultZipCode = self.defaultZipCode
 
 				if zc1 == zc and i == encoded_v and i == encoded_defaultZipCode:
-					#The city found in the list it's set to default
+					# The city found in the list it's set to default
 					found = True
-
 				if not t:
-					#update the cities list
-					zipCodesList.append(i)
-					#search for old zipcodes
+					# Update the cities list
+					zipCodesList.append(Shared().Normalize(i))
+					# Search for old zipcodes
 					old_zc = zc.split()[-1]
-					new_zd= 0 #it when it becomes 2 it has all the details and definition data
-					old_zd= 0 #it when it becomes 2 it has all the details and definition data
+					new_zd= 0 # It when it becomes 2 it has all the details and definition data
+					old_zd= 0 # It when it becomes 2 it has all the details and definition data
 					if old_zc in define_dic:
-						#updates the old cities definitions
+						# Updates the old cities definitions
 						old_zd += 1
 						self.define_dic.update({old_zc: define_dic[old_zc]})
 
 					elif zc in define_dic:
-						#updates the cities definitions
+						# Updates the cities definitions
 						new_zd += 1
 						self.define_dic.update({zc: define_dic[zc]})
 
 					if old_zc in details_dic:
-						#update the old cities details
+						# Update the old cities details
 						old_zd += 1
 						self.details_dic.update({old_zc: details_dic[old_zc]})
 
 					elif zc in details_dic:
-						#update the cities details
+						# Update the cities details
 						new_zd += 1
 						self.details_dic.update({zc: details_dic[zc]})
 
 					ti += 1
-					if new_zd > 0 and new_zd <= 2: tr += 1
-					if old_zd > 0 and old_zd <= 2: tr += 1
+					# Each city must have 2 types of data, details and definitions, otherwise they are with missing data
+					if new_zd > 0 and new_zd < 2: tr += 1
+					if old_zd > 0 and old_zd < 2: tr += 1
 
 				else: td += 1
 
@@ -4132,11 +3934,11 @@ class EnterDataDialog(wx.Dialog):
 
 		_importProgressBarr.Destroy()
 		_importProgressBarr = None
-		#Refresh cities list in the combobox
+		# Refresh cities list in the combobox
 		if ti:
 			self.zipCodesList = list(sorted(zipCodesList))
 			self.cbx.Clear()
-			self.cbx.Append(self.zipCodesList)
+			self.cbx.AppendItems(self.zipCodesList)
 			self.ComboSet(v)
 			if found:
 				self.defaultZipCode = self.tempZipCode = v
@@ -4149,7 +3951,7 @@ class EnterDataDialog(wx.Dialog):
 					self.cbx.SetValue("")
 					if v == self.defaultZipCode: self.ReTitle(_("None"))
 
-		if "_importReportDialog" not in globals(): global _importReportDialog
+		global _importReportDialog
 		with wx.MessageDialog(None,
 		'%s: %d %s.\n%s: %d.\n%s: %d.\n%s: %d.\n%s: %d.' % (
 		_("Were added"), ti, _("new cities to the list"),
@@ -4160,28 +3962,27 @@ class EnterDataDialog(wx.Dialog):
 		'%s - %s' % (_addonSummary, _("Import finished")), wx.ICON_INFORMATION) as _importReportDialog:
 			_importReportDialog.ShowModal()
 
-		evt.GetEventObject().SetFocus()	
+		self.cbx.SetFocus()
 		_importReportDialog = None
 
 
 	def OnExport(self, evt):
 		"""Export file Weather.zipcodes"""
-
 		file = "Weather.zipcodes"
 		if self.modifiedList:
 			winsound.MessageBeep(winsound.MB_ICONEXCLAMATION)
-			#Translators: dialog message used if the user has he added cities but hasn't saved them yet
+			# Translators: dialog message used if the user has he added cities but hasn't saved them yet
 			if wx.MessageBox('%s "%s" %s\n%s\n%s' % (
 			_("A copy of"),
 			file,
 			_("It will be exported"),
 			_("But it does not yet contain the changes you just made the list!"),
 			_("I proceed?")),
-			#Translators: the dialog title
+			# Translators: the dialog title
 			'%s - %s' % (_addonSummary, _("Notice!")), wx.YES_NO | wx.NO_DEFAULT | wx.ICON_QUESTION) == 8:
-				return evt.GetEventObject()
+				return self.cbx.SetFocus()
 
-		if "_exportFileDialog" not in globals(): global _exportFileDialog
+		global _exportFileDialog
 		_exportFileDialog = wx.FileDialog(self,
 		_("Export cities"),
 		defaultFile=file,
@@ -4192,21 +3993,21 @@ class EnterDataDialog(wx.Dialog):
 		_exportFileDialog.SetFilterIndex(0)
 		try:
 			if _exportFileDialog.ShowModal() == wx.ID_CANCEL:
-				return evt.GetEventObject().SetFocus()
+				return self.cbx.SetFocus()
 
 			destPath = _exportFileDialog.GetPath()
 		finally:
 			_exportFileDialog.Destroy()
 			_exportFileDialog = None
 
-		#Export a copy of Weather.zipcodes
+		# Export a copy of Weather.zipcodes
 		if  destPath == _zipCodes_path:
 			wx.MessageBox(_("You can not export the same file at the same path!"), '%s - %s' % (_addonSummary, _("Notice!")), wx.ICON_EXCLAMATION)
 			return evt.GetEventObject()
 
 		wx.CallAfter(ui.message, _plzw)
 		if os.path.isfile(_zipCodes_path):
-			#copy the cities list to the destination chosen by the user
+			# Copy the cities list to the destination chosen by the user
 			result = self.ProgressCopy(_zipCodes_path, destPath)
 			if result:
 				winsound.MessageBeep(winsound.MB_ICONASTERISK)
@@ -4220,7 +4021,7 @@ class EnterDataDialog(wx.Dialog):
 		steps = os.stat(src).st_size / buffer_size + 1
 		source = open(src, 'rb')
 		target = open(dest, 'wb')
-		if "_exportProgressBarr" not in globals(): global _exportProgressBarr
+		global _exportProgressBarr
 		_exportProgressBarr = wx.GenericProgressDialog(_addonSummary, _plzw,
 		maximum = int(steps), parent = None,
 		style=wx.PD_AUTO_HIDE
@@ -4254,7 +4055,7 @@ class EnterDataDialog(wx.Dialog):
 
 	def OnHourlyforecastSet(self, evt):
 		"""hourlyforecast report data settings"""
-		if "_HourlyforecastDataSelectDialog" not in globals(): global _HourlyforecastDataSelectDialog
+		global _HourlyforecastDataSelectDialog
 		_HourlyforecastDataSelectDialog = HourlyforecastDataSelect(self, title = _("Hourlyforecast data report values."), message = _("Disable the data you don't want to be processed:"),
 		toWindspeed_hf = self.toWindspeed_hf,
 		toWinddir_hf = self.toWinddir_hf,
@@ -4283,13 +4084,9 @@ class EnterDataDialog(wx.Dialog):
 			_HourlyforecastDataSelectDialog = None
 
 
-	def ComboSet(self, v, add = None):
+	def ComboSet(self, v, add = False):
 		"""Update choices List ComboBox"""
-		if _pyVersion < 3:
-			try:
-				v = v.decode("utf-8")
-			except(UnicodeDecodeError, UnicodeEncodeError): pass
-
+		v = Shared().Normalize(v)
 		if add:
 			i = self.GetIndex(v, self.zipCodesList)
 			if i == None: i = 0
@@ -4298,12 +4095,28 @@ class EnterDataDialog(wx.Dialog):
 		self.cbx.SetStringSelection(v)
 		if not v: self.cbx.SetValue('')
 		self.modifiedList = True
+		self.btn_Ok.Enable(True)
 		self.cbx.SetFocus()
+
+
+class Shared:
+	"""shared functions"""
+
+	def UrlQuote(self, text):
+		"""Normalize the URL parameters"""
+		text = self.Normalize(text)
+
+		if _pyVersion >= 3:
+			return quote(text)
+
+		if isinstance(text, unicode):
+			return quote(text.encode("utf-8"))
+
+		return quote(text)
 
 
 	def Normalize(self, v, strip=False):
 		"""Ensures Unicode consistency (Python 2/3)"""
-
 		if v is None:
 			return u""
 
@@ -4321,12 +4134,9 @@ class EnterDataDialog(wx.Dialog):
 		return result.strip() if strip else result
 
 
-class Shared:
-	"""shared functions"""
-
 	def ShowWind(self, wind):
+		"""Does everything to bring the window back to the foreground"""
 		try:
-			#does everything to bring the window back to the foreground
 			if wind.IsEnabled(): self.Play_sound("restorewind", 1)
 			wind.Iconize(False)
 			wind.Show(True)
@@ -4343,6 +4153,7 @@ class Shared:
 
 
 	def CloseDialog(self, dialog):
+		"""Closes the specified dialog window"""
 		try:
 			if dialog and dialog.IsShown():
 				dialog.Close()
@@ -4351,12 +4162,14 @@ class Shared:
 
 
 	def LogError(self, e):
-		e = str(e)
-		if _pyVersion < 3: e = e.decode("utf-8")
-		log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
+		"""Logs the error message."""
+		e = Shared().Normalize(e)
+		if not "503" and  "Bad Request" in e:
+			log.info('%s %s: %s' % (_addonSummary, _addonVersion, e))
 
 
 	def CalculateStep(self, c, mis, max, flag=False):
+		"""Computes the progress bar update delay."""
 		try:
 			if not flag:
 				count = int(c*100/mis)
@@ -4373,7 +4186,7 @@ class Shared:
 		dd.day
 		)
 		if m:
-			#day and month
+			# Day and month
 			dt = '%s %s' % (dt, self.TranslateCalendar(str(dd.month).rjust(2,'0')))
 
 		return dt
@@ -4390,12 +4203,8 @@ class Shared:
 
 
 	def SetCityString(self, zipcode):
-		if _pyVersion < 3 and isinstance(zipcode, str):
-			try:
-				zipcode = zipcode.decode('utf-8')
-			except UnicodeDecodeError:
-				pass
-
+		"""Title and standardize the city string"""
+		zipcode = Shared().Normalize(zipcode)
 		return u'%s%s' % (
 			zipcode[:zipcode.find(',')].title(),
 			zipcode[zipcode.rfind(','):].upper())
@@ -4409,9 +4218,7 @@ class Shared:
 
 	def GetLocation(self, value, define_dic):
 		"""get city location assigned to zipcode in use"""
-		if _pyVersion < 3:
-			if not isinstance(value, unicode):
-				value = value.decode("utf-8")
+		value = Shared().Normalize(value)
 		return define_dic[value]['location'] if value in define_dic else ''
 
 
@@ -4421,11 +4228,10 @@ class Shared:
 
 
 	def DbaseUpdate(self):
-		"""online update of acronym database"""
-		if "_acronym_dic" not in globals():
-			global _acronym_dic; _acronym_dic = {}
+		"""online update of acronym database if available"""
+		if "_acronym_dic" not in globals(): global _acronym_dic; _acronym_dic = {}
 
-		#load acronym database updates
+		# Load acronym database updates
 		try:
 			url = urljoin(_addonBaseUrl+'/', 'weather.dbase')
 			dbase = self.GetUrlData(url, False)
@@ -4441,34 +4247,33 @@ class Shared:
 	def FindForGeoName(self, real_city_name, city_name, latitude, longitude):
 		"""Retrieve details from geo name with geographic coordinates"""
 		def SplitName(c):
-			#separates the city from the state
+			# Separates the city from the state
 			sc = [i.lstrip(' ').rstrip(' ').replace(', , ', ', ') for i in c.split(',')]
 			if len(sc) >= 3:
-				return '%s, %s' % (sc[0], sc[1]), sc[-1] #city, region, acronym
-			else: return sc[0], sc[-1] #city, acronym
+				return '%s, %s' % (sc[0], sc[1]), sc[-1] # City, region, acronym
+			else: return sc[0], sc[-1] # City, acronym
 
 		def GetGeo(city, acronym):
 			return  self.GetGeoName(city, lat = latitude, lon = longitude, acronym=acronym)
-
 		def ParseName(city, acronym):
 			city_details = GetGeo(city, acronym)
 			if not city_details:
-				#try separating the name
+				# Try separating the name
 				city = city.replace('-', ' ').replace('_', ' ')
 				city_details = GetGeo(city, acronym)
 
 				if not city_details:
-					#try to join all the name
+					# Try to join all the name
 					city = city.replace(' ', '-').replace(',-', ', ')
 					city_details = GetGeo(city, acronym) 
 
 			return city_details
 
-		# first try with the short city name path
+		# First try with the short city name path
 		city, acronym = SplitName(city_name)
 		city_details = ParseName(city, acronym)
 		if not city_details and city_name != real_city_name:
-			#try the long real_city_name
+			# Try the long real_city_name
 			city, acronym = SplitName(real_city_name)
 			city_details = ParseName(city, acronym)
 
@@ -4479,12 +4284,12 @@ class Shared:
 		"""make a region acronym"""
 		if not value: return ""
 		capital_Letters = []
-		#collects initial capital letters
+		# Collects initial capital letters
 		capital_letters = [i for i in value if i.isupper()]
 		l = len(capital_letters)
-		#if there are two or more than 2, will be used the first and the second or the first and last of capital letters
+		# If there are two or more than 2, will be used the first and the second or the first and last of capital letters
 		if l >= 2: acronym = '%s%s' % (capital_letters[0], capital_letters[-1])
-		#if it is a single, will be used the first 2 characters
+		# If it is a single, will be used the first 2 characters
 		elif l == 1: acronym = '%s%s' % (capital_letters[0], value[1])
 		return acronym.upper()
 
@@ -4499,7 +4304,7 @@ class Shared:
 
 	def GetAcronym(self, value):
 		"""converts country in acronym with two caracters"""
-		#difficult countries
+		# Difficult countries
 		p =[
 		(re.compile('''C.+te d.+Ivoire'''), 'CI')
 		]
@@ -4806,7 +4611,7 @@ class Shared:
 		'YEMEN': 'YE',
 		'ZIMBABWE': 'ZW',
 		'ZAMBIA': 'ZM',
-		#US regions
+		# US regions
 		'AGUASCALIENTES': 'AG',
 		'ALABAMA': 'AL',
 		'ALASKA': 'AK',
@@ -4903,7 +4708,7 @@ class Shared:
 		'WYOMING': 'WY',
 		'YUCAT': 'YU',
 		'ZACATECAS': 'ZA',
-		#canada regions
+		# Canada regions
 		'ALBERTA': 'AB',
 		'BRITISH COLUMBIA': 'BC',
 		'MANITOBA': 'MB',
@@ -4922,10 +4727,11 @@ class Shared:
 		'YUKON': 'YT'
 		}
 
-		# Check online for a country update
-		Shared().DbaseUpdate()
-		if len(_acronym_dic):
-			acronym_dic.update(_acronym_dic)
+		if not value in acronym_dic:
+			# Check online for a country update
+			Shared().DbaseUpdate()
+			if len(_acronym_dic):
+				acronym_dic.update(_acronym_dic)
 
 		if value in acronym_dic: return acronym_dic[value]
 		elif len(value) > 2: return ""
@@ -4934,20 +4740,19 @@ class Shared:
 
 	def Get_dst(self, to24Hours, s):
 		"""extracts date, time, add/sub total hours from the rough string"""
-
 		dt = s.split()
 		if len(dt) != 16: return (None,) * 4
-			#translate month
+			# Translate month
 		dt[2] = self.Month2Num (dt[2][:3])
 		dt[2] = self.TranslateCalendar(str(dt[2]).rjust(2, '0'))
-		#create date string
+		# Create date string
 		date = '%s %s %s' % (dt[3].rstrip(","), dt[2], dt[4])
-		#create time string
+		# Create time string
 		time = '%s %s' % (dt[6], dt[7])
 		if to24Hours: time = self.To24h(time)
-		#get add, or sub action
+		# Get add, or sub action
 		action = dt[13]
-		#get number hhours to add, or subtract
+		# Get number hhours to add, or subtract
 		hour = dt[14]
 		return date, time, action, hour
 
@@ -4956,10 +4761,10 @@ class Shared:
 		""" add zero  to left of number with len 1"""
 		if hour in ["No moonrise", "No moonset", "No sunrise", "No sunset", ""]: return hour
 		if p:
-			p = hour[-2:] #pm or am
-			hour = hour[:-3] # hour and minute
+			p = hour[-2:] # Pm or am
+			hour = hour[:-3] # Hour and minute
 
-		m = hour[hour.find(':')+1:] #minute
+		m = hour[hour.find(':')+1:] # Minute
 		t = '%s:%s' % (hour[:hour.find(':')].rjust(2, '0'), m.rjust(2, '0'))
 		return '%s %s' % (t, p) if p else t
 
@@ -4969,34 +4774,34 @@ class Shared:
 		m = ''
 		if hour in ["not rise ", "No moonrise", "No moonset", "No sunrise", "No sunset", ""]: return hour
 		if 'datetime' in str(type(hour)):
-			#datetime format get from lastbuilddate returned in 24 hour format
+			# Datetime format get from lastbuilddate returned in 24 hour format
 			hour = '%s:%s' % (hour.hour, hour.minute)
 		else:
 			if hour.split(' ')[-1] in ('AM', 'PM'):
-				m = hour[-2:] #pm or am
-				hour = hour[:-3] #hour and minute without am|pm
+				m = hour[-2:] # Pm or am
+				hour = hour[:-3] # Hour and minute without am|pm
 
 		if viceversa:
-			#only for lastbuilddate
+			# Only for lastbuilddate
 			t = datetime.strptime(hour, '%H:%M')
-			t1 =t.strftime('%H:%M') #get time in 24 hour format
-			t2 =t.strftime('%I:%M') #get time in 12 hour format
-			h = int(t1[:t1.find(":")]) #get hour in 24 hour format
+			t1 =t.strftime('%H:%M') # Get time in 24 hour format
+			t2 =t.strftime('%I:%M') # Get time in 12 hour format
+			h = int(t1[:t1.find(":")]) # Get hour in 24 hour format
 			if h == 0: t1 = "AM"
 			elif h >= 12: t1 = "PM"
 			elif h >= 1 and h <= 11: t1 = "AM"
 			t = '%s %s' % (t2, t1)
 
 		else:
-			#time get from current weather and forecast date in 12 hour format
+			# Time get from current weather and forecast date in 12 hour format
 			try:
-				t= datetime.strptime(hour, "%I:%M").strftime("%H:%M") #convert to 24 hour format
+				t= datetime.strptime(hour, "%I:%M").strftime("%H:%M") # Convert to 24 hour format
 			except ValueError:
 				t = self.Add_zero(hour, False)
 
 			if m.lower() == "pm":
-				h = hour[:hour.find(':')] #hour
-				m = hour[hour.find(':')+1:] #minute
+				h = hour[:hour.find(':')] # Hour
+				m = hour[hour.find(':')+1:] # Minute
 				t = self.Add_zero('%s:%s' % (int(h)+12 if int(h) < 12 else 12, m), None)
 
 		return t
@@ -5118,7 +4923,7 @@ class Shared:
 
 
 	def Weather_PlusDat(self):
-		apikey_path = _addonDir.replace('..\..', "") + "wp.dat"
+		apikey_path = os.path.abspath(os.path.join(os.path.dirname(__file__), "wp.dat"))
 		import pickle
 		try:
 			with open(apikey_path, 'rb') as r:
@@ -5137,7 +4942,7 @@ class Shared:
 		else:
 			api_query = '%s' % value
 			if api_query.count(',') > 2:
-				#reduces search key length to max 3 elements
+				# Reduces search key length to max 3 elements
 				aq  = [i.lstrip(' ').rstrip(' ').replace(', , ', ', ') for i in api_query.split(',')]
 				api_query = '%s, %s, %s' % (aq[0], aq[1], aq[2])
 
@@ -5155,7 +4960,7 @@ class Shared:
 		country_acronym = self.GetAcronym(country)
 		country_acronymFind = ''
 		if not country or not country_acronym:
-			#tries to recover the country from geonames url
+			# Tries to recover the country from geonames url
 			city_test = '%s, %s' % (city, country_acronym)
 			city_find = self.FindForGeoName(city_test, city_test, lat, lon)
 			if city_find:
@@ -5164,19 +4969,19 @@ class Shared:
 				country = city_find[-2]
 
 		if country and not country_acronym:
-			#search the acronym in the country database
+			# Search the acronym in the country database
 			country_acronym = self.GetAcronym(country)
 		if country and not country_acronym:
-			#Translators: diaalog message that asks the user to report to author the city code whose country could not be determined
-			if "_reqInfoCountry" not in globals(): global _reqInfoCountry
-			#Translators: the message in the window
+			# Translators: diaalog message that asks the user to report to author the city code whose country could not be determined
+			global _reqInfoCountry
+			# Translators: the message in the window
 			message ='%s' % (
 			_("""It was not possible find the acronym of "%s"!""") % country+'\n'+
 			_("This may not allow you to get the city details.")+'\n'+
 			_("Please report this to the author so he can add this country in database.")+'\n'+
 			_("Send an email to %s") % _addonAuthor+'\n'+
 			_("With  object the line below, thanks."))
-			#Translators: the dialog title
+			# Translators: the dialog title
 			title = '%s %s' % (_addonSummary, _("Notice!"))
 			clip = '%s %s' % (_addonSummary, 'Search key = %s - Country = %s' % (api_query, country))
 			gui.mainFrame.prePopup()
@@ -5201,7 +5006,6 @@ class Shared:
 
 	def WeatherConnect(self, api_query, apilang):
 		"""return Weather API values"""
-
 		base_url = "http://api.weatherapi.com/v1/forecast.json"
 		keywords ={
 		"key":_wbdat,
@@ -5233,7 +5037,7 @@ class Shared:
 		"""Download files using the progress bar"""
 		if "_addonBaseUrl" not in globals(): return "Error"
 		max = 100
-		if "_downloadDialog" not in globals(): global _downloadDialog
+		global _downloadDialog
 		_downloadDialog = wx.GenericProgressDialog(title,
 		message,
 		maximum = max,
@@ -5322,7 +5126,7 @@ class Shared:
 		try:
 			BASS_StreamFree(_handle)
 			BASS_Free()
-		except Exception: pass
+		except: pass
 
 
 	def LoadZipCodes(self, i=None):
@@ -5337,13 +5141,13 @@ class Shared:
 		if not os.path.isfile(citiesPath):
 			return [], {}, {}
 
-		# try UTF-8 first
+		# Try UTF-8 first
 		try:
 			file = io.open(citiesPath, 'r', encoding='utf-8')
 			file.read()
 			file.seek(0)
 		except UnicodeDecodeError:
-			# fallback to old Windows format
+			# Fallback to old Windows format
 			file = io.open(citiesPath, 'r', encoding='mbcs')
 		except:
 			return [], {}, {}
@@ -5383,24 +5187,24 @@ class Shared:
 	def Personal_volumes(self, dictionary = None, sav = False):
 		"""Upload or save the audio volumes assigned to each sound effect"""
 		if not os.path.exists(_volumes_path) and sav == False: return {}
-		#It collects the samples list
+		# It collects the samples list
 		samples_list = []
 		if os.path.isdir(_samples_path):
 			samples_list = os.listdir(_samples_path)
-			#remove extension
+			# Remove extension
 			samples_list = [i[:-4] for i in samples_list]
 
 		if sav:
 			if dictionary:
-				#saves the volume of each sound effect
+				# Saves the volume of each sound effect
 				with open(_volumes_path, "w") as file:
 					for i in sorted(dictionary.keys()):
 						file.write('%s\t%s\n' % (i, dictionary[i]))
 
-				return True #dictionary saved
+				return True # Dictionary saved
 
 		else:
-			#load...
+			# Load...
 			dictionary = {}
 			with open(_volumes_path, "r") as file:
 				for line in file:
@@ -5408,7 +5212,7 @@ class Shared:
 					if line and line[0].isupper() and line.count('\t') == 1 and line.endswith('%'):
 						i = line.split('\t')
 						if len(i) == 2:
-							if i[0] in samples_list: #collects only those in the file list
+							if i[0] in samples_list: # Collects only those in the file list
 								dictionary.update({i[0]: i[-1].rstrip('\n')})
 
 				return dictionary
@@ -5435,7 +5239,7 @@ class Shared:
 		lat = int(float(lat))
 		lon = int(float(lon))
 		line = ""
-		address = 'http://www.geonames.org/search.html?q=%s&country=%s' % (city, acronym)
+		address = 'http://www.geonames.org/search.html?q=%s&country=%s' % (Shared().UrlQuote(city), Shared().UrlQuote(acronym))
 		data = self.GetUrlData(address, False)
 		if not data: return None
 		if isinstance(data, bytes) and _pyVersion >= 3: data = data.decode()
@@ -5477,7 +5281,7 @@ class Shared:
 		"""Returns elevation above sea level"""
 		try:
 			return int(json.loads(self.GetUrlData("https://api.open-meteo.com/v1/elevation?latitude=%s&longitude=%s" % (lat, lon))).get('elevation', [None])[0])
-		except Exception: return None
+		except: return None
 
 
 	def Play_sound(self, t, s = 0):
@@ -5503,12 +5307,10 @@ class Shared:
 		"winclose": "Winclose",
 		"winopen": "Winopen"
 		}
+
 		if t in sound_dic:
-			filename = '%s\\%s.wav' % (_sounds_path, sound_dic[t])
-			if _pyVersion < 3:
-				winsound.PlaySound(filename.encode("utf-8"), s)
-			else:
-				winsound.PlaySound(filename, s)
+			filename = os.path.join(_sounds_path, sound_dic[t] + ".wav")
+			winsound.PlaySound(filename, s)
 
 
 	def WriteError(self, title):
@@ -5523,29 +5325,18 @@ class Shared:
 	def ZipCodeInList(self, v, zipCodesList):
 		"""Check if the city already exists on cities list"""
 		i, t = 0, False
-		if _pyVersion < 3:
-			zc = self.DecodeValue(v)
-		else: zc = v
+		zc = Shared().Normalize(v)
 
 		for i, n in enumerate(zipCodesList):
-			if _pyVersion < 3:
-				zc1 = self.DecodeValue(n)
-			else: zc1 = n
+			zc1 = Shared().Normalize(n)
 			if zc.upper() == zc1.upper():
 				t = True; break
 
 		return t, zc, i
 
 
-	def DecodeValue(self, v):
-		try:
-			v1 = v.decode("utf-8")
-		except(UnicodeDecodeError, UnicodeEncodeError): v1 = v
-		return v1
-
-
 	def GetUrlData(self, address, verbosity = True):
-		#threading
+		"""threading"""
 		que = Queue.Queue()
 		thread = Thread(target=lambda q, arg1, arg2: q.put(self.GetUrlData2(arg1, arg2)), args=(que, address, verbosity))
 		thread.start()
@@ -5562,22 +5353,20 @@ class Shared:
 
 	def GetUrlData2(self, address, verbosity):
 		"""open url"""
-
 		try:
 			gcontext = ssl.create_default_context()
 			gcontext.load_verify_locations(certifi.where())
 
 			with closing(urlopen(address, context=gcontext)) as response:
 				return response.read()
-
 		except HTTPError as e:
 			if verbosity:
-				self.LogError("HTTP %s: %s" % (e.code, e))
+				self.LogError(e)
 			return "not found"
 
 		except URLError as e:
 			if verbosity:
-				self.LogError("URL Error: %s" % e)
+				self.LogError(e)
 			return "no connect"
 
 		except Exception as e:
@@ -5595,21 +5384,13 @@ class Shared:
 			country = value[value.find(',')+1:].lstrip(' ')
 
 		cities_found = []
-		if _pyVersion >= 3:
-			city_enc = quote(city)
-		else:
-			if isinstance(city, unicode):
-				city_enc = quote(city.encode("utf-8"))
-			else:
-				city_enc = quote(city)
-
 		addresses = [
-		'http://www.geonames.org/postalcode-search.html?q=%s&country=%s' % (city_enc, country),
-		'http://www.geonames.org/search.html?q=%s&country=%s' % (city_enc, country)
+		'http://www.geonames.org/postalcode-search.html?q=%s&country=%s' % (Shared().UrlQuote(city), Shared().UrlQuote(country)),
+		'http://www.geonames.org/search.html?q=%s&country=%s' % (Shared().UrlQuote(city), Shared().UrlQuote(country))
 		]
 		p=[
-		re.compile(r'</small></td><td>(.+)</td><td>(.+)</td><td>(.+)</td><td>(.+)</td><td>(.+)</td>.+<small>(-*\d+\.\d+)/(-*\d+\.\d+)</small>'), #geonames with posttal codes
-		re.compile(r'latitude">(-*\d+\.\d+)</span><span class="longitude">(-*\d+\.\d+)</span></span></td><td><a href="/countries/([A-Z][A-Z])/(.+)\.html">(.+)</a>, (.+)<br><small>(.+); (.+)</small>')] #geonames without postal codes
+		re.compile(r'</small></td><td>(.+)</td><td>(.+)</td><td>(.+)</td><td>(.+)</td><td>(.+)</td>.+<small>(-*\d+\.\d+)/(-*\d+\.\d+)</small>'), # Geonames with posttal codes
+		re.compile(r'latitude">(-*\d+\.\d+)</span><span class="longitude">(-*\d+\.\d+)</span></span></td><td><a href="/countries/([A-Z][A-Z])/(.+)\.html">(.+)</a>, (.+)<br><small>(.+); (.+)</small>')] # Geonames without postal codes
 		for c in [0, -1]:
 			data = self.GetUrlData(addresses[c])
 			if isinstance(data, bytes) or _pyVersion < 3: data = data.decode("utf-8")
@@ -5622,34 +5403,34 @@ class Shared:
 					if m:
 						if c == 0:
 							city1 = '%s, %s, %s, %s, %s, %s, %s' % (
-							re.search(p[c], m).group(1), #city name
-							re.search(p[c], m).group(2), #postal code
-							self.TranslatePlaces(re.search(p[c], m).group(3)), #region
-							re.search(p[c], m).group(4), #country
-							re.search(p[c], m).group(5), #province
-							(math.ceil(float(re.search(p[c], m).group(6))*100)/100), #latitude
-							(math.ceil(float(re.search(p[c], m).group(7))*100)/100) #longitude
+							re.search(p[c], m).group(1), # City name
+							re.search(p[c], m).group(2), # Postal code
+							self.TranslatePlaces(re.search(p[c], m).group(3)), # Region
+							re.search(p[c], m).group(4), # Country
+							re.search(p[c], m).group(5), # Province
+							(math.ceil(float(re.search(p[c], m).group(6))*100)/100), # Latitude
+							(math.ceil(float(re.search(p[c], m).group(7))*100)/100) # Longitude
 							)
 							city1 = city1.replace('</td><td>', ', ').replace('<tr><td>', '').replace('<tr class="odd"><td>, ', ', ').replace(', , ', ', ')
 							city1 = city1.split('html">')[-1].replace('</a>', '')
 							name = '%s, %s' % (city1.split(', ')[0], city1.split(', ')[3])
 						else:
 							city1 = '%s, %s, %s, %s, %s, %s, %s' % (
-							re.search(p[c], m).group(8).title(), #city name
-							_npc, #No postal code
-							self.TranslatePlaces(re.search(p[c], m).group(6)), #region
-							re.search(p[c], m).group(5), #country
-							re.search(p[c], m).group(7).rstrip(' & gt'), #province
-							(math.ceil(float(re.search(p[c], m).group(1))*100)/100), #latitude
-							(math.ceil(float(re.search(p[c], m).group(2))*100)/100) #longitude
+							re.search(p[c], m).group(8).title(), # City name
+							_npc, # No postal code
+							self.TranslatePlaces(re.search(p[c], m).group(6)), # Region
+							re.search(p[c], m).group(5), # Country
+							re.search(p[c], m).group(7).rstrip(' & gt'), # Province
+							(math.ceil(float(re.search(p[c], m).group(1))*100)/100), # Latitude
+							(math.ceil(float(re.search(p[c], m).group(2))*100)/100) # Longitude
 							)
 							name = '%s, %s, %s' % (city1.split(', ')[0], city1.split(', ')[1], city1.split(', ')[2])
 				except (AttributeError, ValueError): city1 = None
-				#collects city datas
+				# Collects city datas
 				if city1:
-					#takes coordinates of the city found
+					# Takes coordinates of the city found
 					coords = '%s, %s' % (city1.split(', ')[-2], city1.split(', ')[-1])
-					#checks if they are present in the list
+					# Checks if they are present in the list
 					coordsInList = [True for x in cities_found if coords in x]
 					nameInList = [True for x in cities_found if name in x]
 					if not nameInList and not coordsInList: cities_found.append(city1)
@@ -5662,12 +5443,12 @@ class Shared:
 		command = cityName[:cityName.find(':')+1].upper()
 		city = cityName[cityName.find(':')+1:]
 		if not command and (city.replace('.', '').isdigit() or Shared().GetCoords(cityName)): return cityName
-		elif command in ['D:', 'IATA:']: return city #passes the city in search key directly to API
-		elif command in ['AUTO:', 'METAR:']: return cityName #passes entire search key directly to API
-		elif command == 'P:': mode = 1 #search for postal code
-		elif command == 'G:': mode = 2 #search for geographical coordinates
-		elif command == 'T:': mode = 3 #search for path string
-		else: mode = 1 #default
+		elif command in ['D:', 'IATA:']: return city # Passes the city in search key directly to API
+		elif command in ['AUTO:', 'METAR:']: return cityName # Passes entire search key directly to API
+		elif command == 'P:': mode = 1 # Search for postal code
+		elif command == 'G:': mode = 2 # Search for geographical coordinates
+		elif command == 'T:': mode = 3 # Search for path string
+		else: mode = 1 # Default
 
 		def GetValue(v, mode):
 			m = m1 = m2 = ""
@@ -5675,17 +5456,17 @@ class Shared:
 				country = v.split(', ')[2]
 			except IndexError: mode, country = 2, ''
 			try:
-				#get postal code from city
+				# Get postal code from city
 				if mode is 1:
 					valid_countries = ['United States', 'Canada', 'United Kingdom']
-					m = v.split(', ')[1] #get postal code
-					country_wpc = v.split(', ')[2] #get country
+					m = v.split(', ')[1] # Get postal code
+					country_wpc = v.split(', ')[2] # Get country
 					if m == _npc\
 					or country_wpc not in valid_countries: mode = 3
 				if mode == 1:
 					m = v.split(', ')[1]
 				elif mode == 2:
-					#get geographical coordinates from city
+					# Get geographical coordinates from city
 					p = re.compile(r'.+, (-*\d+\.\d+), (-*\d+\.\d+)')
 					try:
 						m = re.search(p, v).group(1)
@@ -5693,7 +5474,7 @@ class Shared:
 					except AttributeError: m = m1 = None
 
 				else:
-					#get path string
+					# Get path string
 					m = v.split(', ')[0]
 					m1 = v.split(', ')[2]
 					m2 = v.split(', ')[3]
@@ -5712,21 +5493,21 @@ class Shared:
 			return v
 
 		recurrences_list = self.Find_cities(city)
-		if not recurrences_list: return city #passes the search key to API
+		if not recurrences_list: return city # Passes the search key to API
 		lrl = len(recurrences_list)
-		if lrl is 0: return city #passes the search key to API
+		if lrl is 0: return city # Passes the search key to API
 		elif lrl == 1: return GetValue(recurrences_list[0], mode)
 		else:
-		#Translators: window that allows you to choose a city among the found occurrences
+		# Translators: window that allows you to choose a city among the found occurrences
 			title = '%s - %d %s %s %s.' % \
-			(#Translators: the window title
+			(# Translators: the window title
 			_addonSummary, lrl, _("occurrences found"), _("for"), city)
 			message = '%s.\n%s\n%s:' % (
-			#Translators: message dialog
+			# Translators: message dialog
 			_("Choose a city."),
-			self.Find_wbdats(), #get hotkeys
+			self.Find_wbdats(), # Get hotkeys
 			_("List of availables Cities"))
-			if "_searchDialog" not in globals(): global _searchDialog
+			global _searchDialog
 			_searchDialog = SelectDialog(gui.mainFrame, title = title, message = message, choices = recurrences_list, last = [0], sel = 0)
 			self.Play_sound("subwindow", 1)
 			try:
@@ -5791,7 +5572,7 @@ class NoticeAgainDialog(wx.Dialog):
 
 class SelectDialog(wx.Dialog):
 	"""Dialog to choose a city"""
-	def __init__(self, parent, message = "", title = "", choices = [], last = [], sel = 0, defaultString = ""):
+	def __init__(self, parent, message = "", title = "", choices = [], last = [], sel = 0):
 		super(SelectDialog, self).__init__(parent, title = title)
 		sizer = wx.BoxSizer(wx.VERTICAL)
 		sizerHelper = gui.guiHelper.BoxSizerHelper(self, orientation=wx.VERTICAL)
@@ -5799,11 +5580,7 @@ class SelectDialog(wx.Dialog):
 			sizerHelper.addItem(wx.StaticText(self, -1, message))
 			sizerHelper.addItem(wx.StaticLine(self))
 
-		if _pyVersion < 3:
-			try:
-				choices = [i.decode("utf-8") for i in choices]
-			except(UnicodeDecodeError, UnicodeEncodeError): pass
-
+		choices = [Shared().Normalize(i, True) for i in choices]
 		chb = wx.Choice(self, -1, choices = choices)
 		sizerHelper.addItem(chb)
 		chb.SetSelection(last[sel])
@@ -5816,8 +5593,7 @@ class SelectDialog(wx.Dialog):
 
 		chb.SetFocus()
 		self.choices = choices
-		self.defaultString = defaultString
-		#Shortcut key event for FindText()
+		# Shortcut key event for FindText()
 		chb.Bind(wx.EVT_CHAR, self.OnKey)
 		self.chb = chb
 
@@ -5832,54 +5608,53 @@ class SelectDialog(wx.Dialog):
 		ctrl = evt.ControlDown()
 		shift = evt.ShiftDown()
 		key = evt.GetKeyCode()
-		defaultString = self.defaultString
+		global defaultString
+		global _itemStatus
+		_itemStatus = {}
+
+		global _undo
+		_undo = []
+
+		global _defaultStrings
+		_defaultStrings = []
+
 		if key == wx.WXK_F3 and ctrl:
-			#Enter text to search
-			if "_itemStatus" not in globals():
-				global _itemStatus
-				_itemStatus = {}
+			# Enter text to search
+			# Load search keys saved
+			sel = 0
+			if os.path.isfile(_searchKey_path):
+				with open(_searchKey_path, 'r') as r:
+					for i in r:
+						i = Shared().Normalize(i)
+						if i.startswith('\t'): sel = int(i.lstrip('\t')); continue # Get last selected index
+						_defaultStrings.append(i.rstrip('\n'))
 
-			if "_undo" not in globals():
-				global _undo
-				_undo = []
-
-			if "_defaultStrings" not in globals():
-				global _defaultStrings
-				_defaultStrings = []
-				#load search keys saved
-				sel = 0
-				if os.path.isfile(_searchKey_path):
-					with open(_searchKey_path, 'r') as r:
-						for i in r:
-							if _pyVersion < 3: i = i.decode("utf-8")
-							if i.startswith('\t'): sel = int(i.lstrip('\t')); continue
-							_defaultStrings.append(i.rstrip('\n'))
-
-			if "_selected" not in globals():
-				global _selected
-				_selected = sel
-
-			if "_findDialog" not in globals(): global _findDialog
+			global _selected
+			_selected = sel
+			global _findDialog
 			_findDialog = FindDialog(self, message = _("Type the search string"), title = _("Find"))
 			if _findDialog.ShowModal() == wx.ID_OK:
-				self.defaultString = defaultString = _findDialog.GetValue()
-				if defaultString and defaultString not in _defaultStrings: _defaultStrings.append(defaultString); _defaultStrings.sort()
-				if defaultString: _selected = _defaultStrings.index(defaultString)
+				defaultString = _findDialog.GetValue()
+				if defaultString and defaultString not in _defaultStrings:
+					if defaultString and '\t' + defaultString not in _undo:
+						_defaultStrings.append(defaultString); _defaultStrings.sort()
+				if defaultString in _defaultStrings: _selected = _defaultStrings.index(defaultString)
 				else:
 					if _notifyDialog: _notifyDialog.Destroy()
 					_findDialog.Destroy()
 					return
+
 				self.FindText(self.choices, defaultString, direction = 0)
 
 			_findDialog.Destroy()
 
 		elif key == wx.WXK_F3 and shift and defaultString:
-			#Find previous
+			# Find previous
 			self.FindText(self.choices, defaultString, direction = -1)
 		elif key == wx.WXK_F3 and defaultString:
-			#Find next
+			# Find next
 			self.FindText(self.choices, defaultString, direction = 1)
-		
+
 		evt.Skip()
 
 
@@ -5887,25 +5662,20 @@ class SelectDialog(wx.Dialog):
 		"""Search and if found, displays the selected item by the user""" 
 		d = direction
 		if direction == -1:
-			#Find previous
+			# Find previous
 			s = self.GetStart_index(strings, direction)
 			e = direction
 		elif direction == 1:
-			#Find next
+			# Find next
 			s = self.GetStart_index(strings, direction)
 			e = len(strings)
 		else:
-			#Find to bbegin
+			# Find to bbegin
 			s = 0; e = len(strings)
 		if direction == 0: direction = 1
 		find = False
 		for line in range(s, e, direction):
-			if _pyVersion >= 3: t = strings[line].lower()
-			else:
-				try:
-					t = strings[line].lower().decode("utf-8")
-				except(UnicodeDecodeError, UnicodeEncodeError): t = strings[line].lower()
-
+			t = Shared().Normalize(strings[line].lower())
 			if t.find(text.lower()) != -1:
 				self.chb.SetSelection(line)
 				wx.CallLater(100, ui.message, self.chb.GetStringSelection())
@@ -5913,7 +5683,7 @@ class SelectDialog(wx.Dialog):
 		if not find:
 			ds= ["", _("next"), _("previous")]
 			if d == 0:
-				if "_notifyDialog" not in globals(): global _notifyDialog
+				global _notifyDialog
 				_notifyDialog = wx.MessageDialog(gui.mainFrame, '"%s" %s' % (text, _("not found!")), _("Find"), wx.OK|wx.ICON_EXCLAMATION)
 				if _notifyDialog.ShowModal(): _notifyDialog.Destroy()
 
@@ -5930,7 +5700,7 @@ class SelectDialog(wx.Dialog):
 			t = self.chb.GetStringSelection()
 			s = strings.index(t) + direction
 		except ValueError:
-			if _pyVersion < 3: s = strings.index(t.encode("utf-8")) +direction
+			s = Shared().Normalize(strings.index(t))
 
 		return s
 
@@ -5955,7 +5725,7 @@ class SelectImportDialog(wx.Dialog):
 		bHelper.addItem(btns)
 		bHelper.addItem(btnd)
 		sizerHelper.addItem(bHelper)
-		#ok and cancell buttons
+		# Ok and cancell buttons
 		sizerHelper.addDialogDismissButtons(self.CreateButtonSizer(wx.OK|wx.CANCEL))
 		btn_ok = self.FindWindowById(wx.ID_OK)
 		btn_cancel = self.FindWindowById(wx.ID_CANCEL)
@@ -5976,7 +5746,7 @@ class SelectImportDialog(wx.Dialog):
 		self.Hit_Item(True)
 		self.SetButtons(self.clb.GetCount())
 
-		#Set scroll dialog
+		# Set scroll dialog
 		self.DoLayoutAdaptation()
 		self.SetLayoutAdaptationLevel(self.GetLayoutAdaptationLevel())
 		self.Bind(wx.EVT_SCROLL_THUMBTRACK, self.OnCaptureMouse)
@@ -5992,26 +5762,26 @@ class SelectImportDialog(wx.Dialog):
 
 
 	def On_ok(self, evt):
-		"""enter key event"""
+		"""enter key event from SelectImportDialog"""
 		if len(self.checkedItems):
-			#selections have been made
-			##if self.btn_ok.IsEnabled(): self.EndModal(wx.ID_OK)
+			# Selections have been made
+			# #if self.btn_ok.IsEnabled(): self.EndModal(wx.ID_OK)
 			self.EndModal(wx.ID_OK)
 		else: return wx.Bell()
 
 
 	def On_cancel(self, evt):
-		"""escape key event"""
+		"""escape key event from SelectImportDialog"""
 		self.EndModal(wx.ID_CANCEL)
 
 
 	def ListBoxEvent(self, evt):
-		"""Event scroll and highlight items in the list"""
+		"""Event scroll and highlight items in the list from SelectImportDialog"""
 		self.Hit_Item(True)
 
 
 	def Hit_Item(self, verbose = False, evt = None):
-		"""Reads the checkbox status of the selection"""
+		"""Reads the checkbox status of the selection from SelectImportDialog"""
 		items = self.clb.GetCount()
 		self.checkedItems = [i for i in range(items) if self.clb.IsChecked(i)]
 		index = self.clb.GetSelection()
@@ -6030,7 +5800,7 @@ class SelectImportDialog(wx.Dialog):
 
 
 	def OnSelectAll(self, evt):
-		"""select all the check boxes in the list"""
+		"""select all the check boxes in the list from SelectImportDialog"""
 		items = self.clb.GetCount()
 		[self.clb.Check(item, check = True) for item in range(items)]
 		wx.CallLater(60, ui.message, '%d %s' % (items, _("check boxes checked")))
@@ -6039,7 +5809,7 @@ class SelectImportDialog(wx.Dialog):
 
 
 	def OnDeselectAll(self, evt):
-		"""deselect all the check boxes in the list"""
+		"""deselect all the check boxes in the list from SelectImportDialog"""
 		items = self.clb.GetCount()
 		[self.clb.Check(item, check = False) for item in range(items)]
 		wx.CallLater(60, ui.message, '%d %s' % (items, _("check boxes not checked")))
@@ -6048,7 +5818,7 @@ class SelectImportDialog(wx.Dialog):
 
 
 	def SetButtons(self, items):
-		"""update buttons for Select SelectImportDialog"""
+		"""update select buttons for SelectImportDialog"""
 		self.checkedItems = [i for i in range(items) if self.clb.IsChecked(i)]
 		l = len(self.checkedItems)
 		if l > 0 and l < items:
@@ -6106,7 +5876,7 @@ class MyDialog(wx.Dialog):
 
 
 	def OnConfirm(self, evt):
-		""" yes and ok button event """
+		""" yes and ok button event in MyDialog"""
 		if self.buttons:
 			self.Hide()
 			file = "%s%s.nvda-addon" % (_addonSummary, self.newVersion.split()[0])
@@ -6127,7 +5897,7 @@ class MyDialog(wx.Dialog):
 			if self.verbosity:
 				wx.MessageBox(message, title)
 
-			#Start update addon
+			# Start update addon
 			Shared().FreeHandle()
 			try:
 				os.startfile(target)
@@ -6138,7 +5908,7 @@ class MyDialog(wx.Dialog):
 
 
 	def EnableMenu(self, flag):
-		"""Change status menu"""
+		"""Change status menu in MyDialog"""
 		self.setZipCodeItem.Enable(flag)
 		if not self.zipCodesList and flag is True:
 			self.setTempZipCodeItem.Enable(False)
@@ -6148,7 +5918,7 @@ class MyDialog(wx.Dialog):
 
 
 	def OnCancel(self, evt = None):
-		"""cancell button event"""
+		"""cancell button event in MyDialog"""
 		if self.UpgradeAddonItem: self.EnableMenu(True)
 		self.Destroy()
 
@@ -6161,10 +5931,14 @@ class FindDialog(wx.Dialog):
 			sizer.Add(wx.StaticText(self, -1, message), 0, wx.ALL, 10)
 
 		boxSizerH1 = wx.BoxSizer(wx.HORIZONTAL)
+		global _selected
 		textEntry = wx.TextCtrl(self)
-		try:
-			textEntry.SetValue(_defaultStrings[_selected])
-		except IndexError: pass
+		if defaultString: textEntry.SetValue(defaultString)
+		else:
+			try:
+				textEntry.SetValue(_defaultStrings[_selected])
+			except IndexError: pass
+
 		sizer.Add(textEntry, 1, wx.EXPAND|wx.ALL, 5)
 		boxSizerH1.Add(self.CreateButtonSizer(wx.OK|wx.CANCEL), 0, wx.CENTRE| wx.ALL|wx.EXPAND, 5)
 		btn_ok = self.FindWindowById(wx.ID_OK)
@@ -6173,16 +5947,15 @@ class FindDialog(wx.Dialog):
 			btn_ok.Enable(False)
 		sizer.Add(boxSizerH1)
 		textEntry.Bind(wx.EVT_CHAR, self.OnKey)
-		##textEntry.Bind(wx.EVT_RIGHT_DOWN, self.OnContext)
 		textEntry.Bind(wx.EVT_CONTEXT_MENU, self.OnContext)
 		btn_ok.Bind(wx.EVT_CHAR, self.OnKey)
 		btn_canc.Bind(wx.EVT_CHAR, self.OnKey)
-		self.defaultStrings = _defaultStrings
 		self.selected = _selected
 		self.textEntry = textEntry
 		self.btn_ok = btn_ok
 		self.SetSizerAndFit(sizer)
 		self.Center(wx.BOTH|wx.Center)
+		textEntry.SetSelection(0, -1)
 		textEntry.SetFocus()
 
 
@@ -6193,63 +5966,64 @@ class FindDialog(wx.Dialog):
 		tegv = self.textEntry
 		tes = tegv.GetValue()
 		if key == wx.WXK_DOWN and obj == tegv:
-			#select the next string
+			# Select the next string
 			if tes and len(tes) == 1:
-				for i in self.defaultStrings:
-					if tes.upper() in i[0].upper(): self.selected = self.defaultStrings.index(i); break
-			elif self.selected < len(self.defaultStrings) -1:
+				for i in _defaultStrings:
+					if tes.upper() in i[0].upper(): self.selected = _defaultStrings.index(i); break
+
+			elif self.selected < len(_defaultStrings) -1:
 				self.selected += 1
 
 			try:
-				tegv.SetValue(self.defaultStrings[self.selected])
+				tegv.SetValue(_defaultStrings[self.selected])
 			except (TypeError, IndexError): pass
 			return tegv.SetSelection(0, -1)
 		elif key == wx.WXK_UP and obj == tegv:
-			#choose the previous string
+			# Choose the previous string
 			if tes and len(tes) == 1:
-				for i in self.defaultStrings:
-					if tes.upper() in i[0].upper(): self.selected = self.defaultStrings.index(i); break
+				for i in _defaultStrings:
+					if tes.upper() in i[0].upper(): self.selected = _defaultStrings.index(i); break
 			elif self.selected > 0:
 				self.selected -= 1
 				if self.selected < 0: self.selected = 0
 
 			try:
-				tegv.SetValue(self.defaultStrings[self.selected])
+				tegv.SetValue(_defaultStrings[self.selected])
 			except (TypeError, IndexError): pass
 			return tegv.SetSelection(0, -1)
 		elif key == wx.WXK_PAGEDOWN and obj == tegv:
-			#page down
-			page = int((len(self.defaultStrings) + 10 - 1) / 10)
+			# Page down
+			page = int((len(_defaultStrings) + 10 - 1) / 10)
 			self.selected += page
-			if self.selected >= len(self.defaultStrings): self.selected = len(self.defaultStrings) -1
+			if self.selected >= len(_defaultStrings): self.selected = len(_defaultStrings) -1
 			try:
-				tegv.SetValue(self.defaultStrings[self.selected])
+				tegv.SetValue(_defaultStrings[self.selected])
 			except (TypeError, IndexError): pass
 			tegv.SetSelection(0, -1)
 		elif key == wx.WXK_PAGEUP and tegv == obj:
-			#page up
-			page = int((len(self.defaultStrings) + 10 - 1) / 10)
+			# Page up
+			page = int((len(_defaultStrings) + 10 - 1) / 10)
 			self.selected-= page
 			if self.selected < 0: self.selected = 0
 			try:
-				tegv.SetValue(self.defaultStrings[self.selected])
+				tegv.SetValue(_defaultStrings[self.selected])
 			except (TypeError, IndexError): pass
 			tegv.SetSelection(0, -1)
 		elif obj == tegv:
 			if key == wx.WXK_DELETE and tegv.CanCut():
-				#delete search key
+				# Delete search key
 				return self.OnDelete()
 			elif key == wx.WXK_CONTROL_Z:
-				#undo
+				# Undo
 				return self.OnUndo()
 			elif key == wx.WXK_CONTROL_X and tegv.CanCut():
-				#cut
+				# Cut
 				return self.OnCut()
 			elif key == wx.WXK_CONTROL_V and tegv.CanPaste:
-				#paste
+				# Paste
 				return self.OnPaste()
 		elif key == wx.WXK_F2:
-			#sett focus in edit field
+			# Sett focus in edit field
 			tegv.SetFocus()
 			try:
 				tegv.SetSelection(-1, -1)
@@ -6269,7 +6043,7 @@ class FindDialog(wx.Dialog):
 		self.Bind(wx.EVT_MENU, self.OnSelectAll, id = wx.ID_SELECTALL)
 		self.Bind(wx.EVT_MENU, self.OnDelete, id = wx.ID_DELETE)
 		self.Bind(wx.EVT_MENU, self.OnSave, id = wx.ID_SAVE)
-		#Create the popup menu
+		# Create the popup menu
 		menu = wx.Menu()
 		selected = [
 		self.textEntry.GetSelection()[0],
@@ -6277,30 +6051,30 @@ class FindDialog(wx.Dialog):
 		]
 		lenValue = len(self.textEntry.GetValue())
 		if selected[0] == selected[-1]:
-			#unselected
+			# Unselected
 			_itemStatus['cut'] = False
 			_itemStatus['copy'] = False
 			_itemStatus['paste'] = self.TestClipboard()
 			_itemStatus['selectall'] = True
 		elif selected[0] == 0 and selected[-1] == lenValue:
-			#all selected
+			# All selected
 			_itemStatus['cut'] = True
 			_itemStatus['copy'] = True
 			_itemStatus['paste'] = self.TestClipboard()
 			_itemStatus['selectall'] = False
 		elif (selected[0] != selected[-1]) and (selected[0] >= 0 and selected[-1] != lenValue):
-			#partial selected
+			# Partial selected
 			_itemStatus['cut'] = True
 			_itemStatus['copy'] = True
 			_itemStatus['paste'] = bool(api.getClipData())
 			_itemStatus['selectall'] = True
 
 		_itemStatus['undo'] = bool(_undo)
-		_itemStatus['save'] = bool(_defaultStrings and self.textEntry.GetValue() in _defaultStrings)
+		_itemStatus['save'] = bool(_defaultStrings and self.textEntry.GetValue() not in _defaultStrings or _itemStatus['undo'])
 		if not self.textEntry.GetValue(): _itemStatus['selectall'] = False
 		_itemStatus['delete'] = bool(self.textEntry.GetValue() and self.textEntry.GetStringSelection())
 
-		#append pop menus
+		# Append pop menus
 		itemUndo = menu.Append(wx.ID_UNDO, ).Enable(_itemStatus['undo'])
 		itemCut = menu.Append(wx.ID_CUT, ).Enable(_itemStatus['cut'])
 		itemCopy = menu.Append(wx.ID_COPY, ).Enable(_itemStatus['copy'])
@@ -6309,7 +6083,7 @@ class FindDialog(wx.Dialog):
 		itemDelete = menu.Append(wx.ID_DELETE, ).Enable(_itemStatus['delete'])
 		menu.AppendSeparator()
 		itemSave = menu.Append(wx.ID_SAVE, ).Enable(_itemStatus['save'])
-		#Displays the pop-up menu
+		# Displays the pop-up menu
 		self.PopupMenu(menu)
 		menu.Destroy()
 
@@ -6340,23 +6114,22 @@ class FindDialog(wx.Dialog):
 		v = tegv.GetValue()
 		self.ListPreserve(v)
 		index = None
-		if not self.defaultStrings or v not in self.defaultStrings:
-			tegv.SetValue('')
-			self.btn_ok.Enable(False)
-		elif self.defaultStrings:
+		if not _defaultStrings or v not in _defaultStrings:
+			if not v: self.btn_ok.Enable(False)
+		elif _defaultStrings:
 			try:
-				index = self.defaultStrings.index(v)
-				del self.defaultStrings[index]
+				index = _defaultStrings.index(v)
+				del _defaultStrings[index]
 			except ValueError: pass
 			try:
-				if index is not None: tegv.SetValue(self.defaultStrings[index -1])
+				if index is not None: tegv.SetValue(_defaultStrings[index -1])
 			except IndexError:
-				tegv.SetValue('') 	
+				tegv.SetString(_defaultStrings[-1]) if _defaultStrings else ''
 
 			if index is not None: self.selected = index
 
 		tegv.SetFocus()
-		if not self.defaultStrings or not v:
+		if not _defaultStrings or not v:
 			tegv.SetValue('')
 			self.btn_ok.Enable(False)
 		if v: self.textEntry.SetSelection(-1, -1)
@@ -6364,18 +6137,19 @@ class FindDialog(wx.Dialog):
 
 	def OnUndo(self, evt=None):
 		"""undo popup menu item"""
+		global _undo
 		if not _undo: return
 		tegv = self.textEntry
-		#removes double keys
+		# Removes double keys
 		undo2 = list(set(_undo))
-		[_undo.pop() for i in range(len(_undo))]
+		_undo = []
 		[_undo.append(i) for i in undo2]
-		#recovers the last key
+		# Recovers the last key
 		lastUndo = _undo.pop()
 		index = self.ListResume(lastUndo)
-		if index: tegv.SetValue(self.defaultStrings[index])
+		if index: tegv.SetValue(_defaultStrings[index])
 		else: tegv.SetValue(lastUndo.lstrip('\t'))
-		#select all and set focus
+		# Select all and set focus
 		tegv.SetSelection(0, -1)
 		tegv.SetFocus()
 
@@ -6389,14 +6163,14 @@ class FindDialog(wx.Dialog):
 		try:
 			api.copyToClip(selected)
 		except Exception: pass
-		if selected in self.defaultStrings:
-			index = self.defaultStrings.index(selected)
-			if index < len(self.defaultStrings)-1:
-				tegv.SetValue(self.defaultStrings[index + 1])
-			elif index > 0: tegv.SetValue(self.defaultStrings[index - 1])
+		if selected in _defaultStrings:
+			index = _defaultStrings.index(selected)
+			if index < len(_defaultStrings)-1:
+				tegv.SetValue(_defaultStrings[index + 1])
+			elif index > 0: tegv.SetValue(_defaultStrings[index - 1])
 			tegv.SetSelection(0, -1)
 			self.ListPreserve(selected)
-			self.defaultStrings.remove(selected)
+			_defaultStrings.remove(selected)
 		else: self.ListPreserve(v, False)
 
 
@@ -6411,10 +6185,10 @@ class FindDialog(wx.Dialog):
 		except: clipData = None
 		if clipData:
 			if selected:
-				#replace the selected text
+				# Replace the selected text
 				tegv.SetValue(v.replace(selected, clipData))
 			else:
-				#insert text from insertion point
+				# Insert text from insertion point
 				start = v[:pos]
 				end = v[pos:]
 				tegv.SetValue(start+clipData+end)
@@ -6425,40 +6199,47 @@ class FindDialog(wx.Dialog):
 
 	def OnSave(self, evt):
 		"""save popup menu item"""
-		e = None
-		self.defaultStrings.append('\t%s' % self.defaultStrings.index(self.textEntry.GetValue()))
-		with open(_searchKey_path, 'w') as w:
-			for i in self.defaultStrings:
-				if _pyVersion >= 3: i += "\n"
-				else: i =i.encode("utf-8") + "\n"
-				try:
-					w.write(i)
-				except Exception as e:
-					Shared().LogError(e)
+		global _defaultStrings
 
-		if not e: Shared().Play_sound("save")
-		self.defaultStrings.pop() #remove key index from list
-		[_undo.pop() for i in range(len(_undo))] #empty the canceled list
+		value = self.textEntry.GetValue().strip().title()
+		if value and value not in _defaultStrings:
+			_defaultStrings.append(value)
+
+		_defaultStrings = sorted(set(_defaultStrings))
+		index = _defaultStrings.index(value) if value else 0
+
+		try:
+			lines = sorted(Shared().Normalize(item.title()) for item in _defaultStrings)
+			lines.append("\t%s" % index)
+
+			with open(_searchKey_path, "w") as w:
+				w.write("\n".join(lines))
+
+			Shared().Play_sound("save")
+			_undo = []
+		except Exception as e:
+			Shared().LogError(e)
 
 
 	def ListPreserve(self, v, tolist=True):
+		global _undo
 		"""adds a pointer to the deleted key"""
-		if tolist and v in self.defaultStrings and (v not in _undo or '\t' + v not in _undo):
-			#in list
+		if tolist and v in _defaultStrings and (v not in _undo or '\t' + v not in _undo):
+			# In list
 			_undo.append('\t' + v)
 		elif v not in _undo and ('\t' + v not in _undo):
-			#not in list
+			# Not in list
 			_undo.append(v)
 
 
 	def ListResume(self, lastUndo):
 		"""restore the search key of the list"""
 		if lastUndo.startswith('\t'):
-			#was in the list
-			self.defaultStrings.append(lastUndo.lstrip('\t'))
-			self.defaultStrings.sort()
+			# Was in the list
+			_defaultStrings.append(lastUndo.lstrip('\t'))
+			_defaultStrings.sort()
 			try:
-				return self.defaultStrings.index(lastUndo.lstrip('\t'))
+				return _defaultStrings.index(lastUndo.lstrip('\t'))
 			except indexError: return None
 
 
@@ -6545,7 +6326,7 @@ class MyDialog2(wx.Dialog):
 		lines = len(split_message)
 		width = 500
 		heigth = lines * 15
-		#calculate aproximate text width for TextCtrl
+		# Calculate aproximate text width for TextCtrl
 		for i in split_message:
 			l = len(i)*6
 			if l > width: width = l
@@ -6591,6 +6372,7 @@ class MyDialog2(wx.Dialog):
 
 
 	def OnChar(self, evt):
+		"""Edit field keyboard shortcuts in the MyDialog2"""
 		k = evt.GetKeyCode()
 		ctrl = evt.ControlDown()
 		evt.Skip()

@@ -1,11 +1,13 @@
 Changes version 11.0:
 • Added the "République Tchèque" to the database.
 • Replaced the two radio buttons with two combo boxes in the Settings window, as their labels were not displayed correctly.
+• Improved management of search keys used by "Find" (Control+F3.)
 • Improved Python 2 compatibility: removed MBCS encoding and standardized character handling to UTF-8.
 • Improved Python 2 compatibility: fixed incorrect UTF-8 encoding handling in WeatherConnect's urlencode module.
 • Enhanced data loading and saving functions, as well as general management routines.
 • Fixed a bug that prevented cities with incomplete data from being counted in OnImport.
 • Updated the documentation.
+• Now the documentation is displayed directly when requested, if not available it will be displayed in English.
 Changes version 10.9:
 • Corrected and translated a new response string "Does not rise toda:Does not rise today" to "Does not rise today"".
 Changes version 10.8:
