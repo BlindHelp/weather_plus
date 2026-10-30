@@ -1,3 +1,20 @@
+28/10/2026
+# Last modification made by Adriano:
+Changes version 11.1:
+• Updated bass.dll.
+• Updated weather condition codes.
+• Updated compatibility flag for nvda 2026.3.
+
+# Modified files:
+_init_.py,
+buildVars.py,
+Changes.txt,
+Updated bass.dll.
+
+# Created the new tag:
+git tag 11.1
+git push origin 11.1
+
 24/06/2026
 Changes version 11.0:
 

@@ -1,3 +1,8 @@
+Changes version 11.1:
+• Updated bass.dll.
+• Updated weather condition codes.
+• Updated compatibility flag for nvda 2026.3.
+
 Changes version 11.0:
 • Added the "République Tchèque" to the database.
 • Replaced the two radio buttons with two combo boxes in the Settings window, as their labels were not displayed correctly.
@@ -8,21 +13,29 @@ Changes version 11.0:
 • Fixed a bug that prevented cities with incomplete data from being counted in OnImport.
 • Updated the documentation.
 • Now the documentation is displayed directly when requested, if not available it will be displayed in English.
+
 Changes version 10.9:
 • Corrected and translated a new response string "Does not rise toda:Does not rise today" to "Does not rise today"".
+
 Changes version 10.8:
 • Updated bass.dll.
+
 Changes version 10.7:
 • Improved connection security with the integration of the certifi module
+
 Changes version 10.6:
 • Forced import of the certifi2 module for versions of nvda with python 2.xx and python 3.xx without the certifi module.
+
 Changes version 10.5:
 • Fixed display of string in bytes in undocumented test window.
+
 Changes version 10.4:
-• Updated compatibility flag for nvda 2026.1
+• Updated compatibility flag for nvda 2026.1.
+
 Changes version 10.3:
 • Updated the six library to version 1.17.0.
 • Updated the onUpgrade version check function which now accepts up to 4 digits (e.g. 9999.00).
+
 Changes version 10.2:
 • Updated the flag of the latest tested version for compatibility with NVDA 2026.1.
 • Since version 10.1, Weather_Plus has already supported both 32-bit and 64-bit NVDA.
@@ -31,6 +44,6 @@ Changes version 10.1:
 • Due to a bug, correct in this last version, this will not be automatically downloaded.
 It will be necessary to download it manually.
 
-Changes version 10.0: 
+Changes version 10.0:
 • Sperimental compatibility for 64 bit NVDA versions.
 • Deleted download link from readme, the download link for future updates will now only be available from the add-on store.

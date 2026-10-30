@@ -9,9 +9,9 @@ Email: adrianobarb@yahoo.it
 Released under GPL 2
 This file is covered by the GNU General Public License
 See the file COPYING for more details
-Version 11.0
+Version 11.1
 NVDA compatibility: 2017.3 to beyond
-Last Edit date June, 24th, 2026"""
+Last Edit date October, 28th, 2026"""
 
 import os, sys, winsound, config, globalVars, ssl, json
 import globalPluginHandler, scriptHandler, languageHandler, addonHandler
@@ -713,7 +713,19 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 		1003: '*', # Partly cloudy
 		1006: '*', # Cloudy
 		1009: '*', # Overcast
+		1012: '*', # Haze'
+		1015: '*', # Dust haze
+		1018: '*', # Blowing dust
+		1021: 'Sand storm00', # Dust storm
+		1024: 'Sand storm00', # Sandstorm
+		1027: 'Sand storm00', # Severe sandstorm
 		1030: 'Fog ambience', # Mist
+		1033: '*', # Smoke
+		1036: '*', # Smoky haze
+		1039: '*', # Smog
+		1042: '*', # Severe smog
+		1045:'*', # Saharan dust
+		1048: '*', # Dust
 		1063: 'Light rain', # Patchy rain possible
 		1066: 'Snow', # Patchy snow possible
 		1069: 'Sleet', # Patchy sleet possible
@@ -1132,9 +1144,6 @@ class GlobalPlugin(globalPluginHandler.GlobalPlugin):
 
 		# Create file path to play sample.
 		filePath = _samples_path+"\\"
-		try:
-			if not v: v = samples_dic[condition]
-		except KeyError: pass
 		if v:
 			ext = ".mp3"
 			filename = '%s%s%s' % (filePath, v, ext)
